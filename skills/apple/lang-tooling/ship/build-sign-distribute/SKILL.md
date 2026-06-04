@@ -13,7 +13,6 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases
     - https://developer.apple.com/documentation/security/customizing-the-notarization-workflow
-    - https://developer.apple.com/documentation/xcode/creating-distribution-provisioned-builds
   snapshot_date: "2026-05-30"
   stability: stable
   version: 1.0.0

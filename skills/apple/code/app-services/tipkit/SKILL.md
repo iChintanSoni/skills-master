@@ -68,7 +68,6 @@ struct AddToFavoritesTip: Tip {
 ## References
 
 - **Documentation:** [TipKit](https://developer.apple.com/documentation/tipkit)
-- **Documentation:** [Highlighting app features with TipKit](https://developer.apple.com/documentation/tipkit/highlighting-app-features-with-tipkit)
 - **WWDC:** [Make features discoverable with TipKit (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10229/)
 - **WWDC:** [Customize feature discovery with TipKit (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10070/)
 - **Human Interface Guidelines:** [Offering help](https://developer.apple.com/design/human-interface-guidelines/offering-help)
