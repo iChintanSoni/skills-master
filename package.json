@@ -1,0 +1,23 @@
+{
+  "name": "skills-master-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Tool-agnostic Apple development skills, installable into any AI coding tool.",
+  "packageManager": "pnpm@11.5.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm --filter skills-master build",
+    "test": "pnpm --filter skills-master test",
+    "typecheck": "pnpm --filter skills-master typecheck",
+    "cli": "pnpm --filter skills-master exec tsx src/bin.ts",
+    "skills:lint": "pnpm --filter skills-master exec tsx src/bin.ts lint --content ../../skills",
+    "skills:registry": "pnpm --filter skills-master exec tsx src/bin.ts registry build --content ../../skills",
+    "skills:marketplace": "pnpm --filter skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../.."
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

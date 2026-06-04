@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  cli:
+    name: CLI typecheck + tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter skills-master typecheck
+      - run: pnpm --filter skills-master test
+
+  content:
+    name: Lint skills + registry drift
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      # Validate every skill (names, descriptions, pairs_with integrity, body cap, headings).
+      - run: pnpm --filter skills-master exec tsx src/bin.ts lint --content ../../skills
+      # Fail if the committed registry.json is stale.
+      - run: pnpm --filter skills-master exec tsx src/bin.ts registry build --content ../../skills --check

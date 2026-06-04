@@ -1,0 +1,37 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "skills-master",
+  "owner": {
+    "name": "skills-master contributors"
+  },
+  "plugins": [
+    {
+      "name": "skills-master-apple-code",
+      "source": "./plugins/skills-master-apple-code",
+      "description": "Apple code skills (frameworks & APIs).",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-design",
+      "source": "./plugins/skills-master-apple-design",
+      "description": "Apple design-review skills.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-apple-lang-tooling",
+      "source": "./plugins/skills-master-apple-lang-tooling",
+      "description": "Apple language, build, test & ship skills.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-overviews",
+      "source": "./plugins/skills-master-apple-overviews",
+      "description": "Apple decision-guidance routers.",
+      "version": "0.1.0",
+      "category": "development"
+    }
+  ]
+}

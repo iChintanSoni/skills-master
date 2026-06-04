@@ -1,0 +1,653 @@
+{
+  "$schema": "https://skills-master.dev/schema/registry.json",
+  "version": "0.1.0",
+  "skills": [
+    {
+      "name": "adopting-liquid-glass",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for adopting the Liquid Glass design language across an existing app in the 2025-2026 OS cycle, covering what changes automatically, when to opt in versus defer, and where custom UI needs attention. Use when planning a Liquid Glass migration, recompiling an existing app against the iOS 26 SDK, deciding whether to keep the legacy appearance, or auditing custom controls and backgrounds that may not adapt cleanly to the new material.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "liquid-glass",
+        "design",
+        "swiftui",
+        "uikit",
+        "migration"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/adopting-liquid-glass",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "build-sign-distribute",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Best practices for building, code signing, and distributing Apple apps across the App Store, TestFlight, and Developer ID channels, covering signing identities, provisioning profiles, automatic versus manual signing, archiving and exporting, App Store Connect uploads, and Mac notarization. Use when preparing a release build, setting up signing on continuous integration, archiving and exporting an app, distributing a beta through TestFlight, notarizing a Mac app outside the App Store, or debugging certificate and provisioning failures.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "signing",
+        "distribution",
+        "testflight",
+        "notarization",
+        "ci"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/build-sign-distribute",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-ml-approach",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for picking an on-device machine learning or AI approach on Apple platforms, covering the Foundation Models framework, Core ML, Create ML, and the task-specific Vision, Natural Language, and Speech frameworks. Use when deciding which Apple ML technology fits a feature, comparing the on-device language model against a custom Core ML model, evaluating privacy or offline constraints, or routing a \"should this be ML, an LLM, or a built-in framework\" question before writing code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "ml",
+        "ai",
+        "on-device",
+        "foundation-models",
+        "coreml"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/choosing-ml-approach",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-persistence",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Helps choose a persistence approach on Apple platforms — SwiftData, Core Data, files/Codable, or CloudKit — by weighing maturity, sync needs, and migration cost. Use when starting a new data layer, deciding between SwiftData and Core Data, or adding cross-device sync.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "contested",
+      "version": "1.0.0",
+      "tags": [
+        "persistence",
+        "swiftdata",
+        "core-data",
+        "cloudkit",
+        "decision"
+      ],
+      "pairs_with": [
+        "swiftdata-modeling"
+      ],
+      "path": "apple/overviews/choosing-persistence",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-ui-toolkit",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for selecting SwiftUI versus UIKit or AppKit when building a screen, feature, or whole app in the 2026 (OS 26) cycle, including when to mix toolkits through interop. Use when starting a new app or screen and deciding the primary toolkit, when weighing a SwiftUI rewrite of UIKit or AppKit code, when an advanced or legacy requirement (deep text editing, precise scroll or collection control, document-based macOS apps, fine-grained drawing) tempts a drop to UIKit or AppKit, or when wrapping one toolkit inside another with representable types or hosting controllers.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "contested",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "uikit",
+        "appkit",
+        "architecture",
+        "interop",
+        "decision"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/choosing-ui-toolkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-accessibility",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design-critique guidance for Apple Human Interface Guidelines accessibility foundations, covering VoiceOver labels, traits, and hints, Dynamic Type and large text layouts, sufficient color contrast and never relying on color alone, Reduce Motion, adequate touch target sizes, and meaningful accessibility for custom controls. Use when reviewing or designing iOS, iPadOS, macOS, watchOS, tvOS, or visionOS interfaces for inclusive access, auditing a screen for VoiceOver and Dynamic Type support, deciding accessibility labels or traits, evaluating contrast or motion, or judging whether custom controls expose their meaning to assistive technologies.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "accessibility",
+        "hig",
+        "voiceover",
+        "dynamic-type",
+        "design"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-accessibility",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-layout",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design-critique guidance for Apple Human Interface Guidelines layout foundations across iOS, iPadOS, macOS, and visionOS, covering safe areas and layout margins, Dynamic Type, size classes and resizable windows, alignment and consistent spacing, and edge-to-edge content under Liquid Glass. Use when critiquing or specifying a screen layout, reviewing whether a design respects safe areas and margins, evaluating how a UI adapts across device sizes, multitasking windows, or orientations, or judging spacing, alignment, and edge-to-edge content treatment for an Apple platform interface.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "layout",
+        "design",
+        "adaptivity",
+        "accessibility"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-layout",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-materials-liquid-glass",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design-critique guidance for Apple's system materials, vibrancy, and the Liquid Glass design language across iOS, iPadOS, macOS, and visionOS. Use when reviewing or designing translucent surfaces, navigation bars, toolbars, sheets, sidebars, or floating controls; when deciding whether a surface should be glass or opaque; when judging legibility and contrast over busy or changing backgrounds; when tinting glass controls; or when adapting a refreshed interface to light and dark appearances for the 26 release cycle.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "design",
+        "hig",
+        "materials",
+        "liquid-glass",
+        "accessibility"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-materials-liquid-glass",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-sheets",
+      "domain": "apple",
+      "class": "design",
+      "category": "components",
+      "description": "Applies Apple Human Interface Guidelines to sheets and modal presentation — when to use a sheet versus full-screen or a popover, height/detents, and dismissal. Use when designing or reviewing a modal flow, choosing a presentation style, or critiquing a sheet's UX. Produces design critique, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "design",
+        "sheets",
+        "modality",
+        "presentation"
+      ],
+      "pairs_with": [
+        "swiftui-sheets"
+      ],
+      "path": "apple/design/components/presentation/hig-sheets",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-typography-sf-symbols",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Critiques typography and SF Symbols usage against Apple's Human Interface Guidelines, covering built-in text styles for Dynamic Type, weight and size hierarchy, legibility, and consistent symbol rendering modes, weights, scales, and variants. Use when reviewing a screen's text hierarchy, evaluating whether type respects Dynamic Type and accessibility sizes, deciding font weights or styles, picking SF Symbol rendering modes, or checking that symbols visually match adjacent text.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "typography",
+        "sf-symbols",
+        "dynamic-type",
+        "design"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-typography-sf-symbols",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "observation",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance on the Observation framework and the Observable macro for SwiftUI reference-type models, including fine-grained per-property view updates, ObservationIgnored, and migration away from ObservableObject. Use when defining a view model or shared model class, choosing between Observable and ObservableObject, deciding which view property wrapper to use, marking properties as non-tracked, or migrating existing Published code to the Observable macro.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "observation",
+        "state",
+        "view-models",
+        "ios17"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/observation",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "spm",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Guidance on authoring Swift Package Manager manifests, including products and targets, dependency version rules, local packages for app modularization, test targets, bundled resources, and platform-conditional build settings. Use when creating or editing a Package.swift file, splitting an app into local feature packages, adding or pinning third-party dependencies, declaring resources or test targets in a package, or resolving version-resolution and platform-condition issues.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "spm",
+        "swift",
+        "build-packaging",
+        "dependencies",
+        "modularization"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/build-packaging/spm",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swift-concurrency",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guidance for writing data-race-safe asynchronous Swift under Swift 6 strict concurrency, covering async/await, structured concurrency with async let and task groups, actors and isolation, the MainActor, Sendable, and Task cancellation. Use when adding or auditing async code, fixing strict-concurrency or Sendable diagnostics, deciding where work should run, choosing between structured and unstructured tasks, or modernizing callback-based APIs to async/await.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "concurrency",
+        "async-await",
+        "actors",
+        "sendable"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/swift-concurrency",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swift-testing",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Writes tests with the Swift Testing framework — @Test functions, the expect and require macros, parameterized tests, suites, and async/throwing tests. Use when adding or restructuring tests for Apple-platform Swift code, migrating from XCTest, or parameterizing test cases.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "swift-testing",
+        "xctest",
+        "unit-tests"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/testing/swift-testing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftdata-modeling",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Designs SwiftData models with @Model, relationships, delete rules, and uniqueness for Apple-platform persistence. Use when modeling persistent data, choosing relationship or delete rules, adding @Attribute(.unique), setting up a ModelContainer, or deciding how to shape a SwiftData schema.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftdata",
+        "persistence",
+        "model",
+        "schema",
+        "database"
+      ],
+      "pairs_with": [
+        "choosing-persistence"
+      ],
+      "path": "apple/code/app-frameworks/swiftdata-modeling",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftdata-queries-migration",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance on reading and evolving a SwiftData store, covering the Query macro with the Predicate macro, sort descriptors, FetchDescriptor for imperative fetches, fetching through the model context, and schema migration with VersionedSchema and SchemaMigrationPlan stages. Use when filtering or sorting persisted models, paging large result sets, fetching outside a view, designing versioned schemas, or planning lightweight versus custom migrations between store versions.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftdata",
+        "persistence",
+        "migration",
+        "query",
+        "predicate"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftdata-queries-migration",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-core",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Covers SwiftUI fundamentals including views as value types, the body computed property, view composition and subview extraction, layout containers (VStack, HStack, ZStack, Grid, and lazy stacks), modifier ordering, ViewBuilder, and previews. Use when building or refactoring SwiftUI view hierarchies, deciding when to extract a subview, reasoning about why modifier order changes layout or appearance, choosing between eager and lazy containers, or wiring up Xcode previews. Excludes navigation and state-flow concerns, which belong to dedicated skills.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "views",
+        "layout",
+        "viewbuilder",
+        "composition"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-core",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-navigation",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance for modern SwiftUI navigation using NavigationStack with a value-based path, navigationDestination(for:), and NavigationSplitView for multi-column layouts. Use when building navigation hierarchies, adding programmatic or deep-link navigation, choosing between stack and split layouts for iPhone, iPad, Mac, or visionOS, restoring navigation state, or migrating away from the deprecated NavigationView.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "navigation",
+        "navigationstack",
+        "deeplink",
+        "ui"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-navigation",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-sheets",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Implements modal sheets in SwiftUI with .sheet, presentation detents, and programmatic dismissal. Use when presenting a sheet, setting partial/large detents, driving presentation from optional item state, or wiring a Cancel/Done flow. Pairs with the HIG sheets design skill.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "sheets",
+        "modal",
+        "presentation",
+        "detents"
+      ],
+      "pairs_with": [
+        "hig-sheets"
+      ],
+      "path": "apple/code/app-frameworks/swiftui-sheets",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-state-data-flow",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance for managing SwiftUI state and data flow with the Observation framework, covering State for view-owned value data and for Observable reference models, Binding, passing Observable models down the view tree, Environment for dependency injection, and Bindable. Use when deciding which property wrapper owns a piece of state, when a child needs to mutate a parent's value, when injecting a shared model across many screens, or when migrating from the legacy StateObject, ObservedObject, and Published trio to Observable.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "observation",
+        "state",
+        "data-flow",
+        "bindable"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-state-data-flow",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "xcode-project-conventions",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Conventions for structuring Xcode projects so they stay reviewable and reproducible — targets versus schemes versus build configurations, xcconfig files, Info.plist and entitlements, asset catalogs, low project-file churn, and modularization with local Swift packages. Use when setting up a new Xcode project, deciding where a build setting belongs, taming noisy pbxproj diffs, splitting an app into feature modules, or onboarding a team to a shared project layout.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "xcode",
+        "build-settings",
+        "xcconfig",
+        "modularization",
+        "project-structure"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/build-packaging/xcode-project-conventions",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`emitters > projects the fixture skill for agents 1`] = `
+[
+  {
+    "blockId": "fixture-skill",
+    "blockVersion": "1.0.0",
+    "contents": "### Fixture Skill
+
+## When to use
+
+Use this fixture to verify emitter output and the add/update/remove lifecycle.
+
+## Core guidance
+
+- Do the first deterministic thing.
+- Do the second deterministic thing, referencing examples.md.
+- Deeper notes live in reference.md.
+
+## Platform notes
+
+Runs only on the imaginary testos platform.
+
+## Pitfalls
+
+- A representative pitfall.
+
+## Open question
+
+Tradeoff: 
+
+Whether fixtures should be exhaustive is a tradeoff; this one stays minimal but covers every code path. See checklist.md.
+
+## See also
+
+- Apple-equivalent docs live at the source URL.
+
+> Extended reference and worked examples are available in the full Claude Code skill for this topic.",
+    "mode": "block",
+    "path": "AGENTS.md",
+  },
+]
+`;
+
+exports[`emitters > projects the fixture skill for claude 1`] = `
+[
+  {
+    "contents": "---
+name: fixture-skill
+description: A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
+---
+
+## When to use
+
+Use this fixture to verify emitter output and the add/update/remove lifecycle.
+
+## Core guidance
+
+- Do the first deterministic thing.
+- Do the second deterministic thing, referencing [examples.md](examples.md).
+- Deeper notes live in [reference.md](reference.md).
+
+## Platform notes
+
+Runs only on the imaginary testos platform.
+
+## Pitfalls
+
+- A representative pitfall.
+
+## Open question
+
+Whether fixtures should be exhaustive is a tradeoff; this one stays minimal but covers every code path. See [checklist.md](checklist.md).
+
+## See also
+
+- Apple-equivalent docs live at the source URL.
+",
+    "mode": "whole",
+    "path": ".claude/skills/fixture-skill/SKILL.md",
+  },
+  {
+    "contents": "# fixture-skill — reference
+
+Deterministic reference content used to verify that single-file targets drop and
+note Level-3 resources while Claude copies them verbatim.
+",
+    "mode": "whole",
+    "path": ".claude/skills/fixture-skill/reference.md",
+  },
+  {
+    "contents": "# fixture-skill — examples
+
+\`\`\`swift
+func deterministicExample() -> Int { 42 }
+\`\`\`
+",
+    "mode": "whole",
+    "path": ".claude/skills/fixture-skill/examples.md",
+  },
+  {
+    "contents": "# fixture-skill — checklist
+
+- [ ] Emitters produce deterministic output.
+- [ ] Sentinel blocks preserve surrounding edits.
+",
+    "mode": "whole",
+    "path": ".claude/skills/fixture-skill/checklist.md",
+  },
+]
+`;
+
+exports[`emitters > projects the fixture skill for copilot 1`] = `
+[
+  {
+    "contents": "---
+applyTo: "**/*.swift"
+description: A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
+---
+
+## When to use
+
+Use this fixture to verify emitter output and the add/update/remove lifecycle.
+
+## Core guidance
+
+- Do the first deterministic thing.
+- Do the second deterministic thing, referencing examples.md.
+- Deeper notes live in reference.md.
+
+## Platform notes
+
+Runs only on the imaginary testos platform.
+
+## Pitfalls
+
+- A representative pitfall.
+
+## Open question
+
+Whether fixtures should be exhaustive is a tradeoff; this one stays minimal but covers every code path. See checklist.md.
+
+## See also
+
+- Apple-equivalent docs live at the source URL.
+
+> Extended reference and worked examples are available in the full Claude Code skill for this topic.
+",
+    "mode": "whole",
+    "path": ".github/instructions/fixture-skill.instructions.md",
+  },
+  {
+    "blockId": "fixture-skill",
+    "blockVersion": "1.0.0",
+    "contents": "For Fixture Skill guidance, see \`.github/instructions/fixture-skill.instructions.md\`.",
+    "mode": "block",
+    "path": ".github/copilot-instructions.md",
+  },
+]
+`;
+
+exports[`emitters > projects the fixture skill for cursor 1`] = `
+[
+  {
+    "contents": "---
+description: A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
+globs: "**/*.swift"
+alwaysApply: false
+---
+
+## When to use
+
+Use this fixture to verify emitter output and the add/update/remove lifecycle.
+
+## Core guidance
+
+- Do the first deterministic thing.
+- Do the second deterministic thing, referencing examples.md.
+- Deeper notes live in reference.md.
+
+## Platform notes
+
+Runs only on the imaginary testos platform.
+
+## Pitfalls
+
+- A representative pitfall.
+
+## Open question
+
+Whether fixtures should be exhaustive is a tradeoff; this one stays minimal but covers every code path. See checklist.md.
+
+## See also
+
+- Apple-equivalent docs live at the source URL.
+
+> Extended reference and worked examples are available in the full Claude Code skill for this topic.
+",
+    "mode": "whole",
+    "path": ".cursor/rules/fixture-skill.mdc",
+  },
+]
+`;

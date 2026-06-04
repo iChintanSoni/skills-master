@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills-master.dev/schema/config.json",
+  "contentRef": "main",
+  "targets": [
+    "claude",
+    "cursor",
+    "copilot",
+    "agents"
+  ],
+  "paths": {},
+  "scope": "project",
+  "commit": true
+}

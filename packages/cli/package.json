@@ -1,0 +1,51 @@
+{
+  "name": "skills-master",
+  "version": "0.1.0",
+  "description": "Install tool-agnostic Apple development skills into any AI coding tool (Claude Code, Cursor, Copilot, AGENTS.md).",
+  "keywords": [
+    "skills",
+    "apple",
+    "swift",
+    "swiftui",
+    "claude",
+    "cursor",
+    "copilot",
+    "agents.md",
+    "ai",
+    "agent"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "skills-master": "./dist/bin.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/bin.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "giget": "^1.2.3",
+    "gray-matter": "^4.0.3",
+    "semver": "^7.6.3",
+    "yaml": "^2.5.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/semver": "^7.5.8",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.2"
+  }
+}
