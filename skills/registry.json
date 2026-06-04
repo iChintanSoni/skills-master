@@ -268,6 +268,37 @@
       }
     },
     {
+      "name": "cloudkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when storing app data in iCloud with CloudKit: CKContainer and private/public/shared CKDatabase, CKRecord and CKReference, async saving and querying, record zones, push subscriptions, CKShare sharing, and offline-first sync with CKSyncEngine, including account checks and conflict handling.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "cloudkit",
+        "icloud",
+        "sync",
+        "sharing",
+        "push"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/cloudkit",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "controls-widgets",
       "domain": "apple",
       "class": "code",
@@ -288,6 +319,184 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-frameworks/controls-widgets",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "core-data",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when persisting an object graph with Apple's Core Data stack: setting up NSPersistentContainer, separating view and background contexts, writing fetch requests and predicates, running batch insert/delete/update, performing lightweight or staged migrations, enforcing perform-based concurrency, or mirroring a store to iCloud with NSPersistentCloudKitContainer. Also use when deciding between Core Data and SwiftData.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "core-data",
+        "persistence",
+        "cloudkit",
+        "concurrency",
+        "migration"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/core-data",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "core-location",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when an app needs the user's geographic position, geofencing, or visit detection on Apple platforms. Triggers: requesting when-in-use vs always authorization, streaming positions with CLLocationUpdate.liveUpdates, CLServiceSession, one-shot fixes, CLMonitor geofences, significant-change or visit monitoring, reduced accuracy, and required Info.plist usage strings.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "corelocation",
+        "location",
+        "geofencing",
+        "authorization",
+        "privacy"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/core-location",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "core-ml",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when integrating a trained model into an Apple app with Core ML: loading the Xcode-generated model class, running sync/async/batch predictions, tuning MLModelConfiguration compute units for the Neural Engine, converting models with Core ML Tools, or wrapping image models in Vision. Triggers on .mlpackage/.mlmodel files, generated prediction classes, MLModelConfiguration, VNCoreMLModel, or CoreMLRequest.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "coreml",
+        "machine-learning",
+        "vision",
+        "neural-engine",
+        "on-device"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/core-ml",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "core-spotlight",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when making in-app content searchable from the system Spotlight index on iOS, iPadOS, and macOS. Triggers: indexing records with CSSearchableItem and CSSearchableItemAttributeSet, donating NSUserActivity for search and Handoff, deep-linking back from a Spotlight result, batch reindexing or deletion, or exposing App Intents entities to system search via IndexedEntity.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "spotlight",
+        "search",
+        "indexing",
+        "app-intents",
+        "deep-linking"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/core-spotlight",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "eventkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Access Calendar events and Reminders with EventKit and EventKitUI on Apple platforms. Use when creating, editing, or querying EKEvent or EKReminder, requesting calendar/reminders authorization, building recurrence rules, or presenting EKEventEditViewController. Triggers: EKEventStore, requestFullAccessToEvents, write-only access, predicateForEvents, EKRecurrenceRule, calendar permission strings.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "eventkit",
+        "calendar",
+        "reminders",
+        "permissions",
+        "swiftui"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/eventkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "healthkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Guidance for reading and writing Health data with HealthKit using modern async query descriptors, authorization, and background delivery. Use when an app requests Health permissions, queries samples or statistics, writes workouts, observes background updates, or runs watchOS/iOS workout sessions.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "watchos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "healthkit",
+        "health",
+        "swift-concurrency",
+        "watchos",
+        "privacy"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/healthkit",
       "resources": {
         "reference": false,
         "examples": false,
@@ -446,6 +655,67 @@
       }
     },
     {
+      "name": "mapkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Build maps in SwiftUI with the declarative Map view, content builders, camera control, Look Around, search, and directions. Use when adding a map screen, placing markers or overlays, drawing routes, controlling the camera, showing user location, searching places with MKLocalSearch, or computing directions with MKDirections in a SwiftUI app.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "mapkit",
+        "swiftui",
+        "maps",
+        "location",
+        "directions"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/mapkit",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "natural-language",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when analyzing or understanding text on-device with Apple's Natural Language framework: tokenizing, lemmatizing, tagging parts of speech, recognizing named entities, identifying language, computing word/sentence embeddings and similarity, running custom Create ML classifiers, or scoring sentiment, all without a network call.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "naturallanguage",
+        "nlp",
+        "nltagger",
+        "embeddings",
+        "sentiment"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/natural-language",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "observation",
       "domain": "apple",
       "class": "code",
@@ -470,6 +740,64 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-frameworks/observation",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "passkit-apple-pay",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when integrating Apple Pay checkout or Wallet passes in an Apple app: configuring the merchant ID and in-app-payments entitlement, building a PKPaymentRequest, presenting PKPaymentAuthorizationController or the SwiftUI PayWithApplePayButton, handling authorization callbacks and payment tokens, and adding PKPass objects to Wallet.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "apple-pay",
+        "passkit",
+        "wallet",
+        "payments",
+        "swiftui"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/passkit-apple-pay",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "speech",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Guidance for speech-to-text and text-to-speech on Apple platforms using the Speech and AVFAudio frameworks. Use when transcribing microphone or file audio with SpeechAnalyzer/SpeechTranscriber or SFSpeechRecognizer, handling speech and microphone authorization, streaming audio buffers, or synthesizing spoken output with AVSpeechSynthesizer including Personal Voice.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "speech",
+        "transcription",
+        "accessibility",
+        "audio",
+        "avfoundation"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/speech",
       "resources": {
         "reference": false,
         "examples": false,
@@ -505,6 +833,37 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "storekit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when implementing in-app purchases or auto-renewable subscriptions with StoreKit 2 — loading Product objects, calling purchase() and handling PurchaseResult, verifying VerificationResult<Transaction>, reading current entitlements and subscription status, listening to Transaction.updates for renewals and refunds, finishing transactions, and building paywalls with ProductView or SubscriptionStoreView.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "storekit",
+        "in-app-purchase",
+        "subscriptions",
+        "swiftui",
+        "monetization"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/storekit",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -1285,6 +1644,37 @@
       }
     },
     {
+      "name": "tipkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Guidance for surfacing contextual feature-discovery tips with TipKit. Use when defining a Tip, gating it with parameter- or event-based rules, presenting via popoverTip or TipView, grouping tips, or syncing tip status across devices with CloudKit.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "tipkit",
+        "onboarding",
+        "swiftui",
+        "feature-discovery",
+        "cloudkit"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/tipkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "uikit-auto-layout",
       "domain": "apple",
       "class": "code",
@@ -1398,6 +1788,97 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "user-notifications",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when adding local or remote (push) notifications to an Apple app: requesting authorization, scheduling with calendar/time-interval triggers, building content with categories and actions, registering for APNs, handling foreground and tapped notifications, setting interruption levels or time-sensitive alerts, and writing service/content extensions or communication notifications.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "notifications",
+        "apns",
+        "push",
+        "usernotifications",
+        "extensions"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/user-notifications",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "vision",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when extracting text, detecting faces or barcodes, classifying images, or running a Core ML vision model on still images with Apple's Vision framework. Triggers: OCR, RecognizeTextRequest, DetectFaceRectanglesRequest, ClassifyImageRequest, DetectBarcodesRequest, CoreMLRequest, bounding-box overlays, or migrating off VNImageRequestHandler.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "vision",
+        "ocr",
+        "coreml",
+        "image-analysis",
+        "swift-concurrency"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/vision",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "weatherkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Fetch current conditions, hourly and daily forecasts, severe weather alerts, and next-hour minute precipitation from Apple WeatherKit on Apple platforms or via the REST API. Use when an app shows weather data, when wiring WeatherService.shared, when required Apple Weather attribution and legal links are missing, or when a server needs signed JWT REST access.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "weatherkit",
+        "weather",
+        "forecast",
+        "app-services",
+        "rest-api"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-services/weatherkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
