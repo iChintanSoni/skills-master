@@ -82,6 +82,20 @@ export function lintSkills(skillsRoot: string): LintResult {
     byName.set(v.value.name, v.value);
   }
 
+  // Skill names must be globally unique (the registry and `add` key on name).
+  const nameDirs = new Map<string, string[]>();
+  for (const s of loaded) {
+    const n = s.fm?.name ?? s.folderName;
+    (nameDirs.get(n) ?? nameDirs.set(n, []).get(n)!).push(s.relPath);
+  }
+  for (const [name, paths] of nameDirs) {
+    if (paths.length > 1) {
+      for (const p of paths) {
+        diagnostics.push({ relPath: p, level: "error", message: `duplicate skill name "${name}" (also at ${paths.filter((x) => x !== p).join(", ")})` });
+      }
+    }
+  }
+
   const todayStr = today();
 
   for (const s of loaded) {

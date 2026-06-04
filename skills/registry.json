@@ -807,6 +807,361 @@
       }
     },
     {
+      "name": "hig-action-button",
+      "domain": "apple",
+      "class": "design",
+      "category": "inputs",
+      "description": "Design-critique guidance for the Apple Human Interface Guidelines Action button and Camera Control on iPhone, covering which app actions are appropriate to assign, making each press fast and unambiguous, primary versus secondary actions, light-press and full-press plus swipe behavior on Camera Control, and integrating through App Intents, Controls, and the locked-camera capture experience. Use when reviewing or specifying how an app hooks into the Action button or Camera Control, judging whether an assigned action is suitable, fast, and recoverable, or critiquing whether the hardware button is treated as a shortcut rather than the only path to a feature. Produces design recommendations and critique, not code.",
+      "platforms": [
+        "ios"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "action-button",
+        "camera-control",
+        "ios",
+        "inputs"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/inputs/hig-action-button",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-app-icons",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design-critique guidance for Apple app icons across platforms in the 26 design cycle: the unified rounded-rectangle grid, platform shapes, and the Liquid Glass layered icon system with default, dark, clear, and tinted appearances authored in Icon Composer. Use when reviewing or designing an app icon; when judging whether artwork is simple and recognizable at small sizes; when deciding how to layer artwork for depth and translucency; when removing text, words, or photographic backgrounds; when adapting one icon to iPhone, iPad, Mac, Apple Watch, Apple TV, or Apple Vision Pro; or when verifying the icon holds up in light, dark, clear, and tinted looks. Produces design recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "design",
+        "hig",
+        "app-icons",
+        "liquid-glass",
+        "icon-composer",
+        "branding"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-app-icons",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-apple-pencil",
+      "domain": "apple",
+      "class": "design",
+      "category": "inputs",
+      "description": "Design-critique guidance for Apple Human Interface Guidelines on Apple Pencil and Scribble, covering low-latency drawing and handwriting, hover feedback, double-tap and squeeze (Pencil controls), roll and barrel-tip expression, Scribble for text entry, palm-rejection expectations, and always offering equivalent touch alternatives. Use when reviewing or designing an iPadOS or visionOS drawing, note-taking, markup, or handwriting feature, judging Pencil gesture and hover affordances, evaluating Scribble in text fields, or deciding whether a Pencil-only interaction needs a non-Pencil fallback. Produces UX recommendations, not code.",
+      "platforms": [
+        "ipados",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "apple-pencil",
+        "scribble",
+        "hig",
+        "ipados",
+        "inputs",
+        "design"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/inputs/hig-apple-pencil",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-color",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design critique and guidance for using color in Apple apps per the Human Interface Guidelines: system/semantic colors, the app accent/tint color, sufficient contrast, never relying on color alone, vibrancy on Liquid Glass materials, light/dark adaptation, and wide-gamut consistency. Use when reviewing a color palette, picking an accent/tint, auditing contrast or dark-mode legibility, or deciding between solid colors and vibrancy on glass. Produces UX recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "color",
+        "accessibility",
+        "contrast",
+        "dark-mode",
+        "materials",
+        "foundations"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-color",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-dark-mode",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design guidance and critique for supporting Light and Dark appearances on Apple platforms per the Human Interface Guidelines. Use when reviewing or designing an interface that must adapt across appearances, choosing semantic colors and adaptive materials, planning per-appearance assets and elevation, or fixing contrast and pure-black issues. Triggers: dark mode, light/dark, appearance, semantic colors, dynamic colors, adaptive materials, elevation, vibrancy, per-appearance assets, contrast audit.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "dark-mode",
+        "appearance",
+        "color",
+        "materials",
+        "contrast"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-dark-mode",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-digital-crown",
+      "domain": "apple",
+      "class": "design",
+      "category": "inputs",
+      "description": "Applies Apple Human Interface Guidelines to the Digital Crown on Apple Watch — precise scrolling, value adjustment, haptic detents, and keeping Crown input paired with on-screen focus. Use when designing or reviewing a watchOS screen that scrolls, paginates, or adjusts a value with the Crown, choosing whether the Crown or touch drives an interaction, or critiquing whether the Crown is overloaded. Produces design critique and recommendations, not code.",
+      "platforms": [
+        "watchos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "design",
+        "watchos",
+        "digital-crown",
+        "inputs",
+        "haptics"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/inputs/hig-digital-crown",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-drag-and-drop",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Applies Apple Human Interface Guidelines to drag and drop — drag affordances, drop-target feedback, multi-item and cross-app drags, spring-loading, and accessible alternatives. Use when designing or reviewing a drag-and-drop interaction, deciding what should be draggable, critiquing drag previews or drop highlighting, or planning accessible and keyboard fallbacks. Produces design critique and recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "design",
+        "drag-and-drop",
+        "patterns",
+        "accessibility"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-drag-and-drop",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-entering-data",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design-critique guidance for Apple Human Interface Guidelines on entering data across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS, covering minimizing typing, matching the keyboard to the content, AutoFill and one-time codes, sensible defaults and formatting, inline validation, and reducing required fields. Use when critiquing or specifying a form, sign-in, sign-up, checkout, or settings screen, reviewing whether a design asks for too much manual input, judging keyboard and AutoFill choices, or evaluating how errors and required fields are presented. Produces UX critique and recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "forms",
+        "data-entry",
+        "autofill",
+        "keyboards",
+        "design"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-entering-data",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-feedback",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and recommendations for feedback and status across Apple platforms: progress, success/confirmation, error and empty states, haptics and sound, and keeping people informed without interrupting. Use when reviewing or designing loading and progress UI, success or error messaging, empty states, alerts, toasts/banners, or haptic and sound feedback, or when judging whether feedback is too noisy, too quiet, or interrupts unnecessarily. Produces HIG-grounded design guidance, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "feedback",
+        "status",
+        "haptics",
+        "alerts",
+        "progress"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-feedback",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-gestures-design",
+      "domain": "apple",
+      "class": "design",
+      "category": "inputs",
+      "description": "Design critique and recommendations for gesture interaction on iOS, iPadOS, and visionOS per Apple's Human Interface Guidelines. Use when reviewing or designing touch and spatial gestures, custom swipes, drag, pinch, touch-and-hold, or gaze-and-pinch interactions, or when a screen relies on hidden gestures. Triggers: gesture conflicts with the back swipe or screen edges, undiscoverable custom gestures, missing visible alternatives, accessibility concerns (VoiceOver, AssistiveTouch, Switch Control), or weak gesture feedback. Produces HIG-grounded design guidance, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "gestures",
+        "inputs",
+        "touch",
+        "accessibility",
+        "visionos"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/inputs/hig-gestures-design",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-images",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design-critique guidance for images in Apple interfaces under the Human Interface Guidelines, covering when to use photographs versus illustrations versus SF Symbols, resolution and scale factors, intended aspect ratio and content fit, focal points and safe areas, keeping text legible over imagery, and labeling meaningful versus decorative images for accessibility. Use when reviewing or specifying photos, illustrations, thumbnails, hero images, or symbol artwork in a screen; deciding which image style fits a context; judging crop, scale, and aspect-ratio treatment; or checking that imagery carries the right alternative text. Produces UX critique and recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "images",
+        "design",
+        "accessibility",
+        "sf-symbols"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-images",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-keyboards-design",
+      "domain": "apple",
+      "class": "design",
+      "category": "inputs",
+      "description": "Design critique and HIG guidance for hardware keyboard support: keyboard shortcuts, the hold-Command shortcut overlay on iPad, focus order, Full Keyboard Access, and standard key behaviors. Use when reviewing or designing how an iPad, Mac, or visionOS app responds to a physical keyboard, when deciding which actions deserve shortcuts, when auditing Tab focus order or motor accessibility, or when a design must work without a pointer. Produces UX recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "keyboards",
+        "shortcuts",
+        "accessibility",
+        "focus",
+        "inputs"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/inputs/hig-keyboards-design",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "hig-layout",
       "domain": "apple",
       "class": "design",
@@ -836,6 +1191,38 @@
       }
     },
     {
+      "name": "hig-loading",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Applies Apple Human Interface Guidelines to loading states and perceived performance — showing UI immediately, placeholders and skeletons versus spinners, determinate versus indeterminate progress, incremental loading, and slow or offline networks. Use when designing or reviewing a loading experience, a blank-while-fetching screen, a progress indicator, or pull-to-refresh, or critiquing how an app feels during waits. Produces design critique and recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "design",
+        "loading",
+        "progress",
+        "performance",
+        "patterns"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-loading",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "hig-materials-liquid-glass",
       "domain": "apple",
       "class": "design",
@@ -858,6 +1245,342 @@
       ],
       "pairs_with": [],
       "path": "apple/design/foundations/hig-materials-liquid-glass",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-modality",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and recommendations for modal experiences on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing interruptions and focused tasks: deciding whether to go modal at all, choosing between sheets, full-screen covers, alerts, action sheets/menus, and popovers, keeping modal tasks short and focused, providing clear dismissal and confirming unsaved changes, and avoiding nested or stacked modals. Covers the 26 design cycle (Liquid Glass sheets that morph from their source, dimming for focus). Produces UX guidance and review notes, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "modality",
+        "sheets",
+        "alerts",
+        "popovers",
+        "navigation",
+        "hig"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-modality",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-motion",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design critique for motion and animation in Apple apps, grounded in the Human Interface Guidelines. Use when reviewing transitions, animated feedback, navigation/scroll motion, parallax, or Liquid Glass effects, or when a design feels gratuitous, disorienting, or fails Reduce Motion. Produces UX/design guidance on purposeful motion, continuity, hierarchy, and accessibility-safe animation, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "motion",
+        "animation",
+        "accessibility",
+        "liquid-glass",
+        "transitions",
+        "hig"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-motion",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-multitasking",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design guidance and UX critique for iPad multitasking and the iPadOS 26 windowing system: resizable windows, full-screen vs windowed apps, Stage Manager, Split View, size classes, state preservation across configurations, and external displays. Use when reviewing or designing an iPad app's window behavior, evaluating layouts that must adapt to any window size, deciding minimum window sizes, or planning external-display support. Produces HIG-grounded recommendations, not code.",
+      "platforms": [
+        "ipados",
+        "ios"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "ipados",
+        "multitasking",
+        "windowing",
+        "stage-manager",
+        "layout"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-multitasking",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-notifications",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design-review guidance for app notifications on Apple platforms per the Human Interface Guidelines. Use when designing, auditing, or critiquing push/local notifications, choosing interruption levels (passive, active, time-sensitive, critical), writing notification copy, grouping or threading alerts, adding notification actions, or deciding how alerts behave under Focus and user settings. Produces UX critique and recommendations grounded in the HIG, not code. Triggers: notification design review, alert copy, interruption level choice, time-sensitive vs passive, over-notifying, notification fatigue, Focus and notification settings.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "notifications",
+        "hig",
+        "focus",
+        "interruption-levels",
+        "ux",
+        "alerts"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-notifications",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-onboarding",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design-critique guidance for Apple Human Interface Guidelines onboarding and launching, covering a fast content-first first run, getting users to value quickly, avoiding long tutorials and walkthroughs, deferring sign-in and permission prompts until contextually needed, progressive disclosure, sourcing setup from device defaults, and restoring state. Use when reviewing or designing a first-run experience, onboarding flow, launch screen, sign-in wall, or permission-request timing on iOS, iPadOS, macOS, watchOS, tvOS, or visionOS, or when auditing whether new users reach value without friction. Produces UX recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "onboarding",
+        "launching",
+        "first-run",
+        "permissions",
+        "hig",
+        "design"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-onboarding",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": true
+      }
+    },
+    {
+      "name": "hig-pointing-devices",
+      "domain": "apple",
+      "class": "design",
+      "category": "inputs",
+      "description": "Design-critique guidance for Apple Human Interface Guidelines pointing-device support on iPadOS and macOS, covering pointer shapes, hover and highlight effects, the iPadOS 26 precise 1:1 pointer with its Liquid Glass highlight, hit regions and target sizing, and secondary (right) click actions. Use when reviewing or specifying how an iPad or Mac interface responds to a trackpad or mouse, judging hover feedback and pointer effects on controls, evaluating whether targets are large and precise enough to point at, or critiquing right-click and shortcut-menu behavior. Produces design recommendations, not code.",
+      "platforms": [
+        "ipados",
+        "macos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "pointer",
+        "ipados",
+        "macos",
+        "inputs"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/inputs/hig-pointing-devices",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-privacy",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design guidance and UX critique for privacy-respecting Apple apps, grounded in the Human Interface Guidelines. Use when reviewing or designing permission flows, just-in-time prompts, purpose strings, data-minimization decisions, App Store privacy nutrition labels, transparency about data use, or Sign in with Apple. Covers when and how to request access in context, how to justify it, and how to avoid surprising or coercing people. Produces design recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "privacy",
+        "permissions",
+        "hig",
+        "foundations",
+        "trust"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-privacy",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-ratings-reviews",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design-critique guidance for Apple Human Interface Guidelines ratings and reviews, covering when to request a rating at a natural moment of satisfaction, using the system in-app prompt within its limited budget, never blocking the app or bribing for reviews, and responding to feedback gracefully. Use when designing or reviewing a rating-request flow, deciding the trigger moment for the system prompt, auditing whether an app gates content behind a review, evaluating a custom rating UI, or planning how to respond to App Store reviews on iOS, iPadOS, macOS, or tvOS. Produces UX recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "ratings",
+        "reviews",
+        "hig",
+        "app-store",
+        "design"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-ratings-reviews",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-right-to-left",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design critique and guidance for right-to-left (RTL) layouts on Apple platforms per the Human Interface Guidelines. Use when reviewing or designing for Arabic, Hebrew, Farsi, or Urdu localizations, when deciding what to mirror vs. keep fixed (navigation, sliders, media controls, numerals), when aligning text or handling bidirectional content, or when a team still reasons in left/right instead of leading/trailing. Produces UX recommendations, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "rtl",
+        "localization",
+        "layout",
+        "accessibility",
+        "foundations"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-right-to-left",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-searching",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and recommendations for search experiences on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing where and how to offer search: search field placement and prominence, scope bars, search suggestions and recent searches, search tokens, clear and empty states, and how results are presented. Triggers include search bars, scope controls, filter chips, tab-bar or toolbar search, and Spotlight indexing. Produces UX guidance, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "search",
+        "hig",
+        "patterns",
+        "navigation",
+        "ios",
+        "accessibility"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-searching",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-settings",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and recommendations for app settings and configuration on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing a settings screen, deciding between in-app settings and the system Settings app, choosing sensible defaults, grouping and labeling options, or trimming options the app could decide itself. Produces UX guidance and critique, not code. Triggers: settings screen, preferences pane, configuration, onboarding setup choices, defaults, options grouping, Settings bundle, settings app.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "settings",
+        "configuration",
+        "defaults",
+        "patterns",
+        "hig",
+        "onboarding"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-settings",
       "resources": {
         "reference": false,
         "examples": false,
@@ -920,6 +1643,68 @@
       ],
       "pairs_with": [],
       "path": "apple/design/foundations/hig-typography-sf-symbols",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-undo-redo",
+      "domain": "apple",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design guidance and critique for reversible actions on Apple platforms: shake-to-undo, the three-finger edit gestures on iPhone and iPad, undo/redo affordances and menu items on Mac, and choosing undo over confirmation for destructive operations. Use when reviewing or designing editing flows, delete/destructive actions, undo/redo buttons or alerts, or text-editing gestures, or when someone asks whether an action should be undoable or guarded by a confirmation dialog. Produces UX critique grounded in Apple's Human Interface Guidelines, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "undo",
+        "redo",
+        "gestures",
+        "destructive",
+        "patterns"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/patterns/hig-undo-redo",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-writing",
+      "domain": "apple",
+      "class": "design",
+      "category": "foundations",
+      "description": "Critiques and improves UX writing for Apple platform apps using Human Interface Guidelines: voice and tone, concise button and label text, capitalization (title-style vs sentence-style), helpful alerts and error messages, and inclusive language. Use when reviewing or writing interface copy, button titles, labels, alert and error wording, empty states, permission prompts, onboarding text, or notifications; when copy feels wordy, jargony, or off-brand; or when checking capitalization and inclusive-language choices. Produces design guidance and copy critique, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "writing",
+        "ux-writing",
+        "content",
+        "foundations",
+        "hig",
+        "inclusion"
+      ],
+      "pairs_with": [],
+      "path": "apple/design/foundations/hig-writing",
       "resources": {
         "reference": false,
         "examples": false,
