@@ -1,0 +1,8 @@
+- [ ] Chose `MagnifyGesture` / `RotateGesture`, not the deprecated `MagnificationGesture` / `RotationGesture`.
+- [ ] Transient values use `@GestureState` with `.updating`; persistent results commit in `.onEnded`.
+- [ ] Composition operator (`simultaneously` / `sequenced` / `exclusively`) matches the intended interaction, and order is correct.
+- [ ] Used `highPriorityGesture` or `simultaneousGesture` where the gesture conflicts with built-in scrolling or system gestures.
+- [ ] Applied `contentShape` so padding, spacers, and clear regions are hittable.
+- [ ] Verified hit testing and coordinate spaces on a real device, including multi-touch gestures.
+- [ ] Every custom gesture has an `accessibilityAction` (or adjustable action) equivalent for VoiceOver and Switch Control.
+- [ ] Checked behavior per target platform (watchOS/tvOS may need focus or crown alternatives; visionOS may need `SpatialEventGesture`).

@@ -32,6 +32,13 @@ SwiftData requires iOS 17 / iPadOS 17 / macOS 14 / watchOS 10 / tvOS 17 / vision
 
 Whether to use SwiftData at all versus Core Data or a hand-rolled store is a genuine tradeoff, not a settled default. That decision lives in `choosing-persistence`, which weighs maturity, CloudKit needs, and migration cost. This skill assumes SwiftData has already been chosen.
 
+## References
+
+- **Documentation:** [SwiftData](https://developer.apple.com/documentation/swiftdata)
+- **Documentation:** [Defining data relationships with enumerations and model classes](https://developer.apple.com/documentation/SwiftData/Defining-data-relationships-with-enumerations-and-model-classes)
+- **WWDC:** [Model your schema with SwiftData (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10195/)
+- **WWDC:** [SwiftData: Dive into inheritance and schema migration (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/291/)
+
 ## See also
 
 - Decision: `choosing-persistence`

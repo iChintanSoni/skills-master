@@ -32,6 +32,14 @@ SwiftData requires the iOS 17 / macOS 14 era and later. If you must run on older
 
 SwiftData versus Core Data is genuinely contested as of 2026 and the right answer is project-specific. SwiftData is the strategic direction and the better default for greenfield iOS 17+ work, but Core Data remains the safer choice for complex migrations and mature schemas. This skill presents the tradeoffs rather than prescribing one; record the decision (and its date) in your project so it can be revisited as SwiftData matures.
 
+## References
+
+- **Documentation:** [SwiftData](https://developer.apple.com/documentation/swiftdata)
+- **Documentation:** [Core Data](https://developer.apple.com/documentation/coredata)
+- **Documentation:** [CloudKit](https://developer.apple.com/documentation/cloudkit)
+- **Documentation:** [Adopting SwiftData for a Core Data app](https://developer.apple.com/documentation/coredata/adopting-swiftdata-for-a-core-data-app)
+- **WWDC:** [Meet SwiftData (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10187/)
+
 ## See also
 
 - Implementation: `swiftdata-modeling`

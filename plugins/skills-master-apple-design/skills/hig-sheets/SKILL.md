@@ -25,6 +25,13 @@ Sheets are central on iPhone, where partial detents shine. On iPad and Mac, the 
 - Defaulting to full height when a partial detent would preserve context.
 - Allowing swipe-to-dismiss to discard unsaved edits without confirmation.
 
+## References
+
+- **Human Interface Guidelines:** [Sheets](https://developer.apple.com/design/human-interface-guidelines/sheets)
+- **Human Interface Guidelines:** [Modality](https://developer.apple.com/design/human-interface-guidelines/modality)
+- **Documentation:** [Modal presentations](https://developer.apple.com/documentation/swiftui/modal-presentations)
+- **WWDC:** [Get to know the new design system (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/356/)
+
 ## See also
 
 - Implementation: `swiftui-sheets`

@@ -51,6 +51,14 @@ case .unavailable(let reason):
 - Confusing Create ML with a runtime. It produces a model; Core ML executes it. Shipping the training app is not the goal.
 - Assuming the on-device transcription, vision, or language models are static across OS updates. Their behavior can shift, so test against the supported OS range rather than one build.
 
+## References
+
+- **Documentation:** [Foundation Models](https://developer.apple.com/documentation/FoundationModels)
+- **Documentation:** [Core ML](https://developer.apple.com/documentation/coreml)
+- **Human Interface Guidelines:** [Machine learning](https://developer.apple.com/design/human-interface-guidelines/machine-learning)
+- **WWDC:** [Meet the Foundation Models framework (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/286/)
+- **WWDC:** [Deep dive into the Foundation Models framework (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/301/)
+
 ## See also
 
 Pair this overview with a Foundation Models adoption skill for guided generation and tool calling, a `coreml-integration` skill for converting and running custom models, and a `vision-image-analysis` or speech-transcription skill for the task frameworks. For privacy framing of on-device versus cloud, see a `privacy-on-device-processing` skill.

@@ -45,6 +45,14 @@ func upcoming(after date: Date, in context: ModelContext) throws -> [Trip] {
 - Fetching everything to count or to find one row. Use `fetchCount(_:)` or set `fetchLimit` to 1 instead of loading and counting an array.
 - Reordering stages or omitting an intermediate version so a user upgrading across several releases hits a gap, which leaves the store unopenable.
 
+## References
+
+- **Documentation:** [SwiftData](https://developer.apple.com/documentation/swiftdata)
+- **Documentation:** [Filtering and sorting persistent data](https://developer.apple.com/documentation/swiftdata/filtering-and-sorting-persistent-data)
+- **Documentation:** [SchemaMigrationPlan](https://developer.apple.com/documentation/swiftdata/schemamigrationplan)
+- **WWDC:** [SwiftData: Dive into inheritance and schema migration (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/291/)
+- **WWDC:** [Model your schema with SwiftData (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10195/)
+
 ## See also
 
 See `swiftdata-modeling` for designing the model types, relationships, and attributes that these queries and migrations operate on. Related navigation and view-state concerns are covered by `swiftui-navigation` and `swift-observation`.

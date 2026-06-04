@@ -51,6 +51,13 @@ struct LabeledValue: View {
 - Reaching for a lazy stack outside a scroll view, where its children never get the chance to defer and it only adds overhead.
 - Relying on a single default preview, which hides regressions in dark mode, large dynamic type, or compact width.
 
+## References
+
+- **Documentation:** [SwiftUI](https://developer.apple.com/documentation/swiftui)
+- **Documentation:** [Layout fundamentals](https://developer.apple.com/documentation/swiftui/layout-fundamentals)
+- **Human Interface Guidelines:** [Layout](https://developer.apple.com/design/human-interface-guidelines/layout)
+- **WWDC:** [SwiftUI essentials (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10150/)
+
 ## See also
 
 For moving between screens and presenting sheets, see `swiftui-navigation`. For where mutable state belongs and how data flows with the Observation framework, see `swiftui-state-flow`. For building bespoke arrangements beyond the stock containers, see `swiftui-custom-layout`. For list and collection performance at scale, see `swiftui-lists-performance`.

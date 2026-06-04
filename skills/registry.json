@@ -3,6 +3,33 @@
   "version": "0.1.0",
   "skills": [
     {
+      "name": "activitykit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Builds ActivityKit Live Activities that surface live data on the Lock Screen and in the Dynamic Island via a widget extension. Use when starting, updating, or ending an Activity, modeling ActivityAttributes and ContentState, laying out compact/minimal/expanded Dynamic Island regions, driving updates with push or broadcast channels, or managing the update budget and stale dates.",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "activitykit",
+        "live-activities",
+        "dynamic-island",
+        "widgetkit",
+        "push"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/activitykit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "adopting-liquid-glass",
       "domain": "apple",
       "class": "overview",
@@ -25,6 +52,90 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/adopting-liquid-glass",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "app-intents",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Defining AppIntent and AppEntity, parameters and resolution, AppShortcuts for Siri and Spotlight, intents that power interactive widgets and Controls, and the perform method. Use when exposing app actions or content to Siri, Spotlight, Shortcuts, widgets, Controls, or Apple Intelligence, or when designing AppEntity, AppShortcutsProvider, queries, or donations.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "app-intents",
+        "siri",
+        "shortcuts",
+        "widgets",
+        "spotlight",
+        "apple-intelligence"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/app-intents",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "appkit-core",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Use when building or maintaining a native Mac app in AppKit, or deciding AppKit vs SwiftUI on macOS. Covers NSApplication, NSWindow, NSWindowController, NSViewController, the menu bar and NSMenu, NSToolbar, target-action and the responder chain, document-based apps, and Mac idioms like resizable windows, keyboard handling, and multiple windows.",
+      "platforms": [
+        "macos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "appkit",
+        "macos",
+        "nswindow",
+        "nsdocument",
+        "responder-chain"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/appkit-core",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "appkit-swiftui-interop",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Bridges AppKit and SwiftUI on macOS with NSViewRepresentable, NSViewControllerRepresentable, NSHostingController, and NSHostingView, plus menu and toolbar wiring. Use when embedding a SwiftUI view inside an AppKit window or vice versa, hosting an NSView/NSViewController in SwiftUI, sizing hosted content, or sharing menus, commands, and the responder chain across the two frameworks.",
+      "platforms": [
+        "macos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "appkit",
+        "swiftui",
+        "interop",
+        "macos",
+        "hosting"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/appkit-swiftui-interop",
       "resources": {
         "reference": false,
         "examples": false,
@@ -150,6 +261,33 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/choosing-ui-toolkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "controls-widgets",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Build iOS 18+ control widgets that surface app actions in Control Center, the Lock Screen, and the Action button using ControlWidget with ControlWidgetButton/Toggle and App Intents. Use when adding a control, exposing a quick toggle or button outside the app, wiring a control to an App Intent, or driving control state with a value provider.",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "widgetkit",
+        "control-center",
+        "app-intents",
+        "lock-screen",
+        "ios18"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/controls-widgets",
       "resources": {
         "reference": false,
         "examples": false,
@@ -495,6 +633,130 @@
       }
     },
     {
+      "name": "swiftui-accessibility",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Covers SwiftUI accessibility modifiers in code: labels, values, hints, traits, grouping with accessibilityElement(children:), hiding, custom actions, sort priority, and Dynamic Type. Use when adding or auditing VoiceOver/assistive-technology support, fixing mis-read controls, grouping or hiding elements, exposing custom actions, or making text and metrics scale.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "accessibility",
+        "voiceover",
+        "dynamic-type",
+        "a11y"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-accessibility",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-animations-transitions",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guides SwiftUI motion design with implicit animation(value:), explicit withAnimation, springs and timing curves, view transitions, matchedGeometryEffect, PhaseAnimator and KeyframeAnimator, custom Animatable conformances, and Reduce Motion support. Use when adding or fixing animations, transitions, hero effects, multi-step or keyframe motion, or when animations stutter, fire unexpectedly, or ignore accessibility.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "animation",
+        "transitions",
+        "accessibility",
+        "ui"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-animations-transitions",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "swiftui-charts",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Builds data visualizations with Swift Charts in SwiftUI: Chart plus marks (BarMark, LineMark, PointMark, AreaMark, RuleMark, SectorMark), Plottable data, axes and scales, category styling, selection, and accessibility. Use when adding bar, line, area, scatter, or pie charts to a SwiftUI app, styling marks by category, wiring tap or drag selection, customizing axes, or making charts VoiceOver-friendly.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "charts",
+        "dataviz",
+        "accessibility",
+        "ios26"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-charts",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "swiftui-concurrency",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guides view-scoped async work in SwiftUI using the task and task(id:) modifiers, refreshable and searchable async closures, and main-actor state updates. Use when wiring async loads, async sequences, pull-to-refresh, or live search into a view, when a task must cancel on disappear or restart on an id change, or when updating Observable or State models from background work without data races.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "concurrency",
+        "async",
+        "mainactor",
+        "task"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-concurrency",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "swiftui-core",
       "domain": "apple",
       "class": "code",
@@ -526,6 +788,286 @@
       }
     },
     {
+      "name": "swiftui-custom-layout",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance for building SwiftUI custom layouts with the Layout protocol (sizeThatFits/placeSubviews), layout caches, alignment guides, ViewThatFits, anchors, and coordinate spaces. Use when arranging subviews in a flow, radial, or measurement-driven pattern that nested HStack/VStack/Grid cannot express, when adapting between layouts by available space, or when reading one view's geometry relative to another.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "layout",
+        "ui",
+        "adaptive",
+        "geometry"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-custom-layout",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-drawing-canvas",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance for custom 2D drawing in SwiftUI using Shape, Path, built-in shapes, fill/stroke/gradients, and Canvas with GraphicsContext, including TimelineView-driven animation. Use when drawing custom graphics, designing a reusable Shape, deciding between composing shapes and dropping into Canvas, or rendering many primitives or particle effects efficiently.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "drawing",
+        "canvas",
+        "shape",
+        "animation"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-drawing-canvas",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-environment-preferences",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guides reading and writing SwiftUI environment values, defining custom keys with the Entry macro, injecting Observable models, and flowing data up the tree with PreferenceKey. Use when sharing implicit dependencies across views, injecting a shared model, theming, or when a child must report size, position, or anchors back to an ancestor.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "environment",
+        "preferences",
+        "observable",
+        "data-flow"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-environment-preferences",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-focus",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Manages keyboard and focus-engine focus in SwiftUI with the FocusState property wrapper, focused(_:equals:), default focus, focus sections, focusable, and onKeyPress. Use when wiring text-field focus and tab order, dismissing the keyboard programmatically, setting initial focus, grouping focus regions, or building focus-driven navigation on tvOS and visionOS.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "focus",
+        "keyboard",
+        "tvos",
+        "visionos"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-focus",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-forms-controls",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Use when building data-entry or settings UI in SwiftUI with Form, Section, Toggle, Picker, Slider, Stepper, DatePicker, ColorPicker, LabeledContent, or controlSize. Covers picker style selection, grouping and styling, control sizing, and deciding Form versus a custom layout.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "forms",
+        "controls",
+        "picker",
+        "settings"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-forms-controls",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-gestures",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guides building and composing SwiftUI gestures (tap, long press, drag, magnify, rotate) with @GestureState, priority and composition modifiers, hit testing, and accessibility. Use when adding touch or pointer interactions, combining recognizers, tracking transient gesture state, fixing hit-testing or gesture-conflict bugs, or making custom gestures accessible.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "gestures",
+        "interaction",
+        "accessibility",
+        "hit-testing"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-gestures",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "swiftui-grids",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance for choosing between SwiftUI's eager Grid/GridRow and lazy LazyVGrid/LazyHGrid, and for sizing tracks with GridItem (fixed, flexible, adaptive). Use when laying out content in rows and columns, building photo galleries or card collections, aligning form-like or spreadsheet content across columns, or deciding which grid container belongs inside a scroll view.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "layout",
+        "grid",
+        "lazyvgrid",
+        "griditem"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-grids",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-images-symbols",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance for displaying images and SF Symbols in SwiftUI: sizing with resizable and scaledToFit, choosing a symbol rendering mode (monochrome, hierarchical, palette, multicolor), animating with symbolEffect, loading remote images with AsyncImage, and labeling images for VoiceOver. Use when adding photos, icons, glyphs, remote thumbnails, or animated symbols to a SwiftUI view, or when fixing image scaling, blurry assets, or missing accessibility labels.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "images",
+        "sf-symbols",
+        "asyncimage",
+        "accessibility"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-images-symbols",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-lists-tables",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Builds scrollable data UI with SwiftUI List and Table, including ForEach with stable identity, sections, selection, editing, swipe actions, pull-to-refresh, search, and multi-column tables. Use when displaying collections of rows, adding onDelete/onMove or swipeActions, wiring searchable or refreshable onto a list, or presenting tabular data with sortable columns on iPad and Mac.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "list",
+        "table",
+        "collections",
+        "editing",
+        "search"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-lists-tables",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "swiftui-navigation",
       "domain": "apple",
       "class": "code",
@@ -550,6 +1092,68 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-frameworks/swiftui-navigation",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-scenes-windows",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Structure a SwiftUI app's window and scene topology using App, Scene, WindowGroup, Window, Settings, DocumentGroup, and MenuBarExtra. Use when building multi-window experiences, opening or dismissing windows with openWindow and dismissWindow, tuning windowStyle and windowResizability, or shipping volumetric windows and immersive spaces on visionOS.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "windows",
+        "scenes",
+        "multiwindow",
+        "visionos"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-scenes-windows",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-scrollview",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Builds modern SwiftUI scrolling with ScrollView, scroll target behaviors, scroll position binding, transitions, and content margins. Use when implementing carousels, paged or snapping scroll, programmatic scroll-to, parallax/fade scroll effects, or reacting to scroll offset and visibility. Triggers: scrollTargetBehavior, viewAligned, paging, scrollPosition, scrollTransition, contentMargins, scrollIndicators, ScrollViewReader.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "scrollview",
+        "scrolling",
+        "animation",
+        "ios17"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-scrollview",
       "resources": {
         "reference": false,
         "examples": false,
@@ -616,6 +1220,213 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-tab-views",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Builds SwiftUI tab navigation with the type-safe Tab API, programmatic selection, the search role, the sidebar-adaptable style, paged TabView, and reorderable tabs. Use when adding a tab bar, wiring deep links to a selected tab, supporting iPad sidebar layouts, or adopting iOS 26 tab bar minimize and bottom-accessory behavior.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "tabview",
+        "navigation",
+        "ipados",
+        "liquid-glass"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-tab-views",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-text-input",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Guidance for building SwiftUI text entry with TextField, TextEditor, and SecureField. Use when accepting names, emails, passwords, numbers, dates, or multiline notes; when adding format/parse value binding, validation, focus management, keyboard and content types, submit handling, or text selection. Triggers include keyboardType, textContentType, FocusState, submitLabel, onSubmit, axis vertical, and TextSelection.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "textfield",
+        "forms",
+        "keyboard",
+        "focus"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/swiftui-text-input",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "uikit-auto-layout",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Builds robust UIKit layouts with layout anchors, constraint priorities, and stack views. Use when writing programmatic Auto Layout, fixing ambiguous or unsatisfiable constraint logs, tuning content hugging and compression resistance, or anchoring views to safe area, layout margin, and keyboard guides.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "uikit",
+        "autolayout",
+        "constraints",
+        "uistackview",
+        "layout-anchors"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/uikit-auto-layout",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "uikit-collection-views",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Builds modern UICollectionView screens with compositional layout, diffable data sources, cell registrations, and content configurations. Use when laying out grids, lists, or outlines in UIKit, when sections need different layouts, when migrating off flow layout or register(_:forCellWithReuseIdentifier:), or when async data updates must animate safely off the main thread's reload path.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "uikit",
+        "collectionview",
+        "compositional-layout",
+        "diffable",
+        "lists"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/uikit-collection-views",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "uikit-core",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Covers UIKit fundamentals: the UIViewController lifecycle (viewDidLoad, viewIsAppearing, viewWillAppear, layoutSubviews), view controller containment with addChild and didMove, the UIView hierarchy and responder chain, the scene-based lifecycle with UIWindowScene and a scene delegate, trait collections and registerForTraitChanges, and when UIKit still fits versus SwiftUI. Use when building or maintaining a UIKit screen, debugging when lifecycle or layout code runs, embedding a child view controller, migrating to the scene lifecycle, reacting to trait or size-class changes, or routing events through the responder chain.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "uikit",
+        "viewcontroller",
+        "lifecycle",
+        "scene",
+        "traits"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/uikit-core",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "uikit-swiftui-interop",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Bridges UIKit and SwiftUI in both directions using representables, UIHostingController, and UIHostingConfiguration. Use when embedding a UIView or UIViewController in SwiftUI, hosting SwiftUI inside UIKit cells or controllers, wiring a Coordinator, or passing bindings across the boundary.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "uikit",
+        "swiftui",
+        "interop",
+        "representable",
+        "hosting"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/uikit-swiftui-interop",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "widgetkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Use when building or refreshing Home Screen, Lock Screen, StandBy, or watch widgets with WidgetKit and SwiftUI. Triggers: creating a Widget/WidgetConfiguration, writing a TimelineProvider or AppIntentTimelineProvider, choosing reload policies and widget families, adding interactive Button/Toggle App Intents, applying containerBackground, or wiring push-based widget updates.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "widgetkit",
+        "widgets",
+        "swiftui",
+        "app-intents",
+        "timeline"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/app-frameworks/widgetkit",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {

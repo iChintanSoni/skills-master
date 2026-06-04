@@ -41,6 +41,13 @@ xcrun stapler staple MyApp.app
 - Skipping the staple step after notarizing a Mac app, which forces Gatekeeper to check online and blocks launch on offline machines.
 - Reusing a developer's interactive keychain on a build agent, leaving it locked or prompting for key access mid-build.
 
+## References
+
+- **Documentation:** [Preparing your app for distribution](https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution)
+- **Documentation:** [Distributing your app for beta testing and releases](https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases)
+- **Documentation:** [Notarizing macOS software before distribution](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution)
+- **WWDC:** [Simplify distribution in Xcode and Xcode Cloud (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10224/)
+
 ## See also
 
 See `xcode-project-conventions` for how build settings, bundle identifiers, and configurations should be organized so that signing and export stay predictable across schemes and targets.

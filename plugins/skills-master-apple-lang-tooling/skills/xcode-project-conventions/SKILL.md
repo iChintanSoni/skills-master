@@ -43,6 +43,14 @@ let package = Package(
 - Setting a value in the editor on top of an xcconfig that already sets it, creating an invisible override. Check the Levels view before assuming a setting is taking effect.
 - Over-modularizing into dozens of tiny packages, which can slow resolution and clutter the workspace; group by feature ownership, not by file.
 
+## References
+
+- **Documentation:** [Build settings reference](https://developer.apple.com/documentation/xcode/build-settings-reference)
+- **Documentation:** [Adding a build configuration file](https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project)
+- **Documentation:** [Customizing build schemes](https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project)
+- **Documentation:** [Entitlements](https://developer.apple.com/documentation/bundleresources/entitlements)
+- **WWDC:** [Explore advanced project configuration in Xcode (WWDC21)](https://developer.apple.com/videos/play/wwdc2021/10210/)
+
 ## See also
 
 For authoring and depending on Swift packages in depth, see `spm`. For turning these targets and configurations into signed archives and store submissions, see `build-sign-distribute`.

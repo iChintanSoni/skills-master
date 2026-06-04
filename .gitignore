@@ -13,6 +13,9 @@ coverage/
 # generated crawl reports (regenerate with scripts/crawl)
 scripts/crawl/reports/
 
+# local authoring helpers (session-scoped)
+scripts/dev/
+
 # caches
 .cache/
 .skills-master-cache/

@@ -25,6 +25,13 @@ Use when implementing a modal sheet in SwiftUI — presenting it, sizing it with
 - Mutating the presentation binding from the parent to dismiss, instead of `@Environment(\.dismiss)`.
 - Forgetting that swipe-to-dismiss can drop unsaved work — gate it with a confirmation.
 
+## References
+
+- **Documentation:** [presentationDetents(_:)](https://developer.apple.com/documentation/swiftui/view/presentationdetents(_:))
+- **Documentation:** [sheet(isPresented:onDismiss:content:)](https://developer.apple.com/documentation/swiftui/view/sheet(ispresented:ondismiss:content:))
+- **Human Interface Guidelines:** [Sheets](https://developer.apple.com/design/human-interface-guidelines/sheets)
+- **WWDC:** [What's new in SwiftUI (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10052/)
+
 ## See also
 
 - Design: `hig-sheets`

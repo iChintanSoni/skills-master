@@ -44,6 +44,14 @@ Button(action: toggleFavorite) {
 - Status shown only as red versus green, or a required field marked only by color.
 - Custom controls built from generic containers that expose no trait, value, or action, leaving assistive tech with a silent or meaningless element.
 
+## References
+
+- **Documentation:** [Accessibility](https://developer.apple.com/documentation/accessibility)
+- **Documentation:** [Accessibility modifiers (SwiftUI)](https://developer.apple.com/documentation/swiftui/view-accessibility)
+- **Human Interface Guidelines:** [Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility)
+- **WWDC:** [Catch up on accessibility in SwiftUI (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10073/)
+- **WWDC:** [Evaluate your app for Accessibility Nutrition Labels (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/224/)
+
 ## See also
 
 For type scales and symbol usage that underpin Dynamic Type and color-independent cues, see `hig-typography-sf-symbols`. Pair this critique with implementation skills covering SwiftUI accessibility modifiers and audit tooling such as the Accessibility Inspector.
