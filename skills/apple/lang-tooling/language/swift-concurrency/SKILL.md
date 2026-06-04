@@ -64,6 +64,14 @@ Swift 6 language mode enables strict concurrency checking everywhere; modules ca
 - Marking a type `@unchecked Sendable` to clear a diagnostic without actually providing thread safety, which reintroduces exactly the races the compiler was preventing.
 - Forgetting that `MainActor.run` and similar hops add latency; design APIs to return Sendable results and let the awaiting main-actor caller assign them.
 
+## References
+
+- **Documentation:** [Concurrency](https://developer.apple.com/documentation/swift/concurrency)
+- **Documentation:** [Adopting strict concurrency in Swift 6 apps](https://developer.apple.com/documentation/swift/adoptingswift6)
+- **Documentation:** [Swift 6 Migration Guide](https://www.swift.org/migration/documentation/migrationguide/)
+- **WWDC:** [Embracing Swift concurrency (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/268/)
+- **Sample Code:** [Code-along: Elevate an app with Swift concurrency](https://developer.apple.com/videos/play/wwdc2025/270/)
+
 ## See also
 
 For threading UI state and async work through views, see `swiftui-state-management` and `swiftui-navigation`. For observable models that drive views, see `observation-observable`. For database access from async contexts, see `swiftdata-modeling`. For exercising async and isolated code in tests, see `swift-testing`.

@@ -39,11 +39,26 @@ x-skills-master:
 
 ## Body sections
 
-In this order: `## When to use` · `## Core guidance` · `## Platform notes` · `## Pitfalls` · `## Open question` (only if `stability: contested`) · `## See also`.
+In this order: `## When to use` · `## Core guidance` · `## Platform notes` · `## Pitfalls` · `## Open question` (only if `stability: contested`) · `## References` · `## See also`.
 
 - Keep the body under ~500 lines (the linter errors above that). Push depth into Level-3 files.
 - `## Core guidance` is the heart: tight do/don't bullets and idioms.
 - One short, original code snippet is fine; longer examples belong in `examples.md`.
+
+### `## References` — curated helpful links
+
+Every skill ends with a `## References` section of current, authoritative links so a reader can go deeper. Group them and keep them tight:
+
+```markdown
+## References
+
+- **Documentation:** [SwiftData](https://developer.apple.com/documentation/swiftdata)
+- **Human Interface Guidelines:** [Sheets](https://developer.apple.com/design/human-interface-guidelines/sheets)
+- **WWDC:** [Meet SwiftData (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10187/)
+- **Sample Code:** [Adopting SwiftData…](https://developer.apple.com/documentation/swiftdata/adopting-swiftdata-for-a-core-data-app)
+```
+
+The primary Documentation/HIG URLs should also appear in the `sources` frontmatter (the machine-readable citation list). External `https` links survive compilation to every tool — only links to the Level-3 resource files are condensed away.
 
 ## Rules
 

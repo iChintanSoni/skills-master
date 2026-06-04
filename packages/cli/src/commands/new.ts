@@ -49,9 +49,15 @@ TODO — platform-specific caveats.
 
 TODO — common mistakes.
 
+## References
+
+- **Documentation:** [TODO](https://developer.apple.com/documentation/...)
+- **Human Interface Guidelines:** [TODO](https://developer.apple.com/design/human-interface-guidelines/...)
+- **WWDC:** [TODO](https://developer.apple.com/videos/...)
+
 ## See also
 
-TODO — paired skills and source links.
+TODO — paired skills referenced by name.
 `;
 }
 

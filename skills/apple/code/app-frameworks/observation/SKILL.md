@@ -61,6 +61,13 @@ struct CartView: View {
 - Collections of value types update when the array property changes; mutating elements in place still notifies because the stored array itself is observed.
 - Marking a property ObservationIgnored and then expecting view updates from it is a common mistake — such changes are invisible to SwiftUI.
 
+## References
+
+- **Documentation:** [Observation](https://developer.apple.com/documentation/observation)
+- **Documentation:** [Managing model data in your app](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app)
+- **Documentation:** [Migrating to the Observable macro](https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro)
+- **WWDC:** [Discover Observation in SwiftUI (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10149/)
+
 ## See also
 
 See `swiftui-state-data-flow` for choosing among State, Binding, and the environment, and how value-type and reference-type state compose in a view hierarchy.

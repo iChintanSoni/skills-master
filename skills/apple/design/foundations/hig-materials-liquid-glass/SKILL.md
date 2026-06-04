@@ -55,6 +55,14 @@ Liquid Glass is the unified material introduced across Apple platforms in the 26
 - Applying strong custom tints or opacity to large glass areas, defeating the system's legibility tuning.
 - Validating only in light mode on a calm background, missing failures in dark mode, over photos, or with accessibility settings on.
 
+## References
+
+- **Documentation:** [Liquid Glass](https://developer.apple.com/documentation/TechnologyOverviews/liquid-glass)
+- **Documentation:** [Applying Liquid Glass to custom views](https://developer.apple.com/documentation/SwiftUI/Applying-Liquid-Glass-to-custom-views)
+- **Human Interface Guidelines:** [Materials](https://developer.apple.com/design/human-interface-guidelines/materials)
+- **WWDC:** [Meet Liquid Glass (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/219/)
+- **Sample Code:** [Landmarks: Building an app with Liquid Glass](https://developer.apple.com/documentation/SwiftUI/Landmarks-Building-an-app-with-Liquid-Glass)
+
 ## See also
 
 See `adopting-liquid-glass` for the SwiftUI implementation of these surfaces, including the glass effect and grouping of floating controls. See `hig-layout` for how floating glass elements interact with safe areas, margins, and the underlying content layout.

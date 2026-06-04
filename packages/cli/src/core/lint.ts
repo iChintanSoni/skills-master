@@ -17,7 +17,13 @@ export interface LintResult {
   warnCount: number;
 }
 
-const CANONICAL_HEADINGS = ["## When to use", "## Core guidance", "## Pitfalls", "## See also"];
+const CANONICAL_HEADINGS = [
+  "## When to use",
+  "## Core guidance",
+  "## Pitfalls",
+  "## References",
+  "## See also",
+];
 const MAX_BODY_LINES = 500;
 const WARN_BODY_LINES = 450;
 
@@ -118,7 +124,10 @@ export function lintSkills(skillsRoot: string): LintResult {
       push("warn", `domain "${xm.domain}" does not match the top folder of "${s.relPath}"`);
     }
 
-    // sources should be https documentation URLs
+    // sources should be present and be https documentation URLs
+    if (xm.sources.length === 0) {
+      push("warn", `no sources — add at least one canonical documentation URL`);
+    }
     for (const url of xm.sources) {
       if (!/^https:\/\//.test(url)) {
         push("warn", `sources entry should be an https URL: ${url}`);

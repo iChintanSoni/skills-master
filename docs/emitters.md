@@ -22,6 +22,8 @@ Single-file targets cannot carry Level-3 resources, so `core/condense.ts`:
 2. appends a one-line pointer to the full Claude Code skill,
 3. (for `agents`) summarizes the `## Open question` section to a single tradeoff line.
 
+**External links are preserved.** Condensation only rewrites links to the skill's own Level-3 files; `https` links in the `## References` section (Apple Documentation, HIG, WWDC, Sample Code) flow through to every target unchanged.
+
 ## Activation semantics
 
 - **Cursor** — a skill with `globs` becomes an *Auto-Attached* rule; without globs it is *Agent-Requested* (description-driven). A skills library never sets `alwaysApply: true`.

@@ -51,6 +51,13 @@ Layout critique for Apple platforms judges whether content stays readable, reach
 - Using ad hoc, uneven spacing and misaligned edges that make an otherwise polished screen feel unfinished.
 - Assuming left-to-right reading order and breaking when the interface mirrors for right-to-left locales.
 
+## References
+
+- **Human Interface Guidelines:** [Layout](https://developer.apple.com/design/human-interface-guidelines/layout)
+- **Documentation:** [Layout adjustments](https://developer.apple.com/documentation/swiftui/layout-adjustments)
+- **Documentation:** [SafeAreaRegions](https://developer.apple.com/documentation/swiftui/safearearegions)
+- **WWDC:** [Compose custom layouts with SwiftUI (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10056/)
+
 ## See also
 
 For type scale, weight, and symbol pairing that ride on this layout grid, see `hig-typography-sf-symbols`.

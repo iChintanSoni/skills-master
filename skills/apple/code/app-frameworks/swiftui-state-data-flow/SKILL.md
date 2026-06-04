@@ -73,6 +73,12 @@ struct StepperRow: View {
 - Reading an `@Environment` value that was never injected yields a default-constructed or empty instance and silent bugs. Inject at a common ancestor and confirm the type matches.
 - Computed properties on an `@Observable` model are tracked only through the stored properties they read; a property derived from external, non-observed state will not trigger updates.
 
+## References
+
+- **Documentation:** [Model data](https://developer.apple.com/documentation/swiftui/model-data)
+- **Documentation:** [Managing model data in your app](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app)
+- **WWDC:** [Discover Observation in SwiftUI (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10149/)
+
 ## See also
 
 See `observation` for the framework's tracking model, macro expansion, and how change notifications are delivered. See `swiftui-core` for the broader view lifecycle, identity, and body re-evaluation rules that determine when these wrappers actually cause a redraw. For routing models between destinations, see `swiftui-navigation`.

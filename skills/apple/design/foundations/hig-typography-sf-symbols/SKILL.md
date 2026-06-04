@@ -47,6 +47,13 @@ Reach for this skill when critiquing a screen's text and icon treatment: judging
 - Switching rendering modes inconsistently, or choosing multicolor or palette where a neutral monochrome symbol was intended.
 - Low-contrast text on busy or translucent backgrounds, especially light weights at small sizes.
 
+## References
+
+- **Documentation:** [SF Symbols (SwiftUI Font)](https://developer.apple.com/documentation/swiftui/font)
+- **Human Interface Guidelines:** [Typography](https://developer.apple.com/design/human-interface-guidelines/typography)
+- **Human Interface Guidelines:** [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols)
+- **WWDC:** [What's new in SF Symbols 7 (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/337/)
+
 ## See also
 
 For spacing, margins, and how type blocks sit within a layout grid, see `hig-layout`. For contrast ratios, Bold Text and Increase Contrast settings, and how typography choices interact with assistive technologies, see `hig-accessibility`.

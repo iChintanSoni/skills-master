@@ -61,6 +61,14 @@ struct LegacyChart: UIViewRepresentable {
 
 Whether to standardize on SwiftUI now or keep significant UIKit or AppKit investment is genuinely contested. The SwiftUI-first case: it is where Apple ships new capability, it cuts boilerplate, and it unifies code across six platforms, so committing early reduces future migration debt. The counter-case: mature apps depend on UIKit and AppKit behaviors that SwiftUI still approximates or omits, declarative debugging and precise control can be harder, and rewriting stable code carries regression risk with little user-visible payoff. Team skills, app age, the platform mix, and how advanced the UI requirements are all shift the balance, and reasonable teams land differently. This skill does not prescribe a single answer; it asks the deciding engineer to name the concrete requirement that justifies whichever toolkit they choose.
 
+## References
+
+- **Documentation:** [SwiftUI](https://developer.apple.com/documentation/swiftui)
+- **Documentation:** [UIKit](https://developer.apple.com/documentation/uikit)
+- **Human Interface Guidelines:** [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+- **WWDC:** [SwiftUI essentials (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10150/)
+- **WWDC:** [What's new in UIKit (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/243/)
+
 ## See also
 
 See `swiftui-core` for the declarative model, state, and layout fundamentals that inform when SwiftUI is sufficient on its own.

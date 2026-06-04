@@ -63,6 +63,12 @@ Reach for this guidance when authoring or revising a `Package.swift` manifest, c
 - Letting a non-test target depend on a test target, or importing `@testable` across package boundaries, produces resolution and visibility errors that are easy to misread.
 - Editing the committed `Package.resolved` by hand defeats its purpose; regenerate it through resolution so the recorded revisions stay consistent.
 
+## References
+
+- **Documentation:** [PackageDescription](https://developer.apple.com/documentation/packagedescription)
+- **Documentation:** [Swift packages](https://developer.apple.com/documentation/xcode/swift-packages)
+- **WWDC:** [Creating Swift Packages (WWDC19)](https://developer.apple.com/videos/play/wwdc2019/410/)
+
 ## See also
 
 See `xcode-project-conventions` for how local packages, schemes, and the surrounding Xcode project fit together, including which targets a workspace should own versus delegate to packages.

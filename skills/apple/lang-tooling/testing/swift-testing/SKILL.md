@@ -44,6 +44,14 @@ Swift Testing ships with Swift 6 / Xcode 16 and runs on every Apple platform plu
 - Sharing mutable state between tests via `static` — rely on per-test suite instances instead.
 - Porting `XCTAssertEqual` mechanically; prefer expressive `#expect(a == b)` which captures both operands on failure.
 
+## References
+
+- **Documentation:** [Swift Testing](https://developer.apple.com/documentation/testing)
+- **Documentation:** [Expectations and confirmations](https://developer.apple.com/documentation/testing/expectations)
+- **Documentation:** [Migrating a test from XCTest](https://developer.apple.com/documentation/testing/migratingfromxctest)
+- **WWDC:** [Meet Swift Testing (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10179/)
+- **WWDC:** [Go further with Swift Testing (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10195/)
+
 ## See also
 
 - Apple: Swift Testing, "Migrating a test from XCTest" (see sources).

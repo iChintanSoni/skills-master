@@ -63,6 +63,13 @@ GlassEffectContainer(spacing: 12) {
 - Forgetting accessibility variants, leaving translucent surfaces unreadable when Reduce Transparency is on.
 - Nesting independent glass effects instead of using a container, causing visual seams and extra rendering cost.
 
+## References
+
+- **Documentation:** [Adopting Liquid Glass](https://developer.apple.com/documentation/technologyoverviews/adopting-liquid-glass)
+- **Human Interface Guidelines:** [Materials](https://developer.apple.com/design/human-interface-guidelines/materials)
+- **WWDC:** [Meet Liquid Glass (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/219/)
+- **WWDC:** [Get to know the new design system (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/356/)
+
 ## See also
 
 - See `hig-materials-liquid-glass` for the material's visual rules, layering hierarchy, and tinting guidance.
