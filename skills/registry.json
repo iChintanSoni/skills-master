@@ -91,6 +91,37 @@
       }
     },
     {
+      "name": "app-store-connect-api",
+      "domain": "apple",
+      "class": "code",
+      "category": "web",
+      "description": "Guides REST automation against the App Store Connect API: signing ES256 JWT bearer tokens from an API key, navigating the apps/builds/versions/TestFlight/users/sales-reports resource model, handling pagination and rate limits, and generating a client from the published OpenAPI spec. Use when scripting CI uploads, managing TestFlight beta groups or testers, pulling sales or finance reports, or building tooling that talks to api.appstoreconnect.apple.com.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "appstoreconnect",
+        "rest",
+        "jwt",
+        "testflight",
+        "ci"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/web/app-store-connect-api",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "appkit-core",
       "domain": "apple",
       "class": "code",
@@ -136,6 +167,125 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-frameworks/appkit-swiftui-interop",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "arkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Use when building augmented reality with ARKit on iOS/iPadOS (ARSession, world/face/body tracking, plane and image/object detection, ARAnchor, raycasting) or spatial tracking on visionOS (ARKitSession with world, hand, scene-reconstruction, and plane providers plus authorization), and when pairing ARKit with RealityKit for rendering.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "arkit",
+        "realitykit",
+        "visionos",
+        "augmented-reality",
+        "spatial"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/graphics-games/arkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "avfoundation-capture",
+      "domain": "apple",
+      "class": "code",
+      "category": "media",
+      "description": "Guidance on capturing photos, video, and audio with AVCaptureSession, its device inputs and outputs (AVCapturePhotoOutput, AVCaptureMovieFileOutput, video data output), AVCaptureVideoPreviewLayer, device discovery and configuration, camera and microphone authorization, and modern rotation handling via RotationCoordinator. Use when building a camera or recorder, wiring a capture session, selecting or configuring a capture device, showing a live preview, requesting camera or microphone permission, or fixing video orientation on iOS 17 and later.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "avfoundation",
+        "camera",
+        "capture",
+        "media",
+        "ios17"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/media/avfoundation-capture",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "avfoundation-playback",
+      "domain": "apple",
+      "class": "code",
+      "category": "media",
+      "description": "Guides media playback with AVPlayer/AVPlayerItem, SwiftUI VideoPlayer and AVKit AVPlayerViewController, audio session setup, and Now Playing integration. Use when playing audio or video, observing player status/time, enabling background audio, or wiring lock-screen and remote controls on Apple platforms.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "avfoundation",
+        "avkit",
+        "media",
+        "playback",
+        "audio",
+        "video"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/media/avfoundation-playback",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "background-tasks",
+      "domain": "apple",
+      "class": "code",
+      "category": "system",
+      "description": "Guidance on the BackgroundTasks framework for deferred and long-running background execution: BGAppRefreshTask, BGProcessingTask, the iOS 26 BGContinuedProcessingTask for user-initiated work, and background URLSession transfers. Use when scheduling periodic refresh, running maintenance off-screen, continuing an export or upload after the user leaves, downloading large files in the background, or configuring the required BGTaskSchedulerPermittedIdentifiers and UIBackgroundModes entries.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "backgroundtasks",
+        "scheduling",
+        "urlsession",
+        "ios26",
+        "system",
+        "concurrency"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/system/background-tasks",
       "resources": {
         "reference": false,
         "examples": false,
@@ -326,6 +476,37 @@
       }
     },
     {
+      "name": "core-bluetooth",
+      "domain": "apple",
+      "class": "code",
+      "category": "system",
+      "description": "Guidance for Bluetooth Low Energy with Core Bluetooth: CBCentralManager scanning and connecting, service/characteristic discovery, read/write/notify, the CBPeripheralManager peripheral role, and background state restoration. Use when scanning for or connecting to BLE devices, building a GATT peripheral, streaming notifications, running Bluetooth in the background, or fixing missing Bluetooth permission prompts.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "corebluetooth",
+        "ble",
+        "bluetooth",
+        "peripheral",
+        "background"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/system/core-bluetooth",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "core-data",
       "domain": "apple",
       "class": "code",
@@ -350,6 +531,36 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-services/core-data",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "core-image",
+      "domain": "apple",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Guidance for processing images with Core Image: building lazy CIImage filter graphs, applying typed CIFilter.* effects, rendering with a Metal-backed CIContext, and bridging to CGImage, UIImage, and SwiftUI. Use when applying photo or video filters, chaining effects, writing custom kernels, or rendering CIImage output to the screen.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "coreimage",
+        "graphics",
+        "metal",
+        "filters",
+        "swiftui"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/graphics-games/core-image",
       "resources": {
         "reference": false,
         "examples": false,
@@ -446,6 +657,37 @@
       }
     },
     {
+      "name": "cryptokit",
+      "domain": "apple",
+      "class": "code",
+      "category": "system",
+      "description": "Use when adding hashing, HMAC, symmetric encryption (AES-GCM/ChaChaPoly), key agreement (Curve25519/P256/P384), signatures, HKDF, or Secure Enclave-backed keys to Swift code. Triggers: import CryptoKit, SymmetricKey, SHA256, AES.GCM.seal, sharedSecretFromKeyAgreement, SecureEnclave.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "cryptokit",
+        "security",
+        "encryption",
+        "keychain",
+        "signing"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/system/cryptokit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "eventkit",
       "domain": "apple",
       "class": "code",
@@ -468,6 +710,36 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-services/eventkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "gamekit",
+      "domain": "apple",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Use when adding Game Center to a game with GameKit — authenticating the local player via GKLocalPlayer.authenticateHandler, submitting leaderboard scores and reporting achievements, showing the dashboard with GKAccessPoint or GKGameCenterViewController, running real-time GKMatch or turn-based GKTurnBasedMatch matchmaking, saving games, and adopting the newer Challenges and Activities (GKGameActivity).",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "gamekit",
+        "game-center",
+        "multiplayer",
+        "leaderboards",
+        "achievements"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/graphics-games/gamekit",
       "resources": {
         "reference": false,
         "examples": false,
@@ -655,6 +927,37 @@
       }
     },
     {
+      "name": "keychain-security",
+      "domain": "apple",
+      "class": "code",
+      "category": "system",
+      "description": "Stores credentials, tokens, and cryptographic keys securely using Keychain Services (SecItem APIs), accessibility levels, and SecAccessControl biometric/passcode gating. Use when persisting passwords, OAuth/session tokens, API keys, or private keys; when migrating secrets out of UserDefaults; or when sharing items across apps via keychain access groups.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "keychain",
+        "security",
+        "credentials",
+        "biometrics",
+        "secitem"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/system/keychain-security",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "mapkit",
       "domain": "apple",
       "class": "code",
@@ -685,6 +988,68 @@
       }
     },
     {
+      "name": "metal",
+      "domain": "apple",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Guidance on Metal for GPU rendering and compute, covering MTLDevice, command queues, command buffers, render and compute encoders, Metal Shading Language vertex and fragment functions, MetalKit MTKView and drawables, buffers and textures, and MetalFX upscaling. Use when building a custom renderer, writing GPU shaders, running data-parallel compute on the GPU, drawing into an MTKView, deciding between Metal and a higher-level framework like SwiftUI Canvas or RealityKit, or adding MetalFX upscaling to a real-time scene.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "metal",
+        "gpu",
+        "rendering",
+        "compute",
+        "metalkit",
+        "metalfx"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/graphics-games/metal",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "musickit",
+      "domain": "apple",
+      "class": "code",
+      "category": "media",
+      "description": "Guidance on integrating Apple Music with MusicKit in Swift, covering MusicAuthorization, catalog search via MusicCatalogSearchRequest, the user library, ApplicationMusicPlayer versus SystemMusicPlayer, playback queues, subscription and capability checks, artwork, and the MusicKit SwiftUI views. Use when requesting Apple Music access, searching the catalog or library, building a player or queue, gating playback on a subscription, presenting a subscription offer, or showing artwork in SwiftUI.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "musickit",
+        "apple-music",
+        "media",
+        "playback",
+        "swiftui",
+        "ios17"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/media/musickit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "natural-language",
       "domain": "apple",
       "class": "code",
@@ -709,6 +1074,38 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-services/natural-language",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "network-framework",
+      "domain": "apple",
+      "class": "code",
+      "category": "system",
+      "description": "Guides direct transport-level networking with Apple's Network framework: NWConnection/NetworkConnection for TLS/TCP/UDP/QUIC clients, NWListener for servers, NWPathMonitor for connectivity changes, and NWParameters protocol options. Use when building custom wire protocols, peer-to-peer links, persistent sockets, or QUIC clients, or when deciding between Network framework and URLSession. Most plain HTTP apps should prefer URLSession instead.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "networking",
+        "sockets",
+        "tls",
+        "quic",
+        "connectivity",
+        "concurrency"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/system/network-framework",
       "resources": {
         "reference": false,
         "examples": false,
@@ -747,6 +1144,38 @@
       }
     },
     {
+      "name": "os-logging",
+      "domain": "apple",
+      "class": "code",
+      "category": "system",
+      "description": "Guidance for unified logging and performance tracing on Apple platforms with the Logger (OSLog) and OSSignposter APIs. Use when adding diagnostic logging, choosing log levels, redacting sensitive data with privacy annotations, picking subsystems/categories, reading logs in Console or via the log command, or measuring durations with signposts in Instruments.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "logging",
+        "oslog",
+        "signposts",
+        "instruments",
+        "diagnostics",
+        "privacy"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/system/os-logging",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "passkit-apple-pay",
       "domain": "apple",
       "class": "code",
@@ -769,6 +1198,183 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-services/passkit-apple-pay",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "pencilkit",
+      "domain": "apple",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Build Apple Pencil drawing and annotation features with PencilKit on iOS, iPadOS, and visionOS. Use when adding a PKCanvasView, presenting the PKToolPicker, capturing or rendering a PKDrawing, persisting strokes, handling Apple Pencil hover, double-tap, or squeeze via UIPencilInteraction, or wrapping the canvas in SwiftUI. Triggers: PKCanvasView, PKToolPicker, PKDrawing, drawingPolicy, dataRepresentation, PKToolPickerCustomItem, pencilInteraction didReceiveSqueeze.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "pencilkit",
+        "apple-pencil",
+        "drawing",
+        "swiftui",
+        "canvas"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/graphics-games/pencilkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "photokit",
+      "domain": "apple",
+      "class": "code",
+      "category": "media",
+      "description": "Guides PhotoKit work on Apple platforms: SwiftUI PhotosPicker and UIKit PHPickerViewController for permission-free selection, PHPhotoLibrary read/write and limited-library authorization, fetching with PHAsset and PHFetchResult, loading images via PHImageManager, observing library changes, and editing assets. Use when importing PhotosUI or Photos, presenting a photo picker, requesting photo-library access, querying or displaying user assets, or saving edits back to the library.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "photokit",
+        "photos",
+        "photospicker",
+        "media",
+        "privacy",
+        "ios"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/media/photokit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "realitykit",
+      "domain": "apple",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Builds 3D and AR experiences with RealityKit's Entity-Component-System model, RealityView in SwiftUI, USDZ and Reality Composer Pro scenes, anchors, materials, animations, physics, and SwiftUI attachments. Use when adding 3D content, rendering models, placing AR anchors, handling collisions, or attaching SwiftUI views to entities on iOS, iPadOS, macOS, or visionOS.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "realitykit",
+        "swiftui",
+        "visionos",
+        "ar",
+        "3d",
+        "ecs"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/graphics-games/realitykit",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "scenekit",
+      "domain": "apple",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Builds 3D scenes with SceneKit: SCNScene node graphs, geometry, materials, lights, cameras, asset loading, physics, animation, and hit testing, embedded in UIKit/AppKit or SwiftUI. Use when adding lightweight 3D content, viewers, or simple games on Apple platforms, working with .scn/.dae/USDZ assets via SceneKit, or deciding whether to stay on SceneKit or migrate to RealityKit.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "scenekit",
+        "3d",
+        "graphics",
+        "rendering",
+        "physics",
+        "realitykit"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/graphics-games/scenekit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "screencapturekit",
+      "domain": "apple",
+      "class": "code",
+      "category": "media",
+      "description": "Guidance for capturing screen, window, app, and audio content on macOS with ScreenCaptureKit. Use when building screen recording, screen sharing, video conferencing, or game streaming features, enumerating displays/windows with SCShareableContent, building an SCContentFilter, configuring an SCStream, handling SCStreamOutput samples, presenting the system SCContentSharingPicker, or capturing system and microphone audio.",
+      "platforms": [
+        "macos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "macos",
+        "screencapture",
+        "media",
+        "recording",
+        "audio"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/media/screencapturekit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "sign-in-with-apple",
+      "domain": "apple",
+      "class": "code",
+      "category": "web",
+      "description": "Implements Sign in with Apple using AuthenticationServices: the SwiftUI SignInWithAppleButton, ASAuthorizationAppleIDProvider requests, credential and identity-token handling, server-side token verification, and Sign in with Apple JS on the web. Use when adding Apple authentication, requesting name/email scope, validating identity tokens on a backend, handling the private relay email, or responding to account revocation and deletion.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "authentication",
+        "signinwithapple",
+        "authenticationservices",
+        "privacy",
+        "oauth"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/web/sign-in-with-apple",
       "resources": {
         "reference": false,
         "examples": false,
@@ -829,6 +1435,36 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/build-packaging/spm",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "spritekit",
+      "domain": "apple",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Builds 2D games and animated graphics with SpriteKit: scene graph, the update loop, SKAction animations, physics with contact handling, particle emitters, and embedding scenes in SwiftUI via SpriteView. Use when creating sprite-based games, side-scrollers, or animated 2D effects on Apple platforms, or when integrating an SKScene into a SwiftUI app.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "spritekit",
+        "games",
+        "2d",
+        "physics",
+        "swiftui"
+      ],
+      "pairs_with": [],
+      "path": "apple/code/graphics-games/spritekit",
       "resources": {
         "reference": false,
         "examples": false,
