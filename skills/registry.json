@@ -2665,8 +2665,8 @@
       "path": "apple/code/app-frameworks/observation",
       "resources": {
         "reference": false,
-        "examples": false,
-        "checklist": false
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -3271,8 +3271,8 @@
       "path": "apple/lang-tooling/language/swift-concurrency",
       "resources": {
         "reference": false,
-        "examples": false,
-        "checklist": false
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -3456,8 +3456,8 @@
       "path": "apple/lang-tooling/testing/swift-testing",
       "resources": {
         "reference": false,
-        "examples": false,
-        "checklist": false
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -3490,7 +3490,7 @@
       "resources": {
         "reference": false,
         "examples": true,
-        "checklist": false
+        "checklist": true
       }
     },
     {
@@ -3520,8 +3520,8 @@
       "path": "apple/code/app-frameworks/swiftdata-queries-migration",
       "resources": {
         "reference": false,
-        "examples": false,
-        "checklist": false
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -3706,8 +3706,8 @@
       "path": "apple/code/app-frameworks/swiftui-core",
       "resources": {
         "reference": false,
-        "examples": false,
-        "checklist": false
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -4017,8 +4017,8 @@
       "path": "apple/code/app-frameworks/swiftui-navigation",
       "resources": {
         "reference": false,
-        "examples": false,
-        "checklist": false
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -4141,8 +4141,8 @@
       "path": "apple/code/app-frameworks/swiftui-state-data-flow",
       "resources": {
         "reference": false,
-        "examples": false,
-        "checklist": false
+        "examples": true,
+        "checklist": true
       }
     },
     {
