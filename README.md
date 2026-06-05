@@ -6,6 +6,19 @@ Every AI coding tool has its own way of carrying project context — Claude Code
 
 The first domain is **Apple platform development** — SwiftUI, SwiftData, Swift concurrency, the Human Interface Guidelines, build & ship pipelines — distilled into original best-practice guidance (not copied from Apple's docs).
 
+## What's covered
+
+**183 Apple skills** (current to the 2026 "26" OS cycle, Swift 6.x), each with a curated `## References` section of verified Documentation / HIG / WWDC / Sample-Code links:
+
+| Class | What it produces | Count |
+|------|------------------|------:|
+| `code` | compilable code — SwiftUI, UIKit/AppKit, SwiftData, CloudKit, StoreKit, Core ML, MapKit, RealityKit/ARKit, AVFoundation, CryptoKit, WidgetKit, App Intents… | 71 |
+| `design` | HIG design critique — foundations, components, patterns, inputs, per-platform, technologies | 62 |
+| `lang-tooling` | Swift language, app architecture, testing, build/packaging, ship & CI | 37 |
+| `overview` | decision routers ("which technology should I use?") | 13 |
+
+25 flagship skills also ship Level-3 `examples.md` / `checklist.md`, and code↔design counterparts are cross-linked (e.g. `hig-tab-bars` ↔ `swiftui-tab-views`) so `--with-pairs` installs both. See **[docs/taxonomy.md](docs/taxonomy.md)** for the full catalog.
+
 ## Quick start
 
 ```bash

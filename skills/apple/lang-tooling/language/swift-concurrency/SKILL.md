@@ -14,7 +14,7 @@ x-skills-master:
   pairs_with: []
   sources:
     - https://developer.apple.com/documentation/swift/concurrency
-    - https://developer.apple.com/documentation/swift/adopting-strict-concurrency-in-swift-6-apps
+    - https://www.swift.org/migration/documentation/migrationguide/
   snapshot_date: "2026-05-30"
   stability: stable
   version: 1.0.0

@@ -15,7 +15,7 @@ x-skills-master:
   pairs_with: [choosing-persistence]
   sources:
     - https://developer.apple.com/documentation/swiftdata
-    - https://developer.apple.com/documentation/swiftdata/preservingyourappsmodeldata
+    - https://developer.apple.com/documentation/swiftdata/preserving-your-apps-model-data-across-launches
   snapshot_date: "2026-05-30"
   stability: stable
   version: 1.0.0

@@ -45,7 +45,7 @@ Reach for this when critiquing or designing how people first meet an app or game
 - **Human Interface Guidelines:** [Privacy](https://developer.apple.com/design/human-interface-guidelines/privacy)
 - **WWDC:** [Love at First Launch (WWDC17)](https://developer.apple.com/videos/play/wwdc2017/816/)
 - **WWDC:** [Making a Great First Impression with Strong Onboarding Design (WWDC14)](https://developer.apple.com/videos/play/wwdc2014/230/)
-- **Documentation:** [Sign in with Apple](https://developer.apple.com/documentation/sign_in_with_apple)
+- **Documentation:** [Sign in with Apple](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple)
 
 ## See also
 

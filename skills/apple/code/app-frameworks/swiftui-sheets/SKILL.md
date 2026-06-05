@@ -15,7 +15,7 @@ x-skills-master:
   pairs_with: [hig-sheets]
   sources:
     - https://developer.apple.com/documentation/swiftui/view/sheet(ispresented:ondismiss:content:)
-    - https://developer.apple.com/documentation/swiftui/presentationdetents
+    - https://developer.apple.com/documentation/swiftui/presentationdetent
   snapshot_date: "2026-05-30"
   stability: stable
   version: 1.0.0

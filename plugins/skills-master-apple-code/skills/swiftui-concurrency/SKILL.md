@@ -56,8 +56,8 @@ struct ArticleView: View {
 
 ## References
 
-- **Documentation:** [task(priority:_:)](https://developer.apple.com/documentation/swiftui/view/task(priority:_:))
-- **Documentation:** [task(id:priority:_:)](https://developer.apple.com/documentation/swiftui/view/task(id:priority:_:))
+- **Documentation:** [task(priority:_:)](https://developer.apple.com/documentation/swiftui/view)
+- **Documentation:** [task(id:priority:_:)](https://developer.apple.com/documentation/swiftui/view)
 - **Documentation:** [refreshable(action:)](https://developer.apple.com/documentation/swiftui/view/refreshable(action:))
 - **Documentation:** [Search modifiers](https://developer.apple.com/documentation/swiftui/view-search)
 - **WWDC:** [Explore concurrency in SwiftUI (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/266/)
