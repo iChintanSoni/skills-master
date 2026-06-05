@@ -30,6 +30,37 @@
       }
     },
     {
+      "name": "adopting-app-intents",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for exposing app functionality through the App Intents framework across Siri, Shortcuts, Spotlight, interactive widgets, Controls, the Action button, and Visual Intelligence. Use when deciding which app actions and content to surface as intents, evaluating whether a feature is worth modeling as an intent, planning a phased adoption path, or routing into App Intents implementation work.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "app-intents",
+        "siri",
+        "shortcuts",
+        "spotlight",
+        "widgets"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/adopting-app-intents",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "adopting-liquid-glass",
       "domain": "apple",
       "class": "overview",
@@ -52,6 +83,37 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/adopting-liquid-glass",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "adopting-swift-6-concurrency",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for moving a codebase to Swift 6 strict concurrency and the Swift 6 language mode, covering whether to migrate now, an incremental per-module sequence, where to start, the cost versus benefit, and how MainActor and Sendable fit in. Use when planning a Swift 6 adoption, weighing strict concurrency checking against deadlines, choosing the first module to migrate, recompiling against the Xcode 26 SDK, or deciding between approachable defaults and full data-race safety.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift-6",
+        "concurrency",
+        "migration",
+        "sendable",
+        "mainactor"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/adopting-swift-6-concurrency",
       "resources": {
         "reference": false,
         "examples": false,
@@ -88,6 +150,68 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "app-lifecycle",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Guides the SwiftUI App/Scene lifecycle: @main entry, scenePhase transitions, delegate adaptors, launch sequence, and state restoration. Use when structuring an app's entry point, reacting to active/inactive/background changes, deciding whether you still need a UIApplicationDelegate or NSApplicationDelegate, or restoring per-scene UI state.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "lifecycle",
+        "scenephase",
+        "appdelegate",
+        "state-restoration"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/architecture/app-lifecycle",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "app-review-guidelines",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Guidance for passing Apple App Review: the top rejection reasons (crashes, incomplete info, privacy, misleading metadata), in-app purchase and account-deletion rules, permission and privacy requirements, and how to prepare a submission or respond to a rejection. Use when preparing an App Store Connect submission, planning a paywall or login, adding account deletion, writing purpose strings or metadata, or replying to an App Review rejection.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "app-store",
+        "review",
+        "submission",
+        "privacy",
+        "in-app-purchase"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/app-review-guidelines",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -195,6 +319,37 @@
       ],
       "pairs_with": [],
       "path": "apple/code/graphics-games/arkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "asset-catalogs",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Organize images, colors, SF Symbols, and app icons in Xcode asset catalogs with appearance and device variants, and access them type-safely via generated ImageResource/ColorResource symbols. Use when adding image/color/symbol sets, configuring app icons, supporting dark/tinted appearances or per-device assets, replacing string-based asset lookups, or setting up On-Demand Resources.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "assets",
+        "xcode",
+        "sf-symbols",
+        "app-icon",
+        "resources"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/build-packaging/asset-catalogs",
       "resources": {
         "reference": false,
         "examples": false,
@@ -324,6 +479,100 @@
       }
     },
     {
+      "name": "choosing-async-pattern",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for picking an asynchronous pattern in Swift in the 2026 (OS 26, Swift 6.x) cycle — async/await and structured concurrency as the default, AsyncSequence and AsyncStream for value streams, where Combine still earns its place (and that it is legacy-leaning), and completion handlers only at old API boundaries. Use when starting new async code and unsure which tool to reach for, when bridging a callback or Combine API into async/await, when modeling a stream of values over time, or when deciding whether to keep or retire a Combine pipeline.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "concurrency",
+        "async-await",
+        "asyncsequence",
+        "combine",
+        "decision"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/choosing-async-pattern",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-distribution",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for picking an Apple app distribution channel — App Store, TestFlight, Ad Hoc, Custom/Unlisted apps, the Enterprise Program, and notarized Developer ID for Mac. Use when shipping a build to users, choosing a delivery channel, planning beta testing, deciding between public and private release, or distributing a Mac app outside the Mac App Store.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "distribution",
+        "app-store",
+        "testflight",
+        "notarization",
+        "enterprise"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/choosing-distribution",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-graphics-tech",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for picking an Apple graphics technology in the 2026 (OS 26) cycle: SwiftUI shapes and Canvas for UI drawing, Core Graphics and Core Image for 2D and image processing, SpriteKit for 2D games, RealityKit for new 3D and AR (SceneKit is now soft-deprecated), and Metal with MetalFX for custom GPU work. Use when starting graphics, drawing, image-processing, game, or 3D work and choosing a framework, when weighing whether to drop from a high-level API to Metal, or when deciding whether to migrate a SceneKit project to RealityKit.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "graphics",
+        "metal",
+        "realitykit",
+        "spritekit",
+        "swiftui",
+        "decision"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/choosing-graphics-tech",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-ml-approach",
       "domain": "apple",
       "class": "overview",
@@ -346,6 +595,68 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/choosing-ml-approach",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-navigation-pattern",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for selecting a SwiftUI navigation container: TabView for peer sections, NavigationStack for push hierarchies, NavigationSplitView for multi-column iPad/Mac, and sheets or full-screen covers for modal tasks. Use when starting a new screen flow, restructuring an app's top-level shell, deciding between a stack and a split view, or unsure where modals fit — routes into deeper swiftui-navigation work.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "navigation",
+        "tabview",
+        "ipad",
+        "architecture"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/choosing-navigation-pattern",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-networking",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for picking an Apple networking approach. Use when starting networking work, evaluating URLSession vs Network framework, building WebSocket/peer-to-peer/custom-transport features, or deciding whether a third-party HTTP client is justified.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "networking",
+        "urlsession",
+        "network-framework",
+        "websocket",
+        "architecture"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/choosing-networking",
       "resources": {
         "reference": false,
         "examples": false,
@@ -386,6 +697,37 @@
       }
     },
     {
+      "name": "choosing-testing-strategy",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Helps pick an Apple testing strategy — Swift Testing vs XCTest for new and existing code, plus the right mix of unit, integration, UI, and snapshot tests and how much to invest at each level. Use when starting a test suite, deciding which framework to adopt, planning a migration, or routing into specific testing skills.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "swift-testing",
+        "xctest",
+        "strategy",
+        "decision"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/choosing-testing-strategy",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-ui-toolkit",
       "domain": "apple",
       "class": "overview",
@@ -411,6 +753,64 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/choosing-ui-toolkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-widget-tech",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for picking a glanceable extension on iPhone and iPad: home/Lock Screen widgets, Live Activities with the Dynamic Island, Control widgets, or App Intents and App Shortcuts. Use when deciding how to surface app content or actions outside the app, when a feature needs a static glance, an ongoing event, a quick toggle, or a system-wide action, or when unsure which WidgetKit, ActivityKit, or App Intents API fits.",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "widgetkit",
+        "activitykit",
+        "app-intents",
+        "controls",
+        "overview"
+      ],
+      "pairs_with": [],
+      "path": "apple/overviews/overviews/choosing-widget-tech",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "ci-cd-signing",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Guidance for building, testing, signing, and shipping Apple apps from CI: xcodebuild on headless runners, App Store Connect API keys, fastlane match, TestFlight upload, caching, and Xcode Cloud. Use when setting up a pipeline, fixing CI code-signing failures, automating archive/TestFlight delivery, or choosing between self-hosted CI and Xcode Cloud.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "ci-cd",
+        "code-signing",
+        "fastlane",
+        "testflight",
+        "xcode-cloud"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/ci-cd-signing",
       "resources": {
         "reference": false,
         "examples": false,
@@ -446,6 +846,37 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "codable-serialization",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guidance for serializing Swift types with Codable: conforming to Encodable/Decodable, CodingKeys, JSONEncoder/JSONDecoder strategies, custom encode(to:)/init(from:), nested and dynamic keys, optional/missing fields, property lists, and robust decoding of imperfect JSON. Use when modeling API responses, persisting data, parsing JSON or plists, mapping snake_case keys, decoding dates, or hardening a decoder against malformed input.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "codable",
+        "json",
+        "decoding",
+        "serialization",
+        "foundation"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/codable-serialization",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -657,6 +1088,37 @@
       }
     },
     {
+      "name": "crash-symbolication",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Guides diagnosing app crashes by symbolicating reports, mapping dSYMs, reading the Xcode 26 Organizer and MetricKit diagnostics, and recognizing common crash signatures. Use when a TestFlight or App Store build crashes, when reports show only hex addresses, when matching dSYM UUIDs, when wiring MXCrashDiagnostic, or when triaging force-unwrap, out-of-bounds, or threading crashes.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "crashes",
+        "symbolication",
+        "dsym",
+        "metrickit",
+        "debugging"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/crash-symbolication",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "cryptokit",
       "domain": "apple",
       "class": "code",
@@ -681,6 +1143,99 @@
       ],
       "pairs_with": [],
       "path": "apple/code/system/cryptokit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "dependency-injection",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Guidance on dependency injection in Swift apps: initializer injection, injecting collaborators through the SwiftUI Environment, protocol abstractions for testability, when a lightweight container helps versus when it hurts, and replacing singletons. Use when wiring services into types, making code testable, swapping real implementations for mocks or previews, or untangling global shared state.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "architecture",
+        "testability",
+        "swiftui",
+        "environment",
+        "swift6"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/architecture/dependency-injection",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "entitlements-capabilities",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Guidance for declaring app capabilities in Xcode and the entitlements, App IDs, and provisioning profiles they generate, covering App Groups, Keychain Sharing, Push Notifications, iCloud and CloudKit, Sign in with Apple, and Associated Domains across platforms and build configurations. Use when adding a capability, debugging an entitlement or provisioning mismatch, sharing data between a host app and its extensions, splitting Debug and Release entitlements, or wiring per-platform identifiers.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "entitlements",
+        "capabilities",
+        "provisioning",
+        "app-groups",
+        "signing"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/entitlements-capabilities",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "error-handling",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guidance on Swift error handling: the Error protocol, throws/try/do-catch, typed throws, Result, rethrows, defer, and propagating errors from async code. Use when designing failable APIs, deciding throw vs Result vs optional, modeling recoverable vs programmer errors, or migrating to typed throws.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "error-handling",
+        "typed-throws",
+        "result",
+        "concurrency"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/error-handling",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1712,6 +2267,68 @@
       }
     },
     {
+      "name": "info-plist-entitlements",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Guidance on Info.plist keys, privacy usage strings, and the .entitlements file: which to use, how capabilities populate them, driving values from build settings, and wiring URL schemes and associated domains. Use when configuring privacy purpose strings, adding a capability, debugging a missing-key crash or rejection, setting up universal links or custom schemes, or making these files reviewable.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "info-plist",
+        "entitlements",
+        "build-settings",
+        "capabilities",
+        "privacy"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/build-packaging/info-plist-entitlements",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "instruments-profiling",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Guides profiling Apple apps with Instruments 26 — Time Profiler and CPU Profiler, Allocations and Leaks, the SwiftUI and Hangs and Hitches instruments, and OSSignposter points of interest. Use when an app is slow, janky, hangs, or grows in memory, when reading an Instruments timeline or call tree, or when adding signposts to measure and confirm a performance fix.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "instruments",
+        "profiling",
+        "performance",
+        "signposts",
+        "swiftui"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/instruments-profiling",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "keychain-security",
       "domain": "apple",
       "class": "code",
@@ -1736,6 +2353,37 @@
       ],
       "pairs_with": [],
       "path": "apple/code/system/keychain-security",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "localization",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Internationalize and localize Apple apps with String Catalogs (.xcstrings), modern String(localized:)/LocalizedStringResource APIs, locale-aware formatting, and RTL layout. Use when adding languages, migrating from .strings/.stringsdict, handling plurals or format arguments, formatting dates/numbers/measurements per locale, or exchanging files with translators.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "localization",
+        "internationalization",
+        "string-catalog",
+        "formatting",
+        "rtl"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/localization",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1797,6 +2445,37 @@
       ],
       "pairs_with": [],
       "path": "apple/code/graphics-games/metal",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "modularization-local-spm",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Guides modularizing an app into local Swift packages with clean public interfaces, inward-flowing dependencies, faster builds, and a thin app target. Use when extracting feature or core modules, designing module boundaries, speeding up build and test cycles, or deciding how far to split a monolithic app.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "spm",
+        "modularization",
+        "architecture",
+        "build-times",
+        "swift6"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/architecture/modularization-local-spm",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1866,6 +2545,37 @@
       }
     },
     {
+      "name": "navigation-architecture",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Guides modeling SwiftUI navigation as serializable state with value-based NavigationStack paths, a router/coordinator owning the path, type-erased vs typed routes, deep/universal link parsing, and scene restoration. Use when designing app navigation, choosing centralized vs local navigation state, building a router, handling incoming URLs, or restoring the stack after relaunch.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "navigation",
+        "routing",
+        "deep-linking",
+        "architecture"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/architecture/navigation-architecture",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "network-framework",
       "domain": "apple",
       "class": "code",
@@ -1891,6 +2601,37 @@
       ],
       "pairs_with": [],
       "path": "apple/code/system/network-framework",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "networking-layer",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Guidance for building a testable async networking layer with URLSession in Swift 6: endpoint modeling, Codable decoding, typed error handling, retries, timeouts, token refresh, and URLProtocol stubs. Use when designing an API client, wrapping URLSession, decoding JSON responses, adding auth/token refresh, or making network code unit-testable.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "networking",
+        "urlsession",
+        "async-await",
+        "codable",
+        "testing"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/architecture/networking-layer",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2049,6 +2790,99 @@
       }
     },
     {
+      "name": "privacy-manifests",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Guidance on authoring a PrivacyInfo.xcprivacy privacy manifest: declaring collected data types, tracking and tracking domains, required-reason API entries, and signing third-party SDK manifests. Use when adding or auditing a privacy manifest, fixing ITMS-91053/ITMS-91061 App Store upload errors, integrating an SDK on Apple's required list, or reconciling the manifest with the App Store privacy nutrition label.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "privacy",
+        "app-store",
+        "manifest",
+        "sdk",
+        "compliance"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/privacy-manifests",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "property-wrappers",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guidance on authoring and using Swift property wrappers: @propertyWrapper, wrappedValue, projectedValue via $, initialization, composition, and how SwiftUI's @State/@Binding/@Environment relate to the @Observable macro. Use when writing a custom @propertyWrapper, debugging $-projection or init order, deciding wrapper vs macro, or migrating ObservableObject models to @Observable.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "property-wrappers",
+        "macros",
+        "swiftui",
+        "observation"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/property-wrappers",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "provisioning-code-signing",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Guides Apple code signing and provisioning: signing identities and certificates, development vs distribution provisioning profiles, automatic vs manual signing, the App ID and entitlements relationship, and diagnosing signing errors. Use when configuring a target's Signing & Capabilities, fixing build errors like no profiles found or profile doesn't include signing certificate, or setting up signing on CI.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "code-signing",
+        "provisioning",
+        "certificates",
+        "entitlements",
+        "ci"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/provisioning-code-signing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "realitykit",
       "domain": "apple",
       "class": "code",
@@ -2076,6 +2910,68 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "regex-strings",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guidance for Swift string processing with the Regex type, covering regex literals, the RegexBuilder DSL, Capture and TryCapture, matching/replacing/splitting, Unicode-correct grapheme handling, and localized comparison. Use when parsing or validating text, extracting structured fields, choosing between a regex and plain String APIs, fixing emoji or accent mismatches, or porting NSRegularExpression to Swift Regex.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "regex",
+        "strings",
+        "regexbuilder",
+        "unicode"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/regex-strings",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "result-builders",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guidance for designing and using Swift result builders: the @resultBuilder attribute, the buildBlock/buildOptional/buildEither/buildArray transform methods, buildExpression/buildFinalResult/buildLimitedAvailability, and buildPartialBlock for avoiding overload explosion. Use when authoring a declarative DSL, understanding how SwiftUI ViewBuilder or RegexBuilder work, deciding which build methods to implement, or debugging confusing result-builder type errors and missing control-flow support.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "result-builder",
+        "dsl",
+        "swiftui",
+        "metaprogramming"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/result-builders",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -2160,6 +3056,36 @@
       ],
       "pairs_with": [],
       "path": "apple/code/web/sign-in-with-apple",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "snapshot-testing",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Guidance on snapshot (approval) testing for SwiftUI and UIKit/AppKit UI — capturing reference images or serialized text, judging when they add value, keeping them stable across devices and OS versions, reviewing diffs, and pairing them with unit tests. Use when adding visual regression coverage, debugging flaky or device-dependent snapshots, deciding image-vs-text strategies, wiring snapshots into Swift Testing, or reviewing recorded reference changes in a PR.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "snapshot",
+        "swiftui",
+        "swift-testing",
+        "regression"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/testing/snapshot-testing",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2288,6 +3214,37 @@
       }
     },
     {
+      "name": "swift-6-migration",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guides migrating a codebase to the Swift 6 language mode: enabling it per target, resolving strict data-race checking, making types Sendable, applying actor and @MainActor isolation, and fixing global state. Use when turning on complete concurrency checking, adopting Swift 6 mode, fixing Sendable or actor-isolation compiler errors, or planning an incremental module-by-module migration.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift6",
+        "concurrency",
+        "sendable",
+        "actors",
+        "migration"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/swift-6-migration",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "swift-concurrency",
       "domain": "apple",
       "class": "lang-tooling",
@@ -2312,6 +3269,161 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/language/swift-concurrency",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swift-generics-protocols",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guidance for protocol-oriented and generic Swift, covering generic functions and types, associated types with where clauses, protocol composition, primary associated types, and choosing between opaque results (some) and existentials (any) by their performance and type-identity tradeoffs. Use when designing a protocol or generic API, deciding between some, any, or a generic parameter, constraining associated types, fixing protocol-as-type or associated-type errors, or replacing hand-written type erasure.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "generics",
+        "protocols",
+        "opaque-types",
+        "existentials"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/swift-generics-protocols",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swift-language-core",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Practical guidance for everyday Swift language fundamentals in app code — value versus reference types (struct/enum vs class), optionals and optional chaining, let vs var, stored/computed/lazy properties and observers, closures and capture semantics, protocols and extensions, and struct-first design. Use when modeling a new type and choosing struct vs class, taming optionals, deciding where to put behavior with protocol extensions, fixing a closure retain cycle, or reviewing idiomatic Swift in a pull request.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "value-types",
+        "optionals",
+        "properties",
+        "protocols"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/swift-language-core",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swift-macros",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guidance for authoring and adopting Swift macros, covering freestanding (#) versus attached (@) macro roles, what each expands to, building a macro plugin with SwiftSyntax and the SwiftPM macro target, testing expansions, and choosing a macro over a function or protocol. Use when writing a custom macro, deciding whether a macro is the right tool, debugging an expansion, wiring up a macro package, or understanding how @Observable and #Preview generate code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "macros",
+        "swiftsyntax",
+        "metaprogramming",
+        "spm"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/swift-macros",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swift-package-plugins",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Guidance for authoring and running SwiftPM plugins: build-tool plugins for code generation and command plugins for linting/formatting, declared in Package.swift with sandbox permissions. Use when generating source at build time, wiring a formatter or linter into a package, choosing prebuild vs build commands, or fixing plugin sandbox and write-permission errors in Xcode 26 or the swift CLI.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swiftpm",
+        "plugins",
+        "build-tools",
+        "code-generation",
+        "tooling"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/build-packaging/swift-package-plugins",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swift-performance-memory",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Guides Swift performance and memory work: value semantics and copy-on-write, ARC and reference cycles, weak/unowned capture lists, inout, the borrowing/consuming ownership keywords, and Span. Use when a profile shows retain/release or allocation hotspots, when designing hot-path data structures, when fixing leaks or retain cycles, or when reaching for unsafe pointers.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "swift",
+        "performance",
+        "memory",
+        "arc",
+        "ownership"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/language/swift-performance-memory",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2468,6 +3580,37 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-frameworks/swiftui-animations-transitions",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "swiftui-app-architecture",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Guides choosing and applying SwiftUI app architecture: the MV pattern (Observable models in the environment) versus MVVM (one ViewModel per view), where state and business logic belong, and how to keep views thin and testable. Use when structuring a new SwiftUI app, deciding whether a view needs a ViewModel, refactoring fat views, placing shared model state, or debating MV vs MVVM in code review.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "contested",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "architecture",
+        "observable",
+        "mvvm",
+        "state"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/architecture/swiftui-app-architecture",
       "resources": {
         "reference": false,
         "examples": true,
@@ -3065,6 +4208,68 @@
       }
     },
     {
+      "name": "testflight-appstore-connect",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Guides shipping Apple apps through TestFlight beta testing and App Store Connect: archiving and uploading a build, internal vs external testing groups, export-compliance, metadata and versions, submitting for review, and phased release. Use when you need to distribute a beta, set up TestFlight groups, fix Missing Compliance, manage app versions, or submit a release for review.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testflight",
+        "app-store-connect",
+        "distribution",
+        "release",
+        "ship"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/ship/testflight-appstore-connect",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "testing-async-code",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Guidance for testing async, concurrent, and time-based Swift code with Swift Testing: async test functions, confirmations for callbacks and streams, time limits, actor and MainActor isolation, and injected clocks. Use when writing or reviewing tests that await results, exercise AsyncStream or completion handlers, hit flaky sleeps, or need deterministic timing.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "concurrency",
+        "async",
+        "swift-testing",
+        "clocks"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/testing/testing-async-code",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "tipkit",
       "domain": "apple",
       "class": "code",
@@ -3212,6 +4417,37 @@
       }
     },
     {
+      "name": "unit-testing-strategy",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Guides what to test and how to design Swift code for testability — the test pyramid, isolating logic from UI and I/O via injection and pure functions, test doubles (fakes, stubs, spies), clear naming, and treating coverage as a signal not a target. Use when deciding what is worth testing, structuring a test suite, refactoring untestable code, or reviewing test quality.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "strategy",
+        "testability",
+        "test-doubles",
+        "coverage"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/testing/unit-testing-strategy",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "user-notifications",
       "domain": "apple",
       "class": "code",
@@ -3356,6 +4592,36 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/build-packaging/xcode-project-conventions",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "xctest-ui-automation",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Drives end-to-end UI tests with XCUITest — launching XCUIApplication, querying elements, waiting on expectations, asserting state, and structuring page objects. Use when writing or stabilizing automated UI tests, fixing flaky element lookups, or wiring accessibility identifiers for reliable selectors.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "xcuitest",
+        "ui-testing",
+        "accessibility",
+        "automation"
+      ],
+      "pairs_with": [],
+      "path": "apple/lang-tooling/testing/xctest-ui-automation",
       "resources": {
         "reference": false,
         "examples": false,
