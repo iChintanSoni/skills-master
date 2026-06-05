@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: inputs
   platforms: [ios, ipados, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-gestures]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/gestures
   snapshot_date: "2026-05-30"

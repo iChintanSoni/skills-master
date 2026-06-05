@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "16.1"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [hig-live-activities-design]
   sources:
     - https://developer.apple.com/documentation/activitykit
     - https://developer.apple.com/documentation/activitykit/displaying-live-data-with-live-activities

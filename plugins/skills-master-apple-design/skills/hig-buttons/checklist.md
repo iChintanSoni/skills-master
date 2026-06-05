@@ -1,0 +1,16 @@
+- [ ] Exactly one most-prominent (filled/prominent) action per screen or context; secondary actions use tinted/bordered, tertiary use plain/borderless.
+- [ ] Prominence and tint map to actual priority; no competing equally-prominent buttons.
+- [ ] Accent tint/prominent glass is reserved for the primary action only, not spread across multiple controls.
+- [ ] Destructive actions use the destructive role and are never the default/confirm button in alerts or dialogs.
+- [ ] Cancel actions use the cancel role; dialog button order follows platform convention.
+- [ ] Meaning is not conveyed by color alone (destructive has a clear label + role, not just red).
+- [ ] Labels are short, title-case verbs naming the outcome (e.g., "Delete Draft"), avoiding vague "OK/Submit/Yes".
+- [ ] Labels fit without truncation across Dynamic Type sizes and localized lengths.
+- [ ] Every tappable control has a >=44x44 pt hit target (focusable/gaze targets generous on tvOS/visionOS), even when the glyph is smaller.
+- [ ] Adequate spacing between adjacent controls, especially safe vs destructive, to prevent mis-taps.
+- [ ] Link vs button chosen by consequence: links for inline navigation/reference, buttons for actions and bar/form/card controls.
+- [ ] No primary action buried as an inline text link inside running paragraph text.
+- [ ] Navigation-layer controls (tab bar, toolbar) use Liquid Glass; the glass style is not applied to content/list/card buttons.
+- [ ] No custom backgrounds fighting the system glass material; no glass stacked on glass.
+- [ ] Toolbar/bar items grouped by function and frequency, using grouping/spacing rather than dividers or fills.
+- [ ] Focus/hover/highlight states are clear and legible on tvOS, visionOS, and pointer-driven iPad/macOS.

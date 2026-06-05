@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: inputs
   platforms: [ipados, visionos]
-  pairs_with: []
+  pairs_with: [pencilkit]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/apple-pencil-and-scribble
   snapshot_date: "2026-05-30"

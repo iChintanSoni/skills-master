@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [hig-apple-pencil]
   sources:
     - https://developer.apple.com/documentation/pencilkit/pkcanvasview
     - https://developer.apple.com/documentation/PencilKit/drawing-with-pencilkit

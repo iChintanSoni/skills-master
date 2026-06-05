@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [hig-text-fields]
   sources:
     - https://developer.apple.com/documentation/swiftui/textfield
     - https://developer.apple.com/documentation/swiftui/texteditor

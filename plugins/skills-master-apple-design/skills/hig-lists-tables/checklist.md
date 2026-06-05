@@ -1,0 +1,14 @@
+- [ ] **Right container chosen** — single-column scannable data is a list; visual comparable items are a collection/grid; multi-attribute comparison data is a true multi-column table (iPad/Mac).
+- [ ] **List style fits the content** — plain/continuous for homogeneous feeds, grouped/inset-grouped for labelled settings-like clusters.
+- [ ] **Inset capsule geometry respected** — grouped cards' rounded corners and insets are left intact, not overridden with conflicting shapes.
+- [ ] **Sections carry meaning** — headers/footers only where they name or explain a group; no over-sectioning a short list.
+- [ ] **Row content is scannable** — text is succinct, avoids awkward truncation/wrapping, and leads with the most important info.
+- [ ] **Swipe actions match risk** — destructive/context-ending on trailing, reversible shortcuts on leading; the most important trailing action is first.
+- [ ] **No action is swipe-only** — every swipe action has a discoverable alternative path; destructive ones confirm.
+- [ ] **Navigation vs selection separated** — tap navigates/acts; multi-select lives in an explicit edit mode.
+- [ ] **Reordering offered when sequence matters** — drag-to-reorder with an obvious, reversible grip.
+- [ ] **Disclosure used for real hierarchy** — outlines expand nested data in place; no essential content/actions hidden in collapsed rows.
+- [ ] **Loading and empty states designed** — visible rows fill immediately, slow content streams in, long fetches show progress, and an empty list reads meaningfully.
+- [ ] **Liquid Glass kept off the rows** — glass/material is reserved for floating bars and controls above content, not the scrolling list rows.
+- [ ] **Platform idioms honored** — source list/outline/multi-column tables on Mac; sidebar + detail on iPad; short glanceable rows on watchOS; focus-driven rows/grids on tvOS/visionOS.
+- [ ] **Accessible targets and labels** — adequate tap/focus targets, clear selection/focus appearance, and Dynamic Type-friendly rows.

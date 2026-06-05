@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [hig-apple-pay-design]
   sources:
     - https://developer.apple.com/documentation/passkit/offering-apple-pay-in-your-app
     - https://developer.apple.com/documentation/passkit/pkpaymentauthorizationcontroller

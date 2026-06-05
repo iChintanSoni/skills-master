@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "16"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [hig-charts]
   sources:
     - https://developer.apple.com/documentation/charts
     - https://developer.apple.com/documentation/charts/creating-a-chart-using-swift-charts
