@@ -15,22 +15,37 @@
     "agent"
   ],
   "license": "MIT",
+  "author": "Chintan Soni",
+  "homepage": "https://github.com/iChintanSoni/skills-master#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iChintanSoni/skills-master.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/iChintanSoni/skills-master/issues"
+  },
   "type": "module",
   "bin": {
     "skills-master": "./dist/bin.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsup",
     "dev": "tsx src/bin.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "tsup"
   },
   "dependencies": {
     "commander": "^12.1.0",

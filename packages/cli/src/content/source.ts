@@ -8,7 +8,7 @@ import type { Registry } from "../schema/registry";
 import type { ParsedSkill } from "../types";
 
 /** Default content repo (override with SKILLS_MASTER_REPO). */
-const DEFAULT_REPO = "github:skills-master/skills-master";
+const DEFAULT_REPO = "github:iChintanSoni/skills-master";
 
 /** A resolved, on-disk skills tree the CLI reads from. */
 export class ContentSource {
