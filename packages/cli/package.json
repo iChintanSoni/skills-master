@@ -1,12 +1,16 @@
 {
   "name": "skills-master",
   "version": "0.1.0",
-  "description": "Install tool-agnostic Apple development skills into any AI coding tool (Claude Code, Cursor, Copilot, AGENTS.md).",
+  "description": "Install tool-agnostic Apple & Android development skills into any AI coding tool (Claude Code, Cursor, Copilot, AGENTS.md).",
   "keywords": [
     "skills",
     "apple",
     "swift",
     "swiftui",
+    "android",
+    "kotlin",
+    "jetpack-compose",
+    "material3",
     "claude",
     "cursor",
     "copilot",

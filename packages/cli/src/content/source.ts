@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { basename, isAbsolute, join, resolve } from "node:path";
 import { findSkillDirs } from "../core/discover";
@@ -9,6 +9,9 @@ import type { ParsedSkill } from "../types";
 
 /** Default content repo (override with SKILLS_MASTER_REPO). */
 const DEFAULT_REPO = "github:iChintanSoni/skills-master";
+
+/** package.json `name` that identifies the skills-master content repo (dev checkout). */
+const CONTENT_REPO_PACKAGE = "skills-master-monorepo";
 
 /** A resolved, on-disk skills tree the CLI reads from. */
 export class ContentSource {
@@ -55,7 +58,7 @@ export interface ResolveContentOptions {
  * Resolve where skill content lives, in priority order:
  *   1. explicit `--content <dir>`
  *   2. SKILLS_MASTER_CONTENT env var
- *   3. a `skills/` directory in this repo (dev convenience, searched upward)
+ *   3. the skills-master content repo, if running inside it (dev convenience, searched upward)
  *   4. remote fetch via giget (published content)
  */
 export async function resolveContent(opts: ResolveContentOptions = {}): Promise<ContentSource> {
@@ -72,17 +75,32 @@ export async function resolveContent(opts: ResolveContentOptions = {}): Promise<
   return new ContentSource(await fetchRemote(opts.ref ?? "main"));
 }
 
-/** Walk upward looking for a sibling `skills/` directory (the dev repo). */
+/**
+ * Walk upward looking for the skills-master content repo: a root whose
+ * `package.json` name is {@link CONTENT_REPO_PACKAGE} and that has a `skills/`
+ * subtree. Keying on the package name (not just any pnpm workspace with a
+ * `skills/` dir) keeps an unrelated monorepo from hijacking content resolution.
+ */
 function findLocalSkillsDir(start: string): string | null {
   let dir = resolve(start);
   for (let i = 0; i < 8; i++) {
     const candidate = join(dir, "skills");
-    if (existsSync(join(dir, "pnpm-workspace.yaml")) && existsSync(candidate)) return candidate;
+    if (existsSync(candidate) && isContentRepoRoot(dir)) return candidate;
     const parent = resolve(dir, "..");
     if (parent === dir) break;
     dir = parent;
   }
   return null;
+}
+
+/** True when `dir` is the skills-master monorepo root (by package.json name). */
+function isContentRepoRoot(dir: string): boolean {
+  try {
+    const pkg = JSON.parse(readFileSync(join(dir, "package.json"), "utf8")) as { name?: string };
+    return pkg.name === CONTENT_REPO_PACKAGE;
+  } catch {
+    return false;
+  }
 }
 
 /** Download the `skills/` subtree of the content repo to a local cache. */
