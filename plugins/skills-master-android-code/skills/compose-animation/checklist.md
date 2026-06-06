@@ -1,0 +1,18 @@
+- [ ] Each `animate*AsState` call has a non-empty `label` parameter for Android Studio's Animation Inspector.
+- [ ] `updateTransition` child animations (`animateFloat`, `animateColor`, etc.) all have `label` parameters.
+- [ ] Animation specs are not constructed as new lambda instances on every recomposition — captured as `remember { }` values or top-level vals.
+- [ ] `AnimatedVisibility` content does not reference state that should trigger the visibility itself — doing so can cause layout flicker.
+- [ ] `AnimatedContent` has a `transitionSpec` that provides a `SizeTransform` if the content size changes between states.
+- [ ] `rememberInfiniteTransition` animations are paused or stopped when the composable is off-screen (e.g., in an off-screen pager page) to avoid wasted work.
+- [ ] `Modifier.animateContentSize()` is placed before size-constraining modifiers (like `fillMaxWidth`) so it measures the unconstrained delta.
+- [ ] `Animatable.animateTo` / `snapTo` calls run inside a `LaunchedEffect` or `rememberCoroutineScope` lambda — never directly in the composable body.
+- [ ] Spring specs for navigation and layout transitions use critically-damped or lightly-damped ratios (`DampingRatioNoBouncy` / `DampingRatioLowBouncy`); bouncy presets are reserved for expressive/playful moments.
+- [ ] M3 motion tokens (`MaterialTheme.motionScheme.defaultSpatialSpec()` / `defaultEffectsSpec()`) are used instead of hard-coded spring constants for UI that should match system components.
+- [ ] `SharedTransitionLayout` wraps the full scaffold (or the common ancestor of origin and destination), not just one screen.
+- [ ] Every `sharedElement` / `sharedBounds` modifier uses a unique, stable key that matches between origin and destination.
+- [ ] Container-level elements use `sharedBounds`; leaf/image elements use `sharedElement` to avoid content duplication during the transition.
+- [ ] `Crossfade` is preferred over `AnimatedContent` for pure fade-only content swaps (simpler API, fewer parameters to misconfigure).
+- [ ] Large-screen transitions use shorter durations or higher spring stiffness to avoid sluggish pane-level motion.
+- [ ] `enter` and `exit` specs in `AnimatedVisibility` are symmetric (e.g., `fadeIn`/`fadeOut`, `expandVertically`/`shrinkVertically`) unless an asymmetric effect is intentional.
+- [ ] Predictive-back integration is tested where `AnimatedContent` or custom back handlers are used on Android 12+ devices.
+- [ ] Animation-heavy screens have been profiled in Android Studio's Profiler to confirm consistent 60fps / 120fps frame rendering without jank.

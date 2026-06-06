@@ -1,0 +1,16 @@
+- [ ] A single `AppTheme` composable at the root wraps the entire app; `MaterialTheme` is not called inside individual screens or components.
+- [ ] Both `lightColorScheme()` and `darkColorScheme()` are defined with all required brand color roles; no Color literal leaks into composable bodies.
+- [ ] Dynamic color is guarded with `Build.VERSION.SDK_INT >= Build.VERSION_CODES.S` before calling `dynamicLightColorScheme` / `dynamicDarkColorScheme`.
+- [ ] A hand-crafted fallback `ColorScheme` exists for pre-Android-12 devices; the app does not show the M3 defaults.
+- [ ] `isSystemInDarkTheme()` drives the light/dark switch; no manual `SharedPreferences` theme toggle bypasses the system setting unless an explicit user preference is implemented.
+- [ ] `WindowCompat.setDecorFitsSystemWindows(window, false)` is called in `Activity.onCreate` for edge-to-edge display.
+- [ ] Status-bar icon appearance is toggled via `WindowInsetsControllerCompat.isAppearanceLightStatusBars` in a `SideEffect`, not by setting a solid `statusBarColor`.
+- [ ] A `Typography` instance with the brand `FontFamily` is passed to `MaterialTheme`; font sizes are not set inline on `Text` composables.
+- [ ] Custom `Shapes` are defined for the required tiers (small/medium/large/extraLarge) and passed to `MaterialTheme`; shape overrides are not applied per-component.
+- [ ] Custom design tokens that extend M3 (warning, success, brand-specific colors) are provided via a `staticCompositionLocalOf` local, not injected as raw `Color` parameters.
+- [ ] The `CompositionLocal` default value throws an `error(...)` with a descriptive message so missing providers fail loudly in development.
+- [ ] Extension properties on `MaterialTheme` expose custom locals so call-site access is consistent with `MaterialTheme.colorScheme`, `MaterialTheme.typography`, etc.
+- [ ] At least two `@Preview` configurations exist — one for light, one for dark (`uiMode = Configuration.UI_MODE_NIGHT_YES`) — on every non-trivial composable.
+- [ ] Color palette was generated with Material Theme Builder, not hand-assembled; WCAG contrast ratios are verified for all on-color pairs.
+- [ ] No `android:statusBarColor` or `android:navigationBarColor` attributes remain in `res/values/themes.xml` that would override the Compose edge-to-edge approach.
+- [ ] `AppTheme` is used in all instrumented and screenshot tests so components render with brand tokens instead of M3 defaults.

@@ -63,6 +63,33 @@
       }
     },
     {
+      "name": "adopting-compose",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Migration guide for moving an existing Android View/XML app to Jetpack Compose incrementally — leaf-first or screen-by-screen — covering ComposeView in XML/Fragments, AndroidView for retained Views, shared ViewModels across the boundary, theme bridging, navigation, and testing. Use when planning or executing a Compose migration on a live app, choosing a migration order, wiring Compose screens into an existing Fragment/Navigation-Component stack, or deciding when to switch fully to Compose navigation.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "migration",
+        "interop",
+        "material3",
+        "viewmodel"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/adopting-compose",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "adopting-liquid-glass",
       "domain": "apple",
       "class": "overview",
@@ -512,6 +539,34 @@
       }
     },
     {
+      "name": "choosing-compose-or-views",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for picking Jetpack Compose versus the View/XML system in 2026. Use when starting a new Android UI feature or screen, evaluating a migration path, or weighing tradeoffs between modern declarative UI and an existing View-based codebase.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "contested",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "views",
+        "xml",
+        "ui",
+        "migration",
+        "architecture"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/choosing-compose-or-views",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-distribution",
       "domain": "apple",
       "class": "overview",
@@ -875,6 +930,470 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/language/codable-serialization",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-accessibility",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Compose accessibility APIs — semantics modifier, contentDescription, mergeDescendants, stateDescription, Role, heading, custom actions, traversal order, touch-target sizing, and testTag. Use when building or auditing Compose UIs for TalkBack, Switch Access, or any assistive technology.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "accessibility",
+        "compose",
+        "semantics",
+        "talkback",
+        "a11y",
+        "material3"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-accessibility",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-animation",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Jetpack Compose animation APIs — animate*AsState, Animatable, updateTransition, AnimatedVisibility, AnimatedContent, Crossfade, rememberInfiniteTransition, Modifier.animateContentSize, animation specs (spring/tween/keyframes/M3 Expressive physics), and shared element transitions via SharedTransitionLayout. Use when adding motion to a Compose UI, transitioning between states or screens, animating visibility or layout changes, or implementing shared element transitions.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "animation",
+        "motion",
+        "shared-element",
+        "material3"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-animation",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "compose-foundation",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers the Compose Foundation layer — clickable/combinedClickable, scroll and scrollable, BasicText/BasicTextField, focus management, MutableInteractionSource, and low-level pointer gestures. Use when building custom components that need raw gesture handling, custom indication, or text primitives without Material 3 opinionated styling.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "foundation",
+        "gestures",
+        "focus",
+        "scrollable",
+        "custom-ui"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-foundation",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-fundamentals",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Jetpack Compose fundamentals — composable functions, declarative UI, the recomposition mental model, the composition, layout, and drawing phases, and stateless versus stateful composables. Use when starting a Compose UI, reasoning about why a composable recomposes or skips, breaking a screen into small composables, or setting up previews.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "wear-os",
+        "android-tv",
+        "chromeos",
+        "xr"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "jetpack-compose",
+        "recomposition",
+        "ui"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-fundamentals",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-graphics",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Custom drawing in Jetpack Compose using Canvas, DrawScope, Brush, Path, Modifier.graphicsLayer, and BlendMode. Use when building custom chart renderers, decorative shapes, image effects, or any UI that cannot be assembled from standard composables alone.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "canvas",
+        "graphics",
+        "drawing",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-graphics",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-images",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers the Image composable, painterResource, vector vs raster assets, ContentScale, alignment, ColorFilter, remote image loading with Coil (AsyncImage, rememberAsyncImagePainter, placeholders, crossfade), ImageBitmap, and accessibility content descriptions. Use when displaying local or remote images, tinting icons, controlling how images scale and crop, or loading network images in Jetpack Compose.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "images",
+        "coil",
+        "asyncimage",
+        "contentscale"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-images",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-layout",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Jetpack Compose layout primitives — Row, Column, Box, weight/fill modifiers, BoxWithConstraints, intrinsic measurements, the single-pass constraints model, custom Layout composables, and SubcomposeLayout for measure-dependent content. Use when arranging composables on screen, building adaptive UIs, implementing a custom layout algorithm, or needing slot-driven measurement.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "layout",
+        "jetpack-compose",
+        "ui",
+        "custom-layout"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-layout",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "compose-lazy-lists",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers lazy scrolling containers in Jetpack Compose — LazyColumn, LazyRow, LazyVerticalGrid, LazyVerticalStaggeredGrid, item keys/contentType, sticky headers, LazyListState, programmatic scrolling, item placement animations, and Paging integration. Use when building any scrollable list, feed, grid, or paginated data surface in a Compose-first Android app.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "lazy-list",
+        "recycler",
+        "paging",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-lazy-lists",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "compose-modifiers",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Modifier chains in Jetpack Compose — order semantics, scoped modifiers, common modifiers, reusable extraction, and custom Modifier.Node. Use when building or reviewing Composable layout/decoration/interaction code that relies on padding, size, background, clip, clickable, or scope-specific modifiers like weight and align.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "modifiers",
+        "layout",
+        "android",
+        "material3"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-modifiers",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-performance",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Jetpack Compose performance — stability contracts, @Stable and @Immutable annotations, strong skipping mode, deferring state reads to layout/draw phases, remember for expensive work, stable keys in lazy lists, avoiding backwards writes, and diagnosing over-recomposition with Layout Inspector and compiler metrics. Use when profiling UI jank, cutting unnecessary recompositions, annotating model classes, or setting up baseline profiles.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "performance",
+        "recomposition",
+        "stability",
+        "jetpack-compose"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-performance",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "compose-side-effects",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Jetpack Compose effect APIs — LaunchedEffect, rememberCoroutineScope, rememberUpdatedState, DisposableEffect, SideEffect, produceState, and snapshotFlow — and their key/restart semantics. Use when bridging a composable to coroutines, subscriptions, listeners, or one-shot work that must run on enter or be cleaned up on leave.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "side-effects",
+        "coroutines",
+        "lifecycle"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-side-effects",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "compose-state",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Jetpack Compose state — remember, mutableStateOf variants, state hoisting (state down/events up), stateful vs stateless composables, rememberSaveable with custom Savers, derivedStateOf, snapshot reads, and remember keys. Use when wiring mutable state into a composable, deciding how to hoist or persist state across recomposition or configuration changes, or optimizing with derivedStateOf.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "state",
+        "state-hoisting",
+        "jetpack-compose",
+        "recomposition"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-state",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "compose-text",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers text display in Jetpack Compose — Text composable, MaterialTheme typography, AnnotatedString, inline content, overflow, clickable links via LinkAnnotation, font scaling, and downloadable/variable fonts. Use when building or reviewing any Compose UI that renders, styles, or interacts with text.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "text",
+        "typography",
+        "material3",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-text",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-text-fields",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers TextField, OutlinedTextField, and the state-based BasicTextField with TextFieldState for user text input in Jetpack Compose. Use when building any screen that accepts typed user input, including search bars, forms, login fields, or any editable text surface.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "text-input",
+        "forms",
+        "material3",
+        "keyboard"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-text-fields",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-theming",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers Material 3 theming in Jetpack Compose — building ColorScheme (light/dark/dynamic), Typography, and Shapes, wiring MaterialTheme in the app root, accessing theme tokens inside composables, and extending the system with CompositionLocal for custom design tokens. Use when setting up or customising an app-wide theme, implementing dark-mode support, adopting Android 12+ dynamic color, or building a shared design-system layer on top of Material 3.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "material3",
+        "theming",
+        "design-system",
+        "dark-mode"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-theming",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "compose-view-interop",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers bidirectional Compose/View interoperability — AndroidView and AndroidViewBinding to embed Views in Compose, ComposeView and AbstractComposeView to host Compose in Fragments or XML layouts, ViewCompositionStrategy for lifecycle safety, and cross-boundary state sharing. Use when incrementally migrating a screen, embedding a legacy custom View with no Compose equivalent, or adding Compose islands inside an existing Fragment/View hierarchy.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "interop",
+        "migration",
+        "androidview",
+        "composeview",
+        "fragments"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-view-interop",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-window-insets",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers window insets and edge-to-edge layout in Jetpack Compose — Use when building screens that draw behind system bars, handle the soft keyboard, or need correct safe-area padding on phones and large screens.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "insets",
+        "edge-to-edge",
+        "ime",
+        "material3"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-window-insets",
       "resources": {
         "reference": false,
         "examples": false,
@@ -3197,6 +3716,34 @@
       }
     },
     {
+      "name": "hilt-di",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers Hilt dependency injection for Android — @HiltAndroidApp, @AndroidEntryPoint, @HiltViewModel, modules, scopes, qualifiers, assisted injection, EntryPoint, and testing. Use when wiring DI into an Android app with Hilt.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "hilt",
+        "dependency-injection",
+        "android",
+        "architecture",
+        "viewmodel",
+        "testing"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/hilt-di",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "info-plist-entitlements",
       "domain": "apple",
       "class": "lang-tooling",
@@ -3283,6 +3830,86 @@
       ],
       "pairs_with": [],
       "path": "apple/code/system/keychain-security",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "kotlin-coroutines",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Covers structured concurrency with Kotlin coroutines — CoroutineScope/Job, launch vs async/await, suspend functions, Dispatchers, withContext, cancellation, exception handling, and Android scopes. Use when writing async or concurrent code in an Android app with Kotlin.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "kotlin",
+        "coroutines",
+        "concurrency",
+        "android",
+        "async",
+        "structured-concurrency"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/language/kotlin-coroutines",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "kotlin-flow",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Covers Kotlin Flow — cold asynchronous streams, builders, intermediate and terminal operators, context and backpressure, combining streams, exception handling, and the relationship to StateFlow/SharedFlow. Use when modeling reactive data pipelines, exposing async data from a repository, collecting events in a ViewModel, or writing tests with Turbine.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "kotlin",
+        "flow",
+        "coroutines",
+        "reactive",
+        "async"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/language/kotlin-flow",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "kotlin-language-core",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Covers idiomatic Kotlin for Android development — val/var immutability, null-safety, data classes, sealed classes, when expressions, scope functions, extension functions, and collection operations. Use when writing or reviewing Kotlin code on Android to ensure correctness, expressiveness, and safety.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "kotlin",
+        "android",
+        "language",
+        "idioms",
+        "null-safety",
+        "collections"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/language/kotlin-language-core",
       "resources": {
         "reference": false,
         "examples": false,
@@ -3506,6 +4133,33 @@
       }
     },
     {
+      "name": "navigation-compose",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers Navigation Compose — NavController, NavHost, type-safe routes with @Serializable objects, nested graphs, argument passing, back-stack manipulation, returning results, and adaptive navigation patterns. Use when building multi-screen Compose apps, wiring programmatic navigation, passing data between destinations, or structuring nested navigation graphs.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "navigation",
+        "jetpack",
+        "architecture",
+        "type-safe-routes"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/navigation-compose",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "network-framework",
       "domain": "apple",
       "class": "code",
@@ -3717,6 +4371,34 @@
       ],
       "pairs_with": [],
       "path": "apple/code/media/photokit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "predictive-back",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers predictive back gesture integration for Android apps — opt-in via android:enableOnBackInvokedCallback, system back-to-home animations, PredictiveBackHandler and BackHandler in Compose, migration from legacy OnBackPressedCallback, and gesture testing. Use when implementing or migrating back-navigation handling in a Jetpack Compose or hybrid Android app.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "navigation",
+        "compose",
+        "gesture",
+        "back-navigation",
+        "architecture"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/predictive-back",
       "resources": {
         "reference": false,
         "examples": false,
@@ -4116,6 +4798,33 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "state-flow",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers exposing observable UI state from a ViewModel using StateFlow and SharedFlow — MutableStateFlow with immutable backing, stateIn with WhileSubscribed, collecting with collectAsStateWithLifecycle, the single UiState pattern, and modeling one-off events. Use when designing the state contract between a ViewModel and a Compose screen, choosing between StateFlow, SharedFlow, and LiveData, or wiring lifecycle-aware collection to avoid leaking background work.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "architecture",
+        "stateflow",
+        "viewmodel",
+        "coroutines",
+        "compose"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/state-flow",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -5421,6 +6130,33 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "viewmodel",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers the ViewModel architecture component — its responsibilities, lifecycle, obtaining instances via viewModel()/hiltViewModel(), scoping to an Activity or nav graph, surviving configuration changes and process death with SavedStateHandle, and exposing UI state. Use when designing the state-holder layer for a Compose screen, wiring a ViewModel to a nav destination, persisting UI state across process death, or debugging why state is lost on rotation.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "viewmodel",
+        "architecture",
+        "savedstate",
+        "hilt",
+        "compose"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/viewmodel",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {

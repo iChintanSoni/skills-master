@@ -6,6 +6,27 @@
   },
   "plugins": [
     {
+      "name": "skills-master-android-code",
+      "source": "./plugins/skills-master-android-code",
+      "description": "Android code skills (frameworks & APIs).",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-lang-tooling",
+      "source": "./plugins/skills-master-android-lang-tooling",
+      "description": "Android language, build, test & ship skills.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-overviews",
+      "source": "./plugins/skills-master-android-overviews",
+      "description": "Android decision-guidance routers.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
       "name": "skills-master-apple-code",
       "source": "./plugins/skills-master-apple-code",
       "description": "Apple code skills (frameworks & APIs).",

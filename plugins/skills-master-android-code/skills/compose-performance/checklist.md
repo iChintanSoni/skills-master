@@ -1,0 +1,16 @@
+- [ ] All data classes passed as composable parameters contain only `val` fields of primitive, `String`, or other stable types — no `var` fields, no unobservable mutable collections.
+- [ ] `kotlin.collections.List<T>` (and `Map`, `Set`) parameters have been replaced with `ImmutableList<T>` (or equivalent) from `kotlinx-collections-immutable`, or wrapped in a `@Stable` holder class.
+- [ ] `@Immutable` is used only on classes whose fields are genuinely immutable after construction — no `var` fields, no mutable inner objects.
+- [ ] `@Stable` is used only on classes where mutations are observable through Compose `State` — `equals()` and `hashCode()` are overridden correctly.
+- [ ] Strong skipping mode (`ComposeFeatureFlag.StrongSkipping`) is enabled in `composeCompiler { featureFlags }` for the module.
+- [ ] Compose compiler metrics have been generated (`reportsDestination` / `metricsDestination`) and every performance-critical composable shows `restartable skippable` in the report.
+- [ ] Layout Inspector recomposition counts have been checked on a real device; no composable recomposes on every frame due to animation or scroll state that should have been deferred.
+- [ ] Rapidly-changing values (animation progress, scroll offset) are read inside `offset { }`, `graphicsLayer { }`, or `drawBehind { }` lambda modifiers — never in the composable body.
+- [ ] `derivedStateOf { }` is used wherever a boolean or derived value is computed from high-frequency state (e.g., scroll index thresholds, filter predicates).
+- [ ] Every `remember { }` call for expensive computation carries the correct key(s) — neither missing keys (stale results) nor unstable-object keys (cache never hits).
+- [ ] Every `LazyColumn`/`LazyRow`/`LazyGrid` `items { }` call passes a stable, unique `key` lambda.
+- [ ] Lazy list item keys are saveable types (`String`, primitive, `Parcelable`, or a `data class` of saveables) if the list state needs process-death survival.
+- [ ] No state is written inside a composable body (backwards write). All state mutations happen in event lambdas, `LaunchedEffect`, `SideEffect`, or ViewModel layer.
+- [ ] A baseline profile has been generated using `BaselineProfileRule` and is included in the release build.
+- [ ] The baseline profile is regenerated after any significant code addition that introduces new hot paths (app startup, main feed scroll, etc.).
+- [ ] Third-party or cross-module model types that the compiler cannot inspect are wrapped in a `@Stable` class with a correct `equals()` implementation before being passed to composables.

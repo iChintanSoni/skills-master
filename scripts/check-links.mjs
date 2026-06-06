@@ -1,13 +1,14 @@
 // Report-only link checker for the skill library.
-// Extracts Apple/Swift documentation links from every SKILL.md (frontmatter +
-// body) and HEAD-checks them, throttled. Reports non-2xx/3xx responses.
+// Extracts Apple/Swift/Android/Kotlin documentation links from every SKILL.md
+// (frontmatter + body) and HEAD-checks them, throttled. Reports non-2xx/3xx.
 //
 //   node scripts/check-links.mjs [skillsRoot=skills] [--strict] [--all]
 //
 // Notes:
-//  - developer.apple.com renders docs as a SPA that often returns 200 even for
-//    wrong deep links, so a 200 is necessary but not sufficient. This catches
-//    hard 404s/DNS/typo'd hosts, not every stale anchor.
+//  - developer.apple.com and developer.android.com render docs as SPAs that
+//    sometimes return 200 even for wrong deep links, so a 200 is necessary but
+//    not sufficient. This catches hard 404s/DNS/typo'd hosts, not every stale
+//    anchor.
 //  - Default exit code is 0 (report-only). Pass --strict to fail on dead links.
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
@@ -17,7 +18,7 @@ const strict = args.includes("--strict");
 const checkAll = args.includes("--all");
 const root = args.find((a) => !a.startsWith("--")) ?? "skills";
 
-const HOST_RE = /^https:\/\/(developer\.apple\.com|support\.apple\.com|swift\.org|github\.com\/apple)\//;
+const HOST_RE = /^https:\/\/(developer\.apple\.com|support\.apple\.com|swift\.org|github\.com\/apple|developer\.android\.com|android-developers\.googleblog\.com|kotlinlang\.org|m3\.material\.io|developer\.chrome\.com|source\.android\.com|github\.com\/android|play\.google\.com|support\.google\.com)\//;
 // Allow one level of balanced parens so Apple method URLs survive intact,
 // e.g. .../view/sheet(isPresented:onDismiss:content:) and .../tint(_:).
 const URL_RE = /https?:\/\/[^\s<>"'\]()]+(?:\([^\s()]*\))?[^\s<>"'\])]*/g;
