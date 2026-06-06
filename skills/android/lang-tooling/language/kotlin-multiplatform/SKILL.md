@@ -10,7 +10,7 @@ x-skills-master:
   category: language
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [adopting-kmp]
   sources:
     - https://kotlinlang.org/docs/multiplatform.html
     - https://developer.android.com/kotlin/multiplatform

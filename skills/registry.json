@@ -146,6 +146,63 @@
       }
     },
     {
+      "name": "adopting-edge-to-edge-predictive-back",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Adoption guide for the two modern platform behaviors enforced on Android 16 — going edge-to-edge with correct inset handling and opting into predictive back with animated transitions. Use when planning a migration to full-screen layout enforcement, deciding how to handle window insets in Compose or Views, or enabling predictive back animations for the first time.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "edge-to-edge",
+        "predictive-back",
+        "insets",
+        "window",
+        "compose",
+        "material3"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/adopting-edge-to-edge-predictive-back",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "adopting-kmp",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for adopting Kotlin Multiplatform (KMP) to share code between Android and iOS — covering what to share vs keep native, an incremental rollout path, and team/tooling considerations. Use when evaluating whether KMP is right for a project, deciding which code layers to share first, planning an incremental rollout from a single shared module, or assessing team readiness and CI impact.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "kmp",
+        "kotlin-multiplatform",
+        "android",
+        "ios",
+        "architecture"
+      ],
+      "pairs_with": [
+        "kotlin-multiplatform"
+      ],
+      "path": "android/overviews/overviews/adopting-kmp",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "adopting-liquid-glass",
       "domain": "apple",
       "class": "overview",
@@ -168,6 +225,33 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/adopting-liquid-glass",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "adopting-m3-expressive",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision and adoption guide for Material 3 Expressive in Jetpack Compose — covering spring motion, shape morphing, emphasized typography, and new components. Use when evaluating whether to adopt M3 Expressive, deciding which surfaces benefit from expressive treatment, or planning an incremental opt-in strategy while maintaining accessibility and performance.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "material3",
+        "motion",
+        "shape",
+        "compose",
+        "design-system"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/adopting-m3-expressive",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1077,6 +1161,59 @@
       }
     },
     {
+      "name": "choosing-android-distribution",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Use when deciding how to distribute an Android app — Google Play vs alternative stores vs enterprise/direct sideload — and which delivery format (AAB vs APK), track strategy, and update mechanism to adopt.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "distribution",
+        "google-play",
+        "app-bundle",
+        "enterprise"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/choosing-android-distribution",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-android-testing",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for the Android test strategy — the test pyramid for Kotlin/Compose apps covering JVM unit tests, Robolectric, instrumented tests, Compose UI tests, Espresso/UI Automator, and screenshot tests. Use when designing a test suite from scratch, deciding which test type to add for a specific concern, or evaluating where to invest limited test effort.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "compose",
+        "unit-tests",
+        "instrumentation",
+        "strategy"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/choosing-android-testing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-async-pattern",
       "domain": "apple",
       "class": "overview",
@@ -1108,6 +1245,35 @@
       }
     },
     {
+      "name": "choosing-background-work",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for Android background work strategies in 2026. Use when choosing between WorkManager, foreground services, AlarmManager, and in-process coroutines for a task based on persistence requirements, timing precision, and user visibility.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "workmanager",
+        "background",
+        "coroutines",
+        "foreground-service",
+        "alarmmanager"
+      ],
+      "pairs_with": [
+        "workmanager"
+      ],
+      "path": "android/overviews/overviews/choosing-background-work",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-compose-or-views",
       "domain": "android",
       "class": "overview",
@@ -1129,6 +1295,63 @@
       ],
       "pairs_with": [],
       "path": "android/overviews/overviews/choosing-compose-or-views",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-concurrency-pattern",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for asynchrony in Android apps. Use when choosing between coroutines, Flow, StateFlow, SharedFlow, LiveData, RxJava, or raw callbacks for a new feature, reviewing legacy async code, or mapping a specific need (one-shot call, stream, UI state) to the right tool.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "coroutines",
+        "flow",
+        "stateflow",
+        "livedata",
+        "async",
+        "architecture"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/choosing-concurrency-pattern",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-di",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for selecting a dependency injection strategy on Android in 2026. Use when starting a new Android app or module, evaluating whether to adopt Hilt, or weighing compile-time annotation processing against runtime container approaches.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "dependency-injection",
+        "hilt",
+        "koin",
+        "architecture",
+        "testing"
+      ],
+      "pairs_with": [
+        "hilt-di"
+      ],
+      "path": "android/overviews/overviews/choosing-di",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1167,6 +1390,34 @@
       }
     },
     {
+      "name": "choosing-form-factors",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for targeting Android device form factors beyond the phone — large screens, foldables, Wear OS, TV, Automotive, ChromeOS, and XR. Use when planning which surfaces to support, estimating reach-versus-effort tradeoffs, applying the adaptive quality tiers, or sequencing multi-form-factor investment for a Kotlin/Compose app.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "adaptive",
+        "large-screen",
+        "foldable",
+        "wear-os",
+        "android-tv",
+        "form-factors"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/choosing-form-factors",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "choosing-graphics-tech",
       "domain": "apple",
       "class": "overview",
@@ -1199,6 +1450,91 @@
       }
     },
     {
+      "name": "choosing-http-client",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for selecting an HTTP client library on Android in 2026. Use when starting a new network layer, evaluating Retrofit vs Ktor client vs raw OkHttp, or deciding whether Cronet/QUIC is warranted for a production app.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "networking",
+        "retrofit",
+        "okhttp",
+        "ktor",
+        "cronet"
+      ],
+      "pairs_with": [
+        "retrofit-okhttp"
+      ],
+      "path": "android/overviews/overviews/choosing-http-client",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-image-loading",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for choosing between Coil and Glide for image loading on Android in 2026. Use when starting a new Compose-first project, evaluating a library migration, or weighing tradeoffs between Kotlin/coroutine-native ergonomics and a mature, battle-tested View-oriented solution.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "contested",
+      "version": "1.0.0",
+      "tags": [
+        "images",
+        "coil",
+        "glide",
+        "compose",
+        "performance"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/choosing-image-loading",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-ml",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for on-device intelligence on Android — ML Kit, Gemini Nano via AICore, LiteRT and MediaPipe, and cloud models. Use when deciding which ML or AI technology fits a feature, weighing privacy versus capability tradeoffs, evaluating device support breadth, or routing a \"should this be on-device or cloud\" question before writing code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "ml",
+        "ai",
+        "on-device",
+        "gemini",
+        "mlkit"
+      ],
+      "pairs_with": [
+        "ml-kit"
+      ],
+      "path": "android/overviews/overviews/choosing-ml",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-ml-approach",
       "domain": "apple",
       "class": "overview",
@@ -1221,6 +1557,33 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/choosing-ml-approach",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-navigation",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision guide for selecting a navigation approach in Android apps — Navigation Compose with type-safe routes, Fragment-based Navigation, or a lightweight custom solution. Use when starting a new app, adding a multi-screen flow, or evaluating whether to migrate an existing backstack to Navigation Compose.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "navigation",
+        "compose",
+        "fragments",
+        "architecture",
+        "routing"
+      ],
+      "pairs_with": [],
+      "path": "android/overviews/overviews/choosing-navigation",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1323,6 +1686,35 @@
       }
     },
     {
+      "name": "choosing-storage",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for local Android storage — Room, DataStore (Preferences or Proto), and files with kotlinx.serialization — by matching data shape, query needs, and migration cost. Use when designing a new data layer, deciding whether SharedPreferences is worth replacing, or choosing between Room and DataStore for a given data type.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "storage",
+        "room",
+        "datastore",
+        "serialization",
+        "persistence"
+      ],
+      "pairs_with": [
+        "room"
+      ],
+      "path": "android/overviews/overviews/choosing-storage",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "choosing-testing-strategy",
       "domain": "apple",
       "class": "overview",
@@ -1379,6 +1771,35 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/choosing-ui-toolkit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-web-integration",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for displaying web content in Android apps — WebView for owned in-app or hybrid UIs, Custom Tabs for external links with the system browser engine, Trusted Web Activities for shipping a PWA as an app, and native re-implementation when full platform control matters. Use when choosing how to embed or open any URL or web-rendered content.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "webview",
+        "custom-tabs",
+        "twa",
+        "hybrid",
+        "web-integration"
+      ],
+      "pairs_with": [
+        "webview-custom-tabs"
+      ],
+      "path": "android/overviews/overviews/choosing-web-integration",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1937,7 +2358,9 @@
         "material3",
         "keyboard"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-text-fields"
+      ],
       "path": "android/code/compose-ui/compose-text-fields",
       "resources": {
         "reference": false,
@@ -4795,7 +5218,9 @@
         "viewmodel",
         "testing"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-di"
+      ],
       "path": "android/code/architecture/hilt-di",
       "resources": {
         "reference": false,
@@ -5050,7 +5475,9 @@
         "shared-logic",
         "coroutines"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-kmp"
+      ],
       "path": "android/lang-tooling/language/kotlin-multiplatform",
       "resources": {
         "reference": false,
@@ -5104,6 +5531,33 @@
       ],
       "pairs_with": [],
       "path": "android/code/platform-services/ktor-client",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "lifecycle",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers lifecycle-aware components in Android — the Lifecycle and LifecycleOwner contract, lifecycle states and events, safe Flow collection with repeatOnLifecycle and flowWithLifecycle, DefaultLifecycleObserver for non-Compose observers, and reacting to lifecycle events in Compose with LifecycleEventEffect. Use when collecting Flows safely across foreground/background transitions, observing lifecycle events outside Compose, or hooking side effects to specific lifecycle states in a composable.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "lifecycle",
+        "coroutines",
+        "compose",
+        "architecture",
+        "flow"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/lifecycle",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5556,6 +6010,34 @@
         "car-app-library"
       ],
       "path": "android/design/platforms/m3-cars",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-chips",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design judgment and critique for Material 3 chips on Android — covering the four chip types (assist, filter, input, suggestion), chip group layout, selection state, and when chips outperform buttons, menus, or segmented buttons. Use when choosing the right chip type for a context, reviewing filter or tag patterns, evaluating chip group density and wrapping behavior, or deciding whether chips are the appropriate control at all.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "chips",
+        "selection",
+        "components",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-chips",
       "resources": {
         "reference": false,
         "examples": false,
@@ -6159,6 +6641,34 @@
       }
     },
     {
+      "name": "m3-menus-pickers",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and recommendations for Material 3 menus and pickers on Android: dropdown menus, exposed dropdown menus, context menus, date pickers (dialog vs input mode), and time pickers — when each variant fits, how to keep selection efficient, and how to adapt across screen sizes. Use when reviewing or designing any in-context option list or date/time selection flow in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "menus",
+        "pickers",
+        "components",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-menus-pickers",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-motion",
       "domain": "android",
       "class": "design",
@@ -6446,6 +6956,34 @@
       }
     },
     {
+      "name": "m3-selection-controls",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and recommendations for Material 3 selection controls on Android: checkbox (including tri-state), radio button, and switch — when each control fits, single vs multiple selection, label placement and tap targets, and the distinction between immediate effect (switch) and deferred/confirmed effect (checkbox). Use when reviewing or specifying selection controls in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "selection-controls",
+        "android",
+        "components",
+        "forms"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-selection-controls",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-settings",
       "domain": "android",
       "class": "design",
@@ -6556,6 +7094,34 @@
       }
     },
     {
+      "name": "m3-sliders",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and recommendations for Material 3 sliders on Android — covering continuous and range sliders, discrete steps and tick marks, value labels, when a slider is the right control versus a text field or stepper, and accessible adjustment. Use when reviewing or specifying any slider control in an Android app and you need M3-grounded design judgment rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "sliders",
+        "android",
+        "input",
+        "components"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-sliders",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-snackbar",
       "domain": "android",
       "class": "design",
@@ -6601,7 +7167,9 @@
         "android",
         "launch-screen"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "splash-screen"
+      ],
       "path": "android/design/technologies/m3-splash-screen",
       "resources": {
         "reference": false,
@@ -6635,6 +7203,36 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "m3-text-fields",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and guidance for Material 3 text fields on Android — covering filled vs outlined variants, label behavior, placeholder usage, supporting and error text, leading and trailing icons, character counters, and validation feedback patterns. Use when reviewing or specifying text input in a Compose-first Android app, choosing between the two field variants for a surface context, auditing error and validation UX, or determining whether a text field is the right control at all. Produces design judgment and recommendations, not implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "text-fields",
+        "input",
+        "validation",
+        "components"
+      ],
+      "pairs_with": [
+        "compose-text-fields"
+      ],
+      "path": "android/design/components/m3-text-fields",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -7048,7 +7646,9 @@
         "camera",
         "cameraX"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-ml"
+      ],
       "path": "android/code/media-camera-ml/ml-kit",
       "resources": {
         "reference": false,
@@ -7233,6 +7833,33 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "navigation-deep-links",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers deep links in Navigation Compose — declaring navDeepLink on destinations, handling incoming intents in Activities, and verifying Android App Links with Digital Asset Links. Use when adding implicit or explicit deep links to a NavHost destination, wiring intent handling in a Compose-first Activity, or testing that a URI correctly opens the right screen.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "navigation",
+        "deep-links",
+        "app-links",
+        "compose",
+        "architecture"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/navigation-deep-links",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -7469,6 +8096,33 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "paging",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers Paging 3 for Android — PagingSource, RemoteMediator, Pager, PagingData Flow, collectAsLazyPagingItems in Compose, load states and retry, separators and transformations, and combining network with Room as the source of truth. Use when displaying large or infinite scrolling lists from a network API, a local database, or both, in a Jetpack Compose UI.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "paging",
+        "compose",
+        "jetpack",
+        "architecture",
+        "room"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/paging",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -7960,7 +8614,9 @@
         "kotlin",
         "coroutines"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-http-client"
+      ],
       "path": "android/code/platform-services/retrofit-okhttp",
       "resources": {
         "reference": false,
@@ -8013,7 +8669,9 @@
         "coroutines",
         "flow"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-storage"
+      ],
       "path": "android/code/data/room",
       "resources": {
         "reference": false,
@@ -8048,6 +8706,33 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "saved-state",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers preserving UI state across configuration changes and process death using SavedStateHandle in ViewModel, rememberSaveable in Compose, and custom Savers. Use when building screens that must restore scroll position, text input, selections, or other transient UI state after rotation, backgrounding, or system-initiated process termination.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "savedstate",
+        "viewmodel",
+        "compose",
+        "architecture",
+        "lifecycle"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/saved-state",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -8273,6 +8958,35 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-services/speech",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "splash-screen",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers the AndroidX SplashScreen API — installSplashScreen, holding the splash on screen during async initialization with a keep condition, animated icon and window exit animation, and migrating away from a legacy custom splash Activity. Use when adding or updating a launch experience in an Android app, prolonging the splash while data loads, customizing the animated icon or exit transition, or removing an old custom-Activity splash implementation.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "splash-screen",
+        "architecture",
+        "compose",
+        "app-launch",
+        "animation"
+      ],
+      "pairs_with": [
+        "m3-splash-screen"
+      ],
+      "path": "android/code/architecture/splash-screen",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10150,7 +10864,9 @@
         "web-content",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-web-integration"
+      ],
       "path": "android/code/platform-services/webview-custom-tabs",
       "resources": {
         "reference": false,
@@ -10235,7 +10951,9 @@
         "android",
         "jetpack"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-background-work"
+      ],
       "path": "android/code/platform-services/workmanager",
       "resources": {
         "reference": false,

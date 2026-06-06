@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [choosing-web-integration]
   sources:
     - https://developer.android.com/develop/ui/views/layout/webapps/webview
     - https://developer.chrome.com/docs/android/custom-tabs
