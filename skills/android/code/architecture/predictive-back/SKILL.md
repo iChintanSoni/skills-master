@@ -10,7 +10,7 @@ x-skills-master:
   category: architecture
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
-  pairs_with: []
+  pairs_with: [m3-predictive-back]
   sources:
     - https://developer.android.com/guide/navigation/custom-back/predictive-back-gesture
     - https://developer.android.com/develop/ui/compose/system/predictive-back

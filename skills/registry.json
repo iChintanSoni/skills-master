@@ -536,7 +536,9 @@
         "compose",
         "home-screen"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-widgets"
+      ],
       "path": "android/code/platform-services/app-widgets-glance",
       "resources": {
         "reference": false,
@@ -2045,7 +2047,9 @@
         "ime",
         "material3"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-edge-to-edge"
+      ],
       "path": "android/code/compose-ui/compose-window-insets",
       "resources": {
         "reference": false,
@@ -2532,7 +2536,9 @@
         "chromeos",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-drag-drop"
+      ],
       "path": "android/code/form-factors/drag-and-drop",
       "resources": {
         "reference": false,
@@ -2839,7 +2845,9 @@
         "platform-services",
         "compose"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-haptics-sound"
+      ],
       "path": "android/code/platform-services/haptics-vibration",
       "resources": {
         "reference": false,
@@ -5331,6 +5339,33 @@
       }
     },
     {
+      "name": "m3-app-icons",
+      "domain": "android",
+      "class": "design",
+      "category": "technologies",
+      "description": "Design guidance and critique for Android app icons in Material 3 — adaptive icon layers and the safe zone, themed (monochrome) icon design, masking across launcher shapes, and the Play Store icon. Use when designing a new app icon, auditing an existing icon for safe-zone compliance, ensuring the monochrome layer reads correctly for themed icons, evaluating how an icon survives aggressive masking on third-party launchers, or preparing final icon assets for a Play Store listing.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "app-icons",
+        "android",
+        "adaptive"
+      ],
+      "pairs_with": [],
+      "path": "android/design/technologies/m3-app-icons",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-badges",
       "domain": "android",
       "class": "design",
@@ -5669,6 +5704,66 @@
       }
     },
     {
+      "name": "m3-drag-drop",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Material 3 design guidance for drag-and-drop interactions on Android — drag affordances, drag-state visual feedback, valid drop-target signaling, cross-app drops on large screens and ChromeOS, list reordering, and accessible alternatives to dragging. Use when designing or critiquing a drag-and-drop interaction, deciding what should be draggable, evaluating drag previews or drop-zone feedback, planning large-screen or multi-window drag behavior, or specifying non-drag fallbacks for accessibility.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "patterns",
+        "interaction",
+        "drag-and-drop",
+        "large-screen"
+      ],
+      "pairs_with": [
+        "drag-and-drop"
+      ],
+      "path": "android/design/patterns/m3-drag-drop",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-edge-to-edge",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design guidance and critique for edge-to-edge Android UI — drawing content behind the system bars, safe-area and inset handling, transparent system bars and scrims, keyboard (IME) avoidance, and immersive layouts. Use when designing or reviewing a screen that draws under the status and navigation bars, deciding how content and controls respect insets, or adopting the edge-to-edge enforcement on Android 15 and later.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "edge-to-edge",
+        "insets",
+        "system-bars",
+        "patterns"
+      ],
+      "pairs_with": [
+        "compose-window-insets"
+      ],
+      "path": "android/design/patterns/m3-edge-to-edge",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-elevation",
       "domain": "android",
       "class": "design",
@@ -5697,6 +5792,33 @@
       }
     },
     {
+      "name": "m3-expressive",
+      "domain": "android",
+      "class": "design",
+      "category": "technologies",
+      "description": "Design guidance for Material 3 Expressive — the evolution of Material You that adds physics-based spring motion, animated shape morphing, new and updated components, and the expressive motion scheme to the M3 design system. Use when deciding whether and how to apply expressive treatment (spring physics, shape morphing, emphasized typography, updated component variants) without sacrificing usability, clarity, or accessibility.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "expressive",
+        "motion",
+        "material-you"
+      ],
+      "pairs_with": [],
+      "path": "android/design/technologies/m3-expressive",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-fab",
       "domain": "android",
       "class": "design",
@@ -5718,6 +5840,91 @@
       ],
       "pairs_with": [],
       "path": "android/design/components/m3-fab",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-feedback",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and guidance for Material 3 feedback and status patterns on Android: choosing among snackbar, dialog, inline message, and banner; designing empty, loading, and error states; confirming actions and offering undo; and acknowledging long-running work without blocking. Use when reviewing or designing any moment where the app must communicate outcome, status, or system state to the user — from a reversible deletion to a multi-minute background export — and you need M3-grounded design judgment rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "feedback",
+        "patterns",
+        "snackbar",
+        "error-states"
+      ],
+      "pairs_with": [],
+      "path": "android/design/patterns/m3-feedback",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-gestures",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Material 3 design judgment for gesture interactions on Android: standard gesture vocabulary (tap, swipe, long-press, drag, pinch), affordance and discoverability design, avoiding conflicts with Android system edge gestures and scroll containers, and ensuring every gesture-driven action has a non-gesture alternative for accessibility. Use when designing or critiquing touchscreen interactions, auditing a screen for gesture conflicts or discoverability gaps, or deciding how to surface hidden swipe actions and drag handles.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "gestures",
+        "interaction",
+        "touch"
+      ],
+      "pairs_with": [],
+      "path": "android/design/patterns/m3-gestures",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-haptics-sound",
+      "domain": "android",
+      "class": "design",
+      "category": "technologies",
+      "description": "Design critique and guidance for haptic and sound feedback in Material 3 Android apps — when tactile and audio signals reinforce interactions, how to match haptic weight to visual events, choosing predefined versus custom effects, maintaining restraint to avoid sensory noise, and respecting system and accessibility preferences. Use when reviewing or designing interaction feedback that involves vibration, touch response, or sound cues, or when auditing whether haptic and audio signals are consistent, proportionate, and accessible.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "haptics",
+        "sound",
+        "feedback",
+        "accessibility"
+      ],
+      "pairs_with": [
+        "haptics-vibration"
+      ],
+      "path": "android/design/technologies/m3-haptics-sound",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5896,6 +6103,34 @@
       }
     },
     {
+      "name": "m3-loading",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Material 3 design guidance for loading patterns in Android apps: choosing between skeletons, spinners, and determinate progress; managing perceived performance; avoiding layout shift; and deciding when to block versus load incrementally. Use when designing or reviewing any loading, wait, or in-progress state in a Material You app, or when auditing how asynchronous work is communicated to users across first-load, refresh, and partial-update scenarios.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "loading",
+        "patterns",
+        "perceived-performance",
+        "ux"
+      ],
+      "pairs_with": [],
+      "path": "android/design/patterns/m3-loading",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-loading-indicator",
       "domain": "android",
       "class": "design",
@@ -5980,6 +6215,123 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "m3-notifications",
+      "domain": "android",
+      "class": "design",
+      "category": "technologies",
+      "description": "Design critique and recommendations for Android notifications using Material 3 principles. Use when reviewing or designing notification channels, channel importance levels, notification content and copy, rich styles (Messaging, BigText, Media), grouping strategies, or deciding whether and when an app should notify at all. Produces UX judgment grounded in M3 and Android platform conventions, not implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "notifications",
+        "m3",
+        "design",
+        "channels",
+        "android-ux"
+      ],
+      "pairs_with": [
+        "notifications"
+      ],
+      "path": "android/design/technologies/m3-notifications",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-onboarding",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and recommendations for Material 3 onboarding on Android: first-run education, value-first screens, progressive disclosure vs upfront tours, sign-in and permission timing, skippability, and not blocking the user from the core task. Use when reviewing or designing a first-run experience, onboarding flow, sign-in wall, or permission-request timing in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "onboarding",
+        "first-run",
+        "permissions",
+        "patterns"
+      ],
+      "pairs_with": [],
+      "path": "android/design/patterns/m3-onboarding",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-permissions",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and recommendations for Android runtime permission UX following Material 3 principles: just-in-time requests tied to user actions, pre-permission rationale dialogs, graceful feature degradation when denied, handling permanent denial with a Settings redirect, and minimizing the permission surface of a feature. Use when reviewing or designing any permission request flow in an Android app and you need M3-grounded design judgment rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "permissions",
+        "patterns",
+        "privacy",
+        "android"
+      ],
+      "pairs_with": [
+        "runtime-permissions"
+      ],
+      "path": "android/design/patterns/m3-permissions",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-predictive-back",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and guidance for Material 3 predictive back in Android apps: evaluating system back-to-home preview behavior, specifying in-app back animations and shared-element transitions, maintaining consistent back semantics, and avoiding back hijacking. Use when reviewing or designing back navigation interactions in an Android app, specifying how a screen should respond to the predictive swipe gesture, auditing whether back behavior matches user expectations, or deciding when a custom back animation adds value versus when the system default is the right answer.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "navigation",
+        "back-gesture",
+        "patterns",
+        "android"
+      ],
+      "pairs_with": [
+        "predictive-back"
+      ],
+      "path": "android/design/patterns/m3-predictive-back",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -6094,6 +6446,33 @@
       }
     },
     {
+      "name": "m3-settings",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Material 3 design guidance for Android settings screens: grouping and ordering preferences, choosing between switches, checkboxes, and menus, handling destructive and account actions, adding search within settings, and establishing sensible defaults that minimize required configuration. Use when designing or critiquing a settings or preferences surface in an Android app and you need M3-grounded design judgment rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "settings",
+        "preferences",
+        "patterns"
+      ],
+      "pairs_with": [],
+      "path": "android/design/patterns/m3-settings",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-shape",
       "domain": "android",
       "class": "design",
@@ -6114,6 +6493,34 @@
       ],
       "pairs_with": [],
       "path": "android/design/styles/m3-shape",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-sharing",
+      "domain": "android",
+      "class": "design",
+      "category": "patterns",
+      "description": "Design critique and guidance for Material 3 sharing patterns on Android: when to trigger the system sharesheet versus a custom share menu, how to shape shareable content, surfacing direct-share targets, and designing a well-considered receive-share entry point. Use when reviewing a share action trigger, choosing what content to expose for sharing, or evaluating whether a custom share surface is warranted instead of the Android system sharesheet.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "sharing",
+        "android",
+        "patterns",
+        "sharesheet"
+      ],
+      "pairs_with": [],
+      "path": "android/design/patterns/m3-sharing",
       "resources": {
         "reference": false,
         "examples": false,
@@ -6170,6 +6577,32 @@
       ],
       "pairs_with": [],
       "path": "android/design/components/m3-snackbar",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-splash-screen",
+      "domain": "android",
+      "class": "design",
+      "category": "technologies",
+      "description": "Design-critique guidance for Android splash screens under the Material 3 SplashScreen API: icon sizing, branding, background color, animated icon options, and avoiding legacy custom splash Activities. Use when reviewing or designing an Android app's launch experience; when deciding whether to add an animated icon; when choosing background color and icon treatment; when auditing for compliance with the system splash-screen contract; or when determining whether a splash screen adds value or just delays the user.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "android",
+        "launch-screen"
+      ],
+      "pairs_with": [],
+      "path": "android/design/technologies/m3-splash-screen",
       "resources": {
         "reference": false,
         "examples": false,
@@ -6312,6 +6745,36 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "m3-widgets",
+      "domain": "android",
+      "class": "design",
+      "category": "technologies",
+      "description": "Material 3 design guidance for Android app widgets, covering canonical layout tiers, responsive grid sizing, dynamic color and theming, picker preview content, refresh cadence decisions, and quality bar for production. Use when designing, critiquing, or specifying an Android home-screen or lock-screen widget — evaluating whether it scales gracefully across widget sizes, whether its theming respects user dynamic color, whether preview content sets realistic expectations in the picker, or whether its update cadence is appropriate for its information type.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "widgets",
+        "android",
+        "home-screen",
+        "adaptive"
+      ],
+      "pairs_with": [
+        "app-widgets-glance"
+      ],
+      "path": "android/design/technologies/m3-widgets",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -6935,7 +7398,9 @@
         "android-13",
         "conversations"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-notifications"
+      ],
       "path": "android/code/platform-services/notifications",
       "resources": {
         "reference": false,
@@ -7254,7 +7719,9 @@
         "back-navigation",
         "architecture"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-predictive-back"
+      ],
       "path": "android/code/architecture/predictive-back",
       "resources": {
         "reference": false,
@@ -7573,7 +8040,9 @@
         "activityresult",
         "platform-services"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-permissions"
+      ],
       "path": "android/code/platform-services/runtime-permissions",
       "resources": {
         "reference": false,

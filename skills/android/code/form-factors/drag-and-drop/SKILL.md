@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["android", "large-screen", "chromeos"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
-  pairs_with: []
+  pairs_with: [m3-drag-drop]
   sources:
     - https://developer.android.com/develop/ui/compose/touch-input/user-interactions/drag-and-drop
     - https://developer.android.com/develop/ui/views/touch-and-input/drag-drop

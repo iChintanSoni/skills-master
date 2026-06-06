@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [m3-permissions]
   sources:
     - https://developer.android.com/guide/topics/permissions/overview
     - https://developer.android.com/training/permissions/requesting
