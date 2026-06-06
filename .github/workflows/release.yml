@@ -70,20 +70,11 @@ jobs:
 
       # Write the computed version into package.json so the published tarball
       # carries it. Not committed back to main — git tags are the source of truth.
+      # --allow-same-version makes the first (bootstrap) release a no-op when the
+      # computed version already equals the package.json baseline (e.g. 0.1.0).
       - name: Set package version (runner only, not committed)
         working-directory: packages/cli
-        run: npm version "${{ steps.ver.outputs.next }}" --no-git-tag-version
-
-      # Annotated tag pushed back with the default GITHUB_TOKEN. Pushes made with
-      # GITHUB_TOKEN do NOT trigger new workflow runs, so this can't re-trigger
-      # release.yml. [skip ci] is belt-and-suspenders.
-      - name: Create and push tag
-        run: |
-          set -euo pipefail
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag -a "${{ steps.ver.outputs.tag }}" -m "chore(release): ${{ steps.ver.outputs.tag }} [skip ci]"
-          git push origin "${{ steps.ver.outputs.tag }}"
+        run: npm version "${{ steps.ver.outputs.next }}" --no-git-tag-version --allow-same-version
 
       - run: pnpm --filter @ichintansoni/skills-master build
 
@@ -93,15 +84,10 @@ jobs:
       - name: Zip marketplace
         run: zip -r claude-marketplace.zip .claude-plugin plugins
 
-      - name: Create GitHub Release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release create "${{ steps.ver.outputs.tag }}" \
-            --title "${{ steps.ver.outputs.tag }}" \
-            --generate-notes \
-            claude-marketplace.zip
-
+      # Publish FIRST, tag/release LAST: a registry that rejects the publish then
+      # leaves no tag or release behind, so a re-run (after fixing the cause)
+      # starts from a clean slate instead of colliding with an existing tag.
+      #
       # Dual publish: the same scoped package to npmjs (public install) and to
       # GitHub Packages (lights up the repo's Packages sidebar).
       - name: Publish to npmjs
@@ -118,3 +104,23 @@ jobs:
         run: >
           pnpm --filter @ichintansoni/skills-master publish
           --no-git-checks --registry https://npm.pkg.github.com
+
+      # Annotated tag pushed back with the default GITHUB_TOKEN. Pushes made with
+      # GITHUB_TOKEN do NOT trigger new workflow runs, so this can't re-trigger
+      # release.yml. [skip ci] is belt-and-suspenders.
+      - name: Create and push tag
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.ver.outputs.tag }}" -m "chore(release): ${{ steps.ver.outputs.tag }} [skip ci]"
+          git push origin "${{ steps.ver.outputs.tag }}"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.ver.outputs.tag }}" \
+            --title "${{ steps.ver.outputs.tag }}" \
+            --generate-notes \
+            claude-marketplace.zip
