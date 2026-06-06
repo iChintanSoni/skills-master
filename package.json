@@ -2,7 +2,7 @@
   "name": "skills-master-monorepo",
   "private": true,
   "version": "0.0.0",
-  "description": "Tool-agnostic Apple development skills, installable into any AI coding tool.",
+  "description": "Tool-agnostic Apple & Android development skills, installable into any AI coding tool.",
   "packageManager": "pnpm@11.5.1",
   "engines": {
     "node": ">=22"
