@@ -10,6 +10,12 @@ concurrency:
   group: release
   cancel-in-progress: false
 
+# Apply least-privilege defaults to all jobs (notably the reusable `ci` job).
+# Jobs that need more access can override at job scope (see `release` below).
+permissions:
+  contents: read
+  packages: read
+
 jobs:
   # Reuse the exact same CI that gates PRs. The release job runs only if it passes.
   ci:
