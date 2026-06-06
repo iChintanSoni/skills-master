@@ -4,6 +4,9 @@ on:
   push:
     tags:
       - "v*"
+  # Invoked by release-please.yml when a Release PR is merged. Keeping the tag
+  # trigger above lets us do the one-time bootstrap publish and manual releases.
+  workflow_call:
 
 jobs:
   publish:
@@ -33,9 +36,8 @@ jobs:
           path: |
             .claude-plugin/
             plugins/
-      # Publishes only when an NPM_TOKEN secret is configured.
-      - if: ${{ env.NPM_TOKEN != '' }}
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # This job only runs on an intentional tag push or a release-please
+      # release, so publishing is always the desired outcome here.
+      - env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm --filter skills-master publish --no-git-checks --access public

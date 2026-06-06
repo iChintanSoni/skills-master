@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "node",
+  "include-component-in-tag": false,
+  "bootstrap-sha": "11f4b59a93468a138c6d18af04a55e630dc69d02",
+  "packages": {
+    "packages/cli": { "package-name": "skills-master" }
+  }
+}
