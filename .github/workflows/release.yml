@@ -16,8 +16,8 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           registry-url: "https://registry.npmjs.org"
@@ -30,7 +30,7 @@ jobs:
       - run: pnpm --filter skills-master build
       # Regenerate the Claude marketplace from the skill tree and attach it.
       - run: pnpm --filter skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../..
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: claude-marketplace
           path: |
