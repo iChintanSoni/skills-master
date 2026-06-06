@@ -8,13 +8,13 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "pnpm --filter skills-master build",
-    "test": "pnpm --filter skills-master test",
-    "typecheck": "pnpm --filter skills-master typecheck",
-    "cli": "pnpm --filter skills-master exec tsx src/bin.ts",
-    "skills:lint": "pnpm --filter skills-master exec tsx src/bin.ts lint --content ../../skills",
-    "skills:registry": "pnpm --filter skills-master exec tsx src/bin.ts registry build --content ../../skills",
-    "skills:marketplace": "pnpm --filter skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../.."
+    "build": "pnpm --filter @ichintansoni/skills-master build",
+    "test": "pnpm --filter @ichintansoni/skills-master test",
+    "typecheck": "pnpm --filter @ichintansoni/skills-master typecheck",
+    "cli": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts",
+    "skills:lint": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts lint --content ../../skills",
+    "skills:registry": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts registry build --content ../../skills",
+    "skills:marketplace": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../.."
   },
   "devDependencies": {
     "tsx": "^4.19.2",

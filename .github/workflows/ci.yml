@@ -1,9 +1,15 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
   pull_request:
+  workflow_call: {} # lets release.yml reuse this exact CI
+
+# Read-only is enough for CI. When called by release.yml, a reusable workflow can
+# request at most the permissions its caller grants, so keeping this minimal here
+# keeps the reused CI job read-only; release.yml grants more only on its own
+# publish job.
+permissions:
+  contents: read
 
 jobs:
   cli:
@@ -19,8 +25,8 @@ jobs:
           package-manager-cache: false
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter skills-master typecheck
-      - run: pnpm --filter skills-master test
+      - run: pnpm --filter @ichintansoni/skills-master typecheck
+      - run: pnpm --filter @ichintansoni/skills-master test
 
   content:
     name: Lint skills + registry drift
@@ -36,6 +42,6 @@ jobs:
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
       # Validate every skill (names, descriptions, pairs_with integrity, body cap, headings).
-      - run: pnpm --filter skills-master exec tsx src/bin.ts lint --content ../../skills
+      - run: pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts lint --content ../../skills
       # Fail if the committed registry.json is stale.
-      - run: pnpm --filter skills-master exec tsx src/bin.ts registry build --content ../../skills --check
+      - run: pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts registry build --content ../../skills --check
