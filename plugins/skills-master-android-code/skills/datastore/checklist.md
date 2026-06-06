@@ -1,0 +1,17 @@
+- [ ] Exactly one `DataStore` instance exists per file path in the entire process — created via the `by preferencesDataStore` or `by dataStore` top-level delegate, not inside a class or function.
+- [ ] All key objects (`preferencesKey`, `intPreferencesKey`, etc.) are defined as top-level or `object` constants, not recreated inside lambdas or functions.
+- [ ] `dataStore.data` Flow has a `.catch` operator that emits `emptyPreferences()` (or the proto `defaultValue`) for `IOException` and rethrows all other exceptions.
+- [ ] No call to `runBlocking { dataStore.data.first() }` exists on the main thread; reads are always collected from a coroutine scope.
+- [ ] `dataStore.edit { … }` is called from a `suspend` function or a `launch` block, never from a regular function on the main thread.
+- [ ] The `DataStore` instance is provided as application-scoped singleton via Hilt (or another DI graph); no `Activity` context is used to instantiate it.
+- [ ] Each repository method that writes to DataStore is `suspend` and marked main-safe — callers do not need `withContext(Dispatchers.IO)`.
+- [ ] ViewModel exposes `StateFlow` converted with `stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), initialValue)` rather than passing raw `Flow` to the UI.
+- [ ] `collectAsStateWithLifecycle()` is used in Composables, not plain `collectAsState()`, so collection pauses when the screen is not visible.
+- [ ] SharedPreferences migration uses `SharedPreferencesMigration` passed to `produceMigrations`; no manual copy of legacy values is performed.
+- [ ] After migration, legacy SharedPreferences are explicitly deleted if their contents are device-specific and should not be backed up.
+- [ ] `android:allowBackup` backup rules exclude the `datastore/` directory if the stored data is device-specific (session tokens, device IDs).
+- [ ] Proto DataStore has a `Serializer` that catches `InvalidProtocolBufferException` and wraps it in `CorruptionException`, not a bare crash.
+- [ ] Proto `updateData` is used for read-modify-write on proto DataStore, not two separate `data.first()` + `updateData` calls without atomicity.
+- [ ] DataStore is not used to cache large blobs, images, or serialized lists exceeding a few kilobytes — Room or a file is used instead.
+- [ ] If the app uses multiple processes, `datastore-multiprocess` artifact and `MultiProcessDataStore` are used instead of the standard `datastore` artifact.
+- [ ] Unit tests create an isolated `DataStore` instance per test via `PreferenceDataStoreFactory.create` with a temporary file and `UnconfinedTestDispatcher`.

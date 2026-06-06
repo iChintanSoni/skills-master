@@ -18,7 +18,7 @@ const strict = args.includes("--strict");
 const checkAll = args.includes("--all");
 const root = args.find((a) => !a.startsWith("--")) ?? "skills";
 
-const HOST_RE = /^https:\/\/(developer\.apple\.com|support\.apple\.com|swift\.org|github\.com\/apple|developer\.android\.com|android-developers\.googleblog\.com|kotlinlang\.org|m3\.material\.io|developer\.chrome\.com|source\.android\.com|github\.com\/android|play\.google\.com|support\.google\.com)\//;
+const HOST_RE = /^https:\/\/(developer\.apple\.com|support\.apple\.com|swift\.org|github\.com\/apple|developer\.android\.com|android-developers\.googleblog\.com|kotlinlang\.org|m3\.material\.io|developer\.chrome\.com|source\.android\.com|github\.com\/android|play\.google\.com|support\.google\.com|developers\.google\.com|ai\.google\.dev)\//;
 // Allow one level of balanced parens so Apple method URLs survive intact,
 // e.g. .../view/sheet(isPresented:onDismiss:content:) and .../tint(_:).
 const URL_RE = /https?:\/\/[^\s<>"'\]()]+(?:\([^\s()]*\))?[^\s<>"'\])]*/g;

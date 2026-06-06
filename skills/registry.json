@@ -150,6 +150,60 @@
       }
     },
     {
+      "name": "alarms-scheduling",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers AlarmManager scheduling on Android — exact vs inexact alarms, setExactAndAllowWhileIdle, SCHEDULE_EXACT_ALARM permission, Doze interactions, and when alarms beat WorkManager. Use when you need to fire code at a precise wall-clock time that must survive device idle or Doze mode.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "alarms",
+        "alarmmanager",
+        "scheduling",
+        "background-work",
+        "doze"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/alarms-scheduling",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "app-actions-assistant",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Teaches how to expose app capabilities to Android system surfaces via App Actions and shortcuts — Use when integrating with Google Assistant, surfacing app capabilities in launcher search, or wiring static/dynamic/pinned shortcuts so the OS can deep-link into your features.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "app-actions",
+        "shortcuts",
+        "assistant",
+        "deep-linking",
+        "launcher"
+      ],
+      "pairs_with": [],
+      "path": "android/code/media-camera-ml/app-actions-assistant",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "app-intents",
       "domain": "apple",
       "class": "code",
@@ -275,6 +329,33 @@
       }
     },
     {
+      "name": "app-widgets-glance",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers home-screen widgets built with Jetpack Glance — GlanceAppWidget and its Compose-style UI API, Glance state and update strategies, actions (actionRunCallback, actionStartActivity), responsive and adaptive sizing, and the boundary with legacy RemoteViews. Use when building or modernizing Android home-screen or lock-screen widgets with a Compose-first approach on Android 16+ or targeting large-screen surfaces.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "glance",
+        "widgets",
+        "appwidget",
+        "compose",
+        "home-screen"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/app-widgets-glance",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "appkit-core",
       "domain": "apple",
       "class": "code",
@@ -320,6 +401,33 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-frameworks/appkit-swiftui-interop",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "appsearch",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "Covers AppSearch for on-device full-text indexing — defining a schema with @Document, building a LocalStorage or PlatformStorage session, putting and removing documents, executing structured queries with operators and ranking, and surfacing results in system search. Use when an app needs fast on-device search over its own structured content, wants to expose that content to the platform search UI, or needs to replace a manual SQLite FTS setup.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "appsearch",
+        "search",
+        "indexing",
+        "data",
+        "jetpack"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/appsearch",
       "resources": {
         "reference": false,
         "examples": false,
@@ -379,6 +487,33 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/build-packaging/asset-catalogs",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "autofill",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Guides Android developers on optimizing app fields for the Autofill framework using autofill hints and proper view structure. Use when implementing login forms, address inputs, or payment fields to ensure compatibility with password managers and the system autofill service, or when building a custom autofill service.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "autofill",
+        "forms",
+        "security",
+        "ux",
+        "accessibility"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/autofill",
       "resources": {
         "reference": false,
         "examples": false,
@@ -477,6 +612,114 @@
       }
     },
     {
+      "name": "backup-restore",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "Covers Android Auto Backup and Key/Value Backup — configuring rules, exclusions, device-to-device transfer, cloud restore, and test workflows. Use when implementing or debugging app data backup and restore behavior on Android 16+.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "backup",
+        "restore",
+        "autobackup",
+        "data",
+        "jetpack"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/backup-restore",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "biometric",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers BiometricPrompt for fingerprint/face/device-credential authentication on Android — use when gating sensitive actions, protecting CryptoObject-bound keys, or choosing authenticator strength for your security model.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "biometric",
+        "security",
+        "authentication",
+        "cryptography",
+        "identity"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/biometric",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "bluetooth-ble",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android Bluetooth Low Energy — Android 12+ runtime permissions (BLUETOOTH_SCAN/CONNECT/ADVERTISE), scanning with BluetoothLeScanner, connecting as a GATT client, discovering services and characteristics, read/write/notify, connection lifecycle and reliability patterns, and an overview of the peripheral (advertiser) role. Use when scanning for BLE peripherals, connecting to GATT servers, streaming characteristic notifications, or advertising as a BLE peripheral on Android.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "bluetooth",
+        "ble",
+        "gatt",
+        "android",
+        "permissions",
+        "connectivity"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/bluetooth-ble",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "broadcasts",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android BroadcastReceiver, context-registered vs manifest-declared receivers, implicit broadcast restrictions, exported flags and RECEIVER_EXPORTED/RECEIVER_NOT_EXPORTED, and modern alternatives like Flow for app-internal events. Use when sending or receiving system or custom broadcasts, or replacing legacy broadcast patterns with coroutines and Flow.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "broadcasts",
+        "broadcastreceiver",
+        "platform-services",
+        "background-work"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/broadcasts",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "build-sign-distribute",
       "domain": "apple",
       "class": "lang-tooling",
@@ -505,6 +748,33 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "camerax",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Covers CameraX — binding Preview, ImageCapture, ImageAnalysis, and VideoCapture use cases to a lifecycle, choosing CameraController vs ProcessCameraProvider, embedding a Compose camera preview, configuring resolution and aspect ratio, applying Camera Extensions, and requesting camera permissions. Use when adding a camera viewfinder, capturing photos or video, running real-time image analysis, or integrating vendor-specific camera extensions in a Jetpack Compose app.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "camerax",
+        "camera",
+        "media",
+        "jetpack",
+        "android-camera"
+      ],
+      "pairs_with": [],
+      "path": "android/code/media-camera-ml/camerax",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -1409,6 +1679,32 @@
       }
     },
     {
+      "name": "content-providers",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "Covers authoring and consuming Android ContentProviders — content URIs, MIME types, ContentResolver, URI permission grants, and cross-app data sharing. Use when an app needs to expose structured data to other apps, integrate with system providers (contacts, media), or share files across process boundaries with fine-grained permission control.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "content-provider",
+        "contentresolver",
+        "android",
+        "data"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/content-providers",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "controls-widgets",
       "domain": "apple",
       "class": "code",
@@ -1648,6 +1944,32 @@
       }
     },
     {
+      "name": "credential-manager",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android Credential Manager — the unified API for passkeys, saved passwords, and Sign in with Google that replaces legacy auth stacks. Use when implementing modern sign-in flows, adopting passkeys, migrating away from SmartLock or the deprecated One Tap library, or presenting the bottom-sheet credential picker on Android 16+.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "auth",
+        "passkeys",
+        "credential-manager",
+        "sign-in"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/credential-manager",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "cryptokit",
       "domain": "apple",
       "class": "code",
@@ -1676,6 +1998,33 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "datastore",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "Covers Jetpack DataStore for persistent key-value and typed proto storage — Preferences DataStore, Proto DataStore, reading preferences as a Flow, edit transactions, error handling, and migrating from SharedPreferences. Use when replacing SharedPreferences, persisting typed user settings, or streaming preference changes reactively in an Android app.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "datastore",
+        "preferences",
+        "persistence",
+        "flow"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/datastore",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -1801,6 +2150,60 @@
       }
     },
     {
+      "name": "files-serialization",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "Covers app-specific file I/O, cache vs files directory, streaming large files, and persisting structured data with kotlinx.serialization to disk. Use when you need lightweight structured persistence without a full database, or when storing binary/text blobs in internal storage.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "files",
+        "serialization",
+        "storage",
+        "kotlinx-serialization",
+        "io"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/files-serialization",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "foreground-services",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android foreground services — declaring service types, posting a required notification, handling background-start restrictions, and managing lifecycle. Use when building features that require long-running, user-visible work such as media playback, navigation, fitness tracking, or file transfers.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "foreground-service",
+        "service-types",
+        "notification",
+        "background-work",
+        "lifecycle"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/foreground-services",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "gamekit",
       "domain": "apple",
       "class": "code",
@@ -1824,6 +2227,87 @@
       ],
       "pairs_with": [],
       "path": "apple/code/graphics-games/gamekit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "gemini-nano-aicore",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "On-device generative AI with Gemini Nano via AICore and the ML Kit GenAI APIs — summarization, proofreading, rewrite, and image description on Android 16+. Use when integrating on-device text or image intelligence into an Android app without sending user data to a server, when choosing between on-device Gemini Nano and a cloud model, or when checking capability availability before invoking an AICore feature.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "gemini-nano",
+        "aicore",
+        "on-device-ai",
+        "ml-kit",
+        "genai"
+      ],
+      "pairs_with": [],
+      "path": "android/code/media-camera-ml/gemini-nano-aicore",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "haptics-vibration",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android haptic feedback via VibratorManager and VibrationEffect — Use when adding tactile reinforcement to UI interactions, custom vibration patterns, or Compose haptic feedback in Android apps.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "haptics",
+        "vibration",
+        "ux",
+        "platform-services",
+        "compose"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/haptics-vibration",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "health-services",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Health Services on Wear OS for low-power sensor and exercise tracking, and Health Connect as the on-device health datastore and cross-app sharing layer including permissions. Use when building fitness or health features on Wear OS with real-time sensor data, or when reading/writing health records from a phone or watch app via Health Connect.",
+      "platforms": [
+        "android",
+        "wear-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "health-services",
+        "health-connect",
+        "wear-os",
+        "fitness",
+        "sensors"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/health-services",
       "resources": {
         "reference": false,
         "examples": false,
@@ -3925,6 +4409,59 @@
       }
     },
     {
+      "name": "ktor-client",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Ktor HTTP client for Android and large-screen apps — Use when building type-safe, coroutine-native HTTP networking with content negotiation, auth plugins, and Kotlin Multiplatform compatibility.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "networking",
+        "ktor",
+        "kotlin-multiplatform",
+        "coroutines"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/ktor-client",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "litert-mediapipe",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Guides on-device ML on Android using LiteRT (formerly TensorFlow Lite) for custom model inference and MediaPipe Tasks for streaming perception pipelines. Use when you need to run custom .tflite models locally, configure GPU or NNAPI delegates, or build real-time vision/audio pipelines without a network round-trip.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "machine-learning",
+        "litert",
+        "mediapipe",
+        "on-device-ml"
+      ],
+      "pairs_with": [],
+      "path": "android/code/media-camera-ml/litert-mediapipe",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "localization",
       "domain": "apple",
       "class": "lang-tooling",
@@ -3953,6 +4490,33 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "location-sensors",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers the Fused Location Provider for current location and updates, location permission tiers (coarse/fine/background/approximate), geofencing, and SensorManager for motion and position sensors including activity recognition. Use when requesting or streaming device location, setting up geofence triggers, reading accelerometer or gyroscope data, or classifying physical activity in an Android app.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "location",
+        "sensors",
+        "geofencing",
+        "fused-location",
+        "activity-recognition"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/location-sensors",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -4937,6 +5501,115 @@
       }
     },
     {
+      "name": "media-projection",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Covers screen capture with MediaProjection API — Use when building screen recording, live-streaming, or mirroring features that require capturing display output to a Surface or VirtualDisplay on Android 16+.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "media",
+        "screen-capture",
+        "foreground-service",
+        "virtual-display"
+      ],
+      "pairs_with": [],
+      "path": "android/code/media-camera-ml/media-projection",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "media3-exoplayer",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Media3 ExoPlayer skill for Android — Use when building video/audio playback with adaptive streaming (DASH/HLS), DRM, playlists, track selection, or player surfaces in Jetpack Compose or Views.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "android-tv"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "media3",
+        "exoplayer",
+        "video",
+        "playback",
+        "adaptive-streaming"
+      ],
+      "pairs_with": [],
+      "path": "android/code/media-camera-ml/media3-exoplayer",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "media3-session",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Covers Media3 MediaSession and MediaController for exposing playback to the system. Use when building background audio/video playback, media notification controls, or browsable media libraries with MediaSessionService or MediaLibraryService.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "android-tv"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "media3",
+        "mediasession",
+        "background-playback",
+        "exoplayer",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/media-camera-ml/media3-session",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "mediastore",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "Covers MediaStore queries, inserts, edits, and deletions for images/video/audio, relative path usage, RecoverableSecurityException handling, and the photo picker as a permission-free alternative. Use when reading or writing shared media files on Android, presenting a file picker for images or video, or managing app-contributed media.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "mediastore",
+        "photo-picker",
+        "storage",
+        "media",
+        "permissions"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/mediastore",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "metal",
       "domain": "apple",
       "class": "code",
@@ -4961,6 +5634,33 @@
       ],
       "pairs_with": [],
       "path": "apple/code/graphics-games/metal",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "ml-kit",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Covers ML Kit on-device vision and language APIs (barcode scanning, text recognition, face detection, image labeling, translation, smart reply) — use when adding turnkey ML features to an Android app without building or hosting custom models.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "ml-kit",
+        "machine-learning",
+        "vision",
+        "camera",
+        "cameraX"
+      ],
+      "pairs_with": [],
+      "path": "android/code/media-camera-ml/ml-kit",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5184,6 +5884,60 @@
       }
     },
     {
+      "name": "nfc",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers NFC tag reading and writing, NDEF data handling, the tag dispatch system, foreground dispatch, and Host Card Emulation (HCE) basics for Android apps. Use when building features that read or write NFC tags, emulate smart cards, or need to intercept NFC intents in the foreground.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "nfc",
+        "ndef",
+        "hce",
+        "connectivity",
+        "platform-services"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/nfc",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "notifications",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android notifications using NotificationCompat — creating channels with appropriate importance levels, requesting the POST_NOTIFICATIONS runtime permission on Android 13+, applying rich styles (BigText, Inbox, Media, Messaging), adding actions and direct-reply, grouping related notifications, and implementing conversation/bubble notifications. Use when building any feature that needs to alert the user outside the foreground, add notification actions or direct reply, group related alerts, or surface chat conversations as bubbles.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "notifications",
+        "notificationcompat",
+        "channels",
+        "android-13",
+        "conversations"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/notifications",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "observation",
       "domain": "apple",
       "class": "code",
@@ -5332,6 +6086,34 @@
       ],
       "pairs_with": [],
       "path": "apple/code/media/photokit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "power-doze",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android Doze mode and App Standby buckets, background execution and network restrictions, battery-optimization exemptions, and designing work to survive maintenance windows. Use when building features that schedule background work, send notifications, sync data, or must behave correctly under power-saving constraints.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "doze",
+        "app-standby",
+        "battery",
+        "background",
+        "workmanager",
+        "power"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/power-doze",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5552,6 +6334,87 @@
       }
     },
     {
+      "name": "retrofit-okhttp",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers HTTP networking with Retrofit and OkHttp — defining service interfaces, suspend functions and Flow, converters (kotlinx.serialization/Moshi), interceptors and auth, timeouts and caching, and error/exception handling. Use when building or reviewing an Android network layer, wiring a REST API, adding auth headers, handling HTTP errors, or configuring caching and timeouts.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "networking",
+        "retrofit",
+        "okhttp",
+        "kotlin",
+        "coroutines"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/retrofit-okhttp",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "room",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "Covers Room persistence — @Entity, @Dao, @Database, queries returning Flow, relations and @Relation, type converters, @Transaction, migrations (auto and manual) and fallback, suspend DAO functions, and Room KMP. Use when implementing a local SQLite database with Jetpack Room, modelling entities with relations, reacting to data changes via Flow, handling schema migrations, or targeting Room KMP for shared Kotlin Multiplatform persistence.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "room",
+        "database",
+        "persistence",
+        "coroutines",
+        "flow"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/room",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "runtime-permissions",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android runtime permissions — requesting dangerous permissions with ActivityResult APIs and rememberLauncherForActivityResult, showing rationale, handling permanent denial, one-time and partial grants for location/media/notifications, and minimizing requests. Use when an Android app needs to request dangerous permissions, handle denial flows, or adapt behavior to partial grants such as approximate location or selected photos.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "permissions",
+        "android",
+        "jetpack-compose",
+        "activityresult",
+        "platform-services"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/runtime-permissions",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "scenekit",
       "domain": "apple",
       "class": "code",
@@ -5583,6 +6446,33 @@
       }
     },
     {
+      "name": "scoped-storage",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "Covers Android scoped storage — app-specific internal and external dirs (no permission required), MediaStore for shared media, the Storage Access Framework for user-chosen documents and trees, FileProvider for sharing files with other apps, and the modern READ_MEDIA_* permission model. Use when reading or writing files on Android 10 and above, sharing a file URI with another app, letting the user pick or save a document, or auditing storage permission usage.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "storage",
+        "scoped-storage",
+        "file-provider",
+        "saf",
+        "permissions"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/scoped-storage",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "screencapturekit",
       "domain": "apple",
       "class": "code",
@@ -5602,6 +6492,33 @@
       ],
       "pairs_with": [],
       "path": "apple/code/media/screencapturekit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "security-crypto",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers encryption at rest on Android using the Android Keystore — generating and using AES/RSA keys, encrypting files and data, selecting algorithms, leveraging hardware-backed keys and StrongBox, and migrating away from the deprecated Jetpack Security crypto library. Use when you need to protect sensitive data stored on device or need guidance on Android cryptographic best practices.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "security",
+        "cryptography",
+        "keystore",
+        "encryption",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/security-crypto",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5755,6 +6672,32 @@
       ],
       "pairs_with": [],
       "path": "apple/code/graphics-games/spritekit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "sqlite-androidx",
+      "domain": "android",
+      "class": "code",
+      "category": "data",
+      "description": "AndroidX SQLite and raw SQL access on Android — Use when you need direct SQLite control below Room, including the androidx.sqlite driver API, bundled SQLite, raw SQL execution, and tradeoffs vs Room.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "sqlite",
+        "database",
+        "data",
+        "androidx"
+      ],
+      "pairs_with": [],
+      "path": "android/code/data/sqlite-androidx",
       "resources": {
         "reference": false,
         "examples": false,
@@ -6824,6 +7767,33 @@
       }
     },
     {
+      "name": "telecom-calls",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Building a calling app with Jetpack Telecom (CallsManager) and self-managed ConnectionService — covers call registration, audio routing, call state management, and system dialer integration. Use when implementing VoIP, SIP, or any in-app calling feature that must coexist correctly with the Android telecom stack.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "telecom",
+        "voip",
+        "calls",
+        "audio-routing",
+        "connectionservice"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/telecom-calls",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "testflight-appstore-connect",
       "domain": "apple",
       "class": "lang-tooling",
@@ -7094,6 +8064,33 @@
       }
     },
     {
+      "name": "uwb-ranging",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers the Jetpack UWB API for centimeter-accurate ranging and direction-finding between Android devices — controller/controlee roles, RangingParameters, RangingResult, session lifecycle, permissions, and hardware availability. Use when building features like spatial device-finding, proximity-gated access, or precise peer-to-peer handoff on UWB-capable hardware.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "uwb",
+        "ranging",
+        "connectivity",
+        "bluetooth",
+        "proximity"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/uwb-ranging",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "viewmodel",
       "domain": "android",
       "class": "code",
@@ -7182,6 +8179,33 @@
       }
     },
     {
+      "name": "webview-custom-tabs",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers embedding web content in Android apps via WebView, Custom Tabs, and Trusted Web Activities — use when deciding how to display URLs, integrate a JavaScript bridge, or wrap a PWA in a native shell.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "webview",
+        "custom-tabs",
+        "twa",
+        "web-content",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/webview-custom-tabs",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "widgetkit",
       "domain": "apple",
       "class": "code",
@@ -7206,6 +8230,33 @@
         "hig-widgets-design"
       ],
       "path": "apple/code/app-frameworks/widgetkit",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "workmanager",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers WorkManager for deferrable, guaranteed background work — OneTimeWorkRequest, PeriodicWorkRequest, Constraints, CoroutineWorker, input/output Data, chaining and unique work, expedited work, and observing WorkInfo. Use when scheduling background tasks that must survive process death, run under specific device conditions, or chain into multi-step pipelines.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "workmanager",
+        "background-work",
+        "coroutines",
+        "android",
+        "jetpack"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/workmanager",
       "resources": {
         "reference": false,
         "examples": true,

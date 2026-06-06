@@ -1,0 +1,22 @@
+- [ ] `FOREGROUND_SERVICE` base permission declared in `AndroidManifest.xml`
+- [ ] Type-specific `FOREGROUND_SERVICE_*` permission declared (e.g., `FOREGROUND_SERVICE_LOCATION`)
+- [ ] `android:foregroundServiceType` attribute set on `<service>` element in manifest
+- [ ] `foregroundServiceType` value matches the type flag passed to `startForeground`
+- [ ] `ServiceCompat.startForeground` used instead of raw `startForeground` for API-level safety
+- [ ] `startForeground` called within `onStartCommand` before any async work begins
+- [ ] Notification channel created with `IMPORTANCE_LOW` or higher before building notification
+- [ ] Notification has a valid small icon and meaningful content text
+- [ ] `ServiceCompat.stopForeground(STOP_FOREGROUND_REMOVE)` called before or in `onDestroy`
+- [ ] Coroutine scope (or other async context) cancelled in `onDestroy` to stop leaked work
+- [ ] Background-start restriction accounted for — guarded by a user gesture, exempt condition, or WorkManager
+- [ ] `onStartCommand` handles `null` intent safely (for `START_STICKY` restarts)
+- [ ] Return value of `onStartCommand` chosen deliberately (`START_STICKY` vs `START_NOT_STICKY` vs `START_REDELIVER_INTENT`)
+- [ ] For `dataSync` type — work is resumable if the 6-hour window (API 35+) is exhausted mid-run
+- [ ] For `shortService` type — total runtime expected to stay under ~3 minutes
+- [ ] Notification updated with progress or status as the work proceeds (not just a static message)
+- [ ] App does not start the service from the background without an applicable system exemption
+- [ ] Tested on Android 14 (API 34) device or emulator to confirm no `InvalidForegroundServiceTypeException`
+- [ ] Tested on Android 15 (API 35) device or emulator to confirm `dataSync` time limits handled if applicable
+- [ ] Large-screen / foldable behavior validated — service lifecycle and notification remain consistent across fold state changes
+- [ ] Battery optimization whitelist prompt shown to the user if sustained background operation is critical
+- [ ] ProGuard / R8 rules verified — `Service` subclass is not obfuscated or removed

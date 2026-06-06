@@ -1,0 +1,21 @@
+- [ ] Only the minimum-required location permission tier is declared in the manifest — `ACCESS_COARSE_LOCATION` for city-level, `ACCESS_FINE_LOCATION` for GPS precision.
+- [ ] `ACCESS_BACKGROUND_LOCATION` is declared only when background access is genuinely necessary and is accompanied by a disclosure screen before the permission request.
+- [ ] Background-location permission is requested in a separate, subsequent call after foreground permission is confirmed granted — not in the same request.
+- [ ] The app handles the case where the user grants approximate (coarse) location when fine was requested on Android 12+, and degrades gracefully.
+- [ ] `getLastLocation()` is tried before `getCurrentLocation()` or `requestLocationUpdates()` to avoid unnecessarily waking the GPS radio.
+- [ ] `LocationCallback` is removed (via `removeLocationUpdates`) when the UI is no longer visible — in `onStop`, `onDispose`, or `awaitClose`.
+- [ ] `LocationRequest` uses the lowest `Priority` that satisfies the use-case — `PRIORITY_BALANCED_POWER_ACCURACY` rather than `PRIORITY_HIGH_ACCURACY` for non-navigation use cases.
+- [ ] `setMinUpdateDistanceMeters` is set on `LocationRequest` to suppress callbacks when the device has not moved a meaningful distance.
+- [ ] Location updates are exposed as a `Flow` and collected via a `ViewModel` so they stop when the lifecycle is not active.
+- [ ] Geofences are registered with a `BroadcastReceiver`-backed `PendingIntent` that handles `GeofencingEvent` defensively (null and error checks).
+- [ ] The total number of registered geofences stays well below the system limit of 100.
+- [ ] Geofences are explicitly removed when the associated feature is disabled, the user signs out, or the relevant data is deleted.
+- [ ] The app re-registers geofences after a device reboot (via a `BOOT_COMPLETED` receiver) because geofences do not persist across reboots.
+- [ ] Sensor availability is checked with `getDefaultSensor()` returning non-null before registering a `SensorEventListener`.
+- [ ] `SensorEventListener` is unregistered in the paired lifecycle or `onDispose` callback to prevent battery drain.
+- [ ] The sensor reporting delay (`SENSOR_DELAY_*`) is set to the lowest frequency sufficient for the use-case — `SENSOR_DELAY_NORMAL` for UI, `SENSOR_DELAY_GAME` only for interactive real-time apps.
+- [ ] High-frequency sensor event processing is offloaded off the main thread to avoid jank.
+- [ ] The Activity Recognition API is preferred over manual sensor fusion for classifying walking, running, or vehicle activity.
+- [ ] On large-screen or foldable devices, sensor axis remapping via `SensorManager.remapCoordinateSystem` is applied when computing absolute orientation.
+- [ ] The app requests `ACTIVITY_RECOGNITION` permission (required on Android 10+) before calling `ActivityRecognitionClient` APIs.
+- [ ] All `Task`-returning FLP and geofencing calls use `.await()` (from `kotlinx-coroutines-play-services`) or have a failure listener attached — no fire-and-forget.

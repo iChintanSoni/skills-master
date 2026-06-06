@@ -1,0 +1,18 @@
+- [ ] `CAMERA` permission is declared in `AndroidManifest.xml` and requested at runtime before any camera use case is bound.
+- [ ] `RECORD_AUDIO` permission is declared and requested at runtime before calling `withAudioEnabled()` on a recording.
+- [ ] `LifecycleCameraController` or `ProcessCameraProvider` setup is performed inside `remember { }` or a ViewModel — never re-created on each recomposition.
+- [ ] `PreviewView.implementationMode` is set to `COMPATIBLE` when the view is inside a scrollable container, partially clipped, or transformed by a parent.
+- [ ] `controller.bindToLifecycle(lifecycleOwner)` is called exactly once per controller instance and not on a background thread.
+- [ ] `ImageAnalysis` uses `STRATEGY_KEEP_ONLY_LATEST` backpressure strategy to prevent frame-queue buildup.
+- [ ] Every `ImageProxy` passed to `setImageAnalysisAnalyzer` is closed (`imageProxy.close()`) in ALL code paths, including error and early-return branches.
+- [ ] `ResolutionSelector` or `ResolutionStrategy` is used instead of the deprecated `setTargetResolution` on API 33+ targets; only one of aspect-ratio strategy or resolution strategy is set per use case.
+- [ ] Camera Extension availability is checked with `ExtensionsManager.isExtensionAvailable` before calling `getExtensionEnabledCameraSelector`; a fallback to the default selector is in place.
+- [ ] `cameraProvider.unbindAll()` is called before re-binding use cases when switching cameras, modes, or extensions.
+- [ ] The total number of simultaneously bound use cases does not exceed device limits; if `Preview`, `ImageCapture`, `ImageAnalysis`, and `VideoCapture` are all needed, confirm via `CameraInfo.isUseCasesCombinationSupported` at runtime.
+- [ ] A `DisposableEffect` or ViewModel `onCleared` stops any active `Recording` and shuts down any dedicated `Executor` used for `ImageAnalysis`.
+- [ ] The `Camera` object returned by `bindToLifecycle` is not stored in a long-lived field beyond the lifecycle it was bound to.
+- [ ] On foldable/large-screen devices, fold-state changes are observed and the camera is re-bound if the active sensor or display changes.
+- [ ] `ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY` is used unless maximum-quality capture is explicitly required, to keep shutter lag acceptable.
+- [ ] The UI shows a graceful "camera unavailable" state when `CameraState.Type` is `PENDING_OPEN` or `CLOSED` (e.g. another app has the camera).
+- [ ] Tap-to-focus and pinch-to-zoom are delegated to `LifecycleCameraController` built-in support rather than manually implementing `Camera2CameraControl` focus metering.
+- [ ] Unit or integration tests mock the `ImageCapture.OnImageSavedCallback` and verify the happy path and error path without requiring a physical device.
