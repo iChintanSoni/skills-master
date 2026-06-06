@@ -1,0 +1,20 @@
+- [ ] The layout pattern chosen (list-detail, supporting pane, or feed) matches the app's content model — list-detail for item collections, supporting pane for augmented primary content, feed for scrollable grids.
+- [ ] Pane count adapts to three window-width breakpoints (compact < 600 dp, medium 600–840 dp, expanded >= 840 dp), not to device category labels like "tablet" or "phone."
+- [ ] Compact-width design shows a single pane; no two-pane layout is attempted below 600 dp.
+- [ ] Medium-width design has been explicitly decided: two panes are shown only when each pane can hold at least ~280–300 dp of usable content width.
+- [ ] Expanded-width design always shows both panes simultaneously.
+- [ ] List-detail split follows approximately a 1:2 ratio (list one third, detail two thirds); the list pane is not equal to or wider than the detail pane.
+- [ ] Supporting pane is narrower than the primary pane; equal-width splits have been avoided.
+- [ ] Feed layout adds columns as width increases rather than stretching individual cards beyond ~320–400 dp.
+- [ ] The selected item in a list pane remains visually highlighted while the detail pane is showing it.
+- [ ] Back gesture on an expanded two-pane layout returns focus to the list pane (deselects the item) rather than navigating out of the feature.
+- [ ] Top-level navigation (rail or drawer) is positioned outside the multi-pane region and is not duplicated inside individual panes.
+- [ ] On foldables, the pane boundary aligns with the hinge location to avoid content being bisected by the fold.
+- [ ] Table-top posture (fold horizontal) places viewable content in the top half and interactive controls in the bottom half.
+- [ ] Each pane has been reviewed at its minimum width in isolation — the content is legible and all primary actions are accessible without depending on adjacency to the other pane.
+- [ ] Feed cards are not stretched beyond ~320–400 dp at expanded widths; a new column is added instead.
+- [ ] No detail pane displays a persistent "nothing selected" placeholder as its default state in a feed layout.
+- [ ] The supporting pane's content is contextually linked to the primary pane's scroll position or selection.
+- [ ] App-level navigation chrome (NavigationRail, NavigationDrawer) is used at medium and expanded widths; BottomNavigationBar is not shown on expanded layouts.
+- [ ] Transitions between single-pane and multi-pane layouts preserve the user's scroll position and selection state.
+- [ ] The design has been reviewed in both light and dark themes at all relevant width breakpoints.

@@ -1,0 +1,23 @@
+- [ ] Every list item has a clearly primary headline; supporting text genuinely adds decision-making value rather than repeating the headline.
+- [ ] Line density (one-, two-, three-line) is consistent across the entire list, with no mixed-height rows unless content structure genuinely varies.
+- [ ] Leading elements (icons, avatars, thumbnails) are all the same width so headline text aligns consistently across all rows.
+- [ ] Leading icons encode distinct meaning; no icon is used purely as decoration repeated identically on every row.
+- [ ] Avatar images are cropped to 40 dp circles; thumbnail images are cropped to a consistent fixed size; no leading element exceeds 40 dp.
+- [ ] Trailing controls (Switch, Checkbox, Radio) are in the trailing slot, not the leading slot.
+- [ ] No row has both a trailing icon and a trailing control competing for the same slot.
+- [ ] Trailing metadata (date, count, price) uses a secondary text style and does not visually compete with the headline.
+- [ ] Selection state uses both a color/surface change and an icon state change — not color alone.
+- [ ] Multi-select mode follows the contextual action bar pattern: long-press converts leading element to Checkbox; top bar transitions to bulk-action bar with item count.
+- [ ] Swipe actions are only exposed on content rows (editable or deletable objects), not on navigational or read-only rows.
+- [ ] Destructive swipe actions are paired with a Snackbar undo; no silent deletion occurs.
+- [ ] Swipe action background color is paired with a recognizable icon (not color alone) to communicate the action.
+- [ ] Dividers are inset (aligned to headline text) between items in a section; full-bleed dividers are used only at section breaks.
+- [ ] Subheaders are used only for groups of two or more items and are concise (one to three words).
+- [ ] The choice of list over grid is justified by text-first scanning needs; the choice of list over cards is justified by homogeneous content structure.
+- [ ] On expanded-width screens (600 dp+), a maximum content width or two-pane layout is applied so list rows do not span excessive widths.
+- [ ] Item minimum height is 48 dp for interactive rows; no row is shorter than this touch-target minimum.
+- [ ] Truncation priority is clear: trailing metadata truncates before headline text on narrow screens.
+- [ ] Three-line items are verified to need both supporting-text lines; unused third-line space has been eliminated.
+- [ ] Unread, error, or status indicators use both color and a non-color cue (bold weight, icon, label) to serve colorblind users.
+- [ ] Swipe actions are on opposite sides if two directions are used, to prevent accidental destructive action.
+- [ ] Swipe is not enabled on any row where horizontal scroll conflict could occur.

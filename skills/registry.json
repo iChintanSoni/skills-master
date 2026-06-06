@@ -956,7 +956,9 @@
         "a11y",
         "material3"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-accessibility"
+      ],
       "path": "android/code/compose-ui/compose-accessibility",
       "resources": {
         "reference": false,
@@ -983,7 +985,9 @@
         "shared-element",
         "material3"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-motion"
+      ],
       "path": "android/code/compose-ui/compose-animation",
       "resources": {
         "reference": false,
@@ -1149,7 +1153,9 @@
         "paging",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-lists"
+      ],
       "path": "android/code/compose-ui/compose-lazy-lists",
       "resources": {
         "reference": false,
@@ -1337,7 +1343,9 @@
         "design-system",
         "dark-mode"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-color"
+      ],
       "path": "android/code/compose-ui/compose-theming",
       "resources": {
         "reference": false,
@@ -3948,6 +3956,957 @@
       }
     },
     {
+      "name": "m3-accessibility",
+      "domain": "android",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design critique and judgment for Material 3 accessibility foundations: color contrast ratios, 48dp touch targets, scalable text, content descriptions, TalkBack traversal order, never-color-alone signaling, and motion sensitivity. Use when reviewing or designing Android UIs for inclusive access, auditing a screen for TalkBack and dynamic font support, evaluating contrast or touch-target adequacy, or deciding how custom components should communicate state to assistive technologies.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "accessibility",
+        "m3",
+        "design",
+        "talkback",
+        "contrast"
+      ],
+      "pairs_with": [
+        "compose-accessibility"
+      ],
+      "path": "android/design/foundations/m3-accessibility",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-adaptive-layout",
+      "domain": "android",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design-critique guidance for Material 3 adaptive and responsive layout, covering window size classes and breakpoints, scaling margins and spacing, reflow vs reposition vs reveal strategies, multi-pane layout, and designing one UI that flexes across phones, foldables, tablets, and desktop. Use when critiquing or specifying a screen layout for Android, evaluating whether a design adapts gracefully across compact, medium, and expanded window sizes, deciding between a single-pane and list-detail arrangement, or reviewing how margins and spacing scale with available width.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "layout",
+        "adaptive",
+        "responsive",
+        "foundations"
+      ],
+      "pairs_with": [],
+      "path": "android/design/foundations/m3-adaptive-layout",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-app-bars",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and Material 3 guidance for top app bars (small, center-aligned, medium, large) and the bottom app bar: choosing the right size, scroll behaviors, title and action placement, overflow menus, and how bars interact with FABs and navigation. Use when reviewing or designing an Android screen's top or bottom app bar, selecting between bar sizes and scroll behaviors, placing navigation icons and action items, or evaluating whether a bottom app bar is the right container for actions and a FAB.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "app-bars",
+        "navigation",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-app-bars",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-badges",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design guidance and critique for Material 3 badges on Android: choosing between small dot badges and large numbered badges, placement on navigation and icon targets, count formatting, and accessible labeling. Use when designing or reviewing notification counts, unread indicators, status dots, or any badge overlaid on a navigation item or action icon in a Compose-first Android UI.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "badges",
+        "notifications",
+        "m3",
+        "design",
+        "navigation",
+        "indicators"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-badges",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-button-groups",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design guidance and critique for Material 3 Expressive button groups on Android: choosing connected vs standard groups, orchestrating coordinated interactions and shape morphing, sizing and target rules, and knowing when to group related actions into a single expressive unit instead of placing buttons separately. Use when designing or reviewing toolbars, segmented action sets, filter bars, media controls, or any screen where two or more related actions belong side by side in a cohesive visual cluster.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "button-groups",
+        "expressive",
+        "actions",
+        "components"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-button-groups",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-buttons",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design-critique guidance for Material 3 buttons on Android — covering the five button variants (filled, filled tonal, elevated, outlined, text), emphasis hierarchy, primary-action selection, sizing and shape including M3 Expressive morphing shapes, icons in buttons, and accessible touch targets. Use when reviewing or specifying button choices in a screen, judging whether a variant fits its emphasis level, critiquing hierarchy when multiple buttons compete, or evaluating whether an icon adds clarity or noise. Produces design recommendations and critique, not code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "buttons",
+        "android",
+        "material-you",
+        "components"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-buttons",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-canonical-layouts",
+      "domain": "android",
+      "class": "design",
+      "category": "foundations",
+      "description": "Material 3 design guidance for the three canonical adaptive layouts — list-detail, supporting pane, and feed — covering when each fits, how panes compose across window size classes, and how to adapt gracefully from compact phone to large-screen and foldable. Use when designing or critiquing an Android app layout that must scale across screen sizes, choosing between multi-pane and single-pane navigation, or deciding how to surface secondary content alongside a primary view.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "layout",
+        "adaptive",
+        "large-screen"
+      ],
+      "pairs_with": [],
+      "path": "android/design/foundations/m3-canonical-layouts",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-cards",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design guidance and critique for Material 3 cards on Android: choosing between elevated, filled, and outlined card variants, deciding when a card beats a list item or plain surface, clickable vs container cards, sizing and touch targets, and grouping related content and actions. Use when designing or reviewing any card-based layout, content groupings, feed items, dashboard tiles, or deciding between a card and a list row in Compose-first Android UI.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "cards",
+        "containers",
+        "m3",
+        "design",
+        "layout",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-cards",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-carousel",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design judgment and critique for Material 3 carousels on Android: choosing among multi-browse, uncontained, hero, and full-screen layouts, sizing items for clarity and touch, using parallax and peek to signal scrollability, and ensuring accessible scroll experiences. Use when deciding whether a carousel is the right pattern for a content row, when selecting a carousel variant, or when reviewing an existing carousel design for visual hierarchy, item density, and scroll accessibility.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "carousel",
+        "android",
+        "scrolling"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-carousel",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-color",
+      "domain": "android",
+      "class": "design",
+      "category": "styles",
+      "description": "Design critique and guidance for the Material 3 color system on Android: tonal palettes, semantic color roles, light and dark schemes, dynamic color on Android 12+, accessible pairings, and role selection for hierarchy and emphasis. Use when designing or auditing a color palette, choosing between primary/secondary/tertiary roles, evaluating contrast in light or dark themes, or deciding whether to adopt dynamic color (Material You).",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "color",
+        "accessibility",
+        "material-you",
+        "android"
+      ],
+      "pairs_with": [
+        "compose-theming"
+      ],
+      "path": "android/design/styles/m3-color",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-dark-theme",
+      "domain": "android",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design guidance and critique for Material 3 dark theme on Android — surface tones, tonal elevation, container hierarchy, dynamic color in dark, contrast and legibility. Use when designing or reviewing a dark-theme UI, auditing tonal surface hierarchy, choosing between pure-black and M3 near-black surfaces, verifying contrast ratios in both themes, or deciding how dynamic color interacts with dark palettes.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "dark-theme",
+        "color",
+        "foundations"
+      ],
+      "pairs_with": [],
+      "path": "android/design/foundations/m3-dark-theme",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-dialogs",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and recommendations for Material 3 dialogs on Android: basic dialogs, full-screen dialogs, when a modal interruption is justified, confirm/dismiss action order and labeling, destructive confirmations, focus and accessibility, and when to choose a bottom sheet or inline message instead. Use when reviewing or designing any dialog, confirmation prompt, or interruption flow in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "dialogs",
+        "modality",
+        "confirmation",
+        "components"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-dialogs",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-dividers-scaffold",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design guidance for Material 3 dividers and the Scaffold screen skeleton: choosing full-width vs inset dividers, knowing when spacing alone is better, and structuring a screen with the Scaffold composable (top app bar, FAB, bottom bar, content slot). Use when reviewing or designing screen layout, deciding whether a visual separator is needed between list items or sections, or evaluating how the top app bar, floating action button, and navigation bar fit together as a cohesive screen frame.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "dividers",
+        "scaffold",
+        "layout",
+        "components"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-dividers-scaffold",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-elevation",
+      "domain": "android",
+      "class": "design",
+      "category": "styles",
+      "description": "Design critique and guidance for Material 3 elevation: when to use tonal elevation vs shadow elevation, the five elevation levels, how surface tint encodes depth via container roles, and how the system adapts on dark theme. Use when reviewing surface hierarchy, deciding whether to elevate a component, auditing how depth reads on light vs dark themes, or contrasting M3 with M2 shadow-only depth. Produces UX recommendations, not code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "elevation",
+        "m3",
+        "design",
+        "material-you",
+        "surfaces",
+        "hierarchy"
+      ],
+      "pairs_with": [],
+      "path": "android/design/styles/m3-elevation",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-fab",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design guidance for Material 3 Floating Action Buttons — covers regular, small, large, and extended FAB variants, placement, insets, FAB menus, and when a FAB beats an ordinary button. Use when deciding whether a screen action deserves a FAB, which FAB variant to choose, or how to position FABs correctly across phone and large-screen layouts.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "fab",
+        "components",
+        "android",
+        "navigation"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-fab",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-icon-buttons",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design guidance for Material 3 icon buttons — standard, filled, tonal, and outlined variants, toggleable states, sizing, and accessibility. Use when deciding which icon button variant fits a surface, whether an icon-only action is appropriate, and how to meet 48dp touch targets.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "icon-button",
+        "android",
+        "components",
+        "accessibility"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-icon-buttons",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-icons",
+      "domain": "android",
+      "class": "design",
+      "category": "styles",
+      "description": "Design-critique guidance for Material Symbols iconography in Material 3 Android apps: the variable font axes (weight, fill, grade, optical size), sizing and touch-target alignment, filled vs outlined usage conventions, iconographic consistency, and accessibility labeling for actionable icons. Use when choosing between filled and outlined icon variants; when calibrating icon size, visual weight, or optical size for body text, headlines, or toolbar contexts; when ensuring icon state changes communicate correctly without color alone; when auditing icon set consistency across an app; or when reviewing whether interactive icons carry accessible labels.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "icons",
+        "material-symbols",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/styles/m3-icons",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-interaction-states",
+      "domain": "android",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design critique and guidance for Material 3 interaction states — enabled, disabled, hover, focus, pressed, dragged, and selected — including state-layer opacities, ripple feedback, and applying states consistently so every interactive element clearly communicates its status. Use when auditing interactive elements for missing or inconsistent state feedback, choosing state-layer colors, evaluating ripple placement, or reviewing touch targets for accessibility compliance.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "interaction",
+        "states",
+        "foundations",
+        "accessibility"
+      ],
+      "pairs_with": [],
+      "path": "android/design/foundations/m3-interaction-states",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-layout-spacing",
+      "domain": "android",
+      "class": "design",
+      "category": "foundations",
+      "description": "Covers Material 3 layout and spacing design judgment — the 4dp/8dp grid, margins, padding, density, whitespace grouping, and rhythm — for Android UI. Use when designing or critiquing screen layouts, reviewing component spacing, or evaluating visual hierarchy and grouping across phone and large-screen form factors.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "layout",
+        "spacing",
+        "foundations",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/foundations/m3-layout-spacing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-lists",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Material 3 design guidance for list components on Android — one-, two-, and three-line items with leading and trailing elements, dividers and grouping, density, selection, swipe actions, and when lists beat grids or cards. Use when designing or critiquing any scrollable list surface in an Android app that follows Material You / M3 Expressive.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "lists",
+        "android",
+        "material-you",
+        "components"
+      ],
+      "pairs_with": [
+        "compose-lazy-lists"
+      ],
+      "path": "android/design/components/m3-lists",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-loading-indicator",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Applies Material 3 Expressive design guidance to the loading indicator component — choosing it for indefinite waits instead of a linear/circular progress indicator, understanding its animated personality, sizing and placement rules, and when to prefer alternatives such as skeleton screens or determinate progress. Use when designing or reviewing any screen that shows an indefinite wait state, deciding between a loading indicator and other progress patterns, or critiquing the expressiveness and appropriateness of a wait experience in an Android app.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "loading",
+        "progress",
+        "feedback",
+        "components",
+        "m3",
+        "design"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-loading-indicator",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-motion",
+      "domain": "android",
+      "class": "design",
+      "category": "styles",
+      "description": "Design critique and guidance for Material 3 motion in Android apps: easing and duration tokens, standard vs. expressive motion schemes, physics-based spring motion, M3 transition patterns, choreography, and honoring reduce-motion. Use when reviewing or designing animations, transitions, or state changes in a Material You app, or when auditing motion for accessibility and consistency with the M3 motion system. Produces design judgment and UX recommendations, not code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "motion",
+        "animation",
+        "m3",
+        "design",
+        "transitions",
+        "accessibility"
+      ],
+      "pairs_with": [
+        "compose-animation"
+      ],
+      "path": "android/design/styles/m3-motion",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-navigation",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Material 3 design guidance for primary navigation on Android: when to use a navigation bar, navigation rail, or navigation drawer based on window size class, how to handle 3-7 top destinations, and how to design adaptive navigation that transitions across compact, medium, and expanded layouts. Use when designing or critiquing app-level navigation structure, evaluating destination count, or auditing active-state treatment and accessibility of primary nav components.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "navigation",
+        "adaptive",
+        "android"
+      ],
+      "pairs_with": [
+        "navigation-compose"
+      ],
+      "path": "android/design/components/m3-navigation",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-progress-indicators",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Material 3 design guidance for progress indicators — choosing between linear and circular, determinate and indeterminate, the M3 Expressive loading indicator, and when to show no indicator at all. Use when designing or reviewing any loading state, background operation, or in-progress feedback in an Android app, or when deciding whether a LinearProgressIndicator, CircularProgressIndicator, or LoadingIndicator is the right choice for a given context.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "progress",
+        "loading",
+        "feedback",
+        "components"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-progress-indicators",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "m3-rtl-internationalization",
+      "domain": "android",
+      "class": "design",
+      "category": "foundations",
+      "description": "Design critique and guidance for right-to-left and internationalized layouts on Android using Material 3. Use when reviewing or designing for Arabic, Hebrew, Farsi, Urdu, or other RTL localizations, when deciding which icons to mirror vs. keep fixed, when handling text expansion and truncation across locales, or when the team still reasons in left/right terms instead of start/end. Produces UX recommendations, not implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "rtl",
+        "localization",
+        "m3",
+        "design",
+        "layout",
+        "foundations"
+      ],
+      "pairs_with": [],
+      "path": "android/design/foundations/m3-rtl-internationalization",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-search",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design guidance for Material 3 search patterns — Use when deciding between search bar and search view, placing search in navigation, handling suggestions and recent queries, supporting voice entry, and determining when search warrants a prominent surface.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "search",
+        "navigation",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-search",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-segmented-buttons",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design judgment and critique for Material 3 segmented buttons — a compact row of connected options for single-select or multi-select choices within a view. Use when designing or reviewing a segmented button group, deciding between segmented buttons and tabs, chips, or radio buttons, judging correct item counts, and evaluating label and icon clarity on Android.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "segmented-buttons",
+        "selection",
+        "components",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-segmented-buttons",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-shape",
+      "domain": "android",
+      "class": "design",
+      "category": "styles",
+      "description": "Design guidance for the Material 3 shape system — scale, corner families, component-to-shape assignments, using shape for emphasis and brand expression, and M3 Expressive shape morphing. Use when reviewing or designing component roundness, deciding which shape tier fits a surface or interactive element, communicating brand through corner style, or auditing shape consistency across a Compose UI.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "shape",
+        "material-you",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/styles/m3-shape",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-sheets",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and guidance for Material 3 bottom sheets and side sheets on Android: choosing between modal and standard variants, setting drag handles and partial expansion, deciding when a sheet beats a dialog, and adapting to large-screen and foldable layouts with side sheets. Use when reviewing a contextual action panel, a filter drawer, a details overlay, or any surface that slides over the main content, and you need M3-grounded design recommendations rather than implementation code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "sheets",
+        "bottom-sheets",
+        "android",
+        "side-sheets"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-sheets",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-snackbar",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and recommendations for Material 3 Snackbars on Android. Use when reviewing or designing brief transient feedback messages, deciding whether a snackbar is the right feedback pattern at all, choosing action label copy, timing duration, handling placement relative to a floating action button, and knowing when a dialog, banner, or inline message is a better fit. Produces UX guidance, not code.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "snackbar",
+        "feedback",
+        "m3",
+        "design",
+        "components",
+        "transient"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-snackbar",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-tabs",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and guidance for Material 3 tabs on Android, covering primary vs secondary tabs, fixed vs scrollable layout, when tabs complement or replace a navigation bar, label and icon conventions, and content-switching expectations. Use when reviewing or designing in-page navigation, choosing between primary and secondary tab styles, deciding on fixed vs scrollable tab layout, or determining whether tabs are the right component for a given navigational context.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "tabs",
+        "navigation",
+        "android",
+        "material-you"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-tabs",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-tooltips",
+      "domain": "android",
+      "class": "design",
+      "category": "components",
+      "description": "Design critique and guidance for Material 3 tooltips on Android, covering plain vs rich variants, hover and long-press triggers, helper-text conciseness, and the rule that tooltips must never carry information essential to task completion. Use when designing or reviewing tooltip placement, variant selection, and copy for Compose-first Android apps.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "tooltips",
+        "components",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/components/m3-tooltips",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-typography",
+      "domain": "android",
+      "class": "design",
+      "category": "styles",
+      "description": "Critiques typography choices against Material 3 design principles, covering the five type-role families (display, headline, title, body, label) at large/medium/small, mapping those roles to visual hierarchy, variable font usage, readable line lengths, and honoring the user's font-size preference. Use when reviewing a screen's text hierarchy, evaluating whether type roles are applied semantically, deciding between competing type roles, assessing readability at different densities, or auditing a layout for respect of system font-scale settings.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "typography",
+        "material-you",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/design/styles/m3-typography",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-writing",
+      "domain": "android",
+      "class": "design",
+      "category": "foundations",
+      "description": "Guides designers and engineers on UX writing and content design for Material 3 Android apps. Use when crafting labels, button text, error messages, empty states, or any in-product copy to ensure clarity, consistent tone, and localization-friendly phrasing.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "ux-writing",
+        "content-design",
+        "android",
+        "foundations"
+      ],
+      "pairs_with": [],
+      "path": "android/design/foundations/m3-writing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "mapkit",
       "domain": "apple",
       "class": "code",
@@ -4151,7 +5110,9 @@
         "architecture",
         "type-safe-routes"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-navigation"
+      ],
       "path": "android/code/architecture/navigation-compose",
       "resources": {
         "reference": false,

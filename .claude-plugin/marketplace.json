@@ -13,6 +13,13 @@
       "category": "development"
     },
     {
+      "name": "skills-master-android-design",
+      "source": "./plugins/skills-master-android-design",
+      "description": "Android design-review skills.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
       "name": "skills-master-android-lang-tooling",
       "source": "./plugins/skills-master-android-lang-tooling",
       "description": "Android language, build, test & ship skills.",

@@ -1,0 +1,18 @@
+- [ ] The navigation surface matches the window size class: navigation bar for compact, rail for medium, permanent drawer for expanded.
+- [ ] The number of top-level destinations is between 3 and 7, with 5 or fewer preferred for compact layouts.
+- [ ] Destinations are peer-level: no sub-destination, action, or utility item (search, compose, settings) is mixed into the primary nav surface.
+- [ ] The active destination shows the M3 pill indicator with `secondaryContainer` fill and `onSecondaryContainer` icon tint.
+- [ ] Inactive destination icons use `onSurfaceVariant` at full opacity and do not appear disabled.
+- [ ] Labels are present and readable at all widths; no label is truncated at the target breakpoint.
+- [ ] The design specifies behavior at all three window size classes (compact, medium, expanded) — not just the phone layout.
+- [ ] Content layout adapts alongside the navigation surface: expanded width uses additional columns or list-detail rather than extra padding.
+- [ ] Navigation state (selected destination, scroll position, back stack) is preserved across fold/unfold and window resize.
+- [ ] The navigation bar remains visible during scroll; it is not hidden on scroll-down.
+- [ ] Each destination item has a touch target of at least 48 x 48 dp.
+- [ ] Icons without persistent visible labels have content descriptions specified in the design handoff.
+- [ ] Active state is not conveyed by color alone; the indicator shape provides a second, shape-based cue.
+- [ ] Keyboard/D-pad focus order through navigation destinations is defined for large-screen layouts.
+- [ ] The permanent drawer on expanded layouts does not overlap or compete with system bars (status bar, taskbar).
+- [ ] No "More" overflow item appears in the navigation bar; if one is needed, the destination count must be reduced.
+- [ ] Dynamic color (Material You) has been considered: the design does not hard-code hex values for navigation states that would override wallpaper-derived color schemes.
+- [ ] The navigation surface is not used on Wear OS or TV form factors where different navigation paradigms apply.
