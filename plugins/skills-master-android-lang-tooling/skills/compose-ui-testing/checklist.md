@@ -1,0 +1,16 @@
+- [ ] Every composable under test has a stable `Modifier.testTag(TestTags.SOME_CONSTANT)` on its outermost meaningful node; tag constants are defined in a shared object, not as inline string literals.
+- [ ] `createComposeRule()` is used for composable-only tests; `createAndroidComposeRule<MyActivity>()` is used only when a real `Activity`, theme, or system resource is required.
+- [ ] `rule.setContent { … }` receives a fresh composable with fresh fakes on every test (or the shared state is reset in `@Before`); no mutable state leaks between tests.
+- [ ] ViewModels and repositories injected into composables under test are hand-rolled fakes or Hilt test replacements — not production singletons.
+- [ ] Nodes that may be off-screen in a `LazyColumn`/`LazyRow` are reached via `performScrollTo()`, `performScrollToIndex()`, or `performScrollToKey()` before any visibility assertion.
+- [ ] `assertIsDisplayed()` is used only when viewport visibility is the actual requirement; `assertExists()` is used when only presence in the semantics tree matters.
+- [ ] Assertions after async state changes use `advanceUntilIdle()` on a `TestDispatcher` or an `IdlingResource`, not `Thread.sleep`.
+- [ ] `mainClock.autoAdvance = false` is used when stepping through animations; it is restored to `true` in `@After` or at the end of the test to avoid contaminating subsequent tests.
+- [ ] `IdlingResource` instances registered with `rule.registerIdlingResource` are unregistered in `@After` to prevent timeout leaks in the test suite.
+- [ ] `performTextInput` is preceded by `performTextClearance()` (or replaced with `performTextReplacement`) whenever the text field may already contain content.
+- [ ] `useUnmergedTree = true` is used sparingly and only when the test legitimately needs to inspect internal node structure, not as a workaround for a missing `testTag`.
+- [ ] Each screenshot/golden test covers at least the empty, loading, error, and success states rather than a single state.
+- [ ] Screenshot tests target at least API 26 (`minSdk 26` in the test variant) because `captureToImage()` is not supported on lower API levels.
+- [ ] Test tag constants live in a location accessible to both production and test source sets (e.g., a `:testing` module or a `TestTags` object in `androidTest`), preventing duplication.
+- [ ] Tests that verify disabled/enabled state use `assertIsEnabled()` / `assertIsNotEnabled()` rather than checking text color or alpha, which are implementation details.
+- [ ] All node matchers are as specific as possible — combining `hasTestTag` with `hasClickAction` or `isEnabled` — to avoid accidental matches when multiple nodes share similar properties.

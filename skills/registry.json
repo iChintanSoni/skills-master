@@ -3,6 +3,32 @@
   "version": "0.1.0",
   "skills": [
     {
+      "name": "accessibility-testing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Covers Android accessibility testing — Accessibility Scanner, Espresso/Compose a11y checks, TalkBack and Switch Access manual walkthroughs, contrast and touch-target audits, and gating a11y failures in CI. Use when validating that an Android app is usable by people who rely on assistive technology, auditing for WCAG contrast or touch-target failures, or adding accessibility checks to a CI pipeline.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "accessibility",
+        "testing",
+        "espresso",
+        "talkback",
+        "ci"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/ship/accessibility-testing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "activitykit",
       "domain": "apple",
       "class": "code",
@@ -207,6 +233,33 @@
       }
     },
     {
+      "name": "android-navigation-architecture",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Covers Android navigation architecture — where navigation logic lives, a single NavController as source of truth, type-safe routes with Navigation 2.x Kotlin DSL, decoupling destinations from feature modules, deep-link strategy, and testing navigation graphs. Use when designing app-wide navigation, choosing a single- vs multi-graph structure, wiring feature modules to a nav graph, handling deep links, or writing navigation unit tests.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "navigation",
+        "architecture",
+        "deep-linking",
+        "routing",
+        "jetpack"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/architecture/android-navigation-architecture",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "app-actions-assistant",
       "domain": "android",
       "class": "code",
@@ -227,6 +280,59 @@
       ],
       "pairs_with": [],
       "path": "android/code/media-camera-ml/app-actions-assistant",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "app-architecture",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Covers modern Android layered architecture — UI, domain, and data layers — with unidirectional data flow, single source of truth, and immutable UI state. Use when designing a new Android app, refactoring an existing codebase into layers, deciding where logic belongs, or evaluating UI presentation patterns (MVVM vs. MVI vs. plain UDF) in code review.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "contested",
+      "version": "1.0.0",
+      "tags": [
+        "architecture",
+        "mvvm",
+        "mvi",
+        "viewmodel",
+        "udf",
+        "compose"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/architecture/app-architecture",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "app-bundles-size",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Guidance on building Android App Bundles (AAB), configuring per-device split APKs, structuring Play Feature Delivery for install-time and on-demand dynamic modules, adopting Play Asset Delivery, and measuring or reducing download size. Use when packaging a release build with AGP 9+, adding dynamic feature modules, optimising download size, or investigating why an AAB or APK is larger than expected.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "build-packaging",
+        "app-bundle",
+        "size-optimisation",
+        "dynamic-delivery"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/app-bundles-size",
       "resources": {
         "reference": false,
         "examples": false,
@@ -297,6 +403,33 @@
       }
     },
     {
+      "name": "app-localization",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Covers Android app localization — externalizing strings and resources, locale qualifiers, per-app language preferences via AppCompat/AndroidX, plurals and argument formatting, RTL layout support, and pseudolocale testing. Use when building or auditing a multi-language Android app to ensure correct resource resolution, proper string externalization, and reliable locale switching.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "localization",
+        "i18n",
+        "resources",
+        "rtl",
+        "plurals"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/ship/app-localization",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "app-review-guidelines",
       "domain": "apple",
       "class": "lang-tooling",
@@ -321,6 +454,32 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/ship/app-review-guidelines",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "app-signing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Guidance on configuring Android app signing in Gradle with Kotlin DSL — signing configs, the upload key vs app signing key distinction, Play App Signing, key rotation, and keeping keystores out of version control. Use when setting up release signing for a new app, migrating a keystore to Play App Signing, rotating a compromised key, or hardening signing secrets in CI/CD.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "signing",
+        "build-packaging",
+        "release",
+        "security",
+        "gradle"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/app-signing",
       "resources": {
         "reference": false,
         "examples": false,
@@ -781,6 +940,31 @@
       }
     },
     {
+      "name": "build-variants-flavors",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Covers Android build types, product flavors, flavor dimensions, variant-specific source sets and resources, BuildConfig fields, and manifest placeholders using AGP 9 with Kotlin DSL. Use when configuring multi-environment or multi-tier Android builds that need distinct artifacts from a single codebase.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "gradle",
+        "build-variants",
+        "product-flavors"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/build-variants-flavors",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "camerax",
       "domain": "android",
       "class": "code",
@@ -1227,6 +1411,32 @@
       }
     },
     {
+      "name": "ci-cd",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Covers continuous integration and delivery for Android — building and testing from the command line with Gradle, Gradle Managed Devices for instrumented tests in CI, build caching, secure signing in CI, and automating Play Store uploads. Use when setting up or improving a CI/CD pipeline for an Android project.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "ci-cd",
+        "gradle",
+        "testing",
+        "signing",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/ship/ci-cd",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "ci-cd-signing",
       "domain": "apple",
       "class": "lang-tooling",
@@ -1601,6 +1811,32 @@
       }
     },
     {
+      "name": "compose-preview-testing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Guidance on using Compose @Preview annotations as a testing tool — PreviewParameterProvider, multipreview annotations, adaptive/dark/font-scale preview variants, and wiring previews into screenshot test pipelines. Use when building a visual regression safety net for Jetpack Compose UIs, parameterizing preview states, scaling coverage across display configurations, or integrating previews with Paparazzi or Roborazzi.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "preview",
+        "screenshot-testing",
+        "ui-testing",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/testing/compose-preview-testing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "compose-side-effects",
       "domain": "android",
       "class": "code",
@@ -1737,6 +1973,32 @@
       }
     },
     {
+      "name": "compose-ui-testing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Covers Jetpack Compose UI testing — createComposeRule, createAndroidComposeRule, semantic finders and matchers, assertions and actions, synchronization and idling, testTag, and screenshot/state testing. Use when writing instrumented or local Compose UI tests, verifying composable behavior through semantics, or diagnosing test flakiness caused by synchronization gaps.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "testing",
+        "ui-testing",
+        "android",
+        "instrumented"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/testing/compose-ui-testing",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "compose-view-interop",
       "domain": "android",
       "class": "code",
@@ -1838,6 +2100,33 @@
       ],
       "pairs_with": [],
       "path": "apple/code/app-frameworks/controls-widgets",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "convention-plugins",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Covers Gradle convention plugins (build-logic) for Android multi-module projects — precompiled script plugins, shared module configuration, the included build pattern, and eliminating buildscript duplication. Use when setting up or refactoring the Gradle build of a multi-module Android project to share build logic without copy-paste.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "gradle",
+        "android",
+        "build",
+        "convention-plugins",
+        "kotlin-dsl",
+        "multi-module"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/convention-plugins",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2026,6 +2315,32 @@
       }
     },
     {
+      "name": "crash-anr-vitals",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Covers diagnosing crashes and ANRs on Android — reading stack traces and traces, applying the main-thread responsibility rule, identifying common ANR causes, and monitoring Android vitals in Play Console. Use when investigating stability regressions, integrating a crash reporter, or reducing crash/ANR rates to meet Play Store thresholds.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "stability",
+        "crash",
+        "anr",
+        "vitals"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/ship/crash-anr-vitals",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "crash-symbolication",
       "domain": "apple",
       "class": "lang-tooling",
@@ -2172,6 +2487,32 @@
       }
     },
     {
+      "name": "dependency-injection-patterns",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Covers dependency injection approaches in Android — manual DI/service locator, Hilt, Koin, and compile-time alternatives (Metro/kotlin-inject) — with tradeoffs on compile safety, scoping, and testability. Use when choosing or evaluating a DI strategy, wiring services across Compose screens, or making code testable without a specific framework commitment.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "contested",
+      "version": "1.0.0",
+      "tags": [
+        "architecture",
+        "dependency-injection",
+        "testability",
+        "hilt",
+        "koin"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/architecture/dependency-injection-patterns",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "drag-and-drop",
       "domain": "android",
       "class": "code",
@@ -2197,6 +2538,32 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "edge-to-edge-compat",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Covers API-level compatibility and behavior changes for edge-to-edge display — targetSdk obligations, automatic enforcement on Android 15+, predictive back gesture opt-in, handling deprecated window APIs, and AndroidX compatibility shims. Use when migrating an app to a higher targetSdk, auditing edge-to-edge readiness, enabling predictive back, or resolving inset/gesture regressions introduced by Android 15 behavior changes.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "edge-to-edge",
+        "compatibility",
+        "predictive-back",
+        "target-sdk"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/ship/edge-to-edge-compat",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -2255,6 +2622,32 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/language/error-handling",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "espresso",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Covers Espresso UI testing for Android — onView/onData, ViewMatchers, ViewActions, ViewAssertions, idling resources, and interop with Compose-first codebases. Use when writing or reviewing instrumented UI tests for View-based or mixed View/Compose screens on Android.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "testing",
+        "espresso",
+        "ui-testing",
+        "instrumentation"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/testing/espresso",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2395,6 +2788,32 @@
       ],
       "pairs_with": [],
       "path": "android/code/media-camera-ml/gemini-nano-aicore",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "gradle-kotlin-dsl",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Covers the Android Gradle build system using the Kotlin DSL — build.gradle.kts structure, the android block, dependency configurations, plugins block, settings.gradle.kts, and where build logic belongs. Use when structuring or debugging Gradle build files for an Android project using Kotlin DSL and AGP 9+.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "gradle",
+        "build",
+        "kotlin-dsl",
+        "android",
+        "agp"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/gradle-kotlin-dsl",
       "resources": {
         "reference": false,
         "examples": true,
@@ -4552,6 +4971,33 @@
       }
     },
     {
+      "name": "kotlin-generics-types",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Covers Kotlin generics and the type system for Android — declaration-site variance (in/out), use-site projections, star projection, reified type parameters with inline functions, type bounds, and nullability in generic code. Use when writing or reviewing generic Kotlin APIs, repository abstractions, sealed state containers, or utility functions that must preserve type safety across the Android codebase.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "kotlin",
+        "android",
+        "generics",
+        "types",
+        "variance",
+        "reified"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/language/kotlin-generics-types",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "kotlin-language-core",
       "domain": "android",
       "class": "lang-tooling",
@@ -4572,6 +5018,58 @@
       ],
       "pairs_with": [],
       "path": "android/lang-tooling/language/kotlin-language-core",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "kotlin-multiplatform",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Covers Kotlin Multiplatform (KMP) for sharing business logic across Android and iOS — source-set hierarchy, expect/actual declarations, KMP-ready libraries, and what belongs in shared vs platform-specific code. Use when setting up a KMP module, authoring shared domain or data layers, wiring expect/actual for platform APIs, or evaluating which libraries work in commonMain.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "kotlin",
+        "multiplatform",
+        "kmp",
+        "shared-logic",
+        "coroutines"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/language/kotlin-multiplatform",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "kotlin-serialization",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "language",
+      "description": "Covers kotlinx.serialization for Android — @Serializable classes, Json format configuration, custom serializers, polymorphic sealed hierarchies, and Retrofit/Ktor converter integration. Use when encoding or decoding JSON (or other formats) in a Kotlin Android project without relying on Gson or Moshi.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "kotlin",
+        "serialization",
+        "json",
+        "android",
+        "networking"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/language/kotlin-serialization",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5873,6 +6371,32 @@
       }
     },
     {
+      "name": "macrobenchmark-baseline-profiles",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Covers performance measurement and startup optimisation using Macrobenchmark and Baseline Profiles — measuring startup, scroll, and jank with MacrobenchmarkRule, generating and shipping Baseline/Startup Profiles to precompile hot code paths, and verifying improvements in CI. Use when you need to quantify app performance regressions, reduce cold-start time, or eliminate first-draw jank in a Jetpack Compose Android app.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "performance",
+        "benchmarking",
+        "baseline-profiles",
+        "startup",
+        "testing"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/testing/macrobenchmark-baseline-profiles",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "mapkit",
       "domain": "apple",
       "class": "code",
@@ -6067,6 +6591,32 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "modularization",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Guides splitting an Android app into :app, :feature, and :core Gradle modules with clean dependency boundaries, cycle-free graphs, and shared convention plugins. Use when extracting features into dedicated modules, designing api vs implementation dependency scopes, speeding up build and test cycles, or reducing coupling in a growing monolithic app.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "modularization",
+        "architecture",
+        "gradle",
+        "build-speed",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/architecture/modularization",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -6283,6 +6833,32 @@
       }
     },
     {
+      "name": "networking-data-layer",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "architecture",
+      "description": "Guidance for structuring the Android data layer — repository pattern, network-to-domain model mapping, single-source-of-truth offline-first caching, typed error modeling with Result and sealed types, and exposing reactive data as Flow. Use when designing a repository, wiring a local cache to a remote API, modeling errors for UI consumption, or deciding where domain mapping belongs.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "repository",
+        "offline-first",
+        "flow",
+        "error-handling",
+        "architecture"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/architecture/networking-data-layer",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "networking-layer",
       "domain": "apple",
       "class": "lang-tooling",
@@ -6492,6 +7068,33 @@
       }
     },
     {
+      "name": "performance-profiling",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Covers profiling and performance analysis on Android — Android Studio Profiler (CPU, memory, energy, network), system tracing with Perfetto, diagnosing jank and slow startup, and a repeatable workflow for finding and fixing hotspots. Use when investigating frame drops, slow app startup, memory growth, excessive battery drain, or unexplained ANRs in an Android Kotlin app.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "performance",
+        "profiling",
+        "jank",
+        "startup",
+        "tracing"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/ship/performance-profiling",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "photokit",
       "domain": "apple",
       "class": "code",
@@ -6548,6 +7151,59 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "play-billing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Covers Google Play Billing integration for Android apps — setting up the Play Billing Library, querying products, launching the purchase flow, acknowledging purchases, handling subscriptions, querying existing purchases, and verifying transactions server-side. Use when adding one-time purchases or subscriptions to an Android app, troubleshooting billing flow issues, or implementing server-side receipt validation with the Play Developer API.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "billing",
+        "purchases",
+        "subscriptions",
+        "play-store",
+        "ship"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/ship/play-billing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "play-console-publishing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "ship",
+      "description": "Covers shipping Android apps through Google Play — the Play Console, release tracks (internal/closed/open/production) and staged rollouts, Android App Bundles and Play App Signing, in-app updates and in-app reviews, Play Integrity API, and store listing and policy essentials. Use when setting up a Play release pipeline, managing track promotion, integrating flexible or immediate in-app updates, verifying app integrity, or preparing a store listing for review.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "play-console",
+        "publishing",
+        "release",
+        "ship",
+        "app-bundle"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/ship/play-console-publishing",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -6700,6 +7356,33 @@
       }
     },
     {
+      "name": "r8-proguard",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Covers R8 code and resource shrinking for Android release builds — enabling minification, writing keep rules, handling reflection and serialization, debugging with mapping.txt and retrace, and avoiding over-keeping. Use when configuring shrinking for a release build, diagnosing keep-rule gaps, or reducing APK/AAB size.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "r8",
+        "proguard",
+        "shrinking",
+        "build",
+        "android",
+        "release"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/r8-proguard",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "realitykit",
       "domain": "apple",
       "class": "code",
@@ -6816,6 +7499,32 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "robolectric",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Covers running Android-framework tests on the JVM with Robolectric — shadows, SDK level configuration, and the tradeoffs vs instrumented tests. Use when writing fast local tests that exercise Android APIs (Context, View, Intent, ContentResolver, etc.) without a device or emulator.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "robolectric",
+        "android",
+        "unit-tests",
+        "jvm"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/testing/robolectric",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -6950,6 +7659,32 @@
       ],
       "pairs_with": [],
       "path": "apple/code/media/screencapturekit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "screenshot-testing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Covers visual regression testing for Jetpack Compose and View-based Android UIs using Compose Preview Screenshot Testing, Roborazzi, and Paparazzi — capturing baselines, diffing renders, and gating UI regressions in CI. Use when adding screenshot coverage to a Compose-first project, choosing between JVM-rendered and device-rendered screenshot strategies, wiring baseline capture into a Gradle task, or enforcing that a PR cannot merge if a visual diff exceeds threshold.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "screenshot",
+        "compose",
+        "regression",
+        "roborazzi"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/testing/screenshot-testing",
       "resources": {
         "reference": false,
         "examples": false,
@@ -8453,6 +9188,32 @@
       }
     },
     {
+      "name": "ui-automator",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Covers UI Automator for cross-app and system UI instrumented tests on Android — UiDevice setup, element selectors, cross-process interactions, and combining UI Automator with Espresso or Compose test rules for end-to-end flows. Use when writing instrumented tests that must interact with system dialogs, other apps, or the notification shade.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android",
+        "testing",
+        "ui-automator",
+        "instrumented-tests",
+        "end-to-end"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/testing/ui-automator",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "uikit-auto-layout",
       "domain": "apple",
       "class": "code",
@@ -8569,6 +9330,32 @@
       }
     },
     {
+      "name": "unit-testing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "testing",
+      "description": "Covers JVM unit testing for Android — JUnit 5 structure, test naming, fakes vs mocks with MockK, testing coroutines with runTest and TestDispatchers, testing Flow with Turbine, and deciding what belongs in a local JVM test versus an instrumented test. Use when writing or reviewing unit tests for Android Kotlin code, choosing test doubles, or testing coroutine and Flow-based logic without a device.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "junit",
+        "mockk",
+        "coroutines",
+        "kotlin"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/testing/unit-testing",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "unit-testing-strategy",
       "domain": "apple",
       "class": "lang-tooling",
@@ -8650,6 +9437,32 @@
       ],
       "pairs_with": [],
       "path": "android/code/platform-services/uwb-ranging",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "version-catalogs",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Guidance on Gradle version catalogs — declaring versions, libraries, bundles, and plugins in libs.versions.toml, referencing libs.* accessors in build scripts, sharing a catalog across modules, and migrating hardcoded dependency strings. Use when adding or updating dependencies in a multi-module Android project, consolidating scattered version strings, or setting up a new project with a shared dependency catalog.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "gradle",
+        "build-packaging",
+        "dependencies",
+        "version-catalog",
+        "kotlin-dsl"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/version-catalogs",
       "resources": {
         "reference": false,
         "examples": false,

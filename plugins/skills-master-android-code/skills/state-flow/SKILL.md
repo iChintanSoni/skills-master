@@ -103,4 +103,4 @@ This makes `when` expressions exhaustive and eliminates impossible states like `
 
 ## See also
 
-For coroutine scoping and `viewModelScope` usage, see `swift-concurrency` (Android equivalent: the `coroutines` skill). For how Compose reacts to state changes and the recomposition model, see `compose-fundamentals`. For the broader ViewModel and screen architecture, see the `navigation-architecture` skill.
+For coroutine scoping and `viewModelScope` usage, see `swift-concurrency` (Android equivalent: the `coroutines` skill). For how Compose reacts to state changes and the recomposition model, see `compose-fundamentals`. For the broader ViewModel and screen architecture, see the `android-navigation-architecture` skill.

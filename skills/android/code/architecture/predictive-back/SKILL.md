@@ -126,4 +126,4 @@ On foldables and tablets the back swipe edge may compete with multi-window drag 
 
 ## See also
 
-See `swiftui-navigation` for the analogous navigation-stack back-gesture pattern on Apple platforms. For broader navigation architecture decisions, see the `navigation-architecture` skill. For handling system window insets alongside back gestures on large screens, see `uikit-auto-layout` patterns adapted to Compose via `WindowInsets`.
+See `swiftui-navigation` for the analogous navigation-stack back-gesture pattern on Apple platforms. For broader navigation architecture decisions, see the `android-navigation-architecture` skill. For handling system window insets alongside back gestures on large screens, see `uikit-auto-layout` patterns adapted to Compose via `WindowInsets`.

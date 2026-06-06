@@ -127,4 +127,4 @@ if (WebViewFeature.isFeatureSupported(WebViewFeature.WEB_MESSAGE_LISTENER)) {
 
 ## See also
 
-The `choosing-web-integration` overview skill describes the decision tree for picking between WebView, Custom Tabs, and TWA at the architecture level. The `network-framework` skill covers `OkHttp`/`Ktor` patterns for APIs consumed alongside embedded web content. The `sign-in-with-apple` (web OAuth) and `navigation-architecture` skills are relevant when Custom Tabs handle OAuth redirect flows back into the app via deep links.
+The `choosing-web-integration` overview skill describes the decision tree for picking between WebView, Custom Tabs, and TWA at the architecture level. The `network-framework` skill covers `OkHttp`/`Ktor` patterns for APIs consumed alongside embedded web content. The `sign-in-with-apple` (web OAuth) and `android-navigation-architecture` skills are relevant when Custom Tabs handle OAuth redirect flows back into the app via deep links.

@@ -110,4 +110,4 @@ Both meta-data entries can reference the **same** `shortcuts.xml` if you combine
 
 ## See also
 
-The `app-intents` skill (if building cross-platform intent integration) and `deep-linking` cover complementary ways to route users into specific in-app destinations. The `navigation-architecture` skill explains how to wire the receiving Activity or Composable destination once the OS launches your app via a shortcut intent.
+The `app-intents` skill (if building cross-platform intent integration) and `deep-linking` cover complementary ways to route users into specific in-app destinations. The `android-navigation-architecture` skill explains how to wire the receiving Activity or Composable destination once the OS launches your app via a shortcut intent.

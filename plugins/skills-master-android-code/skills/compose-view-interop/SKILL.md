@@ -177,4 +177,4 @@ class ComposeProgressBar @JvmOverloads constructor(
 
 ## See also
 
-See `compose-state` for state hoisting patterns that make cross-boundary data flow cleaner. See `uikit-swiftui-interop` for the analogous pattern on iOS. For Fragment-level architecture decisions, see `navigation-architecture`.
+See `compose-state` for state hoisting patterns that make cross-boundary data flow cleaner. See `uikit-swiftui-interop` for the analogous pattern on iOS. For Fragment-level architecture decisions, see `android-navigation-architecture`.

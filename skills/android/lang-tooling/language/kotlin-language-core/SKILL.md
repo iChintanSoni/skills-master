@@ -160,4 +160,4 @@ fun renderState(state: UiState<List<User>>): String = when (state) {
 
 ## See also
 
-Concurrency patterns build directly on these language fundamentals — see `swift-concurrency` for the analogous mental model, or the Android-specific `kotlin-coroutines` skill for `suspend`, `Flow`, and structured concurrency. For modelling navigation state with sealed types see `swiftui-navigation` (conceptually similar) or the Android `navigation-architecture` skill. For applying these idioms inside Compose UI code see `compose-state`.
+Concurrency patterns build directly on these language fundamentals — see `swift-concurrency` for the analogous mental model, or the Android-specific `kotlin-coroutines` skill for `suspend`, `Flow`, and structured concurrency. For modelling navigation state with sealed types see `swiftui-navigation` (conceptually similar) or the Android `android-navigation-architecture` skill. For applying these idioms inside Compose UI code see `compose-state`.
