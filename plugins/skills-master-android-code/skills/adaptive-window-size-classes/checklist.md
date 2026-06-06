@@ -1,0 +1,15 @@
+- [ ] `currentWindowAdaptiveInfo()` is used inside composables to obtain `WindowSizeClass` — not `calculateWindowSizeClass(activity)` called from within Compose.
+- [ ] No `Build.MODEL`, `Build.PRODUCT`, or `PackageManager.hasSystemFeature()` calls are used to branch layout decisions — only `WindowWidthSizeClass` or `WindowHeightSizeClass`.
+- [ ] No raw `dp` thresholds such as `>= 600.dp` are scattered throughout composables — breakpoint logic is centralised in a helper function that accepts `WindowWidthSizeClass` and returns a layout type.
+- [ ] The `when` expression over `WindowWidthSizeClass` / `WindowHeightSizeClass` always includes an `else` branch to handle future additions to the enum.
+- [ ] `WindowSizeClass` is read at the screen-level root composable and only the derived booleans or sealed layout types are passed down the tree.
+- [ ] `currentWindowAdaptiveInfo()` is not called inside a `ViewModel`, `Repository`, or any non-composable class.
+- [ ] The app declares `android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout"` in the Activity's manifest entry to prevent unnecessary Activity recreation on resize.
+- [ ] Window size is not derived from `DisplayMetrics`, `Resources.getDisplayMetrics()`, or `windowManager.currentWindowMetrics` inside composables — only from `currentWindowAdaptiveInfo()`.
+- [ ] `BoxWithConstraints` is not used as a substitute for `WindowSizeClass` at the screen level — it is only used for local leaf-level measurement branching.
+- [ ] Medium and Expanded windows are handled in the same branch whenever the only distinction is "show rail vs. show drawer" — avoid duplicating layout code that is identical for both.
+- [ ] `WindowSizeClass.calculateFromSize(DpSize(...))` is used in composable tests to inject arbitrary size classes without needing an Activity.
+- [ ] On foldable targets, `WindowPosture` from `adaptiveInfo.windowPosture` is checked alongside `WindowWidthSizeClass` when content needs to respond to hinge position (tabletop, book).
+- [ ] Navigation component (NavHost) is only used for the single-pane branch — the two-pane expanded branch shows both panes simultaneously in a `Row` rather than navigating between them.
+- [ ] Column counts and pane counts are derived from a pure function of `WindowWidthSizeClass`, making them independently testable without a device or emulator.
+- [ ] The layout correctly re-renders when the user resizes the ChromeOS window or enters/exits split-screen — verified by running the app in a resizable emulator and dragging the divider.

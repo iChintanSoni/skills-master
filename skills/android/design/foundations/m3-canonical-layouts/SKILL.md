@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [list-detail-pane-scaffold]
   sources:
     - https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts
     - https://developer.android.com/develop/ui/compose/layouts/adaptive

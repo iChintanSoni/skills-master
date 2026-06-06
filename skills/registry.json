@@ -32,6 +32,36 @@
       }
     },
     {
+      "name": "adaptive-window-size-classes",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers WindowSizeClass computation via currentWindowAdaptiveInfo() and calculateWindowSizeClass(), the compact/medium/expanded width and height breakpoints, and driving adaptive decisions — navigation type, pane count, column count — from size class rather than device type. Use when building layouts that must adapt to phones, tablets, foldables, and ChromeOS windows without hard-coded device checks.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "chromeos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "adaptive",
+        "window-size-classes",
+        "large-screen",
+        "compose",
+        "material3"
+      ],
+      "pairs_with": [
+        "m3-large-screens"
+      ],
+      "path": "android/code/form-factors/adaptive-window-size-classes",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
       "name": "adopting-app-intents",
       "domain": "apple",
       "class": "overview",
@@ -775,6 +805,89 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "car-app-library",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers building in-car experiences with the Jetpack Car App Library — CarAppService and Session lifecycle, the template model (ListTemplate, PaneTemplate, NavigationTemplate, GridTemplate), Screen and ScreenManager navigation, host constraints and template limits, and sharing one codebase between Android Auto and Automotive OS. Use when building any app that must run inside a car head unit, navigate between car screens, present media or point-of-interest lists in the car UI, or add turn-by-turn navigation within a vehicle display.",
+      "platforms": [
+        "android-auto",
+        "automotive-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "car-app-library",
+        "android-auto",
+        "automotive-os",
+        "templates",
+        "carappservice"
+      ],
+      "pairs_with": [
+        "m3-cars"
+      ],
+      "path": "android/code/form-factors/car-app-library",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "car-driving-constraints",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Android Auto and Automotive OS driver-distraction constraints — driving vs parked state detection, template and list limits, task step quotas, CarContext restriction APIs, and Automotive OS vehicle-property access. Use when building Car App Library experiences that must respect system-enforced distraction rules and surface the correct UI based on driving state.",
+      "platforms": [
+        "android-auto",
+        "automotive-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android-auto",
+        "automotive-os",
+        "car-app-library",
+        "driver-distraction",
+        "vehicle-properties"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/car-driving-constraints",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "car-media-messaging",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers media and messaging apps for Android Auto and Automotive OS — MediaBrowserService for browsable audio playback, the Car App Library messaging template, notification-based messaging with CarCompatExtender reply and mark-as-read actions, and voice-first interaction patterns. Use when building an audio, podcast, or messaging app that must run on the car dashboard through Android Auto or a built-in Automotive OS head unit.",
+      "platforms": [
+        "android-auto",
+        "automotive-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android-auto",
+        "automotive-os",
+        "car-app-library",
+        "mediabrowserservice",
+        "messaging"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/car-media-messaging",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -2052,6 +2165,34 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/architecture/dependency-injection",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "drag-and-drop",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers drag-and-drop in Jetpack Compose using dragAndDropSource and dragAndDropTarget modifiers, DragAndDropTransferData with MIME types, cross-app drop acceptance, and visual feedback. Use when implementing drag-and-drop interactions in Compose on Android — especially on large screens, tablets, and ChromeOS where multi-window drag is common.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "chromeos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "drag-and-drop",
+        "large-screen",
+        "chromeos",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/drag-and-drop",
       "resources": {
         "reference": false,
         "examples": false,
@@ -4298,6 +4439,35 @@
       }
     },
     {
+      "name": "keyboard-mouse-stylus",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers hardware input on large-screen and ChromeOS surfaces — physical keyboard shortcuts (onKeyEvent, KeyboardShortcutGroup), pointer hover and right-click, mouse/trackpad scrolling, and stylus/pen input including low-latency rendering and motion prediction. Use when building apps that must feel native on tablets, foldables, or ChromeOS where keyboard, mouse, and stylus are primary input methods.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "chromeos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "keyboard",
+        "stylus",
+        "mouse",
+        "large-screen",
+        "chromeos",
+        "pointer-input"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/keyboard-mouse-stylus",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "keychain-security",
       "domain": "apple",
       "class": "code",
@@ -4432,6 +4602,36 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "list-detail-pane-scaffold",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Implements ListDetailPaneScaffold — the canonical two-pane adaptive layout in Jetpack Compose — including ThreePaneScaffoldNavigator for pane navigation, predictive back, single-pane vs dual-pane switching by window size, and preserving selection across config changes. Use when building a list-detail (or similar hierarchical) screen that must adapt between compact phones, large-screen tablets, foldables, and ChromeOS windows.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "chromeos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "adaptive",
+        "large-screen",
+        "list-detail",
+        "form-factors"
+      ],
+      "pairs_with": [
+        "m3-canonical-layouts"
+      ],
+      "path": "android/code/form-factors/list-detail-pane-scaffold",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -4577,6 +4777,35 @@
       }
     },
     {
+      "name": "m3-ai-glasses",
+      "domain": "android",
+      "class": "design",
+      "category": "platforms",
+      "description": "Design guidance and critique for Android XR AI/display glasses using the Glimmer design language: glanceable surfaces, audio-first and hands-free interaction patterns, world-sensing assistance UX, and adapting content to a constrained heads-up display. Use when designing or reviewing any experience targeting Android AI glasses, deciding what information belongs on the display versus in audio, or auditing a glasses UI for glanceability, cognitive load, and situational safety.",
+      "platforms": [
+        "glasses"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "glasses",
+        "xr",
+        "m3",
+        "design",
+        "glimmer",
+        "android"
+      ],
+      "pairs_with": [
+        "xr-glimmer-glasses"
+      ],
+      "path": "android/design/platforms/m3-ai-glasses",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-app-bars",
       "domain": "android",
       "class": "design",
@@ -4706,7 +4935,9 @@
         "adaptive",
         "large-screen"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "list-detail-pane-scaffold"
+      ],
       "path": "android/design/foundations/m3-canonical-layouts",
       "resources": {
         "reference": false,
@@ -4763,6 +4994,63 @@
       ],
       "pairs_with": [],
       "path": "android/design/components/m3-carousel",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-cars",
+      "domain": "android",
+      "class": "design",
+      "category": "platforms",
+      "description": "Design guidance and critique for Android Auto and Automotive OS in-vehicle UIs — distraction-optimized templates, voice-first interaction, large touch targets, driving vs parked experiences, and platform differences. Use when designing, reviewing, or critiquing a car app UI, evaluating whether a flow is safe for eyes-on-road operation, choosing between Auto and Automotive OS templates, or deciding which interactions require parked mode.",
+      "platforms": [
+        "android-auto",
+        "automotive-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "cars",
+        "android-auto",
+        "automotive-os"
+      ],
+      "pairs_with": [
+        "car-app-library"
+      ],
+      "path": "android/design/platforms/m3-cars",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-chromeos-desktop",
+      "domain": "android",
+      "class": "design",
+      "category": "platforms",
+      "description": "Design critique and guidance for Material 3 on ChromeOS and Android desktop environments, covering pointer and keyboard-first interaction, resizable free-form windows, multitasking, hover and right-click affordances, and productivity patterns on a large display. Use when designing or auditing an Android app intended to run on ChromeOS, evaluating whether a UI is appropriately calibrated for mouse and keyboard input, reviewing window resize behavior, or specifying context menus, tooltips, and drag-and-drop flows for a desktop-class experience.",
+      "platforms": [
+        "chromeos",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "chromeos",
+        "large-screen",
+        "desktop",
+        "productivity"
+      ],
+      "pairs_with": [],
+      "path": "android/design/platforms/m3-chromeos-desktop",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5019,6 +5307,36 @@
         "reference": false,
         "examples": false,
         "checklist": false
+      }
+    },
+    {
+      "name": "m3-large-screens",
+      "domain": "android",
+      "class": "design",
+      "category": "platforms",
+      "description": "Material 3 design guidance for large screens and foldables, covering window size class breakpoints, canonical multi-pane layouts, navigation rail and drawer at expanded widths, foldable postures and hinge-aware design, keyboard and pointer affordances, and the four adaptive quality tiers. Use when designing or critiquing an Android app for tablets, foldables, or ChromeOS; evaluating whether a layout earns its place on a large canvas; deciding between navigation rail and permanent drawer; specifying pointer and keyboard behavior; or auditing an app against the large-screen quality tiers before submission to the Play Store.",
+      "platforms": [
+        "large-screen",
+        "chromeos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "large-screen",
+        "adaptive",
+        "platforms",
+        "chromeos"
+      ],
+      "pairs_with": [
+        "adaptive-window-size-classes"
+      ],
+      "path": "android/design/platforms/m3-large-screens",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
       }
     },
     {
@@ -5416,6 +5734,34 @@
       }
     },
     {
+      "name": "m3-tv",
+      "domain": "android",
+      "class": "design",
+      "category": "platforms",
+      "description": "Design-critique and judgment guidance for Android TV: the 10-foot UI, D-pad focus navigation, browse and immersive-detail layout patterns, overscan-safe composition, and legibility at distance. Use when designing or reviewing an Android TV app screen, evaluating whether focus movement is logical and predictable across a D-pad, critiquing text sizes and contrast for a 10-foot viewing distance, assessing overscan margin compliance, or deciding between a browse row layout and an immersive full-screen detail experience.",
+      "platforms": [
+        "android-tv"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "android-tv",
+        "focus",
+        "leanback"
+      ],
+      "pairs_with": [
+        "tv-compose"
+      ],
+      "path": "android/design/platforms/m3-tv",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "m3-typography",
       "domain": "android",
       "class": "design",
@@ -5436,6 +5782,34 @@
       ],
       "pairs_with": [],
       "path": "android/design/styles/m3-typography",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-wear",
+      "domain": "android",
+      "class": "design",
+      "category": "platforms",
+      "description": "Design-critique guidance for Material 3 on Wear OS — glanceable round-screen layouts, M3 Expressive surface hierarchy, tile/app/notification surfaces, rotary and physical-button input, ambient mode, and battery-aware design. Use when designing or critiquing a Wear OS watch face, tile, app screen, or notification, evaluating glanceability and thumb-zone ergonomics, specifying rotary or crown input affordances, or auditing a design for ambient-mode and power constraints.",
+      "platforms": [
+        "wear-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "wear-os",
+        "glanceable",
+        "platforms"
+      ],
+      "pairs_with": [
+        "wear-compose"
+      ],
+      "path": "android/design/platforms/m3-wear",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5464,6 +5838,34 @@
       ],
       "pairs_with": [],
       "path": "android/design/foundations/m3-writing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "m3-xr",
+      "domain": "android",
+      "class": "design",
+      "category": "platforms",
+      "description": "Design critique and judgment for Android XR headset UIs: spatial panels and orbiters, depth and elevation in three-dimensional space, viewer comfort and accessibility at distance, environment design, and adapting 2D Material 3 layouts into immersive XR experiences. Use when reviewing or specifying UI for Android XR headsets, evaluating whether a panel layout respects spatial comfort zones, deciding how 2D screens translate into the volumetric canvas, or critiquing depth hierarchy and orbiter placement.",
+      "platforms": [
+        "xr"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "m3",
+        "design",
+        "xr",
+        "spatial",
+        "platforms"
+      ],
+      "pairs_with": [
+        "xr-compose-spatial"
+      ],
+      "path": "android/design/platforms/m3-xr",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5821,6 +6223,34 @@
       }
     },
     {
+      "name": "navigation-suite-scaffold",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers NavigationSuiteScaffold from the Material3 Adaptive Navigation Suite library — an adaptive container that automatically switches between NavigationBar, NavigationRail, and NavigationDrawer based on window size class. Use when building an app with top-level navigation that must adapt seamlessly across phones, tablets, foldables, and ChromeOS windows without manually wiring three separate navigation components.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "chromeos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "navigation",
+        "adaptive",
+        "large-screen",
+        "material3"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/navigation-suite-scaffold",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "network-framework",
       "domain": "apple",
       "class": "code",
@@ -6086,6 +6516,34 @@
       ],
       "pairs_with": [],
       "path": "apple/code/media/photokit",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "picture-in-picture",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Android Picture-in-Picture (PiP) mode using PictureInPictureParams — entering PiP on home/pause, configuring aspect ratio and source-rect hints, the Compose pipLayout Modifier, auto-enter behavior, custom remote actions, and adapting UI when the window shrinks to PiP size. Use when building video players, video calls, navigation, or any feature that should continue playing or displaying content in a floating overlay while the user switches to another app.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "android-tv"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "picture-in-picture",
+        "video",
+        "compose",
+        "large-screen",
+        "android-tv"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/picture-in-picture",
       "resources": {
         "reference": false,
         "examples": false,
@@ -6760,6 +7218,34 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "supporting-pane-scaffold",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers SupportingPaneScaffold from the Adaptive Navigation library — primary content pane paired with a contextual supporting pane on medium and expanded windows, the ThreePaneScaffoldNavigator, pane back-stack management, and when to choose SupportingPaneScaffold over ListDetailPaneScaffold. Use when building a feature screen that needs a persistent or slide-in contextual panel (metadata, filters, inspector, help) alongside the main content on large screens while remaining a single-pane layout on compact windows.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "chromeos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "adaptive",
+        "large-screen",
+        "scaffold",
+        "form-factors"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/supporting-pane-scaffold",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -7887,6 +8373,86 @@
       }
     },
     {
+      "name": "tv-compose",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Compose for TV using the androidx.tv.material3 library — Cards, ImmersiveList, Carousel, TvNavigationDrawer, and focus-driven 10-foot navigation — for building browse and detail screens on Android TV. Use when building a new Android TV app with Jetpack Compose, migrating a Leanback-based app to Compose, designing browse/detail screen patterns, or wiring D-pad focus across a composable hierarchy on a TV form factor.",
+      "platforms": [
+        "android-tv"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android-tv",
+        "compose",
+        "leanback-migration",
+        "focus",
+        "material3"
+      ],
+      "pairs_with": [
+        "m3-tv"
+      ],
+      "path": "android/code/form-factors/tv-compose",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "tv-focus-input",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Jetpack Compose for TV focus management — focusRestorer, focus groups, D-pad key event handling, focused-state visuals, and predictable directional navigation. Use when building or debugging navigation on Android TV with Compose for TV, ensuring D-pad users can traverse every interactive element in a logical, predictable order.",
+      "platforms": [
+        "android-tv"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android-tv",
+        "compose",
+        "focus",
+        "dpad",
+        "navigation"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/tv-focus-input",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "tv-media-playback",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Media3 ExoPlayer player UI for Android TV — Use when building a living-room video playback experience with D-pad-driven controls, remote-friendly overlays, background/resume behaviour, and TV audio/display considerations using Media3 ExoPlayer and TV Compose.",
+      "platforms": [
+        "android-tv"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "android-tv",
+        "media3",
+        "exoplayer",
+        "playback",
+        "tv-compose"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/tv-media-playback",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "uikit-auto-layout",
       "domain": "apple",
       "class": "code",
@@ -8148,6 +8714,111 @@
       }
     },
     {
+      "name": "wear-complications",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers watch face complications on Wear OS from the data-source side — ComplicationDataSourceService subclassing, supported complication types, providing and refreshing complication data, handling permission, and the update lifecycle. Use when building an app that supplies live data to watch face complications on Wear OS 2+.",
+      "platforms": [
+        "wear-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "wear-os",
+        "complications",
+        "watchface",
+        "complication-data-source",
+        "tiles"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/wear-complications",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "wear-compose",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Compose for Wear OS — wear.compose.material3 components, TransformingLazyColumn and ScalingLazyColumn for round-screen scrolling, AppScaffold and ScreenScaffold, rotary input via rotaryScrollable, edge-hugging buttons, TimeText, and Wear navigation with SwipeDismissableNavHost. Use when building or modernising Wear OS apps with a Compose-first approach, targeting round and square watch faces with Material 3 Expressive for Wear.",
+      "platforms": [
+        "wear-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "wear-os",
+        "compose",
+        "material3",
+        "wearables"
+      ],
+      "pairs_with": [
+        "m3-wear"
+      ],
+      "path": "android/code/form-factors/wear-compose",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "wear-data-health",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers the Wearable Data Layer API (MessageClient, DataClient, CapabilityClient) for phone-watch communication and Health Services for low-power sensor and exercise tracking on Wear OS. Use when building Wear OS apps that need to sync data with a paired phone, exchange messages, or read real-time health and sensor data during workouts or ongoing activities.",
+      "platforms": [
+        "wear-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "wear-os",
+        "data-layer",
+        "health-services",
+        "wearable",
+        "exercise"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/wear-data-health",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "wear-tiles",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Wear OS Tiles built with TileService and ProtoLayout — the 3-slot layout, Tiles Material components, resource bundles, freshness strategy, and tile previews. Use when building glanceable, always-accessible surfaces that appear in the Wear OS tile carousel without launching a full app.",
+      "platforms": [
+        "wear-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "wear-os",
+        "tiles",
+        "protolayout",
+        "tileservice",
+        "glanceable"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/wear-tiles",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "weatherkit",
       "domain": "apple",
       "class": "code",
@@ -8237,6 +8908,33 @@
       }
     },
     {
+      "name": "window-manager-foldables",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Jetpack WindowManager for foldable and dual-screen Android devices — WindowInfoTracker, FoldingFeature, detecting tabletop and book postures, reading hinge bounds and occlusion type, and adapting Compose layouts to avoid or span the fold. Use when building layouts that respond to device fold state, avoiding content under the hinge, splitting UI across panels, or implementing posture-aware interactions on foldable hardware.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "foldables",
+        "window-manager",
+        "adaptive-layout",
+        "compose",
+        "large-screen"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/window-manager-foldables",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "workmanager",
       "domain": "android",
       "class": "code",
@@ -8318,6 +9016,115 @@
       ],
       "pairs_with": [],
       "path": "apple/lang-tooling/testing/xctest-ui-automation",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "xr-arcore",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers ARCore perception for Jetpack XR — planes, anchors, hit testing, and hand tracking — plus the XR permission model and anchoring virtual Compose content to the real world. Use when building Android XR apps that need to detect real-world surfaces, place persistent virtual objects, or read hand-joint poses.",
+      "platforms": [
+        "xr"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "xr",
+        "arcore",
+        "anchors",
+        "spatial-computing",
+        "hand-tracking"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/xr-arcore",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "xr-compose-spatial",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Jetpack Compose for XR — Subspace, SpatialPanel, orbiters, spatial elevation, home space vs full space modes, SubspaceModifier, and adapting an existing adaptive app to spatial UI on Android XR. Use when building or adapting an Android app to run on XR headsets or wired XR glasses with spatial panels, 3D layout, floating orbiters, or immersive full-space experiences.",
+      "platforms": [
+        "xr"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "xr",
+        "compose",
+        "spatial",
+        "jetpack",
+        "material3"
+      ],
+      "pairs_with": [
+        "m3-xr"
+      ],
+      "path": "android/code/form-factors/xr-compose-spatial",
+      "resources": {
+        "reference": false,
+        "examples": true,
+        "checklist": true
+      }
+    },
+    {
+      "name": "xr-glimmer-glasses",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers building for Android XR glasses with Jetpack Compose and the Glimmer display model — lightweight glanceable surfaces, constrained rendering budgets, audio and voice interaction, and hands-free UX patterns for AI/display glasses. Use when targeting XR glasses hardware with Jetpack XR SDK, authoring Glimmer panels, designing hands-free or audio-first flows, or adapting existing Compose UI for a constrained, head-worn display.",
+      "platforms": [
+        "xr",
+        "glasses"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "xr",
+        "glasses",
+        "glimmer",
+        "jetpack-xr",
+        "hands-free"
+      ],
+      "pairs_with": [
+        "m3-ai-glasses"
+      ],
+      "path": "android/code/form-factors/xr-glimmer-glasses",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "xr-scenecore",
+      "domain": "android",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers Jetpack XR SceneCore for Android XR apps — loading glTF/GLB models, managing entities and transforms, configuring environments and skyboxes, and composing 3D content alongside spatial panels. Use when building or extending an Android XR app that needs 3D objects, spatial layouts, or custom environments in SceneCore.",
+      "platforms": [
+        "xr"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "xr",
+        "scenecore",
+        "3d",
+        "jetpack-xr",
+        "spatial"
+      ],
+      "pairs_with": [],
+      "path": "android/code/form-factors/xr-scenecore",
       "resources": {
         "reference": false,
         "examples": false,
