@@ -8,13 +8,13 @@ Each skill is authored once and compiled into whatever format a given tool expec
 
 ```bash
 # In your project — auto-detects which tools you use and writes the right files:
-npx skills-master init
-npx skills-master add swiftui-navigation swiftdata-modeling --with-pairs
-npx skills-master list --class code            # browse the catalog
-npx skills-master search navigation
-npx skills-master update                        # pull newer skill versions
-npx skills-master remove swiftui-sheets
-npx skills-master doctor                        # check installed skills for drift
+npx @ichintansoni/skills-master init
+npx @ichintansoni/skills-master add swiftui-navigation swiftdata-modeling --with-pairs
+npx @ichintansoni/skills-master list --class code            # browse the catalog
+npx @ichintansoni/skills-master search navigation
+npx @ichintansoni/skills-master update                        # pull newer skill versions
+npx @ichintansoni/skills-master remove swiftui-sheets
+npx @ichintansoni/skills-master doctor                        # check installed skills for drift
 ```
 
 `add` writes, per detected tool:

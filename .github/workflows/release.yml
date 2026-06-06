@@ -2,42 +2,113 @@ name: Release
 
 on:
   push:
-    tags:
-      - "v*"
-  # Invoked by release-please.yml when a Release PR is merged. Keeping the tag
-  # trigger above lets us do the one-time bootstrap publish and manual releases.
-  workflow_call:
+    branches: [main]
+
+# Serialize releases so two quick merges can't both try to tag/publish the same
+# version. A later push waits for the in-flight release to finish.
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
-  publish:
-    name: Publish CLI + build marketplace
+  # Reuse the exact same CI that gates PRs. The release job runs only if it passes.
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  release:
+    name: Version, tag, release, publish
+    needs: ci
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      id-token: write
+      contents: write # push tag + create GitHub Release
+      packages: write # publish to GitHub Packages
+      id-token: write # npm provenance on the npmjs publish
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # need full history...
+          fetch-tags: true # ...and all tags to find the latest version.
+
       - uses: actions/setup-node@v5
         with:
           node-version: 22
-          registry-url: "https://registry.npmjs.org"
-          # corepack provisions pnpm; skip setup-node's auto pnpm cache,
-          # which would invoke pnpm before corepack enable puts it on PATH.
           package-manager-cache: false
+          registry-url: "https://registry.npmjs.org"
+          scope: "@ichintansoni"
+
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter skills-master test
-      - run: pnpm --filter skills-master build
-      # Regenerate the Claude marketplace from the skill tree and attach it.
-      - run: pnpm --filter skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../..
-      - uses: actions/upload-artifact@v5
-        with:
-          name: claude-marketplace
-          path: |
-            .claude-plugin/
-            plugins/
-      # This job only runs on an intentional tag push or a release-please
-      # release, so publishing is always the desired outcome here.
-      - env:
+
+      # Decide the next version from the latest tag + head commit message.
+      - name: Compute next version
+        id: ver
+        run: |
+          set -euo pipefail
+          LATEST_TAG="$(git tag -l 'v*' --sort=-v:refname | head -n1)"
+          if [ -z "$LATEST_TAG" ]; then
+            # First-ever release: publish the package.json baseline (0.1.0) as-is.
+            NEXT="$(node -p "require('./packages/cli/package.json').version")"
+          else
+            CURRENT="${LATEST_TAG#v}"
+            # Bump level from the head commit message: #major > #minor > patch.
+            MSG="$(git log -1 --pretty=%B)"
+            if   printf '%s' "$MSG" | grep -qiE '#major'; then LEVEL=major
+            elif printf '%s' "$MSG" | grep -qiE '#minor'; then LEVEL=minor
+            else LEVEL=patch
+            fi
+            NEXT="$(pnpm --filter @ichintansoni/skills-master exec semver -i "$LEVEL" "$CURRENT")"
+          fi
+          echo "next=$NEXT" >> "$GITHUB_OUTPUT"
+          echo "tag=v$NEXT" >> "$GITHUB_OUTPUT"
+          echo "Releasing v$NEXT (from ${LATEST_TAG:-package.json baseline})"
+
+      # Write the computed version into package.json so the published tarball
+      # carries it. Not committed back to main — git tags are the source of truth.
+      - name: Set package version (runner only, not committed)
+        working-directory: packages/cli
+        run: npm version "${{ steps.ver.outputs.next }}" --no-git-tag-version
+
+      # Annotated tag pushed back with the default GITHUB_TOKEN. Pushes made with
+      # GITHUB_TOKEN do NOT trigger new workflow runs, so this can't re-trigger
+      # release.yml. [skip ci] is belt-and-suspenders.
+      - name: Create and push tag
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.ver.outputs.tag }}" -m "chore(release): ${{ steps.ver.outputs.tag }} [skip ci]"
+          git push origin "${{ steps.ver.outputs.tag }}"
+
+      - run: pnpm --filter @ichintansoni/skills-master build
+
+      # Rebuild the Claude marketplace and attach it to the release as an asset.
+      - name: Build Claude marketplace
+        run: pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../..
+      - name: Zip marketplace
+        run: zip -r claude-marketplace.zip .claude-plugin plugins
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.ver.outputs.tag }}" \
+            --title "${{ steps.ver.outputs.tag }}" \
+            --generate-notes \
+            claude-marketplace.zip
+
+      # Dual publish: the same scoped package to npmjs (public install) and to
+      # GitHub Packages (lights up the repo's Packages sidebar).
+      - name: Publish to npmjs
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm --filter skills-master publish --no-git-checks --access public
+        run: >
+          pnpm --filter @ichintansoni/skills-master publish
+          --no-git-checks --access public --provenance
+          --registry https://registry.npmjs.org
+
+      - name: Publish to GitHub Packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          pnpm --filter @ichintansoni/skills-master publish
+          --no-git-checks --registry https://npm.pkg.github.com

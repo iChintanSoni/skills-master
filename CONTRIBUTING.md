@@ -6,7 +6,7 @@ Thanks for helping build `skills-master`. There are two kinds of contributions: 
 
 ```bash
 corepack pnpm install          # or: pnpm install
-pnpm --filter skills-master test
+pnpm --filter @ichintansoni/skills-master test
 ```
 
 Node ≥ 20 and pnpm (via Corepack) are required.
@@ -31,8 +31,8 @@ pnpm skills:registry                                             # regenerate re
 ## Contributing to the CLI
 
 ```bash
-pnpm --filter skills-master typecheck
-pnpm --filter skills-master test
+pnpm --filter @ichintansoni/skills-master typecheck
+pnpm --filter @ichintansoni/skills-master test
 ```
 
 - Add an emitter under `packages/cli/src/emitters/` and register it in `emitters/index.ts`; cover it with a snapshot in `test/emitters/`.

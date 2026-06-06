@@ -48,12 +48,12 @@ Current to Android 16 / API 36, Kotlin 2.2, Jetpack Compose & Material 3.
 
 ```bash
 # In your app project:
-npx skills-master init                         # detect your tools, write skills-master.json
-npx skills-master add swiftui-navigation        # install an Apple skill into every detected tool
-npx skills-master add compose-state room        # …or Android skills (names are unique across domains)
-npx skills-master add m3-navigation --target cursor,claude
-npx skills-master list --domain android --class code   # browse one domain
-npx skills-master update                         # pull newer skill versions
+npx @ichintansoni/skills-master init                         # detect your tools, write skills-master.json
+npx @ichintansoni/skills-master add swiftui-navigation        # install an Apple skill into every detected tool
+npx @ichintansoni/skills-master add compose-state room        # …or Android skills (names are unique across domains)
+npx @ichintansoni/skills-master add m3-navigation --target cursor,claude
+npx @ichintansoni/skills-master list --domain android --class code   # browse one domain
+npx @ichintansoni/skills-master update                         # pull newer skill versions
 ```
 
 Claude Code users can alternatively install via the plugin marketplace. Each domain is split into four installable plugins (`code`, `design`, `lang-tooling`, `overviews`):

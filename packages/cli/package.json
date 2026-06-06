@@ -1,5 +1,5 @@
 {
-  "name": "skills-master",
+  "name": "@ichintansoni/skills-master",
   "version": "0.1.0",
   "description": "Install tool-agnostic Apple & Android development skills into any AI coding tool (Claude Code, Cursor, Copilot, AGENTS.md).",
   "keywords": [
@@ -41,7 +41,8 @@
     "node": ">=20"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "build": "tsup",
