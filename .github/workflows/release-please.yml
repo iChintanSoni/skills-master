@@ -7,6 +7,12 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  # The publish job calls the reusable release.yml, whose job requests
+  # id-token: write (npm provenance/OIDC). A reusable workflow can't hold more
+  # permission than its caller, and GitHub checks this at startup — before the
+  # job's `if` is evaluated — so this must be granted here even though publish
+  # only runs when a release is actually created.
+  id-token: write
 
 jobs:
   release-please:
