@@ -1,0 +1,15 @@
+- [ ] Row/Column children that need equal spacing use `Arrangement.spacedBy(dp)` rather than manual `Spacer` calls between every sibling.
+- [ ] `Modifier.weight()` is only applied inside a `RowScope` or `ColumnScope` — no weight modifiers floating outside those scopes.
+- [ ] `BoxWithConstraints` is used only when the composable's *structure* (number or type of children) changes with available space, not merely its style.
+- [ ] Custom `Layout` measures each child exactly once — no second `measure()` call on any `Measurable`.
+- [ ] `Placeable.placeRelative()` is used instead of `place()` wherever RTL mirroring is desirable.
+- [ ] `SubcomposeLayout` slot IDs are stable, distinct values (enum or sealed object) — not inline lambdas or anonymous objects.
+- [ ] `SubcomposeLayout` is justified: the content's *structure* depends on a sibling's measured size. Pure style changes use `Layout` instead.
+- [ ] Intrinsic measurements (`IntrinsicSize.Min/Max`) are not used inside `LazyColumn`/`LazyRow` items or other frequently recomposing paths.
+- [ ] No `fillMaxSize()` or `fillMaxHeight()` child placed inside an unbounded scroll container (would cause an infinite-height crash).
+- [ ] No `LazyColumn`/`LazyRow` nested inside a `verticalScroll`/`horizontalScroll` modifier — the lazy list is the scroll container.
+- [ ] Breakpoints use `Dp` values compared against `BoxWithConstraints.maxWidth` or `WindowSizeClass`, not raw pixel comparisons.
+- [ ] `Spacer` is sized with `Modifier.height()` or `Modifier.width()`, not `Modifier.size()`, to avoid unintended cross-axis sizing.
+- [ ] Large-screen layouts respond to the `600 dp` and `840 dp` width breakpoints (compact / medium / expanded) rather than hard-coding device names.
+- [ ] Padding modifiers are applied on the *outer* composable that needs insets, not duplicated on every child.
+- [ ] `layout(width, height)` in a custom `Layout` returns a size within the incoming `Constraints` — not larger than `maxWidth` / `maxHeight`.

@@ -1,0 +1,18 @@
+- [ ] Every `items` / `itemsIndexed` call supplies a `key` lambda using a stable domain identifier (not the list index).
+- [ ] Heterogeneous item types pass a `contentType` value so Compose can pool composition nodes correctly.
+- [ ] `Modifier.animateItem()` is applied to the root composable of each item for insert/remove/reorder animations.
+- [ ] `LazyListState` is obtained via `rememberLazyListState()` and passed to the container's `state` parameter.
+- [ ] Scroll-position derived values (e.g. "show FAB") are computed inside `remember { derivedStateOf { } }` — not read directly in the composable body.
+- [ ] Programmatic scrolls (`animateScrollToItem`, `scrollToItem`) are called from a coroutine scope, not directly from event callbacks.
+- [ ] `contentPadding` is used on the list container instead of padding inside each item, to avoid doubled edge spacing and broken overscroll effects.
+- [ ] No nested scrollable containers scroll in the same direction (no `LazyColumn` inside `verticalScroll`).
+- [ ] Expensive computation inside item lambdas is guarded by `remember` or moved to a `ViewModel`.
+- [ ] `stickyHeader` blocks are annotated with `@OptIn(ExperimentalFoundationApi::class)`.
+- [ ] For large screens, `LazyVerticalGrid` uses `GridCells.Adaptive` rather than a hardcoded `Fixed` count.
+- [ ] `GridItemSpan(maxLineSpan)` is used for full-width items (headers, banners) inside a grid.
+- [ ] Paging items use `collectAsLazyPagingItems()` and handle `loadState.refresh`, `loadState.append`, and `loadState.prepend`.
+- [ ] Paging `items` block uses `pagingItems.itemKey { }` and `pagingItems.itemContentType { }` helpers.
+- [ ] A retry action is surfaced for `LoadState.Error` states in paging flows.
+- [ ] Placeholder composables are rendered for `null` paging items to preserve list structure during loading.
+- [ ] `LazyVerticalStaggeredGrid` is preferred over manual column-splitting for variable-height item layouts.
+- [ ] On foldables, layout adapts based on `FoldingFeature` or `WindowSizeClass` rather than static breakpoints.

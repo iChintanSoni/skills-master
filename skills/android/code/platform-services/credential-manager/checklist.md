@@ -1,0 +1,20 @@
+- [ ] `androidx.credentials:credentials` and `androidx.credentials:credentials-play-services-auth` are both declared as dependencies; the Play Services artifact enables Google account support on API 28–33.
+- [ ] `CredentialManager.create(context)` is called with `applicationContext`, not an `Activity`, when constructing the manager instance — but `getCredential` and `createCredential` are called with the foreground `Activity`.
+- [ ] `GetCredentialRequest` includes all intended credential types — `GetPublicKeyCredentialOption` for passkeys, `GetPasswordOption` for saved passwords, and `GetGoogleIdOption` for Google accounts — so the bottom sheet shows a complete picker.
+- [ ] The FIDO2 challenge JSON passed to `GetPublicKeyCredentialOption` is fetched from the server for this specific authentication attempt, never reused or hardcoded.
+- [ ] `GetGoogleIdOption` has a two-pass strategy — `filterByAuthorizedAccounts(true)` for returning users, falling back to `filterByAuthorizedAccounts(false)` on `NoCredentialException` for new account selection.
+- [ ] `NoCredentialException` routes to a registration or alternative sign-in UI rather than displaying a generic error message.
+- [ ] `GetCredentialCancellationException` is caught and silently ignored — user-initiated dismissal is not an error.
+- [ ] All three `Credential` subtypes are handled in the success path — `PublicKeyCredential`, `PasswordCredential`, and `CustomCredential` with `GoogleIdTokenCredential` type.
+- [ ] Passkey registration uses `CreatePublicKeyCredentialRequest` with a server-generated registration challenge; the resulting attestation JSON is sent back to the server for verification.
+- [ ] `CreatePasswordRequest` is called after a successful password-based registration so the system offers to save the credentials.
+- [ ] `credentialManager.clearCredentialState(ClearCredentialStateRequest())` is called on every sign-out path.
+- [ ] Credential Manager calls are launched from a `ViewModel` using `viewModelScope`, not called directly from a composable or `Fragment.onCreate`.
+- [ ] Digital Asset Links (`/.well-known/assetlinks.json`) are deployed on the server domain with the correct app package name and SHA-256 signing certificate fingerprint before testing passkey creation on a real device.
+- [ ] The RP ID in the FIDO2 JSON matches the registered domain in `assetlinks.json` exactly — a mismatch causes a security error at runtime that is difficult to diagnose.
+- [ ] The app does not hardcode `BuildConfig.GOOGLE_SERVER_CLIENT_ID` in the source; it is injected from a Secrets Gradle plugin or equivalent secure configuration mechanism.
+- [ ] On large-screen or foldable devices in multi-window mode, the `Activity` passed to `getCredential` is the one currently visible in the foreground window, not a background split-screen activity.
+- [ ] The sign-in screen has been manually tested on API 28 (no passkeys) to confirm the flow degrades gracefully to passwords and Google.
+- [ ] The sign-in screen has been tested on an Android 14+ emulator with a FIDO2 authenticator configured to confirm passkeys appear in the bottom sheet.
+- [ ] Google ID token is verified on the backend using Google's token verification endpoint or the Google Auth Library — client-side verification of the token is insufficient.
+- [ ] The app does not use the deprecated `SmartLock`, `One Tap`, or `GoogleSignIn` APIs alongside Credential Manager — mixing the old and new APIs causes conflicting bottom-sheet behavior.

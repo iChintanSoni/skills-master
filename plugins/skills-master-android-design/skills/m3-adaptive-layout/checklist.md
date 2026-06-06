@@ -1,0 +1,18 @@
+- [ ] The design has been reviewed at compact (below 600 dp), medium (600–840 dp), and expanded (840 dp and above) — not only at the primary phone target.
+- [ ] Each breakpoint has a distinct layout intent (reflow, reposition, or reveal) rather than being a scaled copy of the phone layout.
+- [ ] Margins follow the M3 scale: 16 dp at compact, 24 dp at medium and expanded.
+- [ ] Wide content columns (text, forms, media) are capped at a comfortable max-width and centered rather than stretching to fill the full expanded canvas.
+- [ ] Navigation uses the correct M3 component for each width: NavigationBar at compact, NavigationRail at medium, NavigationDrawer at expanded.
+- [ ] Any list-detail (two-pane) layout specifies what appears in the detail pane on first entry — it is never blank.
+- [ ] Each pane in a multi-pane layout is at least 240 dp wide at the narrowest breakpoint where that split is shown.
+- [ ] The three-pane layout is used only when the content hierarchy genuinely requires three levels; two panes is the default ceiling.
+- [ ] All interactive touch targets remain at least 48 dp at every breakpoint — larger canvases do not justify smaller tap areas.
+- [ ] The design has been reviewed at compact height (below 480 dp, i.e., phone in landscape) to confirm primary actions and content are not pushed off screen.
+- [ ] On foldable targets, the hinge area is free of interactive controls and primary content on both sides (at least 8 dp clear of the hinge line).
+- [ ] A tabletop posture treatment is specified if the app contains content typically consumed hands-free (video, recipes, navigation, fitness).
+- [ ] The design has been validated at non-boundary widths (e.g., 720 dp, 900 dp, 1200 dp) to check for awkward intermediate states.
+- [ ] Bottom navigation is not present on a tablet or foldable-open layout; it has been replaced with a rail or drawer.
+- [ ] Spacing between components grows modestly but consistently across breakpoints — no abrupt jumps except at structural pane changes.
+- [ ] Reveal of secondary content (filter panels, sidebars) is deferred to expanded widths unless the pane sizes are clearly comfortable at medium.
+- [ ] The design has been reviewed in both portrait and landscape on both compact and expanded form factors.
+- [ ] The implementation has been handed to the adaptive-window-size-classes code skill with explicit breakpoint and pane-width specifications.

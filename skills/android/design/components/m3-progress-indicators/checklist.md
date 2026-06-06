@@ -1,0 +1,21 @@
+- [ ] Every indicator is tied to real async work; no decorative or always-on spinners.
+- [ ] Determinate variant is used whenever a completion percentage is known or calculable.
+- [ ] Indeterminate variant is reserved for operations where duration genuinely cannot be estimated.
+- [ ] `LoadingIndicator` (M3 Expressive) is used only for full-attention loading moments (app launch, first-load); not substituted for ambient `CircularProgressIndicator` use.
+- [ ] `LoadingIndicator` and `CircularProgressIndicator` do not appear simultaneously in the same view.
+- [ ] Full-screen blocking overlay is used only when partial interaction would cause data corruption or a confusing state.
+- [ ] Indicator is placed close to the content it represents, not at an unrelated global position.
+- [ ] On large screens and foldables, `LinearProgressIndicator` is constrained to content-column width, not stretched across the full window.
+- [ ] A visible Cancel action is provided for any blocking wait exceeding a few seconds.
+- [ ] The user is warned before in-progress work is discarded on cancel.
+- [ ] Indicators are not shown for operations that typically complete in under 200ms; a threshold delay is in place.
+- [ ] Supporting text is shown for waits longer than a few seconds, naming the operation specifically ("Uploading 3 of 7 photos") rather than generic copy ("Loading...").
+- [ ] Determinate progress is reported honestly; the bar does not stall near 100% for unpredictable final stages.
+- [ ] When a task transitions from measurable to unmeasurable (or vice versa), the indicator type changes to match — no false precision.
+- [ ] Active indicator and background track colors come from the M3 color system (`primary` / `surfaceVariant`) unless there is a semantic reason to override.
+- [ ] Color overrides (e.g., `error` tint) are not the sole cue for state change; a label or icon also signals the change.
+- [ ] Active/background track contrast is verified in both light and dark themes.
+- [ ] The indicator or its parent container has a meaningful `contentDescription` for TalkBack.
+- [ ] An accessibility live region or semantic update announces completion state to screen-reader users.
+- [ ] On two-pane large-screen layouts, each pane carries its own scoped indicator rather than a single global one.
+- [ ] Linear indicator choice vs circular indicator choice is validated against available space and content context.

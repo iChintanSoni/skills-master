@@ -1,0 +1,28 @@
+## Compose for TV review checklist
+
+- [ ] The manifest declares `<uses-feature android:name="android.software.leanback" android:required="false" />` so the app is not restricted to TV-only distribution.
+- [ ] The manifest declares `<uses-feature android:name="android.hardware.touchscreen" android:required="false" />` so the app appears in the Android TV Play Store.
+- [ ] An `android:banner` drawable is set on the launcher `<activity>` for the TV home screen tile.
+- [ ] `androidx.tv:tv-material` is in the dependency graph and the Compose BOM is aligned to a compatible version.
+- [ ] All content screens use `TvLazyRow` / `TvLazyColumn` instead of the standard Compose `LazyRow` / `LazyColumn`.
+- [ ] `AppTvTheme` wraps `androidx.tv.material3.MaterialTheme`, not the phone-side `androidx.compose.material3.MaterialTheme`.
+- [ ] The app uses dark theme by default (TV convention) with high-contrast color roles.
+- [ ] All interactive composables are reachable by D-pad (Up/Down/Left/Right/Select) without requiring touch or swipe.
+- [ ] Cards use `StandardCardContainer`, `ClassicCard`, or `CompactCard` from `tv-material` — custom focus borders are not hand-rolled.
+- [ ] `ImmersiveList` hero cross-fade is driven by the `background` slot, not by a separate overlay composable.
+- [ ] `Carousel` auto-scroll is paused (`autoScrollDurationMillis = Long.MAX_VALUE`) when the carousel has D-pad focus.
+- [ ] `CarouselDefaults.IndicatorRow` is placed in the `indicatorContent` slot for platform-consistent slide indicators.
+- [ ] `pivotOffsets` is set on each `TvLazyRow` so partially visible items at list edges signal scrollability.
+- [ ] Content inside rows has at least 48 dp lateral `contentPadding` to keep focus borders clear of the screen bezel.
+- [ ] Top-level navigation uses `ModalNavigationDrawer` / `NavigationDrawer` from `tv-material` — no `BottomNavigation` or `TabRow` from the phone library.
+- [ ] `focusRestorer()` is applied to action button rows on detail screens so D-pad re-entry restores the last focused button.
+- [ ] `FocusRequester.requestFocus()` is called inside a `LaunchedEffect(Unit)` (not during composition) to move initial focus to the first content item.
+- [ ] `Modifier.focusGroup()` is applied to containers that should cycle focus internally before passing it to the parent layout.
+- [ ] No visible interactive composable has `focusable(false)` — disabled items use `enabled = false` instead so D-pad traversal skips them predictably.
+- [ ] Hero images and carousel backdrops are loaded asynchronously with Coil or a similar loader; no synchronous bitmap decoding occurs inside composables.
+- [ ] All `Card` composables and image containers have a non-empty `contentDescription` for TalkBack / Switch Access users.
+- [ ] Media playback uses `androidx.media3:media3-ui` `PlayerView` wrapped in `AndroidView` — no custom Compose surface for video.
+- [ ] The `ComposeView` in any transitional Leanback Fragment sets `setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)`.
+- [ ] The Leanback dependency (`androidx.leanback:leanback`) is removed from `build.gradle.kts` once all Fragments are replaced.
+- [ ] The app has been tested with the emulator virtual D-pad (all four directions + Select + Back) through every primary user flow.
+- [ ] Navigation Compose uses `@Serializable` type-safe route objects — no string-based route constants.

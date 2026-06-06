@@ -1,0 +1,16 @@
+- [ ] `GenerativeModel.availability()` is called before any session is created, and all three cases (`AVAILABLE`, `AVAILABLE_AFTER_DOWNLOAD`, `NOT_SUPPORTED`) are handled explicitly.
+- [ ] `model.prepareFeature()` is called and awaited when availability is `AVAILABLE_AFTER_DOWNLOAD` before proceeding to inference.
+- [ ] Download progress or a waiting indicator is shown in the UI during `prepareFeature()` so the user is not left with a frozen screen.
+- [ ] All availability checks and session calls are launched from a coroutine (e.g., inside `viewModelScope.launch`), never directly on the main thread.
+- [ ] Session objects are closed in a `finally` block after `execute()` completes or if the coroutine is cancelled, to release NPU resources.
+- [ ] Each session is used for exactly one `execute()` call — sessions are not reused across multiple requests.
+- [ ] `GenerativeModel` instances are created once per ViewModel (or equivalent scope) and not recreated on every inference call.
+- [ ] The availability result is cached in the ViewModel for the session lifetime rather than re-checked before every `execute()` call.
+- [ ] Streaming `Flow<String>` responses from `execute()` are collected incrementally and appended to a `StateFlow<String>` so the UI updates token by token.
+- [ ] The UI shows partial results during streaming rather than waiting for the full response, improving perceived responsiveness.
+- [ ] A graceful fallback (cloud endpoint, heuristic, or feature hide) is implemented for devices where availability is `NOT_SUPPORTED`.
+- [ ] `ImageDescriptionSession` bitmap inputs are decoded off the main thread before being passed to `execute()`.
+- [ ] Gemini Nano is not used for open-domain factual queries or general knowledge lookups — only for the four task APIs with app-supplied context.
+- [ ] The feature is not gated purely on Android API level — also check `Availability` at runtime, because not all Android 16+ devices support Gemini Nano.
+- [ ] On large-screen / foldable targets, `GenerativeModel` is ViewModel-scoped rather than Activity-scoped to avoid duplicate NPU sessions across window configurations.
+- [ ] No API key, network permission, or Firebase project is required in the manifest — AICore is a local system service with no authentication.

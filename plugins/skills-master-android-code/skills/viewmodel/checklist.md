@@ -1,0 +1,17 @@
+- [ ] ViewModel class does not hold a reference to `Context`, `Activity`, `Fragment`, or any `View` — use `@ApplicationContext` via Hilt or `AndroidViewModel` only when a context is genuinely required.
+- [ ] All coroutines are launched inside `viewModelScope` so they are automatically cancelled when the ViewModel is cleared.
+- [ ] Mutable state holders (`MutableStateFlow`, `MutableLiveData`) are `private`; only the read-only interface (`StateFlow`, `LiveData`) is exposed to the UI.
+- [ ] `MutableStateFlow` is exposed via `.asStateFlow()` to prevent callers from casting back to mutable.
+- [ ] ViewModel is obtained with `viewModel()` or `hiltViewModel()`, never constructed directly with `MyViewModel()` inside a composable.
+- [ ] `SavedStateHandle` is used for any state that must survive process death (query strings, selected IDs, scroll positions) — not for large objects or bitmaps.
+- [ ] `SavedStateHandle` values are read reactively via `getStateFlow("key", default)` rather than polled with `get("key")`.
+- [ ] Values written to `SavedStateHandle` are `Parcelable`, `Serializable`, or a primitive type supported by the `Bundle` API.
+- [ ] Nav route arguments are read from `SavedStateHandle` by their declared argument name when using `hiltViewModel()` inside a nav destination.
+- [ ] Shared state across two or more nav destinations is scoped to a parent nav graph via `navController.getBackStackEntry(graphRoute)`, not leaked to the Activity scope.
+- [ ] Activity-scoped ViewModels (obtained outside a `NavHost`) are used only when state must genuinely outlive all destinations — not as a default sharing strategy.
+- [ ] One-shot UI events (navigation, Snackbar) are surfaced via `Channel<Event>.receiveAsFlow()` or `SharedFlow` — not via a boolean flag in `StateFlow` that risks being consumed twice.
+- [ ] `UiState` is a sealed interface or sealed class so the UI handles all states exhaustively in a `when` expression.
+- [ ] The ViewModel is covered by unit tests that inject fakes for all constructor dependencies; `SavedStateHandle` is constructed with `SavedStateHandle(mapOf(...))` in tests.
+- [ ] `viewModelScope.launch` results are not silently ignored when cancellation or error handling is required — keep the `Job` reference or use `supervisorScope` with structured error handling.
+- [ ] The ViewModel does not reference `Modifier`, `Dp`, `Color`, or any Compose/UI type — it remains UI-framework-agnostic.
+- [ ] On large-screen targets, graph-scoped ViewModels are used rather than relying on a shared Activity-scoped ViewModel for pane-to-pane communication.

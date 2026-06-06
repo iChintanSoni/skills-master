@@ -1,0 +1,24 @@
+- [ ] `BLUETOOTH_SCAN` and `BLUETOOTH_CONNECT` are declared in the manifest for Android 12+ (API 31+), and legacy `BLUETOOTH`/`ACCESS_FINE_LOCATION` are included for API < 31 with a `Build.VERSION.SDK_INT` guard.
+- [ ] `android:usesPermissionFlags="neverForLocation"` is set on `BLUETOOTH_SCAN` if scan results are not used to derive location.
+- [ ] Both `BLUETOOTH_SCAN` and `BLUETOOTH_CONNECT` are requested at runtime via `ActivityResultContracts.RequestMultiplePermissions` before any BLE call.
+- [ ] `BluetoothAdapter` is obtained through `BluetoothManager.adapter`, not the deprecated `BluetoothAdapter.getDefaultAdapter()`.
+- [ ] `adapter.isEnabled` is checked before starting a scan or connecting; Bluetooth-off state is surfaced to the user with an enable-Bluetooth intent rather than programmatic enable.
+- [ ] Every scan uses at least one `ScanFilter` (by service UUID or device address) to avoid open-ended scans and the 5-scans-per-30-min OS quota.
+- [ ] Scanning is stopped immediately after the target device is found or after a bounded timeout (30 s recommended).
+- [ ] `device.connectGatt(context, false, callback, BluetoothDevice.TRANSPORT_LE)` is called with `autoConnect = false` and the `TRANSPORT_LE` flag.
+- [ ] All `BluetoothGatt` operations (`discoverServices`, `readCharacteristic`, `writeCharacteristic`, `writeDescriptor`) are issued one at a time, with the next operation triggered only from the corresponding callback.
+- [ ] `gatt.discoverServices()` is called only from `onConnectionStateChange` when `newState == STATE_CONNECTED`.
+- [ ] Characteristic properties are checked with bitwise AND (e.g., `PROPERTY_READ`, `PROPERTY_NOTIFY`) before performing any operation.
+- [ ] To enable notifications: both `gatt.setCharacteristicNotification(char, true)` AND a write of `ENABLE_NOTIFICATION_VALUE` to the CCD descriptor (UUID `00002902-...`) are performed.
+- [ ] The API 33+ three-argument `onCharacteristicChanged(gatt, characteristic, value: ByteArray)` override is used (not the deprecated two-argument form that reads `characteristic.value`).
+- [ ] `ByteArray` values from `onCharacteristicChanged` are copied before storage — the field is overwritten on the next callback.
+- [ ] `gatt.requestMtu(512)` is called after `onServicesDiscovered`; write payloads are chunked to `mtu - 3` bytes.
+- [ ] `gatt.close()` is called on every disconnect or error path (including GATT_ERROR status 133) and never skipped.
+- [ ] Reconnect attempts use exponential back-off with a cap (e.g., 3 retries at 1 s/2 s/4 s); after the cap, the UI shows an error rather than looping.
+- [ ] The GATT callback layer is wrapped in `callbackFlow` or `suspendCancellableCoroutine` in a repository, so ViewModels consume `Flow` rather than raw callbacks.
+- [ ] The BLE connection job runs in `viewModelScope` and is cancelled in `onCleared()` or when the user navigates away.
+- [ ] Background scanning (if required) is anchored to a foreground service with `foregroundServiceType="connectedDevice"` on Android 10+.
+- [ ] `BluetoothLeAdvertiser` nullability is checked before advertising — not all devices support the peripheral role.
+- [ ] `AdvertiseData` includes the service UUID and has `setIncludeDeviceName(false)` to keep the payload within the 31-byte advertising limit.
+- [ ] Compose UI reads BLE state from a `StateFlow<UiState>` collected with `collectAsStateWithLifecycle`, not from raw callback data.
+- [ ] Scanning and connection logic is not started from composable event handlers or `LaunchedEffect` that can re-fire on recomposition — scan lifecycle is owned by the ViewModel.

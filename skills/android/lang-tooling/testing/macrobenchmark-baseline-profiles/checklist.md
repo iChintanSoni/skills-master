@@ -1,0 +1,17 @@
+- [ ] A dedicated `:macrobenchmark` module with `com.android.test` plugin exists and does not depend on any production module directly (uses `targetProjectPath`).
+- [ ] The `benchmark` build type in `:app` has `isDebuggable = false` and `isProfileable = true` so ART behaves like a release build during measurement.
+- [ ] `StartupMode.COLD` benchmarks call `pressHome()` and `killProcess()` in `setupBlock` to guarantee cold conditions before each iteration.
+- [ ] `startActivityAndWait()` is used (not `launchActivity`) so the benchmark blocks until the first fully-drawn frame.
+- [ ] `reportFullyDrawn()` is called in the `Activity` or Compose code once meaningful content is on screen so `timeToFullDisplayMs` is accurate.
+- [ ] Scroll benchmarks use `FrameTimingMetric` and capture at least 5 iterations; p99 `frameDurationCpuMs` targets < 16 ms at 60 Hz.
+- [ ] The `BaselineProfileRule`-based generator covers all primary user journeys: cold start, home screen scroll, and at least one detail/secondary screen.
+- [ ] `baseline-prof.txt` is committed to source control under `app/src/main/` and treated as a versioned artifact, not a build output.
+- [ ] `androidx.profileinstaller` is added to the `:app` production dependencies so profiles are installed in non-Play builds.
+- [ ] `ProfileVerifier.getCompilationStatusAsync()` is asserted in a benchmark test to confirm `RESULT_CODE_COMPILED_WITH_PROFILE` on CI after profile generation.
+- [ ] Benchmarks run on a physical device or a rooted/Gradle-managed emulator — not a standard non-rooted emulator — to get stable timing.
+- [ ] CI pipeline uploads the JSON output from `connected_android_test_additional_output/` and tracks `timeToInitialDisplayMs` and `timeToFullDisplayMs` across builds.
+- [ ] Baseline Profile is regenerated after any significant architectural change, major dependency upgrade (especially Compose), or addition of new primary screens.
+- [ ] The `benchmark` build type in `:macrobenchmark` is not `isDebuggable` and uses a signing config compatible with the app's `benchmark` variant.
+- [ ] UiAutomator locators use semantic resource IDs (test tags exposed via `Modifier.testTag` + `semantics { testTagsAsResourceId = true }`) rather than fragile XPath expressions.
+- [ ] Iteration count is at least 10 for startup benchmarks reported to stakeholders; 5 is acceptable for local developer feedback loops.
+- [ ] Profile scope is scoped to startup and primary journeys only — profiling every code path wastes compile-time budget and reduces the benefit.

@@ -1,0 +1,20 @@
+- [ ] Every `@Entity` class has exactly one `@PrimaryKey`; auto-increment is used for surrogate keys (`autoGenerate = true`) and external IDs use explicit string or typed primary keys.
+- [ ] `@ColumnInfo(name = "snake_case")` is applied to properties where the Kotlin name differs from the desired column name, decoupling schema from Kotlin refactors.
+- [ ] `@Database(exportSchema = true)` is set and the generated schema JSON files are committed to source control.
+- [ ] The `RoomDatabase` is created once and held as a singleton (via Hilt `@Singleton` or equivalent); it is never constructed on every call or in a composable.
+- [ ] One-shot DAO operations (insert, update, delete, single-row query) are `suspend fun` so callers run them on the correct dispatcher.
+- [ ] Reactive queries return `Flow<T>` (non-suspend) so Room automatically emits when the table changes — callers do not poll.
+- [ ] All `@Relation` queries are annotated with `@Transaction` to ensure parent and child rows are read from a consistent snapshot.
+- [ ] Foreign key constraints are declared on child entities with `@ForeignKey`, and the child column is indexed with `@Index` to prevent full-table scans on cascades.
+- [ ] `@Upsert` (or `@Insert(onConflict = OnConflictStrategy.REPLACE)`) is used deliberately — `REPLACE` on entities with `CASCADE` foreign keys deletes child rows; prefer explicit `@Upsert` which does not trigger cascades unexpectedly.
+- [ ] `@TypeConverter` functions are registered at the `@Database` level via `@TypeConverters(...)`, not on DAOs or entities.
+- [ ] Every schema version change increments `@Database(version = N)` and is covered by either an `@AutoMigration` annotation or an explicit `Migration(from, to)` object added to the builder.
+- [ ] `@AutoMigration` is used for simple additive changes (new nullable/default columns, table renames); complex alterations use a manual `Migration` with raw SQL.
+- [ ] `fallbackToDestructiveMigration()` is never called unconditionally in production builds; it is either removed or guarded by `BuildConfig.DEBUG`.
+- [ ] Migration correctness is verified with `MigrationTestHelper` in the `androidTest` source set, running `runMigrationsAndValidate` for each migration step.
+- [ ] DAO access never occurs on the main thread; Room is accessed via coroutines with `Dispatchers.IO`, not via `allowMainThreadQueries()` (which must not appear outside of tests).
+- [ ] A domain-model mapping layer exists between `@Entity` types and the rest of the app; entities do not leak into the ViewModel or UI layers.
+- [ ] In KMP projects, `room.generateKotlin = true` is set in the KSP compiler arguments so Room generates Kotlin (not Java) implementation files for all targets.
+- [ ] In KMP projects, the platform `RoomDatabase.Builder` is provided via `expect/actual` in each target's source set with the appropriate SQLite driver.
+- [ ] Complex multi-step DAO operations (e.g. delete-then-insert across multiple tables) are wrapped in a `@Transaction` abstract function in the DAO to run atomically.
+- [ ] There are no JSON-blob type converters hiding relational data — data that is genuinely relational is stored in separate entities with `@Relation`, not serialised into a single column.

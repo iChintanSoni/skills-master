@@ -1,0 +1,20 @@
+- [ ] All workers extend `CoroutineWorker`, not the blocking `Worker`, so suspend functions and coroutines work correctly inside `doWork`.
+- [ ] `doWork` returns `Result.success()`, `Result.failure()`, or `Result.retry()` on every code path — no implicit `null` or unreachable return.
+- [ ] `runAttemptCount` is checked before returning `Result.retry()`; persistent failure eventually returns `Result.failure()` to avoid infinite retry loops.
+- [ ] `Data` payloads passed through input/output contain only primitive types or arrays of primitives; total serialised size stays well under 10 KB.
+- [ ] Large payloads (file paths, query results) are stored in Room or on disk — only the ID is threaded through WorkManager `Data`.
+- [ ] Unique work names are used for any task that must not run as duplicates; `enqueueUniqueWork` / `enqueueUniquePeriodicWork` replaces plain `enqueue`.
+- [ ] `ExistingWorkPolicy` is chosen deliberately — `KEEP` for idempotent syncs, `REPLACE` for user-triggered re-uploads, `APPEND_OR_REPLACE` for pipeline re-runs.
+- [ ] `Constraints` are applied at the request level, not hard-coded inside the worker; the worker itself is free of network or hardware checks.
+- [ ] Periodic work interval is not shorter than 15 minutes; the design accounts for the OS silently enforcing the minimum.
+- [ ] Chained requests pass only IDs through `outputData` / `inputData`; downstream workers query the database for the full record.
+- [ ] Expedited workers override `getForegroundInfo()` to supply a notification for pre-Android 12 compatibility.
+- [ ] `OutOfQuotaPolicy` is set to `RUN_AS_NON_EXPEDITED_WORK_REQUEST` on expedited builders so the task degrades gracefully when the quota is exhausted.
+- [ ] WorkInfo is observed via `getWorkInfoByIdFlow` or `getWorkInfosByTagFlow` in a ViewModel, not directly in a Composable.
+- [ ] The UI filters `WorkInfo` emissions by `WorkInfo.state` before acting on output data to avoid premature reads.
+- [ ] When using Hilt, the worker is annotated with `@HiltWorker`, the constructor with `@AssistedInject`, and the default `WorkManagerInitializer` content provider is disabled in `AndroidManifest.xml`.
+- [ ] `HiltWorkerFactory` is supplied via a manual `WorkManager.initialize` call in `Application.onCreate` or a Hilt module, not left to auto-initialization.
+- [ ] Blocking I/O inside a `CoroutineWorker` runs under `withContext(Dispatchers.IO)`, not on `Dispatchers.Default`.
+- [ ] Workers are tested with `TestListenableWorkerBuilder` in unit tests so that `doWork` can be called without a real device or emulator.
+- [ ] OEM battery-optimization caveats are documented for QA — the app cannot programmatically override aggressive power management on Huawei, Xiaomi, or OPPO devices.
+- [ ] `setProgress` / `setProgressAsync` is called at meaningful intervals for long-running workers so the UI can render a progress indicator.

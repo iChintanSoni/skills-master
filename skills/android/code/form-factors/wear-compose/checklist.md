@@ -1,0 +1,25 @@
+- [ ] Dependencies use `androidx.wear.compose:compose-material3` and `androidx.wear.compose:compose-navigation` — no phone `material3` or `navigation-compose` artifacts in the Wear module.
+- [ ] `wear-compose` version is pinned explicitly (BOM does not manage it); confirm the pinned version matches the `wear-compose: 1.5` requirement or later.
+- [ ] The Wear app is wrapped in a single `AppScaffold` at the root. There is no nested `AppScaffold`.
+- [ ] Each screen composable is wrapped in `ScreenScaffold` with its `scrollState` parameter wired to the screen's `TransformingLazyColumnState` or `ScalingLazyColumnState`.
+- [ ] `TransformingLazyColumn` is used for new screens (not plain `LazyColumn`). Legacy `ScalingLazyColumn` screens are noted for migration.
+- [ ] `rememberTransformingLazyColumnState()` is used with `TransformingLazyColumn`; `rememberScalingLazyListState()` with `ScalingLazyColumn`.
+- [ ] `contentPadding` on `TransformingLazyColumn` sets a top of at least 32 dp (to clear `TimeText`) and a bottom of at least 48 dp (to clear chin / EdgeButton).
+- [ ] `Modifier.rotaryScrollable(behavior, focusRequester)` is applied to the scrollable container (not the screen root or `ScreenScaffold`).
+- [ ] `rememberActiveFocusRequester()` is used and `focusRequester.requestFocus()` is called in `LaunchedEffect(Unit)` on every screen that handles rotary input.
+- [ ] `rememberTransformingLazyColumnScrollBehavior(columnState)` (or the appropriate snap behavior for pagers/pickers) is passed as the rotary `behavior`.
+- [ ] `EdgeButton` is used for the primary action on each screen and placed as the **last item** inside `TransformingLazyColumn`, not as a floating overlay.
+- [ ] `SwipeDismissableNavHost` and `rememberSwipeDismissableNavController()` are used instead of the phone-tier `NavHost`.
+- [ ] Navigation routes are short string constants; argument validation uses `.orEmpty()` / null-safe operators defensively.
+- [ ] `MaterialTheme` is imported from `androidx.wear.compose.material3` — the import statement is verified; IDE auto-import can pull the wrong package silently.
+- [ ] Custom `TimeText` lambdas in `AppScaffold` provide both `leadingLinearContent` (square/fallback) and `leadingCurvedContent` (round) when injecting extra status.
+- [ ] `Picker` screens wire `rememberPickerScrollBehavior(pickerState)` to `rotaryScrollable` so crown input drives picker selection.
+- [ ] `AlertDialog` and `ConfirmationDialog` are from `wear.compose.material3` — phone-tier dialogs are not used on Wear screens.
+- [ ] `Card`, `Button`, `OutlinedButton`, `IconButton`, and `ToggleButton` are all from `wear.compose.material3`, not `material3`.
+- [ ] List items provide stable `key` lambdas to `items(...)` for correct animation and identity tracking.
+- [ ] Dynamic color uses `MaterialTheme(colorScheme = dynamicColorScheme(...))` guarded by a Wear OS 4+ / API 33+ check, with a fixed fallback scheme for older OS versions.
+- [ ] No `remember`, `mutableStateOf`, or phone-Compose side-effect APIs are used incorrectly — all patterns follow the standard Compose state model (which does work in Wear Compose unlike Glance).
+- [ ] Ambient mode is handled via `AmbientLifecycleObserver` outside the Compose layer — the interactive Compose UI does not attempt to manage ambient directly.
+- [ ] Wear module does not import from the Tiles / ProtoLayout namespace; tile code lives in a separate module if both are needed.
+- [ ] The `WearActivity` declares `android:taskAffinity=""` and `android:excludeFromRecents="true"` in the manifest to conform to Wear OS activity guidelines.
+- [ ] Compose previews use `@WearPreviewDevices` and/or `@WearPreviewFontScales` from `wear.compose.ui.tooling.preview` for round-display preview accuracy.

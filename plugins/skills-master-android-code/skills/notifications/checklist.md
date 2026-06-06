@@ -1,0 +1,18 @@
+- [ ] Every notification channel is created idempotently at app startup (Application.onCreate or a dedicated initializer), not inside a ViewModel or composable.
+- [ ] Channel importance is set correctly for the content type — IMPORTANCE_HIGH is reserved for genuinely time-critical alerts; informational updates use IMPORTANCE_DEFAULT or IMPORTANCE_LOW.
+- [ ] POST_NOTIFICATIONS is declared in the manifest, and a runtime permission request is shown in context (not at first launch) on API 33+.
+- [ ] The permission-denied case is handled gracefully — the app does not crash, and a path to the system notification settings is offered when the permission is permanently denied.
+- [ ] All notifications are built with NotificationCompat.Builder (not the platform Notification.Builder) to ensure consistent behavior across API levels.
+- [ ] Every notification has a non-null contentIntent (PendingIntent) so tapping the notification navigates somewhere meaningful.
+- [ ] PendingIntent uses FLAG_IMMUTABLE for all intents except direct-reply intents, which use FLAG_MUTABLE so the system can write reply text into the extras.
+- [ ] The small icon is a transparency-only vector or PNG — no color fills that would be replaced with white in the status bar.
+- [ ] Large bitmaps passed as largeIcon or style images are downsampled to ~256×256 px to avoid TransactionTooLargeException.
+- [ ] Grouped notifications include a group summary notification posted with setGroupSummary(true) so grouping works on all API levels.
+- [ ] Each notification uses a stable, unique notificationId derived from the content (e.g., messageId.hashCode()), not a hardcoded constant that collides across entries.
+- [ ] After a direct reply is handled in the BroadcastReceiver, the notification is immediately updated or cancelled to clear the reply spinner.
+- [ ] Direct-reply RemoteInput uses FLAG_MUTABLE on its PendingIntent — confirmed by testing that RemoteInput.getResultsFromIntent returns the typed text (not null).
+- [ ] MessagingStyle notifications include a ShortcutInfo published via ShortcutManagerCompat.pushDynamicShortcut so the conversation is eligible for ranking and bubble promotion.
+- [ ] Notifications posted to a channel that does not exist have been audited — the channel create call always precedes the notify call.
+- [ ] MediaStyle notifications provide a valid MediaSession token and call setShowActionsInCompactView to choose which controls appear when collapsed.
+- [ ] The foreground-denied code path (POST_NOTIFICATIONS denied) is covered by an instrumented test or manual test case, not just the happy path.
+- [ ] On large-screen targets, the contentIntent navigates to the appropriate adaptive layout destination rather than always opening a single-pane detail screen.
