@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: 22
           registry-url: "https://registry.npmjs.org"
+          # corepack provisions pnpm; skip setup-node's auto pnpm cache,
+          # which would invoke pnpm before corepack enable puts it on PATH.
+          package-manager-cache: false
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter skills-master test
