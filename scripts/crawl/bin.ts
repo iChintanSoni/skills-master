@@ -110,7 +110,7 @@ function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
     if (!foundInnerLinks) {
       // Fallback: extract the main title and link of the entry/item itself
       const titleMatch = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(content);
-      const title = titleMatch ? titleMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/i, "$1").replace(/<[^>]+>/g, "").trim() : "";
+      const title = titleMatch ? titleMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/i, "$1").replace(/[<>]/g, "").trim() : "";
       
       let url = "";
       const locMatch = /<loc>([\s\S]*?)<\/loc>/i.exec(content);
