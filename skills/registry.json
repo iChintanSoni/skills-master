@@ -137,7 +137,9 @@
         "material3",
         "viewmodel"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-views-interop"
+      ],
       "path": "android/overviews/overviews/adopting-compose",
       "resources": {
         "reference": false,
@@ -165,7 +167,9 @@
         "compose",
         "material3"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "system-ui-styling"
+      ],
       "path": "android/overviews/overviews/adopting-edge-to-edge-predictive-back",
       "resources": {
         "reference": false,
@@ -444,7 +448,9 @@
         "canvas",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-compose"
+      ],
       "path": "android/code/compose-ui/android-views-interop",
       "resources": {
         "reference": false,
@@ -654,32 +660,6 @@
       }
     },
     {
-      "name": "app-signing",
-      "domain": "android",
-      "class": "lang-tooling",
-      "category": "build-packaging",
-      "description": "Guidance on configuring Android app signing in Gradle with Kotlin DSL — signing configs, the upload key vs app signing key distinction, Play App Signing, key rotation, and keeping keystores out of version control. Use when setting up release signing for a new app, migrating a keystore to Play App Signing, rotating a compromised key, or hardening signing secrets in CI/CD.",
-      "platforms": [
-        "android"
-      ],
-      "stability": "stable",
-      "version": "1.0.0",
-      "tags": [
-        "signing",
-        "build-packaging",
-        "release",
-        "security",
-        "gradle"
-      ],
-      "pairs_with": [],
-      "path": "android/lang-tooling/build-packaging/app-signing",
-      "resources": {
-        "reference": false,
-        "examples": false,
-        "checklist": false
-      }
-    },
-    {
       "name": "app-shortcuts",
       "domain": "android",
       "class": "code",
@@ -699,6 +679,32 @@
       ],
       "pairs_with": [],
       "path": "android/code/platform-services/app-shortcuts",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "app-signing",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Guidance on configuring Android app signing in Gradle with Kotlin DSL — signing configs, the upload key vs app signing key distinction, Play App Signing, key rotation, and keeping keystores out of version control. Use when setting up release signing for a new app, migrating a keystore to Play App Signing, rotating a compromised key, or hardening signing secrets in CI/CD.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "signing",
+        "build-packaging",
+        "release",
+        "security",
+        "gradle"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/app-signing",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2118,34 +2124,6 @@
       }
     },
     {
-      "name": "compose-custom-layouts",
-      "domain": "android",
-      "class": "code",
-      "category": "compose-ui",
-      "description": "Covers designing custom layouts, subcomposition, and intrinsic measurements in Jetpack Compose. Use when building non-standard layout containers, custom flow layouts, or dynamic sizing components.",
-      "platforms": [
-        "android",
-        "large-screen"
-      ],
-      "stability": "stable",
-      "version": "1.0.0",
-      "tags": [
-        "compose",
-        "custom-layout",
-        "subcompose-layout",
-        "intrinsics",
-        "measure",
-        "layout"
-      ],
-      "pairs_with": [],
-      "path": "android/code/compose-ui/compose-custom-layouts",
-      "resources": {
-        "reference": false,
-        "examples": false,
-        "checklist": false
-      }
-    },
-    {
       "name": "compose-animation",
       "domain": "android",
       "class": "code",
@@ -2172,6 +2150,36 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "compose-custom-layouts",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers designing custom layouts, subcomposition, and intrinsic measurements in Jetpack Compose. Use when building non-standard layout containers, custom flow layouts, or dynamic sizing components.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "custom-layout",
+        "subcompose-layout",
+        "intrinsics",
+        "measure",
+        "layout"
+      ],
+      "pairs_with": [
+        "compose-layout"
+      ],
+      "path": "android/code/compose-ui/compose-custom-layouts",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -2253,7 +2261,9 @@
         "pinch-zoom",
         "draggable"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "keyboard-mouse-stylus"
+      ],
       "path": "android/code/compose-ui/compose-gestures",
       "resources": {
         "reference": false,
@@ -2334,7 +2344,9 @@
         "ui",
         "custom-layout"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-custom-layouts"
+      ],
       "path": "android/code/compose-ui/compose-layout",
       "resources": {
         "reference": false,
@@ -2580,7 +2592,8 @@
         "dark-mode"
       ],
       "pairs_with": [
-        "m3-color"
+        "m3-color",
+        "design-system-customization"
       ],
       "path": "android/code/compose-ui/compose-theming",
       "resources": {
@@ -2663,7 +2676,8 @@
         "material3"
       ],
       "pairs_with": [
-        "m3-edge-to-edge"
+        "m3-edge-to-edge",
+        "system-ui-styling"
       ],
       "path": "android/code/compose-ui/compose-window-insets",
       "resources": {
@@ -3153,7 +3167,11 @@
         "shape",
         "compose"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-color",
+        "m3-typography",
+        "compose-theming"
+      ],
       "path": "android/design/styles/design-system-customization",
       "resources": {
         "reference": false,
@@ -5533,7 +5551,9 @@
         "chromeos",
         "pointer-input"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-gestures"
+      ],
       "path": "android/code/form-factors/keyboard-mouse-stylus",
       "resources": {
         "reference": false,
@@ -6315,7 +6335,8 @@
         "android"
       ],
       "pairs_with": [
-        "compose-theming"
+        "compose-theming",
+        "design-system-customization"
       ],
       "path": "android/design/styles/m3-color",
       "resources": {
@@ -7531,7 +7552,9 @@
         "material-you",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "design-system-customization"
+      ],
       "path": "android/design/styles/m3-typography",
       "resources": {
         "reference": false,
@@ -10412,7 +10435,10 @@
         "compose",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-window-insets",
+        "adopting-edge-to-edge-predictive-back"
+      ],
       "path": "android/code/compose-ui/system-ui-styling",
       "resources": {
         "reference": false,
