@@ -33,3 +33,19 @@ export const APPLE_ENDPOINTS: Endpoint[] = [
     description: "Human Interface Guidelines",
   },
 ];
+
+export const ANDROID_ENDPOINTS: Endpoint[] = [
+  {
+    domain: "android",
+    key: "androidx-releases",
+    url: "https://developer.android.com/feeds/androidx-release-notes.xml",
+    description: "AndroidX (Jetpack) library releases",
+  },
+  {
+    domain: "android",
+    key: "android-developers-blog",
+    url: "https://android-developers.googleblog.com/atom.xml",
+    description: "Official Android Developers Blog posts",
+  },
+];
+

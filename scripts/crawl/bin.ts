@@ -13,7 +13,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { APPLE_ENDPOINTS } from "./endpoints";
+import { APPLE_ENDPOINTS, ANDROID_ENDPOINTS } from "./endpoints";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(HERE, "../..");
@@ -75,8 +75,71 @@ function staleness(reg: Registry) {
   return rows;
 }
 
+function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
+  const topics: { title: string; url: string }[] = [];
+  
+  // Extract <entry>...</entry> or <item>...</item>
+  const entryRegex = /<(entry|item)>([\s\S]*?)<\/\1>/gi;
+  let match;
+  while ((match = entryRegex.exec(xmlText)) !== null) {
+    const content = match[2];
+    
+    // Check if there are nested links inside <content> (specific to AndroidX release notes XML)
+    const aTagRegex = /<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+    let aMatch;
+    let foundInnerLinks = false;
+    while ((aMatch = aTagRegex.exec(content)) !== null) {
+      const url = aMatch[1].trim();
+      const title = aMatch[2].replace(/<[^>]+>/g, "").trim();
+      if (url && title) {
+        topics.push({ title, url });
+        foundInnerLinks = true;
+      }
+    }
+
+    if (!foundInnerLinks) {
+      // Fallback: extract the main title and link of the entry/item itself
+      const titleMatch = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(content);
+      const title = titleMatch ? titleMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/i, "$1").replace(/<[^>]+>/g, "").trim() : "";
+      
+      let url = "";
+      const locMatch = /<loc>([\s\S]*?)<\/loc>/i.exec(content);
+      if (locMatch) {
+        url = locMatch[1].trim();
+      } else {
+        const linkMatch = /<link\s+[^>]*href=["']([^"']+)["']/i.exec(content) || /<link[^>]*>([\s\S]*?)<\/link>/i.exec(content);
+        if (linkMatch) {
+          url = linkMatch[1].trim();
+        }
+      }
+
+      if (url && title) {
+        topics.push({ title, url });
+      }
+    }
+  }
+
+  // Standard sitemap support
+  if (topics.length === 0) {
+    const urlRegex = /<url>([\s\S]*?)<\/url>/gi;
+    while ((match = urlRegex.exec(xmlText)) !== null) {
+      const content = match[1];
+      const locMatch = /<loc>([\s\S]*?)<\/loc>/i.exec(content);
+      if (locMatch) {
+        const url = locMatch[1].trim();
+        const title = url.split("/").pop() || url;
+        topics.push({ title, url });
+      }
+    }
+  }
+
+  return topics;
+}
+
 async function fetchUpstream() {
   const out: Record<string, unknown> = {};
+  
+  // Apple endpoints
   for (const ep of APPLE_ENDPOINTS) {
     try {
       const res = await fetch(ep.url, { headers: { accept: "application/json" } });
@@ -85,7 +148,6 @@ async function fetchUpstream() {
         continue;
       }
       const data: any = await res.json();
-      // Keep only structural fields (titles/identifiers), never prose.
       const refs = data?.references ?? {};
       const topics = Object.values(refs)
         .filter((r: any) => r?.title && r?.url)
@@ -96,6 +158,23 @@ async function fetchUpstream() {
       out[ep.key] = { error: err instanceof Error ? err.message : String(err) };
     }
   }
+
+  // Android endpoints (XML parsing)
+  for (const ep of ANDROID_ENDPOINTS) {
+    try {
+      const res = await fetch(ep.url);
+      if (!res.ok) {
+        out[ep.key] = { error: `HTTP ${res.status}` };
+        continue;
+      }
+      const xmlText = await res.text();
+      const topics = parseXmlFeed(xmlText).slice(0, 2000);
+      out[ep.key] = { count: topics.length, topics };
+    } catch (err) {
+      out[ep.key] = { error: err instanceof Error ? err.message : String(err) };
+    }
+  }
+
   return out;
 }
 
@@ -118,7 +197,7 @@ async function main() {
   }
 
   if (doFetch) {
-    console.log("Fetching Apple render-JSON endpoints…");
+    console.log("Fetching upstream endpoints…");
     const upstream = await fetchUpstream();
     writeFileSync(join(REPORTS, "upstream.json"), JSON.stringify(upstream, null, 2) + "\n");
     for (const [k, v] of Object.entries(upstream)) {
@@ -126,6 +205,7 @@ async function main() {
       console.log(`  ${k}: ${info.error ? `ERROR ${info.error}` : `${info.count} topics`}`);
     }
   }
+
 
   console.log(`Reports written to ${REPORTS}`);
 }
