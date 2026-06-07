@@ -75,6 +75,16 @@ function staleness(reg: Registry) {
   return rows;
 }
 
+function stripHtmlTags(input: string): string {
+  let previous: string;
+  let current = input;
+  do {
+    previous = current;
+    current = current.replace(/<[^>]+>/g, "");
+  } while (current !== previous);
+  return current;
+}
+
 function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
   const topics: { title: string; url: string }[] = [];
   
@@ -90,7 +100,7 @@ function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
     let foundInnerLinks = false;
     while ((aMatch = aTagRegex.exec(content)) !== null) {
       const url = aMatch[1].trim();
-      const title = aMatch[2].replace(/<[^>]+>/g, "").trim();
+      const title = stripHtmlTags(aMatch[2]).trim();
       if (url && title) {
         topics.push({ title, url });
         foundInnerLinks = true;
