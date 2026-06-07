@@ -93,17 +93,18 @@ jobs:
       - name: Publish to npmjs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: >
-          pnpm --filter @ichintansoni/skills-master publish
-          --no-git-checks --access public --provenance
-          --registry https://registry.npmjs.org
+        run: |
+          echo "@ichintansoni:registry=https://registry.npmjs.org" > .npmrc
+          echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' >> .npmrc
+          pnpm --filter @ichintansoni/skills-master publish --no-git-checks --access public --provenance
 
       - name: Publish to GitHub Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: >
-          pnpm --filter @ichintansoni/skills-master publish
-          --no-git-checks --registry https://npm.pkg.github.com
+        run: |
+          echo "@ichintansoni:registry=https://npm.pkg.github.com" > .npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> .npmrc
+          pnpm --filter @ichintansoni/skills-master publish --no-git-checks
 
       # Annotated tag pushed back with the default GITHUB_TOKEN. Pushes made with
       # GITHUB_TOKEN do NOT trigger new workflow runs, so this can't re-trigger
