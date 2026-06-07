@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: styles
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [design-system-customization]
   sources:
     - https://m3.material.io/styles/typography/overview
     - https://developer.android.com/develop/ui/compose/designsystems/material3

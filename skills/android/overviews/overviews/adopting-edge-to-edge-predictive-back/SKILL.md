@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: ["system-ui-styling"]
   sources:
     - https://developer.android.com/develop/ui/views/layout/edge-to-edge
     - https://developer.android.com/guide/navigation/custom-back/predictive-back-gesture

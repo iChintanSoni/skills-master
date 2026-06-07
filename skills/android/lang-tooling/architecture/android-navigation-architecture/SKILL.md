@@ -30,6 +30,11 @@ Apply this skill when designing or refactoring app-wide navigation on Android. C
 - **Do** own navigation logic in the ViewModel or a dedicated navigator, not in composables. A composable calls `viewModel.onDetailClicked(id)`, the ViewModel emits a navigation event, and the hosting composable observes it and calls the controller. This keeps composables testable without a `NavController`.
 - **Do** design the nav graph in layers: a top-level app graph owns the primary destinations; each feature module exposes a `NavGraphBuilder` extension function (`fun NavGraphBuilder.featureGraph(...)`) that the app graph calls. The feature module never imports the app module.
 - **Do** declare deep-link URI patterns on each destination at the graph level. Parse incoming `Intent`/`Uri` to a typed route in one place (e.g., a `DeepLinkHandler` invoked from `Activity.onCreate` and `onNewIntent`), then call `navController.navigate(route)`. Keep URI-to-route mapping in a single file.
+- **Do** respect the **Principles of Navigation**:
+  - **Fixed Start Destination:** Every app must have a fixed starting destination (the screen the user sees first upon launch).
+  - **Back stack representation (LIFO):** The navigation state must represent a Last-In, First-Out queue of screens.
+  - **Back/Up Symmetry:** The Up button (system action bar) and system Back key/gesture must behave identically for destinations within the app.
+  - **Deep Link Consistency:** When a user enters the app via deep link, the back stack must be synthesized so that pressing Back takes them to the logical parent screen, not out of the app.
 - **Don't** store `NavController` in a ViewModel, `Application`, or any object that outlives the composable scope. `NavController` holds a reference to the `FragmentManager`/composition and will leak.
 - **Don't** nest `NavHost` composables that share a back stack. Independent nested stacks (e.g., bottom-nav tabs) are fine; sharing state between them should go through a shared ViewModel in a common scope, not cross-controller navigation calls.
 - **Don't** use `popBackStack` + `navigate` to simulate replacing the current destination; use `NavOptions` with `popUpTo` and `launchSingleTop` to keep the back stack clean.

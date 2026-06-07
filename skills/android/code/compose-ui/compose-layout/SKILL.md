@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
-  pairs_with: []
+  pairs_with: [compose-custom-layouts]
   sources:
     - https://developer.android.com/develop/ui/compose/layouts/basics
     - https://developer.android.com/develop/ui/compose/layouts/custom

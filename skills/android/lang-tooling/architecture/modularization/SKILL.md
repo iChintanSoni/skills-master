@@ -27,10 +27,13 @@ Apply this skill when a single-module app is growing slow to build, hard to test
 
 - **Layer by dependency direction.** Organise into three tiers: leaf `:core` modules (network, database, design system, models), `:feature` modules that depend on `:core`, and a thin `:app` module that wires everything together and owns the manifest. Dependencies always flow inward — a `:core` module must never import a `:feature`.
 - **Keep `:app` thin.** The app module should set up dependency injection, wire navigation, and delegate everything else to features. A thin app target compiles in seconds and improves iteration speed.
+- **Choose the right modularization pattern:**
+  - **Modularization by layer:** Split by technical concerns (e.g., `:ui`, `:presentation`, `:data`). Avoid this for large scale apps as changes often touch all modules.
+  - **Modularization by feature / flow:** Split by business capabilities (e.g., `:feature:login`, `:feature:dashboard`). Highly scalable and enables code ownership.
 - **Use `api` sparingly; prefer `implementation`.** Expose a dependency transitively via `api` only when callers genuinely need its types. Over-using `api` leaks your module's internal dependencies and inflates consumers' compile classpaths.
 - **Split each feature's public contract into an `-api` artifact.** When feature A needs to navigate to feature B, depend on `:feature:b-api` (interfaces, route descriptors, plain types) rather than `:feature:b`. This keeps the build graph wide and parallel and prevents rebuild cascades when B's internals change.
 - **Avoid dependency cycles.** Gradle does not permit circular dependencies between project modules; design boundaries before the cycle forms. If two modules need each other's types, extract the shared types into a third `:core` module.
-- **Write tests inside the module.** Each module gets its own `test` and `androidTest` source sets, so logic is verified without running the full app — fast, hermetic, and CI-cache-friendly.
+- **Write tests inside the module.** Each module gets its own `test` and `androidTest` source sets, so logic is verified without running the full app. Enable `android { testFixtures { enable = true } }` in core modules to share fakes, mocks, or helper utilities across modules without duplicate code.
 - **Use convention plugins for shared config.** A `build-logic` included build exposes reusable `Convention` plugins (e.g., `AndroidLibraryConventionPlugin`, `ComposeConventionPlugin`) that apply AGP, Kotlin, and lint config once and are consumed by every module's `build.gradle.kts`.
 - **Do not over-modularize.** Dozens of micro-modules multiply configuration files, slow Gradle configuration phase, and create fragile dependency graphs. Start with coarse modules and split when a real boundary hurts.
 

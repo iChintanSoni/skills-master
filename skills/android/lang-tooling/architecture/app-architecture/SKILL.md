@@ -28,6 +28,7 @@ Apply this skill when starting a new Android app and deciding how to partition c
 ### The three-layer model
 
 - **Data layer** — owns all data sources (Room DAOs, Retrofit services, DataStore, content providers) and the repositories that unify them. Repositories are the single source of truth for each data type; they decide whether to hit the network or return a cached result.
+  - **Offline-First pattern:** Design repositories to treat local storage (Room, DataStore) as the Single Source of Truth for the UI. Sync network operations in the background to write directly to the local database; the UI always observes local storage streams (`Flow<T>`).
 - **Domain layer** — optional. Contains use cases (also called interactors) that encapsulate a single, reusable business operation spanning multiple repositories or requiring non-trivial logic. Each use case is a plain Kotlin class with a single `operator fun invoke` entry point.
 - **UI layer** — state holders (ViewModels) that expose immutable UI state to the composable (or Fragment/Activity) tree. The UI renders state and fires events upward; it never pulls data directly.
 
