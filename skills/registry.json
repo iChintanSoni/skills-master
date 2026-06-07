@@ -317,6 +317,60 @@
       }
     },
     {
+      "name": "android-activities",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers Activities, lifecycles, launch modes, task state restoration, and inter-activity intent-driven navigation. Use when building activity controllers, handling launch options, managing task affinities, or handling process death recreation.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "activities",
+        "lifecycle",
+        "task-affinity",
+        "launchmode",
+        "state-restoration",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/architecture/android-activities",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "android-manifest",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Covers the structure, components, intent filters, deep links, permissions, and security configurations in the AndroidManifest.xml file. Use when configuring app declarations, declaring intents, setting permissions, or auditing security properties.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "manifest",
+        "security",
+        "deep-links",
+        "components",
+        "configuration",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/lang-tooling/build-packaging/android-manifest",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "android-navigation-architecture",
       "domain": "android",
       "class": "lang-tooling",
@@ -337,6 +391,61 @@
       ],
       "pairs_with": [],
       "path": "android/lang-tooling/architecture/android-navigation-architecture",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "android-resources",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers organizing project resources, configuration qualifiers, alternative resources selection, and resource compilation in Android projects. Use when organizing layouts, drawables, localized assets, values, or managing resource conflicts.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "resources",
+        "configurations",
+        "localization",
+        "drawables",
+        "layouts",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/android-resources",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "android-views-interop",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers traditional View-based XML layouts, custom View drawing, lifecycle interactions, and two-way interoperability between traditional Views and Jetpack Compose. Use when working with legacy layouts, custom canvas Views, or embedding Views/Compose in each other.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "views",
+        "xml",
+        "compose",
+        "interop",
+        "custom-view",
+        "canvas",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/android-views-interop",
       "resources": {
         "reference": false,
         "examples": false,
@@ -564,6 +673,32 @@
       ],
       "pairs_with": [],
       "path": "android/lang-tooling/build-packaging/app-signing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "app-shortcuts",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers launcher shortcuts (static, dynamic, pinned) and Google Assistant App Actions. Use when implementing app entry shortcuts, custom intents, or system keyboard shortcuts helper integration.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "shortcuts",
+        "app-actions",
+        "assistant",
+        "launcher",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/platform-services/app-shortcuts",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1983,6 +2118,34 @@
       }
     },
     {
+      "name": "compose-custom-layouts",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers designing custom layouts, subcomposition, and intrinsic measurements in Jetpack Compose. Use when building non-standard layout containers, custom flow layouts, or dynamic sizing components.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "custom-layout",
+        "subcompose-layout",
+        "intrinsics",
+        "measure",
+        "layout"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-custom-layouts",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "compose-animation",
       "domain": "android",
       "class": "code",
@@ -2063,6 +2226,35 @@
       ],
       "pairs_with": [],
       "path": "android/code/compose-ui/compose-fundamentals",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "compose-gestures",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers touch interaction processing, drag/tap gesture detection, multitouch zoom/pan configurations, and custom pointer inputs in Jetpack Compose. Use when adding custom drag mechanics, complex swipe actions, or raw touch responders.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "gestures",
+        "touch",
+        "pointer-input",
+        "drag",
+        "pinch-zoom",
+        "draggable"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/compose-gestures",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2933,6 +3125,36 @@
       ],
       "pairs_with": [],
       "path": "android/lang-tooling/architecture/dependency-injection-patterns",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "design-system-customization",
+      "domain": "android",
+      "class": "design",
+      "category": "styles",
+      "description": "Guides mapping brand guidelines to Material 3 design tokens (colors, typography, shapes) and implementing custom design systems in Jetpack Compose. Use when establishing a brand theme, importing Figma design tokens, or defining custom semantic tokens.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "design-system",
+        "theming",
+        "material3",
+        "brand",
+        "typography",
+        "color",
+        "shape",
+        "compose"
+      ],
+      "pairs_with": [],
+      "path": "android/design/styles/design-system-customization",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10164,6 +10386,34 @@
         "hig-text-fields"
       ],
       "path": "apple/code/app-frameworks/swiftui-text-input",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "system-ui-styling",
+      "domain": "android",
+      "class": "code",
+      "category": "compose-ui",
+      "description": "Covers configuring, styling, and toggling system status bars, navigation bars, edge-to-edge display modes, and display cutouts. Use when adjusting screen overlays, managing system visibility, or configuring notch/camera layout overlays.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "system-ui",
+        "status-bar",
+        "navigation-bar",
+        "edge-to-edge",
+        "cutout",
+        "compose",
+        "android"
+      ],
+      "pairs_with": [],
+      "path": "android/code/compose-ui/system-ui-styling",
       "resources": {
         "reference": false,
         "examples": false,

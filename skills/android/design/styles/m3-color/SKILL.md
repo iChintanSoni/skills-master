@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: styles
   platforms: ["android", "large-screen"]
-  pairs_with: [compose-theming]
+  pairs_with: [compose-theming, design-system-customization]
   sources:
     - https://m3.material.io/styles/color/system/overview
     - https://developer.android.com/develop/ui/compose/designsystems/material3
