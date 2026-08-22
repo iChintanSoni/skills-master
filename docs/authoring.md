@@ -81,4 +81,4 @@ pnpm skills:registry    # regenerate registry.json
 node scripts/gen-taxonomy.mjs   # regenerate docs/taxonomy.md from the registry
 ```
 
-CI runs the first two; `registry.json` must be regenerated and committed when skills change. `docs/taxonomy.md` is generated too — never hand-edit it.
+CI runs all three; `registry.json` and `docs/taxonomy.md` must both be regenerated and committed when skills change. Both are generated — never hand-edit them.
