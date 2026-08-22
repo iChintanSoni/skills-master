@@ -2,3 +2,10 @@ packages:
   - "packages/*"
 allowBuilds:
   esbuild: true
+# tsup 8.5.1 (latest) pins esbuild ^0.27.0, but every 0.27.x from 0.27.3 up
+# carries GHSA-g7r4-m6w7-qqqr. esbuild ships breaking changes in minor 0.x
+# bumps, so this forces tsup past its declared range deliberately: verified
+# that the build succeeds and dist/bin.js is byte-identical either way.
+# Remove this once tsup widens its range to ^0.28.
+overrides:
+  esbuild: ">=0.28.1"
