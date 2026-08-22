@@ -30,12 +30,12 @@ jobs:
       packages: write # publish to GitHub Packages
       id-token: write # npm provenance on the npmjs publish
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # need full history...
           fetch-tags: true # ...and all tags to find the latest version.
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           package-manager-cache: false
