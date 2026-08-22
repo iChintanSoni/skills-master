@@ -8,8 +8,13 @@
  *    tradeoff line for terse targets.
  */
 
+// The character classes deliberately exclude their own delimiters and newlines.
+// A link-text class of [^\]]+ can match "[", which makes every "[" an overlapping
+// restart position and the whole scan quadratic on adversarial input
+// (CodeQL js/polynomial-redos). Excluding "[" keeps restarts disjoint, so
+// matching stays linear. Markdown link text may not span lines here either.
 const L3_LINK_RE =
-  /\[([^\]]+)\]\((?:\.\/)?(reference|examples|checklist)\.md(?:#[^)]*)?\)/g;
+  /\[([^\][\n]+)\]\((?:\.\/)?(reference|examples|checklist)\.md(?:#[^()\n]*)?\)/g;
 
 export interface CondenseOptions {
   /** "keep" (default) leaves the section intact; "summarize" collapses it. */
