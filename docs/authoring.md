@@ -5,7 +5,7 @@ A skill encodes **best-practice judgment** for a topic — not a copy of the doc
 ## Scaffold
 
 ```bash
-pnpm cli new apple/code/app-frameworks/swiftui-grids --content skills
+pnpm cli new apple/code/app-frameworks/swiftui-grids --content ../../skills
 ```
 
 This creates `skills/apple/code/app-frameworks/swiftui-grids/SKILL.md` from a template (today's date, `version: 0.1.0`, `stability: emerging`). The spec is `domain/class/category/name`.
@@ -78,6 +78,7 @@ An unquoted YAML scalar treats ` #` (space then hash) as a **comment** and silen
 ```bash
 pnpm skills:lint        # name/description/required fields, pairs_with integrity, body cap, headings
 pnpm skills:registry    # regenerate registry.json
+node scripts/gen-taxonomy.mjs   # regenerate docs/taxonomy.md from the registry
 ```
 
-CI runs both; `registry.json` must be regenerated and committed when skills change.
+CI runs the first two; `registry.json` must be regenerated and committed when skills change. `docs/taxonomy.md` is generated too — never hand-edit it.

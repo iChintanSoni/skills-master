@@ -16,17 +16,17 @@ Node ≥ 20 and pnpm (via Corepack) are required.
 Read [docs/authoring.md](docs/authoring.md) first. In short:
 
 ```bash
-pnpm cli new apple/code/app-frameworks/<name> --content skills   # scaffold
+pnpm cli new apple/code/app-frameworks/<name> --content ../../skills   # scaffold
 # … write original prose + minimal original code …
 pnpm skills:lint                                                  # must be clean
 pnpm skills:registry                                             # regenerate registry.json
 ```
 
-- **Original prose and code only.** Summarize Apple's documented best practices and link to them; never paste Apple text or sample code.
+- **Original prose and code only.** Summarize the platform vendor's documented best practices and link to them; never paste vendor text or sample code.
 - Cite `sources` and set `snapshot_date` to the day you verified.
 - Contested topics present tradeoffs (`stability: contested` + `## Open question`); they never prescribe.
 - `pairs_with` is bidirectional — update both skills.
-- Commit the regenerated `skills/registry.json` with your skill.
+- Commit the regenerated `skills/registry.json` (and `docs/taxonomy.md`, via `node scripts/gen-taxonomy.mjs`) with your skill.
 
 ## Contributing to the CLI
 
@@ -45,4 +45,4 @@ Every PR runs: typecheck, unit + e2e tests, `skills-master lint` over `skills/`,
 
 ## Scope
 
-The first domain is `apple`. The architecture is domain-agnostic — `android`, `web`, and others are planned. New domains go under `skills/<domain>/` and reuse the same classes (`code`, `design`, `lang-tooling`, `overview`).
+Two domains ship today: `apple` and `android`. The architecture is domain-agnostic — `web` and others can follow. New domains go under `skills/<domain>/` and reuse the same classes (`code`, `design`, `lang-tooling`, `overview`).

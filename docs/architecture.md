@@ -14,7 +14,7 @@ skills/<domain>/<class>/<category>/<name>/
 └── checklist.md    # optional Level 3 — review/migration rubric
 ```
 
-- **domain** namespaces a technology ecosystem (`apple`, later `android`, `web`, …).
+- **domain** namespaces a technology ecosystem (`apple` and `android` today; `web` and others can follow).
 - **class** is one of `code` (produces code), `design` (produces UX critique), `lang-tooling` (cross-cutting language/build/test/ship), `overview` (decision routers). `class` maps to a directory via `CLASS_DIR` (`overview` → `overviews`).
 - The folder name **is** the skill `name` (kebab-case), enforced by the linter.
 
@@ -44,7 +44,7 @@ discover → parse → validate → compile (per target) → write
 
 ### Emitters
 
-Every target implements one interface (`emitters/Emitter.ts`):
+Every target implements one interface (`packages/cli/src/types.ts`):
 
 ```ts
 interface Emitter {

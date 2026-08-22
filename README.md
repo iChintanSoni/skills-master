@@ -11,7 +11,7 @@ Two domains ship today — **Apple** and **Android** platform development — di
 
 ## What's covered
 
-**384 skills across two domains**, each with a curated `## References` section of verified, vendor-canonical links (Documentation / design guidelines / WWDC or Android Dev sessions / Sample Code). Every skill carries one of four classes:
+**393 skills across two domains**, each with a curated `## References` section of verified, vendor-canonical links (Documentation / design guidelines / WWDC or Android Dev sessions / Sample Code). Every skill carries one of four classes:
 
 | Class | What it produces |
 |------|------------------|
@@ -31,15 +31,15 @@ Current to the 2026 "26" OS cycle, Swift 6.x.
 | `lang-tooling` | Swift language, app architecture, testing, build/packaging, ship & CI | 37 |
 | `overview` | decision routers | 13 |
 
-### Android — 201 skills
+### Android — 210 skills
 
 Current to Android 16 / API 36, Kotlin 2.2, Jetpack Compose & Material 3.
 
 | Class | What it produces | Count |
 |------|------------------|------:|
-| `code` | Jetpack Compose, Material 3, app architecture (ViewModel/Hilt/Navigation), Room/DataStore, CameraX, Media3/ExoPlayer, ML Kit/Gemini Nano, WorkManager, form factors (Wear/TV/Auto/XR/foldables)… | 88 |
-| `design` | Material 3 — foundations, components, patterns, styles, per-platform, technologies | 62 |
-| `lang-tooling` | Kotlin language, app architecture, testing, Gradle/build variants, ship & Play Console | 34 |
+| `code` | Jetpack Compose, Material 3, app architecture (ViewModel/Hilt/Navigation), Room/DataStore, CameraX, Media3/ExoPlayer, ML Kit/Gemini Nano, WorkManager, form factors (Wear/TV/Auto/XR/foldables)… | 95 |
+| `design` | Material 3 — foundations, components, patterns, styles, per-platform, technologies | 63 |
+| `lang-tooling` | Kotlin language, app architecture, testing, Gradle/build variants, ship & Play Console | 35 |
 | `overview` | decision routers | 17 |
 
 90 flagship skills also ship Level-3 `examples.md` / `checklist.md`, and code↔design counterparts are cross-linked (Apple: `hig-tab-bars` ↔ `swiftui-tab-views`; Android: `m3-navigation` ↔ `navigation-compose`) so `--with-pairs` installs both. See **[docs/taxonomy.md](docs/taxonomy.md)** for the full catalog.

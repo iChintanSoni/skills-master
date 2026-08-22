@@ -1,6 +1,6 @@
 # Emitters
 
-An emitter projects one canonical skill into the files a specific AI tool reads. All emitters implement the `Emitter` interface (`packages/cli/src/emitters/Emitter.ts`) and are registered in `emitters/index.ts`. The `x-skills-master` block is stripped from every output.
+An emitter projects one canonical skill into the files a specific AI tool reads. All emitters implement the `Emitter` interface (`packages/cli/src/types.ts`) and are registered in `emitters/index.ts`. The `x-skills-master` block is stripped from every output.
 
 | Emitter | Output(s) | Frontmatter emitted | Body | Fidelity |
 |---------|-----------|---------------------|------|----------|
