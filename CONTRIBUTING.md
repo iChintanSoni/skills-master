@@ -41,7 +41,7 @@ pnpm --filter @ichintansoni/skills-master test
 
 ## CI gates
 
-Every PR runs: typecheck, unit + e2e tests, `skills-master lint` over `skills/`, and a `registry.json` drift check. All must pass.
+Every PR runs: typecheck, unit + e2e tests, `skills-master lint` over `skills/`, and drift checks for both `registry.json` and `docs/taxonomy.md`. All must pass.
 
 ## Scope
 

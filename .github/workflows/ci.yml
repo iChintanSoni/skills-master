@@ -29,7 +29,7 @@ jobs:
       - run: pnpm --filter @ichintansoni/skills-master test
 
   content:
-    name: Lint skills + registry drift
+    name: Lint skills + registry/taxonomy drift
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -45,3 +45,6 @@ jobs:
       - run: pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts lint --content ../../skills
       # Fail if the committed registry.json is stale.
       - run: pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts registry build --content ../../skills --check
+      # Fail if docs/taxonomy.md no longer matches the registry. It is generated,
+      # and went stale for 9 skills and two whole categories before this gate.
+      - run: node scripts/gen-taxonomy.mjs --check

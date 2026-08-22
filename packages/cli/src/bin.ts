@@ -1,4 +1,8 @@
 import { Command } from "commander";
+// Single source of truth for the version. release.yml rewrites this
+// package.json before running the build, so the bundle carries the
+// released version; a literal here would silently report a stale one.
+import { version } from "../package.json";
 import { ALL_TARGETS, type TargetId } from "./types";
 import { initCommand } from "./commands/init";
 import { addCommand } from "./commands/add";
@@ -39,8 +43,8 @@ async function run(fn: () => Promise<unknown> | unknown, exitOnFalse = false): P
 const program = new Command();
 program
   .name("skills-master")
-  .description("Install tool-agnostic Apple development skills into any AI coding tool.")
-  .version("0.1.0");
+  .description("Install tool-agnostic Apple & Android development skills into any AI coding tool.")
+  .version(version);
 
 program
   .command("init")
