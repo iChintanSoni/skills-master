@@ -30,7 +30,8 @@ export const ProjectConfigSchema = z
       })
       .partial()
       .default({}),
-    scope: z.enum(["project"]).default("project"),
+    /** @deprecated accepted for configs written by older versions; never written. */
+    scope: z.enum(["project"]).optional(),
     /** true = commit generated files; false = add them to .gitignore. */
     commit: z.boolean().default(true),
   })

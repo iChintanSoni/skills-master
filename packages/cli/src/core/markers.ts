@@ -41,22 +41,6 @@ export function hasBlock(file: string, id: string): boolean {
   return blockRegex(id).test(file);
 }
 
-/** Read the inner body of a managed block, or null if absent. */
-export function readBlock(file: string, id: string): string | null {
-  const m = blockRegex(id).exec(file);
-  if (!m) return null;
-  const inner = m[0]
-    .replace(new RegExp(`^[ \\t]*<!-- BEGIN ${PREFIX}:${escapeRe(id)}(?: v[^>]*)? -->\\n?`), "")
-    .replace(new RegExp(`\\n?<!-- END ${PREFIX}:${escapeRe(id)} -->$`), "");
-  return inner;
-}
-
-/** Read the version recorded in a block's BEGIN marker, or null. */
-export function readBlockVersion(file: string, id: string): string | null {
-  const m = new RegExp(`<!-- BEGIN ${PREFIX}:${escapeRe(id)} v([^\\s>]+) -->`).exec(file);
-  return m?.[1] ?? null;
-}
-
 /**
  * Insert or replace a managed block. Returns the new file contents.
  * If the block is absent it is appended, separated by a blank line.

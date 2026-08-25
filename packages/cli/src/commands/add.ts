@@ -11,7 +11,6 @@ import {
   saveLockfile,
 } from "../core/project";
 import { ensureGitignored } from "../core/gitignore";
-import type { ConflictChoice } from "../core/writer";
 import { log } from "../util/log";
 
 export interface AddOptions {
@@ -24,8 +23,6 @@ export interface AddOptions {
   withPairs?: boolean;
   dryRun?: boolean;
   overwrite?: boolean;
-  /** interactive conflict resolver (bin supplies this on a TTY). */
-  onConflict?: (path: string) => ConflictChoice;
 }
 
 export interface AddResult {
@@ -96,7 +93,6 @@ export async function addCommand(opts: AddOptions): Promise<AddResult> {
     const result = installSkill(opts.cwd, skill, targets, paths, {
       dryRun: opts.dryRun,
       overwrite: opts.overwrite,
-      onConflict: opts.onConflict,
     });
     if (!opts.dryRun) lock.skills[name] = result.locked;
     installed.push({ name, version: result.version });

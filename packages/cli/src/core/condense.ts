@@ -21,7 +21,6 @@ export interface CondenseOptions {
   /** whether the source skill had any resource files (drives the pointer note). */
   hadResources?: boolean;
   /** how to refer to the full skill in the appended note. */
-  fullSkillNote?: string;
 }
 
 const DEFAULT_NOTE =
@@ -43,7 +42,7 @@ export function condenseBody(body: string, opts: CondenseOptions = {}): string {
   out = out.replace(/\n{3,}/g, "\n\n").trim();
 
   if (opts.hadResources || strippedLink) {
-    out += `\n\n> ${opts.fullSkillNote ?? DEFAULT_NOTE}`;
+    out += `\n\n> ${DEFAULT_NOTE}`;
   }
 
   return out + "\n";

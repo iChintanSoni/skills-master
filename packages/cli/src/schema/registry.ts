@@ -27,7 +27,6 @@ export const RegistrySchema = z.object({
   $schema: z.string().optional(),
   /** aggregate library version (bumped on release). */
   version: z.string().default("0.1.0"),
-  generatedAt: z.string().optional(),
   skills: z.array(RegistryEntrySchema).default([]),
 });
 

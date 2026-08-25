@@ -1,15 +1,15 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import type { ParsedSkill, TargetId } from "../types";
+import type { ParsedSkill, TargetId, WriteResult } from "../types";
 import type { LockedSkill } from "../schema/lockfile";
 import { compileSkill } from "./compile";
-import { applyFiles, type ApplyOptions, type DetailedWriteResult } from "./writer";
+import { applyFiles, type ApplyOptions } from "./writer";
 import { sha256 } from "./hash";
 
 export interface InstallResult {
   name: string;
   version: string;
-  results: DetailedWriteResult[];
+  results: WriteResult[];
   locked: LockedSkill;
 }
 
