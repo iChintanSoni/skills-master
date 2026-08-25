@@ -1,4 +1,4 @@
-import type { Frontmatter } from "../schema/frontmatter";
+import { CLASS_DIR, type Frontmatter } from "../schema/frontmatter";
 import { findSkillDirs, relPathOf } from "./discover";
 import { loadRawSkill, type RawSkill, validateFrontmatter } from "./parse";
 
@@ -143,9 +143,14 @@ export function lintSkills(skillsRoot: string): LintResult {
       );
     }
 
-    // domain should match the top path segment
-    if (!s.relPath.startsWith(`${xm.domain}/`)) {
-      push("warn", `domain "${xm.domain}" does not match the top folder of "${s.relPath}"`);
+    // The on-disk location is derived entirely from frontmatter; any drift
+    // means the registry and coverage reports carry a phantom taxonomy.
+    const expectedPath = `${xm.domain}/${CLASS_DIR[xm.class]}/${xm.category}/${fm.name}`;
+    if (s.relPath !== expectedPath) {
+      push(
+        "error",
+        `on-disk path "${s.relPath}" must be "${expectedPath}" (domain/class dir/category/name from frontmatter)`,
+      );
     }
 
     // sources should be present and be https documentation URLs
