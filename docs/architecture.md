@@ -9,7 +9,7 @@ A skill is a directory:
 ```
 skills/<domain>/<class>/<category>/<name>/
 ├── SKILL.md        # frontmatter + body (Level 1 metadata + Level 2 instructions)
-├── reference.md    # optional Level 3 — deep reference, loaded on demand
+├── reference.md    # optional Level 3 — deep reference, loaded on demand (defined but currently unused by all skills)
 ├── examples.md     # optional Level 3 — worked snippets
 └── checklist.md    # optional Level 3 — review/migration rubric
 ```
