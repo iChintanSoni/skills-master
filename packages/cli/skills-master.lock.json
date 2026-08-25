@@ -3,8 +3,8 @@
   "contentRef": "main",
   "skills": {
     "swiftui-navigation": {
-      "version": "1.0.0",
-      "sourceHash": "sha256:4765e2a668c9f24baf9eeb38db140530c20d49b49d546117e11f9618898d4aeb",
+      "version": "1.0.1",
+      "sourceHash": "sha256:4982757c5a2b745ac3416ad22bc8aa0ec0b2c4aa5bb8a28a08f3c330064aa66c",
       "emitted": {
         "claude": {
           "files": [
@@ -12,20 +12,20 @@
             ".claude/skills/swiftui-navigation/examples.md",
             ".claude/skills/swiftui-navigation/checklist.md"
           ],
-          "hash": "sha256:711b94b85734c091d8842de8dafd272afe2c67b904b9faa2b51240203c97996a"
+          "hash": "sha256:c65950c636b8abed8217cb44674a3c1097767fdd8556296ab29cafeb145d6da0"
         },
         "cursor": {
           "files": [
             ".cursor/rules/swiftui-navigation.mdc"
           ],
-          "hash": "sha256:0e23a21767a5055dad628c23a33fac5b8d9f924bfc11dad9c3a6c6655fe5013e"
+          "hash": "sha256:467d2b368e6253939d8694ad77c0254198b04b68a7502c7a048cc42ea8b0f02d"
         },
         "copilot": {
           "files": [
             ".github/instructions/swiftui-navigation.instructions.md"
           ],
           "block": ".github/copilot-instructions.md",
-          "hash": "sha256:5a6a5b6129d5028bec21f125b8e30adaa3ae374890695533f2b0075e5ef28c93"
+          "hash": "sha256:4c3f6ed5061ea7a68505cbd2fd83ba23970565a6d8efeeb205cdb0f0fdf3816e"
         },
         "agents": {
           "files": [],

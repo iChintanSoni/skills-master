@@ -20,7 +20,6 @@ export interface CondenseOptions {
   openQuestion?: "keep" | "summarize";
   /** whether the source skill had any resource files (drives the pointer note). */
   hadResources?: boolean;
-  /** how to refer to the full skill in the appended note. */
 }
 
 const DEFAULT_NOTE =
@@ -65,25 +64,57 @@ function summarizeOpenQuestion(body: string): string {
   });
 }
 
-/**
- * Demote every markdown heading by `by` levels (capped at h6), leaving fenced
- * code blocks untouched. Used when a skill body (headings start at h2) is
- * nested under a titled section in a shared file like AGENTS.md.
- */
-export function demoteHeadings(md: string, by: number): string {
+/** First `max` top-level bullets of a `## <section>`, or its first paragraph as fallback. */
+function sectionHighlights(body: string, section: string, max: number): string[] {
+  const re = new RegExp(`^## ${section}\\n([\\s\\S]*?)(?=\\n## |(?![\\s\\S]))`, "m");
+  const m = re.exec(body);
+  if (!m) return [];
+  const text = m[1]!;
+  const bullets: string[] = [];
   let inFence = false;
-  return md
-    .split("\n")
-    .map((line) => {
-      if (/^(```|~~~)/.test(line.trimStart())) {
-        inFence = !inFence;
-        return line;
-      }
-      if (inFence) return line;
-      const m = /^(#{1,6})(\s)/.exec(line);
-      if (!m) return line;
-      const hashes = m[1]!;
-      return "#".repeat(Math.min(6, hashes.length + by)) + line.slice(hashes.length);
-    })
-    .join("\n");
+  for (const line of text.split("\n")) {
+    if (/^(```|~~~)/.test(line.trimStart())) {
+      inFence = !inFence;
+      continue;
+    }
+    if (!inFence && /^- /.test(line.trim())) bullets.push(line.trim());
+    if (bullets.length === max) break;
+  }
+  if (bullets.length > 0) return bullets;
+  const firstPara = text
+    .trim()
+    .split(/\n\s*\n/)[0]
+    ?.replace(/\s+/g, " ")
+    .trim();
+  return firstPara ? [firstPara] : [];
+}
+
+export interface DigestOptions {
+  /** skill name, used in the pointer note. */
+  name: string;
+  /** frontmatter description (already carries the "use when" trigger clause). */
+  description: string;
+}
+
+/**
+ * Aggressive digest for always-injected shared files (AGENTS.md): description
+ * plus the leading Core guidance and Pitfalls bullets. The full body averages
+ * ~1.9k tokens per skill and shared files are read in full on every request,
+ * so everything else — code fences, references, platform notes — is dropped
+ * in favor of a pointer to the complete projections.
+ */
+export function digestBody(body: string, opts: DigestOptions): string {
+  const guidance = sectionHighlights(body, "Core guidance", 6);
+  const pitfalls = sectionHighlights(body, "Pitfalls", 3);
+  // Bullets can carry links to resource files that do not exist next to a
+  // consumer's AGENTS.md — flatten them like condenseBody does.
+  const flatten = (lines: string[]) =>
+    lines.map((l) => l.replace(L3_LINK_RE, (_m, text: string) => text));
+  const parts: string[] = [opts.description.trim()];
+  if (guidance.length > 0) parts.push(`#### Core guidance\n\n${flatten(guidance).join("\n")}`);
+  if (pitfalls.length > 0) parts.push(`#### Pitfalls\n\n${flatten(pitfalls).join("\n")}`);
+  parts.push(
+    `> Digest only — the complete skill (full guidance, examples, references) ships with the Claude Code, Cursor, and Copilot projections, or via \`skills-master view ${opts.name}\`.`,
+  );
+  return parts.join("\n\n");
 }

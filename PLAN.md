@@ -49,78 +49,94 @@ broken emit formats) is a bug, not a nice-to-have.
 
 ## Phase 0 — Infra unblockers
 
-- [ ] **0.1 Fix pnpm invocation + engines (S).** Make `corepack pnpm install` work again
+- [x] **0.1 Fix pnpm invocation + engines (S).** Make `corepack pnpm install` work again
   (align `packageManager` with what corepack resolves, or add `devEngines.packageManager`);
   align Node engines to `>=22` across root, CLI `package.json`, and `tsup` target;
   update CLAUDE.md if the documented command changes.
-- [ ] **0.2 Publish metadata (S).** Ship `LICENSE` in the npm tarball; drop shipped
+- [x] **0.2 Publish metadata (S).** Ship `LICENSE` in the npm tarball; drop shipped
   sourcemaps or include them deliberately; fix Zod deprecations (`z.string().url()` →
   `z.url()`, `.passthrough()` → `z.looseObject()`).
-- [ ] **0.3 TS formatter/linter (M).** Add Biome (single tool: format + lint), format the
+- [x] **0.3 TS formatter/linter (M).** Add Biome (single tool: format + lint), format the
   package once, wire a CI check. Keep rules light — codify the existing style.
 
 ## Phase 1 — CLI correctness
 
-- [ ] **1.1 `.gitignore` poisoning (S).** `add` with `commit: false` writes target *roots*
+- [x] **1.1 `.gitignore` poisoning (S).** `add` with `commit: false` writes target *roots*
   (`.github`, `AGENTS.md`) to consumer `.gitignore` (`commands/add.ts:114`). Introduce
   per-emitter ignorable paths; only ignore files the emitter owns. Add regression test.
-- [ ] **1.2 Exit codes & help-text correctness (S).** `doctor` gets `exitOnFalse` so drift
+- [x] **1.2 Exit codes & help-text correctness (S).** `doctor` gets `exitOnFalse` so drift
   fails CI (`bin.ts:172`); fix `new`'s help string (says 3 segments, parser needs 4);
   rename value-taking `--version` on `registry build`/`marketplace build` to
   `--set-version`; add the ~17 missing option descriptions; add `.catch()` on
   `parseAsync`.
-- [ ] **1.3 Emitter output bugs (S).** Demote body headings under the `###` title in the
+- [x] **1.3 Emitter output bugs (S).** Demote body headings under the `###` title in the
   AGENTS.md emitter; teach `titleFromName` compound tokens (SwiftUI, SwiftData, watchOS…);
   re-record snapshots; refresh the committed dogfood outputs under `packages/cli/`.
-- [ ] **1.4 Error handling honesty (M).** `update` must distinguish "skill deleted
+- [x] **1.4 Error handling honesty (M).** `update` must distinguish "skill deleted
   upstream" from load errors; `resolveContent` errors on nonexistent `--content` path;
   config/lockfile parse failures name the file instead of dumping raw Zod; wrap
   `fetchRemote` failures with actionable hints; guard the cache-dir wipe on empty ref;
   fix `remove` over-reporting when target filtering empties the set.
-- [ ] **1.5 Delete dead surface (S).** Remove `src/index.ts` (unbuilt programmatic API),
+- [x] **1.5 Delete dead surface (S).** Remove `src/index.ts` (unbuilt programmatic API),
   `onConflict` plumbing, `setQuiet`, `readBlock`/`readBlockVersion`,
   `DetailedWriteResult.before/after`, `CondenseOptions.fullSkillNote`, unused
   `scope`/`generatedAt` schema fields. (Decision: CLI-only package, per Chintan.)
-- [ ] **1.6 Registry fast path + perf (M).** Make `ContentSource` actually read the
+- [x] **1.6 Registry fast path + perf (M).** Make `ContentSource` actually read the
   committed `registry.json` (falling back to a scan), as `docs/architecture.md` already
   claims; memoize `skillDirs()` (kills the O(n²) walk in `marketplace build`); update
   architecture.md if behavior ends up differing.
-- [ ] **1.7 Auto-detect heuristics (S).** Copilot currently triggers on `.github` existing
+- [x] **1.7 Auto-detect heuristics (S).** Copilot currently triggers on `.github` existing
   (nearly always true); AGENTS.md only on the file pre-existing (nearly always false).
   Rebalance and document detection rules.
-- [ ] **1.8 Agent-consumption audit (M).** Verify each emitted format against what the
+- [x] **1.8 Agent-consumption audit (M).** Verify each emitted format against what the
   consuming agent actually reads today: Claude Code skill frontmatter + description-based
   triggering, Cursor `.mdc` rule fields and glob semantics, Copilot `applyTo` instructions,
   AGENTS.md conventions. Check emitted block token weight is proportionate. Audit skill
   `description` fields as trigger phrases ("Use when…" quality) since that is what makes
   an agent load the skill at the right moment. Findings feed Phases 3–7.
+  **Findings (2026-08-25):** cursor emitter fully current (comma-string globs,
+  `alwaysApply: false` + description = "Apply Intelligently"); claude emitter
+  spec-portable (x-skills-master stripped; name/description caps match the Agent
+  Skills spec; optional future: spec-legal `metadata` map for provenance);
+  copilot `applyTo` string format correct, `excludeAgent`/`description` newly
+  available; AGENTS.md now read natively by Cursor and Copilot, nesting is
+  standard. Two defects found → items 1.9/1.10. Description audit: all 393
+  carry "use when", only 18 lead with it → fold into 7.2/7.3 passes.
+- [x] **1.9 AGENTS.md digest (M).** Blocks averaged ~1.9k tokens (755k for a
+  full install) in a file consumers inject wholesale on every request; the
+  emitter's "summarized aggressively" comment was aspirational. Blocks now
+  carry description + top-6 Core guidance bullets + top-3 Pitfalls + pointer
+  (mean ~584 tokens, 3.3x lighter), with L3 links flattened.
+- [ ] **1.10 Copilot applyTo scoping (S).** 176 glob-less skills emit
+  `applyTo: "**"`, attaching them to every Copilot request. Omit `applyTo`
+  for glob-less skills (manual attach + always-loaded pointer line instead).
 
 ## Phase 2 — Linter gates (protect all later content work)
 
-- [ ] **2.1 Taxonomy-depth lint rule (S).** Error when a skill's on-disk path isn't
+- [x] **2.1 Taxonomy-depth lint rule (S).** Error when a skill's on-disk path isn't
   `domain/class/category/name` or the directory doesn't match frontmatter
   `class`/`category`. (Catches the 5 current offenders.)
-- [ ] **2.2 Rule tightening (S).** Error on `## Open question` in non-`contested` skills
+- [x] **2.2 Rule tightening (S).** Error on `## Open question` in non-`contested` skills
   (reverse direction of existing rule); warn on >3 `sources` (authoring.md says 1–3);
   warn on L3 files present but unlinked from the body.
-- [ ] **2.3 lint.ts test suite (M).** Unit tests for every rule in `core/lint.ts` —
+- [x] **2.3 lint.ts test suite (M).** Unit tests for every rule in `core/lint.ts` —
   duplicate names, `pairs_with` reciprocity, future `snapshot_date`, YAML `" #"`
   truncation, body caps, canonical headings, plus the new 2.1/2.2 rules. Add fixture
   skills as needed.
 
 ## Phase 3 — Content structural fixes
 
-- [ ] **3.1 Re-home the 5 mis-placed skills (S).** Move 4 apple overviews to
+- [x] **3.1 Re-home the 5 mis-placed skills (S).** Move 4 apple overviews to
   `apple/overviews/overviews/<name>` and `hig-sheets` up to `design/components/`;
   regenerate registry/taxonomy/marketplace (marketplace build prunes old plugin paths).
-- [ ] **3.2 Link all orphaned L3 files (M).** Add body links (`## References` or inline)
+- [x] **3.2 Link all orphaned L3 files (M).** Add body links (`## References` or inline)
   to `examples.md`/`checklist.md` in all ~90 affected skills so condense/pointers work
   in every emitter; spot-check emitted output for both modes.
-- [ ] **3.3 Dead links + small conformance (S).** Replace the 6 dead URLs; fix the 2
+- [x] **3.3 Dead links + small conformance (S).** Replace the 6 dead URLs; fix the 2
   `stable` skills carrying `## Open question`; add "Use when" to the 3 noncompliant
   descriptions; add `globs` to the 2 bare `code` skills; trim the 39 skills with >3
   sources.
-- [ ] **3.4 `reference.md` decision (S).** Either author `reference.md` where depth
+- [x] **3.4 `reference.md` decision (S).** Either author `reference.md` where depth
   genuinely exists to be split out, or remove it from authoring.md/emitters.md/registry
   schema so docs stop promising a file type with zero instances. (Default: remove from
   docs now; reintroduce when a real one exists.)

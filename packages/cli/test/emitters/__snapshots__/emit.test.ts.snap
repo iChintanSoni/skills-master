@@ -7,9 +7,7 @@ exports[`emitters > projects the fixture skill for agents 1`] = `
     "blockVersion": "1.0.0",
     "contents": "### Fixture Skill
 
-#### When to use
-
-Use this fixture to verify emitter output and the add/update/remove lifecycle.
+A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
 
 #### Core guidance
 
@@ -17,23 +15,11 @@ Use this fixture to verify emitter output and the add/update/remove lifecycle.
 - Do the second deterministic thing, referencing examples.md.
 - Deeper notes live in reference.md.
 
-#### Platform notes
-
-Runs only on the imaginary testos platform.
-
 #### Pitfalls
 
 - A representative pitfall.
 
-#### Open question
-
-Tradeoff: Whether fixtures should be exhaustive is a tradeoff; this one stays minimal but covers every code path. See checklist.md.
-
-#### See also
-
-- Apple-equivalent docs live at the source URL.
-
-> Extended reference and worked examples are available in the full Claude Code skill for this topic.",
+> Digest only — the complete skill (full guidance, examples, references) ships with the Claude Code, Cursor, and Copilot projections, or via \`skills-master view fixture-skill\`.",
     "mode": "block",
     "path": "AGENTS.md",
   },
