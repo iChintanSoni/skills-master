@@ -36,6 +36,11 @@ case .unavailable(let reason):
 }
 ```
 
+### WWDC 2026 update
+
+- The decision tree gains a new trunk: the **Core AI** framework handles on-device model loading, specialization, and ahead-of-time compilation with inference memory control — positioned between Foundation Models (Apple's models, simplest path) and Core ML (bring-your-own-model, most control).
+- Foundation Models itself expands: multimodal prompts, Dynamic Profiles, Private Cloud Compute execution, and third-party LLM provider integration. The practical routing in 2026: Foundation Models for general generate/summarize/understand features; Core AI when you ship your own specialized model; Core ML/Metal for custom architectures and full pipeline control.
+
 ## Platform notes
 
 - The Foundation Models framework, `SpeechAnalyzer`, and the current Vision and Natural Language updates target the iOS, iPadOS, macOS, and visionOS "26" cycle. Verify the deployment target before adopting them.

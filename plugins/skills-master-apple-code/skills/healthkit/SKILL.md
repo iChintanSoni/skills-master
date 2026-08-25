@@ -28,6 +28,11 @@ let descriptor = HKStatisticsCollectionQueryDescriptor(
 let collection = try await descriptor.result(for: store)   // bucketed daily totals
 ```
 
+### iOS/watchOS 27 (WWDC 2026)
+
+- Workout zones become API: heart-rate and cycling-power zone data is queryable rather than app-computed — replace hand-rolled zone math with the system's definitions so your zones match what users see in the Workout app.
+- Menopause and perimenopause cycle APIs extend reproductive-health coverage; handle with the same granular-authorization care as existing cycle data.
+
 ## Platform notes
 
 - **iOS / iPadOS:** Add the HealthKit capability (`com.apple.developer.healthkit`) plus the `NSHealthShareUsageDescription` (read) and `NSHealthUpdateUsageDescription` (write) Info.plist strings; a missing string for a requested direction crashes on launch. Clinical record reads need the separate access entitlement. As of WWDC25, full workout sessions run on iPhone and iPad with code shared from watchOS.

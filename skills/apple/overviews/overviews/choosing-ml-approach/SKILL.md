@@ -12,9 +12,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/foundationmodels
     - https://developer.apple.com/documentation/coreml
     - https://developer.apple.com/machine-learning/
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Choosing an on-device ML approach
@@ -49,6 +49,11 @@ case .unavailable(let reason):
     fallBackToHeuristic(reason)  // older device, model not ready, etc.
 }
 ```
+
+### WWDC 2026 update
+
+- The decision tree gains a new trunk: the **Core AI** framework handles on-device model loading, specialization, and ahead-of-time compilation with inference memory control — positioned between Foundation Models (Apple's models, simplest path) and Core ML (bring-your-own-model, most control).
+- Foundation Models itself expands: multimodal prompts, Dynamic Profiles, Private Cloud Compute execution, and third-party LLM provider integration. The practical routing in 2026: Foundation Models for general generate/summarize/understand features; Core AI when you ship your own specialized model; Core ML/Metal for custom architectures and full pipeline control.
 
 ## Platform notes
 

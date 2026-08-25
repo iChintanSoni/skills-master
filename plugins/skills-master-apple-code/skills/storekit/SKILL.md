@@ -33,6 +33,11 @@ func unlock(_ product: Product) async throws -> Bool {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- New subscription commerce shapes: monthly-billed subscriptions with a 12-month commitment, and volume subscriptions for organizational purchases — revisit paywall logic that assumes the term equals the billing interval.
+- Background Assets expands to in-game/in-app content up to 200 GB with StoreKit-linked unlock — large content no longer has to ship in the binary or through a custom CDN pipeline (see the Background Assets guidance).
+
 ## Platform notes
 
 - **iOS/iPadOS 17+, macOS 14+, watchOS 10+, tvOS 17+, visionOS 1+** support the full StoreKit 2 surface, including the SwiftUI views.

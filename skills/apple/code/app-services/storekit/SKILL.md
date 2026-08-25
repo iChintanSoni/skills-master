@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/storekit
     - https://developer.apple.com/documentation/storekit/product/purchaseresult
     - https://developer.apple.com/documentation/storekit/transaction/updates
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.2
+  version: 1.1.0
 ---
 
 ## When to use
@@ -51,6 +51,11 @@ func unlock(_ product: Product) async throws -> Bool {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- New subscription commerce shapes: monthly-billed subscriptions with a 12-month commitment, and volume subscriptions for organizational purchases — revisit paywall logic that assumes the term equals the billing interval.
+- Background Assets expands to in-game/in-app content up to 200 GB with StoreKit-linked unlock — large content no longer has to ship in the binary or through a custom CDN pipeline (see the Background Assets guidance).
 
 ## Platform notes
 

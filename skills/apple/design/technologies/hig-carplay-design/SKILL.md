@@ -10,9 +10,10 @@ x-skills-master:
   pairs_with: []
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/carplay
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/ios/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # hig-carplay-design
@@ -61,6 +62,10 @@ skill produces design judgment, not implementation.
   the system tint to the car's theme, avoid pure-black fills that blend into the
   bezel, and verify legibility under bright sun and at night, not just on a
   monitor.
+
+### iOS 27 (WWDC 2026)
+
+- CarPlay adds a video-browsing app category, a MiniPlayer template for compact playback control, and expanded voice-control coverage — media apps should re-check template fit before maintaining custom-negotiated designs that the new templates now cover.
 
 ## Platform notes
 
