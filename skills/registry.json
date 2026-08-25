@@ -10270,7 +10270,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "images",
@@ -10301,7 +10301,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "list",
@@ -10335,7 +10335,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "navigation",
@@ -10366,7 +10366,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "windows",
@@ -10397,7 +10397,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "scrollview",
@@ -10426,7 +10426,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "sheets",
@@ -10459,7 +10459,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "observation",
@@ -10490,7 +10490,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "tabview",

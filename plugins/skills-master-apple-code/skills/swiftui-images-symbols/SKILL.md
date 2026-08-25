@@ -26,6 +26,11 @@ Image(systemName: isPlaying ? "pause.fill" : "play.fill")
     .accessibilityLabel(isPlaying ? "Pause" : "Play")
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `AsyncImage` finally caches: it honors standard HTTP semantics (`Cache-Control`, validators) by default, takes an `AsyncImage(request:)` initializer for custom `URLRequest`s, and `.asyncImageURLSession(_:)` injects a session configured with your own `URLCache`. Re-evaluate third-party image loaders whose remaining value was caching; they still win on transformations, prefetching, and memory-pressure policy.
+- SF Symbols 8 ships alongside — 7,000+ symbols across 9 weights and 3 scales.
+
 ## Platform notes
 
 - watchOS and tvOS favor symbols over dense photography; multicolor and hierarchical modes read well on both, but verify contrast on the dimmed tvOS focus states.

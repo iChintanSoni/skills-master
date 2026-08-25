@@ -34,6 +34,13 @@ struct ShelfApp: App {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- iPhone apps become resizable on larger canvases (iPad and iPhone-Mirroring-class environments); Xcode 27 previews grow resize handles. Audit fixed-width assumptions the same way iPad multitasking once demanded.
+- `UIHostingSceneDelegate` bridges UIKit scene lifecycle into SwiftUI scenes for apps mixing the two worlds.
+- The new `appearsActive` environment value exposes window focus state — drive visual de-emphasis from it instead of scene-phase heuristics.
+- `DocumentGroupLaunchScene` gives document apps a designed launch experience; see the document-based app guidance for the full new Document API family.
+
 ## Platform notes
 
 - **iOS / iPadOS:** A single `WindowGroup` is the norm on iPhone. On iPad, multiple windows and side-by-side multitasking require `UIApplicationSupportsMultipleScenes`. `Settings` and `MenuBarExtra` are macOS-only and are ignored elsewhere.

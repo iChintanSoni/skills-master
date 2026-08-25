@@ -15,6 +15,11 @@ Use when implementing a modal sheet in SwiftUI — presenting it, sizing it with
 - For a form-style sheet, wrap content in a `NavigationStack` and put Cancel/Done in the toolbar; confirm before discarding unsaved edits instead of relying on swipe-to-dismiss.
 - Keep sheet content in its own `View`; pass in only what it needs so it stays previewable and testable.
 
+### iOS 27 (WWDC 2026)
+
+- Error presentation gets a first-class binding: `alert(error:actions:message:)` takes a `Binding` to an optional `LocalizedError` — set the error to present, and the alert titles itself from `errorDescription`. Stop shadowing errors with a boolean `isPresented` plus a stashed error property.
+- `.alert(_:item:)` and `.confirmationDialog(_:item:)` adopt the same item-binding pattern sheets have always had: the presentation appears when the bound optional becomes non-nil and dismisses when it returns to nil, carrying the item into the content builder.
+
 ## Platform notes
 
 `.sheet` and `presentationDetents` are available iOS 16+/macOS 13+. On macOS a sheet attaches to its window; on iPad and Mac, consider whether a popover or separate window fits better (the design call lives in `hig-sheets`). visionOS renders sheets within the scene — keep them shallow.

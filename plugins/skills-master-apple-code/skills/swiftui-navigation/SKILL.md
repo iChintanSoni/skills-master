@@ -36,6 +36,11 @@ struct RootView: View {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `navigationTransition(.crossFade)` joins `.zoom` as a built-in `NavigationTransition`, giving push/pop a cross-fade without custom transition plumbing.
+- `toolbarMinimizeBehavior(_:for:)` lets the navigation bar minimize on scroll and re-expand on scroll-up — adopt it instead of hand-rolled scroll-offset observation for collapsing chrome.
+
 ## Platform notes
 
 - iPhone and Apple Watch: a `NavigationStack` is the common shape; a `NavigationSplitView` automatically collapses into one in the compact horizontal size class.

@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/list
     - https://developer.apple.com/documentation/swiftui/table
     - https://developer.apple.com/documentation/swiftui/tablecolumn
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -52,6 +52,11 @@ List {
 }
 .refreshable { await reload() }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- First-class reordering arrives: mark items `.reorderable()` inside a `.reorderContainer(for:isEnabled:move:)`, and apply the resulting `ReorderDifference` to your data in the move closure. The same code works across `List`, stacks, `LazyVGrid`, and custom layouts — and reordering reaches watchOS for the first time — so drag-to-reorder no longer needs `onMove`-style List-only APIs or custom drag gestures.
+- Swipe actions are no longer List-only: `.swipeActionsContainer()` on a `ScrollView` enables row swipe actions in lazy stacks, so a custom-layout feed can match List's edit affordances.
 
 ## Platform notes
 

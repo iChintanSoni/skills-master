@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/windowgroup
     - https://developer.apple.com/documentation/swiftui/windowresizability
     - https://developer.apple.com/documentation/swiftui/menubarextra
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -52,6 +52,13 @@ struct ShelfApp: App {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- iPhone apps become resizable on larger canvases (iPad and iPhone-Mirroring-class environments); Xcode 27 previews grow resize handles. Audit fixed-width assumptions the same way iPad multitasking once demanded.
+- `UIHostingSceneDelegate` bridges UIKit scene lifecycle into SwiftUI scenes for apps mixing the two worlds.
+- The new `appearsActive` environment value exposes window focus state — drive visual de-emphasis from it instead of scene-phase heuristics.
+- `DocumentGroupLaunchScene` gives document apps a designed launch experience; see the document-based app guidance for the full new Document API family.
 
 ## Platform notes
 

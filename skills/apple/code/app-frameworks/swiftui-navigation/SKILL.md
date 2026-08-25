@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/navigationstack
     - https://developer.apple.com/documentation/swiftui/navigationsplitview
     - https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -54,6 +54,11 @@ struct RootView: View {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- `navigationTransition(.crossFade)` joins `.zoom` as a built-in `NavigationTransition`, giving push/pop a cross-fade without custom transition plumbing.
+- `toolbarMinimizeBehavior(_:for:)` lets the navigation bar minimize on scroll and re-expand on scroll-up — adopt it instead of hand-rolled scroll-offset observation for collapsing chrome.
 
 ## Platform notes
 

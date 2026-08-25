@@ -16,9 +16,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/swiftui/view/sheet(ispresented:ondismiss:content:)
     - https://developer.apple.com/documentation/swiftui/presentationdetent
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/swiftui/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -32,6 +33,11 @@ Use when implementing a modal sheet in SwiftUI — presenting it, sizing it with
 - Offer partial heights with `.presentationDetents([.medium, .large])`, and bind `.presentationDetents(_, selection:)` when you need to read or drive the current detent.
 - For a form-style sheet, wrap content in a `NavigationStack` and put Cancel/Done in the toolbar; confirm before discarding unsaved edits instead of relying on swipe-to-dismiss.
 - Keep sheet content in its own `View`; pass in only what it needs so it stays previewable and testable.
+
+### iOS 27 (WWDC 2026)
+
+- Error presentation gets a first-class binding: `alert(error:actions:message:)` takes a `Binding` to an optional `LocalizedError` — set the error to present, and the alert titles itself from `errorDescription`. Stop shadowing errors with a boolean `isPresented` plus a stashed error property.
+- `.alert(_:item:)` and `.confirmationDialog(_:item:)` adopt the same item-binding pattern sheets have always had: the presentation appears when the bound optional becomes non-nil and dismisses when it returns to nil, carrying the item into the content builder.
 
 ## Platform notes
 

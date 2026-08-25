@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/SwiftUI/TabView
     - https://developer.apple.com/documentation/SwiftUI/Enhancing-your-app-content-with-tab-navigation
     - https://developer.apple.com/documentation/SwiftUI/TabViewStyle/sidebarAdaptable
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -54,6 +54,11 @@ struct RootView: View {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- `Tab(role: .prominent)` renders a visually separated, trailing-emphasized tab for the app's primary action.
+- Sidebar-capable tab bars reach iPhone: the sidebar adaptable style is no longer iPad-only, so the same `TabView` hierarchy can present as a sidebar where space and preference allow.
 
 ## Platform notes
 

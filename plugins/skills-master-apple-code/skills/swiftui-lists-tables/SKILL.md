@@ -34,6 +34,11 @@ List {
 .refreshable { await reload() }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- First-class reordering arrives: mark items `.reorderable()` inside a `.reorderContainer(for:isEnabled:move:)`, and apply the resulting `ReorderDifference` to your data in the move closure. The same code works across `List`, stacks, `LazyVGrid`, and custom layouts — and reordering reaches watchOS for the first time — so drag-to-reorder no longer needs `onMove`-style List-only APIs or custom drag gestures.
+- Swipe actions are no longer List-only: `.swipeActionsContainer()` on a `ScrollView` enables row swipe actions in lazy stacks, so a custom-layout feed can match List's edit affordances.
+
 ## Platform notes
 
 - **iOS / iPadOS 26 and macOS 26 (Liquid Glass):** List and other scrollable containers received notable performance work this cycle, especially on Mac. Lists adopt the new material automatically; let the system style sidebars and inset rows rather than hardcoding backgrounds.

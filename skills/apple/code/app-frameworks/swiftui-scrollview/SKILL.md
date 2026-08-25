@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/scrolltargetbehavior
     - https://developer.apple.com/documentation/swiftui/scrollposition
     - https://developer.apple.com/documentation/swiftui/view/scrolltransition(_:axis:transition:)
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -53,6 +53,11 @@ ScrollView(.horizontal) {
 .scrollTargetBehavior(.viewAligned)
 .contentMargins(.horizontal, 24, for: .scrollContent)
 ```
+
+### iOS 27 (WWDC 2026)
+
+- `.swipeActionsContainer()` brings List-style swipe actions to rows inside a `ScrollView` + lazy stack.
+- Lazy stacks gain subview prefetching and scrolling improvements — measure before keeping workarounds that pre-warmed content off-screen.
 
 ## Platform notes
 

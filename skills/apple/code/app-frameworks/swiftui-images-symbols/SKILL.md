@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/image
     - https://developer.apple.com/documentation/swiftui/symbolrenderingmode
     - https://developer.apple.com/documentation/swiftui/asyncimage
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -44,6 +44,11 @@ Image(systemName: isPlaying ? "pause.fill" : "play.fill")
     .symbolEffect(.bounce, value: tapCount)
     .accessibilityLabel(isPlaying ? "Pause" : "Play")
 ```
+
+### iOS 27 (WWDC 2026)
+
+- `AsyncImage` finally caches: it honors standard HTTP semantics (`Cache-Control`, validators) by default, takes an `AsyncImage(request:)` initializer for custom `URLRequest`s, and `.asyncImageURLSession(_:)` injects a session configured with your own `URLCache`. Re-evaluate third-party image loaders whose remaining value was caching; they still win on transformations, prefetching, and memory-pressure policy.
+- SF Symbols 8 ships alongside — 7,000+ symbols across 9 weights and 3 scales.
 
 ## Platform notes
 

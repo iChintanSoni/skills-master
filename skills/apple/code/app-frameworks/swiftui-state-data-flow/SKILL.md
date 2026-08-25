@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/state-and-data-flow
     - https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro
     - https://developer.apple.com/documentation/swiftui/bindable
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 # SwiftUI state and data flow with Observation
@@ -58,6 +58,10 @@ struct StepperRow: View {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- `@State` is reimplemented as a macro, and a stored `@Observable` class default is now initialized **lazily, once per view lifetime** — the long-standing footgun where `@State var model = Model()` constructed (and threw away) a fresh instance on every reinitialization of the view struct is gone. Caveat: assigning through `init` still initializes eagerly, so keep defaults in the property declaration to benefit.
 
 ## Platform notes
 
