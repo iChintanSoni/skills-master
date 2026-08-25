@@ -13,6 +13,17 @@ const DEFAULT_REPO = "github:iChintanSoni/skills-master";
 /** package.json `name` that identifies the skills-master content repo (dev checkout). */
 const CONTENT_REPO_PACKAGE = "skills-master-monorepo";
 
+/** The named skill does not exist in the content tree (vs. failing to load). */
+export class SkillNotFoundError extends Error {
+  constructor(
+    public readonly skillName: string,
+    root: string,
+  ) {
+    super(`Skill "${skillName}" not found in content at ${root}`);
+    this.name = "SkillNotFoundError";
+  }
+}
+
 /** A resolved, on-disk skills tree the CLI reads from. */
 export class ContentSource {
   constructor(public readonly root: string) {}
@@ -30,7 +41,7 @@ export class ContentSource {
 
   loadSkill(name: string): ParsedSkill {
     const dir = this.findDir(name);
-    if (!dir) throw new Error(`Skill "${name}" not found in content at ${this.root}`);
+    if (!dir) throw new SkillNotFoundError(name, this.root);
     return loadSkill(dir, this.root);
   }
 
@@ -66,10 +77,15 @@ export interface ResolveContentOptions {
 export async function resolveContent(opts: ResolveContentOptions = {}): Promise<ContentSource> {
   if (opts.content) {
     const root = isAbsolute(opts.content) ? opts.content : resolve(process.cwd(), opts.content);
+    if (!existsSync(root)) throw new Error(`--content directory not found: ${root}`);
     return new ContentSource(root);
   }
   const env = process.env.SKILLS_MASTER_CONTENT;
-  if (env) return new ContentSource(resolve(env));
+  if (env) {
+    const root = resolve(env);
+    if (!existsSync(root)) throw new Error(`SKILLS_MASTER_CONTENT directory not found: ${root}`);
+    return new ContentSource(root);
+  }
 
   const local = findLocalSkillsDir(opts.cwd ?? process.cwd());
   if (local) return new ContentSource(local);
@@ -108,12 +124,24 @@ function isContentRepoRoot(dir: string): boolean {
 /** Download the `skills/` subtree of the content repo to a local cache. */
 async function fetchRemote(ref: string): Promise<string> {
   const repo = process.env.SKILLS_MASTER_REPO ?? DEFAULT_REPO;
-  const cacheDir = join(homedir(), ".skills-master-cache", ref.replace(/[^\w.-]/g, "_"));
+  // An empty sanitized ref would collapse the cache path to the cache root,
+  // which forceClean below would then wipe wholesale.
+  const safeRef = ref.trim().replace(/[^\w.-]/g, "_");
+  if (!safeRef) throw new Error(`Invalid content ref "${ref}".`);
+  const cacheDir = join(homedir(), ".skills-master-cache", safeRef);
   const { downloadTemplate } = await import("giget");
-  const { dir } = await downloadTemplate(`${repo}/skills#${ref}`, {
-    dir: cacheDir,
-    force: true,
-    forceClean: true,
-  });
-  return dir;
+  try {
+    const { dir } = await downloadTemplate(`${repo}/skills#${ref.trim()}`, {
+      dir: cacheDir,
+      force: true,
+      forceClean: true,
+    });
+    return dir;
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    throw new Error(
+      `Failed to fetch skills content from ${repo}#${ref.trim()}: ${msg}\n` +
+        `Check the ref, or point at a local checkout with --content <dir> or SKILLS_MASTER_CONTENT.`,
+    );
+  }
 }
