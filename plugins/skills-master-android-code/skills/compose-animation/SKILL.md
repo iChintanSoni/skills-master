@@ -118,6 +118,11 @@ fun ExpandableCard(expanded: Boolean, onToggle: () -> Unit) {
 }
 ```
 
+### Compose 1.12 (BOM 2026.08.00)
+
+- `DeferredTargetAnimation` graduates from experimental.
+- `DeferredAnimatedContent` and `DeferredAnimatedVisibility` enable two-stage transitions: manipulate properties manually during the deferred phase, then hand off with velocity transfer; `permitTransformDuringDeferredTransition` opts shared elements into transforming during that phase.
+
 ## Platform notes
 
 - On large screens (tablets, foldables), users perceive longer transitions more acutely because more surface area changes at once — use shorter `durationMillis` or higher spring stiffness for pane-level transitions.

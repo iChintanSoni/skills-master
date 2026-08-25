@@ -112,6 +112,12 @@ Run `./gradlew assembleRelease` (or the build variant you care about). Inspect `
 - Don't write state inside a composable body (backwards write).
 - Don't skip compiler metrics — they identify every unstable parameter explicitly.
 
+### Compose 1.12 (BOM 2026.08.00)
+
+- Startup: Time to Initial Display for Compose UIs now benchmarks comparable to Views, removing the last structural argument for Views on startup-critical screens.
+- Keyed `SideEffect(key1, key2)` is the cheap path for one-shot effects (up to ~90% faster than `LaunchedEffect` for non-suspending work) — see `compose-side-effects`.
+- Toolchain floor: Compose 1.12 requires compileSdk 37 and AGP 9.1.1+ — plan the AGP upgrade with the BOM bump, not after it.
+
 ## Platform notes
 
 - On **large screens** (tablets, foldables), adaptive layouts often recompose more screens simultaneously during fold/unfold or orientation change. Apply the deferral and stability patterns to every adaptive pane, not just the primary screen.

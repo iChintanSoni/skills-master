@@ -150,6 +150,11 @@ LaunchedEffect(listState) {
 | Async/callback source → Compose `State` | `produceState` |
 | Compose `State` → `Flow` | `snapshotFlow` |
 
+### Compose 1.12 (BOM 2026.08.00)
+
+- `SideEffect` now takes optional `key1`/`key2` arguments for one-shot keyed effects — per Google's benchmarks up to ~90% faster than an equivalent `LaunchedEffect` and ~20% faster than `DisposableEffect` when no coroutine or disposal is needed. Reach for keyed `SideEffect` first when the work is synchronous fire-on-change; keep `LaunchedEffect` for anything that suspends.
+- `Modifier.onFirstVisible()` is deprecated — migrate visibility-triggered effects to `Modifier.onVisibilityChanged()`.
+
 ## Platform notes
 
 - On **large screens**, `LaunchedEffect` and `DisposableEffect` respect configuration changes triggered by window-size-class transitions. Keep keys driven by the current state, not device geometry literals, so effects naturally restart on orientation change.

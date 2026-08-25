@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/develop/ui/compose/testing
     - https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -135,6 +135,14 @@ fun loginScreen_invalidEmail_showsError() {
 ```
 
 ---
+
+### Compose 1.12 test APIs (BOM 2026.08.00)
+
+- `hasPendingWork()` — passively check whether work is pending without advancing the test clock.
+- `runWithoutImplicitWait()` — disable implicit synchronization while stepping frames manually.
+- `captureToImage()` now includes popups and dialogs with their anchor in a single bitmap.
+- `onRootWithViewInteraction()` scopes finders to a specific Android View for hybrid Compose/View screens.
+- `@PreviewWrapper` applies reusable setup to custom `@MultiPreview` classes.
 
 ## Platform notes
 

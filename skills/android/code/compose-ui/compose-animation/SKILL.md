@@ -9,14 +9,14 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: [m3-motion]
   sources:
     - https://developer.android.com/develop/ui/compose/animation/introduction
     - https://developer.android.com/develop/ui/compose/animation/quick-guide
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -133,6 +133,11 @@ fun ExpandableCard(expanded: Boolean, onToggle: () -> Unit) {
     }
 }
 ```
+
+### Compose 1.12 (BOM 2026.08.00)
+
+- `DeferredTargetAnimation` graduates from experimental.
+- `DeferredAnimatedContent` and `DeferredAnimatedVisibility` enable two-stage transitions: manipulate properties manually during the deferred phase, then hand off with velocity transfer; `permitTransformDuringDeferredTransition` opts shared elements into transforming during that phase.
 
 ## Platform notes
 

@@ -12,9 +12,9 @@ x-skills-master:
   sources:
     - https://m3.material.io/styles/motion/overview
     - https://m3.material.io/styles/shape/overview-principles
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -33,7 +33,7 @@ Material 3 Expressive is an evolution layered on top of the baseline Material 3 
 
 **Emphasized typography.** A new typescale level — Display Emphasized and Headline Emphasized — pairs high-weight variable-font rendering with tighter tracking to create focal hierarchy without added color or motion. This requires a variable font file that supports the `wght` axis and a `FontVariation.Setting` call in your `FontFamily` definition.
 
-**New components.** The 2026 M3 Expressive component catalogue includes Loading Indicator (circular with morphing progress), Floating Toolbar (horizontally scrollable action surface), Wide FAB, Split Button, and Button Group. These ship in `androidx.compose.material3` from the BOM version aligned with Android 16 SDK availability.
+**New components.** The 2026 M3 Expressive component catalogue includes Loading Indicator (circular with morphing progress), Floating Toolbar (horizontally scrollable action surface), Wide FAB, Split Button, and Button Group. These are stable as of `androidx.compose.material3` 1.4.0 (August 2026, BOM 2026.08.00), which graduates the expressive wave — `MaterialExpressiveTheme`, `FloatingToolbar`, flexible top app bars, `SplitButton`, and the wavy progress indicators — out of experimental annotations, so adoption no longer requires opting into `ExperimentalMaterial3ExpressiveApi`.
 
 ### Incremental opt-in strategy
 

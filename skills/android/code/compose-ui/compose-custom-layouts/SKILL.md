@@ -12,14 +12,14 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-    compose-bom: "2026.05.00"
+    compose-bom: "2026.08.00"
   pairs_with: [compose-layout]
   sources:
     - https://developer.android.com/develop/ui/compose/layouts/custom
     - https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -76,6 +76,10 @@ fun UniformHorizontalLayout(
     }
 }
 ```
+
+### Compose 1.12 (BOM 2026.08.00)
+
+- An experimental non-lazy Grid layout gains named areas: declare semantic regions with `area(id, row, column, rowSpan, columnSpan)` inside `GridConfigurationScope` and place children with `Modifier.gridItem(areaId = ...)` — CSS-grid-style template layouts without a hand-rolled `Layout`. Experimental: expect API movement before pinning a design system to it.
 
 ## Platform notes
 

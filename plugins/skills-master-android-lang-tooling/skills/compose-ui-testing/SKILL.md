@@ -120,6 +120,14 @@ fun loginScreen_invalidEmail_showsError() {
 
 ---
 
+### Compose 1.12 test APIs (BOM 2026.08.00)
+
+- `hasPendingWork()` — passively check whether work is pending without advancing the test clock.
+- `runWithoutImplicitWait()` — disable implicit synchronization while stepping frames manually.
+- `captureToImage()` now includes popups and dialogs with their anchor in a single bitmap.
+- `onRootWithViewInteraction()` scopes finders to a specific Android View for hybrid Compose/View screens.
+- `@PreviewWrapper` applies reusable setup to custom `@MultiPreview` classes.
+
 ## Platform notes
 
 - `createComposeRule()` runs on both Robolectric (local JVM) and real/emulated devices; `createAndroidComposeRule` requires a device or emulator.

@@ -9,13 +9,13 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: []
   sources:
     - https://developer.android.com/develop/ui/compose/side-effects
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -164,6 +164,11 @@ LaunchedEffect(listState) {
 | Push value to non-Compose system post-composition | `SideEffect` |
 | Async/callback source → Compose `State` | `produceState` |
 | Compose `State` → `Flow` | `snapshotFlow` |
+
+### Compose 1.12 (BOM 2026.08.00)
+
+- `SideEffect` now takes optional `key1`/`key2` arguments for one-shot keyed effects — per Google's benchmarks up to ~90% faster than an equivalent `LaunchedEffect` and ~20% faster than `DisposableEffect` when no coroutine or disposal is needed. Reach for keyed `SideEffect` first when the work is synchronous fire-on-change; keep `LaunchedEffect` for anything that suspends.
+- `Modifier.onFirstVisible()` is deprecated — migrate visibility-triggered effects to `Modifier.onVisibilityChanged()`.
 
 ## Platform notes
 
