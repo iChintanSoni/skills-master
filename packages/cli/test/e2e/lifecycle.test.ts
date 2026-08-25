@@ -100,6 +100,32 @@ describe("install lifecycle", () => {
     expect(lock.skills[NAME]).toBeUndefined();
   });
 
+  it("commit:false gitignores only emitter-owned files, never shared files or target roots", async () => {
+    writeFileSync(join(dir, "skills-master.json"), JSON.stringify({ commit: false }), "utf8");
+    await install();
+
+    const gi = read(".gitignore");
+    const lines = gi.split("\n");
+    // Whole-mode outputs are ignored as exact root-anchored paths.
+    expect(lines).toContain(`/${CLAUDE}`);
+    expect(lines).toContain(`/.claude/skills/${NAME}/examples.md`);
+    expect(lines).toContain(`/${CURSOR}`);
+    expect(lines).toContain(`/${COPILOT}`);
+    // Shared block files and target roots must never be ignored: they can
+    // carry hand-written content (.github workflows, a hand-authored AGENTS.md).
+    expect(gi).not.toContain(COPILOT_ROOT);
+    expect(lines).not.toContain("AGENTS.md");
+    expect(lines).not.toContain("/AGENTS.md");
+    expect(lines).not.toContain(".github");
+    expect(lines).not.toContain("/.github");
+
+    // Re-installing is idempotent: no duplicate entries, one header.
+    await install();
+    const again = read(".gitignore");
+    expect(again).toBe(gi);
+    expect(again.match(/# skills-master/g)).toHaveLength(1);
+  });
+
   it("dry-run writes nothing", async () => {
     await addCommand({ cwd: dir, names: [NAME], targets: ALL_TARGETS, content: CONTENT_ROOT, dryRun: true });
     expect(has(CLAUDE)).toBe(false);
