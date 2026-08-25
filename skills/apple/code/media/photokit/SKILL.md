@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/photokit
     - https://developer.apple.com/documentation/photosui/photospicker
     - https://developer.apple.com/documentation/photokit/bringing-photos-picker-to-your-swiftui-app
-    - https://developer.apple.com/documentation/photos/phphotolibrary/requestauthorization(_:)
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # PhotoKit

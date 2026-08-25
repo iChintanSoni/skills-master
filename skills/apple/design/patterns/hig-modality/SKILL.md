@@ -12,10 +12,9 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/modality
     - https://developer.apple.com/design/human-interface-guidelines/sheets
     - https://developer.apple.com/design/human-interface-guidelines/alerts
-    - https://developer.apple.com/design/human-interface-guidelines/popovers
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # HIG Modality

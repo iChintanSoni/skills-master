@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/usernotifications
     - https://developer.apple.com/documentation/usernotifications/asking-permission-to-use-notifications
     - https://developer.apple.com/documentation/usernotifications/scheduling-a-notification-locally-from-your-app
-    - https://developer.apple.com/documentation/usernotifications/implementing-communication-notifications
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

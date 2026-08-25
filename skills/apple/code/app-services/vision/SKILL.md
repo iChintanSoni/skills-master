@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/vision
     - https://developer.apple.com/documentation/vision/recognizetextrequest
     - https://developer.apple.com/documentation/vision/normalizedrect/toimagecoordinates(from:imagesize:origin:)
-    - https://developer.apple.com/videos/play/wwdc2024/10163/
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

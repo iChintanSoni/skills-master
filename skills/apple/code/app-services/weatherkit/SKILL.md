@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/weatherkit
     - https://developer.apple.com/documentation/weatherkit/weatherservice
     - https://developer.apple.com/documentation/weatherkitrestapi
-    - https://developer.apple.com/weatherkit/data-source-attribution/
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

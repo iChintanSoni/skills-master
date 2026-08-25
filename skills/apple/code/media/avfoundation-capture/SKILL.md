@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/avfoundation/avcapturesession
     - https://developer.apple.com/documentation/avfoundation/setting-up-a-capture-session
     - https://developer.apple.com/documentation/avfoundation/requesting-authorization-to-capture-and-save-media
-    - https://developer.apple.com/documentation/avfoundation/avcapturedevice/rotationcoordinator
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

@@ -14,11 +14,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/bundleresources/privacy-manifest-files
     - https://developer.apple.com/documentation/bundleresources/adding-a-privacy-manifest-to-your-app-or-third-party-sdk
     - https://developer.apple.com/documentation/bundleresources/describing-use-of-required-reason-api
-    - https://developer.apple.com/documentation/technotes/tn3183-adding-required-reason-api-entries-to-your-privacy-manifest
-    - https://developer.apple.com/support/third-party-SDK-requirements/
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

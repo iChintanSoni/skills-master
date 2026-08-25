@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/storekit
     - https://developer.apple.com/documentation/storekit/product/purchaseresult
     - https://developer.apple.com/documentation/storekit/transaction/updates
-    - https://developer.apple.com/documentation/storekit/subscriptionstoreview
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

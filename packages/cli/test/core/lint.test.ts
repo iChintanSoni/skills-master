@@ -24,6 +24,9 @@ interface SkillSpec {
   snapshotDate?: string;
   pairsWith?: string[];
   body?: string;
+  sources?: string[];
+  /** resource filenames (examples.md / checklist.md / reference.md) to create alongside. */
+  resources?: string[];
 }
 
 const BODY = [
@@ -54,6 +57,7 @@ function writeSkill(spec: SkillSpec): void {
   mkdirSync(dir, { recursive: true });
   const name = spec.name ?? spec.dir.split("/").at(-1);
   const pairs = (spec.pairsWith ?? []).map((p) => `"${p}"`).join(", ");
+  const sources = spec.sources ?? ["https://example.com/docs"];
   const fm = [
     "---",
     `name: ${name}`,
@@ -65,7 +69,7 @@ function writeSkill(spec: SkillSpec): void {
     "  platforms: [testos]",
     `  pairs_with: [${pairs}]`,
     "  sources:",
-    "    - https://example.com/docs",
+    ...sources.map((u) => `    - ${u}`),
     `  snapshot_date: "${spec.snapshotDate ?? "2026-01-01"}"`,
     `  stability: ${spec.stability ?? "stable"}`,
     "  version: 1.0.0",
@@ -73,6 +77,9 @@ function writeSkill(spec: SkillSpec): void {
     "",
   ].join("\n");
   writeFileSync(join(dir, "SKILL.md"), fm + (spec.body ?? BODY), "utf8");
+  for (const f of spec.resources ?? []) {
+    writeFileSync(join(dir, f), "## Resource\n\ncontent\n", "utf8");
+  }
 }
 
 function messagesOf(level: "error" | "warn"): string[] {
@@ -195,5 +202,63 @@ describe("lintSkills — existing rules still hold", () => {
     expect(messagesOf("error")).toEqual(
       expect.arrayContaining([expect.stringContaining('duplicate skill name "same-name"')]),
     );
+  });
+});
+
+describe("lintSkills — tightened rules", () => {
+  it("errors when a non-contested skill carries an Open question section", () => {
+    writeSkill({
+      dir: "apple/code/app-frameworks/settled-skill",
+      body: `${BODY}\n## Open question\n\nNot actually open.\n`,
+    });
+    expect(messagesOf("error")).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining('"## Open question" is reserved for stability: contested'),
+      ]),
+    );
+  });
+
+  it("accepts contested with an Open question section", () => {
+    writeSkill({
+      dir: "apple/code/app-frameworks/truly-contested",
+      stability: "contested",
+      body: `${BODY}\n## Open question\n\nGenuinely open.\n`,
+    });
+    expect(lintSkills(root).errorCount).toBe(0);
+  });
+
+  it("warns when sources exceed the 3-URL cap", () => {
+    writeSkill({
+      dir: "apple/code/app-frameworks/many-sources",
+      sources: [
+        "https://example.com/1",
+        "https://example.com/2",
+        "https://example.com/3",
+        "https://example.com/4",
+      ],
+    });
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([expect.stringContaining("4 sources — keep at most 3")]),
+    );
+  });
+
+  it("warns when a resource file exists but is never linked", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/orphaned-resources", resources: ["examples.md"] });
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([expect.stringContaining("examples.md exists but is never linked")]),
+    );
+  });
+
+  it("accepts a linked resource, including anchored links", () => {
+    writeSkill({
+      dir: "apple/code/app-frameworks/linked-resources",
+      resources: ["examples.md", "checklist.md"],
+      body: BODY.replace(
+        "- [Docs](https://example.com/docs)",
+        "- [Docs](https://example.com/docs)\n- [Worked examples](examples.md#setup)\n- [Checklist](./checklist.md)",
+      ),
+    });
+    expect(lintSkills(root).warnCount).toBe(0);
+    expect(lintSkills(root).errorCount).toBe(0);
   });
 });

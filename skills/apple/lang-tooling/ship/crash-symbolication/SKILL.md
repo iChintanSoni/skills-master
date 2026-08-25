@@ -14,10 +14,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/xcode/diagnosing-issues-using-crash-reports-and-device-logs
     - https://developer.apple.com/documentation/xcode/adding-identifiable-symbol-names-to-a-crash-report
     - https://developer.apple.com/documentation/xcode/interpreting-the-json-format-of-a-crash-report
-    - https://developer.apple.com/documentation/metrickit/mxcrashdiagnostic
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Crash symbolication

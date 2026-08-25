@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/cloudkit/ckcontainer
     - https://developer.apple.com/documentation/cloudkit/cksyncengine-5sie5
     - https://developer.apple.com/documentation/cloudkit/ckshare
-    - https://developer.apple.com/documentation/cloudkit/ckerror/serverrecordchanged
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

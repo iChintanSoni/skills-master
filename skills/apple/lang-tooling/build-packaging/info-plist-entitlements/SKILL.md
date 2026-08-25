@@ -14,10 +14,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/bundleresources/information-property-list
     - https://developer.apple.com/documentation/BundleResources/managing-your-app-s-information-property-list
     - https://developer.apple.com/documentation/bundleresources/entitlements
-    - https://developer.apple.com/documentation/xcode/supporting-associated-domains
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

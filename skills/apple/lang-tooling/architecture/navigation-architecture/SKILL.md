@@ -16,10 +16,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types
     - https://developer.apple.com/documentation/swiftui/navigationpath
     - https://developer.apple.com/documentation/swiftui/view/navigationdestination(for:destination:)
-    - https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

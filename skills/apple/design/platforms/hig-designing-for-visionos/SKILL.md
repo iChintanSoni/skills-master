@@ -12,10 +12,9 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos
     - https://developer.apple.com/design/human-interface-guidelines/eyes
     - https://developer.apple.com/design/human-interface-guidelines/immersive-experiences
-    - https://developer.apple.com/design/human-interface-guidelines/spatial-layout
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Designing for visionOS
