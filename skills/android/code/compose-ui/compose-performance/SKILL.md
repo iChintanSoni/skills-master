@@ -9,14 +9,14 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: []
   sources:
     - https://developer.android.com/develop/ui/compose/performance
     - https://developer.android.com/develop/ui/compose/performance/stability
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -127,6 +127,12 @@ Run `./gradlew assembleRelease` (or the build variant you care about). Inspect `
 - Don't read state at the top of a large composable when only a leaf widget needs it.
 - Don't write state inside a composable body (backwards write).
 - Don't skip compiler metrics — they identify every unstable parameter explicitly.
+
+### Compose 1.12 (BOM 2026.08.00)
+
+- Startup: Time to Initial Display for Compose UIs now benchmarks comparable to Views, removing the last structural argument for Views on startup-critical screens.
+- Keyed `SideEffect(key1, key2)` is the cheap path for one-shot effects (up to ~90% faster than `LaunchedEffect` for non-suspending work) — see `compose-side-effects`.
+- Toolchain floor: Compose 1.12 requires compileSdk 37 and AGP 9.1.1+ — plan the AGP upgrade with the BOM bump, not after it.
 
 ## Platform notes
 

@@ -9,13 +9,13 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: []
   sources:
     - https://developer.android.com/develop/ui/compose/graphics/draw/overview
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -127,6 +127,12 @@ Non-`SrcOver` blend modes require a compositing layer (wrap in `graphicsLayer { 
 ### Canvas composable vs Painter
 
 Use a `Painter` subclass when the drawable needs to be reused across multiple composables or passed to `Image(painter = ...)`. Use the `Canvas` composable when the drawing is self-contained and tied to a specific composable's layout. You cannot embed `Canvas` inside a `Painter`, but a `Painter` can call all the same `DrawScope` primitives.
+
+### Compose 1.12 (BOM 2026.08.00)
+
+- `MeshGradientPainter` draws multi-point organic gradients — position control points with `setVertex(row, column, offset, color)`.
+- The color pipeline supports wide gamut (Display P3) and HDR end to end: non-sRGB colors are preserved through rendering, falling back to sRGB where the device or OS version cannot display them.
+- `LayerOutsets` on `GraphicsLayer` / `Modifier.graphicsLayer` expands a layer's visual bounds, avoiding the implicit `clipToBounds` that used to truncate shadows and glows.
 
 ## Platform notes
 

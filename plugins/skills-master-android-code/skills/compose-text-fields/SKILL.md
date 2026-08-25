@@ -94,6 +94,13 @@ fun EmailAndPasswordForm() {
 - **Don't** use `remember { mutableStateOf("") }` plus `onValueChange` for new forms — this pattern forces you to manually reconcile cursor position and selection on every edit.
 - **Don't** apply both `InputTransformation.maxLength(n)` and a manual character count check in `onValueChange` — pick one layer.
 
+### Compose 1.12 (BOM 2026.08.00)
+
+- Rich-text editing lands in `BasicTextField`: apply `SpanStyle`/`ParagraphStyle` through `TextFieldBuffer.addStyle()`, and read styling back via `getSpanStyles()`/`getParagraphStyles()` (returning `TrackedRange`s that survive edits).
+- Selection is now hoistable via the `SelectionState` API — `selectedTexts`, `select(TextRange)`, `selectAll()`, `clear()`, `extendSelectionByWord()` — enabling toolbar-driven selection UI without gesture simulation.
+- Credential Manager integrates directly: the `credentialRequest` semantics property plus `CredentialRequestData` surface passkeys/saved credentials in fields (API 34+).
+- Smaller additions: `KeyboardType.Date`/`.Time`/`.DateTime`/`.SignedDecimal`, font variation settings, auto-scroll while drag-selecting, and `BasicSecureTextField` defaulting to `TextObfuscationMode.System`.
+
 ## Platform notes
 
 **Large screen / foldable:** On large-screen layouts (two-pane or expanded window class) the soft keyboard does not always overlay the field. Use `WindowInsets.ime` with `imePadding()` on your form's scroll container to guarantee the focused field remains visible regardless of keyboard mode (docked, floating, or absent).

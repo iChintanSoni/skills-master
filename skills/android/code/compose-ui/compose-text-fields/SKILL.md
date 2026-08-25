@@ -9,13 +9,13 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: [m3-text-fields]
   sources:
     - https://developer.android.com/develop/ui/compose/text/user-input
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -108,6 +108,13 @@ fun EmailAndPasswordForm() {
 - **Don't** recreate `TextFieldState` inside a `LaunchedEffect` or on each recomposition — always use `rememberTextFieldState()` or store it in a stable holder.
 - **Don't** use `remember { mutableStateOf("") }` plus `onValueChange` for new forms — this pattern forces you to manually reconcile cursor position and selection on every edit.
 - **Don't** apply both `InputTransformation.maxLength(n)` and a manual character count check in `onValueChange` — pick one layer.
+
+### Compose 1.12 (BOM 2026.08.00)
+
+- Rich-text editing lands in `BasicTextField`: apply `SpanStyle`/`ParagraphStyle` through `TextFieldBuffer.addStyle()`, and read styling back via `getSpanStyles()`/`getParagraphStyles()` (returning `TrackedRange`s that survive edits).
+- Selection is now hoistable via the `SelectionState` API — `selectedTexts`, `select(TextRange)`, `selectAll()`, `clear()`, `extendSelectionByWord()` — enabling toolbar-driven selection UI without gesture simulation.
+- Credential Manager integrates directly: the `credentialRequest` semantics property plus `CredentialRequestData` surface passkeys/saved credentials in fields (API 34+).
+- Smaller additions: `KeyboardType.Date`/`.Time`/`.DateTime`/`.SignedDecimal`, font variation settings, auto-scroll while drag-selecting, and `BasicSecureTextField` defaulting to `TextObfuscationMode.System`.
 
 ## Platform notes
 

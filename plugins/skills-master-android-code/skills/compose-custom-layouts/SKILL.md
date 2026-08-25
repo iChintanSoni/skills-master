@@ -58,6 +58,10 @@ fun UniformHorizontalLayout(
 }
 ```
 
+### Compose 1.12 (BOM 2026.08.00)
+
+- An experimental non-lazy Grid layout gains named areas: declare semantic regions with `area(id, row, column, rowSpan, columnSpan)` inside `GridConfigurationScope` and place children with `Modifier.gridItem(areaId = ...)` — CSS-grid-style template layouts without a hand-rolled `Layout`. Experimental: expect API movement before pinning a design system to it.
+
 ## Platform notes
 
 - **Lookahead Scope:** Modern Jetpack Compose supports dynamic animations during layout size changes via `LookaheadScope`. Utilize `Modifier.approachLayout` to define custom transition behaviors when parent dimensions change.

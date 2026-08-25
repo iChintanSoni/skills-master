@@ -113,6 +113,12 @@ Non-`SrcOver` blend modes require a compositing layer (wrap in `graphicsLayer { 
 
 Use a `Painter` subclass when the drawable needs to be reused across multiple composables or passed to `Image(painter = ...)`. Use the `Canvas` composable when the drawing is self-contained and tied to a specific composable's layout. You cannot embed `Canvas` inside a `Painter`, but a `Painter` can call all the same `DrawScope` primitives.
 
+### Compose 1.12 (BOM 2026.08.00)
+
+- `MeshGradientPainter` draws multi-point organic gradients — position control points with `setVertex(row, column, offset, color)`.
+- The color pipeline supports wide gamut (Display P3) and HDR end to end: non-sRGB colors are preserved through rendering, falling back to sRGB where the device or OS version cannot display them.
+- `LayerOutsets` on `GraphicsLayer` / `Modifier.graphicsLayer` expands a layer's visual bounds, avoiding the implicit `clipToBounds` that used to truncate shadows and glows.
+
 ## Platform notes
 
 - **Large screen / foldable** — `DrawScope.size` reflects actual physical pixel dimensions after density; always derive coordinates from `size.width` / `size.height` rather than hardcoding to avoid incorrect rendering on tablets or in multi-window.
