@@ -228,7 +228,7 @@
         "migration"
       ],
       "pairs_with": [],
-      "path": "apple/overviews/adopting-liquid-glass",
+      "path": "apple/overviews/overviews/adopting-liquid-glass",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1697,7 +1697,7 @@
         "coreml"
       ],
       "pairs_with": [],
-      "path": "apple/overviews/choosing-ml-approach",
+      "path": "apple/overviews/overviews/choosing-ml-approach",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1819,7 +1819,7 @@
       "pairs_with": [
         "swiftdata-modeling"
       ],
-      "path": "apple/overviews/choosing-persistence",
+      "path": "apple/overviews/overviews/choosing-persistence",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1911,7 +1911,7 @@
         "decision"
       ],
       "pairs_with": [],
-      "path": "apple/overviews/choosing-ui-toolkit",
+      "path": "apple/overviews/overviews/choosing-ui-toolkit",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5087,7 +5087,7 @@
       "pairs_with": [
         "swiftui-sheets"
       ],
-      "path": "apple/design/components/presentation/hig-sheets",
+      "path": "apple/design/components/hig-sheets",
       "resources": {
         "reference": false,
         "examples": false,
