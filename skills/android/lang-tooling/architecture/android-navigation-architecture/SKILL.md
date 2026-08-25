@@ -14,9 +14,10 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/navigation
     - https://developer.android.com/guide/navigation/principles
-  snapshot_date: "2026-06-06"
+    - https://developer.android.com/guide/navigation/navigation-3
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -25,9 +26,11 @@ Apply this skill when designing or refactoring app-wide navigation on Android. C
 
 ## Core guidance
 
+Two navigation models now coexist. With Navigation 2 / Navigation Compose the framework's `NavController` owns the back stack and your code issues commands against it. With Jetpack Navigation 3 the ownership inverts: your code holds the back stack as an observable list (usually in a ViewModel) and `NavDisplay` renders it — the "own navigation logic in the ViewModel" principle below stops being a discipline and becomes the architecture. The principles in this skill apply to both; bullets that name `NavController` are Navigation 2-specific, and `navigation3` covers the equivalents.
+
 - **Do** keep exactly one `NavController` per back stack. In a single-Activity app that means one per `NavHost`. Never pass `NavController` down into nested composables — pass lambdas (`onNavigate: () -> Unit`) or an abstracted `Navigator` interface instead.
 - **Do** define routes as a typed Kotlin class hierarchy (sealed classes or `@Serializable` data objects/classes) and use Navigation 2.x type-safe APIs (`NavController.navigate<RouteType>(args)`). This eliminates runtime `IllegalArgumentException` from misspelled route strings.
-- **Do** own navigation logic in the ViewModel or a dedicated navigator, not in composables. A composable calls `viewModel.onDetailClicked(id)`, the ViewModel emits a navigation event, and the hosting composable observes it and calls the controller. This keeps composables testable without a `NavController`.
+- **Do** own navigation logic in the ViewModel or a dedicated navigator, not in composables. A composable calls `viewModel.onDetailClicked(id)`, the ViewModel emits a navigation event, and the hosting composable observes it and calls the controller. This keeps composables testable without a `NavController`. Under Navigation 3 this pattern simplifies: the ViewModel mutates the back-stack list directly and there is no event hop.
 - **Do** design the nav graph in layers: a top-level app graph owns the primary destinations; each feature module exposes a `NavGraphBuilder` extension function (`fun NavGraphBuilder.featureGraph(...)`) that the app graph calls. The feature module never imports the app module.
 - **Do** declare deep-link URI patterns on each destination at the graph level. Parse incoming `Intent`/`Uri` to a typed route in one place (e.g., a `DeepLinkHandler` invoked from `Activity.onCreate` and `onNewIntent`), then call `navController.navigate(route)`. Keep URI-to-route mapping in a single file.
 - **Do** respect the **Principles of Navigation**:

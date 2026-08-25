@@ -5,7 +5,7 @@ description: Covers Navigation Compose — NavController, NavHost, type-safe rou
 
 ## When to use
 
-Reach for this guidance whenever a Compose app needs to move between more than one screen — whether that is a simple two-screen flow, a deeply nested wizard, or an adaptive layout that switches between a navigation rail and a bottom bar based on window size. It covers the canonical Navigation Compose pattern: `NavController` + `NavHost` + type-safe `@Serializable` route objects, including argument passing, back-stack control, returning results, and nested graphs. Begin here before adding any third-party router.
+Reach for this guidance whenever a Compose app already built on Navigation Compose needs to move between more than one screen — whether that is a simple two-screen flow, a deeply nested wizard, or an adaptive layout that switches between a navigation rail and a bottom bar based on window size. It covers the canonical Navigation Compose pattern: `NavController` + `NavHost` + type-safe `@Serializable` route objects, including argument passing, back-stack control, returning results, and nested graphs. For a greenfield Compose app, evaluate Jetpack Navigation 3 first (see `navigation3` and `choosing-navigation`): it replaces the framework-owned `NavController` with a back stack your code owns as state, and is Google's recommended starting point for new Compose apps. Navigation Compose remains fully supported — migration is worthwhile only when scenes, multi-pane layouts, or state-driven navigation pay for it.
 
 ## Core guidance
 
@@ -124,4 +124,4 @@ Navigation Compose supports URL-pattern deep links via `deepLinks = listOf(navDe
 
 ## See also
 
-For handling deep links via URI patterns and intent filters, see `navigation-deep-links`. For adaptive scaffold patterns (NavigationRail, NavigationDrawer, two-pane) on large screens, see `adaptive-layouts`. For structuring ViewModels and state scoping per navigation destination, see `compose-viewmodel`. For the Compose state and side-effect APIs used inside navigation destinations, see `compose-state` and `compose-side-effects`.
+For the app-owned back-stack successor and its adaptive scenes, see `navigation3`. For handling deep links via URI patterns and intent filters, see `navigation-deep-links`. For adaptive scaffold patterns (NavigationRail, NavigationDrawer, two-pane) on large screens, see `adaptive-layouts`. For structuring ViewModels and state scoping per navigation destination, see `compose-viewmodel`. For the Compose state and side-effect APIs used inside navigation destinations, see `compose-state` and `compose-side-effects`.

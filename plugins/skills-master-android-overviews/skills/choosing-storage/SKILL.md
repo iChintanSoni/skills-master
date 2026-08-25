@@ -23,6 +23,8 @@ Choose Room when data is naturally relational, when you need to filter, sort, pa
 
 Room generates type-safe DAO interfaces at compile time, validates SQL at build time, and exposes results as `Flow<List<T>>` that recompose Compose UIs automatically. Prefer it over raw SQLite for any relational use case.
 
+Since July 2026 Room ships in two generations: for **new databases choose Room 3** (`androidx.room3` — coroutine-first, KSP-only, suspend/reactive DAOs, broad Kotlin Multiplatform targets); `androidx.room` 2.x is maintenance-only, still correct where Java consumers, kapt, or blocking DAOs are load-bearing. The two packages coexist, so the choice is per-database, not per-app; budget the 2.x → 3 migration (transactions, raw queries, and invalidation all change shape) as a deliberate module-by-module effort rather than a version bump. Details in the `room` skill.
+
 **What Room is not** — it is heavy ceremony for a handful of scalar settings. Do not model a user-preference like `isDarkMode: Boolean` as a Room entity.
 
 ### DataStore — typed settings, user preferences, small config

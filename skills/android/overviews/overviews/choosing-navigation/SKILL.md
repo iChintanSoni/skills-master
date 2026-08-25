@@ -1,6 +1,6 @@
 ---
 name: choosing-navigation
-description: Decision guide for selecting a navigation approach in Android apps — Navigation Compose with type-safe routes, Fragment-based Navigation, or a lightweight custom solution. Use when starting a new app, adding a multi-screen flow, or evaluating whether to migrate an existing backstack to Navigation Compose.
+description: Decision guide for selecting a navigation approach in Android apps — Jetpack Navigation 3 with an app-owned back stack, Navigation Compose with type-safe routes, Fragment-based Navigation, or a lightweight custom solution. Use when starting a new app, adding a multi-screen flow, choosing between Navigation 3 and Navigation Compose, or evaluating a back-stack migration.
 tags: [navigation, compose, fragments, architecture, routing]
 x-skills-master:
   domain: android
@@ -12,9 +12,10 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/navigation
     - https://developer.android.com/develop/ui/compose/navigation
-  snapshot_date: "2026-06-06"
+    - https://developer.android.com/guide/navigation/navigation-3
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -23,11 +24,21 @@ Reach for this skill whenever you are choosing or reconsidering how screens conn
 
 ## Core guidance
 
-Three realistic options exist in 2026. The right choice is almost always Navigation Compose for any app that is Compose-first or greenfield.
+Four realistic options exist in 2026. For a greenfield Compose app the default is now Jetpack Navigation 3; Navigation Compose remains the right home for established Compose apps.
 
-### Navigation Compose with type-safe routes — the default
+### Jetpack Navigation 3 — the default for new Compose apps
 
-Navigation Compose (`androidx.navigation:navigation-compose`) is the strategic direction for Compose apps. Since Navigation 2.8, routes are defined as `@Serializable` data classes or objects, giving compile-time safety, IDE autocomplete, and argument passing without string formatting or `Bundle` boilerplate.
+Navigation 3 (`androidx.navigation3:navigation3-runtime` + `navigation3-ui`, stable since November 2025) is Google's Compose-native navigation model: your code owns the back stack as an observable list of keys, and `NavDisplay` renders it. It exists because the framework-owned `NavController` model fights Compose's state-first architecture.
+
+- **Back stack as state** — push/pop are list mutations; deep links are a list assignment; every navigation decision is testable state logic.
+- **Scenes** — the same back stack can render two panes at once on large screens via scene strategies, which matters more now that Android 17 force-resizes apps on big screens.
+- **Shared elements and metadata** — 1.1 adds shared-element transitions between scenes and a type-safe `NavMetadata` DSL.
+
+Choose Navigation 3 for new Compose apps, for apps whose navigation is naturally state-driven, and when multi-pane adaptive layouts are on the roadmap. Do not rush to migrate a working Navigation Compose app — migration inverts back-stack ownership and touches every navigation call site; migrate when scenes or state-driven navigation pay for it. Implementation details live in the `navigation3` code skill.
+
+### Navigation Compose with type-safe routes — established Compose apps
+
+Navigation Compose (`androidx.navigation:navigation-compose`) remains fully supported and is the pragmatic choice for apps already built on it. Since Navigation 2.8, routes are defined as `@Serializable` data classes or objects, giving compile-time safety, IDE autocomplete, and argument passing without string formatting or `Bundle` boilerplate.
 
 Key characteristics:
 
@@ -65,19 +76,20 @@ Fragment nav and Navigation Compose share the same `NavController` abstraction a
 
 ### Lightweight custom backstack — only for tiny apps
 
-A manual backstack (a `mutableStateListOf<Screen>()` in a ViewModel, navigated with `push`/`pop`) can work for a one-flow micro-app with two or three screens, no deep links, and no adaptive layout requirement. Do not scale this beyond that boundary. The moment you need deep links, animated transitions, process-death restoration, or a second entry point, swap to Navigation Compose; retrofitting those onto a custom stack costs more than adopting the library from day one.
+A manual backstack (a `mutableStateListOf<Screen>()` in a ViewModel, navigated with `push`/`pop`) is exactly the model Navigation 3 formalizes — with restoration, predictive back, and adaptive scenes done for you. If you are reaching for a hand-rolled stack, that is the signal to adopt Navigation 3 instead: you keep the ownership model and shed the maintenance liability. A fully custom stack is defensible only in a throwaway prototype.
 
 ### Decision summary
 
-| Signal | Navigation Compose | Fragment Nav | Custom |
+| Signal | Navigation 3 | Navigation Compose | Fragment Nav |
 |---|---|---|---|
-| Greenfield Compose app | Yes | — | — |
-| New screen in a Compose-first app | Yes | — | — |
-| Large-screen / adaptive layout | Yes (AdaptiveNavSuite) | Manual | — |
-| Multi-module feature nav | Yes (NavGraphBuilder ext) | Yes | No |
-| Existing Fragment-based app, no active rewrite | — | Yes | — |
-| SDK hands back a Fragment you do not own | — | Yes | — |
-| Two or three screens, no deep links, no restore | Preferred | OK | Acceptable |
+| Greenfield Compose app | Yes | OK | — |
+| Established Navigation Compose app | Migrate only for cause | Yes | — |
+| Multi-pane / adaptive scenes | Yes (scene strategies) | Scaffold-level only | Manual |
+| Navigation driven from owned state | Yes | Workarounds | — |
+| Multi-module feature nav | Yes (entryProvider per module) | Yes (NavGraphBuilder ext) | Yes |
+| Existing Fragment-based app, no active rewrite | — | — | Yes |
+| SDK hands back a Fragment you do not own | — | — | Yes |
+| Kotlin Multiplatform | Yes | — | — |
 
 ## Platform notes
 
@@ -107,4 +119,4 @@ A manual backstack (a `mutableStateListOf<Screen>()` in a ViewModel, navigated w
 
 ## See also
 
-For UI system selection (Compose versus Views) see `choosing-compose-or-views`. For adaptive layout scaffolds that pair with navigation see the `swiftui-navigation` conceptual reference or the Android `navigation-architecture` code skill. For ViewModel scoping and state sharing across destinations see `swiftui-state-data-flow` as a conceptual parallel and the Android `swiftui-app-architecture` overview.
+For UI system selection (Compose versus Views) see `choosing-compose-or-views`. For the app-owned back stack model see `navigation3`; for the NavController model see `navigation-compose`. For the architectural principles either should serve — single source of truth for the stack, module boundaries, deep-link strategy — see `android-navigation-architecture`.

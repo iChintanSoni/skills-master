@@ -384,7 +384,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "android",
         "navigation",
@@ -1709,13 +1709,13 @@
       "domain": "android",
       "class": "overview",
       "category": "overviews",
-      "description": "Decision guide for selecting a navigation approach in Android apps — Navigation Compose with type-safe routes, Fragment-based Navigation, or a lightweight custom solution. Use when starting a new app, adding a multi-screen flow, or evaluating whether to migrate an existing backstack to Navigation Compose.",
+      "description": "Decision guide for selecting a navigation approach in Android apps — Jetpack Navigation 3 with an app-owned back stack, Navigation Compose with type-safe routes, Fragment-based Navigation, or a lightweight custom solution. Use when starting a new app, adding a multi-screen flow, choosing between Navigation 3 and Navigation Compose, or evaluating a back-stack migration.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "navigation",
         "compose",
@@ -1837,7 +1837,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "storage",
         "room",
@@ -8062,7 +8062,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "compose",
         "navigation",
@@ -8071,7 +8071,8 @@
         "type-safe-routes"
       ],
       "pairs_with": [
-        "m3-navigation"
+        "m3-navigation",
+        "navigation3"
       ],
       "path": "android/code/architecture/navigation-compose",
       "resources": {
@@ -8129,6 +8130,37 @@
       ],
       "pairs_with": [],
       "path": "android/code/form-factors/navigation-suite-scaffold",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "navigation3",
+      "domain": "android",
+      "class": "code",
+      "category": "architecture",
+      "description": "Covers Jetpack Navigation 3 — the Compose-native navigation library where your code owns the back stack as observable state, with NavDisplay, NavEntry, entryProvider, scene strategies for adaptive multi-pane layouts, shared elements between scenes, and the NavMetadata DSL. Use when starting navigation in a new Compose app, rendering two destinations at once on large screens, driving navigation from state you already own, or weighing a migration from Navigation Compose.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "compose",
+        "navigation3",
+        "navigation",
+        "back-stack",
+        "scenes",
+        "adaptive",
+        "architecture"
+      ],
+      "pairs_with": [
+        "navigation-compose"
+      ],
+      "path": "android/code/architecture/navigation3",
       "resources": {
         "reference": false,
         "examples": false,
@@ -8900,13 +8932,13 @@
       "domain": "android",
       "class": "code",
       "category": "data",
-      "description": "Covers Room persistence — @Entity, @Dao, @Database, queries returning Flow, relations and @Relation, type converters, @Transaction, migrations (auto and manual) and fallback, suspend DAO functions, and Room KMP. Use when implementing a local SQLite database with Jetpack Room, modelling entities with relations, reacting to data changes via Flow, handling schema migrations, or targeting Room KMP for shared Kotlin Multiplatform persistence.",
+      "description": "Covers Room persistence — @Entity, @Dao, @Database, queries returning Flow, relations and @Relation, type converters, @Transaction, migrations (auto and manual) and fallback, suspend DAO functions, Room KMP, and choosing between androidx.room 2.x and the coroutine-first androidx.room3 3.0 rewrite. Use when implementing a local SQLite database with Jetpack Room, modelling entities with relations, reacting to data changes via Flow, handling schema migrations, or targeting Room KMP for shared Kotlin Multiplatform persistence.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "room",
         "database",
