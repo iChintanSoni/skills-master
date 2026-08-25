@@ -10,13 +10,14 @@ x-skills-master:
   category: media-camera-ml
   platforms: ["android", "large-screen", "android-tv"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [media3-transformer]
   sources:
     - https://developer.android.com/media/media3/exoplayer
     - https://developer.android.com/media/media3
-  snapshot_date: "2026-06-06"
+    - https://android-developers.googleblog.com/2026/06/building-premium-android-experiences-google-io-26.html
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -122,6 +123,12 @@ fun VideoPlayer(player: ExoPlayer, modifier: Modifier = Modifier) {
 ```
 
 ## Platform notes
+
+**Since mid-2026 (Media3 / Android 17 wave)**
+- Scrubbing mode is stable: enable it during seek-bar drags for smooth frame-accurate preview seeking instead of jumping between keyframes.
+- Casting: the Media3 `CastPlayer` gives Cast sessions the same `Player` interface as local ExoPlayer, so UI and session code stay shared.
+- Android 17 widens the codec surface — Eclipsa Video HDR (SMPTE ST 2094-50-based), an extended xHE-AAC software encoder, and OEM-defined `video/vvc` (H.266) exposed through `MediaExtractor`/`MediaCodecInfo`. Query codec capability at runtime rather than assuming device support.
+- For export/transcoding pipelines, CodecDB provides chipset-aware encoding recommendations — see the `media3-transformer` skill.
 
 **Phones / general Android**
 - Request audio focus via `AudioFocusRequest` or let `ExoPlayer`'s built-in `AudioFocusManager` handle it (enabled by default when `setAudioAttributes` is set with `handleAudioFocus = true`).

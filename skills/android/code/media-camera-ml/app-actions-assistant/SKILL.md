@@ -10,13 +10,14 @@ x-skills-master:
   category: media-camera-ml
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [app-functions]
   sources:
     - https://developer.android.com/guide/app-actions/overview
     - https://developer.android.com/guide/topics/ui/shortcuts
-  snapshot_date: "2026-06-06"
+    - https://android-developers.googleblog.com/2026/06/Android-17.html
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -24,6 +25,10 @@ x-skills-master:
 Apply this skill whenever you want to surface app functionality outside the app itself — via Google Assistant voice commands, launcher long-press shortcuts, system search, or predictive suggestions. It covers the full shortcut surface area: static shortcuts declared in XML, dynamic shortcuts created at runtime via `ShortcutManagerCompat`, pinned shortcuts added to the home screen, and the `shortcuts.xml` capability file that powers App Actions in Google Assistant.
 
 ## Core guidance
+
+### The 2026 direction: AppFunctions
+
+App Actions and BIIs remain the shipping mechanism for Assistant voice integration, but Android 17 introduces their successor: **AppFunctions**, a Jetpack library (alpha) where you annotate a Kotlin function with `@AppFunction` plus KDoc, and the system generates the plumbing that exposes it — through Android's on-device Model Context Protocol implementation — as a tool that AI assistants such as Gemini can discover, orchestrate, and execute against your app's local state. New capability surface should be designed with that model in mind (small, well-described, parameterized functions); see the `app-functions` skill for adoption guidance. Everything below documents the established App Actions / shortcuts surface, which existing integrations should keep.
 
 ### Shortcuts (static, dynamic, pinned)
 
