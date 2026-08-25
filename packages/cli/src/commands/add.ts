@@ -87,6 +87,8 @@ export async function addCommand(opts: AddOptions): Promise<AddResult> {
   const lock = loadLockfile(opts.cwd);
   lock.contentRef = opts.ref ?? cfg.contentRef;
   const installed: { name: string; version: string }[] = [];
+  const ownedFiles = new Set<string>();
+  const sharedBlockFiles = new Set<string>();
 
   const prefix = opts.dryRun ? "[dry-run] " : "";
   for (const name of [...selected].sort()) {
@@ -98,6 +100,12 @@ export async function addCommand(opts: AddOptions): Promise<AddResult> {
     });
     if (!opts.dryRun) lock.skills[name] = result.locked;
     installed.push({ name, version: result.version });
+
+    for (const e of Object.values(result.locked.emitted)) {
+      if (!e) continue;
+      for (const f of e.files) ownedFiles.add(f);
+      if (e.block) sharedBlockFiles.add(e.block);
+    }
 
     for (const r of result.results) {
       const tag = r.mode === "block" ? `${r.path} [${r.blockId}]` : r.path;
@@ -112,8 +120,19 @@ export async function addCommand(opts: AddOptions): Promise<AddResult> {
       log.info("Wrote skills-master.json.");
     }
     if (!cfg.commit) {
-      const outs = targets.map((t) => paths[t]);
-      ensureGitignored(opts.cwd, outs);
+      // Ignore only files the emitters own outright, anchored to the project
+      // root. Block-mode outputs live inside shared files (AGENTS.md,
+      // .github/copilot-instructions.md) that may carry hand-written content,
+      // so those are never gitignored.
+      ensureGitignored(
+        opts.cwd,
+        [...ownedFiles].sort((a, b) => a.localeCompare(b)).map((f) => `/${f}`),
+      );
+      if (sharedBlockFiles.size > 0) {
+        log.warn(
+          `Not gitignoring shared file(s) with managed blocks: ${[...sharedBlockFiles].sort().join(", ")}.`,
+        );
+      }
     }
   }
 
