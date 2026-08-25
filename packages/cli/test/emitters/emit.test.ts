@@ -109,3 +109,14 @@ describe("detectTargets", () => {
     expect(detectTargets(dir).sort()).toEqual(["agents", "claude", "cursor"]);
   });
 });
+
+describe("copilot applyTo scoping", () => {
+  it("omits applyTo when the skill declares no globs", () => {
+    const src = new ContentSource(CONTENT_ROOT);
+    const skill = src.loadSkill("fixture-tool-skill"); // lang-tooling fixture, no globs
+    const files = getEmitter("copilot")!.emit(skill, ctx());
+    const whole = files.find((f) => f.mode === "whole")!;
+    expect(whole.contents).not.toContain("applyTo");
+    expect(whole.contents).toContain("description:");
+  });
+});
