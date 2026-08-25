@@ -29,6 +29,12 @@ func upcoming(after date: Date, in context: ModelContext) throws -> [Trip] {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- Sectioned queries: `@Query(sort:sectionBy:)` (keyed on a persisted `String` property for now) yields `.sections` ready for a sectioned `List` — no more hand-grouping in the view.
+- Compound predicates compose dynamically: `Predicate(all:)` and `Predicate(any:)` take arrays, so incremental filter builders stop being string-built or nested-closure gymnastics.
+- Observation escapes SwiftUI: `ResultsObserver<Model, SectionID>` tracks live query results from any context (auto-tracking accessed properties via `withContinuousObservation`), and `HistoryObserver(observedModels:modelContainer:)` streams transaction history — the supported primitive for syncing local changes to your own backend via `fetchHistory(descriptor)`.
+
 ## Platform notes
 
 - Lightweight stages handle adding or removing properties, renaming via the rename attribute, changing a relationship's delete rule, and adding attributes such as unique, external storage, or cloud-encryption flags. Anything that reshapes existing values needs a custom stage.

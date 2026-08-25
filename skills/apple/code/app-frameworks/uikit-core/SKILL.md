@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/uikit/uiviewcontroller
     - https://developer.apple.com/documentation/uikit/uiwindowscene
     - https://developer.apple.com/documentation/uikit/uitraitchangeobservable
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -47,6 +47,14 @@ final class DetailViewController: UIViewController {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- **Scene adoption is now mandatory:** apps built with the iOS 27 SDK must use the scene-based lifecycle or they fail to launch. Any remaining app-delegate-only architecture has to migrate before rebuilding against the new SDK — this is the hard deadline Apple has signaled since iOS 13.
+- Screen-scoped APIs continue to fall away: display links move to `UIWindowScene.displayLink(target:selector:)` (the `UIScreen`/`UIApplication` variants are deprecated), and the ancient `UIAccelerometer` family is obsoleted outright — use CoreMotion.
+- Scene surface grows: `UISceneAccessory` (register via `registerSceneAccessory(_:)`, with `externalNonInteractive(sceneConfiguration:userInfo:)` for passive external displays), `UIWindowScene.closureConfirmation` (`UISceneClosureConfirmation`) to confirm before a scene closes, and `UIScene.extendStateRestoration()` / `completeStateRestoration()` for restoration across background transitions.
+- TextKit 2 fills long-standing gaps: the `NSTextTable`/`NSTextBlock` family arrives from macOS (attach via `NSParagraphStyle.textBlocks`), `UITextView` exposes viewport layout through `NSTextViewportLayoutControllerDelegate`, and attachment views gain a reuse policy (`registerTextAttachmentViewProviderReusePolicy(_:forTextAttachmentViewProviderType:)`).
+- Menus and drag: `UIMenuElement.subtitle` and `preferredImageVisibility` (menu images are hidden by default on iPadOS/macOS 27 — opt in explicitly), `UIDragInteraction.liftBehavior` and `allowsPointerDragBeforeLiftDelay`.
 
 ## Platform notes
 

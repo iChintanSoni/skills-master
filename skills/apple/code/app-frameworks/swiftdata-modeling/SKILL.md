@@ -16,9 +16,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/swiftdata
     - https://developer.apple.com/documentation/swiftdata/preserving-your-apps-model-data-across-launches
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/ios/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.2
+  version: 1.1.0
 ---
 
 ## When to use
@@ -34,6 +35,11 @@ Use when defining the persistent shape of an app's data with SwiftData: declarin
 - Keep model types free of UI and import only Foundation, so they remain testable and portable across every platform that ships SwiftData.
 
 See [examples.md](examples.md) for an annotated model graph.
+
+### iOS 27 (WWDC 2026)
+
+- `@Attribute(.codable)` persists types SwiftData cannot decompose — including framework types you do not own (an `MKMapItem.Identifier`, say) — serialized as a BLOB. The tradeoff is explicit: a `.codable` value cannot participate in filtering, sorting, or predicates, so reserve it for payload, never for query keys.
+- Predicates now compare enums directly (`#Predicate<Expense> { $0.type == someCase }`) — delete the shadow raw-value properties whose only job was filterability.
 
 ## Platform notes
 

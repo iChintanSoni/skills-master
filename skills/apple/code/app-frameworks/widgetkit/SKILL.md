@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/widgetkit
     - https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
     - https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.2
+  version: 1.1.0
 ---
 
 ## When to use
@@ -50,6 +50,11 @@ struct StatusProvider: AppIntentTimelineProvider {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- Widget customization runs through App Intents with dynamic styling — configuration and appearance react to intent-driven state rather than static families alone.
+- New `systemExtraLargePortrait` family on iOS/iPadOS/macOS 27 — audit which existing families you map before assuming layouts transfer to the tall canvas.
 
 ## Platform notes
 

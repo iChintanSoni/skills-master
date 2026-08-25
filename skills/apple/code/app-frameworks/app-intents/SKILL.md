@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/appintents
     - https://developer.apple.com/documentation/appintents/app-shortcuts
     - https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -51,6 +51,12 @@ struct CompleteTaskIntent: AppIntent {
   }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- **App Schemas** are the headline: conforming intents and entities to assistant schemas is what lets Siri (in its Apple Intelligence era) invoke your actions from natural language with system-understood semantics. New protocol surface — `SyncableEntity`, `RelevantEntities`, `ValueRepresentation` — deepens what the system can index and reason about.
+- The View Annotations API ties intent results and entities to your UI, powering the new Snippets result surfaces.
+- **AppIntentsTesting** (new framework) makes intents unit-testable — assert resolution, parameter binding, and results without driving Siri or Shortcuts by hand. Wire it into the same suites that cover your domain logic.
 
 ## Platform notes
 

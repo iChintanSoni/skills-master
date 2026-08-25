@@ -33,6 +33,12 @@ struct CompleteTaskIntent: AppIntent {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- **App Schemas** are the headline: conforming intents and entities to assistant schemas is what lets Siri (in its Apple Intelligence era) invoke your actions from natural language with system-understood semantics. New protocol surface — `SyncableEntity`, `RelevantEntities`, `ValueRepresentation` — deepens what the system can index and reason about.
+- The View Annotations API ties intent results and entities to your UI, powering the new Snippets result surfaces.
+- **AppIntentsTesting** (new framework) makes intents unit-testable — assert resolution, parameter binding, and results without driving Siri or Shortcuts by hand. Wire it into the same suites that cover your domain logic.
+
 ## Platform notes
 
 - iOS/iPadOS 16+: full support, including the Action button (iPhone 15 Pro and later) and interactive widgets (iOS 17+). SnippetIntent and interactive snippets are iOS 26.

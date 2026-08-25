@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/corespotlight/cssearchableitem
     - https://developer.apple.com/documentation/corespotlight/cssearchableindex
     - https://developer.apple.com/documentation/appintents/making-app-entities-available-in-spotlight
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -46,6 +46,10 @@ let item = CSSearchableItem(uniqueIdentifier: note.id.uuidString,
                             attributeSet: attrs)
 try await CSSearchableIndex.default().indexSearchableItems([item])
 ```
+
+### iOS 27 (WWDC 2026)
+
+- Spotlight's index turns semantic: App Intents entity schemas feed it, and search over Core Spotlight content becomes LLM-backed — donated entities with well-described attributes surface for meaning, not just keyword matches. The practical shift: invest in schema-conformant entities (see `app-intents`) and accurate attribute descriptions; they are now retrieval features, not metadata hygiene.
 
 ## Platform notes
 
