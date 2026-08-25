@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -128,6 +128,8 @@ TV navigation is D-pad driven. Primary navigation on TV typically uses a side pa
 - **Material 3 Guidelines:** [Color roles](https://m3.material.io/styles/color/roles)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -247,6 +247,8 @@ class ProfileVerificationTest {
 - **Documentation:** [Macrobenchmark overview — Android Developers](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

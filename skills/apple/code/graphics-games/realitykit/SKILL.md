@@ -20,7 +20,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/realitykit/presentation-views-and-attachments
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -74,6 +74,8 @@ RealityView { content in
 - **Documentation:** [Views and attachments](https://developer.apple.com/documentation/realitykit/presentation-views-and-attachments)
 - **WWDC:** [What's new in RealityKit (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/287/)
 - **WWDC:** [Better together: SwiftUI and RealityKit (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/274/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

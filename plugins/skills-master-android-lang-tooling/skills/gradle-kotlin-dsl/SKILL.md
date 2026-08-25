@@ -163,6 +163,8 @@ dependencies {
 - **Guide:** [Share build logic between subprojects — Gradle docs](https://docs.gradle.org/current/samples/sample_convention_plugins.html)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

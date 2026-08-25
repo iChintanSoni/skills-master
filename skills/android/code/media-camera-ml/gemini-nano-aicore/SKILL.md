@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/ai
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -144,6 +144,8 @@ sealed interface SummaryUiState {
 
 - **Documentation:** [Gemini Nano on Android](https://developer.android.com/ai/gemini-nano)
 - **Documentation:** [Android AI overview](https://developer.android.com/ai)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

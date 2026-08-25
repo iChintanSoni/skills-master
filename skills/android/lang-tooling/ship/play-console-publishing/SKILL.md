@@ -14,7 +14,7 @@ x-skills-master:
     - https://play.google.com/console/about/
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -155,6 +155,8 @@ The Play Integrity API (`com.google.android.play:integrity`) provides a signed t
 - **Documentation:** [Play Integrity API](https://developer.android.com/google/play/integrity)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

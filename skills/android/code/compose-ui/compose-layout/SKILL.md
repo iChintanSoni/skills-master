@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/layouts/custom
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -123,6 +123,8 @@ Never measure a child more than once — Compose enforces the single-pass contra
 - **Documentation:** [Compose layout basics](https://developer.android.com/develop/ui/compose/layouts/basics)
 - **Documentation:** [Custom layouts in Compose](https://developer.android.com/develop/ui/compose/layouts/custom)
 - **Documentation:** [Adaptive layouts](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

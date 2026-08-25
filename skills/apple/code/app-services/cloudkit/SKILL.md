@@ -20,7 +20,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/cloudkit/ckerror/serverrecordchanged
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -73,6 +73,8 @@ _ = try result.saveResults[record.recordID]?.get()  // throws serverRecordChange
 - **WWDC:** [Sync to iCloud with CKSyncEngine (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10188/)
 - **Sample Code:** [CloudKit sync engine sample](https://github.com/apple/sample-cloudkit-sync-engine)
 - **Sample Code:** [CloudKit sharing sample](https://github.com/apple/sample-cloudkit-sharing)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

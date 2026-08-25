@@ -81,6 +81,8 @@ Use this skill when:
 
 - **Material 3 Guidelines:** [Buttons overview](https://m3.material.io/components/buttons/overview)
 - **Documentation:** [Buttons in Jetpack Compose](https://developer.android.com/develop/ui/compose/components/button)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

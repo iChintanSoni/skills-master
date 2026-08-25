@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/media/camera/camerax/architecture
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -253,6 +253,8 @@ Always check availability before selecting an extension — it may not be presen
 - **Documentation:** [ImageAnalysis](https://developer.android.com/media/camera/camerax/analyze)
 - **Documentation:** [VideoCapture](https://developer.android.com/media/camera/camerax/video-capture)
 - **Documentation:** [Camera Extensions](https://developer.android.com/media/camera/camerax/extensions-api)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

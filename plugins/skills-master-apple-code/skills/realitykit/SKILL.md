@@ -54,6 +54,8 @@ RealityView { content in
 - **Documentation:** [Views and attachments](https://developer.apple.com/documentation/realitykit/presentation-views-and-attachments)
 - **WWDC:** [What's new in RealityKit (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/287/)
 - **WWDC:** [Better together: SwiftUI and RealityKit (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/274/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

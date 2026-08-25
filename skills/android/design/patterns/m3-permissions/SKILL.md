@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.android.com/guide/topics/permissions/overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -94,6 +94,8 @@ Permission behavior has changed substantially across versions. One-time grants a
 - **Material 3 Guidelines:** [Dialogs overview](https://m3.material.io/components/dialogs/overview)
 - **Material 3 Guidelines:** [Snackbar](https://m3.material.io/components/snackbar/overview)
 - **Material 3 Guidelines:** [Bottom sheets](https://m3.material.io/components/bottom-sheets/overview)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

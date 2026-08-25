@@ -117,6 +117,8 @@ class RefreshStepsCallback : ActionCallback {
 
 - **Documentation:** [Build widgets with Glance](https://developer.android.com/develop/ui/compose/glance)
 - **Documentation:** [App Widgets overview (RemoteViews reference)](https://developer.android.com/develop/ui/views/appwidgets/overview)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

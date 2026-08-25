@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/designsystems/custom
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -123,6 +123,8 @@ val MaterialTheme.extras: AppExtras
 - **Documentation:** [Material 3 in Compose](https://developer.android.com/develop/ui/compose/designsystems/material3)
 - **Documentation:** [Custom design systems in Compose](https://developer.android.com/develop/ui/compose/designsystems/custom)
 - **Documentation:** [CompositionLocal](https://developer.android.com/develop/ui/compose/compositionlocal)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

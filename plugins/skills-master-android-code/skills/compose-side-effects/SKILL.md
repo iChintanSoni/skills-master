@@ -170,6 +170,8 @@ LaunchedEffect(listState) {
 
 - **Documentation:** [Side-effects in Compose](https://developer.android.com/develop/ui/compose/side-effects)
 - **Documentation:** [Compose API guidelines — effects](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/compose/docs/compose-api-guidelines.md)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

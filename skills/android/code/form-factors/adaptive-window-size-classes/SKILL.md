@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -135,6 +135,8 @@ Pass these into your screen-level composable in a `@Composable` test to verify t
 
 - **Guide — Use window size classes:** [https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes](https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes)
 - **Guide — Adaptive layouts overview:** [https://developer.android.com/develop/ui/compose/layouts/adaptive](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

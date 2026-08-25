@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/training/permissions/requesting
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -129,6 +129,8 @@ fun CameraFeature(viewModel: CameraViewModel = hiltViewModel()) {
 
 - **Documentation:** [Permissions on Android — overview](https://developer.android.com/guide/topics/permissions/overview)
 - **Documentation:** [Request runtime permissions](https://developer.android.com/training/permissions/requesting)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

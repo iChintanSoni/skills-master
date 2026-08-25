@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components/button
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -94,6 +94,8 @@ Use this skill when:
 
 - **Material 3 Guidelines:** [Buttons overview](https://m3.material.io/components/buttons/overview)
 - **Documentation:** [Buttons in Jetpack Compose](https://developer.android.com/develop/ui/compose/components/button)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

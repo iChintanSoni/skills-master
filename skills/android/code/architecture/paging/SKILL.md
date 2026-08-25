@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -252,6 +252,8 @@ All `PagingData` transformations must happen in the `ViewModel` (before `cachedI
 
 - **Documentation:** [Paging 3 overview](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
 - **Documentation:** [Load and display paged data](https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

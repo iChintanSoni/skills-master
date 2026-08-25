@@ -14,7 +14,7 @@ x-skills-master:
     - https://kotlinlang.org/docs/multiplatform.html
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -122,6 +122,8 @@ kotlin {
 
 - **Documentation:** [Kotlin Multiplatform — Android Developer](https://developer.android.com/kotlin/multiplatform)
 - **Documentation:** [Kotlin Multiplatform — kotlinlang.org](https://kotlinlang.org/docs/multiplatform.html)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

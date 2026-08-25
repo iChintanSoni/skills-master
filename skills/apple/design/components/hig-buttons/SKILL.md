@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/materials
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -64,6 +64,7 @@ Use this skill when designing or critiquing any tappable/clickable control that 
 - **WWDC:** [Get to know the new design system (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/356/)
 - **WWDC:** [Design foundations from idea to interface (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/359/)
 - **Documentation:** [Button | SwiftUI](https://developer.apple.com/documentation/swiftui/button)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

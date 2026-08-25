@@ -89,6 +89,8 @@ M3 defines four named transition patterns. Choosing among them is a design decis
 - **Material 3 Guidelines:** [Transition patterns](https://m3.material.io/styles/motion/transitions/transition-patterns)
 - **Material 3 Guidelines:** [M3 Expressive motion](https://m3.material.io/blog/building-with-m3-expressive)
 - **Documentation:** [Animation in Jetpack Compose — Introduction](https://developer.android.com/develop/ui/compose/animation/introduction)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

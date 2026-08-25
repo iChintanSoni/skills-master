@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/connectivity/bluetooth/ble/connect-gatt-server
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -142,6 +142,8 @@ class BleGattCallback(
 - **Documentation:** [BLE overview — developer.android.com](https://developer.android.com/develop/connectivity/bluetooth/ble/ble-overview)
 - **Documentation:** [Connect to a GATT server — developer.android.com](https://developer.android.com/develop/connectivity/bluetooth/ble/connect-gatt-server)
 - **API reference:** [BluetoothGatt — developer.android.com](https://developer.android.com/reference/android/bluetooth/BluetoothGatt)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/designsystems/material3
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -101,6 +101,8 @@ x-skills-master:
 - **Material 3 Guidelines:** [Dynamic color](https://m3.material.io/styles/color/dynamic)
 - **Material 3 Guidelines:** [Dark theme](https://m3.material.io/styles/color/system/overview)
 - **Material 3 Guidelines:** [Accessibility — Color and contrast](https://m3.material.io/foundations/overview)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

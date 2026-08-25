@@ -13,7 +13,7 @@ x-skills-master:
     - https://m3.material.io/components/progress-indicators/overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -132,6 +132,8 @@ Specific contexts where this skill applies:
 - **Material 3 Guidelines:** [Dialogs overview](https://m3.material.io/components/dialogs/overview)
 - **Material 3 Guidelines:** [Empty states](https://m3.material.io/components/dialogs/overview)
 - **Material 3 Guidelines:** [Communication patterns](https://developer.android.com/design/ui/mobile)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

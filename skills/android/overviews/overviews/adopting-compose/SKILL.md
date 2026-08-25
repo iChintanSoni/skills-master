@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/migrate/strategy
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -122,6 +122,8 @@ class ProfileFragment : Fragment() {
 - **Documentation:** [Compose migration strategy](https://developer.android.com/develop/ui/compose/migrate/strategy)
 - **Documentation:** [ComposeView interop API](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/compose-in-views)
 - **Documentation:** [AndroidView — Views in Compose](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

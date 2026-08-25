@@ -69,7 +69,7 @@
         "chromeos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "adaptive",
         "window-size-classes",
@@ -129,7 +129,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "migration",
@@ -188,7 +188,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "kmp",
         "kotlin-multiplatform",
@@ -495,7 +495,7 @@
         "android"
       ],
       "stability": "contested",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "architecture",
         "mvvm",
@@ -553,7 +553,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "app-intents",
         "siri",
@@ -753,7 +753,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "glance",
         "widgets",
@@ -1092,7 +1092,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "bluetooth",
         "ble",
@@ -1202,7 +1202,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "camerax",
         "camera",
@@ -1229,7 +1229,7 @@
         "automotive-os"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "car-app-library",
         "android-auto",
@@ -1541,7 +1541,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "adaptive",
         "large-screen",
@@ -1837,7 +1837,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "storage",
         "room",
@@ -1984,7 +1984,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "ci-cd",
         "gradle",
@@ -2046,7 +2046,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "cloudkit",
         "icloud",
@@ -2134,7 +2134,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "animation",
@@ -2336,7 +2336,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "layout",
@@ -2365,7 +2365,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "lazy-list",
@@ -2421,7 +2421,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "performance",
@@ -2474,7 +2474,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "side-effects",
@@ -2500,7 +2500,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "state",
@@ -2583,7 +2583,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "material3",
@@ -2612,7 +2612,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "testing",
@@ -2903,7 +2903,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "coreml",
         "machine-learning",
@@ -3015,7 +3015,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "auth",
         "passkeys",
@@ -3072,7 +3072,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "android",
         "datastore",
@@ -3219,7 +3219,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "android",
         "edge-to-edge",
@@ -3390,7 +3390,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "foreground-service",
         "service-types",
@@ -3447,7 +3447,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "gemini-nano",
         "aicore",
@@ -3473,7 +3473,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "gradle",
         "build",
@@ -3825,7 +3825,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "buttons",
         "controls",
@@ -4403,7 +4403,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "hig",
         "design",
@@ -4710,7 +4710,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "onboarding",
         "launching",
@@ -5197,7 +5197,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "hig",
         "tab-bars",
@@ -5602,7 +5602,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "kotlin",
         "coroutines",
@@ -5629,7 +5629,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "kotlin",
         "flow",
@@ -5709,7 +5709,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "kotlin",
         "multiplatform",
@@ -5818,7 +5818,7 @@
         "chromeos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "adaptive",
@@ -5905,7 +5905,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "location",
         "sensors",
@@ -5932,7 +5932,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "accessibility",
         "m3",
@@ -5961,7 +5961,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6128,7 +6128,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6156,7 +6156,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6325,7 +6325,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6383,7 +6383,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6582,7 +6582,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6750,7 +6750,7 @@
         "chromeos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6808,7 +6808,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6922,7 +6922,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "motion",
         "animation",
@@ -6952,7 +6952,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6981,7 +6981,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "notifications",
         "m3",
@@ -7010,7 +7010,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -7038,7 +7038,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -7098,7 +7098,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -7459,7 +7459,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -7601,7 +7601,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -7686,7 +7686,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "performance",
         "benchmarking",
@@ -7716,7 +7716,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "mapkit",
         "swiftui",
@@ -7770,7 +7770,7 @@
         "android-tv"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "media3",
         "exoplayer",
@@ -7911,7 +7911,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "modularization",
         "architecture",
@@ -8062,7 +8062,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "navigation",
@@ -8262,7 +8262,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "notifications",
         "notificationcompat",
@@ -8295,7 +8295,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "observation",
@@ -8354,7 +8354,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "paging",
         "compose",
@@ -8553,7 +8553,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "android",
         "play-console",
@@ -8761,7 +8761,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "realitykit",
         "swiftui",
@@ -8851,7 +8851,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "networking",
         "retrofit",
@@ -8906,7 +8906,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "room",
         "database",
@@ -8935,7 +8935,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "permissions",
         "android",
@@ -9022,7 +9022,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "storage",
         "scoped-storage",
@@ -9336,7 +9336,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "architecture",
         "stateflow",
@@ -9367,7 +9367,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "storekit",
         "in-app-purchase",
@@ -9457,7 +9457,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swift",
         "concurrency",
@@ -9643,7 +9643,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "testing",
         "swift-testing",
@@ -9673,7 +9673,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "swiftdata",
         "persistence",
@@ -9706,7 +9706,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftdata",
         "persistence",
@@ -9768,7 +9768,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "animation",
@@ -9799,7 +9799,7 @@
         "visionos"
       ],
       "stability": "contested",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "architecture",
@@ -9830,7 +9830,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "charts",
@@ -9894,7 +9894,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "views",
@@ -10080,7 +10080,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "gestures",
@@ -10175,7 +10175,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "list",
@@ -10209,7 +10209,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "navigation",
@@ -10333,7 +10333,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "observation",
@@ -10576,7 +10576,7 @@
         "android-tv"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "android-tv",
         "compose",
@@ -10772,7 +10772,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "uikit",
         "swiftui",
@@ -10798,7 +10798,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "testing",
         "junit",
@@ -10939,7 +10939,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "viewmodel",
         "architecture",
@@ -11021,7 +11021,7 @@
         "wear-os"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "wear-os",
         "compose",
@@ -11163,7 +11163,7 @@
         "watchos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "widgetkit",
         "widgets",
@@ -11219,7 +11219,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "workmanager",
         "background-work",
@@ -11334,7 +11334,7 @@
         "xr"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "xr",
         "compose",

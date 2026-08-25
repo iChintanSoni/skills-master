@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -158,6 +158,8 @@ On two-pane widths, the detail pane is always visible even before the user has s
 
 - **Documentation:** [Build a list-detail layout with Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail)
 - **Documentation:** [Adaptive layouts in Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

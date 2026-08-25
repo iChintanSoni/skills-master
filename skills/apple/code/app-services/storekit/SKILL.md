@@ -20,7 +20,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/storekit/subscriptionstoreview
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -76,6 +76,8 @@ func unlock(_ product: Product) async throws -> Bool {
 - **Documentation:** [Setting up StoreKit Testing in Xcode](https://developer.apple.com/documentation/xcode/setting-up-storekit-testing-in-xcode/)
 - **WWDC:** [Meet StoreKit for SwiftUI (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10013/)
 - **Sample Code:** [SubscriptionStoreView](https://developer.apple.com/documentation/storekit/subscriptionstoreview)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

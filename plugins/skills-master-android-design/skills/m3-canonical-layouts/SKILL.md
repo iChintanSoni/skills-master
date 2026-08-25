@@ -85,6 +85,8 @@ On Wear OS and TV the canonical layouts do not apply — Wear uses a scrolling t
 - **Material 3 Guidelines:** [Understanding layout](https://developer.android.com/guide/topics/large-screens/support-different-screen-sizes)
 - **Material 3 Guidelines:** [Applying layout](https://developer.android.com/develop/ui/compose/layouts/adaptive)
 - **Documentation:** [Adaptive layouts in Jetpack Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

@@ -16,7 +16,7 @@ x-skills-master:
     - https://kotlinlang.org/docs/flow.html
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -131,6 +131,8 @@ Turbine is the community-standard library for unit-testing flows. Call `flow.tes
 - **Documentation:** [Asynchronous Flow — Kotlin language docs](https://kotlinlang.org/docs/flow.html)
 - **Documentation:** [StateFlow and SharedFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)
 - **Library:** [Turbine — Flow testing library](https://github.com/cashapp/turbine)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

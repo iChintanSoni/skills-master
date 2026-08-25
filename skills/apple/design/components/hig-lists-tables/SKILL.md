@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/outline-views
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -56,6 +56,7 @@ Use when designing or reviewing scrollable, row-based content and deciding how t
 - **Human Interface Guidelines:** [Disclosure controls](https://developer.apple.com/design/human-interface-guidelines/disclosure-controls)
 - **WWDC:** [Get to know the new design system (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/356/)
 - **WWDC:** [Build a SwiftUI app with the new design (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/323/)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

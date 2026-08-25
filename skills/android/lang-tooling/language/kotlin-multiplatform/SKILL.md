@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/kotlin/multiplatform
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -145,6 +145,8 @@ actual fun currentEpochMillis(): Long =
 - **Documentation:** [Android developer guide to Kotlin Multiplatform](https://developer.android.com/kotlin/multiplatform)
 - **Documentation:** [Share business logic between Android and iOS](https://kotlinlang.org/docs/multiplatform-share-on-platforms.html)
 - **Documentation:** [Ktor multiplatform client](https://ktor.io/docs/client-create-multiplatform-application.html)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

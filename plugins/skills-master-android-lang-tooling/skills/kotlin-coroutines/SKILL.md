@@ -159,6 +159,8 @@ viewModelScope.launch(handler) { ... }
 - **Guide:** [Best practices for coroutines in Android](https://developer.android.com/kotlin/coroutines/coroutines-best-practices)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

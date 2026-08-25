@@ -16,7 +16,7 @@ x-skills-master:
     - https://square.github.io/okhttp/
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -138,6 +138,8 @@ class ArticleRepository @Inject constructor(private val api: ArticleService) {
 - **Documentation:** [OkHttp — An efficient HTTP client for Android and Java](https://square.github.io/okhttp/)
 - **Documentation:** [kotlinx.serialization Retrofit converter](https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter)
 - **Documentation:** [Android Network Security Configuration](https://developer.android.com/privacy-and-security/security-tips)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

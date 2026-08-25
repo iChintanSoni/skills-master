@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -112,6 +112,8 @@ Collect this in a `ViewModel` with `stateIn(viewModelScope, SharingStarted.While
 - **Documentation:** [Sensors overview](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview)
 - **Documentation:** [Request location permissions](https://developer.android.com/develop/sensors-and-location/location/permissions)
 - **Documentation:** [Create and monitor geofences](https://developer.android.com/develop/sensors-and-location/location/geofencing)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

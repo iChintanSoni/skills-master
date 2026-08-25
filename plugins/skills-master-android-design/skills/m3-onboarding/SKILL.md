@@ -84,6 +84,8 @@ Ensure skip controls and navigation indicators (step dots) have explicit content
 - **Material 3 Guidelines:** [Motion — transitions](https://m3.material.io/styles/motion/transitions/transition-patterns)
 - **Material 3 Guidelines:** [Adaptive design layouts](https://m3.material.io/foundations/overview)
 - **Material 3 Guidelines:** [Communication — writing](https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

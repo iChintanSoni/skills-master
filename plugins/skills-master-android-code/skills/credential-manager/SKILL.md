@@ -120,6 +120,8 @@ The Credential Manager bottom sheet is a system-owned UI; it adapts to window si
 - **Documentation:** [Credential Manager overview](https://developer.android.com/identity/sign-in/credential-manager)
 - **Documentation:** [Sign in with passkeys using Credential Manager](https://developer.android.com/training/sign-in/passkeys)
 - **Documentation:** [androidx.credentials API reference](https://developer.android.com/reference/androidx/credentials/package-summary)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

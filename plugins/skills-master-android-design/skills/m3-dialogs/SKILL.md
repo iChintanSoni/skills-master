@@ -81,6 +81,8 @@ Dialog-equivalent interactions on Wear are constrained to very short prompts and
 - **Documentation:** [Dialogs in Jetpack Compose](https://developer.android.com/develop/ui/compose/components/dialog)
 - **Material 3 Guidelines:** [Bottom sheets](https://m3.material.io/components/bottom-sheets/overview)
 - **Material 3 Guidelines:** [Snackbar](https://m3.material.io/components/snackbar/overview)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

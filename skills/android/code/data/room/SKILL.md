@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/training/data-storage/room/migrating-db-versions
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -146,6 +146,8 @@ object DatabaseModule {
 
 - **Documentation:** [Save data in a local database using Room](https://developer.android.com/training/data-storage/room)
 - **Documentation:** [Migrating Room database versions](https://developer.android.com/training/data-storage/room/migrating-db-versions)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

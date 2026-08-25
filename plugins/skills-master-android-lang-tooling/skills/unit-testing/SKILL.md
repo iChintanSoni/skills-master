@@ -149,6 +149,8 @@ fun `results flow emits filtered list then completes`() = runTest {
 - **Library:** [kotlinx-coroutines-test](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-test/)
 - **Library:** [Turbine — Flow testing by Cash App](https://github.com/cashapp/turbine)
 - **Library:** [MockK — mocking library for Kotlin](https://mockk.io)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

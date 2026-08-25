@@ -19,7 +19,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -79,6 +79,8 @@ struct RootView: View {
 - **Documentation:** [Migrating to new navigation types](https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types)
 - **Human Interface Guidelines:** [Navigation and search](https://developer.apple.com/design/human-interface-guidelines/navigation-and-search)
 - **WWDC:** [The SwiftUI cookbook for navigation (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10054/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

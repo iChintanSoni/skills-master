@@ -52,6 +52,8 @@ func upcoming(after date: Date, in context: ModelContext) throws -> [Trip] {
 - **Documentation:** [SchemaMigrationPlan](https://developer.apple.com/documentation/swiftdata/schemamigrationplan)
 - **WWDC:** [SwiftData: Dive into inheritance and schema migration (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/291/)
 - **WWDC:** [Model your schema with SwiftData (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10195/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

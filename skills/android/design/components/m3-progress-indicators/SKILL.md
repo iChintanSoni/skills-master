@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components/progress
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -75,6 +75,8 @@ Wear OS has its own circular progress pattern designed for the round watch face;
 - **Documentation:** [Progress indicators in Jetpack Compose](https://developer.android.com/develop/ui/compose/components/progress)
 - **Material 3 Guidelines:** [Progress indicators specs](https://m3.material.io/components/progress-indicators/specs)
 - **Material 3 Guidelines:** [Progress indicators accessibility](https://m3.material.io/components/progress-indicators/accessibility)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

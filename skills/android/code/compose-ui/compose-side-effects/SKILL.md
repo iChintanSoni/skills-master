@@ -15,7 +15,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/side-effects
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -185,6 +185,8 @@ LaunchedEffect(listState) {
 
 - **Documentation:** [Side-effects in Compose](https://developer.android.com/develop/ui/compose/side-effects)
 - **Documentation:** [Compose API guidelines — effects](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/compose/docs/compose-api-guidelines.md)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

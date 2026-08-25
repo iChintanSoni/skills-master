@@ -18,7 +18,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/Observation
   snapshot_date: "2026-05-30"
   stability: contested
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -125,6 +125,8 @@ disagree.
 - **WWDC:** [Discover Observation in SwiftUI (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10149/)
 - **WWDC:** [Demystify SwiftUI performance (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10160/)
 - **Sample Code:** [Backyard Birds: Building an app with SwiftData and widgets](https://developer.apple.com/documentation/swiftui/backyard-birds-sample)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

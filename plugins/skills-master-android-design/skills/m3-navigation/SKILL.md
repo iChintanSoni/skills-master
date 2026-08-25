@@ -115,6 +115,8 @@ TV navigation is D-pad driven. Primary navigation on TV typically uses a side pa
 - **Material 3 Guidelines:** [Color roles](https://m3.material.io/styles/color/roles)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

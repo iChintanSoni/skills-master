@@ -119,6 +119,8 @@ Pass these into your screen-level composable in a `@Composable` test to verify t
 
 - **Guide — Use window size classes:** [https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes](https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes)
 - **Guide — Adaptive layouts overview:** [https://developer.android.com/develop/ui/compose/layouts/adaptive](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 
