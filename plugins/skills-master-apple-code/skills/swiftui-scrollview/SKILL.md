@@ -35,6 +35,11 @@ ScrollView(.horizontal) {
 .contentMargins(.horizontal, 24, for: .scrollContent)
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `.swipeActionsContainer()` brings List-style swipe actions to rows inside a `ScrollView` + lazy stack.
+- Lazy stacks gain subview prefetching and scrolling improvements — measure before keeping workarounds that pre-warmed content off-screen.
+
 ## Platform notes
 
 - iOS/iPadOS 17 introduced the snapping, position, transition, margin, and indicator modifiers; iOS 18 added the `ScrollPosition` value type plus `onScrollGeometryChange`, `onScrollPhaseChange`, and `onScrollVisibilityChange`.

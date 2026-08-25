@@ -36,6 +36,11 @@ struct RootView: View {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `Tab(role: .prominent)` renders a visually separated, trailing-emphasized tab for the app's primary action.
+- Sidebar-capable tab bars reach iPhone: the sidebar adaptable style is no longer iPad-only, so the same `TabView` hierarchy can present as a sidebar where space and preference allow.
+
 ## Platform notes
 
 - **iPadOS / macOS:** `.sidebarAdaptable` shows a floating top tab bar on iPad that promotes into a sidebar; `TabSection` headers appear only in the sidebar form. On Mac the style renders as a sidebar by default. Use `.defaultAdaptableTabBarPlacement(_:)` to nudge the initial presentation.

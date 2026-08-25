@@ -40,6 +40,10 @@ struct StepperRow: View {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `@State` is reimplemented as a macro, and a stored `@Observable` class default is now initialized **lazily, once per view lifetime** — the long-standing footgun where `@State var model = Model()` constructed (and threw away) a fresh instance on every reinitialization of the view struct is gone. Caveat: assigning through `init` still initializes eagerly, so keep defaults in the property declaration to benefit.
+
 ## Platform notes
 
 - The Observation framework and `@Observable` require iOS 17, iPadOS 17, macOS 14, watchOS 10, tvOS 17, and visionOS 1 or later. Code targeting earlier systems still needs the `ObservableObject` protocol.
