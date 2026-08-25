@@ -84,6 +84,8 @@ Apply this skill when configuring the root `AndroidManifest.xml` file or merging
 - **Android 12+ exported enforcement:** Failure to specify `android:exported` on any component with an `<intent-filter>` will cause a build/install error.
 - **Queries element:** If your app targets Android 11+ and needs to interact with other packages, you must declare the packages or intent filters inside a `<queries>` tag.
 - **Dynamic manifest replacement:** Use Gradle manifest placeholders (e.g., `${applicationId}`) to customize values per build variant or flavor.
+- **Android 17 large-screen enforcement:** for apps targeting API 37, `android:screenOrientation`, `android:resizeableActivity`, and aspect-ratio restrictions are ignored whenever the window is 600 dp or wider, with no opt-out — these attributes now only constrain phone-sized windows. Do not rely on them to avoid building resizable layouts.
+- **Local network access:** apps targeting API 37 that talk to LAN devices (casting, smart home, development servers) must declare and request the new `ACCESS_LOCAL_NETWORK` runtime permission, or adopt the system device pickers that bypass the prompt.
 
 ## Pitfalls
 

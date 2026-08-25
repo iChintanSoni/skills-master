@@ -14,9 +14,10 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/topics/large-screens/make-apps-fold-aware
     - https://developer.android.com/jetpack/androidx/releases/window
-  snapshot_date: "2026-06-06"
+    - https://developer.android.com/about/versions/17/behavior-changes-17
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -138,6 +139,7 @@ fun FoldableScreen(posture: Posture, modifier: Modifier = Modifier) {
 ## Platform notes
 
 - `WindowInfoTracker` is available on all Android versions but only returns meaningful `FoldingFeature` data on devices that declare fold support (typically Android 10+ hardware with the appropriate OEM driver).
+- Android 17 (API 37) removes the last escape hatch for fixed-format apps on large screens: `android:screenOrientation` and `android:resizeableActivity` are ignored on windows sw >= 600 dp, with no opt-out (the temporary one from Android 16 is gone). On foldables this means the unfolded posture always gets a resizable, orientation-free window, so fold-aware layouts must work at any size rather than assuming a locked configuration.
 - On Android 16 (API 36), the Window Extensions API is standardised across OEMs — prior to Android 12 some OEMs shipped proprietary equivalents (Samsung Flex Mode, Microsoft Surface Duo SDK). Prefer `androidx.window` for all new code; it routes to the right implementation automatically.
 - When your app runs in multi-window or split-screen mode, `displayFeatures` may be empty even on a foldable if the fold is outside your window bounds. Always handle the empty list as a valid state equivalent to `Posture.Flat`.
 - `WindowInfoTracker.windowLayoutInfo` requires an `Activity` context, not an `Application` context. Do not call it from a `Service` or non-UI context.

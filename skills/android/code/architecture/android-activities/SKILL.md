@@ -15,9 +15,10 @@ x-skills-master:
   pairs_with: []
   sources:
     - https://developer.android.com/guide/components/activities/intro-activities
-  snapshot_date: "2026-06-06"
+    - https://developer.android.com/about/versions/17/behavior-changes-17
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -79,6 +80,7 @@ class DetailActivity : ComponentActivity() {
 
 - **Activity Results:** Avoid using the deprecated `startActivityForResult`. Use the modern `registerForActivityResult(contract, callback)` API to launch activities and collect results.
 - **Process Death:** To test state restoration, put the app in the background and terminate the process from Android Studio / terminal, then relaunch to confirm the correct state was restored.
+- **Background activity launches (Android 17):** for apps targeting API 37, `ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED` is deprecated in favor of `MODE_BACKGROUND_ACTIVITY_START_ALLOW_IF_VISIBLE`, which permits a start only while the granting app is visible, and the hardening extends to `IntentSender`-based launches. If you accept `PendingIntent`s from other apps or launch activities on their behalf, switch to the `ALLOW_IF_VISIBLE` mode and rely on strict-mode plus the updated lint checks to surface remaining legacy launch paths.
 
 ## Pitfalls
 

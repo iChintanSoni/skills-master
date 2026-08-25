@@ -127,6 +127,8 @@ Run with `./gradlew :benchmark:connectedReleaseAndroidTest` and publish results 
 - **Compose compiler metrics** (enabled via `freeCompilerArgs += "-P", "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=..."`) emit `*-composables.csv` files listing inferred stability and skippability for every composable — essential for diagnosing recomposition hot paths without attaching a profiler.
 - The `Trace` API (`android.os.Trace`) is a no-op in release builds unless `android:debuggable="true"` is set or the trace category is explicitly enabled, so trace markers have zero production overhead.
 - Perfetto's `heapprofd` (heap profiler) runs on-device and captures native allocations without recompiling the app — invoke via `adb shell heap_profile --pid <pid>`.
+- **Android 17 (API 37)** enforces RAM-based per-app memory limits: a process that exceeds its budget is killed with no stack trace, surfacing in `ApplicationExitInfo` as `REASON_OTHER` with a description containing `MemoryLimiter:AnonSwap` — check `getDescription()` when triaging unexplained background deaths. Pair this with `ProfilingManager`'s new triggers: `TRIGGER_TYPE_OOM` captures a Java heap dump at the exact moment of an `OutOfMemoryError`, and `TRIGGER_TYPE_ANOMALY` delivers one before a severe-memory termination; register with `registerForAllProfilingResults(...)` and read the result on next startup. Perfetto's Heap Dump Explorer inspects the captured dumps.
+- Memory-trim behavior narrowed on Android 15+: only `TRIM_MEMORY_UI_HIDDEN` and `TRIM_MEMORY_BACKGROUND` remain meaningful in `onTrimMemory()`; the finer-grained levels are deprecated, so release caches on those two signals rather than a graded ladder.
 
 ---
 

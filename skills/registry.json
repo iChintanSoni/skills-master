@@ -69,7 +69,7 @@
         "chromeos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "adaptive",
         "window-size-classes",
@@ -330,7 +330,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "activities",
         "lifecycle",
@@ -357,7 +357,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "manifest",
         "security",
@@ -6750,7 +6750,7 @@
         "chromeos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "m3",
         "design",
@@ -8441,7 +8441,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "android",
         "performance",
@@ -8935,7 +8935,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "permissions",
         "android",
@@ -9101,7 +9101,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "security",
         "cryptography",
@@ -11192,7 +11192,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "foldables",
         "window-manager",
