@@ -14,9 +14,10 @@ x-skills-master:
   sources:
     - https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
-  snapshot_date: "2026-06-06"
+    - https://developer.android.com/about/versions/17/behavior-changes-17
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -116,6 +117,7 @@ Pass these into your screen-level composable in a `@Composable` test to verify t
 
 ## Platform notes
 
+- **Android 17 (API 37) makes adaptive mandatory on large screens:** for apps targeting 37+, the platform ignores `android:screenOrientation`, `android:resizeableActivity`, and aspect-ratio restrictions whenever the window is sw >= 600 dp — and the temporary opt-out that existed when Android 16 introduced this is gone. Portrait-locked or fixed-size activities get freely resized on tablets, foldables, and ChromeOS whether or not they were designed for it, so size-class-driven layouts are no longer a large-screen enhancement; they are the only way to control what users see there.
 - **Foldables:** On a foldable in the folded state the window is `Compact`; when open it is typically `Medium` or `Expanded`. `currentWindowAdaptiveInfo()` also exposes `windowPosture` (`Tabletop`, `Book`, `Normal`) — use this in addition to size class to decide whether to split content at the hinge.
 - **ChromeOS:** Apps run in resizable windows that can cross every size-class boundary. `currentWindowAdaptiveInfo()` recomposes as the user drags the window edge, so adaptive layouts update live without any extra work.
 - **Multi-window / split-screen:** The window your app occupies is smaller than the physical screen. Always derive breakpoints from the window size, never from `DisplayMetrics` or `Resources.getDisplayMetrics()`.
@@ -130,6 +132,7 @@ Pass these into your screen-level composable in a `@Composable` test to verify t
 - **Ignoring the `else` branch in a `when` on `WindowWidthSizeClass`** — the enum is not sealed; new values may be added in future SDK releases. Always include an `else` fallback.
 - **Using `WindowWidthSizeClass.COMPACT.ordinal` or comparing by name string** — compare with the named constants (`WindowWidthSizeClass.COMPACT`, `.MEDIUM`, `.EXPANDED`) only.
 - **Forgetting to add `android:configChanges`** — without it the Activity recreates on every orientation or resize event on some devices, causing visible recomposition jank and reset of scroll state.
+- **Treating manifest orientation/resizability locks as a fallback plan** — on Android 17 those locks are ignored on large screens for apps targeting API 37, so a layout that "only works portrait" will simply render broken in a resized window. Fix the layout with size classes rather than trying to constrain the window.
 
 ## References
 

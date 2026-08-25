@@ -124,6 +124,7 @@ fun decrypt(ivAndCiphertext: ByteArray): ByteArray {
 - **API 30+** — `KeyInfo.getSecurityLevel()` is preferred over the deprecated `isInsideSecureHardware()`; emit `KeyProperties.SECURITY_LEVEL_TRUSTED_ENVIRONMENT` or `SECURITY_LEVEL_STRONGBOX`.
 - On **large-screen / multi-window** devices the app can be backgrounded mid-operation; hold the `SecretKey` reference only for the duration of a single encrypt/decrypt call, not across the lifecycle.
 - **Foldables and ChromeOS** do not change the Keystore API surface, but a hardware security chip may not be present on all form factors — always handle `StrongBoxUnavailableException`.
+- **Android 17 (API 37) hardens the TLS layer around your crypto:** Certificate Transparency verification is enforced by default for apps targeting 37 (it was opt-in on 16) — connections to hosts whose certificates lack valid CT proofs fail unless the domain is exempted via the `<certificateTransparency>` element in the network security config. Certificate-pinned and private-CA setups are the usual casualties; test them before raising targetSdk. Encrypted Client Hello is also on by default where the networking stack and server support it, tunable per-domain with the new `<domainEncryption>` element.
 
 ---
 

@@ -11,9 +11,10 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
-  snapshot_date: "2026-06-06"
+    - https://developer.android.com/about/versions/17/behavior-changes-17
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -36,9 +37,9 @@ x-skills-master:
 
 ### Adaptive quality tiers
 
-Google Play and the large-screen guidelines recognize four quality levels; designs should target Tier 2 as a baseline and Tier 3 for apps where the large-screen canvas is a primary use case.
+Google Play and the large-screen guidelines recognize four quality levels; designs should target Tier 2 as a baseline and Tier 3 for apps where the large-screen canvas is a primary use case. Since Android 17 (API 37), the floor is enforced by the platform itself, not only by Play review: orientation, resizability, and aspect-ratio restrictions are ignored on windows of 600 dp and wider, with no opt-out. An app can no longer choose letterboxing as its large-screen strategy — it will be resized regardless, and the only question is whether the design survives it.
 
-- **Tier 4 (broken):** The app is letterboxed in portrait orientation, crashes on resize, clips content behind system UI, or has interactive elements hidden by the hinge. This is an unacceptable baseline and disqualifies the app from large-screen features. The design review must flag any layout that cannot resize gracefully.
+- **Tier 4 (broken):** The app crashes on resize, clips content behind system UI, renders a stretched or truncated phone layout when the platform force-resizes it, or has interactive elements hidden by the hinge. On Android 17 this state is fully user-visible — the OS resizes the app whether or not the layout copes — and it still disqualifies the app from large-screen featuring. The design review must flag any layout that cannot resize gracefully.
 - **Tier 3 (optimized for large screens):** The design adapts meaningfully: it does not simply stretch the phone layout. Navigation chrome matches the window width (rail at medium, drawer at expanded). Content reveals or repositions rather than reflowing alone. Multi-pane appears where appropriate. The app works in any orientation and survives free-form window resizing on ChromeOS. This is the minimum target for apps that ship a tablet or foldable-specific design.
 - **Tier 2 (large-screen ready):** The app runs correctly and does not feel broken, but it does not take advantage of the additional canvas. Content reflows without a second pane, navigation adapts, and the app does not crash or clip. This is an acceptable baseline for apps where the large-screen audience is secondary.
 - **Tier 1 (optimized and featured):** The design is purpose-built for the large canvas — it exploits reveal, multi-pane, drag-and-drop, keyboard navigation, and pointer affordances. It earns placement in Play Store large-screen editorial. Very few apps need to target this tier immediately; it should be a deliberate product goal.

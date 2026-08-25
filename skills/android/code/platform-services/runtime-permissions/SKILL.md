@@ -14,9 +14,10 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/topics/permissions/overview
     - https://developer.android.com/training/permissions/requesting
-  snapshot_date: "2026-06-06"
+    - https://developer.android.com/about/versions/17/behavior-changes-17
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -113,6 +114,7 @@ fun CameraFeature(viewModel: CameraViewModel = hiltViewModel()) {
 - On **Android 11+ (API 30+)** the system auto-resets permissions for apps unused for several months. Apps that need persistent access (e.g., a background location tracker) should check permission status on resume, not just on first launch.
 - On **Android 12+ (API 31+)** Bluetooth permissions were restructured — `BLUETOOTH_SCAN`, `BLUETOOTH_CONNECT`, and `BLUETOOTH_ADVERTISE` replace the older `BLUETOOTH` and `BLUETOOTH_ADMIN`. Use `neverForLocation` attribute on `BLUETOOTH_SCAN` if you do not use Bluetooth to derive location.
 - On **Android 14+ (API 34+)** body sensors and health permissions have additional granularity. For these use `android.permission.health.*` and be prepared for users to grant or deny each sensor type independently.
+- On **Android 17 (API 37)**, local network access becomes a runtime permission: apps targeting 37+ must hold `ACCESS_LOCAL_NETWORK` (in the `NEARBY_DEVICES` group) to discover or connect to devices on the LAN — smart-home gear, casting receivers, development servers. Users who already granted another NEARBY_DEVICES permission are not re-prompted. Prefer the system-mediated device pickers where they fit, since they skip the permission prompt entirely; otherwise declare the permission and request it in context like any dangerous permission. What was opt-in hardening on Android 16 is mandatory at target 37.
 - The Accompanist Permissions library (`com.google.accompanist:accompanist-permissions`) wraps the state machine into `rememberPermissionState` / `rememberMultiplePermissionsState`. It is convenient for simple flows but adds a dependency; evaluate whether the raw ActivityResult API suffices.
 
 ## Pitfalls
