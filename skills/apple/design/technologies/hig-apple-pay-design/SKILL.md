@@ -10,11 +10,9 @@ x-skills-master:
   pairs_with: [passkit-apple-pay]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/apple-pay
-    - https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/buttons-and-marks/
-    - https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/checkout-and-payment/
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -51,8 +49,6 @@ Use this skill when designing or critiquing any flow where someone pays — a ca
 ## References
 
 - **Human Interface Guidelines:** [Apple Pay](https://developer.apple.com/design/human-interface-guidelines/apple-pay)
-- **Human Interface Guidelines:** [Apple Pay — Buttons and marks](https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/buttons-and-marks/)
-- **Human Interface Guidelines:** [Apple Pay — Checkout and payment](https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/checkout-and-payment/)
 - **WWDC:** [What's new in Apple Pay (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/201/)
 - **WWDC:** [What's new in Wallet and Apple Pay (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10108/)
 - **Documentation:** [PKPaymentButton](https://developer.apple.com/documentation/passkit/pkpaymentbutton)

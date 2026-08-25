@@ -10,11 +10,9 @@ x-skills-master:
   pairs_with: []
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/app-clips
-    - https://developer.apple.com/design/human-interface-guidelines/app-clips/overview/experience/
-    - https://developer.apple.com/design/human-interface-guidelines/app-clips/overview/app-clip-card/
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # HIG App Clips design
@@ -51,8 +49,6 @@ Reach for this when critiquing or designing an App Clip: a small, fast slice of 
 ## References
 
 - **Human Interface Guidelines:** [App Clips](https://developer.apple.com/design/human-interface-guidelines/app-clips)
-- **Human Interface Guidelines:** [App Clips — User experience](https://developer.apple.com/design/human-interface-guidelines/app-clips/overview/experience/)
-- **Human Interface Guidelines:** [App Clips — App Clip card](https://developer.apple.com/design/human-interface-guidelines/app-clips/overview/app-clip-card/)
 - **Human Interface Guidelines:** [Sign in with Apple](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple)
 - **WWDC:** [Streamline your App Clip (WWDC20)](https://developer.apple.com/videos/play/wwdc2020/10120/)
 - **Documentation:** [App Clips](https://developer.apple.com/documentation/appclip)

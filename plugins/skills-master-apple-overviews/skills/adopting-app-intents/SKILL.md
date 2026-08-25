@@ -54,8 +54,8 @@ struct LogWaterIntent: AppIntent {
 ## References
 
 - **Documentation:** [App Intents](https://developer.apple.com/documentation/appintents)
-- **Documentation:** [Making actions and content discoverable and widely available](https://developer.apple.com/documentation/appintents/making-actions-and-content-discoverable-and-widely-available)
-- **Documentation:** [Integrating actions with Siri and Apple Intelligence](https://developer.apple.com/documentation/appintents/integrating-actions-with-siri-and-apple-intelligence)
+- **Documentation:** [Donations and discovery](https://developer.apple.com/documentation/appintents/donations-and-discovery)
+- **Documentation:** [Apple Intelligence and Siri AI](https://developer.apple.com/documentation/appintents/apple-intelligence-and-siri-ai)
 - **WWDC:** [Get to know App Intents (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/244/)
 - **WWDC:** [Develop for Shortcuts and Spotlight with App Intents (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/260/)
 - **WWDC:** [Explore new advances in App Intents (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/275/)
