@@ -3,7 +3,6 @@ import type { ParsedSkill, TargetId } from "../types";
 import { SkillNotFoundError, resolveContent } from "../content/source";
 import { diskHash, installSkill, sourceHashOf } from "../core/install";
 import { loadConfigOrDefault, loadLockfile, saveLockfile } from "../core/project";
-import type { ConflictChoice } from "../core/writer";
 import { log } from "../util/log";
 
 export interface UpdateOptions {
@@ -13,7 +12,6 @@ export interface UpdateOptions {
   ref?: string;
   dryRun?: boolean;
   overwrite?: boolean;
-  onConflict?: (path: string) => ConflictChoice;
 }
 
 export interface UpdateResult {
@@ -78,7 +76,7 @@ export async function updateCommand(opts: UpdateOptions): Promise<UpdateResult> 
       const e = locked.emitted[t];
       return e && diskHash(opts.cwd, e.files) !== e.hash;
     });
-    if (userEdited && !opts.overwrite && !opts.onConflict) {
+    if (userEdited && !opts.overwrite) {
       log.warn(`${prefix}"${name}" has local edits — skipping (use --overwrite to replace).`);
       skipped.push(name);
       continue;
@@ -87,7 +85,6 @@ export async function updateCommand(opts: UpdateOptions): Promise<UpdateResult> 
     const result = installSkill(opts.cwd, skill, targets, paths, {
       dryRun: opts.dryRun,
       overwrite: opts.overwrite || !userEdited,
-      onConflict: opts.onConflict,
     });
     if (!opts.dryRun) lock.skills[name] = result.locked;
     updated.push(name);

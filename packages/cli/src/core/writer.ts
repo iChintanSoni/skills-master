@@ -11,32 +11,17 @@ import { dirname, join } from "node:path";
 import type { EmittedFile, WriteAction, WriteResult } from "../types";
 import { hasBlock, removeBlock, upsertBlock } from "./markers";
 
-export type ConflictChoice = "overwrite" | "skip";
-
 export interface ApplyOptions {
   dryRun?: boolean;
   /** force-overwrite changed whole-files without asking. */
   overwrite?: boolean;
-  /** called for a changed whole-file when neither overwrite nor dryRun is set. */
-  onConflict?: (path: string) => ConflictChoice;
-}
-
-export interface DetailedWriteResult extends WriteResult {
-  /** previous file contents (whole-file) when it changed — for diff previews. */
-  before?: string;
-  /** new file contents (whole-file) when it changed. */
-  after?: string;
 }
 
 function ensureDir(absPath: string): void {
   mkdirSync(dirname(absPath), { recursive: true });
 }
 
-function applyWhole(
-  projectRoot: string,
-  file: EmittedFile,
-  opts: ApplyOptions,
-): DetailedWriteResult {
+function applyWhole(projectRoot: string, file: EmittedFile, opts: ApplyOptions): WriteResult {
   const abs = join(projectRoot, file.path);
   const exists = existsSync(abs);
   const next = file.contents;
@@ -46,7 +31,7 @@ function applyWhole(
       ensureDir(abs);
       writeFileSync(abs, next, "utf8");
     }
-    return { path: file.path, mode: "whole", action: "created", after: next };
+    return { path: file.path, mode: "whole", action: "created" };
   }
 
   const current = readFileSync(abs, "utf8");
@@ -54,23 +39,16 @@ function applyWhole(
     return { path: file.path, mode: "whole", action: "unchanged" };
   }
 
-  // changed
-  let choice: ConflictChoice = "overwrite";
-  if (!opts.overwrite) {
-    choice = opts.onConflict ? opts.onConflict(file.path) : opts.dryRun ? "overwrite" : "skip";
-  }
-  if (choice === "skip") {
-    return { path: file.path, mode: "whole", action: "skipped", before: current, after: next };
+  // changed: a real run without --overwrite preserves the local edit; dry-run
+  // previews what an overwriting run would do.
+  if (!opts.overwrite && !opts.dryRun) {
+    return { path: file.path, mode: "whole", action: "skipped" };
   }
   if (!opts.dryRun) writeFileSync(abs, next, "utf8");
-  return { path: file.path, mode: "whole", action: "updated", before: current, after: next };
+  return { path: file.path, mode: "whole", action: "updated" };
 }
 
-function applyBlock(
-  projectRoot: string,
-  file: EmittedFile,
-  opts: ApplyOptions,
-): DetailedWriteResult {
+function applyBlock(projectRoot: string, file: EmittedFile, opts: ApplyOptions): WriteResult {
   const abs = join(projectRoot, file.path);
   const exists = existsSync(abs);
   const current = exists ? readFileSync(abs, "utf8") : "";
@@ -94,7 +72,7 @@ export function applyFiles(
   projectRoot: string,
   files: EmittedFile[],
   opts: ApplyOptions = {},
-): DetailedWriteResult[] {
+): WriteResult[] {
   return files.map((f) =>
     f.mode === "block" ? applyBlock(projectRoot, f, opts) : applyWhole(projectRoot, f, opts),
   );
