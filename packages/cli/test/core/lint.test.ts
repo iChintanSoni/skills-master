@@ -58,6 +58,9 @@ function writeSkill(spec: SkillSpec): void {
   const name = spec.name ?? spec.dir.split("/").at(-1);
   const pairs = (spec.pairsWith ?? []).map((p) => `"${p}"`).join(", ");
   const sources = spec.sources ?? ["https://example.com/docs"];
+  const sourcesLines = sources.length
+    ? ["  sources:", ...sources.map((u) => `    - ${u}`)]
+    : ["  sources: []"];
   const fm = [
     "---",
     `name: ${name}`,
@@ -68,8 +71,7 @@ function writeSkill(spec: SkillSpec): void {
     `  category: ${spec.category ?? spec.dir.split("/")[2]}`,
     "  platforms: [testos]",
     `  pairs_with: [${pairs}]`,
-    "  sources:",
-    ...sources.map((u) => `    - ${u}`),
+    ...sourcesLines,
     `  snapshot_date: "${spec.snapshotDate ?? "2026-01-01"}"`,
     `  stability: ${spec.stability ?? "stable"}`,
     "  version: 1.0.0",
@@ -260,5 +262,84 @@ describe("lintSkills — tightened rules", () => {
     });
     expect(lintSkills(root).warnCount).toBe(0);
     expect(lintSkills(root).errorCount).toBe(0);
+  });
+});
+
+describe("lintSkills — remaining rule coverage", () => {
+  it("errors when the body exceeds 500 lines and warns above 450", () => {
+    const pad = (n: number) => `${BODY}\n${"filler line\n".repeat(n)}`;
+    writeSkill({ dir: "apple/code/app-frameworks/very-long", body: pad(510) });
+    writeSkill({ dir: "apple/code/app-frameworks/getting-long", body: pad(440) });
+    expect(messagesOf("error")).toEqual(
+      expect.arrayContaining([expect.stringMatching(/body is 5\d\d lines \(max 500\)/)]),
+    );
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([expect.stringMatching(/body is 4\d\d lines \(approaching/)]),
+    );
+  });
+
+  it("warns on each missing canonical heading", () => {
+    writeSkill({
+      dir: "apple/code/app-frameworks/no-headings",
+      body: "Just prose, no sections.\n",
+    });
+    const warns = messagesOf("warn").filter((m) => m.includes("missing recommended section"));
+    expect(warns).toHaveLength(5);
+    for (const h of ["When to use", "Core guidance", "Pitfalls", "References", "See also"]) {
+      expect(warns.some((m) => m.includes(h))).toBe(true);
+    }
+  });
+
+  it("warns when the description lacks a Use-when clause", () => {
+    const dir = join(root, "apple/code/app-frameworks/vague-skill");
+    mkdirSync(dir, { recursive: true });
+    const fm = [
+      "---",
+      "name: vague-skill",
+      'description: "Covers something."',
+      "x-skills-master:",
+      "  domain: apple",
+      "  class: code",
+      "  category: app-frameworks",
+      "  platforms: [testos]",
+      "  pairs_with: []",
+      "  sources:",
+      "    - https://example.com/docs",
+      '  snapshot_date: "2026-01-01"',
+      "  stability: stable",
+      "  version: 1.0.0",
+      "---",
+      "",
+    ].join("\n");
+    writeFileSync(join(dir, "SKILL.md"), fm + BODY, "utf8");
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([expect.stringContaining('"Use when ..." trigger clause')]),
+    );
+  });
+
+  it("warns when sources are absent entirely", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/unsourced", sources: [] });
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([expect.stringContaining("no sources")]),
+    );
+  });
+
+  it("errors when pairs_with names an unknown skill", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/lonely", pairsWith: ["ghost-skill"] });
+    expect(messagesOf("error")).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining('pairs_with references unknown skill "ghost-skill"'),
+      ]),
+    );
+  });
+
+  it("reports invalid frontmatter as errors without aborting the run", () => {
+    const dir = join(root, "apple/code/app-frameworks/broken-skill");
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "SKILL.md"), "---\nname: 42\n---\nbody", "utf8");
+    writeSkill({ dir: "apple/code/app-frameworks/fine-skill" });
+    const res = lintSkills(root);
+    expect(res.skillCount).toBe(2);
+    expect(res.errorCount).toBeGreaterThan(0);
   });
 });
