@@ -37,3 +37,7 @@ Single-file targets cannot carry Level-3 resources, so `core/condense.ts`:
 3. Add a snapshot expectation in `test/emitters/emit.test.ts`.
 
 No other code changes — detection, conflict handling, the lockfile, and `update`/`remove` are all generic over the interface.
+
+## Auto-detection
+
+Each emitter's `detect(root)` claims a project only on evidence that its tool is actually in use: `.claude/` (Claude Code), `.cursor/` (Cursor), `.github/copilot-instructions.md` or `.github/instructions/` (Copilot — a bare `.github/` full of workflows proves nothing), and an existing `AGENTS.md` (the standard is opt-in by the file's presence). When nothing is detected, `init`/`add` fall back to all targets, so a fresh project still gets everything.

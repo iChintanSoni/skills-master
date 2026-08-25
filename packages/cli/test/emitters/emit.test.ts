@@ -1,8 +1,11 @@
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ContentSource } from "../../src/content/source";
 import { DEFAULT_PATHS } from "../../src/schema/projectConfig";
-import { EMITTERS, getEmitter } from "../../src/emitters";
+import { detectTargets, EMITTERS, getEmitter } from "../../src/emitters";
 import { titleFromName } from "../../src/emitters/util";
 import type { EmitContext } from "../../src/types";
 
@@ -72,5 +75,37 @@ describe("titleFromName", () => {
     expect(titleFromName("watchos-complications")).toBe("watchOS Complications");
     expect(titleFromName("m3-gestures")).toBe("M3 Gestures");
     expect(titleFromName("plain-name")).toBe("Plain Name");
+  });
+});
+
+describe("detectTargets", () => {
+  let dir: string;
+  beforeEach(() => {
+    dir = mkdtempSync(join(tmpdir(), "skills-master-detect-"));
+  });
+  afterEach(() => {
+    rmSync(dir, { recursive: true, force: true });
+  });
+
+  it("does not claim Copilot for a repo that merely has .github workflows", () => {
+    mkdirSync(join(dir, ".github/workflows"), { recursive: true });
+    expect(detectTargets(dir)).toEqual([]);
+  });
+
+  it("detects Copilot from its own customization files", () => {
+    mkdirSync(join(dir, ".github"), { recursive: true });
+    writeFileSync(join(dir, ".github/copilot-instructions.md"), "# hi\n", "utf8");
+    expect(detectTargets(dir)).toEqual(["copilot"]);
+
+    rmSync(join(dir, ".github/copilot-instructions.md"));
+    mkdirSync(join(dir, ".github/instructions"), { recursive: true });
+    expect(detectTargets(dir)).toEqual(["copilot"]);
+  });
+
+  it("detects claude/cursor from their config dirs and agents from AGENTS.md", () => {
+    mkdirSync(join(dir, ".claude"), { recursive: true });
+    mkdirSync(join(dir, ".cursor"), { recursive: true });
+    writeFileSync(join(dir, "AGENTS.md"), "# Agents\n", "utf8");
+    expect(detectTargets(dir).sort()).toEqual(["agents", "claude", "cursor"]);
   });
 });

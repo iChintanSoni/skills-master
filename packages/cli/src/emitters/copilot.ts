@@ -13,7 +13,10 @@ import { existsRel, globsToString, hasResources, titleFromName } from "./util";
 export const copilotEmitter: Emitter = {
   id: "copilot",
   label: "GitHub Copilot",
-  detect: (root) => existsRel(root, ".github"),
+  // A bare .github/ (workflows, templates) says nothing about Copilot use —
+  // detect only on Copilot's own customization files.
+  detect: (root) =>
+    existsRel(root, ".github/copilot-instructions.md") || existsRel(root, ".github/instructions"),
   emit(skill, ctx): EmittedFile[] {
     const base = ctx.paths.copilot; // e.g. ".github"
     const instructionsPath = `${base}/instructions/${skill.name}.instructions.md`;
