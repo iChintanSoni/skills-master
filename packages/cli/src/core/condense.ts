@@ -50,7 +50,11 @@ export function condenseBody(body: string, opts: CondenseOptions = {}): string {
 }
 
 function summarizeOpenQuestion(body: string): string {
-  const re = /^## Open question[ \t]*\n([\s\S]*?)(?=\n## |\s*$)/m;
+  // The section runs to the next h2 or the true end of input. `$` must not be
+  // line-end here (the pattern is /m for the heading anchor), so absolute end
+  // is spelled (?![\s\S]) — with \s*$ the lazy capture stopped at the first
+  // newline and "summarized" every section to an empty string.
+  const re = /^## Open question[ \t]*\n([\s\S]*?)(?=\n## |(?![\s\S]))/m;
   return body.replace(re, (_m, section: string) => {
     const firstPara =
       section
@@ -60,4 +64,27 @@ function summarizeOpenQuestion(body: string): string {
         .trim() ?? "";
     return `## Open question\n\nTradeoff: ${firstPara}\n`;
   });
+}
+
+/**
+ * Demote every markdown heading by `by` levels (capped at h6), leaving fenced
+ * code blocks untouched. Used when a skill body (headings start at h2) is
+ * nested under a titled section in a shared file like AGENTS.md.
+ */
+export function demoteHeadings(md: string, by: number): string {
+  let inFence = false;
+  return md
+    .split("\n")
+    .map((line) => {
+      if (/^(```|~~~)/.test(line.trimStart())) {
+        inFence = !inFence;
+        return line;
+      }
+      if (inFence) return line;
+      const m = /^(#{1,6})(\s)/.exec(line);
+      if (!m) return line;
+      const hashes = m[1]!;
+      return "#".repeat(Math.min(6, hashes.length + by)) + line.slice(hashes.length);
+    })
+    .join("\n");
 }

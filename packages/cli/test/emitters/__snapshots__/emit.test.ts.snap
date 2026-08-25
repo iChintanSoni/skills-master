@@ -7,31 +7,29 @@ exports[`emitters > projects the fixture skill for agents 1`] = `
     "blockVersion": "1.0.0",
     "contents": "### Fixture Skill
 
-## When to use
+#### When to use
 
 Use this fixture to verify emitter output and the add/update/remove lifecycle.
 
-## Core guidance
+#### Core guidance
 
 - Do the first deterministic thing.
 - Do the second deterministic thing, referencing examples.md.
 - Deeper notes live in reference.md.
 
-## Platform notes
+#### Platform notes
 
 Runs only on the imaginary testos platform.
 
-## Pitfalls
+#### Pitfalls
 
 - A representative pitfall.
 
-## Open question
+#### Open question
 
-Tradeoff: 
+Tradeoff: Whether fixtures should be exhaustive is a tradeoff; this one stays minimal but covers every code path. See checklist.md.
 
-Whether fixtures should be exhaustive is a tradeoff; this one stays minimal but covers every code path. See checklist.md.
-
-## See also
+#### See also
 
 - Apple-equivalent docs live at the source URL.
 

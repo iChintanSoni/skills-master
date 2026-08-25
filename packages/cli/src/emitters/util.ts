@@ -7,10 +7,12 @@ export function existsRel(root: string, rel: string): boolean {
   return existsSync(join(root, rel));
 }
 
-const ACRONYMS: Record<string, string> = {
+/** Tokens whose brand casing plain capitalization gets wrong (acronyms and compound names). */
+const CASED_TOKENS: Record<string, string> = {
   hig: "HIG",
   ui: "UI",
   ml: "ML",
+  ai: "AI",
   ar: "AR",
   av: "AV",
   os: "OS",
@@ -20,20 +22,53 @@ const ACRONYMS: Record<string, string> = {
   api: "API",
   sf: "SF",
   spm: "SPM",
+  m3: "M3",
+  nfc: "NFC",
+  http: "HTTP",
+  sqlite: "SQLite",
   ios: "iOS",
   ipados: "iPadOS",
   macos: "macOS",
   tvos: "tvOS",
   visionos: "visionOS",
   watchos: "watchOS",
+  chromeos: "ChromeOS",
+  swiftui: "SwiftUI",
+  swiftdata: "SwiftData",
+  uikit: "UIKit",
+  appkit: "AppKit",
+  xcode: "Xcode",
+  xctest: "XCTest",
+  viewmodel: "ViewModel",
+  workmanager: "WorkManager",
+  activitykit: "ActivityKit",
+  arkit: "ARKit",
+  cloudkit: "CloudKit",
+  cryptokit: "CryptoKit",
+  eventkit: "EventKit",
+  gamekit: "GameKit",
+  healthkit: "HealthKit",
+  mapkit: "MapKit",
+  musickit: "MusicKit",
+  passkit: "PassKit",
+  pencilkit: "PencilKit",
+  photokit: "PhotoKit",
+  realitykit: "RealityKit",
+  scenekit: "SceneKit",
+  screencapturekit: "ScreenCaptureKit",
+  spritekit: "SpriteKit",
+  storekit: "StoreKit",
+  tipkit: "TipKit",
+  weatherkit: "WeatherKit",
+  widgetkit: "WidgetKit",
 };
 
-/** Human title derived from a kebab-case skill name (e.g. "hig-sheets" → "HIG Sheets"). */
+/** Human title derived from a kebab-case skill name (e.g. "swiftui-grids" → "SwiftUI Grids"). */
 export function titleFromName(name: string): string {
   return name
     .split("-")
     .filter(Boolean)
-    .map((w) => ACRONYMS[w] ?? w.charAt(0).toUpperCase() + w.slice(1))
+    .map((w) => CASED_TOKENS[w] ?? w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 }
 

@@ -1,5 +1,5 @@
 import type { Emitter, EmittedFile } from "../types";
-import { condenseBody } from "../core/condense";
+import { condenseBody, demoteHeadings } from "../core/condense";
 import { existsRel, hasResources, titleFromName } from "./util";
 
 /**
@@ -13,10 +13,15 @@ export const agentsEmitter: Emitter = {
   label: "AGENTS.md",
   detect: (root) => existsRel(root, "AGENTS.md"),
   emit(skill, ctx): EmittedFile[] {
-    const body = condenseBody(skill.body, {
-      openQuestion: "summarize",
-      hadResources: hasResources(skill.resources),
-    });
+    const body = demoteHeadings(
+      condenseBody(skill.body, {
+        openQuestion: "summarize",
+        hadResources: hasResources(skill.resources),
+      }),
+      // Body headings start at h2; the section title below is h3, so shift
+      // the body down two levels to keep the outline well-formed.
+      2,
+    );
     const section = `### ${titleFromName(skill.name)}\n\n${body.trim()}`;
     return [
       {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { condenseBody } from "../../src/core/condense";
+import { condenseBody, demoteHeadings } from "../../src/core/condense";
 
 describe("condenseBody", () => {
   it("flattens Level-3 links to their text", () => {
@@ -34,5 +34,47 @@ describe("condenseBody", () => {
       condenseBody(attack);
       expect(performance.now() - started).toBeLessThan(2_000);
     }
+  });
+});
+
+describe("summarizeOpenQuestion (via condenseBody)", () => {
+  const body =
+    "## Core guidance\n\ntext\n\n## Open question\n\nFirst paragraph states the tradeoff.\n\nSecond paragraph elaborates at length.\n";
+
+  it("collapses the section to its first paragraph", () => {
+    const out = condenseBody(body, { openQuestion: "summarize" });
+    expect(out).toContain("Tradeoff: First paragraph states the tradeoff.");
+    expect(out).not.toContain("Second paragraph");
+  });
+
+  it("summarizes a section that ends at the end of the body", () => {
+    const out = condenseBody("## Open question\n\nOnly paragraph.\n", {
+      openQuestion: "summarize",
+    });
+    expect(out).toContain("Tradeoff: Only paragraph.");
+    // Regression: with the old \s*$ lookahead the capture matched nothing and
+    // the output was a bare "Tradeoff: " with the paragraph left behind.
+    expect(out).not.toMatch(/Tradeoff:\s*\n/);
+  });
+
+  it("stops at the next h2", () => {
+    const out = condenseBody(`${body}## References\n\n- link\n`, { openQuestion: "summarize" });
+    expect(out).toContain("## References");
+    expect(out).not.toContain("Second paragraph");
+  });
+});
+
+describe("demoteHeadings", () => {
+  it("shifts headings by the given amount, capped at h6", () => {
+    expect(demoteHeadings("## A\n\n### B\n\n###### C", 2)).toBe("#### A\n\n##### B\n\n###### C");
+  });
+
+  it("leaves fenced code blocks untouched", () => {
+    const md = "## A\n\n```sh\n# comment, not a heading\n```\n\n## B";
+    expect(demoteHeadings(md, 2)).toBe("#### A\n\n```sh\n# comment, not a heading\n```\n\n#### B");
+  });
+
+  it("ignores hashes that are not headings", () => {
+    expect(demoteHeadings("#tag and #5 stay", 2)).toBe("#tag and #5 stay");
   });
 });
