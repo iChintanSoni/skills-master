@@ -20,10 +20,14 @@ export const copilotEmitter: Emitter = {
   emit(skill, ctx): EmittedFile[] {
     const base = ctx.paths.copilot; // e.g. ".github"
     const instructionsPath = `${base}/instructions/${skill.name}.instructions.md`;
-    const applyTo = globsToString(skill.frontmatter) ?? "**";
 
-    const fm = {
-      applyTo,
+    // Skills without globs (design guidance, overviews) must not become
+    // applyTo: "**" — that attaches them to every single request. Omitting
+    // applyTo makes the file manual-attach; the always-loaded pointer line in
+    // copilot-instructions.md still advertises it.
+    const applyTo = globsToString(skill.frontmatter);
+    const fm: Record<string, unknown> = {
+      ...(applyTo ? { applyTo } : {}),
       description: skill.frontmatter.description,
     };
     const body = condenseBody(skill.body, {
