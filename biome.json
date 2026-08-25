@@ -1,0 +1,56 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": [
+      "**",
+      "!plugins",
+      "!.claude-plugin",
+      "!skills",
+      "!docs",
+      "!packages/cli/.claude",
+      "!packages/cli/.cursor",
+      "!packages/cli/.github",
+      "!packages/cli/AGENTS.md",
+      "!packages/cli/skills-master.json",
+      "!packages/cli/skills-master.lock.json",
+      "!packages/cli/test/fixtures",
+      "!packages/cli/test/**/__snapshots__",
+      "!scripts/crawl/reports"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "off"
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "style": {
+        "useTemplate": "off",
+        "noNonNullAssertion": "off"
+      }
+    }
+  }
+}

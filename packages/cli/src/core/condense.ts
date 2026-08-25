@@ -13,8 +13,7 @@
 // restart position and the whole scan quadratic on adversarial input
 // (CodeQL js/polynomial-redos). Excluding "[" keeps restarts disjoint, so
 // matching stays linear. Markdown link text may not span lines here either.
-const L3_LINK_RE =
-  /\[([^\][\n]+)\]\((?:\.\/)?(reference|examples|checklist)\.md(?:#[^()\n]*)?\)/g;
+const L3_LINK_RE = /\[([^\][\n]+)\]\((?:\.\/)?(reference|examples|checklist)\.md(?:#[^()\n]*)?\)/g;
 
 export interface CondenseOptions {
   /** "keep" (default) leaves the section intact; "summarize" collapses it. */
@@ -53,7 +52,12 @@ export function condenseBody(body: string, opts: CondenseOptions = {}): string {
 function summarizeOpenQuestion(body: string): string {
   const re = /^## Open question[ \t]*\n([\s\S]*?)(?=\n## |\s*$)/m;
   return body.replace(re, (_m, section: string) => {
-    const firstPara = section.trim().split(/\n\s*\n/)[0]?.replace(/\s+/g, " ").trim() ?? "";
+    const firstPara =
+      section
+        .trim()
+        .split(/\n\s*\n/)[0]
+        ?.replace(/\s+/g, " ")
+        .trim() ?? "";
     return `## Open question\n\nTradeoff: ${firstPara}\n`;
   });
 }

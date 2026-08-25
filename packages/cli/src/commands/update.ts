@@ -1,5 +1,5 @@
 import { resolvePaths } from "../schema/projectConfig";
-import type { TargetId } from "../types";
+import type { ParsedSkill, TargetId } from "../types";
 import { resolveContent } from "../content/source";
 import { diskHash, installSkill, sourceHashOf } from "../core/install";
 import { loadConfigOrDefault, loadLockfile, saveLockfile } from "../core/project";
@@ -48,7 +48,7 @@ export async function updateCommand(opts: UpdateOptions): Promise<UpdateResult> 
       continue;
     }
 
-    let skill;
+    let skill: ParsedSkill;
     try {
       skill = content.loadSkill(name);
     } catch {

@@ -2,12 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { basename, join } from "node:path";
 import matter from "gray-matter";
 import { FrontmatterSchema, type Frontmatter } from "../schema/frontmatter";
-import {
-  RESOURCE_FILES,
-  type ParsedSkill,
-  type ResourceKey,
-  type SkillResources,
-} from "../types";
+import { RESOURCE_FILES, type ParsedSkill, type ResourceKey, type SkillResources } from "../types";
 import { relPathOf } from "./discover";
 
 export interface RawSkill {

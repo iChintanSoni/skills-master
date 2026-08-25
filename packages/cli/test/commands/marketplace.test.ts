@@ -1,4 +1,12 @@
-import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -74,16 +82,23 @@ describe("marketplace build", () => {
       "skills-master-testdomain-code",
     );
     const names = JSON.parse(read(MARKETPLACE)).plugins.map((p: { name: string }) => p.name);
-    expect(names).toEqual(["skills-master-testdomain-code", "skills-master-testdomain-lang-tooling"]);
+    expect(names).toEqual([
+      "skills-master-testdomain-code",
+      "skills-master-testdomain-lang-tooling",
+    ]);
   });
 
   it("is deterministic across repeat runs", async () => {
     await build();
-    const first = bundled().map((p) => read(`plugins/${p.split("/")[0]}/skills/${p.split("/")[1]}/SKILL.md`));
+    const first = bundled().map((p) =>
+      read(`plugins/${p.split("/")[0]}/skills/${p.split("/")[1]}/SKILL.md`),
+    );
     const firstManifest = read(MARKETPLACE);
 
     await build();
-    const second = bundled().map((p) => read(`plugins/${p.split("/")[0]}/skills/${p.split("/")[1]}/SKILL.md`));
+    const second = bundled().map((p) =>
+      read(`plugins/${p.split("/")[0]}/skills/${p.split("/")[1]}/SKILL.md`),
+    );
     expect(second).toEqual(first);
     expect(read(MARKETPLACE)).toBe(firstManifest);
   });

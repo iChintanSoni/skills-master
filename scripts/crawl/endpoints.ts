@@ -48,4 +48,3 @@ export const ANDROID_ENDPOINTS: Endpoint[] = [
     description: "Official Android Developers Blog posts",
   },
 ];
-

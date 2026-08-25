@@ -75,7 +75,10 @@ interface MarketplaceOutput {
  */
 function buildOutputs(content: ContentSource, out: string, version: string): MarketplaceOutput {
   // Group emitted files by (domain, class).
-  const groups = new Map<string, { domain: string; cls: SkillClass; files: EmittedFile[]; count: number }>();
+  const groups = new Map<
+    string,
+    { domain: string; cls: SkillClass; files: EmittedFile[]; count: number }
+  >();
 
   for (const dir of content.skillDirs()) {
     const skill = content.loadSkill(dir.split(/[\\/]/).pop()!);
@@ -124,7 +127,13 @@ function buildOutputs(content: ContentSource, out: string, version: string): Mar
       JSON.stringify(manifest, null, 2) + "\n",
     );
 
-    plugins.push({ name, source: `./${PLUGINS_DIR}/${name}`, description, version, category: CLASS_CATEGORY[cls] });
+    plugins.push({
+      name,
+      source: `./${PLUGINS_DIR}/${name}`,
+      description,
+      version,
+      category: CLASS_CATEGORY[cls],
+    });
     counts.push({ name, count });
   }
 
@@ -185,7 +194,11 @@ export async function marketplaceBuildCommand(opts: MarketplaceBuildOptions): Pr
   for (const rel of stale) rmSync(join(out, rel), { force: true });
   pruneEmptyDirsUnder(join(out, PLUGINS_DIR));
 
-  const emitted: EmittedFile[] = [...files].map(([path, contents]) => ({ path, contents, mode: "whole" }));
+  const emitted: EmittedFile[] = [...files].map(([path, contents]) => ({
+    path,
+    contents,
+    mode: "whole",
+  }));
   applyFiles(out, emitted, { overwrite: true });
 
   for (const { name, count } of counts) log.info(`Built ${name} (${count} skills).`);

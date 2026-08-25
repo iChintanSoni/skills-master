@@ -1,4 +1,4 @@
-import { type Emitter, type EmittedFile } from "../types";
+import type { Emitter, EmittedFile } from "../types";
 import { withFrontmatter } from "../core/yaml";
 import { condenseBody } from "../core/condense";
 import { existsRel, globsToString, hasResources, titleFromName } from "./util";

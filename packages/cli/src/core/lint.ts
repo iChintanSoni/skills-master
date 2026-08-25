@@ -1,6 +1,6 @@
 import type { Frontmatter } from "../schema/frontmatter";
 import { findSkillDirs, relPathOf } from "./discover";
-import { loadRawSkill, validateFrontmatter } from "./parse";
+import { loadRawSkill, type RawSkill, validateFrontmatter } from "./parse";
 
 export type DiagnosticLevel = "error" | "warn";
 
@@ -45,7 +45,7 @@ export function lintSkills(skillsRoot: string): LintResult {
   const byName = new Map<string, Frontmatter>();
 
   for (const dir of dirs) {
-    let raw;
+    let raw: RawSkill;
     try {
       raw = loadRawSkill(dir, skillsRoot);
     } catch (err) {
@@ -91,7 +91,11 @@ export function lintSkills(skillsRoot: string): LintResult {
   for (const [name, paths] of nameDirs) {
     if (paths.length > 1) {
       for (const p of paths) {
-        diagnostics.push({ relPath: p, level: "error", message: `duplicate skill name "${name}" (also at ${paths.filter((x) => x !== p).join(", ")})` });
+        diagnostics.push({
+          relPath: p,
+          level: "error",
+          message: `duplicate skill name "${name}" (also at ${paths.filter((x) => x !== p).join(", ")})`,
+        });
       }
     }
   }
@@ -128,9 +132,15 @@ export function lintSkills(skillsRoot: string): LintResult {
     // body length
     const lineCount = s.body.split("\n").length;
     if (lineCount > MAX_BODY_LINES) {
-      push("error", `SKILL.md body is ${lineCount} lines (max ${MAX_BODY_LINES}); move depth into reference.md/examples.md`);
+      push(
+        "error",
+        `SKILL.md body is ${lineCount} lines (max ${MAX_BODY_LINES}); move depth into reference.md/examples.md`,
+      );
     } else if (lineCount > WARN_BODY_LINES) {
-      push("warn", `SKILL.md body is ${lineCount} lines (approaching the ${MAX_BODY_LINES}-line cap)`);
+      push(
+        "warn",
+        `SKILL.md body is ${lineCount} lines (approaching the ${MAX_BODY_LINES}-line cap)`,
+      );
     }
 
     // domain should match the top path segment
@@ -163,7 +173,10 @@ export function lintSkills(skillsRoot: string): LintResult {
         continue;
       }
       if (!partnerFm["x-skills-master"].pairs_with.includes(fm.name)) {
-        push("error", `pairs_with "${partner}" is not reciprocated (add "${fm.name}" to its pairs_with)`);
+        push(
+          "error",
+          `pairs_with "${partner}" is not reciprocated (add "${fm.name}" to its pairs_with)`,
+        );
       }
     }
   }

@@ -1,4 +1,12 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmdirSync, rmSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  rmdirSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { dirname, join } from "node:path";
 import type { EmittedFile, WriteAction, WriteResult } from "../types";
 import { hasBlock, removeBlock, upsertBlock } from "./markers";

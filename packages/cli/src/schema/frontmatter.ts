@@ -15,12 +15,7 @@ export type Stability = z.infer<typeof StabilitySchema>;
  *  - lang-tooling → cross-cutting language/build/test/ship guidance
  *  - overview    → decision-guidance routers
  */
-export const SkillClassSchema = z.enum([
-  "code",
-  "design",
-  "lang-tooling",
-  "overview",
-]);
+export const SkillClassSchema = z.enum(["code", "design", "lang-tooling", "overview"]);
 export type SkillClass = z.infer<typeof SkillClassSchema>;
 
 /** Maps a skill `class` to its directory name within a domain in `skills/<domain>/`. */
@@ -50,9 +45,7 @@ export const XSkillsMasterSchema = z
     sources: z.array(z.url()).default([]),
     snapshot_date: z.string().regex(ISO_DATE_RE, "must be an ISO date (YYYY-MM-DD)"),
     stability: StabilitySchema,
-    version: z
-      .string()
-      .refine((v) => semver.valid(v) != null, "must be a valid semver version"),
+    version: z.string().refine((v) => semver.valid(v) != null, "must be a valid semver version"),
   })
   .strict();
 export type XSkillsMaster = z.infer<typeof XSkillsMasterSchema>;
@@ -64,15 +57,14 @@ const GlobsSchema = z
   .optional();
 
 // Loose: tolerate tool-native extras (e.g. allowed-tools) without failing validation.
-export const FrontmatterSchema = z
-  .looseObject({
-    name: z.string().regex(NAME_RE, "must be kebab-case ([a-z0-9-], <=64 chars)"),
-    description: z
-      .string()
-      .min(1, "description is required")
-      .max(1024, "description must be <= 1024 characters"),
-    globs: GlobsSchema,
-    tags: z.array(z.string()).default([]),
-    "x-skills-master": XSkillsMasterSchema,
-  });
+export const FrontmatterSchema = z.looseObject({
+  name: z.string().regex(NAME_RE, "must be kebab-case ([a-z0-9-], <=64 chars)"),
+  description: z
+    .string()
+    .min(1, "description is required")
+    .max(1024, "description must be <= 1024 characters"),
+  globs: GlobsSchema,
+  tags: z.array(z.string()).default([]),
+  "x-skills-master": XSkillsMasterSchema,
+});
 export type Frontmatter = z.infer<typeof FrontmatterSchema>;

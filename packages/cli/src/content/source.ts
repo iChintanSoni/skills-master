@@ -23,7 +23,9 @@ export class ContentSource {
 
   findDir(name: string): string | undefined {
     const dirs = this.skillDirs();
-    return dirs.find((d) => basename(d) === name) ?? dirs.find((d) => safeName(d, this.root) === name);
+    return (
+      dirs.find((d) => basename(d) === name) ?? dirs.find((d) => safeName(d, this.root) === name)
+    );
   }
 
   loadSkill(name: string): ParsedSkill {

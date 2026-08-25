@@ -18,9 +18,7 @@ function escapeRe(s: string): string {
 }
 
 export function beginMarker(id: string, version?: string): string {
-  return version
-    ? `<!-- BEGIN ${PREFIX}:${id} v${version} -->`
-    : `<!-- BEGIN ${PREFIX}:${id} -->`;
+  return version ? `<!-- BEGIN ${PREFIX}:${id} v${version} -->` : `<!-- BEGIN ${PREFIX}:${id} -->`;
 }
 
 export function endMarker(id: string): string {
@@ -55,22 +53,15 @@ export function readBlock(file: string, id: string): string | null {
 
 /** Read the version recorded in a block's BEGIN marker, or null. */
 export function readBlockVersion(file: string, id: string): string | null {
-  const m = new RegExp(
-    `<!-- BEGIN ${PREFIX}:${escapeRe(id)} v([^\\s>]+) -->`,
-  ).exec(file);
-  return m && m[1] ? m[1] : null;
+  const m = new RegExp(`<!-- BEGIN ${PREFIX}:${escapeRe(id)} v([^\\s>]+) -->`).exec(file);
+  return m?.[1] ?? null;
 }
 
 /**
  * Insert or replace a managed block. Returns the new file contents.
  * If the block is absent it is appended, separated by a blank line.
  */
-export function upsertBlock(
-  file: string,
-  id: string,
-  body: string,
-  version?: string,
-): string {
+export function upsertBlock(file: string, id: string, body: string, version?: string): string {
   const block = renderBlock(id, body, version);
   const re = blockRegex(id);
   if (re.test(file)) {
