@@ -16,10 +16,9 @@ x-skills-master:
     - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/properties/
     - https://developer.apple.com/documentation/Observation
     - https://developer.apple.com/documentation/observation/observable()
-    - https://developer.apple.com/documentation/SwiftUI/Migrating-from-the-observable-object-protocol-to-the-observable-macro
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

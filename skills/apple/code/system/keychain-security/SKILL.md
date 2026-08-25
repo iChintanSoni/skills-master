@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/security/keychain-services
     - https://developer.apple.com/documentation/security/keychain-items
     - https://developer.apple.com/documentation/security/secaccesscontrolcreatewithflags(_:_:_:_:)
-    - https://developer.apple.com/documentation/security/sharing-access-to-keychain-items-among-a-collection-of-apps
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # keychain-security

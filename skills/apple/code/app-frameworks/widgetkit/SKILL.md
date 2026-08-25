@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/widgetkit
     - https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
     - https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities
-    - https://developer.apple.com/documentation/widgetkit/updating-widgets-with-widgetkit-push-notifications
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

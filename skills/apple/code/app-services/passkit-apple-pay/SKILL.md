@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/passkit/offering-apple-pay-in-your-app
     - https://developer.apple.com/documentation/passkit/pkpaymentauthorizationcontroller
     - https://developer.apple.com/documentation/passkit/paywithapplepaybutton
-    - https://developer.apple.com/documentation/passkit/pkpasslibrary/1617093-addpasses
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

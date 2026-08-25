@@ -12,10 +12,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/widgetkit
     - https://developer.apple.com/documentation/ActivityKit
     - https://developer.apple.com/documentation/WidgetKit/Creating-controls-to-perform-actions-across-the-system
-    - https://developer.apple.com/documentation/appintents/app-shortcuts
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

@@ -1,4 +1,5 @@
 import { CLASS_DIR, type Frontmatter } from "../schema/frontmatter";
+import type { SkillResources } from "../types";
 import { findSkillDirs, relPathOf } from "./discover";
 import { loadRawSkill, type RawSkill, validateFrontmatter } from "./parse";
 
@@ -36,6 +37,7 @@ interface Loaded {
   folderName: string;
   fm?: Frontmatter;
   body: string;
+  resources?: SkillResources;
 }
 
 export function lintSkills(skillsRoot: string): LintResult {
@@ -75,10 +77,21 @@ export function lintSkills(skillsRoot: string): LintResult {
       for (const issue of v.issues) {
         diagnostics.push({ relPath: raw.relPath, level: "error", message: issue });
       }
-      loaded.push({ relPath: raw.relPath, folderName: raw.folderName, body: raw.body });
+      loaded.push({
+        relPath: raw.relPath,
+        folderName: raw.folderName,
+        body: raw.body,
+        resources: raw.resources,
+      });
       continue;
     }
-    loaded.push({ relPath: raw.relPath, folderName: raw.folderName, fm: v.value, body: raw.body });
+    loaded.push({
+      relPath: raw.relPath,
+      folderName: raw.folderName,
+      fm: v.value,
+      body: raw.body,
+      resources: raw.resources,
+    });
     byName.set(v.value.name, v.value);
   }
 
@@ -124,9 +137,38 @@ export function lintSkills(skillsRoot: string): LintResult {
       push("error", `snapshot_date ${xm.snapshot_date} is in the future`);
     }
 
-    // contested ⇒ Open question section
-    if (xm.stability === "contested" && !/^## Open question\b/m.test(s.body)) {
+    // contested ⇔ Open question section (the heading is reserved for contested)
+    const hasOpenQuestion = /^## Open question\b/m.test(s.body);
+    if (xm.stability === "contested" && !hasOpenQuestion) {
       push("error", `stability is "contested" but no "## Open question" section is present`);
+    } else if (xm.stability !== "contested" && hasOpenQuestion) {
+      push(
+        "error",
+        `"## Open question" is reserved for stability: contested skills — retitle the section or mark the skill contested`,
+      );
+    }
+
+    // sources cap (authoring.md: 1-3 canonical citation URLs)
+    if (xm.sources.length > 3) {
+      push("warn", `${xm.sources.length} sources — keep at most 3 canonical citation URLs`);
+    }
+
+    // Level-3 resources must be linked from the body: condense flattens links
+    // and appends the pointer note, and agents navigate through them — an
+    // unlinked resource is invisible in every emit target.
+    const l3: [keyof SkillResources, string][] = [
+      ["reference", "reference.md"],
+      ["examples", "examples.md"],
+      ["checklist", "checklist.md"],
+    ];
+    for (const [key, file] of l3) {
+      if (
+        s.resources?.[key] != null &&
+        !s.body.includes(`(${file}`) &&
+        !s.body.includes(`(./${file}`)
+      ) {
+        push("warn", `${file} exists but is never linked from the SKILL.md body`);
+      }
     }
 
     // body length

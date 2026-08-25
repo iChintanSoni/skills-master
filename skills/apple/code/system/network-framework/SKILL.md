@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/network
     - https://developer.apple.com/documentation/network/nwconnection
     - https://developer.apple.com/documentation/network/nwpathmonitor
-    - https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

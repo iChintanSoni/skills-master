@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/animations
     - https://developer.apple.com/documentation/swiftui/phaseanimator
     - https://developer.apple.com/documentation/swiftui/transition
-    - https://developer.apple.com/documentation/swiftui/withanimation(_:completioncriteria:_:completion:)
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

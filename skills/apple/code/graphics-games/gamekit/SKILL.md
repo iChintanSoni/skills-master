@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/gamekit
     - https://developer.apple.com/documentation/gamekit/gklocalplayer
     - https://developer.apple.com/documentation/gamekit/gkaccesspoint
-    - https://developer.apple.com/documentation/gamekit/gkgameactivity
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/scenekit
     - https://developer.apple.com/documentation/scenekit/scnscene
     - https://developer.apple.com/documentation/scenekit/scnnode
-    - https://developer.apple.com/documentation/RealityKit/bringing-your-scenekit-projects-to-realitykit
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

@@ -14,10 +14,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/xcode/managing-assets-with-asset-catalogs
     - https://developer.apple.com/documentation/xcode/asset-management
     - https://developer.apple.com/documentation/xcode/configuring-your-app-icon
-    - https://developer.apple.com/documentation/developertoolssupport/imageresource
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

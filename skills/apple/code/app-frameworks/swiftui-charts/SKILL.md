@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/charts
     - https://developer.apple.com/documentation/charts/creating-a-chart-using-swift-charts
     - https://developer.apple.com/documentation/charts/customizing-axes-in-swift-charts
-    - https://developer.apple.com/documentation/swiftui/view/chartxselection(value:)
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

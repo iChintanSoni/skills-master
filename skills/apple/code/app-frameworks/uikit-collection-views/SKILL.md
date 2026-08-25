@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/uikit/implementing-modern-collection-views
     - https://developer.apple.com/documentation/uikit/uicollectionviewcompositionallayout
     - https://developer.apple.com/documentation/uikit/uicollectionviewdiffabledatasource-9tqpa
-    - https://developer.apple.com/documentation/uikit/uicollectionlayoutlistconfiguration
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

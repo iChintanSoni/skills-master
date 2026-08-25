@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/authenticationservices
     - https://developer.apple.com/documentation/AuthenticationServices/implementing-user-authentication-with-sign-in-with-apple
     - https://developer.apple.com/documentation/signinwithapple/verifying-a-user
-    - https://developer.apple.com/documentation/signinwithapplejs
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

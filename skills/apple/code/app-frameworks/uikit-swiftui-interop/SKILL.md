@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/uiviewrepresentable
     - https://developer.apple.com/documentation/swiftui/uiviewcontrollerrepresentable
     - https://developer.apple.com/documentation/swiftui/uihostingcontroller
-    - https://developer.apple.com/documentation/swiftui/uihostingconfiguration
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

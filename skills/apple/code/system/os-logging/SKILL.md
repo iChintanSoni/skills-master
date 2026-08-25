@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/os/logger
     - https://developer.apple.com/documentation/os/oslogprivacy
     - https://developer.apple.com/documentation/os/ossignposter
-    - https://developer.apple.com/documentation/os/generating-log-messages-from-your-code
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # os-logging

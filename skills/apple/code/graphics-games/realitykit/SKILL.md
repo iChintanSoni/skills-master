@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/realitykit
     - https://developer.apple.com/documentation/RealityKit/RealityView
     - https://developer.apple.com/documentation/realitykit/anchorentity
-    - https://developer.apple.com/documentation/realitykit/presentation-views-and-attachments
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

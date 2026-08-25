@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/uikit/nslayoutconstraint
     - https://developer.apple.com/documentation/uikit/nslayoutanchor
     - https://developer.apple.com/documentation/uikit/uistackview
-    - https://developer.apple.com/documentation/uikit/uilayoutguide
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

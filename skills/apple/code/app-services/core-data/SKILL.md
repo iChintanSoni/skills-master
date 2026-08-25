@@ -17,10 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/coredata/nspersistentcontainer
     - https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer
     - https://developer.apple.com/documentation/coredata/staged-migrations
-    - https://developer.apple.com/documentation/coredata/batch-processing
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
