@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "Tool-agnostic Apple & Android development skills, installable into any AI coding tool.",
-  "packageManager": "pnpm@11.5.1",
+  "packageManager": "pnpm@11.23.0",
   "engines": {
     "node": ">=22"
   },
