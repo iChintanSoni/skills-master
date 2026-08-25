@@ -1,12 +1,12 @@
 # Skill coverage
 
-Generated from `skills/registry.json`. **393 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
+Generated from `skills/registry.json`. **394 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
 
 | Domain | `code` | `design` | `lang-tooling` | `overview` | Total |
 |---|---:|---:|---:|---:|---:|
 | `apple` | 71 | 62 | 37 | 13 | 183 |
-| `android` | 95 | 63 | 35 | 17 | 210 |
-| **All** | **166** | **125** | **72** | **30** | **393** |
+| `android` | 96 | 63 | 35 | 17 | 211 |
+| **All** | **167** | **125** | **72** | **30** | **394** |
 
 Skills with Level-3 resources (examples/checklist/reference): **90**.
 
@@ -247,13 +247,14 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `choosing-ui-toolkit`  — contested
 - `choosing-widget-tech`
 
-## android  ›  code  ›  architecture  (11)
+## android  ›  code  ›  architecture  (12)
 
 - `android-activities`
 - `hilt-di`  — ↔ choosing-di
 - `lifecycle`
-- `navigation-compose`  — examples, checklist, ↔ m3-navigation
+- `navigation-compose`  — examples, checklist, ↔ m3-navigation, ↔ navigation3
 - `navigation-deep-links`
+- `navigation3`  — ↔ navigation-compose
 - `paging`  — examples, checklist
 - `predictive-back`  — ↔ m3-predictive-back
 - `saved-state`

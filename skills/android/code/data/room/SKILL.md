@@ -1,6 +1,6 @@
 ---
 name: room
-description: Covers Room persistence — @Entity, @Dao, @Database, queries returning Flow, relations and @Relation, type converters, @Transaction, migrations (auto and manual) and fallback, suspend DAO functions, and Room KMP. Use when implementing a local SQLite database with Jetpack Room, modelling entities with relations, reacting to data changes via Flow, handling schema migrations, or targeting Room KMP for shared Kotlin Multiplatform persistence.
+description: Covers Room persistence — @Entity, @Dao, @Database, queries returning Flow, relations and @Relation, type converters, @Transaction, migrations (auto and manual) and fallback, suspend DAO functions, Room KMP, and choosing between androidx.room 2.x and the coroutine-first androidx.room3 3.0 rewrite. Use when implementing a local SQLite database with Jetpack Room, modelling entities with relations, reacting to data changes via Flow, handling schema migrations, or targeting Room KMP for shared Kotlin Multiplatform persistence.
 globs:
   - "**/*.kt"
 tags: [room, database, persistence, coroutines, flow]
@@ -14,9 +14,10 @@ x-skills-master:
   sources:
     - https://developer.android.com/training/data-storage/room
     - https://developer.android.com/training/data-storage/room/migrating-db-versions
-  snapshot_date: "2026-06-06"
+    - https://developer.android.com/jetpack/androidx/releases/room3
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -24,6 +25,19 @@ x-skills-master:
 Reach for Room whenever the app must store structured, relational data locally — search history, user-generated content, offline cache, or any dataset too large or too relational for DataStore/Preferences. Room is the right fit when you need SQL-level querying, reactive data streams via `Flow`, foreign-key integrity, or a migration story as the schema evolves. For simple key-value or typed preferences, consider DataStore instead (see the choosing-persistence overview skill).
 
 ## Core guidance
+
+### Room 3 vs Room 2 — pick the generation first
+
+Room 3.0 (stable July 2026) is a coroutine-first rewrite living in a **new package and Maven group, `androidx.room3`** (`room3-runtime`, `room3-compiler`), deliberately able to coexist with `androidx.room` 2.x in one app. What changes:
+
+- **KSP only** — kapt and Java annotation processing are gone; Kotlin is required for code generation.
+- **No blocking DAOs** — every DAO function must be `suspend` or return a reactive type (`Flow`, or an integration type via `room3-paging` / `room3-rxjava3` / `room3-livedata`).
+- **`SupportSQLite` is replaced by the `SQLiteDriver` APIs**; `room3-sqlite-wrapper` (and `getSupportWrapper()`) exist for gradual transition.
+- **Transactions and raw queries change shape** — `runInTransaction {}` becomes `withWriteTransaction {}` / `withReadTransaction {}`; direct `query()` becomes `useReaderConnection { it.usePrepared(...) }`.
+- **Flow-only invalidation** — the `InvalidationTracker` observer pattern is replaced by `createFlow()`.
+- **Broader KMP targets** (JVM, iOS/macOS, watchOS/tvOS, Linux, JS/Wasm with async drivers) and new modelling features: FTS5 via `@Fts5`, composite `@Relation`/`@Junction` keys, `@Entity(withoutRowId = true)`, default constructor values.
+
+Choose `androidx.room3` for new databases and new modules — the guidance below is written against the coroutine-first model it enforces. Stay on 2.x where Java consumers, kapt, or blocking DAOs are load-bearing, and migrate module-by-module (there is no automated migration; the package split is the migration mechanism). The 2.x line is maintenance-only.
 
 **Entities — modelling tables**
 - Annotate the class with `@Entity`; every `@Entity` needs exactly one `@PrimaryKey`.
