@@ -29,7 +29,7 @@ jobs:
       - run: pnpm --filter @ichintansoni/skills-master test
 
   content:
-    name: Lint skills + registry/taxonomy drift
+    name: Lint skills + registry/taxonomy/marketplace drift
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -48,3 +48,7 @@ jobs:
       # Fail if docs/taxonomy.md no longer matches the registry. It is generated,
       # and went stale for 9 skills and two whole categories before this gate.
       - run: node scripts/gen-taxonomy.mjs --check
+      # Fail if the committed plugins/ + .claude-plugin/ output is stale. These
+      # ship via `/plugin install`, and drifted by 9 missing skills (plus 3 left
+      # behind by a class move) before this gate existed.
+      - run: pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../.. --check

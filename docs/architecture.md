@@ -84,4 +84,4 @@ In a consuming project:
 Two channels over the same content:
 
 1. **npx CLI** — `skills-master add …` fetches skill subtrees (via `giget`, pinned to `contentRef`) and compiles them for whichever tools a project uses.
-2. **Claude marketplace** — `marketplace build` generates `.claude-plugin/marketplace.json` and one plugin per `(domain, class)` (e.g. `skills-master-apple-code`) for native `/plugin install`.
+2. **Claude marketplace** — `marketplace build` generates `.claude-plugin/marketplace.json` and one plugin per `(domain, class)` (e.g. `skills-master-apple-code`) for native `/plugin install`. The output is committed, so it is a build artifact that can go stale: the build owns every file under `plugins/` and deletes any it no longer emits, and `marketplace build --check` gates the committed tree in CI. Whatever the skill library holds, the plugins must bundle — a skill missing from a plugin is invisible to anyone who installs that way.

@@ -206,10 +206,19 @@ marketplace
   .description("Generate .claude-plugin/marketplace.json and per-class plugins")
   .option("--content <dir>")
   .option("--out <dir>", "output root")
+  .option("--check", "verify the committed marketplace output is current (CI)")
   .option("--version <v>")
   .action((opts) =>
-    run(() =>
-      marketplaceBuildCommand({ cwd: process.cwd(), content: opts.content, out: opts.out, version: opts.version }),
+    run(
+      () =>
+        marketplaceBuildCommand({
+          cwd: process.cwd(),
+          content: opts.content,
+          out: opts.out,
+          check: opts.check,
+          version: opts.version,
+        }),
+      true,
     ),
   );
 
