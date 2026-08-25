@@ -128,6 +128,8 @@ sealed interface SummaryUiState {
 
 - **Documentation:** [Gemini Nano on Android](https://developer.android.com/ai/gemini-nano)
 - **Documentation:** [Android AI overview](https://developer.android.com/ai)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

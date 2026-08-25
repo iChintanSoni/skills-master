@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/topic/modularization/patterns
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -98,6 +98,8 @@ dependencies {
 
 - **Documentation:** [Guide to Android app modularization](https://developer.android.com/topic/modularization)
 - **Documentation:** [Common modularization patterns](https://developer.android.com/topic/modularization/patterns)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

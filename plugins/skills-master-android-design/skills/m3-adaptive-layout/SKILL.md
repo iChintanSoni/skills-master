@@ -71,6 +71,8 @@ description: Design-critique guidance for Material 3 adaptive and responsive lay
 
 - **Material 3 Guidelines:** [Understanding layout](https://developer.android.com/guide/topics/large-screens/support-different-screen-sizes)
 - **Documentation:** [Build adaptive layouts in Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

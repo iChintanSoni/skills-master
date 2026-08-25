@@ -130,6 +130,8 @@ object DatabaseModule {
 
 - **Documentation:** [Save data in a local database using Room](https://developer.android.com/training/data-storage/room)
 - **Documentation:** [Migrating Room database versions](https://developer.android.com/training/data-storage/room/migrating-db-versions)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

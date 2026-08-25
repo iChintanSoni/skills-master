@@ -115,6 +115,8 @@ Turbine is the community-standard library for unit-testing flows. Call `flow.tes
 - **Documentation:** [Asynchronous Flow — Kotlin language docs](https://kotlinlang.org/docs/flow.html)
 - **Documentation:** [StateFlow and SharedFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)
 - **Library:** [Turbine — Flow testing library](https://github.com/cashapp/turbine)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

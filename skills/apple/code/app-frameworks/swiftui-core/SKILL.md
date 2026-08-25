@@ -19,7 +19,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/viewbuilder
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -76,6 +76,8 @@ struct LabeledValue: View {
 - **Documentation:** [Layout fundamentals](https://developer.apple.com/documentation/swiftui/layout-fundamentals)
 - **Human Interface Guidelines:** [Layout](https://developer.apple.com/design/human-interface-guidelines/layout)
 - **WWDC:** [SwiftUI essentials (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10150/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

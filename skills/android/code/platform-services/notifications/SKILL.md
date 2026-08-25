@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/views/notifications/build-notification
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -145,6 +145,8 @@ fun postMessageNotification(context: Context, thread: ChatThread) {
 
 - **Documentation:** [Notifications overview](https://developer.android.com/develop/ui/views/notifications)
 - **Documentation:** [Create a notification](https://developer.android.com/develop/ui/views/notifications/build-notification)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

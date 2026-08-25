@@ -145,6 +145,8 @@ On foldables and tablets, activities can be in a split-screen state and still co
 - **Documentation:** [Foreground services](https://developer.android.com/develop/background-work/services/foreground-services)
 - **Documentation:** [Foreground service types](https://developer.android.com/develop/background-work/services/fgs/service-types)
 - **Reference:** [ServiceCompat (AndroidX Core)](https://developer.android.com/reference/androidx/core/app/ServiceCompat)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

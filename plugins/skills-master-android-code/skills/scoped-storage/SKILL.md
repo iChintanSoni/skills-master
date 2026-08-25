@@ -122,6 +122,8 @@ Never pass a `file://` URI to another app on API 24+. The system blocks it with 
 
 - **Documentation:** [Data and file storage overview](https://developer.android.com/training/data-storage)
 - **Documentation:** [Access documents and other files from shared storage](https://developer.android.com/training/data-storage/shared/documents-files)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

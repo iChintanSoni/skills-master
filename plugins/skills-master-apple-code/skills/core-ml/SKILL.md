@@ -84,6 +84,8 @@ print(output.classLabel, output.classLabelProbs)
 - **WWDC:** [Improve Core ML integration with async prediction (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10049/)
 - **WWDC:** [Deploy machine learning and AI models on-device with Core ML (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10161/)
 - **Sample Code:** [Classifying Images with Vision and Core ML](https://developer.apple.com/documentation/coreml/model_integration_samples/classifying_images_with_vision_and_core_ml)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/sidebars
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 A tab bar gives people fast, persistent access to the top-level, peer sections of an app. In the 2026 design cycle it renders as a floating, inset Liquid Glass element that lets content flow beneath it. Use this skill to critique whether a tab bar is the right navigation model, whether its contents read as destinations, and whether it adapts well across devices.
@@ -58,6 +58,7 @@ A tab bar gives people fast, persistent access to the top-level, peer sections o
 - **WWDC:** [Elevate the design of your iPad app (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/208/)
 - **Documentation:** [Elevating your iPad app with a tab bar and sidebar](https://developer.apple.com/documentation/uikit/elevating-your-ipad-app-with-a-tab-bar-and-sidebar)
 - **Documentation:** [TabRole.search](https://developer.apple.com/documentation/swiftui/tabrole/search)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

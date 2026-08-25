@@ -119,6 +119,8 @@ Specific contexts where this skill applies:
 - **Material 3 Guidelines:** [Dialogs overview](https://m3.material.io/components/dialogs/overview)
 - **Material 3 Guidelines:** [Empty states](https://m3.material.io/components/dialogs/overview)
 - **Material 3 Guidelines:** [Communication patterns](https://developer.android.com/design/ui/mobile)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

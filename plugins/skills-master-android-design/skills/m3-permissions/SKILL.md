@@ -81,6 +81,8 @@ Permission behavior has changed substantially across versions. One-time grants a
 - **Material 3 Guidelines:** [Dialogs overview](https://m3.material.io/components/dialogs/overview)
 - **Material 3 Guidelines:** [Snackbar](https://m3.material.io/components/snackbar/overview)
 - **Material 3 Guidelines:** [Bottom sheets](https://m3.material.io/components/bottom-sheets/overview)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

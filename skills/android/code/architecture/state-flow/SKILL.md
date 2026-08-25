@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/topic/architecture/ui-layer
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -116,6 +116,8 @@ This makes `when` expressions exhaustive and eliminates impossible states like `
 - **Documentation:** [UI layer — Android Architecture](https://developer.android.com/topic/architecture/ui-layer)
 - **Documentation:** [collectAsStateWithLifecycle API](https://developer.android.com/reference/kotlin/androidx/lifecycle/compose/package-summary#(kotlinx.coroutines.flow.StateFlow).collectAsStateWithLifecycle(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle.State,kotlin.coroutines.CoroutineContext))
 - **Guide:** [Kotlin flows on Android](https://developer.android.com/kotlin/flow)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

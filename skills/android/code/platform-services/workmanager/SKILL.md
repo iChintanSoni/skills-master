@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -137,6 +137,8 @@ val syncState: StateFlow<WorkInfo?> = workManager
 
 - **Documentation:** [WorkManager overview](https://developer.android.com/topic/libraries/architecture/workmanager)
 - **Documentation:** [Getting started with WorkManager](https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

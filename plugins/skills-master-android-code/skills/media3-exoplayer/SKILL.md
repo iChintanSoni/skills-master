@@ -136,6 +136,8 @@ fun VideoPlayer(player: ExoPlayer, modifier: Modifier = Modifier) {
 - **Documentation:** [Media3 ExoPlayer guide](https://developer.android.com/media/media3/exoplayer)
 - **Documentation:** [Media3 overview](https://developer.android.com/media/media3)
 - **API reference:** [ExoPlayer JavaDoc](https://developer.android.com/reference/androidx/media3/exoplayer/ExoPlayer)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

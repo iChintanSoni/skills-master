@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -165,6 +165,8 @@ fun loginScreen_invalidEmail_showsError() {
 - **Documentation:** [Compose testing cheatsheet — Android Developers](https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -109,6 +109,8 @@ Wear OS and Android TV are not addressed by these guidelines. Wear uses a tile-a
 
 - **Material 3 Guidelines:** [Large screen canonical layouts](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts)
 - **Documentation:** [Build adaptive layouts in Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

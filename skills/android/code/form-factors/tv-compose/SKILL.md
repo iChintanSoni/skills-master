@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/jetpack/androidx/releases/tv
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -193,6 +193,8 @@ fun BrowseScreen(
 
 - **Documentation:** [Get started with TV apps](https://developer.android.com/training/tv/get-started)
 - **Documentation:** [Jetpack TV library releases](https://developer.android.com/jetpack/androidx/releases/tv)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

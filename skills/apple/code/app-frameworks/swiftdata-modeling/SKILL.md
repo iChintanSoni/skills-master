@@ -18,7 +18,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftdata/preserving-your-apps-model-data-across-launches
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -56,6 +56,7 @@ Whether to use SwiftData at all versus Core Data or a hand-rolled store is a gen
 - **Documentation:** [Defining data relationships with enumerations and model classes](https://developer.apple.com/documentation/SwiftData/Defining-data-relationships-with-enumerations-and-model-classes)
 - **WWDC:** [Model your schema with SwiftData (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10195/)
 - **WWDC:** [SwiftData: Dive into inheritance and schema migration (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/291/)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

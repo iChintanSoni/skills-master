@@ -126,6 +126,8 @@ fun NewsFeed(
 - **Documentation:** [Lists and grids — Jetpack Compose](https://developer.android.com/develop/ui/compose/lists)
 - **API Reference:** [LazyListState](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/LazyListState)
 - **Paging 3 + Compose:** [Paging with Jetpack Compose](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

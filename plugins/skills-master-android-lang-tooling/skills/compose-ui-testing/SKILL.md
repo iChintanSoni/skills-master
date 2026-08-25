@@ -149,6 +149,8 @@ fun loginScreen_invalidEmail_showsError() {
 - **Documentation:** [Compose testing cheatsheet — Android Developers](https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

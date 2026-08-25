@@ -20,7 +20,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/view/chartxselection(value:)
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -74,6 +74,8 @@ Chart(sales) { row in
 - **WWDC:** [Hello Swift Charts (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10136/)
 - **WWDC:** [Explore pie charts and interactivity in Swift Charts (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10037/)
 - **WWDC:** [Bring Swift Charts to the third dimension (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/313/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

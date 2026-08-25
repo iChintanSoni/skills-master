@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/views/appwidgets/overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -133,6 +133,8 @@ class RefreshStepsCallback : ActionCallback {
 
 - **Documentation:** [Build widgets with Glance](https://developer.android.com/develop/ui/compose/glance)
 - **Documentation:** [App Widgets overview (RemoteViews reference)](https://developer.android.com/develop/ui/views/appwidgets/overview)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

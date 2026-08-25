@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/codelabs/android-proto-datastore
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -149,6 +149,8 @@ private val Context.dataStore by preferencesDataStore(
 
 - **Documentation:** [DataStore — Android Developers](https://developer.android.com/topic/libraries/architecture/datastore)
 - **Codelab:** [Android Proto DataStore — Android Developers Codelabs](https://developer.android.com/codelabs/android-proto-datastore)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

@@ -16,7 +16,7 @@ x-skills-master:
     - https://kotlinlang.org/docs/coroutines-guide.html
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -175,6 +175,8 @@ viewModelScope.launch(handler) { ... }
 - **Guide:** [Best practices for coroutines in Android](https://developer.android.com/kotlin/coroutines/coroutines-best-practices)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

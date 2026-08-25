@@ -107,6 +107,8 @@ val MaterialTheme.extras: AppExtras
 - **Documentation:** [Material 3 in Compose](https://developer.android.com/develop/ui/compose/designsystems/material3)
 - **Documentation:** [Custom design systems in Compose](https://developer.android.com/develop/ui/compose/designsystems/custom)
 - **Documentation:** [CompositionLocal](https://developer.android.com/develop/ui/compose/compositionlocal)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

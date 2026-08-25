@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/topic/architecture/ui-layer
   snapshot_date: "2026-06-06"
   stability: contested
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -157,6 +157,8 @@ There is no universally correct answer. The choice that matters most is picking 
 - **Documentation:** [UI layer](https://developer.android.com/topic/architecture/ui-layer)
 - **Documentation:** [Data layer](https://developer.android.com/topic/architecture/data-layer)
 - **Documentation:** [Domain layer](https://developer.android.com/topic/architecture/domain-layer)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

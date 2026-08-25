@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/about/versions/15/behavior-changes-15
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -113,6 +113,8 @@ Always add `androidx.core:core-ktx` and `androidx.activity:activity-ktx` (or `ac
 
 - **Android Developers:** [Go edge-to-edge](https://developer.android.com/develop/ui/views/layout/edge-to-edge)
 - **Android Developers:** [Android 15 behavior changes for apps targeting API 35](https://developer.android.com/about/versions/15/behavior-changes-15)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

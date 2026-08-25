@@ -17,7 +17,7 @@ x-skills-master:
     - https://www.swift.org/migration/documentation/migrationguide/
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -71,6 +71,8 @@ Swift 6 language mode enables strict concurrency checking everywhere; modules ca
 - **Documentation:** [Swift 6 Migration Guide](https://www.swift.org/migration/documentation/migrationguide/)
 - **WWDC:** [Embracing Swift concurrency (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/268/)
 - **Sample Code:** [Code-along: Elevate an app with Swift concurrency](https://developer.apple.com/videos/play/wwdc2025/270/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

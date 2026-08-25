@@ -58,6 +58,8 @@ struct CompleteTaskIntent: AppIntent {
 - **Human Interface Guidelines:** [Siri](https://developer.apple.com/design/human-interface-guidelines/siri)
 - **WWDC:** [Get to know App Intents (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/244/)
 - **WWDC:** [Explore new advances in App Intents (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/275/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

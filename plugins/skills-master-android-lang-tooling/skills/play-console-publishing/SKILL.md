@@ -141,6 +141,8 @@ The Play Integrity API (`com.google.android.play:integrity`) provides a signed t
 - **Documentation:** [Play Integrity API](https://developer.android.com/google/play/integrity)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

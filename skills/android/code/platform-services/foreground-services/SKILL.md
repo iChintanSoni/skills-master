@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/background-work/services/fgs/service-types
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -161,6 +161,8 @@ On foldables and tablets, activities can be in a split-screen state and still co
 - **Documentation:** [Foreground services](https://developer.android.com/develop/background-work/services/foreground-services)
 - **Documentation:** [Foreground service types](https://developer.android.com/develop/background-work/services/fgs/service-types)
 - **Reference:** [ServiceCompat (AndroidX Core)](https://developer.android.com/reference/androidx/core/app/ServiceCompat)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

@@ -108,6 +108,8 @@ kotlin {
 
 - **Documentation:** [Kotlin Multiplatform — Android Developer](https://developer.android.com/kotlin/multiplatform)
 - **Documentation:** [Kotlin Multiplatform — kotlinlang.org](https://kotlinlang.org/docs/multiplatform.html)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

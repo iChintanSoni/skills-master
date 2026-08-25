@@ -141,6 +141,8 @@ There is no universally correct answer. The choice that matters most is picking 
 - **Documentation:** [UI layer](https://developer.android.com/topic/architecture/ui-layer)
 - **Documentation:** [Data layer](https://developer.android.com/topic/architecture/data-layer)
 - **Documentation:** [Domain layer](https://developer.android.com/topic/architecture/domain-layer)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

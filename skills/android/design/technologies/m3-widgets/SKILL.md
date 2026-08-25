@@ -13,7 +13,7 @@ x-skills-master:
     - https://m3.material.io/foundations/overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -94,6 +94,8 @@ x-skills-master:
 - **Material 3 Guidelines:** [Foundations overview](https://m3.material.io/foundations/overview)
 - **Material 3 Guidelines:** [Dynamic color](https://m3.material.io/styles/color/system/overview)
 - **Material 3 Guidelines:** [Color roles](https://m3.material.io/styles/color/roles)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

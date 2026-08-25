@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/studio/test/gradle-managed-devices
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -194,6 +194,8 @@ Then publish with:
 - **Documentation:** [Gradle Managed Devices — Android Developers](https://developer.android.com/studio/test/gradle-managed-devices)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

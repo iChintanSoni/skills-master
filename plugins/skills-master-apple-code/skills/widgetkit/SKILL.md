@@ -58,6 +58,8 @@ struct StatusProvider: AppIntentTimelineProvider {
 - **Human Interface Guidelines:** [Widgets](https://developer.apple.com/design/human-interface-guidelines/widgets)
 - **WWDC:** [What's new in widgets (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/278/)
 - **WWDC:** [Bring widgets to life (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10028/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

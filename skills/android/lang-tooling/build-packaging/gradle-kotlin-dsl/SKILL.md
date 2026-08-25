@@ -18,7 +18,7 @@ x-skills-master:
     - https://developer.android.com/build/gradle-build-overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -181,6 +181,8 @@ dependencies {
 - **Guide:** [Share build logic between subprojects — Gradle docs](https://docs.gradle.org/current/samples/sample_convention_plugins.html)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

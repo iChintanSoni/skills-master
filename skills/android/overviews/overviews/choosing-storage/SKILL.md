@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/topic/libraries/architecture/datastore
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -109,6 +109,8 @@ There is no reason to add new `SharedPreferences` usage in a Kotlin 2.2 / API-16
 
 - **Documentation:** [Data and file storage overview](https://developer.android.com/training/data-storage)
 - **Documentation:** [DataStore](https://developer.android.com/topic/libraries/architecture/datastore)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

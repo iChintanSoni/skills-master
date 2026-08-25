@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-savedstate
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -105,6 +105,8 @@ class BookDetailViewModel @Inject constructor(
 - **Documentation:** [ViewModel overview](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - **Documentation:** [ViewModel and SavedStateHandle](https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-savedstate)
 - **Documentation:** [ViewModel APIs with Compose](https://developer.android.com/develop/ui/compose/libraries#viewmodel)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

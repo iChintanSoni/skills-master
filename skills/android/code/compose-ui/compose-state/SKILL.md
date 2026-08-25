@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/state-hoisting
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -137,6 +137,8 @@ fun SearchBar(
 - **Documentation:** [State hoisting in Compose](https://developer.android.com/develop/ui/compose/state-hoisting)
 - **Documentation:** [rememberSaveable and Savers](https://developer.android.com/develop/ui/compose/state#restore-ui-state)
 - **Guide:** [ViewModel and state in Compose](https://developer.android.com/topic/architecture/ui-layer/stateholders)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

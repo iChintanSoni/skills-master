@@ -177,6 +177,8 @@ fun BrowseScreen(
 
 - **Documentation:** [Get started with TV apps](https://developer.android.com/training/tv/get-started)
 - **Documentation:** [Jetpack TV library releases](https://developer.android.com/jetpack/androidx/releases/tv)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

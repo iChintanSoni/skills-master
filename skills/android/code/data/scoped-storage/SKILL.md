@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/training/data-storage/shared/documents-files
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -138,6 +138,8 @@ Never pass a `file://` URI to another app on API 24+. The system blocks it with 
 
 - **Documentation:** [Data and file storage overview](https://developer.android.com/training/data-storage)
 - **Documentation:** [Access documents and other files from shared storage](https://developer.android.com/training/data-storage/shared/documents-files)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

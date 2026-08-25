@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/lists
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -115,6 +115,8 @@ TV uses `TvLazyColumn` and focus-state highlighting. M3 phone list density and t
 - **Documentation:** [Lists and grids — Jetpack Compose](https://developer.android.com/develop/ui/compose/lists)
 
 ---
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

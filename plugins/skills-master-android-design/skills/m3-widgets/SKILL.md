@@ -81,6 +81,8 @@ description: Material 3 design guidance for Android app widgets, covering canoni
 - **Material 3 Guidelines:** [Foundations overview](https://m3.material.io/foundations/overview)
 - **Material 3 Guidelines:** [Dynamic color](https://m3.material.io/styles/color/system/overview)
 - **Material 3 Guidelines:** [Color roles](https://m3.material.io/styles/color/roles)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

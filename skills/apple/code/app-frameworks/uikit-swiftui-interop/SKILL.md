@@ -20,7 +20,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/uihostingconfiguration
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -86,6 +86,8 @@ struct SearchField: UIViewRepresentable {
 - **Documentation:** [UIHostingConfiguration](https://developer.apple.com/documentation/swiftui/uihostingconfiguration)
 - **WWDC:** [Use SwiftUI with UIKit (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10072/)
 - **WWDC:** [What's new in UIKit (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/243/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

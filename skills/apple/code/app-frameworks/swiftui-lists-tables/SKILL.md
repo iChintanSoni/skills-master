@@ -19,7 +19,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/tablecolumn
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -78,6 +78,8 @@ List {
 - **Documentation:** [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
 - **WWDC:** [What's new in SwiftUI (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/256/)
 - **WWDC:** [SwiftUI on iPad: Organize your interface (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10058/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

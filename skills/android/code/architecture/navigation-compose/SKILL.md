@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/guide/navigation/design/type-safety
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -135,6 +135,8 @@ Navigation Compose supports URL-pattern deep links via `deepLinks = listOf(navDe
 - **Documentation:** [Navigation with Compose](https://developer.android.com/develop/ui/compose/navigation)
 - **Documentation:** [Type-safe navigation with Compose](https://developer.android.com/guide/navigation/design/type-safety)
 - **Documentation:** [Adaptive navigation layouts](https://developer.android.com/develop/ui/compose/layouts/adaptive)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

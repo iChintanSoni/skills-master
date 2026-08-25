@@ -13,7 +13,7 @@ x-skills-master:
     - https://developer.android.com/design/ui/mobile
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -82,6 +82,8 @@ Use this skill when evaluating or designing how an Android app notifies its user
 - **Documentation:** [Notifications overview](https://developer.android.com/develop/ui/views/notifications)
 - **Documentation:** [Android mobile design](https://developer.android.com/design/ui/mobile)
 - **Material 3 Guidelines:** [Notifications — M3](https://m3.material.io/foundations/content-design/notifications)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 

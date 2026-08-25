@@ -19,7 +19,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/testing/migratingfromxctest
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -51,6 +51,8 @@ Swift Testing ships with Swift 6 / Xcode 16 and runs on every Apple platform plu
 - **Documentation:** [Migrating a test from XCTest](https://developer.apple.com/documentation/testing/migratingfromxctest)
 - **WWDC:** [Meet Swift Testing (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10179/)
 - **WWDC:** [Go further with Swift Testing (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10195/)
+- **Worked examples:** [examples.md](examples.md)
+- **Review checklist:** [checklist.md](checklist.md)
 
 ## See also
 
