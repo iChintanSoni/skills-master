@@ -9,6 +9,10 @@ Apply this skill whenever you want to surface app functionality outside the app 
 
 ## Core guidance
 
+### The 2026 direction: AppFunctions
+
+App Actions and BIIs remain the shipping mechanism for Assistant voice integration, but Android 17 introduces their successor: **AppFunctions**, a Jetpack library (alpha) where you annotate a Kotlin function with `@AppFunction` plus KDoc, and the system generates the plumbing that exposes it — through Android's on-device Model Context Protocol implementation — as a tool that AI assistants such as Gemini can discover, orchestrate, and execute against your app's local state. New capability surface should be designed with that model in mind (small, well-described, parameterized functions); see the `app-functions` skill for adoption guidance. Everything below documents the established App Actions / shortcuts surface, which existing integrations should keep.
+
 ### Shortcuts (static, dynamic, pinned)
 
 **Static shortcuts** are declared at build time in `res/xml/shortcuts.xml` and registered in `AndroidManifest.xml` on your launcher `Activity`. They appear in the launcher long-press menu and are fastest for fixed, high-value actions.

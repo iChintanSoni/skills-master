@@ -1,12 +1,12 @@
 # Skill coverage
 
-Generated from `skills/registry.json`. **394 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
+Generated from `skills/registry.json`. **397 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
 
 | Domain | `code` | `design` | `lang-tooling` | `overview` | Total |
 |---|---:|---:|---:|---:|---:|
 | `apple` | 71 | 62 | 37 | 13 | 183 |
-| `android` | 96 | 63 | 35 | 17 | 211 |
-| **All** | **167** | **125** | **72** | **30** | **394** |
+| `android` | 99 | 63 | 35 | 17 | 214 |
+| **All** | **170** | **125** | **72** | **30** | **397** |
 
 Skills with Level-3 resources (examples/checklist/reference): **90**.
 
@@ -323,21 +323,24 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `xr-glimmer-glasses`  — ↔ m3-ai-glasses
 - `xr-scenecore`
 
-## android  ›  code  ›  media-camera-ml  (8)
+## android  ›  code  ›  media-camera-ml  (10)
 
-- `app-actions-assistant`
+- `app-actions-assistant`  — ↔ app-functions
 - `camerax`  — examples, checklist
 - `gemini-nano-aicore`  — examples, checklist
 - `litert-mediapipe`
 - `media-projection`
-- `media3-exoplayer`  — examples, checklist
+- `media3-ai-effects`  — emerging, ↔ media3-transformer
+- `media3-exoplayer`  — examples, checklist, ↔ media3-transformer
 - `media3-session`
+- `media3-transformer`  — emerging, ↔ media3-ai-effects, ↔ media3-exoplayer
 - `ml-kit`  — ↔ choosing-ml
 
-## android  ›  code  ›  platform-services  (24)
+## android  ›  code  ›  platform-services  (25)
 
 - `alarms-scheduling`
 - `android-resources`
+- `app-functions`  — emerging, ↔ app-actions-assistant
 - `app-shortcuts`
 - `app-widgets-glance`  — examples, checklist, ↔ m3-widgets
 - `autofill`

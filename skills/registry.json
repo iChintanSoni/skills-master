@@ -469,7 +469,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "app-actions",
         "shortcuts",
@@ -477,7 +477,9 @@
         "deep-linking",
         "launcher"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "app-functions"
+      ],
       "path": "android/code/media-camera-ml/app-actions-assistant",
       "resources": {
         "reference": false,
@@ -532,6 +534,36 @@
       ],
       "pairs_with": [],
       "path": "android/lang-tooling/build-packaging/app-bundles-size",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "app-functions",
+      "domain": "android",
+      "class": "code",
+      "category": "platform-services",
+      "description": "Covers Android AppFunctions — exposing app capabilities as agent-orchestrable tools by annotating Kotlin functions with @AppFunction, served through Android's on-device Model Context Protocol so assistants like Gemini can discover and execute them against local app state. Use when making app features invocable by AI assistants and on-device agents, designing an agent-facing capability surface, or deciding between AppFunctions and the older App Actions/BII path.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "app-functions",
+        "agents",
+        "assistant",
+        "mcp",
+        "gemini",
+        "platform-services",
+        "android17"
+      ],
+      "pairs_with": [
+        "app-actions-assistant"
+      ],
+      "path": "android/code/platform-services/app-functions",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1202,7 +1234,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "camerax",
         "camera",
@@ -7759,6 +7791,35 @@
       }
     },
     {
+      "name": "media3-ai-effects",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Covers the Media3 AI Effects library announced at I/O 2026 — a unified interface for image and video enhance, magic eraser, and studio sound that routes each effect to the most efficient path available on the device. Use when adding AI-driven media cleanup to capture or editing flows, removing objects from user photos or video, denoising voice recordings, or deciding how to ship premium media effects across a heterogeneous device fleet.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "media3",
+        "ai-effects",
+        "magic-eraser",
+        "enhance",
+        "studio-sound",
+        "media"
+      ],
+      "pairs_with": [
+        "media3-transformer"
+      ],
+      "path": "android/code/media-camera-ml/media3-ai-effects",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "media3-exoplayer",
       "domain": "android",
       "class": "code",
@@ -7770,7 +7831,7 @@
         "android-tv"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "media3",
         "exoplayer",
@@ -7778,7 +7839,9 @@
         "playback",
         "adaptive-streaming"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "media3-transformer"
+      ],
       "path": "android/code/media-camera-ml/media3-exoplayer",
       "resources": {
         "reference": false,
@@ -7808,6 +7871,37 @@
       ],
       "pairs_with": [],
       "path": "android/code/media-camera-ml/media3-session",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "media3-transformer",
+      "domain": "android",
+      "class": "code",
+      "category": "media-camera-ml",
+      "description": "Covers Media3 Transformer for on-device video editing and export — single-asset transcode/trim, multi-asset composition, applied effects, and CodecDB's chipset-aware encoding recommendations for export quality. Use when implementing video editing, transcoding, format conversion, applying effects before export, stitching multiple clips into one output, or tuning export encoder settings per device.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "media3",
+        "transformer",
+        "video-editing",
+        "transcoding",
+        "codecdb",
+        "export"
+      ],
+      "pairs_with": [
+        "media3-exoplayer",
+        "media3-ai-effects"
+      ],
+      "path": "android/code/media-camera-ml/media3-transformer",
       "resources": {
         "reference": false,
         "examples": false,

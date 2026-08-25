@@ -14,9 +14,10 @@ x-skills-master:
   sources:
     - https://developer.android.com/media/camera/camerax
     - https://developer.android.com/media/camera/camerax/architecture
-  snapshot_date: "2026-06-06"
+    - https://android-developers.googleblog.com/2026/06/building-premium-android-experiences-google-io-26.html
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -62,9 +63,13 @@ Declare permissions in `AndroidManifest.xml`:
 
 Request permissions at runtime with `rememberPermissionState` (Accompanist/Jetpack) or the Activity contracts API before binding any use case. Never attempt to bind the camera before `CAMERA` permission is granted — the library throws if the permission is absent.
 
-### Compose camera preview with CameraController
+### Compose camera preview
 
-Embed `PreviewView` inside a Compose hierarchy using `AndroidView`:
+Since CameraX 1.5 the recommended preview in Compose is the `CameraXViewfinder` composable (`androidx.camera:camera-compose`): a Compose-native surface that stays correctly scaled and responsive across form factors, resize, and picture-in-picture without any View interop. Feed it surface requests from your `Preview` use case and it handles the rest; the interop pattern below remains valid for `LifecycleCameraController`-based code and for apps not yet on 1.5.
+
+CameraX 1.5 also adds high-frame-rate and slow-motion capture; on Android 17 devices update to 1.5.2+ (or 1.6.0+) to avoid a dynamic-range-mode crash.
+
+Legacy/interop path — embed `PreviewView` inside a Compose hierarchy using `AndroidView`:
 
 ```kotlin
 @Composable
