@@ -69,12 +69,12 @@ program
   .command("list")
   .description("List available skills")
   .option("--domain <domain>", "e.g. apple, android")
-  .option("--class <class>")
-  .option("--category <category>")
-  .option("--platform <platform>")
-  .option("--json")
+  .option("--class <class>", "e.g. code, design, lang-tooling, overview")
+  .option("--category <category>", "e.g. app-frameworks, compose-ui")
+  .option("--platform <platform>", "e.g. ios, watchos, android")
+  .option("--json", "machine-readable JSON output")
   .option("--content <dir>", "local skills directory")
-  .option("--ref <ref>")
+  .option("--ref <ref>", "content git ref (tag/branch/sha)")
   .action((opts) =>
     run(() =>
       listCommand({
@@ -93,8 +93,8 @@ program
 program
   .command("search <query>")
   .description("Search skills by name, description, tags")
-  .option("--content <dir>")
-  .option("--ref <ref>")
+  .option("--content <dir>", "local skills directory")
+  .option("--ref <ref>", "content git ref (tag/branch/sha)")
   .action((query, opts) =>
     run(() => searchCommand({ cwd: process.cwd(), query, content: opts.content, ref: opts.ref })),
   );
@@ -103,8 +103,8 @@ program
   .command("view <name>")
   .description("Show a skill's metadata and body")
   .option("--raw", "print the raw SKILL.md body")
-  .option("--content <dir>")
-  .option("--ref <ref>")
+  .option("--content <dir>", "local skills directory")
+  .option("--ref <ref>", "content git ref (tag/branch/sha)")
   .action((name, opts) =>
     run(() =>
       viewCommand({ cwd: process.cwd(), name, raw: opts.raw, content: opts.content, ref: opts.ref }),
@@ -118,8 +118,8 @@ program
   .option("--with-pairs", "also install paired (code<->design) skills")
   .option("--dry-run", "preview without writing")
   .option("--overwrite", "overwrite changed files without asking")
-  .option("--content <dir>")
-  .option("--ref <ref>")
+  .option("--content <dir>", "local skills directory")
+  .option("--ref <ref>", "content git ref (tag/branch/sha)")
   .action((names, opts) =>
     run(() =>
       addCommand({
@@ -138,10 +138,10 @@ program
 program
   .command("update [names...]")
   .description("Re-install skills whose content changed")
-  .option("--dry-run")
+  .option("--dry-run", "preview without writing")
   .option("--overwrite", "force re-install, replacing local edits")
-  .option("--content <dir>")
-  .option("--ref <ref>")
+  .option("--content <dir>", "local skills directory")
+  .option("--ref <ref>", "content git ref (tag/branch/sha)")
   .action((names, opts) =>
     run(() =>
       updateCommand({
@@ -159,7 +159,7 @@ program
   .command("remove <names...>")
   .description("Remove installed skills")
   .option("--target <list>", "comma list or 'all'")
-  .option("--dry-run")
+  .option("--dry-run", "preview without writing")
   .action((names, opts) =>
     run(() =>
       removeCommand({ cwd: process.cwd(), names, targets: parseTargets(opts.target), dryRun: opts.dryRun }),
@@ -169,19 +169,19 @@ program
 program
   .command("doctor")
   .description("Check installed skills for drift and missing files")
-  .action(() => run(() => doctorCommand({ cwd: process.cwd() })));
+  .action(() => run(() => doctorCommand({ cwd: process.cwd() }).ok, true));
 
 program
   .command("lint")
   .description("Validate the skill library (maintainer command)")
-  .option("--content <dir>")
+  .option("--content <dir>", "local skills directory")
   .action((opts) => run(() => lintCommand({ cwd: process.cwd(), content: opts.content }), true));
 
 program
   .command("new <spec>")
-  .description("Scaffold a new skill: class/category/name (maintainer command)")
-  .option("--content <dir>")
-  .option("--force")
+  .description("Scaffold a new skill: domain/class/category/name (maintainer command)")
+  .option("--content <dir>", "local skills directory")
+  .option("--force", "overwrite an existing skill directory")
   .action((spec, opts) =>
     run(() => newSkillCommand({ cwd: process.cwd(), spec, content: opts.content, force: opts.force })),
   );
@@ -190,12 +190,12 @@ const registry = program.command("registry").description("Registry maintenance")
 registry
   .command("build")
   .description("Generate registry.json from the skill tree")
-  .option("--content <dir>")
+  .option("--content <dir>", "local skills directory")
   .option("--check", "verify the committed registry.json is current (CI)")
-  .option("--version <v>")
+  .option("--set-version <v>", "schema version to stamp into registry.json")
   .action((opts) =>
     run(
-      () => registryBuildCommand({ cwd: process.cwd(), content: opts.content, check: opts.check, version: opts.version }),
+      () => registryBuildCommand({ cwd: process.cwd(), content: opts.content, check: opts.check, version: opts.setVersion }),
       true,
     ),
   );
@@ -204,10 +204,10 @@ const marketplace = program.command("marketplace").description("Claude marketpla
 marketplace
   .command("build")
   .description("Generate .claude-plugin/marketplace.json and per-class plugins")
-  .option("--content <dir>")
+  .option("--content <dir>", "local skills directory")
   .option("--out <dir>", "output root")
   .option("--check", "verify the committed marketplace output is current (CI)")
-  .option("--version <v>")
+  .option("--set-version <v>", "version to stamp into plugin manifests")
   .action((opts) =>
     run(
       () =>
@@ -216,10 +216,13 @@ marketplace
           content: opts.content,
           out: opts.out,
           check: opts.check,
-          version: opts.version,
+          version: opts.setVersion,
         }),
       true,
     ),
   );
 
-program.parseAsync(process.argv);
+program.parseAsync(process.argv).catch((err: unknown) => {
+  log.error(err instanceof Error ? err.message : String(err));
+  process.exitCode = 1;
+});
