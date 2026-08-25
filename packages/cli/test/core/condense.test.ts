@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { condenseBody, demoteHeadings } from "../../src/core/condense";
+import { condenseBody, digestBody } from "../../src/core/condense";
 
 describe("condenseBody", () => {
   it("flattens Level-3 links to their text", () => {
@@ -64,17 +64,72 @@ describe("summarizeOpenQuestion (via condenseBody)", () => {
   });
 });
 
-describe("demoteHeadings", () => {
-  it("shifts headings by the given amount, capped at h6", () => {
-    expect(demoteHeadings("## A\n\n### B\n\n###### C", 2)).toBe("#### A\n\n##### B\n\n###### C");
+describe("digestBody", () => {
+  const body = [
+    "## When to use",
+    "",
+    "Long prose that the digest drops.",
+    "",
+    "## Core guidance",
+    "",
+    "- First rule.",
+    "- Second rule.",
+    "```swift",
+    "- not a bullet, inside a fence",
+    "```",
+    "- Third rule.",
+    "",
+    "## Pitfalls",
+    "",
+    "- One pitfall.",
+    "",
+    "## References",
+    "",
+    "- [Docs](https://example.com)",
+    "",
+  ].join("\n");
+
+  it("keeps description, guidance and pitfall bullets, and the pointer note", () => {
+    const out = digestBody(body, { name: "some-skill", description: "Does X. Use when Y." });
+    expect(out).toContain("Does X. Use when Y.");
+    expect(out).toContain("#### Core guidance");
+    expect(out).toContain("- First rule.");
+    expect(out).toContain("- Third rule.");
+    expect(out).toContain("#### Pitfalls");
+    expect(out).toContain("skills-master view some-skill");
   });
 
-  it("leaves fenced code blocks untouched", () => {
-    const md = "## A\n\n```sh\n# comment, not a heading\n```\n\n## B";
-    expect(demoteHeadings(md, 2)).toBe("#### A\n\n```sh\n# comment, not a heading\n```\n\n#### B");
+  it("drops everything else: prose sections, fences, references", () => {
+    const out = digestBody(body, { name: "some-skill", description: "d" });
+    expect(out).not.toContain("Long prose");
+    expect(out).not.toContain("inside a fence");
+    expect(out).not.toContain("References");
+    expect(out).not.toContain("example.com");
   });
 
-  it("ignores hashes that are not headings", () => {
-    expect(demoteHeadings("#tag and #5 stay", 2)).toBe("#tag and #5 stay");
+  it("caps guidance at 6 bullets and pitfalls at 3", () => {
+    const many = `## Core guidance\n\n${Array.from({ length: 10 }, (_, i) => `- G${i}.`).join("\n")}\n\n## Pitfalls\n\n${Array.from({ length: 6 }, (_, i) => `- P${i}.`).join("\n")}\n`;
+    const out = digestBody(many, { name: "n", description: "d" });
+    expect(out).toContain("- G5.");
+    expect(out).not.toContain("- G6.");
+    expect(out).toContain("- P2.");
+    expect(out).not.toContain("- P3.");
+  });
+
+  it("falls back to the first paragraph when a section has no bullets", () => {
+    const prose =
+      "## Core guidance\n\nOnly prose here,\nwrapped across lines.\n\nSecond paragraph.\n";
+    const out = digestBody(prose, { name: "n", description: "d" });
+    expect(out).toContain("Only prose here, wrapped across lines.");
+    expect(out).not.toContain("Second paragraph.");
+  });
+});
+
+describe("digestBody link flattening", () => {
+  it("flattens resource-file links inside kept bullets", () => {
+    const body = "## Core guidance\n\n- See [worked examples](examples.md#setup) for details.\n";
+    const out = digestBody(body, { name: "n", description: "d" });
+    expect(out).toContain("See worked examples for details.");
+    expect(out).not.toContain("(examples.md");
   });
 });
