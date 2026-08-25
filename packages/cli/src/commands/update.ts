@@ -57,9 +57,7 @@ export async function updateCommand(opts: UpdateOptions): Promise<UpdateResult> 
       if (err instanceof SkillNotFoundError) {
         log.warn(`"${name}" no longer exists in the content library.`);
       } else {
-        log.error(
-          `Failed to load "${name}": ${err instanceof Error ? err.message : String(err)}`,
-        );
+        log.error(`Failed to load "${name}": ${err instanceof Error ? err.message : String(err)}`);
       }
       skipped.push(name);
       continue;
