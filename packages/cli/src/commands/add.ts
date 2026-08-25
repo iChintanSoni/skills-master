@@ -62,7 +62,7 @@ export async function addCommand(opts: AddOptions): Promise<AddResult> {
     const byClass = registry.skills.filter((s) => s.class === token);
     const group = byCategory.length ? byCategory : byClass;
     if (group.length) {
-      group.forEach((s) => selected.add(s.name));
+      for (const s of group) selected.add(s.name);
     } else {
       log.warn(`No skill, category, or class matches "${token}".`);
       skipped.push(token);

@@ -16,7 +16,9 @@ export interface InitOptions {
 export function initCommand(opts: InitOptions): ProjectConfig {
   const existing = loadConfig(opts.cwd);
   if (existing && !opts.force) {
-    log.warn(`skills-master.json already exists — leaving it untouched (use --force to overwrite).`);
+    log.warn(
+      `skills-master.json already exists — leaving it untouched (use --force to overwrite).`,
+    );
     return existing;
   }
 

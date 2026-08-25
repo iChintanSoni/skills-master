@@ -71,7 +71,8 @@ describe("install lifecycle", () => {
     // Hand-edit AGENTS.md: add content outside the block and corrupt inside it.
     const original = read(AGENTS);
     const corrupted =
-      "# My Project\n\nHand-written intro.\n\n" + original.replace("### Fixture Skill", "### Fixture Skill\n\nCORRUPTION");
+      "# My Project\n\nHand-written intro.\n\n" +
+      original.replace("### Fixture Skill", "### Fixture Skill\n\nCORRUPTION");
     writeFileSync(join(dir, AGENTS), corrupted, "utf8");
 
     await updateCommand({ cwd: dir, content: CONTENT_ROOT, overwrite: true });
@@ -127,7 +128,13 @@ describe("install lifecycle", () => {
   });
 
   it("dry-run writes nothing", async () => {
-    await addCommand({ cwd: dir, names: [NAME], targets: ALL_TARGETS, content: CONTENT_ROOT, dryRun: true });
+    await addCommand({
+      cwd: dir,
+      names: [NAME],
+      targets: ALL_TARGETS,
+      content: CONTENT_ROOT,
+      dryRun: true,
+    });
     expect(has(CLAUDE)).toBe(false);
     expect(has(AGENTS)).toBe(false);
     expect(has(LOCK)).toBe(false);

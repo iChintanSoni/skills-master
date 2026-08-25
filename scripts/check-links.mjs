@@ -18,7 +18,8 @@ const strict = args.includes("--strict");
 const checkAll = args.includes("--all");
 const root = args.find((a) => !a.startsWith("--")) ?? "skills";
 
-const HOST_RE = /^https:\/\/(developer\.apple\.com|support\.apple\.com|swift\.org|github\.com\/apple|developer\.android\.com|android-developers\.googleblog\.com|kotlinlang\.org|m3\.material\.io|developer\.chrome\.com|source\.android\.com|github\.com\/android|play\.google\.com|support\.google\.com|developers\.google\.com|ai\.google\.dev)\//;
+const HOST_RE =
+  /^https:\/\/(developer\.apple\.com|support\.apple\.com|swift\.org|github\.com\/apple|developer\.android\.com|android-developers\.googleblog\.com|kotlinlang\.org|m3\.material\.io|developer\.chrome\.com|source\.android\.com|github\.com\/android|play\.google\.com|support\.google\.com|developers\.google\.com|ai\.google\.dev)\//;
 // Allow one level of balanced parens so Apple method URLs survive intact,
 // e.g. .../view/sheet(isPresented:onDismiss:content:) and .../tint(_:).
 const URL_RE = /https?:\/\/[^\s<>"'\]()]+(?:\([^\s()]*\))?[^\s<>"'\])]*/g;
@@ -38,7 +39,7 @@ const linkToFiles = new Map();
 for (const f of files) {
   const text = readFileSync(f, "utf8");
   for (const m of text.matchAll(URL_RE)) {
-    let url = m[0].replace(/[.,;]+$/, "");
+    const url = m[0].replace(/[.,;]+$/, "");
     if (!checkAll && !HOST_RE.test(url)) continue;
     (linkToFiles.get(url) ?? linkToFiles.set(url, new Set()).get(url)).add(f);
   }
@@ -49,9 +50,17 @@ console.log(`Checking ${links.length} unique links across ${files.length} skills
 
 async function check(url) {
   try {
-    let res = await fetch(url, { method: "HEAD", redirect: "follow", signal: AbortSignal.timeout(10000) });
+    let res = await fetch(url, {
+      method: "HEAD",
+      redirect: "follow",
+      signal: AbortSignal.timeout(10000),
+    });
     if (res.status === 403 || res.status === 405) {
-      res = await fetch(url, { method: "GET", redirect: "follow", signal: AbortSignal.timeout(10000) });
+      res = await fetch(url, {
+        method: "GET",
+        redirect: "follow",
+        signal: AbortSignal.timeout(10000),
+      });
     }
     return res.status;
   } catch (err) {

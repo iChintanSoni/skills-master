@@ -9,7 +9,8 @@ describe("condenseBody", () => {
   });
 
   it("leaves external and non-L3 links intact", () => {
-    const body = "[SwiftData](https://developer.apple.com/documentation/swiftdata) and [x](other.md)";
+    const body =
+      "[SwiftData](https://developer.apple.com/documentation/swiftdata) and [x](other.md)";
     expect(condenseBody(body)).toContain("(https://developer.apple.com/documentation/swiftdata)");
     expect(condenseBody(body)).toContain("[x](other.md)");
   });
@@ -25,7 +26,10 @@ describe("condenseBody", () => {
   // regex needs several seconds here; the fixed one is ~1ms. The budget is
   // deliberately loose so this measures complexity, not machine speed.
   it("stays linear on adversarial bracket-heavy input", () => {
-    for (const attack of ["[".repeat(100_000), "[](examples.md#" + "[(](examples.md#".repeat(20_000)]) {
+    for (const attack of [
+      "[".repeat(100_000),
+      "[](examples.md#" + "[(](examples.md#".repeat(20_000),
+    ]) {
       const started = performance.now();
       condenseBody(attack);
       expect(performance.now() - started).toBeLessThan(2_000);

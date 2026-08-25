@@ -66,9 +66,7 @@ function staleness(reg: Registry) {
   const today = new Date().toISOString().slice(0, 10);
   const rows = reg.skills.map((s) => {
     const date = snapshotDateOf(s);
-    const ageDays = date
-      ? Math.round((Date.parse(today) - Date.parse(date)) / 86_400_000)
-      : null;
+    const ageDays = date ? Math.round((Date.parse(today) - Date.parse(date)) / 86_400_000) : null;
     return { name: s.name, path: s.path, stability: s.stability, snapshot_date: date, ageDays };
   });
   rows.sort((a, b) => (b.ageDays ?? Infinity) - (a.ageDays ?? Infinity));
@@ -87,18 +85,16 @@ function stripHtmlTags(input: string): string {
 
 function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
   const topics: { title: string; url: string }[] = [];
-  
+
   // Extract <entry>...</entry> or <item>...</item>
   const entryRegex = /<(entry|item)>([\s\S]*?)<\/\1>/gi;
-  let match;
-  while ((match = entryRegex.exec(xmlText)) !== null) {
+  for (let match = entryRegex.exec(xmlText); match !== null; match = entryRegex.exec(xmlText)) {
     const content = match[2];
-    
+
     // Check if there are nested links inside <content> (specific to AndroidX release notes XML)
     const aTagRegex = /<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
-    let aMatch;
     let foundInnerLinks = false;
-    while ((aMatch = aTagRegex.exec(content)) !== null) {
+    for (let aMatch = aTagRegex.exec(content); aMatch !== null; aMatch = aTagRegex.exec(content)) {
       const url = aMatch[1].trim();
       const title = stripHtmlTags(aMatch[2]).trim();
       if (url && title) {
@@ -110,14 +106,21 @@ function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
     if (!foundInnerLinks) {
       // Fallback: extract the main title and link of the entry/item itself
       const titleMatch = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(content);
-      const title = titleMatch ? titleMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/i, "$1").replace(/[<>]/g, "").trim() : "";
-      
+      const title = titleMatch
+        ? titleMatch[1]
+            .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/i, "$1")
+            .replace(/[<>]/g, "")
+            .trim()
+        : "";
+
       let url = "";
       const locMatch = /<loc>([\s\S]*?)<\/loc>/i.exec(content);
       if (locMatch) {
         url = locMatch[1].trim();
       } else {
-        const linkMatch = /<link\s+[^>]*href=["']([^"']+)["']/i.exec(content) || /<link[^>]*>([\s\S]*?)<\/link>/i.exec(content);
+        const linkMatch =
+          /<link\s+[^>]*href=["']([^"']+)["']/i.exec(content) ||
+          /<link[^>]*>([\s\S]*?)<\/link>/i.exec(content);
         if (linkMatch) {
           url = linkMatch[1].trim();
         }
@@ -132,7 +135,7 @@ function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
   // Standard sitemap support
   if (topics.length === 0) {
     const urlRegex = /<url>([\s\S]*?)<\/url>/gi;
-    while ((match = urlRegex.exec(xmlText)) !== null) {
+    for (let match = urlRegex.exec(xmlText); match !== null; match = urlRegex.exec(xmlText)) {
       const content = match[1];
       const locMatch = /<loc>([\s\S]*?)<\/loc>/i.exec(content);
       if (locMatch) {
@@ -148,7 +151,7 @@ function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
 
 async function fetchUpstream() {
   const out: Record<string, unknown> = {};
-  
+
   // Apple endpoints
   for (const ep of APPLE_ENDPOINTS) {
     try {
@@ -157,11 +160,15 @@ async function fetchUpstream() {
         out[ep.key] = { error: `HTTP ${res.status}` };
         continue;
       }
-      const data: any = await res.json();
-      const refs = data?.references ?? {};
-      const topics = Object.values(refs)
-        .filter((r: any) => r?.title && r?.url)
-        .map((r: any) => ({ title: r.title, url: r.url }))
+      const data = (await res.json()) as {
+        references?: Record<string, { title?: unknown; url?: unknown }>;
+      };
+      const topics = Object.values(data.references ?? {})
+        .filter(
+          (r): r is { title: string; url: string } =>
+            typeof r?.title === "string" && typeof r?.url === "string",
+        )
+        .map((r) => ({ title: r.title, url: r.url }))
         .slice(0, 2000);
       out[ep.key] = { count: topics.length, topics };
     } catch (err) {
@@ -215,7 +222,6 @@ async function main() {
       console.log(`  ${k}: ${info.error ? `ERROR ${info.error}` : `${info.count} topics`}`);
     }
   }
-
 
   console.log(`Reports written to ${REPORTS}`);
 }

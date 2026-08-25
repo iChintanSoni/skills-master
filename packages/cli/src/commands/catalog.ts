@@ -97,16 +97,24 @@ export async function viewCommand(opts: ViewOptions): Promise<void> {
     log.plain(skill.body);
     return;
   }
-  log.plain(`${skill.name}  v${xm.version}  [${xm.domain}/${xm.class}/${xm.category}]  ${xm.stability}`);
+  log.plain(
+    `${skill.name}  v${xm.version}  [${xm.domain}/${xm.class}/${xm.category}]  ${xm.stability}`,
+  );
   log.plain(`platforms: ${xm.platforms.join(", ")}`);
   if (xm.requires) {
-    log.plain(`requires: ${Object.entries(xm.requires).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+    log.plain(
+      `requires: ${Object.entries(xm.requires)
+        .map(([k, v]) => `${k} ${v}`)
+        .join(", ")}`,
+    );
   }
   if (xm.pairs_with.length) log.plain(`pairs with: ${xm.pairs_with.join(", ")}`);
   log.plain(`\n${skill.frontmatter.description}\n`);
   log.plain(`sources:`);
   for (const url of xm.sources) log.plain(`  ${url}`);
-  const res = Object.entries(skill.resources).filter(([, v]) => v).map(([k]) => k);
+  const res = Object.entries(skill.resources)
+    .filter(([, v]) => v)
+    .map(([k]) => k);
   if (res.length) log.plain(`\nresource files: ${res.join(", ")}`);
 }
 

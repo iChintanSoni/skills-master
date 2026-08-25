@@ -30,9 +30,8 @@ export function removeCommand(opts: RemoveOptions): RemoveResult {
       continue;
     }
 
-    const targets = (opts.targets?.length
-      ? opts.targets
-      : (Object.keys(locked.emitted) as TargetId[])
+    const targets = (
+      opts.targets?.length ? opts.targets : (Object.keys(locked.emitted) as TargetId[])
     ).filter((t) => locked.emitted[t]);
 
     const wholeRemoved: string[] = [];

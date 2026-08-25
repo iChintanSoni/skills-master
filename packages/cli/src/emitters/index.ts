@@ -9,12 +9,7 @@ import { agentsEmitter } from "./agents";
  * one-line change here plus a new emitter file — the rest of the pipeline is
  * generic over the `Emitter` interface.
  */
-export const EMITTERS: Emitter[] = [
-  claudeEmitter,
-  cursorEmitter,
-  copilotEmitter,
-  agentsEmitter,
-];
+export const EMITTERS: Emitter[] = [claudeEmitter, cursorEmitter, copilotEmitter, agentsEmitter];
 
 const BY_ID = new Map<string, Emitter>(EMITTERS.map((e) => [e.id, e]));
 

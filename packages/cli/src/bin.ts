@@ -21,7 +21,10 @@ const VALID = new Set<string>(ALL_TARGETS);
 function parseTargets(value?: string): TargetId[] | undefined {
   if (!value) return undefined;
   if (value === "all") return ALL_TARGETS;
-  const ids = value.split(",").map((s) => s.trim()).filter(Boolean);
+  const ids = value
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
   for (const id of ids) {
     if (!VALID.has(id)) {
       throw new Error(`Unknown target "${id}". Valid: ${[...VALID, "all"].join(", ")}.`);
@@ -107,7 +110,13 @@ program
   .option("--ref <ref>", "content git ref (tag/branch/sha)")
   .action((name, opts) =>
     run(() =>
-      viewCommand({ cwd: process.cwd(), name, raw: opts.raw, content: opts.content, ref: opts.ref }),
+      viewCommand({
+        cwd: process.cwd(),
+        name,
+        raw: opts.raw,
+        content: opts.content,
+        ref: opts.ref,
+      }),
     ),
   );
 
@@ -162,7 +171,12 @@ program
   .option("--dry-run", "preview without writing")
   .action((names, opts) =>
     run(() =>
-      removeCommand({ cwd: process.cwd(), names, targets: parseTargets(opts.target), dryRun: opts.dryRun }),
+      removeCommand({
+        cwd: process.cwd(),
+        names,
+        targets: parseTargets(opts.target),
+        dryRun: opts.dryRun,
+      }),
     ),
   );
 
@@ -183,7 +197,9 @@ program
   .option("--content <dir>", "local skills directory")
   .option("--force", "overwrite an existing skill directory")
   .action((spec, opts) =>
-    run(() => newSkillCommand({ cwd: process.cwd(), spec, content: opts.content, force: opts.force })),
+    run(() =>
+      newSkillCommand({ cwd: process.cwd(), spec, content: opts.content, force: opts.force }),
+    ),
   );
 
 const registry = program.command("registry").description("Registry maintenance");
@@ -195,7 +211,13 @@ registry
   .option("--set-version <v>", "schema version to stamp into registry.json")
   .action((opts) =>
     run(
-      () => registryBuildCommand({ cwd: process.cwd(), content: opts.content, check: opts.check, version: opts.setVersion }),
+      () =>
+        registryBuildCommand({
+          cwd: process.cwd(),
+          content: opts.content,
+          check: opts.check,
+          version: opts.setVersion,
+        }),
       true,
     ),
   );

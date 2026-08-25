@@ -9,6 +9,8 @@
   },
   "scripts": {
     "build": "pnpm --filter @ichintansoni/skills-master build",
+    "format": "biome format --write .",
+    "lint:ts": "biome check .",
     "test": "pnpm --filter @ichintansoni/skills-master test",
     "typecheck": "pnpm --filter @ichintansoni/skills-master typecheck",
     "cli": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts",
@@ -17,6 +19,7 @@
     "skills:marketplace": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../.."
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.10",
     "tsx": "^4.23.7",
     "typescript": "^6.0.3"
   }
