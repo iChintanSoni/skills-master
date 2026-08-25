@@ -4,7 +4,7 @@ import { basename, isAbsolute, join, resolve } from "node:path";
 import { findSkillDirs } from "../core/discover";
 import { loadSkill } from "../core/parse";
 import { buildRegistry } from "../core/registry-build";
-import type { Registry } from "../schema/registry";
+import { RegistrySchema, type Registry } from "../schema/registry";
 import type { ParsedSkill } from "../types";
 
 /** Default content repo (override with SKILLS_MASTER_REPO). */
@@ -26,10 +26,14 @@ export class SkillNotFoundError extends Error {
 
 /** A resolved, on-disk skills tree the CLI reads from. */
 export class ContentSource {
+  #dirs?: string[];
+  #registry?: Registry;
+
   constructor(public readonly root: string) {}
 
   skillDirs(): string[] {
-    return findSkillDirs(this.root);
+    this.#dirs ??= findSkillDirs(this.root);
+    return this.#dirs;
   }
 
   findDir(name: string): string | undefined {
@@ -45,8 +49,25 @@ export class ContentSource {
     return loadSkill(dir, this.root);
   }
 
+  /**
+   * The catalog used by list/search/add. Reads the committed registry.json
+   * when the content ships one (it is generated and CI-gated for drift);
+   * otherwise — or if the committed file is unreadable — falls back to
+   * scanning and parsing every skill, which is always ground truth.
+   */
   registry(): Registry {
-    return buildRegistry(this.root);
+    this.#registry ??= this.readCommittedRegistry() ?? buildRegistry(this.root);
+    return this.#registry;
+  }
+
+  private readCommittedRegistry(): Registry | null {
+    const p = join(this.root, "registry.json");
+    if (!existsSync(p)) return null;
+    try {
+      return RegistrySchema.parse(JSON.parse(readFileSync(p, "utf8")));
+    } catch {
+      return null;
+    }
   }
 }
 
