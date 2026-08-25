@@ -67,7 +67,7 @@ The primary Documentation/HIG URLs should also appear in the `sources` frontmatt
 3. **Cite + snapshot.** Every skill carries `sources` and a `snapshot_date`. Bump `snapshot_date` (and a `version` patch) whenever you re-verify against changed docs.
 4. **Contested topics present tradeoffs.** For genuinely debated choices (MV vs MVVM, SwiftUI vs UIKit), set `stability: contested`, add a `## Open question` section, and do **not** prescribe a single answer. Route the decision through an `overviews/` skill.
 5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. Pairs link a `design` skill to its `code` counterpart.
-6. **L2/L3 split.** When the body grows past ~500 lines, move reference tables → `reference.md`, long examples → `examples.md`, step lists → `checklist.md`, and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
+6. **L2/L3 split.** When the body grows past ~500 lines, move long examples → `examples.md`, step lists → `checklist.md`, and deep reference tables → `reference.md` (a defined slot no skill currently uses — prefer the first two unless a true lookup table outgrows them), and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
 
 ## YAML hazard: `#` in scalars
 
