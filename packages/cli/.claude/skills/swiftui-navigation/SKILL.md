@@ -52,6 +52,15 @@ struct RootView: View {
 - Assuming `NavigationView` still behaves the same. It is deprecated, mixes poorly with the new types, and should not be combined with `NavigationStack` in the same hierarchy.
 - Forgetting that `NavigationPath` only restores when every pushed value is `Codable`; a single non-codable route breaks the saved representation.
 
+## References
+
+- **Documentation:** [Navigation](https://developer.apple.com/documentation/swiftui/navigation)
+- **Documentation:** [NavigationStack](https://developer.apple.com/documentation/swiftui/navigationstack)
+- **Documentation:** [NavigationSplitView](https://developer.apple.com/documentation/swiftui/navigationsplitview)
+- **Documentation:** [Migrating to new navigation types](https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types)
+- **Human Interface Guidelines:** [Navigation and search](https://developer.apple.com/design/human-interface-guidelines/navigation-and-search)
+- **WWDC:** [The SwiftUI cookbook for navigation (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10054/)
+
 ## See also
 
 See `swiftui-core` for view composition, state, and the Observation model that backs navigation state. See `hig-navigation` and `hig-layout` for the platform conventions on sidebars, hierarchy depth, and adaptive layout that inform whether a stack or split view is appropriate. For routes that present sheets or full-screen covers instead of pushing, pair this with a dedicated presentation skill rather than overloading the path.

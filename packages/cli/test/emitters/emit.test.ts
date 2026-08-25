@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { ContentSource } from "../../src/content/source";
 import { DEFAULT_PATHS } from "../../src/schema/projectConfig";
 import { EMITTERS, getEmitter } from "../../src/emitters";
+import { titleFromName } from "../../src/emitters/util";
 import type { EmitContext } from "../../src/types";
 
 const CONTENT_ROOT = fileURLToPath(new URL("../fixtures/content", import.meta.url));
@@ -60,5 +61,16 @@ describe("emitters", () => {
     const copilot = getEmitter("copilot")!.emit(loadFixture(), ctx());
     expect(copilot.find((f) => f.path.endsWith("copilot-instructions.md"))!.mode).toBe("block");
     expect(copilot.find((f) => f.path.endsWith(".instructions.md"))!.mode).toBe("whole");
+  });
+});
+
+describe("titleFromName", () => {
+  it("applies brand casing to compound tokens", () => {
+    expect(titleFromName("swiftui-navigation")).toBe("SwiftUI Navigation");
+    expect(titleFromName("swiftdata-modeling")).toBe("SwiftData Modeling");
+    expect(titleFromName("hig-sheets")).toBe("HIG Sheets");
+    expect(titleFromName("watchos-complications")).toBe("watchOS Complications");
+    expect(titleFromName("m3-gestures")).toBe("M3 Gestures");
+    expect(titleFromName("plain-name")).toBe("Plain Name");
   });
 });
