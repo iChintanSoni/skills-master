@@ -7,7 +7,7 @@ export default defineConfig({
   platform: "node",
   clean: true,
   minify: false,
-  sourcemap: true,
+  sourcemap: false,
   // The CLI is bundled into a single executable file with a Node shebang.
   banner: { js: "#!/usr/bin/env node" },
 });

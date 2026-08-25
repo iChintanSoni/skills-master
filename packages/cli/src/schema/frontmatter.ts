@@ -47,7 +47,7 @@ export const XSkillsMasterSchema = z
     requires: z.record(z.string(), z.string()).optional(),
     pairs_with: z.array(z.string().regex(NAME_RE)).default([]),
     /** citation URLs to canonical docs — never verbatim content. */
-    sources: z.array(z.string().url()).default([]),
+    sources: z.array(z.url()).default([]),
     snapshot_date: z.string().regex(ISO_DATE_RE, "must be an ISO date (YYYY-MM-DD)"),
     stability: StabilitySchema,
     version: z
@@ -63,8 +63,9 @@ const GlobsSchema = z
   .transform((g) => (Array.isArray(g) ? g : [g]))
   .optional();
 
+// Loose: tolerate tool-native extras (e.g. allowed-tools) without failing validation.
 export const FrontmatterSchema = z
-  .object({
+  .looseObject({
     name: z.string().regex(NAME_RE, "must be kebab-case ([a-z0-9-], <=64 chars)"),
     description: z
       .string()
@@ -73,7 +74,5 @@ export const FrontmatterSchema = z
     globs: GlobsSchema,
     tags: z.array(z.string()).default([]),
     "x-skills-master": XSkillsMasterSchema,
-  })
-  // Tolerate tool-native extras (e.g. allowed-tools) without failing validation.
-  .passthrough();
+  });
 export type Frontmatter = z.infer<typeof FrontmatterSchema>;
