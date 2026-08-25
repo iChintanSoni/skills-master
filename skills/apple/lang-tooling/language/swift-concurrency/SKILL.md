@@ -15,9 +15,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/swift/concurrency
     - https://www.swift.org/migration/documentation/migrationguide/
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/swift/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -50,6 +51,11 @@ final class FeedModel {
     }
 }
 ```
+
+### Swift 6.4 (WWDC 2026)
+
+- `defer` blocks may now contain `async` code — cleanup that must await (closing a connection, flushing a log actor) no longer needs the do/catch-and-duplicate pattern; it runs whether the function returns or throws.
+- Instruments ships a dedicated Swift Concurrency instrument: task scheduling, actor contention, and continuation waits become visible on a timeline — profile with it before restructuring actors on intuition (see `instruments-profiling`).
 
 ## Platform notes
 

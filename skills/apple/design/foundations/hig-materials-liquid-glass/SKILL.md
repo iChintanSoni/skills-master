@@ -13,9 +13,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/materials
     - https://developer.apple.com/documentation/TechnologyOverviews/liquid-glass
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/design/
+  snapshot_date: "2026-08-25"
   stability: emerging
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # HIG materials and Liquid Glass
@@ -39,6 +40,10 @@ Liquid Glass is the unified material introduced across Apple platforms in the 26
 - Tint glass controls sparingly and only to signal meaning, such as a prominent or destructive action. Use the system tinting path so the material's legibility behavior is preserved; avoid saturating large surfaces.
 - Treat glass as accent, not theme. A few floating controls feel vital; covering most of the screen in translucency flattens hierarchy and tires the eye.
 - Never bake the material's look into a static asset. The surface adapts to appearance, wallpaper, motion, and accessibility settings, so verify behavior live rather than against a single snapshot.
+
+### iOS 27 — year two (WWDC 2026)
+
+- Liquid Glass matures from adoption project to default: SwiftUI apps rebuilt against the 27-era SDKs pick up updated glass effects automatically, and the glass tint now responds to a system-level Liquid Glass appearance slider without app changes. Year-two design work shifts from "adopt the material" to auditing custom backgrounds and overlays that fight the system's tinting.
 
 ## Platform notes
 

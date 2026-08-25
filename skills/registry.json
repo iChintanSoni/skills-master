@@ -219,7 +219,7 @@
         "visionos"
       ],
       "stability": "emerging",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "liquid-glass",
         "design",
@@ -3764,7 +3764,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "design",
         "hig",
@@ -4527,7 +4527,7 @@
         "visionos"
       ],
       "stability": "emerging",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "design",
         "hig",
@@ -4680,7 +4680,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "navigation",
         "navigation-bar",
@@ -5229,7 +5229,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "hig",
         "tab-bars",
@@ -5329,7 +5329,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "hig",
         "design",
@@ -5360,7 +5360,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "hig",
         "typography",
@@ -5546,7 +5546,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "instruments",
         "profiling",
@@ -9583,7 +9583,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "swift",
         "concurrency",
@@ -9645,7 +9645,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "swift",
         "value-types",
@@ -9769,7 +9769,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "testing",
         "swift-testing",

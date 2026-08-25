@@ -33,6 +33,10 @@ GlassEffectContainer(spacing: 12) {
 }
 ```
 
+### Year two (WWDC 2026)
+
+- Adoption economics changed: on the 27-era SDKs, standard SwiftUI components pick up current Liquid Glass behavior automatically, including response to the new system-level tint control. The remaining adoption work concentrates in custom-drawn chrome and UIKit surfaces that bypass system materials — inventory those rather than re-auditing standard controls.
+
 ## Platform notes
 
 - iOS and iPadOS: tab bars and toolbars shift to floating glass; verify that content scrolls cleanly beneath them and that custom bottom bars do not double up the material.

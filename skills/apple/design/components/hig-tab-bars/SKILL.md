@@ -11,9 +11,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/tab-bars
     - https://developer.apple.com/design/human-interface-guidelines/sidebars
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/design/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 A tab bar gives people fast, persistent access to the top-level, peer sections of an app. In the 2026 design cycle it renders as a floating, inset Liquid Glass element that lets content flow beneath it. Use this skill to critique whether a tab bar is the right navigation model, whether its contents read as destinations, and whether it adapts well across devices.
@@ -34,6 +35,11 @@ A tab bar gives people fast, persistent access to the top-level, peer sections o
 - **Treat the search tab as a distinct role, not a regular destination.** In iOS 26 the search tab sits visually separated at the trailing edge and can expand into a search field; reserve it for genuine search, and don't mix in primary actions that masquerade as search.
 - **Design for the floating Liquid Glass bar.** The bar is inset, capsule-shaped, and translucent, and it can minimize on scroll to keep focus on content. Don't place critical content directly behind it where it could be obscured, and don't fight the system material with custom opaque backgrounds.
 - **Choose tabs vs sidebar vs hierarchy deliberately.** Tabs suit a few flat sections; a sidebar suits many sections or nested groups on wide layouts; hierarchical navigation suits drilling into a single section. Don't duplicate the same destinations in both a tab bar and a sidebar at once.
+
+### iOS 27 (WWDC 2026)
+
+- A prominent tab (`Tab(role: .prominent)` / `UITabBarController.prominentTabIdentifier`) visually separates the app's single most important action from ordinary tabs — reserve it for the action the app exists for, not the busiest tab.
+- Sidebars reach iPhone: the sidebar-adaptable tab bar is no longer iPad-only (`UITabBarControllerSidebar.preferredPlacement`), so information architectures with many sections can present as a sidebar on any size class where it earns its space.
 
 ## Platform notes
 

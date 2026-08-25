@@ -17,9 +17,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/testing
     - https://developer.apple.com/documentation/testing/migratingfromxctest
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/swift/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -33,6 +34,10 @@ Use when writing or restructuring unit tests for Swift code with Apple's Swift T
 - Parameterize with `@Test(arguments:)` to run one function across many inputs instead of copy-pasting cases; each argument set reports as its own case.
 - Group related tests in a `struct` or `actor` marked `@Suite`. A fresh suite instance is created per test, so store per-test setup in stored properties and tear down in `deinit` — no shared mutable state across tests.
 - Write `async`/`throws` tests directly; `await` the code under test and `try #require` to unwrap. Use traits like `.tags(...)`, `.disabled("reason")`, and `.timeLimit(...)` instead of commenting tests out.
+
+### WWDC 2026
+
+- Swift Testing gains XCTest interoperability: mixed targets run both frameworks side by side, making incremental migration the recommended path — migrate suite-by-suite instead of big-bang, and stop maintaining parallel target structures during the transition.
 
 ## Platform notes
 

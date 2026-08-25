@@ -11,9 +11,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/toolbars
     - https://developer.apple.com/documentation/TechnologyOverviews/liquid-glass
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/design/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -29,6 +30,11 @@ Use when designing or reviewing a toolbar — the bar of frequently used, screen
 - **Prefer clear SF Symbols; add labels when meaning is ambiguous.** Liquid Glass emphasizes symbol-based buttons for a cleaner bar, but never sacrifice comprehension — label or use a menu when an icon isn't self-evident, and don't mix labeled and icon-only buttons in the same tight group.
 - **Let one action lead.** Tint or use the prominent (glass-prominent) treatment for the single most important action (e.g. a confirmation) so it stands out; keep the rest neutral. Don't tint several items at once — it flattens hierarchy.
 - **Remove custom backgrounds and decoration.** Under the 26 design system, drop opaque fills and hairlines from custom bars; let the floating glass material and grouping express hierarchy, and let content scroll legibly beneath it.
+
+### iOS 27 (WWDC 2026)
+
+- Toolbars gain an explicit overflow model: assign `.visibilityPriority(_:)` so items collapse in a designed order as space shrinks, park permanently-secondary actions in `ToolbarOverflowMenu`, and pin the truly critical action trailing with `topBarPinnedTrailing`. Design the priority order deliberately — the system now enforces it instead of clipping arbitrarily.
+- Bars can auto-minimize on scroll (`toolbarMinimizeBehavior` in SwiftUI, `UINavigationItem.barMinimizeBehavior` in UIKit) — decide per-surface whether chrome should yield to content.
 
 ## Platform notes
 

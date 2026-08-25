@@ -11,9 +11,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/navigation-bars
     - https://developer.apple.com/design/human-interface-guidelines/searching
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/design/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # HIG Navigation Bars
@@ -36,6 +37,11 @@ Critique and shape the bar at the top of a navigable screen: its title, the back
 - **Let Liquid Glass and layout create separation, not borders.** Bars are now transparent and float above scrolling content, with a soft scroll-edge effect appearing only when content slides under them. Remove custom bar backgrounds, hairline dividers, and tint hacks; hierarchy should come from grouping and the material, not decoration.
 - **Place search where the thumb is, and make it look like search.** Prefer a dedicated search field or search role in the bottom bar for reachability on tall phones; a search field integrated into the navigation bar inherits correct appearance and behavior. Don't disguise an action as search, and don't bury search behind an unlabeled magnifier when discovery matters.
 - **Protect the safe areas and the tap targets.** Bar controls stay within the safe area and keep roughly 44pt touch targets; never crowd the title against items so tightly that labels truncate mid-word.
+
+### iOS 27 (WWDC 2026)
+
+- Navigation bars can minimize as content scrolls (`UINavigationItem.barMinimizeBehavior` with `barMinimizationSafeAreaAdjustment`; `toolbarMinimizeBehavior` in SwiftUI) — content-forward surfaces like readers should adopt it; task-dense surfaces where the title anchors context should not.
+- Bar items participate in the new visibility-priority system (`UIBarButtonItem.visibilityPriority`) so trailing items collapse predictably on narrow widths.
 
 ## Platform notes
 

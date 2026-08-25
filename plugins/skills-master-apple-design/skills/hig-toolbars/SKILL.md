@@ -17,6 +17,11 @@ Use when designing or reviewing a toolbar — the bar of frequently used, screen
 - **Let one action lead.** Tint or use the prominent (glass-prominent) treatment for the single most important action (e.g. a confirmation) so it stands out; keep the rest neutral. Don't tint several items at once — it flattens hierarchy.
 - **Remove custom backgrounds and decoration.** Under the 26 design system, drop opaque fills and hairlines from custom bars; let the floating glass material and grouping express hierarchy, and let content scroll legibly beneath it.
 
+### iOS 27 (WWDC 2026)
+
+- Toolbars gain an explicit overflow model: assign `.visibilityPriority(_:)` so items collapse in a designed order as space shrinks, park permanently-secondary actions in `ToolbarOverflowMenu`, and pin the truly critical action trailing with `topBarPinnedTrailing`. Design the priority order deliberately — the system now enforces it instead of clipping arbitrarily.
+- Bars can auto-minimize on scroll (`toolbarMinimizeBehavior` in SwiftUI, `UINavigationItem.barMinimizeBehavior` in UIKit) — decide per-surface whether chrome should yield to content.
+
 ## Platform notes
 
 iPhone toolbars are bottom-anchored and not user-customizable; iPad and Mac toolbars are top-anchored and **support reordering, grouping, and user customization** — design a sensible default set and overflow. On Mac, respect the title-bar/toolbar region and standard window controls. In watchOS, space is scarce: surface only one or two essential actions and rely on the navigation stack for the rest. tvOS favors focus-driven navigation over dense bars; keep toolbar actions minimal and focusable. In visionOS, controls float as a glass layer (often an ornament below the window) — keep the action set shallow and glanceable.

@@ -14,9 +14,9 @@ x-skills-master:
     - https://developer.apple.com/tutorials/instruments
     - https://developer.apple.com/documentation/os/ossignposter
     - https://developer.apple.com/documentation/os/recording-performance-data
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -50,6 +50,12 @@ func loadFeed() {
     renderCells()
 }
 ```
+
+### Xcode 27 (WWDC 2026)
+
+- New Swift Concurrency instrument: task scheduling, actor contention, and continuation waits on a timeline — the first purpose-built tool for diagnosing async performance rather than inferring it from Time Profiler gaps.
+- Run comparisons land in Instruments: diff two profiling runs to verify a fix actually moved the metric.
+- Device Hub centralizes device management for profiling across connected hardware.
 
 ## Platform notes
 

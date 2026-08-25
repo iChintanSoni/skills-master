@@ -17,6 +17,10 @@ Reach for this skill when critiquing a screen's text and icon treatment: judging
 - Pick a rendering mode deliberately and apply it consistently. Monochrome reads as neutral and typographic; hierarchical adds depth in a single hue; palette uses two or more deliberate colors; multicolor preserves a symbol's intrinsic colors. Mixing modes arbitrarily across one screen looks unintentional.
 - Use the system's symbol variants (outline versus fill, slash, enclosures) to signal state and selection, and align scale (small, medium, large) with surrounding type rather than resizing by hand.
 
+### iOS 27 (WWDC 2026)
+
+- SF Symbols 8 expands past 7,000 symbols across 9 weights and 3 scales, alongside refreshed system typography. Re-run symbol audits before commissioning custom glyphs — coverage gaps that justified custom art a year ago have likely closed.
+
 ## Platform notes
 
 - iOS and iPadOS: text styles and Dynamic Type are the baseline expectation; verify the largest accessibility sizes on the smallest target. SF Symbols are first-class and should track the label font.
