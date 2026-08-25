@@ -18,7 +18,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftdata/preserving-your-apps-model-data-across-launches
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -46,7 +46,7 @@ SwiftData requires iOS 17 / iPadOS 17 / macOS 14 / watchOS 10 / tvOS 17 / vision
 - Heavy work inside a `@Model` computed property runs on every access; precompute and store the value instead.
 - Sharing one `ModelContext` across threads is unsafe; pass model IDs across actor boundaries and refetch.
 
-## Open question
+## Choosing SwiftData vs alternatives
 
 Whether to use SwiftData at all versus Core Data or a hand-rolled store is a genuine tradeoff, not a settled default. That decision lives in `choosing-persistence`, which weighs maturity, CloudKit needs, and migration cost. This skill assumes SwiftData has already been chosen.
 

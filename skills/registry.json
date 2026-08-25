@@ -102,7 +102,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "app-intents",
         "siri",
@@ -2163,7 +2163,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "custom-layout",
@@ -2251,7 +2251,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "gestures",
@@ -3700,7 +3700,7 @@
         "ipados"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "app-clips",
         "focused-task",
@@ -3762,7 +3762,7 @@
         "watchos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "apple-pay",
         "payments",
@@ -8035,7 +8035,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "navigation",
@@ -8824,7 +8824,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swift",
         "result-builder",
@@ -9673,7 +9673,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftdata",
         "persistence",

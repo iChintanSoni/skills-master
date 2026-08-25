@@ -53,7 +53,7 @@ enum Route: Hashable, Codable { case detail(id: String), settings }
 - **Documentation:** [navigationDestination(for:destination:)](https://developer.apple.com/documentation/swiftui/view/navigationdestination(for:destination:))
 - **Documentation:** [Supporting universal links in your app](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app)
 - **WWDC:** [The SwiftUI cookbook for navigation (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10054/)
-- **Sample Code:** [Bringing robust navigation structure to your SwiftUI app](https://developer.apple.com/documentation/swiftui/bringing_robust_navigation_structure_to_your_swiftui_app)
+- **Sample Code:** [Bringing robust navigation structure to your SwiftUI app](https://developer.apple.com/documentation/swiftui/bringing-robust-navigation-structure-to-your-swiftui-app)
 
 ## See also
 

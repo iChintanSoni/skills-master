@@ -17,7 +17,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/viewbuilder
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -60,7 +60,7 @@ Result builders are a pure language feature (SE-0289, with `buildPartialBlock` a
 - Treating `#Predicate` or `#Expression` as result builders and reaching for `buildOptional` and friends, which do not exist there.
 - Over-overloading `buildExpression`, which can blow up type-checking time and produce ambiguous-overload errors; keep the input types few and unambiguous.
 
-## Open question
+## Tradeoff: buildPartialBlock vs fixed-arity overloads
 
 When components are generic over captured type parameters, you can model a block either as nested `buildPartialBlock` folds that thread an accumulated tuple type, or as a wide family of fixed-arity `buildBlock` overloads. `buildPartialBlock` scales linearly in declarations and is what the standard library chose for `RegexBuilder`, but it produces deeply nested types that can lengthen compile times and worsen error messages; explicit `buildBlock` overloads cap nesting and give cleaner diagnostics at the cost of a combinatorial number of declarations and a hard upper bound on block size. There is no single right answer: weigh expected block width, capture-arity needs, and your tolerance for compile-time cost.
 
