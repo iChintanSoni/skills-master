@@ -1,4 +1,4 @@
-import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
@@ -138,5 +138,44 @@ describe("install lifecycle", () => {
     expect(has(CLAUDE)).toBe(false);
     expect(has(AGENTS)).toBe(false);
     expect(has(LOCK)).toBe(false);
+  });
+});
+
+describe("error-handling honesty", () => {
+  it("remove --target on a target the skill is not installed to removes nothing", async () => {
+    await addCommand({ cwd: dir, names: [NAME], targets: ["claude"], content: CONTENT_ROOT });
+    const res = removeCommand({ cwd: dir, names: [NAME], targets: ["cursor"] });
+    expect(res.removed).toEqual([]);
+    expect(res.missing).toEqual([NAME]);
+    expect(has(CLAUDE)).toBe(true); // untouched
+    const lock = JSON.parse(read(LOCK));
+    expect(lock.skills[NAME]).toBeDefined();
+  });
+
+  it("a broken skill upstream is a load failure, not a deletion", async () => {
+    await install();
+    // Copy the fixture content and corrupt the skill's frontmatter.
+    const badContent = join(dir, "bad-content");
+    cpSync(CONTENT_ROOT, badContent, { recursive: true });
+    const skillMd = join(badContent, "testdomain/code/fixtures", NAME, "SKILL.md");
+    writeFileSync(skillMd, "---\nname: 42\n---\nbroken", "utf8");
+
+    const res = await updateCommand({ cwd: dir, content: badContent });
+    expect(res.skipped).toEqual([NAME]);
+    expect(res.updated).toEqual([]);
+  });
+
+  it("a nonexistent --content directory is an error, not an empty catalog", async () => {
+    await expect(
+      addCommand({ cwd: dir, names: [NAME], targets: ["claude"], content: join(dir, "nope") }),
+    ).rejects.toThrow(/--content directory not found/);
+  });
+
+  it("a corrupt config names the file instead of dumping a raw parse error", async () => {
+    writeFileSync(join(dir, "skills-master.json"), "{ not json", "utf8");
+    await expect(install()).rejects.toThrow(/skills-master\.json is not valid JSON/);
+
+    writeFileSync(join(dir, "skills-master.json"), JSON.stringify({ commit: "yes" }), "utf8");
+    await expect(install()).rejects.toThrow(/skills-master\.json is invalid at "commit"/);
   });
 });

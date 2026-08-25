@@ -33,6 +33,11 @@ export function removeCommand(opts: RemoveOptions): RemoveResult {
     const targets = (
       opts.targets?.length ? opts.targets : (Object.keys(locked.emitted) as TargetId[])
     ).filter((t) => locked.emitted[t]);
+    if (targets.length === 0) {
+      log.warn(`"${name}" is not installed to ${opts.targets?.join(", ")} — nothing to remove.`);
+      missing.push(name);
+      continue;
+    }
 
     const wholeRemoved: string[] = [];
     for (const t of targets) {

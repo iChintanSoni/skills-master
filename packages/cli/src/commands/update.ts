@@ -1,6 +1,6 @@
 import { resolvePaths } from "../schema/projectConfig";
 import type { ParsedSkill, TargetId } from "../types";
-import { resolveContent } from "../content/source";
+import { SkillNotFoundError, resolveContent } from "../content/source";
 import { diskHash, installSkill, sourceHashOf } from "../core/install";
 import { loadConfigOrDefault, loadLockfile, saveLockfile } from "../core/project";
 import type { ConflictChoice } from "../core/writer";
@@ -51,8 +51,14 @@ export async function updateCommand(opts: UpdateOptions): Promise<UpdateResult> 
     let skill: ParsedSkill;
     try {
       skill = content.loadSkill(name);
-    } catch {
-      log.warn(`"${name}" no longer exists in the content library.`);
+    } catch (err) {
+      // Only an actual absence means "removed upstream" — a parse or I/O
+      // failure must not masquerade as a deletion.
+      if (err instanceof SkillNotFoundError) {
+        log.warn(`"${name}" no longer exists in the content library.`);
+      } else {
+        log.error(`Failed to load "${name}": ${err instanceof Error ? err.message : String(err)}`);
+      }
       skipped.push(name);
       continue;
     }
