@@ -4,6 +4,7 @@ import { log } from "../util/log";
 
 export interface DoctorOptions {
   cwd: string;
+  json?: boolean;
 }
 
 export interface DoctorReport {
@@ -16,17 +17,39 @@ export function doctorCommand(opts: DoctorOptions): DoctorReport {
   const note = (msg: string) => problems.push(msg);
 
   const cfg = loadConfig(opts.cwd);
-  if (!cfg) {
-    log.warn("No skills-master.json found — run `skills-master init`.");
-  } else {
-    log.info(`Config targets: ${cfg.targets.length ? cfg.targets.join(", ") : "(auto-detect)"}`);
-  }
-
   const lock = loadLockfile(opts.cwd);
   const diagnoses = diagnoseInstalled(opts.cwd, lock);
+
+  // `--json` must stay parseable, so none of the human-facing lines are printed.
+  // The exit-code contract is unchanged: `ok` still drives it.
+  const emit = (report: DoctorReport): DoctorReport => {
+    if (!opts.json) return report;
+    log.plain(
+      JSON.stringify(
+        {
+          ok: report.ok,
+          problems: report.problems,
+          skills: diagnoses,
+          configuredTargets: cfg?.targets ?? [],
+        },
+        null,
+        2,
+      ),
+    );
+    return report;
+  };
+
+  if (!opts.json) {
+    if (!cfg) {
+      log.warn("No skills-master.json found — run `skills-master init`.");
+    } else {
+      log.info(`Config targets: ${cfg.targets.length ? cfg.targets.join(", ") : "(auto-detect)"}`);
+    }
+  }
+
   if (diagnoses.length === 0) {
-    log.info("No skills installed.");
-    return { problems, ok: true };
+    if (!opts.json) log.info("No skills installed.");
+    return emit({ problems, ok: true });
   }
 
   for (const skill of diagnoses) {
@@ -45,11 +68,13 @@ export function doctorCommand(opts: DoctorOptions): DoctorReport {
     }
   }
 
-  if (problems.length === 0) {
-    log.success(`All ${diagnoses.length} installed skill(s) look healthy.`);
-  } else {
-    for (const p of problems) log.warn(p);
-    log.plain(`\n${problems.length} problem(s) found.`);
+  if (!opts.json) {
+    if (problems.length === 0) {
+      log.success(`All ${diagnoses.length} installed skill(s) look healthy.`);
+    } else {
+      for (const p of problems) log.warn(p);
+      log.plain(`\n${problems.length} problem(s) found.`);
+    }
   }
-  return { problems, ok: problems.length === 0 };
+  return emit({ problems, ok: problems.length === 0 });
 }

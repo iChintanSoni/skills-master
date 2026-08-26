@@ -62,6 +62,7 @@ export async function listCommand(opts: ListOptions): Promise<RegistryEntry[]> {
 
 export interface SearchOptions extends CatalogQuery {
   query: string;
+  json?: boolean;
 }
 
 export async function searchCommand(opts: SearchOptions): Promise<RegistryEntry[]> {
@@ -72,6 +73,10 @@ export async function searchCommand(opts: SearchOptions): Promise<RegistryEntry[
       [s.name, s.description, s.domain, s.category, s.class, ...s.tags].join(" "),
     ).includes(q),
   );
+  if (opts.json) {
+    log.plain(JSON.stringify(hits, null, 2));
+    return hits;
+  }
   if (hits.length === 0) {
     log.info(`No matches for "${opts.query}".`);
     return hits;
@@ -87,12 +92,34 @@ export async function searchCommand(opts: SearchOptions): Promise<RegistryEntry[
 export interface ViewOptions extends CatalogQuery {
   name: string;
   raw?: boolean;
+  json?: boolean;
 }
 
 export async function viewCommand(opts: ViewOptions): Promise<void> {
   const content = await resolveContent({ content: opts.content, ref: opts.ref, cwd: opts.cwd });
   const skill = content.loadSkill(opts.name);
   const xm = skill.frontmatter["x-skills-master"];
+  if (opts.json) {
+    // Everything `view` prints, plus the body — one call for a scripted reader.
+    log.plain(
+      JSON.stringify(
+        {
+          name: skill.name,
+          description: skill.frontmatter.description,
+          globs: skill.frontmatter.globs ?? [],
+          tags: skill.frontmatter.tags ?? [],
+          ...xm,
+          resources: Object.entries(skill.resources)
+            .filter(([, v]) => v)
+            .map(([k]) => k),
+          body: skill.body,
+        },
+        null,
+        2,
+      ),
+    );
+    return;
+  }
   if (opts.raw) {
     log.plain(skill.body);
     return;
