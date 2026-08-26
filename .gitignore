@@ -22,3 +22,6 @@ scripts/dev/
 .DS_Store
 *.log
 npm-debug.log*
+
+# npm auth is per-machine / per-runner, never committed
+.npmrc

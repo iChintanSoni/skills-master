@@ -35,6 +35,17 @@ jobs:
         if: always()
         run: node scripts/coverage-summary.mjs >> "$GITHUB_STEP_SUMMARY"
 
+  # The release workflow silently stopped publishing for five merges because a
+  # credential line used single quotes, so `${NODE_AUTH_TOKEN}` never expanded.
+  # shellcheck flags exactly that (SC2016) — nothing was running it. Workflows
+  # only execute on main, so a linter is the one chance to catch them in review.
+  workflows:
+    name: Lint GitHub Actions workflows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: raven-actions/actionlint@v2
+
   content:
     name: Lint skills + registry/taxonomy/marketplace drift
     runs-on: ubuntu-latest
