@@ -47,8 +47,18 @@ Because `pnpm cli` runs with cwd `packages/cli`, local content is addressed as `
 pnpm cli new apple/code/app-frameworks/swiftui-grids --content ../../skills
 pnpm cli view swiftui-navigation --content ../../skills
 node scripts/check-links.mjs skills            # report-only link checker (--strict to fail)
-pnpm exec tsx scripts/crawl/bin.ts --fetch     # report-only staleness/coverage crawl
+node scripts/check-links.mjs skills --json=scripts/crawl/reports/links.json
+pnpm crawl                                     # report-only staleness/coverage crawl
+pnpm crawl -- --fetch                          # …also snapshot upstream vendor topics
+pnpm crawl:report                              # render the JSON reports as Markdown
 ```
+
+The weekly crawl (`.github/workflows/crawl.yml`) runs the crawl plus the link check, renders
+`scripts/crawl/report.mjs` into the **job summary**, and rewrites a single **`crawl-report`-labelled
+issue** so the repo carries one live dashboard rather than a stack of weekly duplicates. The raw
+JSON stays as a run artifact. The link check is deliberately **not** `--strict` there: vendor
+hosts rate-limit under concurrency and return one-off 404s for live URLs, so a red weekly run
+would just train everyone to ignore it. Re-check any reported dead link by hand before editing.
 
 The CLI auto-resolves content in priority order: `--content` → `SKILLS_MASTER_CONTENT` → walk upward for this repo (`package.json` name `skills-master-monorepo` + a `skills/` dir) → remote fetch via `giget`. So inside this repo `--content` is usually optional; the root scripts pass it because their cwd is `packages/cli`.
 

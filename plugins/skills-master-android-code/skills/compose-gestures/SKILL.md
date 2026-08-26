@@ -70,7 +70,7 @@ fun PinchZoomImage(
 
 ## References
 
-- **Documentation:** [Gestures in Compose](https://developer.android.com/develop/ui/compose/touch-input/gestures)
+- **Documentation:** [Gestures in Compose](https://developer.android.com/develop/ui/compose/touch-input/pointer-input/understand-gestures)
 - **API Reference:** [PointerInputScope](https://developer.android.com/reference/kotlin/androidx/compose/ui/input/pointer/PointerInputScope)
 
 ## See also

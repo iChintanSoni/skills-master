@@ -2,7 +2,7 @@
 // Extracts Apple/Swift/Android/Kotlin documentation links from every SKILL.md
 // (frontmatter + body) and HEAD-checks them, throttled. Reports non-2xx/3xx.
 //
-//   node scripts/check-links.mjs [skillsRoot=skills] [--strict] [--all]
+//   node scripts/check-links.mjs [skillsRoot=skills] [--strict] [--all] [--json=<path>]
 //
 // Notes:
 //  - developer.apple.com and developer.android.com render docs as SPAs that
@@ -10,13 +10,15 @@
 //    not sufficient. This catches hard 404s/DNS/typo'd hosts, not every stale
 //    anchor.
 //  - Default exit code is 0 (report-only). Pass --strict to fail on dead links.
-import { readFileSync, readdirSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 
 const args = process.argv.slice(2);
 const strict = args.includes("--strict");
 const checkAll = args.includes("--all");
 const root = args.find((a) => !a.startsWith("--")) ?? "skills";
+// Machine-readable output, so the weekly crawl can fold results into its report.
+const jsonPath = args.find((a) => a.startsWith("--json="))?.slice("--json=".length);
 
 const HOST_RE =
   /^https:\/\/(developer\.apple\.com|support\.apple\.com|swift\.org|github\.com\/apple|developer\.android\.com|android-developers\.googleblog\.com|kotlinlang\.org|m3\.material\.io|developer\.chrome\.com|source\.android\.com|github\.com\/android|play\.google\.com|support\.google\.com|developers\.google\.com|ai\.google\.dev)\//;
@@ -86,4 +88,21 @@ async function worker() {
 await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
 console.log(`\n${dead.length} dead / ${links.length} links.`);
+
+if (jsonPath) {
+  mkdirSync(dirname(jsonPath), { recursive: true });
+  writeFileSync(
+    jsonPath,
+    `${JSON.stringify(
+      {
+        checked: links.length,
+        dead: dead.map((d) => ({ ...d, files: [...(linkToFiles.get(d.url) ?? [])] })),
+      },
+      null,
+      2,
+    )}\n`,
+  );
+  console.log(`Wrote ${jsonPath}`);
+}
+
 if (strict && dead.length) process.exit(1);
