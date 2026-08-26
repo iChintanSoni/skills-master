@@ -16,7 +16,8 @@
     "cli": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts",
     "skills:lint": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts lint --content ../../skills",
     "skills:registry": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts registry build --content ../../skills",
-    "skills:marketplace": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../.."
+    "skills:marketplace": "pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts marketplace build --content ../../skills --out ../..",
+    "test:coverage": "pnpm --filter @ichintansoni/skills-master test:coverage"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.10",

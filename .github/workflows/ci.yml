@@ -27,7 +27,13 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec biome ci .
       - run: pnpm --filter @ichintansoni/skills-master typecheck
-      - run: pnpm --filter @ichintansoni/skills-master test
+      - run: pnpm --filter @ichintansoni/skills-master test:coverage
+      # Coverage is reported, not gated: a threshold that fails the build tends
+      # to get met with tests written for the number. Putting it in the job
+      # summary keeps the gaps visible on every PR instead.
+      - name: Coverage summary
+        if: always()
+        run: node scripts/coverage-summary.mjs >> "$GITHUB_STEP_SUMMARY"
 
   content:
     name: Lint skills + registry/taxonomy/marketplace drift

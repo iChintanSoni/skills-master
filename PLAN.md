@@ -297,9 +297,23 @@ restated against that total.
   **Every new assertion was mutation-checked**: breaking `doctor`'s missing-file branch,
   its `hasBlock` branch, `update`'s `userEdited` guard and `init`'s `--force` guard each
   failed exactly the test that claims to cover it, and nothing else.
-- [ ] **8.2 Unit gaps + coverage reporting (M).** `catalog` filters/`--json`,
+- [x] **8.2 Unit gaps + coverage reporting (M).** `catalog` filters/`--json`,
   `content/source.ts` resolution chain, `markers.ts`, `project.ts` round-trip,
   `parseTargets`; add `@vitest/coverage-v8` with a CI summary so gaps stay visible.
+  Coverage landed first, so the work was aimed at measured holes rather than the list
+  above: **79.61% → 96.01% statements, 72.89% → 87.55% branches, 83.76% → 100% functions**,
+  107 → 181 tests. Six new files — `catalog` (was 0%), `content/source` (45% → 87%),
+  `markers` (now 100%), `project` round-trip, `parseTargets`, and `add`'s token expansion
+  (74% → 96%), which coverage flagged as the biggest hole and the plan's list did not
+  mention. `new`/`registry build`/`lint` command wrappers were also 0% and are now covered.
+  `parseTargets` moved out of `bin.ts` into `src/util/targets.ts` — validating a flag is
+  real behavior, and it was untestable where it sat.
+  **Coverage is reported, never gated**: a threshold tends to get met with tests written
+  for the number. `scripts/coverage-summary.mjs` writes a table plus the ten least-covered
+  files to the CI job summary on every PR. Also aligned `vitest` and `@vitest/coverage-v8`
+  (4.1.10 vs 4.1.11 was emitting a mixed-version warning).
+  Remaining thin spots, all visible in the summary: `writer.ts` 89%, `update.ts` 89%,
+  `discover.ts` 83%, `remove.ts` 92%.
 
 ## Phase 9 — CLI UX
 
