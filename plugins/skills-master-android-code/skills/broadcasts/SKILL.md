@@ -113,6 +113,10 @@ Context-registered receivers without an explicit export flag throw at runtime. U
 
 No new broadcast restrictions in this release, but health restrictions from the Android 15 foreground service changes indirectly reduce receiver lifetime in background processes. Confirm your use-case does not rely on a backgrounded process staying alive to receive sticky broadcasts.
 
+### Android 17 (API 37)
+
+SMS OTP protection withholds `SMS_RECEIVED_ACTION` for messages containing one-time passcodes for three hours after receipt — WebOTP-format messages are protected for all apps, and standard SMS OTPs too once you target 37 (SMS provider queries are filtered for the same window). Receivers that parse OTPs out of incoming SMS silently stop seeing them; migrate to the SMS Retriever or SMS User Consent APIs. Registration, export-flag, and implicit-broadcast rules are otherwise unchanged at 17.
+
 ## Pitfalls
 
 - **Forgetting to unregister** — leaks the receiver and the enclosing Activity context, causing memory leaks and potential `IntentReceiver not registered` crashes on re-registration.

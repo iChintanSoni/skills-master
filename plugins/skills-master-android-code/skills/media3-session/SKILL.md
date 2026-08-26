@@ -115,6 +115,8 @@ class PlaybackService : MediaSessionService() {
 - **Android Auto:** your service must declare `<meta-data android:name="com.google.android.gms.car.application" ...>` and an automotive app description XML. `onAddMediaItems` must resolve IDs synchronously-enough — use `Futures.immediateFuture` where possible.
 - **Wear OS:** Use `MediaController` over the Wear data layer; the session service runs on the phone.
 - **Background restrictions:** Starting from API 31, the system may limit wake-locks. Keep the foreground service alive during active playback; release promptly when playback ends by calling `stopSelf()` in a `Player.Listener.onPlaybackStateChanged` when state is `STATE_ENDED` and you have no queued items.
+- **Android 17 (API 37) background audio hardening:** apps targeting 37 may only play audio, request focus, or change volume from the background while a foreground service with while-in-use capabilities is running — outside that state, playback and volume calls fail silently and focus requests return `AUDIOFOCUS_REQUEST_FAILED`. The `MediaSessionService` + `mediaPlayback` architecture in this skill is the compliant path; route every playback control through the session service and never spin up ad-hoc background players.
+- **Media3 current releases:** ExoPlayer's scrubbing mode (now stable) optimizes rapid successive seeks while the user drags a seek bar — enable it on the service-owned player during drag gestures (surface it to controller UIs via a custom session command if needed). CodecDB-backed codec selection is also stable and needs no session-layer changes.
 
 ## Pitfalls
 

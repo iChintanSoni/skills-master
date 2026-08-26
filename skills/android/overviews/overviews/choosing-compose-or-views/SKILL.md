@@ -12,9 +12,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/develop/ui
     - https://developer.android.com/blog/posts/android-ui-development-is-compose-first
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: contested
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -26,6 +26,7 @@ Reach for this skill when you need to make a conscious choice about which UI sys
 ### Jetpack Compose — the default for new work
 
 - Start every new app and every new screen in Compose unless a specific blocker applies.
+- Compose-first is Google's official policy: the View toolkit is in maintenance mode — it still receives fixes, but new components, adaptive APIs, and tooling investment land in Compose only. Factor this into any "stay on Views" decision.
 - Compose handles adaptive layouts (phones, tablets, foldables, desktops) cleanly through `WindowSizeClass`, `AdaptiveNavigationSuite`, and the Canonical Layouts catalogue.
 - State-driven, unidirectional data flow reduces the category of bugs that stem from view-state drift; no more `notifyDataSetChanged()` footguns.
 - Material 3 components are native Compose; achieving full M3 fidelity in Views requires significant manual work.
@@ -102,7 +103,7 @@ fun LegacyChartCard(data: List<Float>) {
 
 **Minimum API** — Compose requires `minSdk 21`; if your app targets devices below API 21, Views remain mandatory for those code paths.
 
-**Baseline Profiles** — Compose startup and jank can be significantly reduced with Baseline Profiles (generated via Macrobenchmark). This is Compose-specific overhead that Views do not carry; account for it in performance-sensitive shipping apps.
+**Baseline Profiles** — Compose startup and jank can be significantly reduced with Baseline Profiles (generated via Macrobenchmark). As of Compose 1.12 (BOM 2026.08.00), time-to-initial-display reaches parity with equivalent View screens, so startup cost is no longer a reason to prefer Views — profiles remain worthwhile for jank and warm-up in performance-sensitive apps.
 
 ## Pitfalls
 

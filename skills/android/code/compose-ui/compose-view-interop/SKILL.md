@@ -9,14 +9,14 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: []
   sources:
     - https://developer.android.com/develop/ui/compose/migrate/interoperability-apis
     - https://developer.android.com/develop/ui/compose/migrate
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -26,7 +26,7 @@ x-skills-master:
 - A screen is mostly Compose but a single complex View cannot yet be ported.
 - You need to share `ViewModel` state or `Flow`s across the Compose/View boundary in a lifecycle-safe way.
 
-Prefer a full migration over long-lived interop — interop adds complexity. Use it as a bridge, not a permanent state.
+Prefer a full migration over long-lived interop — interop adds complexity. Use it as a bridge, not a permanent state: Google's guidance is officially Compose-first and the View toolkit is in maintenance mode, so new UI capability lands only on the Compose side of the boundary.
 
 ---
 

@@ -129,7 +129,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "compose",
         "migration",
@@ -304,7 +304,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "alarms",
         "alarmmanager",
@@ -438,7 +438,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "views",
         "xml",
@@ -952,7 +952,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "autofill",
         "forms",
@@ -1124,7 +1124,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "bluetooth",
         "ble",
@@ -1152,7 +1152,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "broadcasts",
         "broadcastreceiver",
@@ -1428,7 +1428,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "workmanager",
         "background",
@@ -1457,7 +1457,7 @@
         "large-screen"
       ],
       "stability": "contested",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "views",
@@ -1485,7 +1485,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "coroutines",
         "flow",
@@ -1573,7 +1573,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "adaptive",
         "large-screen",
@@ -1689,7 +1689,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "ml",
         "ai",
@@ -2016,7 +2016,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "ci-cd",
         "gradle",
@@ -2136,7 +2136,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "accessibility",
         "compose",
@@ -2225,7 +2225,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "foundation",
@@ -2257,7 +2257,7 @@
         "xr"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "jetpack-compose",
@@ -2283,7 +2283,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "compose",
         "gestures",
@@ -2341,7 +2341,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "images",
@@ -2368,7 +2368,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "compose",
         "layout",
@@ -2397,7 +2397,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "compose",
         "lazy-list",
@@ -2426,7 +2426,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "modifiers",
@@ -2532,7 +2532,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "compose",
         "state",
@@ -2559,7 +2559,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "text",
@@ -2615,7 +2615,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "compose",
         "material3",
@@ -2671,7 +2671,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "interop",
@@ -2699,7 +2699,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose",
         "insets",
@@ -2729,7 +2729,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "content-provider",
         "contentresolver",
@@ -2989,7 +2989,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "android",
         "stability",
@@ -3047,7 +3047,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "auth",
         "passkeys",
@@ -3422,7 +3422,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "foreground-service",
         "service-types",
@@ -3479,7 +3479,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "gemini-nano",
         "aicore",
@@ -3505,7 +3505,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "gradle",
         "build",
@@ -5574,7 +5574,7 @@
         "chromeos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "keyboard",
         "stylus",
@@ -5796,7 +5796,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "networking",
         "ktor",
@@ -5993,7 +5993,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "m3",
         "design",
@@ -6020,7 +6020,7 @@
         "glasses"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "glasses",
         "xr",
@@ -6050,7 +6050,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6132,7 +6132,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6160,7 +6160,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "m3",
         "design",
@@ -6188,7 +6188,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "m3",
         "design",
@@ -6559,7 +6559,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -6898,7 +6898,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "loading",
         "progress",
@@ -6926,7 +6926,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -7130,7 +7130,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "m3",
         "design",
@@ -7186,7 +7186,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "m3",
         "design",
@@ -7718,7 +7718,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "performance",
         "benchmarking",
@@ -7861,7 +7861,7 @@
         "android-tv"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "media3",
         "mediasession",
@@ -7977,7 +7977,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "ml-kit",
         "machine-learning",
@@ -8303,7 +8303,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "repository",
         "offline-first",
@@ -8388,7 +8388,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "notifications",
         "notificationcompat",
@@ -8977,7 +8977,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "networking",
         "retrofit",
@@ -9005,7 +9005,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "testing",
         "robolectric",
@@ -10551,7 +10551,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "system-ui",
         "status-bar",
@@ -10924,7 +10924,7 @@
         "android"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "testing",
         "junit",
@@ -11345,7 +11345,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "workmanager",
         "background-work",
@@ -11434,7 +11434,7 @@
         "xr"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "xr",
         "arcore",
@@ -11460,7 +11460,7 @@
         "xr"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "xr",
         "compose",
@@ -11483,13 +11483,13 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers building for Android XR glasses with Jetpack Compose and the Glimmer display model — lightweight glanceable surfaces, constrained rendering budgets, audio and voice interaction, and hands-free UX patterns for AI/display glasses. Use when targeting XR glasses hardware with Jetpack XR SDK, authoring Glimmer panels, designing hands-free or audio-first flows, or adapting existing Compose UI for a constrained, head-worn display.",
+      "description": "Covers building for Android XR glasses with Jetpack Compose Glimmer — the Compose UI toolkit for display glasses — plus Jetpack Projected lifecycle, audio and voice interaction, and hands-free UX patterns for AI/display glasses. Use when targeting XR glasses hardware with the Jetpack XR SDK, authoring Glimmer UI, designing hands-free or audio-first flows, or adapting existing Compose UI for a constrained, head-worn display.",
       "platforms": [
         "xr",
         "glasses"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "xr",
         "glasses",
@@ -11517,7 +11517,7 @@
         "xr"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "xr",
         "scenecore",

@@ -130,6 +130,7 @@ fun `results flow emits filtered list then completes`() = runTest {
 - Robolectric allows a subset of Android framework classes to run on the JVM. Use it only for code where a real `Context` is unavoidable but the logic belongs in a local test (e.g. `SharedPreferences` wrappers, simple `Intent` construction). Do not use it as a substitute for proper injection.
 - `kotlinx-coroutines-test` version must match `kotlinx-coroutines-core`. Use the Kotlin BOM or pin both to the same version to avoid subtle `TestCoroutineScheduler` conflicts.
 - MockK 1.13+ has first-class support for Kotlin 2.x value classes and `inline` functions; update if you see `ClassCastException` in mocks of value-class parameters.
+- The Android 17 era toolchain floor is compileSdk 37 with AGP 9.1.x. Neither ships unit-testing API changes — moving to it is a recompile-and-rerun bump for local JVM suites; the JUnit 4 default and the coroutines/Turbine patterns here carry over unchanged.
 
 ## Pitfalls
 

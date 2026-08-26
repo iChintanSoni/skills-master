@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/topics/text/autofill
     - https://developer.android.com/guide/topics/text/autofill-optimize
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

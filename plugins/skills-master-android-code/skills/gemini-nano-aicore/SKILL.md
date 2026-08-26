@@ -106,6 +106,12 @@ sealed interface SummaryUiState {
 - Prefer cloud when: the task requires broad world knowledge, multi-turn conversation, code generation, multilingual output beyond English, or the device does not support Gemini Nano.
 - Consider a hybrid: run the availability check at startup, use Gemini Nano when available, fall back to a cloud endpoint transparently.
 
+### Android 17 era (2026)
+
+- The ML Kit GenAI surface now extends past the four task APIs (I/O '26): the Prompt API (beta) runs open-ended prompts on Gemini Nano, with Structured Output constraining responses to app-defined object classes and Prefix Caching reusing intermediate model state for a recurring prompt prefix.
+- Gemini Nano 4 is previewable through the AICore Developer Preview program ahead of flagship rollout later in 2026 — keep model-version assumptions out of app code.
+- AICore enforces per-app quotas and permits GenAI inference only while the app is the top foreground app; do not architect background inference on these APIs.
+
 ## Platform notes
 
 - AICore and the ML Kit GenAI APIs require Android 16 (API 36). The device must also meet hardware criteria (NPU, sufficient RAM). Eligible device lists are maintained by Google Play Services.

@@ -10,7 +10,7 @@ description: Covers bidirectional Compose/View interoperability — AndroidView 
 - A screen is mostly Compose but a single complex View cannot yet be ported.
 - You need to share `ViewModel` state or `Flow`s across the Compose/View boundary in a lifecycle-safe way.
 
-Prefer a full migration over long-lived interop — interop adds complexity. Use it as a bridge, not a permanent state.
+Prefer a full migration over long-lived interop — interop adds complexity. Use it as a bridge, not a permanent state: Google's guidance is officially Compose-first and the View toolkit is in maintenance mode, so new UI capability lands only on the Compose side of the boundary.
 
 ---
 

@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/develop/ui/compose/touch-input
     - https://developer.android.com/develop/ui/compose/touch-input/stylus-input
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -123,6 +123,8 @@ class EditorActivity : ComponentActivity() {
 **Stylus low-latency (API 33+):** `MotionEvent.FLAG_CANCELED` and the `TOOL_TYPE_PALM` tool type are available since API 33. `FrontBufferRenderer` requires `androidx.graphics:graphics-core:1.0+`. Motion prediction via `androidx.input:input-motionprediction` is API-level-agnostic (library handles fallback).
 
 **Compose BOM 2026.05.00:** `hoverable`, `contextMenuArea`, and `PointerType` are stable. `PointerButtons` secondary detection is stable since Compose Foundation 1.6.
+
+**Android 17 (API 37):** Orientation, aspect-ratio, and resizability locks are ignored on sw≥600dp displays with no opt-out once you target 37, so keyboard-, mouse-, and stylus-driven surfaces must tolerate free window resizing on tablets and desktop-class windows — never gate hardware-input features on a locked orientation. Separately (all apps), touchpads under `View.requestPointerCapture()` now deliver relative motion like a captured mouse; call the new `requestPointerCapture(int)` overload with `POINTER_CAPTURE_MODE_ABSOLUTE` if you need raw absolute finger positions.
 
 ## Pitfalls
 

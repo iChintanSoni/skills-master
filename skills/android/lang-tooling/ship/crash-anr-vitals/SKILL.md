@@ -12,9 +12,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/topic/performance/vitals
     - https://developer.android.com/topic/performance/vitals/anr
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -99,6 +99,8 @@ class OrderViewModel(
 
 - Integrate a crash SDK (Crashlytics, Sentry) early; both automatically capture uncaught exceptions and ANR-like freezes via `ApplicationExitInfo`.
 - Use `ActivityManager.getHistoricalProcessExitReasons()` (API 30+) to programmatically retrieve exit reasons, including ANR, crash, and OOM, on next launch.
+- On Android 17 (API 37), RAM-based per-app memory limits surface kills as exit info citing `MemoryLimiter:AnonSwap` — triage these as memory-pressure terminations, not crashes, when clustering exit reasons.
+- Android 17's `ProfilingManager` adds `TRIGGER_TYPE_OOM` and `TRIGGER_TYPE_ANOMALY` triggers that capture a heap dump at the moment of failure — register them to get actionable memory diagnostics from production devices without ADB.
 - Set a custom `Thread.setDefaultUncaughtExceptionHandler` only when you genuinely need pre-crash logic (flush logs, write breadcrumbs); always re-throw or call the previous handler to avoid suppressing crashes.
 - Tag crashes with user-visible context (screen name, feature flag values) as custom keys so clusters in the dashboard map directly to code paths.
 

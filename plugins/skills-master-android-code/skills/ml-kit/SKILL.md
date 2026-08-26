@@ -115,6 +115,10 @@ Smart Reply works on a `List<TextMessage>` representing a conversation. Messages
 - Use `FakeImageProxy` (from `camera-testing`) or synthetic `Bitmap`-backed `InputImage` instances in unit tests.
 - For integration tests, provide a known test image from `androidTest/assets` and assert on the detector output.
 
+### Android 17 era (2026)
+
+- ML Kit now also hosts the GenAI APIs (I/O '26): Gemini Nano-backed Summarization, Proofreading, Rewriting, and Image Description (beta), an open-ended Prompt API (beta), and Speech Recognition (alpha, API 31+). Device support is far narrower than the classic vision/language APIs — gate on availability and see `gemini-nano-aicore` for integration.
+
 ## Platform notes
 
 **Large screens and foldables**

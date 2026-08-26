@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/develop/xr/jetpack-xr-sdk
     - https://developer.android.com/develop/xr/jetpack-xr-sdk
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -107,6 +107,11 @@ class XrSceneViewModel(application: Application) : AndroidViewModel(application)
     }
 }
 ```
+
+### Android 17 era (2026)
+
+- Developer Preview 4 (mid-2026) adds node-level model control via `GltfModelNode` — per-node pose, materials, textures, and animation — plus experimental programmatic geometry through custom-mesh builders and `KhronosPbrMaterial` for PBR surfaces.
+- SceneCore and the XR Runtime reached 1.0.0-beta02 (August 2026): the API surface is stabilizing, legacy Guava/RxJava3 variants are removed in the Kotlin-first cleanup, and `AnchorEntity` is renamed `AnchorSpace`, sharing a common `SpaceEntity` base with `ActivitySpace`.
 
 ---
 

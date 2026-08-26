@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/topics/large-screens/support-different-screen-sizes
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -61,6 +61,10 @@ x-skills-master:
 
 - **Maintain a minimum 48 dp touch target at all widths.** Larger canvases do not mean smaller targets; they mean more whitespace between targets. Avoid resizing tap surfaces smaller just because the layout has room to breathe.
 - **Do not over-pad at expanded widths.** Adding large amounts of empty space between elements to "fill the screen" results in a layout that feels airy rather than purposeful. Use that space to reveal content or to improve readability through better column widths.
+
+### Android 17 (API 37)
+
+- **Adaptive layout is now platform-enforced, not optional polish.** For apps targeting API 37, orientation, resizability, and aspect-ratio restrictions are ignored on windows 600 dp and wider, with no opt-out — the OS resizes the app regardless. Letterboxing is no longer a choosable strategy, so every screen must be designed to survive the medium and expanded size classes.
 
 ## Platform notes
 

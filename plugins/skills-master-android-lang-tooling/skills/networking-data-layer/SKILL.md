@@ -97,6 +97,7 @@ class ArticleRepositoryImpl(
 - **Room + Kotlin 2.2:** Room's `@Query` returning `Flow<List<T>>` now uses coroutines natively. The `@Transaction` annotation is safe with `suspend` functions; avoid mixing Java-style callbacks.
 - **WorkManager for durable sync:** Use `CoroutineWorker` with `setExpedited` for user-triggered syncs and standard constraints (`NetworkType.CONNECTED`) for background refresh. Pass minimal input data (IDs only) to keep payloads serializable.
 - **Paging 3:** For list screens backed by a `PagingSource`, the repository still owns data access; return `Pager(…).flow` from the repository and let the ViewModel call `cachedIn(viewModelScope)`.
+- **Android 17 (API 37):** apps targeting 37 get Certificate Transparency verification and Encrypted Client Hello enabled by default in the platform TLS stack; both are tuned per-domain in Network Security Config (`<certificateTransparency>` to opt out, `<domainEncryption>` for ECH mode). These are transport concerns below the repository boundary — but CT failures against misconfigured or private-CA servers surface as handshake `IOException`s, so make sure your `DataError` classification treats them as network errors, not unknowns.
 
 ## Pitfalls
 

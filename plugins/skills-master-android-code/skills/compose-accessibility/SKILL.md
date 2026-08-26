@@ -111,7 +111,7 @@ fun Modifier.testTagIfDebug(tag: String) =
 ## Platform notes
 
 - **Large screen / foldable** — When content reflows into a two-pane layout, explicitly set `isTraversalGroup = true` on each pane so TalkBack does not jump between panes mid-content.
-- **Android 16 (API 36)** — No breaking semantics API changes in the 2026.05.00 BOM. The `minimumInteractiveComponentSize` modifier remains the preferred touch-target helper over raw `sizeIn`.
+- **Android 17 (API 37) / BOM 2026.08.00** — Compose 1.12 adds Credential Manager semantics for text input (sign-in fields surface correctly to autofill and assistive tech); otherwise the semantics surface is unchanged, and `minimumInteractiveComponentSize` remains the preferred touch-target helper over raw `sizeIn`.
 - **Compose Multiplatform** — Semantics APIs share the same surface on Compose for Android and iOS (via skip.tools or CMP), but Role values and TalkBack behaviors are Android-specific; screen readers on other platforms interpret a subset.
 
 ## Pitfalls

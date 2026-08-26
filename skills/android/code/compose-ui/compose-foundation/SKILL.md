@@ -9,14 +9,14 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: []
   sources:
     - https://developer.android.com/develop/ui/compose/touch-input/pointer-input
     - https://developer.android.com/develop/ui/compose/touch-input/focus
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -122,7 +122,7 @@ fun SwipeableCard(onDismiss: () -> Unit) {
 
 **Minimum API 16:** Foundation APIs compile down to API 16 via `minSdk 16`; no conditional guards needed for the APIs covered here.
 
-**Compose BOM 2026.05.00:** `IndicationNodeFactory` is the stable API for custom indications (replacing the deprecated `Indication` interface). `TextFieldState` + `BasicTextField` (the state-hoisted overload) is the recommended text input path.
+**Compose BOM 2026.08.00:** `IndicationNodeFactory` is the stable API for custom indications (replacing the deprecated `Indication` interface). `TextFieldState` + `BasicTextField` (the state-hoisted overload) is the recommended text input path.
 
 ## Pitfalls
 

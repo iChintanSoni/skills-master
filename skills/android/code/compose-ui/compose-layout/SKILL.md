@@ -9,14 +9,14 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: [compose-custom-layouts]
   sources:
     - https://developer.android.com/develop/ui/compose/layouts/basics
     - https://developer.android.com/develop/ui/compose/layouts/custom
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

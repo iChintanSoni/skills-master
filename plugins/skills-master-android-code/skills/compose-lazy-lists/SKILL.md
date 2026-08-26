@@ -103,6 +103,10 @@ fun NewsFeed(
 }
 ```
 
+### Compose 1.12 (BOM 2026.08.00)
+
+- For item impression and visibility tracking, use `Modifier.onVisibilityChanged()` — `Modifier.onFirstVisible()` is deprecated in Compose 1.12; migrate any first-view analytics hooks on list items.
+
 ## Platform notes
 
 **Android (phones):** `LazyColumn`/`LazyRow` cover most cases. On API 16+ all lazy list APIs are available.

@@ -13,19 +13,21 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-    compose-bom: "2026.05.00"
+    compose-bom: "2026.08.00"
   pairs_with: [adopting-compose]
   sources:
     - https://developer.android.com/develop/ui
     - https://developer.android.com/develop/ui/compose/migrate/interoperability-apis
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
 
 Apply this skill when working with traditional View-based layout XMLs, custom subclassed Views (overriding `onMeasure`, `onLayout`, `onDraw`), or integrating traditional View elements (such as `MapView`, `WebView`, or legacy custom controls) into a Jetpack Compose UI (or vice-versa).
+
+Note that Google's UI guidance is officially Compose-first and the View toolkit is in maintenance mode — use this skill to maintain and bridge existing View investments, not as a foundation for new UI.
 
 ## Core guidance
 

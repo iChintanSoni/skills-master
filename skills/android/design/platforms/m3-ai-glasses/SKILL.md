@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/design/ui/ai-glasses
     - https://developer.android.com/develop/xr
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -45,6 +45,10 @@ Use this skill when designing or critiquing an Android experience that targets A
 - **Design for variable ambient brightness and background complexity.** Users move between dim indoor environments and bright outdoor sunlight. Avoid thin strokes, hairline dividers, or low-contrast type on Glimmer surfaces; what passes WCAG AA on a phone screen may be unreadable on a lens in sunlight. Rely on the Glimmer material's system-managed luminance adaptation rather than setting fixed background colors.
 
 - **Accommodate the short interaction window around driving and physical activity.** Safety-critical activities demand the most extreme form of glanceability. If your feature may be used while operating a vehicle or in a high-attention physical task, apply the most aggressive reduction: maximum one line of text, a single binary action, system voice confirmation. Many categories of display output are appropriate only when the user is stationary — design feature flags and context-awareness to suppress display output when motion sensors indicate active transit.
+
+### Android 17 era (2026)
+
+- Glimmer's Developer Preview 4 refresh (mid-2026) sets Google Sans Flex as the toolkit typeface — tuned for legibility on optical see-through displays — and adds Stacks (browse one item at a time via touchpad) and Title Chips (category/context labels on content cards). Design card sequences around these system components rather than inventing carousels or custom labels.
 
 ## Platform notes
 

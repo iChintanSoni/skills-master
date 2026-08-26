@@ -76,6 +76,12 @@ Cloud calls carry per-request cost, require network access, and send user data o
 | Frontier capability needed, network available, cost acceptable | Cloud model |
 | All tiers, offline fallback needed | ML Kit or LiteRT as fallback |
 
+### Android 17 era (2026)
+
+- Tier 2's integration path is now the ML Kit GenAI Prompt API (beta): open-ended prompts with Structured Output for schema-constrained responses and Prefix Caching for recurring prompt prefixes; Gemini Nano 4 is previewable via the AICore Developer Preview ahead of flagship devices later in 2026.
+- Android 17 adds a fifth option: instead of embedding a model, expose app capabilities as agent-orchestrable tools with `@AppFunction` through Android's on-device MCP, letting a system agent supply the intelligence — see the `app-functions` skill.
+- For the on-device/cloud split, Firebase AI Logic hybrid inference offers explicit routing modes (`PREFER_ON_DEVICE`, `PREFER_CLOUD`, `ONLY_ON_DEVICE`, `ONLY_CLOUD`) instead of hand-rolled fallback logic.
+
 ## Platform notes
 
 - **Device support breadth** is the most consequential axis. ML Kit runs on API 16+ and nearly any Android device. Gemini Nano requires capable NPU hardware with sufficient RAM — coverage in 2026 is meaningful on flagships but not universal. LiteRT runs broadly but performance scales with hardware. If the app targets mass-market devices including low-end, ML Kit and LiteRT are more appropriate than relying on Gemini Nano.

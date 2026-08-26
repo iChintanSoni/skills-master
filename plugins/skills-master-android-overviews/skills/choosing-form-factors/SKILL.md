@@ -47,6 +47,7 @@ The app provides a meaningfully distinct experience: a drawing app exposes stylu
 - `ListDetailPaneScaffold` replaces custom split-pane logic for master-detail flows.
 - `NavigationSuiteScaffold` automatically switches between bottom bar, navigation rail, and navigation drawer based on window width.
 - Foldable posture (half-open, tabletop, book) is exposed via `FoldingFeature` in `WindowInfoTracker`; use it for camera viewfinder split, video call layouts, and reading postures.
+- Since Android 17 (API 37), orientation, resizability, and aspect-ratio locks are ignored on windows 600 dp and wider with no opt-out — a phone-only app targeting 37 gets force-resized rather than letterboxed, so "just lock portrait and skip large screens" is no longer an available strategy; Tier 1 adaptive behaviour is platform-mandated.
 - **Verdict:** Prioritise alongside phones for any app with a meaningful tablet or foldable user base. The marginal cost of Tier 1 is low; Tier 2 typically requires a focused sprint.
 
 **ChromeOS**

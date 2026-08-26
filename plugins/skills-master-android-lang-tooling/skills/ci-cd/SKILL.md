@@ -149,6 +149,10 @@ Then publish with:
 - **Do** scope the service account to only the necessary Play Developer API permissions (APKs and AABs, releases).
 - **Don't** use your personal Google account credentials — service account JSON is revocable without touching your account.
 
+### Android 17 era (2026)
+
+- Android CLI 1.0 (stable at I/O '26) is an agent-facing toolchain alongside Gradle — SDK and virtual-device management, dependency `version-lookup`, semantic `find-declaration`/`find-usages`/`analyze-file`, and `render-compose-preview` — installed via apt-get, Homebrew, or winget. It complements `./gradlew` for agent-driven automation; capabilities bridged through a running Android Studio (`android studio …`) are not available on headless CI runners.
+
 ---
 
 ## Platform notes

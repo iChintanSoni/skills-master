@@ -130,6 +130,11 @@ dependencies {
 }
 ```
 
+### Android 17 era (2026)
+
+- Current floor: compileSdk 37 (Android 17) on AGP 9.1.1+, with Compose BOM 2026.08.00 — bump the `libs.versions.toml` pins rather than inline strings.
+- Android CLI 1.0 (stable at I/O '26) adds an agent-facing command line beside Gradle: `version-lookup` resolves dependency versions and `analyze-file` runs editor inspections without opening Studio. It drives the same wrapper and version catalog, so those remain the source of truth.
+
 ---
 
 ## Platform notes
