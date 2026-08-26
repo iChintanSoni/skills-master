@@ -29,6 +29,15 @@ const CANONICAL_HEADINGS = [
 const MAX_BODY_LINES = 500;
 const WARN_BODY_LINES = 450;
 
+/**
+ * Claude's platform rejects a skill whose `name` or `description` contains XML
+ * tags. Tag-shaped generics (`VerificationResult<Transaction>`, `Result<T, E>`)
+ * are what trips it: a validator matching `<` followed by a letter or slash
+ * cannot tell them from markup. Reword rather than escape — the description is
+ * read by a model, not rendered.
+ */
+const XML_TAG_RE = /<[A-Za-z/]/;
+
 function today(): string {
   return new Date().toISOString().slice(0, 10);
 }
@@ -131,6 +140,18 @@ export function lintSkills(skillsRoot: string): LintResult {
     // description shape (soft)
     if (!/use when/i.test(fm.description)) {
       push("warn", `description should include a "Use when ..." trigger clause`);
+    }
+
+    // XML-tag-shaped text. Claude validates `name` too, but the schema already
+    // holds `name` to [a-z0-9-], so only `description` can carry a tag here.
+    const tagAt = fm.description.search(XML_TAG_RE);
+    if (tagAt !== -1) {
+      const end = fm.description.indexOf(">", tagAt);
+      const snippet = fm.description.slice(tagAt, end === -1 ? tagAt + 20 : end + 1);
+      push(
+        "warn",
+        `description contains XML-tag-shaped text "${snippet}" — Claude's skill validation rejects tags; reword it (e.g. "a VerificationResult of Transaction")`,
+      );
     }
 
     // snapshot_date not in the future

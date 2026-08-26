@@ -20,6 +20,7 @@ interface SkillSpec {
   domain?: string;
   cls?: string;
   category?: string;
+  description?: string;
   stability?: string;
   snapshotDate?: string;
   pairsWith?: string[];
@@ -65,7 +66,7 @@ function writeSkill(spec: SkillSpec): void {
   const fm = [
     "---",
     `name: ${name}`,
-    `description: "A test skill. Use when testing."`,
+    `description: "${spec.description ?? "A test skill. Use when testing."}"`,
     `tags: [${(spec.tags ?? []).join(", ")}]`,
     "x-skills-master:",
     `  domain: ${spec.domain ?? spec.dir.split("/")[0]}`,
@@ -198,6 +199,28 @@ describe("lintSkills — existing rules still hold", () => {
         expect.stringContaining('contains " #", which YAML reads as a comment'),
       ]),
     );
+  });
+
+  it("warns when a description carries XML-tag-shaped text", () => {
+    writeSkill({
+      dir: "apple/code/app-frameworks/generic-types",
+      description: "Verifies a VerificationResult<Transaction>. Use when testing.",
+    });
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining(
+          'description contains XML-tag-shaped text "<Transaction>" — Claude\'s skill validation rejects tags',
+        ),
+      ]),
+    );
+  });
+
+  it("leaves a description whose angle bracket is not tag-shaped alone", () => {
+    writeSkill({
+      dir: "apple/code/app-frameworks/comparison-operator",
+      description: "Keeps frame times <16ms on 60Hz displays. Use when profiling.",
+    });
+    expect(messagesOf("warn").filter((m) => m.includes("XML-tag-shaped"))).toHaveLength(0);
   });
 
   it("errors on duplicate names across domains", () => {

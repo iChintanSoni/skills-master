@@ -97,6 +97,8 @@ Warnings worth honoring: description should contain a "Use when …" clause; `so
 
 **YAML hazard:** an unquoted scalar containing ` #` is silently truncated as a comment (`#expect`, `#Preview` in descriptions are the classic trap). Quote the value or reword. The linter warns.
 
+**Description hazard:** Claude's skill validation rejects XML tags in `name`/`description`, and a generic type reads as one (`VerificationResult<Transaction>`, `Flow<UiState>`). Reword ("a VerificationResult of Transaction") — escaping does not help, since the description is read, not rendered. The linter warns.
+
 **Content policy:** original prose and original minimal code only. Summarize Apple's / Google's documented best practices and link to them via `sources` + the `## References` section; never paste vendor text or sample code. Bump `snapshot_date` (and a `version` patch) whenever you re-verify against changed docs.
 
 `class` maps to a directory via `CLASS_DIR` — note `overview` → `overviews/` on disk.
