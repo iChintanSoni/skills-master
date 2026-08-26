@@ -201,12 +201,14 @@ describe("lintSkills — existing rules still hold", () => {
     );
   });
 
-  it("warns when a description carries XML-tag-shaped text", () => {
+  // 1.1 promoted this from warn to error: an upload Claude's platform refuses
+  // is a broken projection, and the library's one violation is gone.
+  it("errors when a description carries XML-tag-shaped text", () => {
     writeSkill({
       dir: "apple/code/app-frameworks/generic-types",
       description: "Verifies a VerificationResult<Transaction>. Use when testing.",
     });
-    expect(messagesOf("warn")).toEqual(
+    expect(messagesOf("error")).toEqual(
       expect.arrayContaining([
         expect.stringContaining(
           'description contains XML-tag-shaped text "<Transaction>" — Claude\'s skill validation rejects tags',
@@ -220,7 +222,8 @@ describe("lintSkills — existing rules still hold", () => {
       dir: "apple/code/app-frameworks/comparison-operator",
       description: "Keeps frame times <16ms on 60Hz displays. Use when profiling.",
     });
-    expect(messagesOf("warn").filter((m) => m.includes("XML-tag-shaped"))).toHaveLength(0);
+    const res = lintSkills(root);
+    expect(res.diagnostics.filter((d) => d.message.includes("XML-tag-shaped"))).toHaveLength(0);
   });
 
   it("errors on duplicate names across domains", () => {

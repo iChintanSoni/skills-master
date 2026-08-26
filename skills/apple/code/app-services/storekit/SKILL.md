@@ -1,6 +1,6 @@
 ---
 name: storekit
-description: "Use when implementing in-app purchases or auto-renewable subscriptions with StoreKit 2 — loading Product objects, calling purchase() and handling PurchaseResult, verifying VerificationResult<Transaction>, reading current entitlements and subscription status, listening to Transaction.updates for renewals and refunds, finishing transactions, and building paywalls with ProductView or SubscriptionStoreView."
+description: "Use when implementing in-app purchases or auto-renewable subscriptions with StoreKit 2 — loading Product objects, calling purchase() and handling PurchaseResult, verifying each transaction's VerificationResult, reading current entitlements and subscription status, listening to Transaction.updates for renewals and refunds, finishing transactions, and building paywalls with ProductView or SubscriptionStoreView."
 globs:
   - "**/*.swift"
 tags: [swiftui, monetization]
@@ -19,7 +19,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/storekit/transaction/updates
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 ## When to use
