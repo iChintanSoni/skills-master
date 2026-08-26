@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: [hilt-di]
+  pairs_with: [hilt-di, dependency-injection-patterns]
   sources:
     - https://developer.android.com/training/dependency-injection
     - https://developer.android.com/training/dependency-injection/hilt-android

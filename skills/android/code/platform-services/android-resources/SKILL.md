@@ -11,7 +11,7 @@ x-skills-master:
   platforms: ["android"]
   requires:
     android: "16"
-  pairs_with: []
+  pairs_with: [m3-app-icons, build-variants-flavors, app-localization]
   sources:
     - https://developer.android.com/guide/topics/resources/providing-resources
   snapshot_date: "2026-06-06"

@@ -10,7 +10,7 @@ x-skills-master:
   category: architecture
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [choosing-navigation, app-architecture]
   sources:
     - https://developer.android.com/guide/navigation
     - https://developer.android.com/guide/navigation/principles

@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [adopting-compose, compose-fundamentals, android-views-interop]
   sources:
     - https://developer.android.com/develop/ui
     - https://developer.android.com/blog/posts/android-ui-development-is-compose-first

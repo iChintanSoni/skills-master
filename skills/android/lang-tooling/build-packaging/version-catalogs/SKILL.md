@@ -15,7 +15,7 @@ x-skills-master:
     android: "16"
     kotlin: "2.2"
     agp: "9.0"
-  pairs_with: []
+  pairs_with: [convention-plugins, gradle-kotlin-dsl]
   sources:
     - https://developer.android.com/build/migrate-to-catalogs
     - https://docs.gradle.org/current/userguide/version_catalogs.html

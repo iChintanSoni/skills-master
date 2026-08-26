@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: ["android-views-interop"]
+  pairs_with: [android-views-interop, compose-fundamentals, choosing-compose-or-views]
   sources:
     - https://developer.android.com/develop/ui/compose/migrate
     - https://developer.android.com/develop/ui/compose/migrate/strategy

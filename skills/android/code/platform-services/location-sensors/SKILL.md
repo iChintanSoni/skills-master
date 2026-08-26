@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [runtime-permissions]
   sources:
     - https://developer.android.com/develop/sensors-and-location/location
     - https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview

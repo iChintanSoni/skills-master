@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["android-auto", "automotive-os"]
   requires: { "android": "16", "kotlin": "2.2", "car-app-library": "1.7" }
-  pairs_with: [m3-cars]
+  pairs_with: [m3-cars, choosing-form-factors, car-driving-constraints, car-media-messaging]
   sources:
     - https://developer.android.com/training/cars/apps
     - https://developer.android.com/jetpack/androidx/releases/car-app

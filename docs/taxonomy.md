@@ -277,282 +277,282 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 
 ## android  ›  code  ›  architecture  (12)
 
-- `android-activities`
-- `hilt-di`  — ↔ choosing-di
-- `lifecycle`
-- `navigation-compose`  — examples, checklist, ↔ m3-navigation, ↔ navigation3
-- `navigation-deep-links`
-- `navigation3`  — ↔ navigation-compose
-- `paging`  — examples, checklist
-- `predictive-back`  — ↔ m3-predictive-back
-- `saved-state`
+- `android-activities`  — ↔ android-manifest, ↔ lifecycle
+- `hilt-di`  — ↔ choosing-di, ↔ dependency-injection-patterns
+- `lifecycle`  — ↔ android-activities, ↔ compose-side-effects, ↔ viewmodel
+- `navigation-compose`  — examples, checklist, ↔ choosing-navigation, ↔ m3-navigation, ↔ navigation-deep-links, ↔ navigation3
+- `navigation-deep-links`  — ↔ android-manifest, ↔ navigation-compose
+- `navigation3`  — ↔ choosing-navigation, ↔ navigation-compose
+- `paging`  — examples, checklist, ↔ compose-lazy-lists, ↔ room
+- `predictive-back`  — ↔ adopting-edge-to-edge-predictive-back, ↔ m3-predictive-back
+- `saved-state`  — ↔ viewmodel
 - `splash-screen`  — ↔ m3-splash-screen
-- `state-flow`  — examples, checklist
-- `viewmodel`  — examples, checklist
+- `state-flow`  — examples, checklist, ↔ choosing-concurrency-pattern, ↔ kotlin-flow, ↔ viewmodel
+- `viewmodel`  — examples, checklist, ↔ lifecycle, ↔ saved-state, ↔ state-flow
 
 ## android  ›  code  ›  compose-ui  (21)
 
-- `android-views-interop`  — ↔ adopting-compose
-- `compose-accessibility`  — ↔ m3-accessibility
+- `android-views-interop`  — ↔ adopting-compose, ↔ choosing-compose-or-views, ↔ compose-view-interop
+- `compose-accessibility`  — ↔ accessibility-testing, ↔ m3-accessibility
 - `compose-animation`  — examples, checklist, ↔ m3-motion
 - `compose-custom-layouts`  — ↔ compose-layout
-- `compose-foundation`
-- `compose-fundamentals`
-- `compose-gestures`  — ↔ keyboard-mouse-stylus
-- `compose-graphics`  — ↔ agsl-runtime-shaders
-- `compose-images`
-- `compose-layout`  — examples, checklist, ↔ compose-custom-layouts
-- `compose-lazy-lists`  — examples, checklist, ↔ m3-lists
-- `compose-modifiers`
-- `compose-performance`  — examples, checklist
-- `compose-side-effects`  — examples, checklist
-- `compose-state`  — examples, checklist
-- `compose-text`
-- `compose-text-fields`  — ↔ m3-text-fields
-- `compose-theming`  — examples, checklist, ↔ design-system-customization, ↔ m3-color
-- `compose-view-interop`
-- `compose-window-insets`  — ↔ m3-edge-to-edge, ↔ system-ui-styling
+- `compose-foundation`  — ↔ compose-modifiers, ↔ m3-interaction-states
+- `compose-fundamentals`  — ↔ adopting-compose, ↔ choosing-compose-or-views, ↔ compose-modifiers, ↔ compose-state
+- `compose-gestures`  — ↔ keyboard-mouse-stylus, ↔ m3-gestures
+- `compose-graphics`  — ↔ agsl-runtime-shaders, ↔ choosing-graphics-api
+- `compose-images`  — ↔ choosing-image-loading
+- `compose-layout`  — examples, checklist, ↔ compose-custom-layouts, ↔ m3-layout-spacing
+- `compose-lazy-lists`  — examples, checklist, ↔ m3-lists, ↔ paging
+- `compose-modifiers`  — ↔ compose-foundation, ↔ compose-fundamentals
+- `compose-performance`  — examples, checklist, ↔ compose-state, ↔ macrobenchmark-baseline-profiles
+- `compose-side-effects`  — examples, checklist, ↔ compose-state, ↔ lifecycle
+- `compose-state`  — examples, checklist, ↔ compose-fundamentals, ↔ compose-performance, ↔ compose-side-effects
+- `compose-text`  — ↔ m3-typography
+- `compose-text-fields`  — ↔ autofill, ↔ m3-text-fields
+- `compose-theming`  — examples, checklist, ↔ adopting-m3-expressive, ↔ design-system-customization, ↔ m3-color, ↔ m3-dark-theme
+- `compose-view-interop`  — ↔ android-views-interop
+- `compose-window-insets`  — ↔ adopting-edge-to-edge-predictive-back, ↔ m3-edge-to-edge, ↔ system-ui-styling
 - `system-ui-styling`  — ↔ adopting-edge-to-edge-predictive-back, ↔ compose-window-insets
 
 ## android  ›  code  ›  data  (9)
 
-- `appsearch`
-- `backup-restore`
-- `content-providers`
-- `datastore`  — examples, checklist
-- `files-serialization`
-- `mediastore`
-- `room`  — examples, checklist, ↔ choosing-storage
-- `scoped-storage`  — examples, checklist
-- `sqlite-androidx`
+- `appsearch`  — ↔ app-shortcuts
+- `backup-restore`  — ↔ datastore
+- `content-providers`  — ↔ android-manifest, ↔ scoped-storage
+- `datastore`  — examples, checklist, ↔ backup-restore, ↔ choosing-storage, ↔ m3-settings
+- `files-serialization`  — ↔ choosing-storage, ↔ kotlin-serialization, ↔ scoped-storage
+- `mediastore`  — ↔ camerax, ↔ scoped-storage
+- `room`  — examples, checklist, ↔ choosing-storage, ↔ paging, ↔ sqlite-androidx
+- `scoped-storage`  — examples, checklist, ↔ content-providers, ↔ files-serialization, ↔ mediastore
+- `sqlite-androidx`  — ↔ choosing-storage, ↔ room
 
 ## android  ›  code  ›  form-factors  (22)
 
-- `adaptive-window-size-classes`  — examples, checklist, ↔ m3-large-screens
-- `car-app-library`  — examples, checklist, ↔ m3-cars
-- `car-driving-constraints`
-- `car-media-messaging`
+- `adaptive-window-size-classes`  — examples, checklist, ↔ choosing-form-factors, ↔ m3-adaptive-layout, ↔ m3-large-screens, ↔ navigation-suite-scaffold
+- `car-app-library`  — examples, checklist, ↔ car-driving-constraints, ↔ car-media-messaging, ↔ choosing-form-factors, ↔ m3-cars
+- `car-driving-constraints`  — ↔ car-app-library, ↔ m3-cars
+- `car-media-messaging`  — ↔ car-app-library, ↔ media3-session
 - `drag-and-drop`  — ↔ m3-drag-drop
-- `keyboard-mouse-stylus`  — ↔ compose-gestures
-- `list-detail-pane-scaffold`  — examples, checklist, ↔ m3-canonical-layouts
-- `navigation-suite-scaffold`
-- `picture-in-picture`
-- `supporting-pane-scaffold`
-- `tv-compose`  — examples, checklist, ↔ m3-tv
-- `tv-focus-input`
-- `tv-media-playback`
-- `wear-complications`
-- `wear-compose`  — examples, checklist, ↔ m3-wear
-- `wear-data-health`
-- `wear-tiles`
-- `window-manager-foldables`
-- `xr-arcore`
-- `xr-compose-spatial`  — examples, checklist, ↔ m3-xr
+- `keyboard-mouse-stylus`  — ↔ compose-gestures, ↔ m3-chromeos-desktop
+- `list-detail-pane-scaffold`  — examples, checklist, ↔ m3-canonical-layouts, ↔ supporting-pane-scaffold
+- `navigation-suite-scaffold`  — ↔ adaptive-window-size-classes, ↔ m3-navigation
+- `picture-in-picture`  — ↔ media3-exoplayer
+- `supporting-pane-scaffold`  — ↔ list-detail-pane-scaffold, ↔ m3-canonical-layouts
+- `tv-compose`  — examples, checklist, ↔ choosing-form-factors, ↔ m3-tv, ↔ tv-focus-input, ↔ tv-media-playback
+- `tv-focus-input`  — ↔ m3-tv, ↔ tv-compose
+- `tv-media-playback`  — ↔ media3-exoplayer, ↔ tv-compose
+- `wear-complications`  — ↔ choosing-widget-toolkit, ↔ wear-tiles
+- `wear-compose`  — examples, checklist, ↔ choosing-form-factors, ↔ m3-wear, ↔ wear-data-health
+- `wear-data-health`  — ↔ health-services, ↔ wear-compose
+- `wear-tiles`  — ↔ choosing-widget-toolkit, ↔ m3-wear, ↔ wear-complications
+- `window-manager-foldables`  — ↔ m3-large-screens
+- `xr-arcore`  — ↔ xr-compose-spatial, ↔ xr-scenecore
+- `xr-compose-spatial`  — examples, checklist, ↔ m3-xr, ↔ xr-arcore, ↔ xr-scenecore
 - `xr-glimmer-glasses`  — ↔ m3-ai-glasses
-- `xr-scenecore`
+- `xr-scenecore`  — ↔ m3-xr, ↔ xr-arcore, ↔ xr-compose-spatial
 
 ## android  ›  code  ›  graphics-games  (8)
 
-- `adpf-thermal-performance`  — ↔ performance-profiling
-- `agdk-game-activity`  — ↔ game-controller-input
-- `agsl-runtime-shaders`  — ↔ compose-graphics
+- `adpf-thermal-performance`  — ↔ game-loop-frame-pacing, ↔ performance-profiling
+- `agdk-game-activity`  — ↔ game-controller-input, ↔ game-loop-frame-pacing
+- `agsl-runtime-shaders`  — ↔ choosing-graphics-api, ↔ compose-graphics
 - `game-controller-input`  — ↔ agdk-game-activity
-- `game-loop-frame-pacing`  — ↔ vulkan-rendering
+- `game-loop-frame-pacing`  — ↔ adpf-thermal-performance, ↔ agdk-game-activity, ↔ vulkan-rendering
 - `play-asset-delivery`  — ↔ app-bundles-size
 - `play-games-services`  — ↔ play-console-publishing
 - `vulkan-rendering`  — ↔ choosing-graphics-api, ↔ game-loop-frame-pacing
 
 ## android  ›  code  ›  media-camera-ml  (10)
 
-- `app-actions-assistant`  — ↔ app-functions
-- `camerax`  — examples, checklist
-- `gemini-nano-aicore`  — examples, checklist
-- `litert-mediapipe`
-- `media-projection`
+- `app-actions-assistant`  — ↔ app-functions, ↔ app-shortcuts
+- `camerax`  — examples, checklist, ↔ mediastore, ↔ ml-kit
+- `gemini-nano-aicore`  — examples, checklist, ↔ choosing-ml
+- `litert-mediapipe`  — ↔ choosing-ml
+- `media-projection`  — ↔ foreground-services
 - `media3-ai-effects`  — emerging, ↔ media3-transformer
-- `media3-exoplayer`  — examples, checklist, ↔ media3-transformer
-- `media3-session`
+- `media3-exoplayer`  — examples, checklist, ↔ media3-session, ↔ media3-transformer, ↔ picture-in-picture, ↔ tv-media-playback
+- `media3-session`  — ↔ car-media-messaging, ↔ media3-exoplayer
 - `media3-transformer`  — emerging, ↔ media3-ai-effects, ↔ media3-exoplayer
-- `ml-kit`  — ↔ choosing-ml
+- `ml-kit`  — ↔ camerax, ↔ choosing-ml
 
 ## android  ›  code  ›  platform-services  (25)
 
-- `alarms-scheduling`
-- `android-resources`
+- `alarms-scheduling`  — ↔ choosing-background-work, ↔ power-doze
+- `android-resources`  — ↔ app-localization, ↔ build-variants-flavors, ↔ m3-app-icons
 - `app-functions`  — emerging, ↔ app-actions-assistant
-- `app-shortcuts`
+- `app-shortcuts`  — ↔ app-actions-assistant, ↔ appsearch
 - `app-widgets-glance`  — examples, checklist, ↔ choosing-widget-toolkit, ↔ m3-widgets
-- `autofill`
-- `biometric`
-- `bluetooth-ble`  — examples, checklist
-- `broadcasts`
-- `credential-manager`  — examples, checklist
-- `foreground-services`  — examples, checklist
+- `autofill`  — ↔ compose-text-fields
+- `biometric`  — ↔ credential-manager, ↔ security-crypto
+- `bluetooth-ble`  — examples, checklist, ↔ uwb-ranging
+- `broadcasts`  — ↔ android-manifest
+- `credential-manager`  — examples, checklist, ↔ biometric
+- `foreground-services`  — examples, checklist, ↔ choosing-background-work, ↔ media-projection, ↔ notifications, ↔ telecom-calls
 - `haptics-vibration`  — ↔ m3-haptics-sound
-- `health-services`
-- `ktor-client`
-- `location-sensors`  — examples, checklist
+- `health-services`  — ↔ wear-data-health
+- `ktor-client`  — ↔ choosing-http-client, ↔ kotlin-serialization
+- `location-sensors`  — examples, checklist, ↔ runtime-permissions
 - `nfc`
-- `notifications`  — examples, checklist, ↔ m3-notifications
-- `power-doze`
-- `retrofit-okhttp`  — examples, checklist, ↔ choosing-http-client
-- `runtime-permissions`  — examples, checklist, ↔ m3-permissions
-- `security-crypto`
-- `telecom-calls`
-- `uwb-ranging`
+- `notifications`  — examples, checklist, ↔ foreground-services, ↔ m3-notifications
+- `power-doze`  — ↔ alarms-scheduling, ↔ choosing-background-work
+- `retrofit-okhttp`  — examples, checklist, ↔ choosing-http-client, ↔ networking-data-layer
+- `runtime-permissions`  — examples, checklist, ↔ location-sensors, ↔ m3-permissions
+- `security-crypto`  — ↔ biometric
+- `telecom-calls`  — ↔ foreground-services
+- `uwb-ranging`  — ↔ bluetooth-ble
 - `webview-custom-tabs`  — ↔ choosing-web-integration
 - `workmanager`  — examples, checklist, ↔ choosing-background-work
 
 ## android  ›  design  ›  components  (25)
 
-- `m3-app-bars`
-- `m3-badges`
-- `m3-button-groups`
-- `m3-buttons`  — examples, checklist
-- `m3-cards`
-- `m3-carousel`
-- `m3-chips`
-- `m3-dialogs`  — examples, checklist
-- `m3-dividers-scaffold`
-- `m3-fab`
-- `m3-icon-buttons`
-- `m3-lists`  — examples, checklist, ↔ compose-lazy-lists
-- `m3-loading-indicator`
-- `m3-menus-pickers`
-- `m3-navigation`  — examples, checklist, ↔ navigation-compose
-- `m3-progress-indicators`  — examples, checklist
-- `m3-search`
-- `m3-segmented-buttons`
-- `m3-selection-controls`
-- `m3-sheets`
-- `m3-sliders`
-- `m3-snackbar`
-- `m3-tabs`
-- `m3-text-fields`  — examples, checklist, ↔ compose-text-fields
-- `m3-tooltips`
+- `m3-app-bars`  — ↔ m3-dividers-scaffold, ↔ m3-search
+- `m3-badges`  — ↔ m3-navigation
+- `m3-button-groups`  — ↔ m3-buttons, ↔ m3-segmented-buttons
+- `m3-buttons`  — examples, checklist, ↔ m3-button-groups, ↔ m3-fab, ↔ m3-icon-buttons
+- `m3-cards`  — ↔ m3-carousel, ↔ m3-lists
+- `m3-carousel`  — ↔ m3-cards
+- `m3-chips`  — ↔ m3-search, ↔ m3-selection-controls
+- `m3-dialogs`  — examples, checklist, ↔ m3-feedback, ↔ m3-sheets
+- `m3-dividers-scaffold`  — ↔ m3-app-bars, ↔ m3-layout-spacing
+- `m3-fab`  — ↔ m3-buttons
+- `m3-icon-buttons`  — ↔ m3-buttons, ↔ m3-icons, ↔ m3-tooltips
+- `m3-lists`  — examples, checklist, ↔ compose-lazy-lists, ↔ m3-cards
+- `m3-loading-indicator`  — ↔ m3-loading, ↔ m3-progress-indicators
+- `m3-menus-pickers`  — ↔ m3-text-fields
+- `m3-navigation`  — examples, checklist, ↔ m3-badges, ↔ m3-tabs, ↔ navigation-compose, ↔ navigation-suite-scaffold
+- `m3-progress-indicators`  — examples, checklist, ↔ m3-loading, ↔ m3-loading-indicator
+- `m3-search`  — ↔ m3-app-bars, ↔ m3-chips
+- `m3-segmented-buttons`  — ↔ m3-button-groups, ↔ m3-tabs
+- `m3-selection-controls`  — ↔ m3-chips, ↔ m3-settings
+- `m3-sheets`  — ↔ m3-dialogs
+- `m3-sliders`  — ↔ m3-settings
+- `m3-snackbar`  — ↔ m3-feedback
+- `m3-tabs`  — ↔ m3-navigation, ↔ m3-segmented-buttons
+- `m3-text-fields`  — examples, checklist, ↔ compose-text-fields, ↔ m3-menus-pickers
+- `m3-tooltips`  — ↔ m3-icon-buttons
 
 ## android  ›  design  ›  foundations  (8)
 
-- `m3-accessibility`  — examples, checklist, ↔ compose-accessibility
-- `m3-adaptive-layout`  — examples, checklist
-- `m3-canonical-layouts`  — examples, checklist, ↔ list-detail-pane-scaffold
-- `m3-dark-theme`
-- `m3-interaction-states`
-- `m3-layout-spacing`
-- `m3-rtl-internationalization`
-- `m3-writing`
+- `m3-accessibility`  — examples, checklist, ↔ accessibility-testing, ↔ compose-accessibility
+- `m3-adaptive-layout`  — examples, checklist, ↔ adaptive-window-size-classes, ↔ m3-large-screens
+- `m3-canonical-layouts`  — examples, checklist, ↔ list-detail-pane-scaffold, ↔ supporting-pane-scaffold
+- `m3-dark-theme`  — ↔ compose-theming, ↔ m3-color, ↔ m3-elevation
+- `m3-interaction-states`  — ↔ compose-foundation
+- `m3-layout-spacing`  — ↔ compose-layout, ↔ m3-dividers-scaffold
+- `m3-rtl-internationalization`  — ↔ app-localization
+- `m3-writing`  — ↔ app-localization
 
 ## android  ›  design  ›  patterns  (10)
 
 - `m3-drag-drop`  — ↔ drag-and-drop
-- `m3-edge-to-edge`  — ↔ compose-window-insets
-- `m3-feedback`  — examples, checklist
-- `m3-gestures`
-- `m3-loading`
-- `m3-onboarding`  — examples, checklist
+- `m3-edge-to-edge`  — ↔ compose-window-insets, ↔ edge-to-edge-compat
+- `m3-feedback`  — examples, checklist, ↔ m3-dialogs, ↔ m3-snackbar
+- `m3-gestures`  — ↔ compose-gestures
+- `m3-loading`  — ↔ m3-loading-indicator, ↔ m3-progress-indicators
+- `m3-onboarding`  — examples, checklist, ↔ m3-splash-screen
 - `m3-permissions`  — examples, checklist, ↔ runtime-permissions
 - `m3-predictive-back`  — ↔ predictive-back
-- `m3-settings`
+- `m3-settings`  — ↔ datastore, ↔ m3-selection-controls, ↔ m3-sliders
 - `m3-sharing`
 
 ## android  ›  design  ›  platforms  (7)
 
 - `m3-ai-glasses`  — ↔ xr-glimmer-glasses
-- `m3-cars`  — ↔ car-app-library
-- `m3-chromeos-desktop`
-- `m3-large-screens`  — examples, checklist, ↔ adaptive-window-size-classes
-- `m3-tv`  — ↔ tv-compose
-- `m3-wear`  — ↔ wear-compose
-- `m3-xr`  — ↔ xr-compose-spatial
+- `m3-cars`  — ↔ car-app-library, ↔ car-driving-constraints
+- `m3-chromeos-desktop`  — ↔ keyboard-mouse-stylus
+- `m3-large-screens`  — examples, checklist, ↔ adaptive-window-size-classes, ↔ m3-adaptive-layout, ↔ window-manager-foldables
+- `m3-tv`  — ↔ tv-compose, ↔ tv-focus-input
+- `m3-wear`  — ↔ wear-compose, ↔ wear-tiles
+- `m3-xr`  — ↔ xr-compose-spatial, ↔ xr-scenecore
 
 ## android  ›  design  ›  styles  (7)
 
 - `design-system-customization`  — ↔ compose-theming, ↔ m3-color, ↔ m3-typography
-- `m3-color`  — examples, checklist, ↔ compose-theming, ↔ design-system-customization
-- `m3-elevation`
-- `m3-icons`
-- `m3-motion`  — examples, checklist, ↔ compose-animation
-- `m3-shape`
-- `m3-typography`  — ↔ design-system-customization
+- `m3-color`  — examples, checklist, ↔ compose-theming, ↔ design-system-customization, ↔ m3-dark-theme
+- `m3-elevation`  — ↔ m3-dark-theme, ↔ m3-shape
+- `m3-icons`  — ↔ m3-app-icons, ↔ m3-icon-buttons
+- `m3-motion`  — examples, checklist, ↔ adopting-m3-expressive, ↔ compose-animation, ↔ m3-expressive
+- `m3-shape`  — ↔ m3-elevation, ↔ m3-expressive
+- `m3-typography`  — ↔ compose-text, ↔ design-system-customization
 
 ## android  ›  design  ›  technologies  (6)
 
-- `m3-app-icons`
-- `m3-expressive`
+- `m3-app-icons`  — ↔ android-resources, ↔ m3-icons
+- `m3-expressive`  — ↔ adopting-m3-expressive, ↔ m3-motion, ↔ m3-shape
 - `m3-haptics-sound`  — ↔ haptics-vibration
 - `m3-notifications`  — examples, checklist, ↔ notifications
-- `m3-splash-screen`  — ↔ splash-screen
+- `m3-splash-screen`  — ↔ m3-onboarding, ↔ splash-screen
 - `m3-widgets`  — examples, checklist, ↔ app-widgets-glance
 
 ## android  ›  lang-tooling  ›  architecture  (5)
 
-- `android-navigation-architecture`
-- `app-architecture`  — examples, checklist, contested
-- `dependency-injection-patterns`  — contested
-- `modularization`  — examples, checklist
-- `networking-data-layer`
+- `android-navigation-architecture`  — ↔ app-architecture, ↔ choosing-navigation
+- `app-architecture`  — examples, checklist, contested, ↔ android-navigation-architecture, ↔ modularization, ↔ networking-data-layer
+- `dependency-injection-patterns`  — contested, ↔ choosing-di, ↔ hilt-di
+- `modularization`  — examples, checklist, ↔ adopting-kmp, ↔ app-architecture, ↔ convention-plugins
+- `networking-data-layer`  — ↔ app-architecture, ↔ choosing-http-client, ↔ retrofit-okhttp
 
 ## android  ›  lang-tooling  ›  build-packaging  (9)
 
 - `android-cli`  — emerging, ↔ ci-cd, ↔ gradle-kotlin-dsl
-- `android-manifest`
-- `app-bundles-size`  — ↔ play-asset-delivery
-- `app-signing`
-- `build-variants-flavors`
-- `convention-plugins`
-- `gradle-kotlin-dsl`  — examples, checklist, ↔ android-cli
-- `r8-proguard`
-- `version-catalogs`
+- `android-manifest`  — ↔ android-activities, ↔ broadcasts, ↔ content-providers, ↔ navigation-deep-links
+- `app-bundles-size`  — ↔ choosing-android-distribution, ↔ play-asset-delivery, ↔ r8-proguard
+- `app-signing`  — ↔ choosing-android-distribution, ↔ ci-cd
+- `build-variants-flavors`  — ↔ android-resources, ↔ gradle-kotlin-dsl
+- `convention-plugins`  — ↔ gradle-kotlin-dsl, ↔ modularization, ↔ version-catalogs
+- `gradle-kotlin-dsl`  — examples, checklist, ↔ android-cli, ↔ build-variants-flavors, ↔ convention-plugins, ↔ version-catalogs
+- `r8-proguard`  — ↔ app-bundles-size
+- `version-catalogs`  — ↔ convention-plugins, ↔ gradle-kotlin-dsl
 
 ## android  ›  lang-tooling  ›  language  (6)
 
-- `kotlin-coroutines`  — examples, checklist
-- `kotlin-flow`  — examples, checklist
-- `kotlin-generics-types`
-- `kotlin-language-core`
+- `kotlin-coroutines`  — examples, checklist, ↔ choosing-concurrency-pattern, ↔ kotlin-flow
+- `kotlin-flow`  — examples, checklist, ↔ choosing-concurrency-pattern, ↔ kotlin-coroutines, ↔ state-flow
+- `kotlin-generics-types`  — ↔ kotlin-language-core
+- `kotlin-language-core`  — ↔ kotlin-generics-types, ↔ kotlin-serialization
 - `kotlin-multiplatform`  — examples, checklist, ↔ adopting-kmp
-- `kotlin-serialization`
+- `kotlin-serialization`  — ↔ files-serialization, ↔ kotlin-language-core, ↔ ktor-client
 
 ## android  ›  lang-tooling  ›  ship  (8)
 
-- `accessibility-testing`
-- `app-localization`
-- `ci-cd`  — examples, checklist, ↔ android-cli
-- `crash-anr-vitals`
-- `edge-to-edge-compat`  — examples, checklist
-- `performance-profiling`  — ↔ adpf-thermal-performance
-- `play-billing`
-- `play-console-publishing`  — examples, checklist, ↔ play-games-services
+- `accessibility-testing`  — ↔ compose-accessibility, ↔ m3-accessibility
+- `app-localization`  — ↔ android-resources, ↔ m3-rtl-internationalization, ↔ m3-writing
+- `ci-cd`  — examples, checklist, ↔ android-cli, ↔ app-signing
+- `crash-anr-vitals`  — ↔ performance-profiling, ↔ play-console-publishing
+- `edge-to-edge-compat`  — examples, checklist, ↔ adopting-edge-to-edge-predictive-back, ↔ m3-edge-to-edge
+- `performance-profiling`  — ↔ adpf-thermal-performance, ↔ crash-anr-vitals, ↔ macrobenchmark-baseline-profiles
+- `play-billing`  — ↔ play-console-publishing
+- `play-console-publishing`  — examples, checklist, ↔ choosing-android-distribution, ↔ crash-anr-vitals, ↔ play-billing, ↔ play-games-services
 
 ## android  ›  lang-tooling  ›  testing  (8)
 
-- `compose-preview-testing`
-- `compose-ui-testing`  — examples, checklist
-- `espresso`
-- `macrobenchmark-baseline-profiles`  — examples, checklist
-- `robolectric`
-- `screenshot-testing`
-- `ui-automator`
-- `unit-testing`  — examples, checklist
+- `compose-preview-testing`  — ↔ compose-ui-testing, ↔ screenshot-testing
+- `compose-ui-testing`  — examples, checklist, ↔ choosing-android-testing, ↔ compose-preview-testing, ↔ espresso
+- `espresso`  — ↔ compose-ui-testing, ↔ ui-automator
+- `macrobenchmark-baseline-profiles`  — examples, checklist, ↔ choosing-android-testing, ↔ compose-performance, ↔ performance-profiling
+- `robolectric`  — ↔ choosing-android-testing, ↔ unit-testing
+- `screenshot-testing`  — ↔ compose-preview-testing
+- `ui-automator`  — ↔ espresso
+- `unit-testing`  — examples, checklist, ↔ choosing-android-testing, ↔ robolectric
 
 ## android  ›  overview  ›  overviews  (19)
 
-- `adopting-compose`  — examples, checklist, ↔ android-views-interop
-- `adopting-edge-to-edge-predictive-back`  — ↔ system-ui-styling
-- `adopting-kmp`  — examples, checklist, ↔ kotlin-multiplatform
-- `adopting-m3-expressive`
-- `choosing-android-distribution`
-- `choosing-android-testing`
-- `choosing-background-work`  — ↔ workmanager
-- `choosing-compose-or-views`  — contested
-- `choosing-concurrency-pattern`
-- `choosing-di`  — ↔ hilt-di
-- `choosing-form-factors`  — examples, checklist
-- `choosing-graphics-api`  — ↔ vulkan-rendering
-- `choosing-http-client`  — ↔ retrofit-okhttp
-- `choosing-image-loading`  — contested
-- `choosing-ml`  — ↔ ml-kit
-- `choosing-navigation`
-- `choosing-storage`  — examples, checklist, ↔ room
+- `adopting-compose`  — examples, checklist, ↔ android-views-interop, ↔ choosing-compose-or-views, ↔ compose-fundamentals
+- `adopting-edge-to-edge-predictive-back`  — ↔ compose-window-insets, ↔ edge-to-edge-compat, ↔ predictive-back, ↔ system-ui-styling
+- `adopting-kmp`  — examples, checklist, ↔ kotlin-multiplatform, ↔ modularization
+- `adopting-m3-expressive`  — ↔ compose-theming, ↔ m3-expressive, ↔ m3-motion
+- `choosing-android-distribution`  — ↔ app-bundles-size, ↔ app-signing, ↔ play-console-publishing
+- `choosing-android-testing`  — ↔ compose-ui-testing, ↔ macrobenchmark-baseline-profiles, ↔ robolectric, ↔ unit-testing
+- `choosing-background-work`  — ↔ alarms-scheduling, ↔ foreground-services, ↔ power-doze, ↔ workmanager
+- `choosing-compose-or-views`  — contested, ↔ adopting-compose, ↔ android-views-interop, ↔ compose-fundamentals
+- `choosing-concurrency-pattern`  — ↔ kotlin-coroutines, ↔ kotlin-flow, ↔ state-flow
+- `choosing-di`  — ↔ dependency-injection-patterns, ↔ hilt-di
+- `choosing-form-factors`  — examples, checklist, ↔ adaptive-window-size-classes, ↔ car-app-library, ↔ tv-compose, ↔ wear-compose
+- `choosing-graphics-api`  — ↔ agsl-runtime-shaders, ↔ compose-graphics, ↔ vulkan-rendering
+- `choosing-http-client`  — ↔ ktor-client, ↔ networking-data-layer, ↔ retrofit-okhttp
+- `choosing-image-loading`  — contested, ↔ compose-images
+- `choosing-ml`  — ↔ gemini-nano-aicore, ↔ litert-mediapipe, ↔ ml-kit
+- `choosing-navigation`  — ↔ android-navigation-architecture, ↔ navigation-compose, ↔ navigation3
+- `choosing-storage`  — examples, checklist, ↔ datastore, ↔ files-serialization, ↔ room, ↔ sqlite-androidx
 - `choosing-web-integration`  — ↔ webview-custom-tabs
-- `choosing-widget-toolkit`  — ↔ app-widgets-glance
+- `choosing-widget-toolkit`  — ↔ app-widgets-glance, ↔ wear-complications, ↔ wear-tiles

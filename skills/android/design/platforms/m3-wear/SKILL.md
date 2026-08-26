@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: ["wear-os"]
-  pairs_with: [wear-compose]
+  pairs_with: [wear-compose, wear-tiles]
   sources:
     - https://developer.android.com/design/ui/wear
     - https://developer.android.com/training/wearables/compose

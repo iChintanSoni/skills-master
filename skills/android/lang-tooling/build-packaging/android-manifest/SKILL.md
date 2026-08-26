@@ -11,7 +11,7 @@ x-skills-master:
   platforms: ["android"]
   requires:
     android: "16"
-  pairs_with: []
+  pairs_with: [android-activities, navigation-deep-links, broadcasts, content-providers]
   sources:
     - https://developer.android.com/guide/topics/manifest/manifest-intro
     - https://developer.android.com/about/versions/17/behavior-changes-17

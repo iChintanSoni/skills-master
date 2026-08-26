@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [compose-foundation]
   sources:
     - https://m3.material.io/foundations/interaction/states/overview
     - https://developer.android.com/develop/ui/compose/touch-input

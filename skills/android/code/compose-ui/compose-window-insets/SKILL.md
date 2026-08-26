@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2", compose-bom: "2026.08.00"}
-  pairs_with: [m3-edge-to-edge, system-ui-styling]
+  pairs_with: [m3-edge-to-edge, system-ui-styling, adopting-edge-to-edge-predictive-back]
   sources:
     - https://developer.android.com/develop/ui/compose/layouts/insets
     - https://developer.android.com/develop/ui/views/layout/edge-to-edge

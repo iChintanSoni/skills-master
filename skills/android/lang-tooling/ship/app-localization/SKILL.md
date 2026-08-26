@@ -8,7 +8,7 @@ x-skills-master:
   category: ship
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [m3-rtl-internationalization, m3-writing, android-resources]
   sources:
     - https://developer.android.com/guide/topics/resources/localization
     - https://developer.android.com/guide/topics/resources/app-languages

@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["wear-os"]
   requires: { "android": "16", "kotlin": "2.2", "wear-compose": "1.5" }
-  pairs_with: []
+  pairs_with: [choosing-widget-toolkit, m3-wear, wear-complications]
   sources:
     - https://developer.android.com/training/wearables/tiles
     - https://developer.android.com/jetpack/androidx/releases/wear-tiles

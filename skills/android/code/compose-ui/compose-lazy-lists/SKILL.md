@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
-  pairs_with: [m3-lists]
+  pairs_with: [m3-lists, paging]
   sources:
     - https://developer.android.com/develop/ui/compose/lists
   snapshot_date: "2026-08-25"

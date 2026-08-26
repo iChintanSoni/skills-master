@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: styles
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-elevation, m3-expressive]
   sources:
     - https://m3.material.io/styles/shape/overview-principles
     - https://developer.android.com/develop/ui/compose/designsystems/material3

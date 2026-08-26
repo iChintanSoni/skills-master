@@ -10,7 +10,7 @@ x-skills-master:
   category: graphics-games
   platforms: ["android"]
   requires: { "android": "10", "kotlin": "2.2" }
-  pairs_with: [performance-profiling]
+  pairs_with: [performance-profiling, game-loop-frame-pacing]
   sources:
     - https://developer.android.com/games/optimize/adpf
     - https://developer.android.com/games/optimize/adpf/thermal

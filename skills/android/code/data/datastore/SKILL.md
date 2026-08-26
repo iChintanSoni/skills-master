@@ -10,7 +10,7 @@ x-skills-master:
   category: data
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [choosing-storage, m3-settings, backup-restore]
   sources:
     - https://developer.android.com/topic/libraries/architecture/datastore
     - https://developer.android.com/codelabs/android-proto-datastore

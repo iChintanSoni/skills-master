@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-lists, m3-carousel]
   sources:
     - https://m3.material.io/components/cards/overview
     - https://developer.android.com/develop/ui/compose/components/card

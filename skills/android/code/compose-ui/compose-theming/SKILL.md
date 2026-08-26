@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
-  pairs_with: [m3-color, design-system-customization]
+  pairs_with: [m3-color, design-system-customization, adopting-m3-expressive, m3-dark-theme]
   sources:
     - https://developer.android.com/develop/ui/compose/designsystems/material3
     - https://developer.android.com/develop/ui/compose/designsystems/custom

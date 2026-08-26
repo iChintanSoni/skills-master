@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: [ml-kit]
+  pairs_with: [ml-kit, gemini-nano-aicore, litert-mediapipe]
   sources:
     - https://developer.android.com/ai
     - https://developers.google.com/ml-kit

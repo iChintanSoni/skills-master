@@ -12,7 +12,7 @@ x-skills-master:
   category: graphics-games
   platforms: ["android"]
   requires: { android: "24", kotlin: "2.2" }
-  pairs_with: [vulkan-rendering]
+  pairs_with: [vulkan-rendering, adpf-thermal-performance, agdk-game-activity]
   sources:
     - https://developer.android.com/games/develop/gameloops
     - https://developer.android.com/games/sdk/frame-pacing

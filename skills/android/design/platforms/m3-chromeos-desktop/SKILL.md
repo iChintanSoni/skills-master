@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: ["chromeos", "large-screen"]
-  pairs_with: []
+  pairs_with: [keyboard-mouse-stylus]
   sources:
     - https://developer.android.com/design/ui/desktop
     - https://developer.android.com/develop/ui/compose/layouts/adaptive

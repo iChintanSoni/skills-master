@@ -10,7 +10,7 @@ x-skills-master:
   category: media-camera-ml
   platforms: ["android", "large-screen", "android-tv"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [car-media-messaging, media3-exoplayer]
   sources:
     - https://developer.android.com/media/media3
     - https://developer.android.com/media/media3/session/background-playback

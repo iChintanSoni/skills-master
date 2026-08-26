@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [choosing-background-work, media-projection, telecom-calls, notifications]
   sources:
     - https://developer.android.com/develop/background-work/services/foreground-services
     - https://developer.android.com/develop/background-work/services/fgs/service-types

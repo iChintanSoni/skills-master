@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["android-tv"]
   requires: {"android": "16", "kotlin": "2.2", "tv-compose": "1.0"}
-  pairs_with: []
+  pairs_with: [tv-compose, media3-exoplayer]
   sources:
     - https://developer.android.com/training/tv/playback
     - https://developer.android.com/media/media3/exoplayer

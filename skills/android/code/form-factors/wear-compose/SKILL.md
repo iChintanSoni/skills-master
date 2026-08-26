@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["wear-os"]
   requires: { "android": "16", "kotlin": "2.2", "wear-compose": "1.5" }
-  pairs_with: [m3-wear]
+  pairs_with: [m3-wear, choosing-form-factors, wear-data-health]
   sources:
     - https://developer.android.com/training/wearables/compose
     - https://developer.android.com/training/wearables/compose/navigation

@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: ["android", "large-screen"]
-  pairs_with: [compose-window-insets]
+  pairs_with: [compose-window-insets, edge-to-edge-compat]
   sources:
     - https://developer.android.com/develop/ui/views/layout/edge-to-edge
     - https://developer.android.com/develop/ui/compose/layouts/insets

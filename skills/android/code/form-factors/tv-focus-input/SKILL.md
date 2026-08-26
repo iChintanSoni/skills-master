@@ -13,7 +13,7 @@ x-skills-master:
     android: "16"
     kotlin: "2.2"
     tv-compose: "1.0"
-  pairs_with: []
+  pairs_with: [m3-tv, tv-compose]
   sources:
     - https://developer.android.com/training/tv/start/navigation
     - https://developer.android.com/develop/ui/compose/touch-input/focus

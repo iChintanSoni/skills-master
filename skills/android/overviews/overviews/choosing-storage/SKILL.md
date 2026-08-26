@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: [room]
+  pairs_with: [room, datastore, files-serialization, sqlite-androidx]
   sources:
     - https://developer.android.com/training/data-storage
     - https://developer.android.com/topic/libraries/architecture/datastore

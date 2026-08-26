@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
-  pairs_with: [m3-text-fields]
+  pairs_with: [m3-text-fields, autofill]
   sources:
     - https://developer.android.com/develop/ui/compose/text/user-input
   snapshot_date: "2026-08-25"

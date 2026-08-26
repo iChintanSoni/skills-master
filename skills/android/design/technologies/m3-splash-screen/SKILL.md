@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: technologies
   platforms: ["android", "large-screen"]
-  pairs_with: [splash-screen]
+  pairs_with: [splash-screen, m3-onboarding]
   sources:
     - https://developer.android.com/develop/ui/views/launch/splash-screen
     - https://developer.android.com/design/ui/mobile

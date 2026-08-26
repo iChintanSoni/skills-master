@@ -8,7 +8,7 @@ x-skills-master:
   category: ship
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: [android-cli]
+  pairs_with: [android-cli, app-signing]
   sources:
     - https://developer.android.com/build/building-cmdline
     - https://developer.android.com/studio/test/gradle-managed-devices

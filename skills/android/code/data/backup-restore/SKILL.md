@@ -10,7 +10,7 @@ x-skills-master:
   category: data
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [datastore]
   sources:
     - https://developer.android.com/guide/topics/data/autobackup
     - https://developer.android.com/guide/topics/data/testingbackup

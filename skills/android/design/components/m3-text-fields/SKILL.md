@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: [compose-text-fields]
+  pairs_with: [compose-text-fields, m3-menus-pickers]
   sources:
     - https://m3.material.io/components/text-fields/overview
     - https://developer.android.com/develop/ui/compose/text/user-input

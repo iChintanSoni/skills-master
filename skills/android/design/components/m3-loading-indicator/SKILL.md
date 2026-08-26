@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-loading, m3-progress-indicators]
   sources:
     - https://m3.material.io/components/loading-indicator/overview
     - https://developer.android.com/develop/ui/compose/components

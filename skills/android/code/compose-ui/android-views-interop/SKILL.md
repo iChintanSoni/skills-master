@@ -14,7 +14,7 @@ x-skills-master:
     android: "16"
     kotlin: "2.2"
     compose-bom: "2026.08.00"
-  pairs_with: [adopting-compose]
+  pairs_with: [adopting-compose, choosing-compose-or-views, compose-view-interop]
   sources:
     - https://developer.android.com/develop/ui
     - https://developer.android.com/develop/ui/compose/migrate/interoperability-apis

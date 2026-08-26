@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [app-bundles-size, play-console-publishing, app-signing]
   sources:
     - https://developer.android.com/distribute
     - https://developer.android.com/guide/app-bundle

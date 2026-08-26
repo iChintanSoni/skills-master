@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [security-crypto, credential-manager]
   sources:
     - https://developer.android.com/identity/sign-in/biometric-auth
     - https://developer.android.com/training/sign-in/biometric-auth

@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
-  pairs_with: []
+  pairs_with: [m3-large-screens]
   sources:
     - https://developer.android.com/guide/topics/large-screens/make-apps-fold-aware
     - https://developer.android.com/jetpack/androidx/releases/window

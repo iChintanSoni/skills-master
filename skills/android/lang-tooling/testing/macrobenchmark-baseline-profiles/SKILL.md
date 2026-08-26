@@ -10,7 +10,7 @@ x-skills-master:
   category: testing
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [choosing-android-testing, compose-performance, performance-profiling]
   sources:
     - https://developer.android.com/topic/performance/baselineprofiles/overview
     - https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview

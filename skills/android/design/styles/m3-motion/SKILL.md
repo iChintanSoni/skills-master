@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: styles
   platforms: ["android", "large-screen"]
-  pairs_with: [compose-animation]
+  pairs_with: [compose-animation, adopting-m3-expressive, m3-expressive]
   sources:
     - https://m3.material.io/styles/motion/overview
     - https://developer.android.com/develop/ui/compose/animation/introduction

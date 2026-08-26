@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [adaptive-window-size-classes, m3-large-screens]
   sources:
     - https://developer.android.com/guide/topics/large-screens/support-different-screen-sizes
     - https://developer.android.com/develop/ui/compose/layouts/adaptive

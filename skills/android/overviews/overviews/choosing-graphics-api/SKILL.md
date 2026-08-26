@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: [vulkan-rendering]
+  pairs_with: [vulkan-rendering, compose-graphics, agsl-runtime-shaders]
   sources:
     - https://developer.android.com/games/develop/vulkan/overview
     - https://developer.android.com/develop/ui/views/graphics/agsl

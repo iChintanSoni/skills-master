@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-buttons, m3-icons, m3-tooltips]
   sources:
     - https://m3.material.io/components/icon-buttons/overview
     - https://developer.android.com/develop/ui/compose/components

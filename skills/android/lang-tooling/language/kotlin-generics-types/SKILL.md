@@ -10,7 +10,7 @@ x-skills-master:
   category: language
   platforms: ["android"]
   requires: {kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [kotlin-language-core]
   sources:
     - https://kotlinlang.org/docs/generics.html
     - https://kotlinlang.org/docs/inline-functions.html

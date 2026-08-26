@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-splash-screen]
   sources:
     - https://developer.android.com/design/ui/mobile
     - https://m3.material.io/foundations/overview

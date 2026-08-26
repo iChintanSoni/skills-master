@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: ["android-tv"]
-  pairs_with: [tv-compose]
+  pairs_with: [tv-compose, tv-focus-input]
   sources:
     - https://developer.android.com/design/ui/tv
     - https://developer.android.com/training/tv

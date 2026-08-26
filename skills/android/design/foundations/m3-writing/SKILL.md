@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [app-localization]
   sources:
     - https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices
     - https://developer.android.com/design/ui/mobile

@@ -10,7 +10,7 @@ x-skills-master:
   category: architecture
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [android-navigation-architecture, networking-data-layer, modularization]
   sources:
     - https://developer.android.com/topic/architecture
     - https://developer.android.com/topic/architecture/ui-layer

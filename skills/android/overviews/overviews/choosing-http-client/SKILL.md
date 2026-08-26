@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: [retrofit-okhttp]
+  pairs_with: [retrofit-okhttp, ktor-client, networking-data-layer]
   sources:
     - https://developer.android.com/develop/connectivity/network-ops/connecting
     - https://developer.android.com/develop/connectivity/network-ops

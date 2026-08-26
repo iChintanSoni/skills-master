@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: ["xr"]
-  pairs_with: [xr-compose-spatial]
+  pairs_with: [xr-compose-spatial, xr-scenecore]
   sources:
     - https://developer.android.com/design/ui/xr
     - https://developer.android.com/develop/xr

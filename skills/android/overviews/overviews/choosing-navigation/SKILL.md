@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [navigation3, navigation-compose, android-navigation-architecture]
   sources:
     - https://developer.android.com/guide/navigation
     - https://developer.android.com/develop/ui/compose/navigation

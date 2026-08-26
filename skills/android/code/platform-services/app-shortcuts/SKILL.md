@@ -13,7 +13,7 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-  pairs_with: []
+  pairs_with: [appsearch, app-actions-assistant]
   sources:
     - https://developer.android.com/develop/ui/compose/system/shortcuts
   snapshot_date: "2026-06-06"

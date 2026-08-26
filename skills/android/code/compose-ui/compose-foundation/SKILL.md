@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
-  pairs_with: []
+  pairs_with: [m3-interaction-states, compose-modifiers]
   sources:
     - https://developer.android.com/develop/ui/compose/touch-input/pointer-input
     - https://developer.android.com/develop/ui/compose/touch-input/focus

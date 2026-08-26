@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
-  pairs_with: []
+  pairs_with: [compose-state, macrobenchmark-baseline-profiles]
   sources:
     - https://developer.android.com/develop/ui/compose/performance
     - https://developer.android.com/develop/ui/compose/performance/stability

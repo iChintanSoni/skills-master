@@ -10,7 +10,7 @@ x-skills-master:
   category: ship
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [adopting-edge-to-edge-predictive-back, m3-edge-to-edge]
   sources:
     - https://developer.android.com/develop/ui/views/layout/edge-to-edge
     - https://developer.android.com/about/versions/15/behavior-changes-15
