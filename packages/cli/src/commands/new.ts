@@ -1,7 +1,12 @@
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { resolveContent } from "../content/source";
-import { CLASS_DIR, SkillClassSchema, type SkillClass } from "../schema/frontmatter";
+import {
+  CLASS_DIR,
+  SkillClassSchema,
+  SkillNameSchema,
+  type SkillClass,
+} from "../schema/frontmatter";
 import { log } from "../util/log";
 
 export interface NewSkillOptions {
@@ -70,6 +75,12 @@ export async function newSkillCommand(opts: NewSkillOptions): Promise<string> {
   const cls = SkillClassSchema.parse(parts[1]);
   const category = parts[2]!;
   const name = parts[parts.length - 1]!;
+  // Fail here rather than at lint: the folder is named after this, so a bad
+  // name means a scaffolded skill that cannot be fixed without moving it.
+  const nameCheck = SkillNameSchema.safeParse(name);
+  if (!nameCheck.success) {
+    throw new Error(`Invalid skill name "${name}": ${nameCheck.error.issues[0]!.message}.`);
+  }
 
   const content = await resolveContent({ content: opts.content, cwd: opts.cwd });
   const dir = join(content.root, domain, CLASS_DIR[cls], ...parts.slice(2));

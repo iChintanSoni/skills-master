@@ -312,6 +312,42 @@ describe("lintSkills — tightened rules", () => {
   });
 });
 
+describe("lintSkills — spec name rule", () => {
+  // The spec allows [a-z0-9] words joined by single hyphens, <= 64 chars, and
+  // Claude's platform additionally rejects "claude"/"anthropic" in a name.
+  const badNames: [string, string][] = [
+    ["-leading-hyphen", "kebab-case"],
+    ["trailing-hyphen-", "kebab-case"],
+    ["double--hyphen", "kebab-case"],
+    ["Upper-Case", "kebab-case"],
+    ["under_score", "kebab-case"],
+    ["a".repeat(65), "at most 64 characters"],
+    ["claude-tooling", "reserved words"],
+    ["anthropic-sdk", "reserved words"],
+  ];
+
+  for (const [name, expected] of badNames) {
+    it(`errors on "${name.slice(0, 20)}"`, () => {
+      writeSkill({ dir: `apple/code/app-frameworks/${name}`, name });
+      expect(messagesOf("error")).toEqual(
+        expect.arrayContaining([expect.stringContaining(expected)]),
+      );
+    });
+  }
+
+  it("accepts a spec-legal name", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/swiftui-grids-2" });
+    expect(lintSkills(root).errorCount).toBe(0);
+  });
+
+  it("applies the same rule to pairs_with entries", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/paired", pairsWith: ["bad--partner"] });
+    expect(messagesOf("error")).toEqual(
+      expect.arrayContaining([expect.stringContaining("pairs_with.0: must be kebab-case")]),
+    );
+  });
+});
+
 describe("lintSkills — remaining rule coverage", () => {
   it("errors when the body exceeds 500 lines and warns above 450", () => {
     const pad = (n: number) => `${BODY}\n${"filler line\n".repeat(n)}`;
