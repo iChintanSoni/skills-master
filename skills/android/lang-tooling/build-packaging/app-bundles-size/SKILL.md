@@ -15,7 +15,7 @@ x-skills-master:
     android: "16"
     kotlin: "2.2"
     agp: "9.0"
-  pairs_with: []
+  pairs_with: [play-asset-delivery]
   sources:
     - https://developer.android.com/guide/app-bundle
     - https://developer.android.com/topic/performance/reduce-apk-size

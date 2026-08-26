@@ -8,7 +8,7 @@ x-skills-master:
   category: ship
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [play-games-services]
   sources:
     - https://developer.android.com/studio/publish
     - https://play.google.com/console/about/

@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
-  pairs_with: []
+  pairs_with: [agsl-runtime-shaders]
   sources:
     - https://developer.android.com/develop/ui/compose/graphics/draw/overview
   snapshot_date: "2026-08-25"

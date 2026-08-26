@@ -1,12 +1,12 @@
 # Skill coverage
 
-Generated from `skills/registry.json`. **418 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
+Generated from `skills/registry.json`. **426 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
 
 | Domain | `code` | `design` | `lang-tooling` | `overview` | Total |
 |---|---:|---:|---:|---:|---:|
 | `apple` | 88 | 64 | 38 | 13 | 203 |
-| `android` | 99 | 63 | 36 | 17 | 215 |
-| **All** | **187** | **127** | **74** | **30** | **418** |
+| `android` | 107 | 63 | 36 | 17 | 223 |
+| **All** | **195** | **127** | **74** | **30** | **426** |
 
 Skills with Level-3 resources (examples/checklist/reference): **90**.
 
@@ -294,7 +294,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `compose-foundation`
 - `compose-fundamentals`
 - `compose-gestures`  — ↔ keyboard-mouse-stylus
-- `compose-graphics`
+- `compose-graphics`  — ↔ agsl-runtime-shaders
 - `compose-images`
 - `compose-layout`  — examples, checklist, ↔ compose-custom-layouts
 - `compose-lazy-lists`  — examples, checklist, ↔ m3-lists
@@ -345,6 +345,17 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `xr-compose-spatial`  — examples, checklist, ↔ m3-xr
 - `xr-glimmer-glasses`  — ↔ m3-ai-glasses
 - `xr-scenecore`
+
+## android  ›  code  ›  graphics-games  (8)
+
+- `adpf-thermal-performance`  — ↔ performance-profiling
+- `agdk-game-activity`  — ↔ game-controller-input
+- `agsl-runtime-shaders`  — ↔ compose-graphics
+- `game-controller-input`  — ↔ agdk-game-activity
+- `game-loop-frame-pacing`  — ↔ vulkan-rendering
+- `play-asset-delivery`  — ↔ app-bundles-size
+- `play-games-services`  — ↔ play-console-publishing
+- `vulkan-rendering`  — ↔ game-loop-frame-pacing
 
 ## android  ›  code  ›  media-camera-ml  (10)
 
@@ -480,7 +491,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 
 - `android-cli`  — emerging, ↔ ci-cd, ↔ gradle-kotlin-dsl
 - `android-manifest`
-- `app-bundles-size`
+- `app-bundles-size`  — ↔ play-asset-delivery
 - `app-signing`
 - `build-variants-flavors`
 - `convention-plugins`
@@ -504,9 +515,9 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `ci-cd`  — examples, checklist, ↔ android-cli
 - `crash-anr-vitals`
 - `edge-to-edge-compat`  — examples, checklist
-- `performance-profiling`
+- `performance-profiling`  — ↔ adpf-thermal-performance
 - `play-billing`
-- `play-console-publishing`  — examples, checklist
+- `play-console-publishing`  — examples, checklist, ↔ play-games-services
 
 ## android  ›  lang-tooling  ›  testing  (8)
 
