@@ -348,6 +348,36 @@
       }
     },
     {
+      "name": "android-cli",
+      "domain": "android",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Covers Android CLI 1.0 — Google's agent-facing command-line toolchain for Android development: project scaffolding (android create), project metadata (android describe), SDK package management, emulator lifecycle, APK deployment (android run), screen capture and layout inspection, knowledge-base search, agent skills installation, and the Android Studio bridge commands (analyze-file, find-declaration, find-usages, render-compose-preview, version-lookup). Use when a coding agent needs to scaffold, inspect, deploy, or visually verify an Android app from the terminal, or when deciding whether a task belongs to Android CLI, ./gradlew, or Android Studio.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "android-cli",
+        "agents",
+        "tooling",
+        "emulator",
+        "sdk",
+        "android"
+      ],
+      "pairs_with": [
+        "gradle-kotlin-dsl",
+        "ci-cd"
+      ],
+      "path": "android/lang-tooling/build-packaging/android-cli",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "android-manifest",
       "domain": "android",
       "class": "lang-tooling",
@@ -594,7 +624,10 @@
         "spotlight",
         "apple-intelligence"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-siri-design",
+        "hig-snippets"
+      ],
       "path": "apple/code/app-frameworks/app-intents",
       "resources": {
         "reference": false,
@@ -1020,8 +1053,44 @@
         "audio",
         "video"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "now-playing"
+      ],
       "path": "apple/code/media/avfoundation-playback",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "background-assets",
+      "domain": "apple",
+      "class": "code",
+      "category": "system",
+      "description": "Guidance on the Background Assets framework for shipping large app content outside the binary: managed asset packs via the AssetPackManager actor, essential/prefetch/on-demand download policies, Apple-hosted asset packs up to 200 GB through App Store Connect, self-hosted managed packs, the legacy BADownloaderExtension path, localized packs, and StoreKit-gated unlock of purchasable content. Use when slimming an app or game binary, downloading level packs or media before first launch or on demand, adopting Apple hosting, delivering per-language assets, or gating premium asset packs behind an in-app purchase.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "backgroundassets",
+        "asset-packs",
+        "downloads",
+        "app-size",
+        "storekit",
+        "ios26"
+      ],
+      "pairs_with": [
+        "storekit",
+        "background-tasks"
+      ],
+      "path": "apple/code/system/background-assets",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1051,7 +1120,9 @@
         "system",
         "concurrency"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "background-assets"
+      ],
       "path": "apple/code/system/background-tasks",
       "resources": {
         "reference": false,
@@ -1728,7 +1799,10 @@
         "foundation-models",
         "coreml"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "core-ai",
+        "foundation-models"
+      ],
       "path": "apple/overviews/overviews/choosing-ml-approach",
       "resources": {
         "reference": false,
@@ -2024,7 +2098,9 @@
         "signing",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-cli"
+      ],
       "path": "android/lang-tooling/ship/ci-cd",
       "resources": {
         "reference": false,
@@ -2799,6 +2875,40 @@
       }
     },
     {
+      "name": "core-ai",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when shipping your own neural or generative model on-device with the Core AI framework (iOS 27): converting a PyTorch model to the .aimodel format, specializing and caching it for the current device with AIModel and AIModelCache, compiling ahead of time with the coreai-build tool, running inference through InferenceFunction with NDArray inputs, encoding async work onto a ComputeStream, or bridging a custom LLM into a Foundation Models session. Triggers on import CoreAI, AIModel, AIModelAsset, InferenceFunction, NDArray, ComputeStream, or .aimodel/.aimodelc assets.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "core-ai",
+        "machine-learning",
+        "on-device",
+        "apple-silicon",
+        "inference"
+      ],
+      "pairs_with": [
+        "choosing-ml-approach",
+        "core-ml",
+        "foundation-models"
+      ],
+      "path": "apple/code/app-services/core-ai",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "core-bluetooth",
       "domain": "apple",
       "class": "code",
@@ -2943,7 +3053,9 @@
         "neural-engine",
         "on-device"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "core-ai"
+      ],
       "path": "apple/code/app-services/core-ml",
       "resources": {
         "reference": false,
@@ -3439,6 +3551,38 @@
       }
     },
     {
+      "name": "foundation-models",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-services",
+      "description": "Use when building on-device LLM features with the Foundation Models framework: prompting the system language model through LanguageModelSession, producing type-safe Swift output with the Generable macro and guided generation, adding tool calling, streaming partial responses, checking SystemLanguageModel availability, or adopting the iOS 27 additions — multimodal image prompts, Dynamic Profiles, Private Cloud Compute, and third-party model providers. Triggers on import FoundationModels, LanguageModelSession, Generable, Guide, SystemLanguageModel, or PrivateCloudComputeLanguageModel.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "foundation-models",
+        "apple-intelligence",
+        "llm",
+        "on-device",
+        "generative-ai"
+      ],
+      "pairs_with": [
+        "choosing-ml-approach",
+        "core-ai"
+      ],
+      "path": "apple/code/app-services/foundation-models",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "gamekit",
       "domain": "apple",
       "class": "code",
@@ -3513,7 +3657,9 @@
         "android",
         "agp"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-cli"
+      ],
       "path": "android/lang-tooling/build-packaging/gradle-kotlin-dsl",
       "resources": {
         "reference": false,
@@ -4680,7 +4826,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [
         "navigation",
         "navigation-bar",
@@ -5188,6 +5334,41 @@
       }
     },
     {
+      "name": "hig-siri-design",
+      "domain": "apple",
+      "class": "design",
+      "category": "technologies",
+      "description": "Design guidance for Siri experiences per the Human Interface Guidelines Siri section, revised in the 2026 cycle for Siri AI and Apple Intelligence. Use when deciding which app actions and content to expose to Siri through App Intents, sharing onscreen context via view annotations and donations, writing response dialogue that works aloud and onscreen, reviewing App Shortcuts phrasing, or applying Apple's editorial rules for referring to Siri. Produces UX critique and copy guidance grounded in the HIG, not code. Triggers: Siri design review, response dialogue, App Shortcuts phrases, exposing actions to Siri, Siri AI, Apple Intelligence integration.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "siri",
+        "hig",
+        "apple-intelligence",
+        "app-intents",
+        "voice",
+        "ux"
+      ],
+      "pairs_with": [
+        "app-intents",
+        "hig-snippets"
+      ],
+      "path": "apple/design/technologies/hig-siri-design",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "hig-sliders-steppers",
       "domain": "apple",
       "class": "design",
@@ -5210,6 +5391,38 @@
       ],
       "pairs_with": [],
       "path": "apple/design/components/hig-sliders-steppers",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "hig-snippets",
+      "domain": "apple",
+      "class": "design",
+      "category": "components",
+      "description": "Applies Apple Human Interface Guidelines to snippets — the compact views Siri, Spotlight, and the Shortcuts app show when an app intent runs. Covers confirmation versus result snippets, the dialogue/custom-view/system-button anatomy, the 400-point height budget, legibility over the system background, descriptive confirmation button labels, and when to deep-link instead of adding detail. Use when designing or reviewing a snippet for an App Intents action, deciding between confirmation and result presentation, or critiquing snippet layout and content density. Produces design critique, not code.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "hig",
+        "design",
+        "snippets",
+        "siri",
+        "app-intents",
+        "components"
+      ],
+      "pairs_with": [
+        "app-intents",
+        "hig-siri-design"
+      ],
+      "path": "apple/design/components/hig-snippets",
       "resources": {
         "reference": false,
         "examples": false,
@@ -5329,7 +5542,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [
         "hig",
         "design",
@@ -5337,7 +5550,9 @@
         "liquid-glass",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-toolbars"
+      ],
       "path": "apple/design/components/hig-toolbars",
       "resources": {
         "reference": false,
@@ -5918,7 +6133,9 @@
         "formatting",
         "rtl"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "xcode-coding-agents"
+      ],
       "path": "apple/lang-tooling/ship/localization",
       "resources": {
         "reference": false,
@@ -8053,6 +8270,40 @@
       }
     },
     {
+      "name": "music-understanding",
+      "domain": "apple",
+      "class": "code",
+      "category": "media",
+      "description": "Guidance on the Music Understanding framework for on-device musical analysis of audio: the MusicUnderstandingSession actor built over an AVAsset or a streaming buffer provider, the rhythm, key, structure, pace, instrument-activity, and loudness analysis types, TimedValue and RangedValue results keyed to CMTime, the progressive loudnessResults sequence, and Codable results you can precompute and ship. Use when detecting beats, bars, or BPM, finding a track's key or section boundaries, syncing visuals or edits to musical energy, metering perceptual loudness in LUFS, or deciding between this framework, ShazamKit, and MusicKit.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "musicunderstanding",
+        "audio-analysis",
+        "on-device",
+        "media",
+        "swift-concurrency",
+        "ios27"
+      ],
+      "pairs_with": [
+        "musickit"
+      ],
+      "path": "apple/code/media/music-understanding",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "musickit",
       "domain": "apple",
       "class": "code",
@@ -8075,7 +8326,10 @@
         "swiftui",
         "ios17"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "music-understanding",
+        "now-playing"
+      ],
       "path": "apple/code/media/musickit",
       "resources": {
         "reference": false,
@@ -8404,6 +8658,42 @@
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "now-playing",
+      "domain": "apple",
+      "class": "code",
+      "category": "media",
+      "description": "Guidance on the Now Playing framework for publishing playback to the Lock Screen, Control Center, and connected accessories including CarPlay: an Observable model conforming to MediaSessionRepresentable that supplies content, playbackSnapshot, and commands, MediaSession activation through requestToBecomeApplicationPrimary and requestToBecomeSystemPrimary, typed content such as MusicContent and PodcastContent, size-driven Artwork providers, MediaCommand handlers, and RemoteMediaSession extensions driven by push for external devices. Use when surfacing metadata and transport controls outside your app, keeping the scrubber accurate, wiring remote commands, publishing artwork, or choosing between this framework and MPNowPlayingInfoCenter.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "nowplaying",
+        "media",
+        "playback",
+        "lock-screen",
+        "control-center",
+        "carplay",
+        "ios27"
+      ],
+      "pairs_with": [
+        "avfoundation-playback",
+        "musickit"
+      ],
+      "path": "apple/code/media/now-playing",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -9501,7 +9791,9 @@
         "swiftui",
         "monetization"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "background-assets"
+      ],
       "path": "apple/code/app-services/storekit",
       "resources": {
         "reference": false,
@@ -10068,6 +10360,37 @@
       }
     },
     {
+      "name": "swiftui-documents",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Builds document-based SwiftUI apps with DocumentGroup and the iOS 27 observable document family — Document, ReadableDocument, WritableDocument, DocumentReader, DocumentWriter — plus DocumentGroupLaunchScene and DocumentCreationSource for the launch experience. Use when creating or migrating a document-based app, routing between the deprecated FileDocument/ReferenceFileDocument protocols and the new reference-type model, implementing custom readers and writers with background file access and progress reporting, or customizing the document launch screen and creation sources.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "documents",
+        "documentgroup",
+        "files",
+        "ui"
+      ],
+      "pairs_with": [
+        "swiftui-scenes-windows"
+      ],
+      "path": "apple/code/app-frameworks/swiftui-documents",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "swiftui-drawing-canvas",
       "domain": "apple",
       "class": "code",
@@ -10335,7 +10658,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [
         "swiftui",
         "navigation",
@@ -10343,7 +10666,9 @@
         "deeplink",
         "ui"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-toolbars"
+      ],
       "path": "apple/code/app-frameworks/swiftui-navigation",
       "resources": {
         "reference": false,
@@ -10374,7 +10699,9 @@
         "multiwindow",
         "visionos"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-documents"
+      ],
       "path": "apple/code/app-frameworks/swiftui-scenes-windows",
       "resources": {
         "reference": false,
@@ -10535,6 +10862,40 @@
         "hig-text-fields"
       ],
       "path": "apple/code/app-frameworks/swiftui-text-input",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "swiftui-toolbars",
+      "domain": "apple",
+      "class": "code",
+      "category": "app-frameworks",
+      "description": "Populates and tunes SwiftUI toolbars — toolbar(content:), ToolbarItem, ToolbarItemGroup, ToolbarItemPlacement, ToolbarSpacer, DefaultToolbarItem — plus the iOS 27 overflow model of ToolbarItemVisibilityPriority, ToolbarOverflowMenu, and topBarPinnedTrailing, and scroll-driven chrome through toolbarMinimizationBehavior. Use when choosing toolbar placements, controlling which actions collapse into the overflow menu as space shrinks, pinning a critical action, minimizing the navigation bar on scroll, or adapting one toolbar declaration across iPhone, iPad, Mac, Apple Watch, Apple TV, and Vision Pro.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "swiftui",
+        "toolbars",
+        "overflow",
+        "navigationbar",
+        "ui"
+      ],
+      "pairs_with": [
+        "swiftui-navigation",
+        "hig-toolbars"
+      ],
+      "path": "apple/code/app-frameworks/swiftui-toolbars",
       "resources": {
         "reference": false,
         "examples": false,
@@ -11364,6 +11725,41 @@
       }
     },
     {
+      "name": "xcode-coding-agents",
+      "domain": "apple",
+      "class": "lang-tooling",
+      "category": "build-packaging",
+      "description": "Operational guidance for the coding agents and coding assistant in Xcode 27 — setting up agents and chat models in Intelligence settings, plan mode before edits, reviewing agent changes in the artifacts pane, conversation-history rollback, command and tool permissions, AGENTS.md/CLAUDE.md configuration files, MCP servers and plug-ins, and the agent-driven localization workflow. Use when adopting Xcode's coding assistant on a project or team, deciding which tasks to hand to an agent, configuring permissions or agent instruction files, reviewing or rolling back agent edits, or running agent translations.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "emerging",
+      "version": "1.0.0",
+      "tags": [
+        "xcode",
+        "coding-agents",
+        "coding-assistant",
+        "intelligence",
+        "agents-md",
+        "workflow"
+      ],
+      "pairs_with": [
+        "xcode-project-conventions",
+        "localization"
+      ],
+      "path": "apple/lang-tooling/build-packaging/xcode-coding-agents",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "xcode-project-conventions",
       "domain": "apple",
       "class": "lang-tooling",
@@ -11386,7 +11782,9 @@
         "modularization",
         "project-structure"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "xcode-coding-agents"
+      ],
       "path": "apple/lang-tooling/build-packaging/xcode-project-conventions",
       "resources": {
         "reference": false,

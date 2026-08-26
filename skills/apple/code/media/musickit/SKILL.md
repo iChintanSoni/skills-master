@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [music-understanding, now-playing]
   sources:
     - https://developer.apple.com/documentation/musickit
     - https://developer.apple.com/documentation/musickit/musicauthorization

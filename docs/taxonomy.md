@@ -1,19 +1,19 @@
 # Skill coverage
 
-Generated from `skills/registry.json`. **397 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
+Generated from `skills/registry.json`. **408 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
 
 | Domain | `code` | `design` | `lang-tooling` | `overview` | Total |
 |---|---:|---:|---:|---:|---:|
-| `apple` | 71 | 62 | 37 | 13 | 183 |
-| `android` | 99 | 63 | 35 | 17 | 214 |
-| **All** | **170** | **125** | **72** | **30** | **397** |
+| `apple` | 78 | 64 | 38 | 13 | 193 |
+| `android` | 99 | 63 | 36 | 17 | 215 |
+| **All** | **177** | **127** | **74** | **30** | **408** |
 
 Skills with Level-3 resources (examples/checklist/reference): **90**.
 
-## apple  ›  code  ›  app-frameworks  (34)
+## apple  ›  code  ›  app-frameworks  (36)
 
 - `activitykit`  — ↔ hig-live-activities-design
-- `app-intents`  — examples, checklist
+- `app-intents`  — examples, checklist, ↔ hig-siri-design, ↔ hig-snippets
 - `appkit-core`
 - `appkit-swiftui-interop`
 - `controls-widgets`  — emerging
@@ -26,6 +26,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `swiftui-concurrency`
 - `swiftui-core`  — examples, checklist
 - `swiftui-custom-layout`
+- `swiftui-documents`  — emerging, ↔ swiftui-scenes-windows
 - `swiftui-drawing-canvas`
 - `swiftui-environment-preferences`
 - `swiftui-focus`
@@ -34,33 +35,36 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `swiftui-grids`
 - `swiftui-images-symbols`
 - `swiftui-lists-tables`  — examples, checklist, ↔ hig-lists-tables
-- `swiftui-navigation`  — examples, checklist
-- `swiftui-scenes-windows`
+- `swiftui-navigation`  — examples, checklist, ↔ swiftui-toolbars
+- `swiftui-scenes-windows`  — ↔ swiftui-documents
 - `swiftui-scrollview`
 - `swiftui-sheets`  — ↔ hig-sheets
 - `swiftui-state-data-flow`  — examples, checklist
 - `swiftui-tab-views`  — ↔ hig-tab-bars
 - `swiftui-text-input`  — ↔ hig-text-fields
+- `swiftui-toolbars`  — emerging, ↔ hig-toolbars, ↔ swiftui-navigation
 - `uikit-auto-layout`
 - `uikit-collection-views`
 - `uikit-core`
 - `uikit-swiftui-interop`  — examples, checklist
 - `widgetkit`  — examples, checklist, ↔ hig-widgets-design
 
-## apple  ›  code  ›  app-services  (16)
+## apple  ›  code  ›  app-services  (18)
 
 - `cloudkit`  — examples, checklist
+- `core-ai`  — emerging, ↔ choosing-ml-approach, ↔ core-ml, ↔ foundation-models
 - `core-data`
 - `core-location`
-- `core-ml`  — examples, checklist
+- `core-ml`  — examples, checklist, ↔ core-ai
 - `core-spotlight`
 - `eventkit`
+- `foundation-models`  — emerging, ↔ choosing-ml-approach, ↔ core-ai
 - `healthkit`
 - `mapkit`  — examples, checklist
 - `natural-language`
 - `passkit-apple-pay`  — ↔ hig-apple-pay-design
 - `speech`
-- `storekit`  — examples, checklist
+- `storekit`  — examples, checklist, ↔ background-assets
 - `tipkit`
 - `user-notifications`
 - `vision`
@@ -77,17 +81,20 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `scenekit`
 - `spritekit`
 
-## apple  ›  code  ›  media  (5)
+## apple  ›  code  ›  media  (7)
 
 - `avfoundation-capture`
-- `avfoundation-playback`
-- `musickit`
+- `avfoundation-playback`  — ↔ now-playing
+- `music-understanding`  — emerging, ↔ musickit
+- `musickit`  — ↔ music-understanding, ↔ now-playing
+- `now-playing`  — emerging, ↔ avfoundation-playback, ↔ musickit
 - `photokit`
 - `screencapturekit`
 
-## apple  ›  code  ›  system  (6)
+## apple  ›  code  ›  system  (7)
 
-- `background-tasks`
+- `background-assets`  — emerging, ↔ background-tasks, ↔ storekit
+- `background-tasks`  — ↔ background-assets
 - `core-bluetooth`
 - `cryptokit`
 - `keychain-security`
@@ -99,7 +106,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `app-store-connect-api`
 - `sign-in-with-apple`  — ↔ hig-sign-in-with-apple-design
 
-## apple  ›  design  ›  components  (20)
+## apple  ›  design  ›  components  (21)
 
 - `hig-action-sheets`
 - `hig-alerts`
@@ -117,10 +124,11 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `hig-sheets`  — ↔ swiftui-sheets
 - `hig-sidebars`
 - `hig-sliders-steppers`
+- `hig-snippets`  — emerging, ↔ app-intents, ↔ hig-siri-design
 - `hig-tab-bars`  — checklist, ↔ swiftui-tab-views
 - `hig-text-fields`  — ↔ swiftui-text-input
 - `hig-toggles`
-- `hig-toolbars`
+- `hig-toolbars`  — ↔ swiftui-toolbars
 
 ## apple  ›  design  ›  foundations  (12)
 
@@ -170,13 +178,14 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `hig-designing-for-visionos`
 - `hig-designing-for-watchos`
 
-## apple  ›  design  ›  technologies  (6)
+## apple  ›  design  ›  technologies  (7)
 
 - `hig-app-clips-design`
 - `hig-apple-pay-design`  — ↔ passkit-apple-pay
 - `hig-carplay-design`
 - `hig-live-activities-design`  — ↔ activitykit
 - `hig-sign-in-with-apple-design`  — ↔ sign-in-with-apple
+- `hig-siri-design`  — emerging, ↔ app-intents, ↔ hig-snippets
 - `hig-widgets-design`  — ↔ widgetkit
 
 ## apple  ›  lang-tooling  ›  architecture  (6)
@@ -188,13 +197,14 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `networking-layer`
 - `swiftui-app-architecture`  — examples, checklist, contested
 
-## apple  ›  lang-tooling  ›  build-packaging  (5)
+## apple  ›  lang-tooling  ›  build-packaging  (6)
 
 - `asset-catalogs`
 - `info-plist-entitlements`
 - `spm`
 - `swift-package-plugins`
-- `xcode-project-conventions`
+- `xcode-coding-agents`  — emerging, ↔ localization, ↔ xcode-project-conventions
+- `xcode-project-conventions`  — ↔ xcode-coding-agents
 
 ## apple  ›  lang-tooling  ›  language  (11)
 
@@ -218,7 +228,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `crash-symbolication`
 - `entitlements-capabilities`
 - `instruments-profiling`
-- `localization`
+- `localization`  — ↔ xcode-coding-agents
 - `privacy-manifests`
 - `provisioning-code-signing`
 - `testflight-appstore-connect`
@@ -239,7 +249,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `choosing-async-pattern`
 - `choosing-distribution`
 - `choosing-graphics-tech`
-- `choosing-ml-approach`
+- `choosing-ml-approach`  — ↔ core-ai, ↔ foundation-models
 - `choosing-navigation-pattern`
 - `choosing-networking`
 - `choosing-persistence`  — contested, ↔ swiftdata-modeling
@@ -453,14 +463,15 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `modularization`  — examples, checklist
 - `networking-data-layer`
 
-## android  ›  lang-tooling  ›  build-packaging  (8)
+## android  ›  lang-tooling  ›  build-packaging  (9)
 
+- `android-cli`  — emerging, ↔ ci-cd, ↔ gradle-kotlin-dsl
 - `android-manifest`
 - `app-bundles-size`
 - `app-signing`
 - `build-variants-flavors`
 - `convention-plugins`
-- `gradle-kotlin-dsl`  — examples, checklist
+- `gradle-kotlin-dsl`  — examples, checklist, ↔ android-cli
 - `r8-proguard`
 - `version-catalogs`
 
@@ -477,7 +488,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 
 - `accessibility-testing`
 - `app-localization`
-- `ci-cd`  — examples, checklist
+- `ci-cd`  — examples, checklist, ↔ android-cli
 - `crash-anr-vitals`
 - `edge-to-edge-compat`  — examples, checklist
 - `performance-profiling`

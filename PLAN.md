@@ -143,27 +143,27 @@ broken emit formats) is a bug, not a nice-to-have.
 
 ## Phase 4 — Targeted staleness refresh (WWDC 2026 / I/O 2026)
 
-- [ ] **4.1 Apple refresh shortlist (S).** From the WWDC26 guides, map announcements to
+- [x] **4.1 Apple refresh shortlist (S).** From the WWDC26 guides, map announcements to
   affected skills (expect: swiftui lists/toolbars/navigation/sheets/error-handling,
   liquid-glass adoption, app-intents/Siri, documents, Xcode/tooling). Commit the
   shortlist into this file under 4.2.
-- [ ] **4.2 Apple re-verification pass (L).** Re-verify each shortlisted skill against
+- [x] **4.2 Apple re-verification pass (L).** Re-verify each shortlisted skill against
   current docs; note iOS 27 changes where behavior shifted; mark moved-fast areas
   `emerging`; bump `snapshot_date`/`version`. Batch PRs by category.
-- [ ] **4.3 Android refresh pass (L).** Compose-first is now official policy: revisit
+- [x] **4.3 Android refresh pass (L).** Compose-first is now official policy: revisit
   Views-adjacent guidance and stability labels; fold in Android 17 behavior changes
   (mandatory large-screen resizability, local-network restrictions, certificate
   transparency) into the affected skills; bump stamps/versions. Batch by category.
-- [ ] **4.4 Refresh the rest honestly (S).** Skills reviewed and found unchanged get a
+- [x] **4.4 Refresh the rest honestly (S).** Skills reviewed and found unchanged get a
   `snapshot_date` bump only when actually re-verified — never a blind bulk stamp.
 
 ## Phase 5 — New skills: headline APIs (all `emerging`)
 
-- [ ] **5.1 iOS 27 SwiftUI additions (M).** ~4–6 skills: new Document API
+- [x] **5.1 iOS 27 SwiftUI additions (M).** ~4–6 skills: new Document API
   (ReadableDocument/WritableDocument family), toolbar overflow/priority model,
   list reordering, error-presentation bindings; update `adopting-liquid-glass` for
   automatic adoption.
-- [ ] **5.2 Android 17 / Compose-first additions (M).** ~3–5 skills: Android 17
+- [x] **5.2 Android 17 / Compose-first additions (M).** ~3–5 skills: Android 17
   migration/behavior changes, media lifecycle toolkit (CameraX Viewfinder composable,
   Media3 AI Effects), Compose-first architecture implications; update relevant overviews.
 

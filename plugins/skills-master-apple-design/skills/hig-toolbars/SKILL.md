@@ -20,7 +20,7 @@ Use when designing or reviewing a toolbar — the bar of frequently used, screen
 ### iOS 27 (WWDC 2026)
 
 - Toolbars gain an explicit overflow model: assign `.visibilityPriority(_:)` so items collapse in a designed order as space shrinks, park permanently-secondary actions in `ToolbarOverflowMenu`, and pin the truly critical action trailing with `topBarPinnedTrailing`. Design the priority order deliberately — the system now enforces it instead of clipping arbitrarily.
-- Bars can auto-minimize on scroll (`toolbarMinimizeBehavior` in SwiftUI, `UINavigationItem.barMinimizeBehavior` in UIKit) — decide per-surface whether chrome should yield to content.
+- Bars can auto-minimize on scroll (`toolbarMinimizationBehavior(_:for:)` in SwiftUI, `UINavigationItem.navigationBarMinimization` in UIKit) — decide per-surface whether chrome should yield to content.
 
 ## Platform notes
 

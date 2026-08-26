@@ -39,7 +39,7 @@ struct RootView: View {
 ### iOS 27 (WWDC 2026)
 
 - `navigationTransition(.crossFade)` joins `.zoom` as a built-in `NavigationTransition`, giving push/pop a cross-fade without custom transition plumbing.
-- `toolbarMinimizeBehavior(_:for:)` lets the navigation bar minimize on scroll and re-expand on scroll-up — adopt it instead of hand-rolled scroll-offset observation for collapsing chrome.
+- `toolbarMinimizationBehavior(_:for:)` lets the navigation bar minimize on scroll and re-expand on scroll-up — adopt it instead of hand-rolled scroll-offset observation for collapsing chrome. Note the spelling: WWDC prose calls it "toolbarMinimizeBehavior", but that symbol does not exist; `tabBarMinimizeBehavior(_:)` is the separate tab-bar API.
 
 ## Platform notes
 

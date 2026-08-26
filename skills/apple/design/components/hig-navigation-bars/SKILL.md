@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.apple.com/wwdc26/guides/design/
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # HIG Navigation Bars
@@ -40,7 +40,7 @@ Critique and shape the bar at the top of a navigable screen: its title, the back
 
 ### iOS 27 (WWDC 2026)
 
-- Navigation bars can minimize as content scrolls (`UINavigationItem.barMinimizeBehavior` with `barMinimizationSafeAreaAdjustment`; `toolbarMinimizeBehavior` in SwiftUI) — content-forward surfaces like readers should adopt it; task-dense surfaces where the title anchors context should not.
+- Navigation bars can minimize as content scrolls (`UINavigationItem.navigationBarMinimization`, whose `UIBarMinimization` carries `minimizationBehavior`, `restorationBehavior`, and `safeAreaAdjustment`; `toolbarMinimizationBehavior(_:for:)` in SwiftUI) — content-forward surfaces like readers should adopt it; task-dense surfaces where the title anchors context should not.
 - Bar items participate in the new visibility-priority system (`UIBarButtonItem.visibilityPriority`) so trailing items collapse predictably on narrow widths.
 
 ## Platform notes

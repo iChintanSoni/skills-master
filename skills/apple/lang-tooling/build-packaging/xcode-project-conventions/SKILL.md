@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "16"
-  pairs_with: []
+  pairs_with: [xcode-coding-agents]
   sources:
     - https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
     - https://developer.apple.com/documentation/xcode/organizing-your-code-with-local-packages

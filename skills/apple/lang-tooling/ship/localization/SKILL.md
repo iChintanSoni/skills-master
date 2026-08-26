@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [xcode-coding-agents]
   sources:
     - https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog
     - https://developer.apple.com/documentation/xcode/exporting-localizations
