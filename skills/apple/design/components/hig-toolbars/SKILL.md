@@ -7,14 +7,14 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-toolbars]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/toolbars
     - https://developer.apple.com/documentation/TechnologyOverviews/liquid-glass
     - https://developer.apple.com/wwdc26/guides/design/
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 ## When to use
@@ -34,7 +34,7 @@ Use when designing or reviewing a toolbar — the bar of frequently used, screen
 ### iOS 27 (WWDC 2026)
 
 - Toolbars gain an explicit overflow model: assign `.visibilityPriority(_:)` so items collapse in a designed order as space shrinks, park permanently-secondary actions in `ToolbarOverflowMenu`, and pin the truly critical action trailing with `topBarPinnedTrailing`. Design the priority order deliberately — the system now enforces it instead of clipping arbitrarily.
-- Bars can auto-minimize on scroll (`toolbarMinimizeBehavior` in SwiftUI, `UINavigationItem.barMinimizeBehavior` in UIKit) — decide per-surface whether chrome should yield to content.
+- Bars can auto-minimize on scroll (`toolbarMinimizationBehavior(_:for:)` in SwiftUI, `UINavigationItem.navigationBarMinimization` in UIKit) — decide per-surface whether chrome should yield to content.
 
 ## Platform notes
 

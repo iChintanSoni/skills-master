@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [background-assets]
   sources:
     - https://developer.apple.com/documentation/backgroundtasks
     - https://developer.apple.com/documentation/backgroundtasks/bgcontinuedprocessingtask

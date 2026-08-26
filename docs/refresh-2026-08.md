@@ -94,7 +94,7 @@ Primary sources: [Android 17 behavior changes](https://developer.android.com/abo
 - [x] `app-functions` → `code/platform-services/` (Android 17 AppFunctions / MCP tools)
 - [x] `media3-ai-effects` → `code/media-camera-ml/`
 - [x] `media3-transformer` → `code/media-camera-ml/` (multi-asset editing + CodecDB)
-- [ ] `android-cli` → `lang-tooling/build-packaging/` (agent-facing toolchain)
+- [x] `android-cli` → `lang-tooling/build-packaging/` (agent-facing toolchain)
 - [x] `compose-grids` — decided: folded into compose-custom-layouts (Grid named
   areas, A4); still experimental, no standalone skill
 - [x] `local-network-access` — decided: folded into runtime-permissions +
@@ -204,20 +204,20 @@ Frameworks:
 
 ## Apple — NEW skills (10 + 2 optional)
 
-- [ ] `swiftui-documents` → `code/app-frameworks` (WritableDocument/DocumentWriter,
+- [x] `swiftui-documents` → `code/app-frameworks` (WritableDocument/DocumentWriter,
   ReadableDocument/DocumentReader, DocumentCreationSource, DocumentGroupLaunchScene)
-- [ ] `swiftui-toolbars` → `code/app-frameworks` (ToolbarOverflowMenu,
+- [x] `swiftui-toolbars` → `code/app-frameworks` (ToolbarOverflowMenu,
   visibilityPriority, minimize behavior)
-- [ ] `foundation-models` → `code/app-services` (shipping since iOS 26; multimodal,
+- [x] `foundation-models` → `code/app-services` (shipping since iOS 26; multimodal,
   Dynamic Profiles, PCC, third-party providers)
-- [ ] `core-ai` → `code/app-services` (on-device model loading/specialization, AOT)
-- [ ] `background-assets` → `code/system` (200GB hosted packs, StoreKit unlock)
-- [ ] `music-understanding` → `code/media`
-- [ ] `now-playing` → `code/media`
-- [ ] `hig-siri-design` → `design/technologies` (new HIG section)
-- [ ] `hig-snippets` → `design/components` (new HIG section)
-- [ ] `xcode-coding-agents` → `lang-tooling/build-packaging`
-- [ ] Optional: `spatial-preview`, `foveated-streaming` → `code/graphics-games`
+- [x] `core-ai` → `code/app-services` (on-device model loading/specialization, AOT)
+- [x] `background-assets` → `code/system` (200GB hosted packs, StoreKit unlock)
+- [x] `music-understanding` → `code/media`
+- [x] `now-playing` → `code/media`
+- [x] `hig-siri-design` → `design/technologies` (new HIG section)
+- [x] `hig-snippets` → `design/components` (new HIG section)
+- [x] `xcode-coding-agents` → `lang-tooling/build-packaging`
+- [ ] Optional: `spatial-preview`, `foveated-streaming` → `code/graphics-games` (deferred)
 
 ---
 

@@ -12,7 +12,7 @@ x-skills-master:
   category: build-packaging
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2", "agp": "9.0" }
-  pairs_with: []
+  pairs_with: [android-cli]
   sources:
     - https://developer.android.com/build
     - https://developer.android.com/build/gradle-build-overview
