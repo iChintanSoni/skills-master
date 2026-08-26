@@ -12,7 +12,7 @@ x-skills-master:
   category: graphics-games
   platforms: ["android"]
   requires: { android: "24", kotlin: "2.2" }
-  pairs_with: [game-loop-frame-pacing]
+  pairs_with: [game-loop-frame-pacing, choosing-graphics-api]
   sources:
     - https://developer.android.com/games/develop/vulkan/overview
     - https://developer.android.com/ndk/guides/graphics/design-notes

@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-image-pipeline]
   sources:
     - https://developer.apple.com/documentation/swiftui/image
     - https://developer.apple.com/documentation/swiftui/symbolrenderingmode
