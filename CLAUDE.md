@@ -48,6 +48,8 @@ pnpm cli new apple/code/app-frameworks/swiftui-grids --content ../../skills
 pnpm cli view swiftui-navigation --content ../../skills
 node scripts/check-links.mjs skills            # report-only link checker (--strict to fail)
 node scripts/check-links.mjs skills --json=scripts/crawl/reports/links.json
+pnpm spec:validate                             # emitted projections vs the Agent Skills spec
+                                               # (needs `pip install skills-ref==0.1.1`)
 pnpm crawl                                     # report-only staleness/coverage crawl
 pnpm crawl -- --fetch                          # …also snapshot upstream vendor topics
 pnpm crawl:report                              # render the JSON reports as Markdown
@@ -111,6 +113,6 @@ Warnings worth honoring: description should contain a "Use when …" clause; `so
 
 ## CI and release
 
-PRs run two jobs: CLI typecheck + tests, and skills lint + registry/taxonomy/marketplace drift checks. All must pass.
+PRs run three jobs: CLI typecheck + tests; skills lint + registry/taxonomy/marketplace drift checks; and Agent Skills spec conformance (the spec's own reference validator over the committed projections — see `docs/emitters.md`). All must pass.
 
 **Every push to `main` publishes.** `.github/workflows/release.yml` reruns CI, then computes the next version from the latest `v*` git tag plus the head commit message — `#major` > `#minor` > default patch — writes it into `packages/cli/package.json` on the runner only (git tags are the source of truth, nothing is committed back), publishes to npmjs **and** GitHub Packages, then tags and creates the release. Include `#minor`/`#major` in a merge commit message when the change warrants it.

@@ -145,7 +145,7 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   to `[a-z0-9-]` by the schema, so it cannot carry a tag, and a second unreachable branch
   would be dead surface. The rule fires on exactly one skill today — `storekit`, as the
   audit predicted — so the library lints at 0 errors, 1 warning until 1.1.
-- [ ] **0.3 `skills-ref validate` in CI (M).** Add a CI step that runs the spec's reference
+- [x] **0.3 `skills-ref validate` in CI (M).** Add a CI step that runs the spec's reference
   validator over emitted output: the committed dogfood `.claude/skills/` and every skill dir
   under `plugins/*/skills/`. Vendor or pin the tool (it lives in
   `github.com/agentskills/agentskills/skills-ref`); if running it proves impractical in CI,
@@ -153,6 +153,17 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   guarding the emitters, not our own snapshots agreeing with themselves. Document in
   `docs/emitters.md` that the Claude projection tracks the Agent Skills spec and this gate
   is what holds it. *(G3)*
+  **Landed:** no vendoring and no port were needed — the tool ships to PyPI as
+  `skills-ref`, pinned at `0.1.1`, and a new `Agent Skills spec conformance` CI job runs
+  `scripts/spec-validate.py` over all 434 committed skill dirs (**0 invalid** today).
+  Three findings worth carrying forward: PyPI 0.1.1 and the repo's HEAD source are
+  byte-identical apart from an explicit `encoding='utf-8'`, so the pin costs no fidelity;
+  0.1.1 renamed the console script from `skills-ref` to **`agentskills`**, so the driver
+  imports the Python API instead, which did not move; and the validator treats **any**
+  non-spec frontmatter key as an error (`ALLOWED_FIELDS` = name, description, license,
+  allowed-tools, metadata, compatibility) — which is the gate 1.2/1.3 must satisfy, and
+  confirms 1.4's boundary from the other side: pointed at `skills/`, it fails on the first
+  skill's `tags`.
 - [x] **0.4 Dead-surface deletion, carried over (S).** From the previous plan (found during
   7.5): `CondenseOptions.openQuestion: "summarize"` and `summarizeOpenQuestion()` are
   exercised only by their own tests — no emitter has passed that option since the 1.9 digest
