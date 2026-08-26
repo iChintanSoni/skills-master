@@ -16,9 +16,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/scenephase
     - https://developer.apple.com/documentation/swiftui/uiapplicationdelegateadaptor
     - https://developer.apple.com/documentation/swiftui/restoring-your-app-s-state-with-swiftui
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # App lifecycle
@@ -73,6 +73,12 @@ struct ReadingApp: App {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- **The scene lifecycle stops being optional:** building with the iOS 27 SDK requires scene adoption — apps without it fail to launch. Treat `UIApplicationDelegate`-only lifecycle code as a blocker for the SDK bump, not a cleanup item.
+- Orientation moves with it: `application(_:supportedInterfaceOrientationsFor:)` is deprecated in favor of the scene-delegate equivalent (`supportedInterfaceOrientations(for:)` on `UIWindowSceneDelegate`).
+- State restoration gains explicit extension hooks — `UIScene.extendStateRestoration()` paired with `completeStateRestoration()` — for work that must finish before restoration completes.
 
 ## Platform notes
 

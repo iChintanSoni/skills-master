@@ -28,6 +28,10 @@ let item = CSSearchableItem(uniqueIdentifier: note.id.uuidString,
 try await CSSearchableIndex.default().indexSearchableItems([item])
 ```
 
+### iOS 27 (WWDC 2026)
+
+- Spotlight's index turns semantic: App Intents entity schemas feed it, and search over Core Spotlight content becomes LLM-backed — donated entities with well-described attributes surface for meaning, not just keyword matches. The practical shift: invest in schema-conformant entities (see `app-intents`) and accurate attribute descriptions; they are now retrieval features, not metadata hygiene.
+
 ## Platform notes
 
 - **iOS / iPadOS**: Deep-link by handling `CSSearchableItemActionType` via SwiftUI's `onContinueUserActivity(_:perform:)`, reading the id from `userInfo[CSSearchableItemActivityIdentifier]`. In UIKit, implement the scene/app delegate `continue userActivity` path.

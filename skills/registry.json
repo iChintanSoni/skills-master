@@ -102,7 +102,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "app-intents",
         "siri",
@@ -585,7 +585,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "app-intents",
         "siri",
@@ -617,7 +617,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "swiftui",
         "lifecycle",
@@ -2963,7 +2963,7 @@
         "macos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "spotlight",
         "search",
@@ -9799,7 +9799,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "tags": [
         "swiftdata",
         "persistence",
@@ -9832,7 +9832,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "swiftdata",
         "persistence",
@@ -10869,7 +10869,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "uikit",
         "viewcontroller",
@@ -11289,7 +11289,7 @@
         "watchos"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "tags": [
         "widgetkit",
         "widgets",

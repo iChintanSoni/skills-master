@@ -17,6 +17,11 @@ Use when defining the persistent shape of an app's data with SwiftData: declarin
 
 See [examples.md](examples.md) for an annotated model graph.
 
+### iOS 27 (WWDC 2026)
+
+- `@Attribute(.codable)` persists types SwiftData cannot decompose — including framework types you do not own (an `MKMapItem.Identifier`, say) — serialized as a BLOB. The tradeoff is explicit: a `.codable` value cannot participate in filtering, sorting, or predicates, so reserve it for payload, never for query keys.
+- Predicates now compare enums directly (`#Predicate<Expense> { $0.type == someCase }`) — delete the shadow raw-value properties whose only job was filterability.
+
 ## Platform notes
 
 SwiftData requires iOS 17 / iPadOS 17 / macOS 14 / watchOS 10 / tvOS 17 / visionOS 1 and later. A CloudKit-backed container adds constraints that must be designed in from the start: every relationship must be optional or have a default value, every non-optional attribute needs a default, and `@Attribute(.unique)` is not supported on a synced store. Choose natural keys and optionality with sync in mind before you adopt CloudKit.

@@ -11,9 +11,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/appintents
     - https://developer.apple.com/documentation/appintents/donations-and-discovery
+    - https://developer.apple.com/wwdc26/guides/ios/
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 # Adopting App Intents
@@ -47,6 +48,11 @@ struct LogWaterIntent: AppIntent {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- The adoption path now leads through **App Schemas**: schema-conformant intents and entities are what Siri's natural-language action invocation and Spotlight's semantic index consume. When planning adoption, inventory your app's actions against the published schema catalog first — schema-conformant surface gets the platform leverage; fully custom intents remain for what the catalog does not cover.
+- Testing is no longer an afterthought: the new AppIntentsTesting framework belongs in the adoption plan from the first intent.
 
 ## Platform notes
 

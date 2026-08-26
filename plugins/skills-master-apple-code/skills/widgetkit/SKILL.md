@@ -32,6 +32,11 @@ struct StatusProvider: AppIntentTimelineProvider {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- Widget customization runs through App Intents with dynamic styling — configuration and appearance react to intent-driven state rather than static families alone.
+- New `systemExtraLargePortrait` family on iOS/iPadOS/macOS 27 — audit which existing families you map before assuming layouts transfer to the tall canvas.
+
 ## Platform notes
 
 - iOS/iPadOS 26: accented and tinted rendering modes affect Home Screen widgets; branch on `\.widgetRenderingMode` and mark images with `widgetAccentedRenderingMode(_:)`. StandBy uses system small / accessory families, so verify those layouts. CarPlay now surfaces widgets across supported vehicles.

@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftdata/fetchdescriptor
     - https://developer.apple.com/documentation/swiftdata/schemamigrationplan
     - https://developer.apple.com/documentation/swiftdata/migrationstage
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 ## When to use
@@ -47,6 +47,12 @@ func upcoming(after date: Date, in context: ModelContext) throws -> [Trip] {
     return try context.fetch(descriptor)
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- Sectioned queries: `@Query(sort:sectionBy:)` (keyed on a persisted `String` property for now) yields `.sections` ready for a sectioned `List` — no more hand-grouping in the view.
+- Compound predicates compose dynamically: `Predicate(all:)` and `Predicate(any:)` take arrays, so incremental filter builders stop being string-built or nested-closure gymnastics.
+- Observation escapes SwiftUI: `ResultsObserver<Model, SectionID>` tracks live query results from any context (auto-tracking accessed properties via `withContinuousObservation`), and `HistoryObserver(observedModels:modelContainer:)` streams transaction history — the supported primitive for syncing local changes to your own backend via `fetchHistory(descriptor)`.
 
 ## Platform notes
 
