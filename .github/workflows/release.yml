@@ -50,23 +50,41 @@ jobs:
         id: ver
         run: |
           set -euo pipefail
-          LATEST_TAG="$(git tag -l 'v*' --sort=-v:refname | head -n1)"
-          if [ -z "$LATEST_TAG" ]; then
-            # First-ever release: publish the package.json baseline (0.1.0) as-is.
-            NEXT="$(node -p "require('./packages/cli/package.json').version")"
+          TAG_VER="$(git tag -l 'v*' --sort=-v:refname | head -n1)"
+          TAG_VER="${TAG_VER#v}"
+
+          # Tags are the intended source of truth, but they are written *after*
+          # the publish steps — so a publish that succeeded and then failed later
+          # in the job leaves the registry ahead of the tags. Baseline on the
+          # higher of the two, otherwise the next run recomputes a version npmjs
+          # already has, pnpm silently skips the publish as a duplicate, and we
+          # tag a release whose tarball is stale.
+          PUB_VER="$(npm view @ichintansoni/skills-master version \
+            --registry=https://registry.npmjs.org 2>/dev/null || true)"
+
+          if [ -n "$TAG_VER" ] && [ -n "$PUB_VER" ]; then
+            CURRENT="$(pnpm --filter @ichintansoni/skills-master exec semver "$TAG_VER" "$PUB_VER" | tail -n1)"
           else
-            CURRENT="${LATEST_TAG#v}"
+            CURRENT="${TAG_VER:-$PUB_VER}"
+          fi
+
+          if [ -z "$CURRENT" ]; then
+            # First-ever release: publish the package.json baseline as-is.
+            NEXT="$(node -p "require('./packages/cli/package.json').version")"
+            SOURCE="package.json baseline"
+          else
             # Bump level from the head commit message: #major > #minor > patch.
             MSG="$(git log -1 --pretty=%B)"
-            if   printf '%s' "$MSG" | grep -qiE '#major'; then LEVEL=major
-            elif printf '%s' "$MSG" | grep -qiE '#minor'; then LEVEL=minor
-            else LEVEL=patch
+            if   printf '%s' "$MSG" | grep -qiE '#major'; then LEVEL="major"
+            elif printf '%s' "$MSG" | grep -qiE '#minor'; then LEVEL="minor"
+            else LEVEL="patch"
             fi
             NEXT="$(pnpm --filter @ichintansoni/skills-master exec semver -i "$LEVEL" "$CURRENT")"
+            SOURCE="$CURRENT (tag ${TAG_VER:-none}, npmjs ${PUB_VER:-none})"
           fi
           echo "next=$NEXT" >> "$GITHUB_OUTPUT"
           echo "tag=v$NEXT" >> "$GITHUB_OUTPUT"
-          echo "Releasing v$NEXT (from ${LATEST_TAG:-package.json baseline})"
+          echo "Releasing v$NEXT (from $SOURCE)"
 
       # Write the computed version into package.json so the published tarball
       # carries it. Not committed back to main — git tags are the source of truth.
@@ -90,20 +108,27 @@ jobs:
       #
       # Dual publish: the same scoped package to npmjs (public install) and to
       # GitHub Packages (lights up the repo's Packages sidebar).
+      # Credentials go in the *user-level* npmrc, never a project one. pnpm 11
+      # deliberately refuses to expand env vars in registry credentials read from
+      # a project .npmrc — that file is usually committed, so expanding it there
+      # could leak the token to an attacker-controlled registry. Writing to the
+      # project root silently produced "authentication token not provided".
       - name: Publish to npmjs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          echo "@ichintansoni:registry=https://registry.npmjs.org" > .npmrc
-          echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' >> .npmrc
+          set -euo pipefail
+          npm config --location=user set "@ichintansoni:registry=https://registry.npmjs.org"
+          npm config --location=user set "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN"
           pnpm --filter @ichintansoni/skills-master publish --no-git-checks --access public --provenance
 
       - name: Publish to GitHub Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "@ichintansoni:registry=https://npm.pkg.github.com" > .npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> .npmrc
+          set -euo pipefail
+          npm config --location=user set "@ichintansoni:registry=https://npm.pkg.github.com"
+          npm config --location=user set "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN"
           pnpm --filter @ichintansoni/skills-master publish --no-git-checks
 
       # Annotated tag pushed back with the default GITHUB_TOKEN. Pushes made with

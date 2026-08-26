@@ -58,6 +58,21 @@ broken emit formats) is a bug, not a nice-to-have.
   `z.url()`, `.passthrough()` → `z.looseObject()`).
 - [x] **0.3 TS formatter/linter (M).** Add Biome (single tool: format + lint), format the
   package once, wire a CI check. Keep rules light — codify the existing style.
+- [x] **0.4 Release pipeline was silently broken (S)** *(found during 9.1 — not in the
+  original audit)*. Every merge from #78 onward failed at "Publish to GitHub Packages", so
+  nothing from Phases 7–9 was tagged or released; npmjs sat at 0.1.6 from 2026-08-25 while
+  tags sat at v0.1.5. Root cause: both publish steps wrote credentials to a **project-level**
+  `.npmrc`, and pnpm 11 deliberately refuses to expand `${VAR}` in registry credentials
+  read from a committed file. npmjs happened to keep working because `setup-node` had
+  already written a *user-level* entry for it; GitHub Packages had no such fallback and
+  401'd. Credentials now go to the user config via `npm config --location=user set`.
+  Three follow-ons: the committed `.npmrc` is deleted and gitignored (it also mis-scoped
+  `@ichintansoni` to GitHub Packages, breaking `npm view` locally, and was the source of the
+  pnpm warning on every command); version computation now baselines on
+  **max(latest tag, latest npmjs version)**, so a publish that succeeds and then fails
+  before tagging self-heals instead of re-publishing a version npmjs already has; and
+  `actionlint` runs in CI, because shellcheck flags this exact bug (SC2016) and nothing was
+  running it. Next release computes 0.1.7.
 
 ## Phase 1 — CLI correctness
 
