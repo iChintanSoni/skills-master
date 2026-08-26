@@ -1,12 +1,12 @@
 # Skill coverage
 
-Generated from `skills/registry.json`. **426 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
+Generated from `skills/registry.json`. **433 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
 
 | Domain | `code` | `design` | `lang-tooling` | `overview` | Total |
 |---|---:|---:|---:|---:|---:|
-| `apple` | 88 | 64 | 38 | 13 | 203 |
-| `android` | 107 | 63 | 36 | 17 | 223 |
-| **All** | **195** | **127** | **74** | **30** | **426** |
+| `apple` | 88 | 64 | 38 | 18 | 208 |
+| `android` | 107 | 63 | 36 | 19 | 225 |
+| **All** | **195** | **127** | **74** | **37** | **433** |
 
 Skills with Level-3 resources (examples/checklist/reference): **90**.
 
@@ -33,7 +33,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `swiftui-forms-controls`
 - `swiftui-gestures`  — examples, checklist, ↔ hig-gestures-design
 - `swiftui-grids`
-- `swiftui-images-symbols`
+- `swiftui-images-symbols`  — ↔ choosing-image-pipeline
 - `swiftui-lists-tables`  — examples, checklist, ↔ hig-lists-tables
 - `swiftui-navigation`  — examples, checklist, ↔ swiftui-toolbars
 - `swiftui-scenes-windows`  — ↔ swiftui-documents
@@ -78,7 +78,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `tvos-media-playback`  — ↔ avfoundation-playback
 - `visionos-immersive-spaces`  — ↔ realitykit, ↔ visionos-windows-volumes
 - `visionos-windows-volumes`  — ↔ hig-designing-for-visionos, ↔ visionos-immersive-spaces
-- `watchos-app-structure`  — ↔ hig-designing-for-watchos, ↔ watchos-complications, ↔ watchos-connectivity
+- `watchos-app-structure`  — ↔ choosing-apple-platforms, ↔ hig-designing-for-watchos, ↔ watchos-complications, ↔ watchos-connectivity
 - `watchos-complications`  — ↔ watchos-app-structure, ↔ widgetkit
 - `watchos-connectivity`  — ↔ watchos-app-structure
 - `watchos-workouts`  — ↔ healthkit
@@ -107,7 +107,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 ## apple  ›  code  ›  system  (7)
 
 - `background-assets`  — emerging, ↔ background-tasks, ↔ storekit
-- `background-tasks`  — ↔ background-assets
+- `background-tasks`  — ↔ background-assets, ↔ choosing-background-execution
 - `core-bluetooth`
 - `cryptokit`
 - `keychain-security`
@@ -117,7 +117,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 ## apple  ›  code  ›  web  (2)
 
 - `app-store-connect-api`
-- `sign-in-with-apple`  — ↔ hig-sign-in-with-apple-design
+- `sign-in-with-apple`  — ↔ choosing-web-embedding, ↔ hig-sign-in-with-apple-design
 
 ## apple  ›  design  ›  components  (21)
 
@@ -204,7 +204,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 ## apple  ›  lang-tooling  ›  architecture  (6)
 
 - `app-lifecycle`
-- `dependency-injection`
+- `dependency-injection`  — ↔ choosing-dependency-injection
 - `modularization-local-spm`
 - `navigation-architecture`
 - `networking-layer`
@@ -254,20 +254,25 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `unit-testing-strategy`
 - `xctest-ui-automation`
 
-## apple  ›  overview  ›  overviews  (13)
+## apple  ›  overview  ›  overviews  (18)
 
 - `adopting-app-intents`
 - `adopting-liquid-glass`  — emerging
 - `adopting-swift-6-concurrency`
+- `choosing-apple-platforms`  — ↔ watchos-app-structure
 - `choosing-async-pattern`
+- `choosing-background-execution`  — ↔ background-tasks
+- `choosing-dependency-injection`  — ↔ dependency-injection
 - `choosing-distribution`
 - `choosing-graphics-tech`
+- `choosing-image-pipeline`  — ↔ swiftui-images-symbols
 - `choosing-ml-approach`  — ↔ core-ai, ↔ foundation-models
 - `choosing-navigation-pattern`
 - `choosing-networking`
 - `choosing-persistence`  — contested, ↔ swiftdata-modeling
 - `choosing-testing-strategy`
 - `choosing-ui-toolkit`  — contested
+- `choosing-web-embedding`  — ↔ sign-in-with-apple
 - `choosing-widget-tech`
 
 ## android  ›  code  ›  architecture  (12)
@@ -355,7 +360,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `game-loop-frame-pacing`  — ↔ vulkan-rendering
 - `play-asset-delivery`  — ↔ app-bundles-size
 - `play-games-services`  — ↔ play-console-publishing
-- `vulkan-rendering`  — ↔ game-loop-frame-pacing
+- `vulkan-rendering`  — ↔ choosing-graphics-api, ↔ game-loop-frame-pacing
 
 ## android  ›  code  ›  media-camera-ml  (10)
 
@@ -376,7 +381,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `android-resources`
 - `app-functions`  — emerging, ↔ app-actions-assistant
 - `app-shortcuts`
-- `app-widgets-glance`  — examples, checklist, ↔ m3-widgets
+- `app-widgets-glance`  — examples, checklist, ↔ choosing-widget-toolkit, ↔ m3-widgets
 - `autofill`
 - `biometric`
 - `bluetooth-ble`  — examples, checklist
@@ -530,7 +535,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `ui-automator`
 - `unit-testing`  — examples, checklist
 
-## android  ›  overview  ›  overviews  (17)
+## android  ›  overview  ›  overviews  (19)
 
 - `adopting-compose`  — examples, checklist, ↔ android-views-interop
 - `adopting-edge-to-edge-predictive-back`  — ↔ system-ui-styling
@@ -543,9 +548,11 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `choosing-concurrency-pattern`
 - `choosing-di`  — ↔ hilt-di
 - `choosing-form-factors`  — examples, checklist
+- `choosing-graphics-api`  — ↔ vulkan-rendering
 - `choosing-http-client`  — ↔ retrofit-okhttp
 - `choosing-image-loading`  — contested
 - `choosing-ml`  — ↔ ml-kit
 - `choosing-navigation`
 - `choosing-storage`  — examples, checklist, ↔ room
 - `choosing-web-integration`  — ↔ webview-custom-tabs
+- `choosing-widget-toolkit`  — ↔ app-widgets-glance

@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     watchos: "10"
     swift: "6.0"
-  pairs_with: [hig-designing-for-watchos, watchos-complications, watchos-connectivity]
+  pairs_with: [hig-designing-for-watchos, watchos-complications, watchos-connectivity, choosing-apple-platforms]
   sources:
     - https://developer.apple.com/documentation/watchos-apps
     - https://developer.apple.com/documentation/watchkit/using-extended-runtime-sessions

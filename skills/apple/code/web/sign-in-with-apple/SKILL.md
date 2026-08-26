@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [hig-sign-in-with-apple-design]
+  pairs_with: [hig-sign-in-with-apple-design, choosing-web-embedding]
   sources:
     - https://developer.apple.com/documentation/authenticationservices
     - https://developer.apple.com/documentation/AuthenticationServices/implementing-user-authentication-with-sign-in-with-apple

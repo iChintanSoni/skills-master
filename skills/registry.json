@@ -916,7 +916,8 @@
         "home-screen"
       ],
       "pairs_with": [
-        "m3-widgets"
+        "m3-widgets",
+        "choosing-widget-toolkit"
       ],
       "path": "android/code/platform-services/app-widgets-glance",
       "resources": {
@@ -1211,7 +1212,8 @@
         "concurrency"
       ],
       "pairs_with": [
-        "background-assets"
+        "background-assets",
+        "choosing-background-execution"
       ],
       "path": "apple/code/system/background-tasks",
       "resources": {
@@ -1577,6 +1579,41 @@
       }
     },
     {
+      "name": "choosing-apple-platforms",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for which Apple platforms a codebase should target and what each one actually costs — iPhone and iPad from one target, the three routes onto the Mac, and the separate entry costs of watchOS, tvOS, visionOS, and CarPlay. Use when scoping a new app's platform matrix, estimating the effort of a port, deciding whether a watch or TV app is worth building, planning how much of a SwiftUI core can be shared, or answering the question of what genuinely does not carry across.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "multiplatform",
+        "form-factors",
+        "watchos",
+        "tvos",
+        "visionos",
+        "carplay",
+        "decision"
+      ],
+      "pairs_with": [
+        "watchos-app-structure"
+      ],
+      "path": "apple/overviews/overviews/choosing-apple-platforms",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-async-pattern",
       "domain": "apple",
       "class": "overview",
@@ -1601,6 +1638,40 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/overviews/choosing-async-pattern",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-background-execution",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for running work outside the foreground on Apple platforms — BGAppRefreshTask versus BGProcessingTask, background URLSession transfers, the declared background modes for audio, location, and VoIP, push-triggered work, Background Assets for bulk content, and Live Activities for user-visible progress. Use when deciding how a sync, upload, export, or refresh should run while the app is not on screen, when background work is silently never executing, or when weighing a background mode against a deferred task.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "background",
+        "backgroundtasks",
+        "urlsession",
+        "push",
+        "activitykit",
+        "decision"
+      ],
+      "pairs_with": [
+        "background-tasks"
+      ],
+      "path": "apple/overviews/overviews/choosing-background-execution",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1686,6 +1757,40 @@
       ],
       "pairs_with": [],
       "path": "android/overviews/overviews/choosing-concurrency-pattern",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-dependency-injection",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for wiring dependencies in a Swift app — initializer injection, the SwiftUI Environment, Observable model ownership, closure and protocol seams for testability, and whether a third-party container is warranted at all. Use when deciding how a new app or module supplies its collaborators, when a team asks which DI framework to adopt, when singletons have made code untestable, or when weighing a container against explicit wiring.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "dependency-injection",
+        "architecture",
+        "swiftui",
+        "environment",
+        "testing",
+        "decision"
+      ],
+      "pairs_with": [
+        "dependency-injection"
+      ],
+      "path": "apple/overviews/overviews/choosing-dependency-injection",
       "resources": {
         "reference": false,
         "examples": false,
@@ -1781,6 +1886,37 @@
       }
     },
     {
+      "name": "choosing-graphics-api",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for Android graphics work — Compose drawing with Canvas and graphicsLayer, AGSL RuntimeShader effects applied through RenderEffect, the View Canvas, OpenGL ES and ANGLE, Vulkan for new native renderers, and the point where a game engine is the honest answer. Use when starting drawing, visual-effect, custom-rendering, or game work and the API is undecided, when weighing whether an effect justifies dropping to a native renderer, or when deciding what to do with an existing OpenGL ES codebase.",
+      "platforms": [
+        "android",
+        "large-screen"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "graphics",
+        "vulkan",
+        "agsl",
+        "opengl",
+        "canvas",
+        "games",
+        "decision"
+      ],
+      "pairs_with": [
+        "vulkan-rendering"
+      ],
+      "path": "android/overviews/overviews/choosing-graphics-api",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-graphics-tech",
       "domain": "apple",
       "class": "overview",
@@ -1862,6 +1998,40 @@
       ],
       "pairs_with": [],
       "path": "android/overviews/overviews/choosing-image-loading",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-image-pipeline",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for image work on Apple platforms: SwiftUI AsyncImage and its 27-cycle caching and request support, URLSession with URLCache versus NSCache, ImageIO downsampling, Core Image versus Metal for processing, ImageRenderer for export, PhotosPicker versus PhotoKit for library access, and SF Symbols versus bitmap assets. Use when deciding how to load, cache, downsample, process, export, or source an image, when a scrolling grid blows its memory budget, or when weighing whether a third-party image loader is still justified.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "images",
+        "asyncimage",
+        "caching",
+        "imageio",
+        "sf-symbols",
+        "decision"
+      ],
+      "pairs_with": [
+        "swiftui-images-symbols"
+      ],
+      "path": "apple/overviews/overviews/choosing-image-pipeline",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2144,6 +2314,40 @@
       }
     },
     {
+      "name": "choosing-web-embedding",
+      "domain": "apple",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for showing web content in an Apple app: the SwiftUI WebView and WebPage pair or WKWebView when you own the page, SFSafariViewController for read-only third-party browsing, ASWebAuthenticationSession for OAuth and OpenID Connect sign-in, openURL to hand off to the default browser, and universal links or App Clips when the answer is not to embed at all. Use when picking a web surface, when a sign-in flow tempts a raw web view, or when weighing the App Review risk of wrapping a website as an app.",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "tvos",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "webkit",
+        "safariservices",
+        "authenticationservices",
+        "oauth",
+        "app-review",
+        "decision"
+      ],
+      "pairs_with": [
+        "sign-in-with-apple"
+      ],
+      "path": "apple/overviews/overviews/choosing-web-embedding",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "choosing-web-integration",
       "domain": "android",
       "class": "overview",
@@ -2193,6 +2397,38 @@
       ],
       "pairs_with": [],
       "path": "apple/overviews/overviews/choosing-widget-tech",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "choosing-widget-toolkit",
+      "domain": "android",
+      "class": "overview",
+      "category": "overviews",
+      "description": "Decision router for Android glanceable surfaces — app widgets built with Jetpack Glance versus RemoteViews directly, Wear OS tiles and complications, Live Updates and ongoing notifications, and Quick Settings tiles. Use when deciding how to surface app content or an action outside the app, when choosing between Glance and RemoteViews for a new widget, or when a feature needs an ongoing status surface rather than a static glance.",
+      "platforms": [
+        "android",
+        "large-screen",
+        "wear-os"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "widgets",
+        "glance",
+        "remoteviews",
+        "wear-os",
+        "tiles",
+        "notifications",
+        "decision"
+      ],
+      "pairs_with": [
+        "app-widgets-glance"
+      ],
+      "path": "android/overviews/overviews/choosing-widget-toolkit",
       "resources": {
         "reference": false,
         "examples": false,
@@ -3376,7 +3612,9 @@
         "environment",
         "swift6"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-dependency-injection"
+      ],
       "path": "apple/lang-tooling/architecture/dependency-injection",
       "resources": {
         "reference": false,
@@ -9811,7 +10049,8 @@
         "oauth"
       ],
       "pairs_with": [
-        "hig-sign-in-with-apple-design"
+        "hig-sign-in-with-apple-design",
+        "choosing-web-embedding"
       ],
       "path": "apple/code/web/sign-in-with-apple",
       "resources": {
@@ -10855,7 +11094,9 @@
         "asyncimage",
         "accessibility"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-image-pipeline"
+      ],
       "path": "apple/code/app-frameworks/swiftui-images-symbols",
       "resources": {
         "reference": false,
@@ -11897,7 +12138,8 @@
         "android"
       ],
       "pairs_with": [
-        "game-loop-frame-pacing"
+        "game-loop-frame-pacing",
+        "choosing-graphics-api"
       ],
       "path": "android/code/graphics-games/vulkan-rendering",
       "resources": {
@@ -11927,7 +12169,8 @@
       "pairs_with": [
         "hig-designing-for-watchos",
         "watchos-complications",
-        "watchos-connectivity"
+        "watchos-connectivity",
+        "choosing-apple-platforms"
       ],
       "path": "apple/code/form-factors/watchos-app-structure",
       "resources": {

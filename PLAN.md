@@ -175,7 +175,7 @@ broken emit formats) is a bug, not a nice-to-have.
 - [x] **6.2 `apple/code/form-factors` (L).** ~8–12 skills: watchOS apps + complications +
   workout/health patterns, tvOS apps + focus engine, CarPlay, visionOS spatial patterns.
   Resolves the 123-skills-claim-watchos contradiction together with 7.3.
-- [ ] **6.3 Overview parity (M).** 7 `choosing-X` overviews: apple gains di,
+- [x] **6.3 Overview parity (M).** 7 `choosing-X` overviews: apple gains di,
   background-work, form-factors, image-loading, web-integration counterparts; android
   gains graphics-tech and widget-tech.
 - [ ] **6.4 Design gaps (M).** `android/design/inputs` (~6 skills); decide whether apple
