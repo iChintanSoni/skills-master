@@ -8,6 +8,7 @@ import { addCommand } from "./commands/add";
 import { updateCommand } from "./commands/update";
 import { removeCommand } from "./commands/remove";
 import { doctorCommand } from "./commands/doctor";
+import { statusCommand } from "./commands/status";
 import { listCommand, searchCommand, viewCommand } from "./commands/catalog";
 import { lintCommand } from "./commands/lint";
 import { registryBuildCommand } from "./commands/registry";
@@ -159,6 +160,23 @@ program
         names,
         targets: parseTargets(opts.target),
         dryRun: opts.dryRun,
+      }),
+    ),
+  );
+
+program
+  .command("status")
+  .description("Show installed skills: versions, targets, and local-edit state")
+  .argument("[names...]", "limit the report to these skills")
+  .option("--problems", "show only skills that are edited or missing files")
+  .option("--json", "machine-readable output")
+  .action((names: string[], opts) =>
+    run(() =>
+      statusCommand({
+        cwd: process.cwd(),
+        names,
+        problemsOnly: opts.problems,
+        json: opts.json,
       }),
     ),
   );

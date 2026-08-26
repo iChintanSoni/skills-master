@@ -317,8 +317,22 @@ restated against that total.
 
 ## Phase 9 — CLI UX
 
-- [ ] **9.1 `status` command (M).** Show installed skills from lockfile: versions, targets,
+- [x] **9.1 `status` command (M).** Show installed skills from lockfile: versions, targets,
   edited/drifted state (shares doctor's detection). `#minor`.
+  "Shares doctor's detection" taken literally: drift detection moved out of `doctor` into
+  `core/installed-state.ts`, and both commands now render the same `SkillDiagnosis[]`, so
+  they cannot drift apart on what "edited" means. `doctor`'s message strings are unchanged,
+  which the existing e2e tests confirm.
+  The two are deliberate siblings answering different questions — `doctor` asks "is anything
+  wrong?" and exits non-zero for CI; `status` asks "what do I have?", always exits 0, and is
+  safe to pipe. `status` is fully offline: lockfile plus disk, no content resolution, so it
+  works in a checkout with no skills library or network nearby.
+  Flags: `[names...]`, `--problems`, `--json`. 13 tests, mutation-checked — and one of them
+  initially passed by luck (it broke the alphabetically-first target, so a "first target
+  wins" rollup would still have looked right); rewritten to break the *second* target so it
+  actually pins the worst-of rule.
+  Also corrected the published README, which still advertised "183 skills" and Apple-only
+  content; it is 433 across apple and android.
 - [ ] **9.2 `sync` command (M).** Re-emit from current config — covers added targets and
   edited paths that `update` never repopulates. `#minor`.
 - [ ] **9.3 Scripting + docs polish (S).** `--json` on `search`/`view`/`doctor`; persist

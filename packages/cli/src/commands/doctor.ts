@@ -1,8 +1,5 @@
-import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
-import { diskHash } from "../core/install";
+import { diagnoseInstalled } from "../core/installed-state";
 import { loadConfig, loadLockfile } from "../core/project";
-import { hasBlock } from "../core/markers";
 import { log } from "../util/log";
 
 export interface DoctorOptions {
@@ -26,34 +23,30 @@ export function doctorCommand(opts: DoctorOptions): DoctorReport {
   }
 
   const lock = loadLockfile(opts.cwd);
-  const names = Object.keys(lock.skills);
-  if (names.length === 0) {
+  const diagnoses = diagnoseInstalled(opts.cwd, lock);
+  if (diagnoses.length === 0) {
     log.info("No skills installed.");
     return { problems, ok: true };
   }
 
-  for (const name of names) {
-    const locked = lock.skills[name]!;
-    for (const [target, e] of Object.entries(locked.emitted)) {
-      for (const file of e.files) {
-        if (!existsSync(join(opts.cwd, file))) note(`${name}: missing ${target} file ${file}`);
+  for (const skill of diagnoses) {
+    for (const t of skill.targets) {
+      for (const file of t.missingFiles) {
+        note(`${skill.name}: missing ${t.target} file ${file}`);
       }
-      if (e.files.every((f) => existsSync(join(opts.cwd, f)))) {
-        if (diskHash(opts.cwd, e.files) !== e.hash) {
-          note(`${name}: local edits to ${target} output(s) (run \`update --overwrite\` to reset)`);
-        }
+      if (t.edited) {
+        note(
+          `${skill.name}: local edits to ${t.target} output(s) (run \`update --overwrite\` to reset)`,
+        );
       }
-      if (e.block) {
-        const abs = join(opts.cwd, e.block);
-        if (!existsSync(abs) || !hasBlock(readFileSync(abs, "utf8"), name)) {
-          note(`${name}: missing managed block in ${e.block}`);
-        }
+      if (t.missingBlock) {
+        note(`${skill.name}: missing managed block in ${t.missingBlock}`);
       }
     }
   }
 
   if (problems.length === 0) {
-    log.success(`All ${names.length} installed skill(s) look healthy.`);
+    log.success(`All ${diagnoses.length} installed skill(s) look healthy.`);
   } else {
     for (const p of problems) log.warn(p);
     log.plain(`\n${problems.length} problem(s) found.`);
