@@ -348,8 +348,21 @@ restated against that total.
   actually pins the worst-of rule.
   Also corrected the published README, which still advertised "183 skills" and Apple-only
   content; it is 433 across apple and android.
-- [ ] **9.2 `sync` command (M).** Re-emit from current config — covers added targets and
+- [x] **9.2 `sync` command (M).** Re-emit from current config — covers added targets and
   edited paths that `update` never repopulates. `#minor`.
+  Verified the gap first: with `claude` installed and `cursor` added to config afterwards,
+  `update` reports "up-to-date 2" and writes nothing. `sync` treats the configured target
+  set as the source of truth and reconciles disk to it.
+  Two kinds of leftover, deliberately treated differently. A **dropped target** is a
+  removal — reported, deleted only with `--prune`. A **changed `paths` override** is a
+  *move*, cleaned up immediately: leaving the old copy would have agents loading the same
+  guidance twice, and `doctor` cannot see it because the lockfile already points at the new
+  path. My first cut gated that behind `--prune` and printed "re-run with `--prune`" —
+  which could never work, since by the second run the lockfile had moved and the staleness
+  was undetectable. Caught by actually running it.
+  Shares `resolveTargets` with `add` and edit detection with `doctor`/`status`.
+  15 tests, mutation-checked against three core behaviours (emit-to-configured-targets,
+  stale cleanup, the `--prune` gate) — each failed exactly its own tests.
 - [ ] **9.3 Scripting + docs polish (S).** `--json` on `search`/`view`/`doctor`; persist
   `--target`/`--ref` on `add` into existing config; document all 12 commands in the CLI
   README.

@@ -9,6 +9,7 @@ import { updateCommand } from "./commands/update";
 import { removeCommand } from "./commands/remove";
 import { doctorCommand } from "./commands/doctor";
 import { statusCommand } from "./commands/status";
+import { syncCommand } from "./commands/sync";
 import { listCommand, searchCommand, viewCommand } from "./commands/catalog";
 import { lintCommand } from "./commands/lint";
 import { registryBuildCommand } from "./commands/registry";
@@ -159,6 +160,29 @@ program
         cwd: process.cwd(),
         names,
         targets: parseTargets(opts.target),
+        dryRun: opts.dryRun,
+      }),
+    ),
+  );
+
+program
+  .command("sync")
+  .description("Re-emit installed skills to match the current config (new targets, moved paths)")
+  .argument("[names...]", "limit the sync to these installed skills")
+  .option("--content <dir>", "local skills directory")
+  .option("--ref <git-ref>", "content ref to read from")
+  .option("--overwrite", "replace locally edited outputs")
+  .option("--prune", "delete outputs for targets the config no longer lists")
+  .option("--dry-run", "show what would change without writing")
+  .action((names: string[], opts) =>
+    run(() =>
+      syncCommand({
+        cwd: process.cwd(),
+        names,
+        content: opts.content,
+        ref: opts.ref,
+        overwrite: opts.overwrite,
+        prune: opts.prune,
         dryRun: opts.dryRun,
       }),
     ),
