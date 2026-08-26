@@ -1054,7 +1054,8 @@
         "video"
       ],
       "pairs_with": [
-        "now-playing"
+        "now-playing",
+        "tvos-media-playback"
       ],
       "path": "apple/code/media/avfoundation-playback",
       "resources": {
@@ -1398,6 +1399,35 @@
       ],
       "pairs_with": [],
       "path": "android/code/form-factors/car-media-messaging",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "carplay-templates",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Implements a CarPlay app with the CarPlay framework — CPTemplateApplicationScene plus its scene delegate, the CPInterfaceController template stack, and the system template catalog (list, grid, tab bar, now playing, point of interest, information, map, search, contact, alert, action sheet). Use when wiring the CarPlay scene manifest into Info.plist, requesting the Apple-granted CarPlay entitlement for an app category, pushing and popping templates, respecting vehicle-imposed list and tab limits, adding a Dashboard or instrument-cluster scene, or testing in the CarPlay Simulator.",
+      "platforms": [
+        "ios"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "carplay",
+        "templates",
+        "scenes",
+        "entitlements",
+        "in-car",
+        "uikit"
+      ],
+      "pairs_with": [
+        "hig-carplay-design"
+      ],
+      "path": "apple/code/form-factors/carplay-templates",
       "resources": {
         "reference": false,
         "examples": false,
@@ -3744,7 +3774,9 @@
         "watchos",
         "privacy"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "watchos-workouts"
+      ],
       "path": "apple/code/app-services/healthkit",
       "resources": {
         "reference": false,
@@ -4030,7 +4062,7 @@
         "ios"
       ],
       "stability": "stable",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [
         "carplay",
         "hig",
@@ -4039,7 +4071,9 @@
         "templates",
         "ux"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "carplay-templates"
+      ],
       "path": "apple/design/technologies/hig-carplay-design",
       "resources": {
         "reference": false,
@@ -4267,7 +4301,9 @@
         "top-shelf",
         "parallax"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "tvos-app-structure"
+      ],
       "path": "apple/design/platforms/hig-designing-for-tvos",
       "resources": {
         "reference": false,
@@ -4293,7 +4329,9 @@
         "accessibility",
         "immersion"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "visionos-windows-volumes"
+      ],
       "path": "apple/design/platforms/hig-designing-for-visionos",
       "resources": {
         "reference": false,
@@ -4320,7 +4358,9 @@
         "complications",
         "smart-stack"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "watchos-app-structure"
+      ],
       "path": "apple/design/platforms/hig-designing-for-watchos",
       "resources": {
         "reference": false,
@@ -9186,7 +9226,9 @@
         "3d",
         "ecs"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "visionos-immersive-spaces"
+      ],
       "path": "apple/code/graphics-games/realitykit",
       "resources": {
         "reference": false,
@@ -11134,6 +11176,97 @@
       }
     },
     {
+      "name": "tvos-app-structure",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Structures a tvOS app in SwiftUI: the App and scene entry point, TabView with sidebar-adaptable navigation, NavigationStack and NavigationSplitView on the big screen, safe-area and overscan discipline for the 10-foot UI, a TVServices Top Shelf extension, the layered AppIcon image stack, the TVUIKit views that still have no SwiftUI equivalent, and multi-user personalization on a shared Apple TV. Use when starting or restructuring an Apple TV target, laying out top-level navigation, shipping a Top Shelf extension, or adapting an iOS codebase to tvOS.",
+      "platforms": [
+        "tvos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "tvos",
+        "swiftui",
+        "tabview",
+        "top-shelf",
+        "tvuikit",
+        "app-structure"
+      ],
+      "pairs_with": [
+        "hig-designing-for-tvos",
+        "tvos-focus-engine"
+      ],
+      "path": "apple/code/form-factors/tvos-app-structure",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "tvos-focus-engine",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Explains the UIKit focus engine and its SwiftUI surface: focusable and FocusState, focusSection and focusScope, prefersDefaultFocus and defaultFocus, resetFocus, focus effects and hoverEffect, UIFocusGuide and UIFocusSystem redirection, UIFocusDebugger, and Siri Remote directional input through onMoveCommand, onExitCommand, UIPress, and GCMicroGamepad. Use when focus lands in the wrong place, gets trapped, or refuses to move, when a custom view needs to become focusable, or when you must redirect focus across a gap in the layout.",
+      "platforms": [
+        "tvos",
+        "ipados",
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "tvos",
+        "focus",
+        "swiftui",
+        "uikit",
+        "siri-remote",
+        "navigation"
+      ],
+      "pairs_with": [
+        "tvos-app-structure"
+      ],
+      "path": "apple/code/form-factors/tvos-focus-engine",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "tvos-media-playback",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Covers video playback on Apple TV: AVPlayerViewController as the expected full-screen player, the tvOS-only transport surface (transportBarCustomMenuItems, customInfoViewControllers, contextualActions, customOverlayViewController, unobscuredContentGuide), AVPlayerItem externalMetadata and navigationMarkerGroups, ad and interstitial scheduling with AVPlayerInterstitialEvent, display-mode matching through AVDisplayManager, Picture in Picture, and the tvOS amendments to the HLS authoring spec. Use when building or debugging a video player on tvOS, customizing the transport bar, inserting ads, or matching the TV's refresh rate and dynamic range.",
+      "platforms": [
+        "tvos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "tvos",
+        "avkit",
+        "avfoundation",
+        "video",
+        "hls",
+        "interstitials",
+        "picture-in-picture"
+      ],
+      "pairs_with": [
+        "avfoundation-playback"
+      ],
+      "path": "apple/code/form-factors/tvos-media-playback",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "ui-automator",
       "domain": "android",
       "class": "lang-tooling",
@@ -11473,6 +11606,182 @@
       }
     },
     {
+      "name": "visionos-immersive-spaces",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Builds the unbounded half of a visionOS app — ImmersiveSpace scenes, the mixed, progressive, and full immersion styles, the openImmersiveSpace and dismissImmersiveSpace environment actions, immersion-change and upper-limb configuration, SpatialEventGesture for direct and indirect pinch input, and the ARKitSession authorization gate for hand tracking and world sensing. Use when content must escape a volume, when replacing passthrough, when opening or closing a space programmatically, or when reasoning about the privacy posture around eye and hand data on Apple Vision Pro.",
+      "platforms": [
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "visionos",
+        "swiftui",
+        "immersive-space",
+        "arkit",
+        "spatial-input",
+        "privacy"
+      ],
+      "pairs_with": [
+        "visionos-windows-volumes",
+        "realitykit"
+      ],
+      "path": "apple/code/form-factors/visionos-immersive-spaces",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "visionos-windows-volumes",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Builds the bounded half of a visionOS app — flat windows versus volumes via windowStyle(.volumetric), physical sizing with defaultSize(_:in:) and PhysicalMetric, ornaments, glassBackgroundEffect, volume baseplates and viewpoints, world alignment and scaling, and the Shared Space rules a 2D iPad-style app must satisfy to feel spatial. Use when bringing an existing SwiftUI app to Apple Vision Pro, deciding whether content belongs in a window or a volume, sizing 3D content in meters, or attaching controls outside a window's bounds.",
+      "platforms": [
+        "visionos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "visionos",
+        "swiftui",
+        "volumes",
+        "windows",
+        "ornaments",
+        "spatial"
+      ],
+      "pairs_with": [
+        "visionos-immersive-spaces",
+        "hig-designing-for-visionos"
+      ],
+      "path": "apple/code/form-factors/visionos-windows-volumes",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "watchos-app-structure",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Builds the skeleton of a SwiftUI watchOS app — App and scene declaration, NavigationStack and NavigationSplitView on a tiny screen, vertical-page TabView, Digital Crown input, watch toolbars, safe-area and scene-padding layout, the frontmost/Always On lifecycle, background refresh tasks, and extended runtime sessions. Use when starting an Apple Watch app, porting an iPhone screen to the wrist, wiring digitalCrownRotation, laying out for multiple watch sizes, or deciding how the app keeps running after the wrist drops.",
+      "platforms": [
+        "watchos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "watchos",
+        "swiftui",
+        "digital-crown",
+        "always-on",
+        "extended-runtime"
+      ],
+      "pairs_with": [
+        "hig-designing-for-watchos",
+        "watchos-complications",
+        "watchos-connectivity"
+      ],
+      "path": "apple/code/form-factors/watchos-app-structure",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "watchos-complications",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Builds Apple Watch complications and Smart Stack widgets with WidgetKit and SwiftUI — accessory circular, rectangular, inline, and corner families, widget labels and accented rendering, the watch reload budget, migrating off deprecated ClockKit, and Smart Stack relevance. Use when adding complications to a watchOS app, replacing a CLKComplicationDataSource, laying out an accessoryCorner view, or making a widget surface at the right moment in the Smart Stack.",
+      "platforms": [
+        "watchos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "watchos",
+        "widgetkit",
+        "complications",
+        "smart-stack",
+        "clockkit"
+      ],
+      "pairs_with": [
+        "watchos-app-structure",
+        "widgetkit"
+      ],
+      "path": "apple/code/form-factors/watchos-complications",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "watchos-connectivity",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Moves data between an iPhone app and its paired watchOS app with WatchConnectivity — WCSession activation and reachability, and choosing between application context, user info, file transfer, and live messages. Use when syncing state to or from Apple Watch, debugging a WCSession that never activates or is never reachable, handling background watch-connectivity wakes, or deciding whether an independent watch app should sync via CloudKit or your own server instead.",
+      "platforms": [
+        "watchos",
+        "ios"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "watchos",
+        "watchconnectivity",
+        "wcsession",
+        "sync",
+        "ios"
+      ],
+      "pairs_with": [
+        "watchos-app-structure"
+      ],
+      "path": "apple/code/form-factors/watchos-connectivity",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "watchos-workouts",
+      "domain": "apple",
+      "class": "code",
+      "category": "form-factors",
+      "description": "Runs HealthKit workout sessions on Apple Watch — HKWorkoutSession lifecycle, HKLiveWorkoutBuilder and HKLiveWorkoutDataSource, background runtime and the workout-processing mode, live heart-rate and energy statistics, water lock, mirrored sessions on iPhone, crash recovery, and workout zones. Use when building a fitness app for the watch, starting or ending a workout session, reading live sensor statistics during a workout, or adopting the workout zone APIs.",
+      "platforms": [
+        "watchos"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "watchos",
+        "healthkit",
+        "workouts",
+        "fitness",
+        "heart-rate"
+      ],
+      "pairs_with": [
+        "healthkit"
+      ],
+      "path": "apple/code/form-factors/watchos-workouts",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "wear-complications",
       "domain": "android",
       "class": "code",
@@ -11659,7 +11968,8 @@
         "timeline"
       ],
       "pairs_with": [
-        "hig-widgets-design"
+        "hig-widgets-design",
+        "watchos-complications"
       ],
       "path": "apple/code/app-frameworks/widgetkit",
       "resources": {

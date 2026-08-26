@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: [tvos]
-  pairs_with: []
+  pairs_with: [tvos-app-structure]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos
     - https://developer.apple.com/design/human-interface-guidelines/focus-and-selection

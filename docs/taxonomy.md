@@ -1,12 +1,12 @@
 # Skill coverage
 
-Generated from `skills/registry.json`. **408 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
+Generated from `skills/registry.json`. **418 skills** across 2 domains (`apple`, `android`). Regenerate after each change with `node scripts/gen-taxonomy.mjs`.
 
 | Domain | `code` | `design` | `lang-tooling` | `overview` | Total |
 |---|---:|---:|---:|---:|---:|
-| `apple` | 78 | 64 | 38 | 13 | 193 |
+| `apple` | 88 | 64 | 38 | 13 | 203 |
 | `android` | 99 | 63 | 36 | 17 | 215 |
-| **All** | **177** | **127** | **74** | **30** | **408** |
+| **All** | **187** | **127** | **74** | **30** | **418** |
 
 Skills with Level-3 resources (examples/checklist/reference): **90**.
 
@@ -47,7 +47,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `uikit-collection-views`
 - `uikit-core`
 - `uikit-swiftui-interop`  — examples, checklist
-- `widgetkit`  — examples, checklist, ↔ hig-widgets-design
+- `widgetkit`  — examples, checklist, ↔ hig-widgets-design, ↔ watchos-complications
 
 ## apple  ›  code  ›  app-services  (18)
 
@@ -59,7 +59,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `core-spotlight`
 - `eventkit`
 - `foundation-models`  — emerging, ↔ choosing-ml-approach, ↔ core-ai
-- `healthkit`
+- `healthkit`  — ↔ watchos-workouts
 - `mapkit`  — examples, checklist
 - `natural-language`
 - `passkit-apple-pay`  — ↔ hig-apple-pay-design
@@ -70,6 +70,19 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `vision`
 - `weatherkit`
 
+## apple  ›  code  ›  form-factors  (10)
+
+- `carplay-templates`  — ↔ hig-carplay-design
+- `tvos-app-structure`  — ↔ hig-designing-for-tvos, ↔ tvos-focus-engine
+- `tvos-focus-engine`  — ↔ tvos-app-structure
+- `tvos-media-playback`  — ↔ avfoundation-playback
+- `visionos-immersive-spaces`  — ↔ realitykit, ↔ visionos-windows-volumes
+- `visionos-windows-volumes`  — ↔ hig-designing-for-visionos, ↔ visionos-immersive-spaces
+- `watchos-app-structure`  — ↔ hig-designing-for-watchos, ↔ watchos-complications, ↔ watchos-connectivity
+- `watchos-complications`  — ↔ watchos-app-structure, ↔ widgetkit
+- `watchos-connectivity`  — ↔ watchos-app-structure
+- `watchos-workouts`  — ↔ healthkit
+
 ## apple  ›  code  ›  graphics-games  (8)
 
 - `arkit`
@@ -77,14 +90,14 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `gamekit`
 - `metal`
 - `pencilkit`  — ↔ hig-apple-pencil
-- `realitykit`  — examples, checklist
+- `realitykit`  — examples, checklist, ↔ visionos-immersive-spaces
 - `scenekit`
 - `spritekit`
 
 ## apple  ›  code  ›  media  (7)
 
 - `avfoundation-capture`
-- `avfoundation-playback`  — ↔ now-playing
+- `avfoundation-playback`  — ↔ now-playing, ↔ tvos-media-playback
 - `music-understanding`  — emerging, ↔ musickit
 - `musickit`  — ↔ music-understanding, ↔ now-playing
 - `now-playing`  — emerging, ↔ avfoundation-playback, ↔ musickit
@@ -174,15 +187,15 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `hig-designing-for-ios`
 - `hig-designing-for-ipados`
 - `hig-designing-for-macos`
-- `hig-designing-for-tvos`
-- `hig-designing-for-visionos`
-- `hig-designing-for-watchos`
+- `hig-designing-for-tvos`  — ↔ tvos-app-structure
+- `hig-designing-for-visionos`  — ↔ visionos-windows-volumes
+- `hig-designing-for-watchos`  — ↔ watchos-app-structure
 
 ## apple  ›  design  ›  technologies  (7)
 
 - `hig-app-clips-design`
 - `hig-apple-pay-design`  — ↔ passkit-apple-pay
-- `hig-carplay-design`
+- `hig-carplay-design`  — ↔ carplay-templates
 - `hig-live-activities-design`  — ↔ activitykit
 - `hig-sign-in-with-apple-design`  — ↔ sign-in-with-apple
 - `hig-siri-design`  — emerging, ↔ app-intents, ↔ hig-snippets

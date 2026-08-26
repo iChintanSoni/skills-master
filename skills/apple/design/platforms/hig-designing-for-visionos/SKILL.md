@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: [visionos]
-  pairs_with: []
+  pairs_with: [visionos-windows-volumes]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos
     - https://developer.apple.com/design/human-interface-guidelines/eyes
