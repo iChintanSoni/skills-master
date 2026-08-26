@@ -6,7 +6,7 @@ x-skills-master:
   domain: apple
   class: design
   category: technologies
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, ios, ipados, macos]
   pairs_with: [app-intents, hig-snippets]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/siri

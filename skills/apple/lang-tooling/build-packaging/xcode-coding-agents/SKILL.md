@@ -6,7 +6,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: build-packaging
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, macos]
   requires:
     xcode: "27"
   pairs_with: [xcode-project-conventions, localization]

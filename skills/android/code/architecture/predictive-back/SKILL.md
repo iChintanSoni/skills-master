@@ -8,7 +8,7 @@ x-skills-master:
   domain: android
   class: code
   category: architecture
-  platforms: ["android", "large-screen"]
+  platforms: [android]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
   pairs_with: [m3-predictive-back, adopting-edge-to-edge-predictive-back]
   sources:

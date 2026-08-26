@@ -6,7 +6,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: ship
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, ios, watchos, tvos]
   requires:
     xcode: "26"
   pairs_with: [choosing-distribution, app-store-connect-api, app-review-guidelines]

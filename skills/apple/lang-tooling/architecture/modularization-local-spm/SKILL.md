@@ -8,7 +8,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: architecture
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, watchos]
   requires:
     swift: "6.0"
   pairs_with: [spm]

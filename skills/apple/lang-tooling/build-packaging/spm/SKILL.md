@@ -8,7 +8,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: build-packaging
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, ios, macos]
   requires:
     swift: "6.0"
   pairs_with: [modularization-local-spm, swift-package-plugins]

@@ -8,7 +8,7 @@ x-skills-master:
   domain: apple
   class: code
   category: web
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple]
   requires: {}
   pairs_with: [testflight-appstore-connect]
   sources:

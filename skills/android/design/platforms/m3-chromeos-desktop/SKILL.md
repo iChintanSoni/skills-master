@@ -6,7 +6,7 @@ x-skills-master:
   domain: android
   class: design
   category: platforms
-  platforms: ["chromeos", "large-screen"]
+  platforms: [large-screen, chromeos]
   pairs_with: [keyboard-mouse-stylus]
   sources:
     - https://developer.android.com/design/ui/desktop

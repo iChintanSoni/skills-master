@@ -6,7 +6,7 @@ x-skills-master:
   domain: android
   class: overview
   category: overviews
-  platforms: ["android", "large-screen", "wear-os"]
+  platforms: [android, wear-os]
   requires: { "android": "16", "kotlin": "2.2" }
   pairs_with: [app-widgets-glance, wear-tiles, wear-complications]
   sources:

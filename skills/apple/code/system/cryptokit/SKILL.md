@@ -8,7 +8,7 @@ x-skills-master:
   domain: apple
   class: code
   category: system
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, ios]
   requires:
     ios: "17"
     swift: "6.0"

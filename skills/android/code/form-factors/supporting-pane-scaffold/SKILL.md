@@ -8,7 +8,7 @@ x-skills-master:
   domain: android
   class: code
   category: form-factors
-  platforms: ["android", "large-screen", "chromeos"]
+  platforms: [android, large-screen]
   requires: {"android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00"}
   pairs_with: [m3-canonical-layouts, list-detail-pane-scaffold]
   sources:

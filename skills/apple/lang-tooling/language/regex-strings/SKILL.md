@@ -8,7 +8,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: language
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple]
   requires:
     swift: "6.0"
   pairs_with: [result-builders]

@@ -8,7 +8,7 @@ x-skills-master:
   domain: android
   class: code
   category: platform-services
-  platforms: ["android", "large-screen"]
+  platforms: [android]
   requires: {android: "16", kotlin: "2.2"}
   pairs_with: [biometric]
   sources:

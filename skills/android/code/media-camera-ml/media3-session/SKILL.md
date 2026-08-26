@@ -8,7 +8,7 @@ x-skills-master:
   domain: android
   class: code
   category: media-camera-ml
-  platforms: ["android", "large-screen", "android-tv"]
+  platforms: [android]
   requires: { "android": "16", "kotlin": "2.2" }
   pairs_with: [car-media-messaging, media3-exoplayer]
   sources:

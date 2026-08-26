@@ -6,7 +6,7 @@ x-skills-master:
   domain: apple
   class: overview
   category: overviews
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, macos, watchos, visionos]
   pairs_with: [build-sign-distribute, testflight-appstore-connect, provisioning-code-signing]
   sources:
     - https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/set-distribution-methods/

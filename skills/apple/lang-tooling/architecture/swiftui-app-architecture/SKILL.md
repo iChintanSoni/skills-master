@@ -8,7 +8,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: architecture
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, ios, macos, visionos]
   requires:
     swift: "6.0"
   pairs_with: [choosing-dependency-injection, swiftui-state-data-flow]

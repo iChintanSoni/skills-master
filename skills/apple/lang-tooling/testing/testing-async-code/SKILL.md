@@ -8,7 +8,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: testing
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple]
   requires:
     xcode: "26"
   pairs_with: [swift-concurrency, swift-testing]
