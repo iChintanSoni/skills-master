@@ -69,6 +69,15 @@ describe("new", () => {
     ).rejects.toThrow();
   });
 
+  it("rejects a name the Agent Skills spec forbids, before scaffolding it", async () => {
+    for (const bad of ["Brand-New", "brand--new", "new-skill-", "claude-helper"]) {
+      await expect(
+        newSkillCommand({ spec: `testdomain/code/fixtures/${bad}`, content }),
+      ).rejects.toThrow(/Invalid skill name/);
+      expect(existsSync(join(content, "testdomain/code/fixtures", bad))).toBe(false);
+    }
+  });
+
   it("refuses to overwrite an existing skill unless forced", async () => {
     const spec = "testdomain/code/fixtures/brand-new";
     await newSkillCommand({ spec, content });

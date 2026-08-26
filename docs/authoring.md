@@ -14,7 +14,7 @@ This creates `skills/apple/code/app-frameworks/swiftui-grids/SKILL.md` from a te
 
 ```yaml
 ---
-name: swiftui-navigation            # kebab-case, == folder name
+name: swiftui-navigation            # kebab-case, == folder name; see "Naming"
 description: >-                      # third person, <=1024 chars, includes "Use when …"
   Implements modern SwiftUI navigation … Use when building stacks, split views, or deep links.
 globs:                              # optional; include only for file-scoped code skills
@@ -36,6 +36,10 @@ x-skills-master:
   version: 1.0.0                    # per-skill semver
 ---
 ```
+
+### Naming
+
+`name` follows the [Agent Skills specification](https://agentskills.io/specification) exactly, because it is emitted verbatim into every projection: lowercase `[a-z0-9]` words joined by **single** hyphens, at most 64 characters. No leading or trailing hyphen, no `--` run, no underscores or capitals. Claude's platform additionally rejects names containing `claude` or `anthropic`, so those are errors here too. The same rule applies to `pairs_with` entries, and `pnpm cli new` refuses a bad name before it scaffolds a folder you would have to move.
 
 ## Body sections
 

@@ -121,11 +121,18 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
 
 ## Phase 0 — Conformance gates (tooling only, no content)
 
-- [ ] **0.1 Tighten the name rule to the spec (S).** Extend schema/lint so `name` (and
+- [x] **0.1 Tighten the name rule to the spec (S).** Extend schema/lint so `name` (and
   `pairs_with` entries) must not start/end with a hyphen or contain `--`, and error on the
   reserved words "claude"/"anthropic" anywhere in the name (Claude platform rule). Update
   the `NAME_RE` doc comment to cite the spec. Zero content changes expected — this converts
   observed compliance into enforced compliance. Unit tests per the 2.3 pattern. *(G1)*
+  **Landed:** `NAME_RE` is now `/^[a-z0-9]+(?:-[a-z0-9]+)*$/` and the 64-char cap plus the
+  reserved-word check live in a shared `SkillNameSchema`, used by both `name` and
+  `pairs_with` — so violations surface as lint errors through the existing frontmatter
+  validation path, with no new lint plumbing. `cli new` validates the leaf name up front
+  too, because that name becomes the folder: catching it at lint time would mean moving a
+  directory rather than fixing a line. All 433 skills still lint clean (0 errors,
+  0 warnings), confirming the audit's "zero violations in content" finding.
 - [ ] **0.2 XML-tag lint rule (S).** Warn (error?) when `name` or `description` matches an
   XML/HTML-tag-shaped pattern (`<[A-Za-z/]`). Generic types are the known trap
   (`VerificationResult<Transaction>`, `Result<T, E>`); the fix at authoring time is to

@@ -1,8 +1,33 @@
 import { z } from "zod";
 import semver from "semver";
 
-/** kebab-case, used for skill `name` and `pairs_with` references. */
-export const NAME_RE = /^[a-z0-9-]{1,64}$/;
+/**
+ * kebab-case, used for skill `name` and `pairs_with` references.
+ *
+ * Shape is the Agent Skills specification's name rule
+ * (https://agentskills.io/specification): lowercase letters and digits joined
+ * by single hyphens — so no leading or trailing hyphen and no `--` run, which
+ * a looser `[a-z0-9-]+` character class would let through.
+ */
+export const NAME_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+/** Specification cap on `name` length. */
+export const NAME_MAX_LENGTH = 64;
+/**
+ * Claude's platform rejects skill names containing these words, so a name
+ * carrying one is unusable in the target this library's main projection serves.
+ */
+export const RESERVED_NAME_WORDS = ["anthropic", "claude"] as const;
+
+/** Skill name / `pairs_with` reference: spec shape, spec length, no reserved word. */
+export const SkillNameSchema = z
+  .string()
+  .max(NAME_MAX_LENGTH, `must be at most ${NAME_MAX_LENGTH} characters`)
+  .regex(NAME_RE, "must be kebab-case ([a-z0-9] words joined by single hyphens)")
+  .refine(
+    (n) => !RESERVED_NAME_WORDS.some((w) => n.includes(w)),
+    `must not contain the reserved words ${RESERVED_NAME_WORDS.map((w) => `"${w}"`).join(" or ")}`,
+  );
+
 export const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 export const StabilitySchema = z.enum(["stable", "emerging", "contested"]);
@@ -40,7 +65,7 @@ export const XSkillsMasterSchema = z
     platforms: z.array(z.string().min(1)).min(1),
     /** domain-defined version requirements, e.g. { ios: "17", swift: "6.0" }. */
     requires: z.record(z.string(), z.string()).optional(),
-    pairs_with: z.array(z.string().regex(NAME_RE)).default([]),
+    pairs_with: z.array(SkillNameSchema).default([]),
     /** citation URLs to canonical docs — never verbatim content. */
     sources: z.array(z.url()).default([]),
     snapshot_date: z.string().regex(ISO_DATE_RE, "must be an ISO date (YYYY-MM-DD)"),
@@ -58,7 +83,7 @@ const GlobsSchema = z
 
 // Loose: tolerate tool-native extras (e.g. allowed-tools) without failing validation.
 export const FrontmatterSchema = z.looseObject({
-  name: z.string().regex(NAME_RE, "must be kebab-case ([a-z0-9-], <=64 chars)"),
+  name: SkillNameSchema,
   description: z
     .string()
     .min(1, "description is required")

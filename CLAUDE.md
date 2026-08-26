@@ -87,7 +87,7 @@ New file in `src/emitters/` exporting an `Emitter` (interface in `src/types.ts`)
 
 Read `docs/authoring.md` first. Hard rules the linter enforces (errors):
 
-- Frontmatter `name` must equal the leaf folder name, kebab-case, and be **globally unique** across all domains (`add` and the registry key on bare name).
+- Frontmatter `name` must equal the leaf folder name and be **globally unique** across all domains (`add` and the registry key on bare name). Shape is the Agent Skills spec rule: `[a-z0-9]` words joined by single hyphens, ≤ 64 chars — no leading/trailing hyphen, no `--` — and no `claude`/`anthropic` (Claude platform rule). Same rule for `pairs_with` entries.
 - `pairs_with` is **bidirectional** — if A lists B, B must list A. Always edit both skills.
 - `SKILL.md` body ≤ 500 lines (warns at 450); push depth into `reference.md` / `examples.md` / `checklist.md`.
 - `stability: contested` requires an `## Open question` section, and such skills present tradeoffs rather than prescribing.
