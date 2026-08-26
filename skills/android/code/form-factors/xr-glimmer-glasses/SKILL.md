@@ -16,7 +16,7 @@ x-skills-master:
     - https://developer.android.com/develop/xr/jetpack-xr-sdk/glasses/first-activity
     - https://developer.android.com/jetpack/androidx/releases/xr-glimmer
   snapshot_date: "2026-08-25"
-  stability: stable
+  stability: emerging
   version: 1.1.0
 ---
 

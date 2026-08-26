@@ -15,7 +15,7 @@ x-skills-master:
     - https://developer.android.com/ai/gemini-nano
     - https://developer.android.com/ai
   snapshot_date: "2026-08-25"
-  stability: stable
+  stability: emerging
   version: 1.0.2
 ---
 

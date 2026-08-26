@@ -15,7 +15,7 @@ x-skills-master:
     - https://developer.android.com/media/media3/transformer
     - https://android-developers.googleblog.com/2026/06/building-premium-android-experiences-google-io-26.html
   snapshot_date: "2026-08-25"
-  stability: emerging
+  stability: stable
   version: 1.0.0
 ---
 

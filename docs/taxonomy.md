@@ -16,7 +16,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `app-intents`  — examples, checklist, ↔ adopting-app-intents, ↔ hig-siri-design, ↔ hig-snippets
 - `appkit-core`  — ↔ appkit-swiftui-interop, ↔ choosing-ui-toolkit, ↔ hig-designing-for-macos
 - `appkit-swiftui-interop`  — ↔ appkit-core
-- `controls-widgets`  — emerging, ↔ adopting-app-intents, ↔ choosing-widget-tech, ↔ hig-action-button
+- `controls-widgets`  — ↔ adopting-app-intents, ↔ choosing-widget-tech, ↔ hig-action-button
 - `observation`  — examples, checklist, ↔ swiftui-state-data-flow
 - `swiftdata-modeling`  — examples, checklist, ↔ choosing-persistence, ↔ swiftdata-queries-migration
 - `swiftdata-queries-migration`  — examples, checklist, ↔ swiftdata-modeling
@@ -346,10 +346,10 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `wear-data-health`  — ↔ health-services, ↔ wear-compose
 - `wear-tiles`  — ↔ choosing-widget-toolkit, ↔ m3-wear, ↔ wear-complications
 - `window-manager-foldables`  — ↔ m3-large-screens
-- `xr-arcore`  — ↔ xr-compose-spatial, ↔ xr-scenecore
-- `xr-compose-spatial`  — examples, checklist, ↔ m3-xr, ↔ xr-arcore, ↔ xr-scenecore
-- `xr-glimmer-glasses`  — ↔ m3-ai-glasses
-- `xr-scenecore`  — ↔ m3-xr, ↔ xr-arcore, ↔ xr-compose-spatial
+- `xr-arcore`  — emerging, ↔ xr-compose-spatial, ↔ xr-scenecore
+- `xr-compose-spatial`  — examples, checklist, emerging, ↔ m3-xr, ↔ xr-arcore, ↔ xr-scenecore
+- `xr-glimmer-glasses`  — emerging, ↔ m3-ai-glasses
+- `xr-scenecore`  — emerging, ↔ m3-xr, ↔ xr-arcore, ↔ xr-compose-spatial
 
 ## android  ›  code  ›  graphics-games  (8)
 
@@ -366,13 +366,13 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 
 - `app-actions-assistant`  — ↔ app-functions, ↔ app-shortcuts
 - `camerax`  — examples, checklist, ↔ mediastore, ↔ ml-kit
-- `gemini-nano-aicore`  — examples, checklist, ↔ choosing-ml
+- `gemini-nano-aicore`  — examples, checklist, emerging, ↔ choosing-ml
 - `litert-mediapipe`  — ↔ choosing-ml
 - `media-projection`  — ↔ foreground-services
 - `media3-ai-effects`  — emerging, ↔ media3-transformer
 - `media3-exoplayer`  — examples, checklist, ↔ media3-session, ↔ media3-transformer, ↔ picture-in-picture, ↔ tv-media-playback
 - `media3-session`  — ↔ car-media-messaging, ↔ media3-exoplayer
-- `media3-transformer`  — emerging, ↔ media3-ai-effects, ↔ media3-exoplayer
+- `media3-transformer`  — ↔ media3-ai-effects, ↔ media3-exoplayer
 - `ml-kit`  — ↔ camerax, ↔ choosing-ml
 
 ## android  ›  code  ›  platform-services  (25)
@@ -399,7 +399,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `runtime-permissions`  — examples, checklist, ↔ location-sensors, ↔ m3-permissions
 - `security-crypto`  — ↔ biometric
 - `telecom-calls`  — ↔ foreground-services
-- `uwb-ranging`  — ↔ bluetooth-ble
+- `uwb-ranging`  — emerging, ↔ bluetooth-ble
 - `webview-custom-tabs`  — ↔ choosing-web-integration
 - `workmanager`  — examples, checklist, ↔ choosing-background-work
 
@@ -457,13 +457,13 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 
 ## android  ›  design  ›  platforms  (7)
 
-- `m3-ai-glasses`  — ↔ xr-glimmer-glasses
+- `m3-ai-glasses`  — emerging, ↔ xr-glimmer-glasses
 - `m3-cars`  — ↔ car-app-library, ↔ car-driving-constraints
 - `m3-chromeos-desktop`  — ↔ keyboard-mouse-stylus
 - `m3-large-screens`  — examples, checklist, ↔ adaptive-window-size-classes, ↔ m3-adaptive-layout, ↔ window-manager-foldables
 - `m3-tv`  — ↔ tv-compose, ↔ tv-focus-input
 - `m3-wear`  — ↔ wear-compose, ↔ wear-tiles
-- `m3-xr`  — ↔ xr-compose-spatial, ↔ xr-scenecore
+- `m3-xr`  — emerging, ↔ xr-compose-spatial, ↔ xr-scenecore
 
 ## android  ›  design  ›  styles  (7)
 
@@ -551,7 +551,7 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `choosing-graphics-api`  — ↔ agsl-runtime-shaders, ↔ compose-graphics, ↔ vulkan-rendering
 - `choosing-http-client`  — ↔ ktor-client, ↔ networking-data-layer, ↔ retrofit-okhttp
 - `choosing-image-loading`  — contested, ↔ compose-images
-- `choosing-ml`  — ↔ gemini-nano-aicore, ↔ litert-mediapipe, ↔ ml-kit
+- `choosing-ml`  — emerging, ↔ gemini-nano-aicore, ↔ litert-mediapipe, ↔ ml-kit
 - `choosing-navigation`  — ↔ android-navigation-architecture, ↔ navigation-compose, ↔ navigation3
 - `choosing-storage`  — examples, checklist, ↔ datastore, ↔ files-serialization, ↔ room, ↔ sqlite-androidx
 - `choosing-web-integration`  — ↔ webview-custom-tabs

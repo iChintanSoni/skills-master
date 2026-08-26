@@ -15,7 +15,7 @@ x-skills-master:
     - https://developer.android.com/develop/connectivity/uwb
     - https://developer.android.com/guide/topics/connectivity/uwb
   snapshot_date: "2026-06-06"
-  stability: stable
+  stability: emerging
   version: 1.0.0
 ---
 

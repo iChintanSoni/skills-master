@@ -69,6 +69,34 @@ The primary Documentation/HIG URLs should also appear in the `sources` frontmatt
 5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. See [What earns a pair](#what-earns-a-pair) for what belongs in the list.
 6. **L2/L3 split.** When the body grows past ~500 lines, move long examples → `examples.md`, step lists → `checklist.md`, and deep reference tables → `reference.md` (a defined slot no skill currently uses — prefer the first two unless a true lookup table outgrows them), and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
 
+## What `stability` means
+
+`stability` describes **the subject, not the skill**. It answers: can a reader act on this
+guidance as settled, or should they expect it to move?
+
+- **`stable`** — the API has been through at least one full OS cycle and the vendor is not
+  reshaping it. A stable skill may still *mention* current-cycle additions; keeping up with
+  the platform is currency, not instability. `uikit-core` cites iOS 27 changes and is stable.
+- **`emerging`** — any one of: the primary API is pre-1.0 (alpha, beta, developer preview) at
+  `snapshot_date`; the framework shipped in the current cycle and has not been revised once;
+  or the vendor is visibly still moving it (renames, a successor already announced). Guidance
+  is current but provisional — say so in the body. `xr-scenecore` is emerging because
+  SceneCore is at `1.0.0-beta02` and `AnchorEntity` was just renamed.
+- **`contested`** — practitioners genuinely disagree and the vendor does not prescribe.
+  Requires `## Open question`, and the skill must lay out both cases without picking a
+  winner (the linter enforces the section; the no-prescription part is on you).
+
+The distinction that matters most: a skill that **prescribes a default with a clear rule is
+not contested**, however much people argue about it online. `choosing-http-client` names
+Retrofit + OkHttp as the default and gives one axis (KMP or not) for departing from it — so
+it is `stable`, not `contested`.
+
+Changing `stability` is metadata-only in the same way `pairs_with` is: it is stripped from
+every projection, so no `version`/`snapshot_date` moves. Note the consequence — **`stability`
+never reaches the consuming agent today.** Contested skills communicate through their
+`## Open question` section; if a skill is `emerging`, the body has to say so in prose for a
+reader to ever learn it.
+
 ## What earns a pair
 
 `pairs_with` is not a "related reading" list — it drives `skills-master add --with-pairs`,

@@ -2227,7 +2227,7 @@
         "android",
         "large-screen"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.0.1",
       "tags": [
         "ml",
@@ -3455,7 +3455,7 @@
         "ios",
         "ipados"
       ],
-      "stability": "emerging",
+      "stability": "stable",
       "version": "1.0.1",
       "tags": [
         "widgetkit",
@@ -4370,7 +4370,7 @@
         "android",
         "large-screen"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.0.2",
       "tags": [
         "gemini-nano",
@@ -7158,7 +7158,7 @@
       "platforms": [
         "glasses"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.0.1",
       "tags": [
         "glasses",
@@ -8950,7 +8950,7 @@
       "platforms": [
         "xr"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.0.0",
       "tags": [
         "m3",
@@ -9163,7 +9163,7 @@
         "android",
         "large-screen"
       ],
-      "stability": "emerging",
+      "stability": "stable",
       "version": "1.0.0",
       "tags": [
         "media3",
@@ -12837,7 +12837,7 @@
         "android",
         "large-screen"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.0.0",
       "tags": [
         "uwb",
@@ -13536,7 +13536,7 @@
       "platforms": [
         "xr"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.0.1",
       "tags": [
         "xr",
@@ -13565,7 +13565,7 @@
       "platforms": [
         "xr"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.0.2",
       "tags": [
         "xr",
@@ -13596,7 +13596,7 @@
         "xr",
         "glasses"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.1.0",
       "tags": [
         "xr",
@@ -13624,7 +13624,7 @@
       "platforms": [
         "xr"
       ],
-      "stability": "stable",
+      "stability": "emerging",
       "version": "1.0.1",
       "tags": [
         "xr",
