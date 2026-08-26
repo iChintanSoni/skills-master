@@ -1,6 +1,7 @@
 ---
 name: kotlin-generics-types
 description: Covers Kotlin generics and the type system for Android — declaration-site variance (in/out), use-site projections, star projection, reified type parameters with inline functions, type bounds, and nullability in generic code. Use when writing or reviewing generic Kotlin APIs, repository abstractions, sealed state containers, or utility functions that must preserve type safety across the Android codebase.
+license: MIT
 ---
 
 ## When to use

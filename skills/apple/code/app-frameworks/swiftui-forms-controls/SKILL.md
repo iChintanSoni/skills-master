@@ -1,6 +1,7 @@
 ---
 name: swiftui-forms-controls
 description: "Use when building data-entry or settings UI in SwiftUI with Form, Section, Toggle, Picker, Slider, Stepper, DatePicker, ColorPicker, LabeledContent, or controlSize. Covers picker style selection, grouping and styling, control sizing, and deciding Form versus a custom layout."
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

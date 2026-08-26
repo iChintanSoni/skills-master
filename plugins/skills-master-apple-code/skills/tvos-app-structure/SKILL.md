@@ -1,6 +1,7 @@
 ---
 name: tvos-app-structure
 description: "Structures a tvOS app in SwiftUI: the App and scene entry point, TabView with sidebar-adaptable navigation, NavigationStack and NavigationSplitView on the big screen, safe-area and overscan discipline for the 10-foot UI, a TVServices Top Shelf extension, the layered AppIcon image stack, the TVUIKit views that still have no SwiftUI equivalent, and multi-user personalization on a shared Apple TV. Use when starting or restructuring an Apple TV target, laying out top-level navigation, shipping a Top Shelf extension, or adapting an iOS codebase to tvOS."
+license: MIT
 ---
 
 ## When to use

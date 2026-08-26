@@ -1,6 +1,7 @@
 ---
 name: m3-fab
 description: "Design guidance for Material 3 Floating Action Buttons — covers regular, small, large, and extended FAB variants, placement, insets, FAB menus, and when a FAB beats an ordinary button. Use when deciding whether a screen action deserves a FAB, which FAB variant to choose, or how to position FABs correctly across phone and large-screen layouts."
+license: MIT
 tags: [navigation]
 x-skills-master:
   domain: android

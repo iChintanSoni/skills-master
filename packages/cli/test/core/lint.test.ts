@@ -21,6 +21,8 @@ interface SkillSpec {
   cls?: string;
   category?: string;
   description?: string;
+  /** `null` omits the field, to exercise the missing-license rule. */
+  license?: string | null;
   stability?: string;
   snapshotDate?: string;
   pairsWith?: string[];
@@ -67,6 +69,7 @@ function writeSkill(spec: SkillSpec): void {
     "---",
     `name: ${name}`,
     `description: "${spec.description ?? "A test skill. Use when testing."}"`,
+    ...(spec.license === null ? [] : [`license: ${spec.license ?? "MIT"}`]),
     `tags: [${(spec.tags ?? []).join(", ")}]`,
     "x-skills-master:",
     `  domain: ${spec.domain ?? spec.dir.split("/")[0]}`,
@@ -224,6 +227,20 @@ describe("lintSkills — existing rules still hold", () => {
     });
     const res = lintSkills(root);
     expect(res.diagnostics.filter((d) => d.message.includes("XML-tag-shaped"))).toHaveLength(0);
+  });
+
+  // 1.2: a skill installs as a standalone directory, so its terms have to
+  // travel with it — the repository LICENSE is not part of what ships.
+  it("warns when a skill declares no license", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/unlicensed-skill", license: null });
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([expect.stringContaining("no license")]),
+    );
+  });
+
+  it("accepts a license other than MIT — the rule is presence, not value", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/apache-skill", license: "Apache-2.0" });
+    expect(lintSkills(root).warnCount).toBe(0);
   });
 
   it("errors on duplicate names across domains", () => {

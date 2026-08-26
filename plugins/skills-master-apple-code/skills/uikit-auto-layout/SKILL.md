@@ -1,6 +1,7 @@
 ---
 name: uikit-auto-layout
 description: Builds robust UIKit layouts with layout anchors, constraint priorities, and stack views. Use when writing programmatic Auto Layout, fixing ambiguous or unsatisfiable constraint logs, tuning content hugging and compression resistance, or anchoring views to safe area, layout margin, and keyboard guides.
+license: MIT
 ---
 
 ## When to use

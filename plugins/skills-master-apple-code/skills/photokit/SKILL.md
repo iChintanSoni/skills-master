@@ -1,6 +1,7 @@
 ---
 name: photokit
 description: "Guides PhotoKit work on Apple platforms: SwiftUI PhotosPicker and UIKit PHPickerViewController for permission-free selection, PHPhotoLibrary read/write and limited-library authorization, fetching with PHAsset and PHFetchResult, loading images via PHImageManager, observing library changes, and editing assets. Use when importing PhotosUI or Photos, presenting a photo picker, requesting photo-library access, querying or displaying user assets, or saving edits back to the library."
+license: MIT
 ---
 
 # PhotoKit

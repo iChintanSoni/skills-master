@@ -1,6 +1,7 @@
 ---
 name: choosing-ml
 description: Decision router for on-device intelligence on Android — ML Kit, Gemini Nano via AICore, LiteRT and MediaPipe, and cloud models. Use when deciding which ML or AI technology fits a feature, weighing privacy versus capability tradeoffs, evaluating device support breadth, or routing a "should this be on-device or cloud" question before writing code.
+license: MIT
 ---
 
 > **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.

@@ -1,6 +1,7 @@
 ---
 name: m3-edge-to-edge
 description: Design guidance and critique for edge-to-edge Android UI — drawing content behind the system bars, safe-area and inset handling, transparent system bars and scrims, keyboard (IME) avoidance, and immersive layouts. Use when designing or reviewing a screen that draws under the status and navigation bars, deciding how content and controls respect insets, or adopting the edge-to-edge enforcement on Android 15 and later.
+license: MIT
 ---
 
 ## When to use

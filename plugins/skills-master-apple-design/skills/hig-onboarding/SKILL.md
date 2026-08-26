@@ -1,6 +1,7 @@
 ---
 name: hig-onboarding
 description: Design-critique guidance for Apple Human Interface Guidelines onboarding and launching, covering a fast content-first first run, getting users to value quickly, avoiding long tutorials and walkthroughs, deferring sign-in and permission prompts until contextually needed, progressive disclosure, sourcing setup from device defaults, and restoring state. Use when reviewing or designing a first-run experience, onboarding flow, launch screen, sign-in wall, or permission-request timing on iOS, iPadOS, macOS, watchOS, tvOS, or visionOS, or when auditing whether new users reach value without friction. Produces UX recommendations, not code.
+license: MIT
 ---
 
 # HIG onboarding and launching

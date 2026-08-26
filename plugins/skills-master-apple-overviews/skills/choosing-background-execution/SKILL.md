@@ -1,6 +1,7 @@
 ---
 name: choosing-background-execution
 description: Decision router for running work outside the foreground on Apple platforms — BGAppRefreshTask versus BGProcessingTask, background URLSession transfers, the declared background modes for audio, location, and VoIP, push-triggered work, Background Assets for bulk content, and Live Activities for user-visible progress. Use when deciding how a sync, upload, export, or refresh should run while the app is not on screen, when background work is silently never executing, or when weighing a background mode against a deferred task.
+license: MIT
 ---
 
 ## When to use

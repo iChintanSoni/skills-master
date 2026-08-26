@@ -1,6 +1,7 @@
 ---
 name: testflight-appstore-connect
 description: "Guides shipping Apple apps through TestFlight beta testing and App Store Connect: archiving and uploading a build, internal vs external testing groups, export-compliance, metadata and versions, submitting for review, and phased release. Use when you need to distribute a beta, set up TestFlight groups, fix Missing Compliance, manage app versions, or submit a release for review."
+license: MIT
 ---
 
 ## When to use

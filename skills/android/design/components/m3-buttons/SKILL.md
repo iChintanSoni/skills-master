@@ -1,6 +1,7 @@
 ---
 name: m3-buttons
 description: "Design-critique guidance for Material 3 buttons on Android — covering the five button variants (filled, filled tonal, elevated, outlined, text), emphasis hierarchy, primary-action selection, sizing and shape including M3 Expressive morphing shapes, icons in buttons, and accessible touch targets. Use when reviewing or specifying button choices in a screen, judging whether a variant fits its emphasis level, critiquing hierarchy when multiple buttons compete, or evaluating whether an icon adds clarity or noise. Produces design recommendations and critique, not code."
+license: MIT
 tags: [material-you]
 x-skills-master:
   domain: android

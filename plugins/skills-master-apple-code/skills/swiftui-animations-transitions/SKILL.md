@@ -1,6 +1,7 @@
 ---
 name: swiftui-animations-transitions
 description: Guides SwiftUI motion design with implicit animation(value:), explicit withAnimation, springs and timing curves, view transitions, matchedGeometryEffect, PhaseAnimator and KeyframeAnimator, custom Animatable conformances, and Reduce Motion support. Use when adding or fixing animations, transitions, hero effects, multi-step or keyframe motion, or when animations stutter, fire unexpectedly, or ignore accessibility.
+license: MIT
 ---
 
 ## When to use

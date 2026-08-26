@@ -17,6 +17,7 @@ This creates `skills/apple/code/app-frameworks/swiftui-grids/SKILL.md` from a te
 name: swiftui-navigation            # kebab-case, == folder name; see "Naming"
 description: >-                      # third person, <=1024 chars, includes "Use when …"
   Implements modern SwiftUI navigation … Use when building stacks, split views, or deep links.
+license: MIT                        # every skill in this library; see "Why the license is per skill"
 globs:                              # optional; include only for file-scoped code skills
   - "**/*.swift"
 tags: []                            # usually empty; see "What `tags` are for"
@@ -36,6 +37,12 @@ x-skills-master:
   version: 1.0.0                    # per-skill semver
 ---
 ```
+
+### Why the license is per skill
+
+A skill installs as a **standalone directory** — a plugin's `skills/<name>/`, a zip uploaded to claude.ai, a folder copied into someone's `.claude/skills/`. The repository `LICENSE` sits next to the source tree and is not part of what ships, so the terms have to travel inside the skill. `license` is a spec field, and the Claude projection carries it verbatim.
+
+Every skill in this library is `MIT`. The linter warns when one is missing, and `pnpm cli new` scaffolds it — but the *value* is yours to state, not the compiler's: the CLI can be pointed at any content root (`--content`, `SKILLS_MASTER_REPO`), and an emitter that stamped a license would be asserting terms for content it did not author. A skill contributed under different terms simply says so.
 
 ### Naming
 

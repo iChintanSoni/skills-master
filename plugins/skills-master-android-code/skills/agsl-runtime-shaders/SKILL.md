@@ -1,6 +1,7 @@
 ---
 name: agsl-runtime-shaders
 description: Writing Android Graphics Shading Language (AGSL) fragment shaders and running them through RuntimeShader — uniforms, input shaders, color management, the AGSL/GLSL differences, applying a shader to a View with RenderEffect and to Compose with ShaderBrush or a graphicsLayer render effect. Use when adding a per-pixel effect such as noise, dissolve, distortion, gradient mesh, or a shader-driven tint to Android UI on API 33 and above, or when deciding whether an effect belongs in AGSL rather than a full OpenGL ES or Vulkan pipeline.
+license: MIT
 ---
 
 ## When to use

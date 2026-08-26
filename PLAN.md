@@ -192,10 +192,30 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   projection's description and the registry entry); `docs/taxonomy.md` does not carry
   descriptions, so it did not move at all. G2 is closed on both sides: the violation is
   gone and the gate now refuses the next one.
-- [ ] **1.2 Emit `license` (S).** Add `license: MIT` to the Claude-emitter frontmatter
+- [x] **1.2 Emit `license` (S).** Add `license: MIT` to the Claude-emitter frontmatter
   (spec-legal optional field), flowing to `.claude/skills/` installs and all 8 plugins.
   One emitter line + snapshot updates + a note in `docs/emitters.md`. Decision to record:
   either bare `MIT` or `MIT (see repository LICENSE)` — keep it short per the spec. *(G6)*
+  **Landed, but not as written — the license is authored per skill, not stamped by the
+  emitter.** Bare `MIT` (SPDX, per the spec's "keep it short"), on all 433 skills; the
+  emitter passes the field through when present and emits nothing when absent. The reason
+  is that a hardcoded constant would be a false claim the moment the CLI is pointed at
+  another content root, which `--content` and `SKILLS_MASTER_REPO` both support — an
+  emitter cannot know the terms of content it did not author. Cost of the honest version is
+  a 433-line source diff (+433 emitted) and an ongoing authoring rule, paid for by a lint
+  warn, the `cli new` template, and a test that a scaffolded skill lints clean. Only the
+  Claude target carries it: `.mdc` / `.instructions.md` / `AGENTS.md` frontmatter is
+  Cursor's and Copilot's vocabulary, not the spec's. `registry.json` does not move —
+  it never carried `license`.
+  **Found in passing:** the `cli new` template's description read `Use when <triggers go
+  here>`, which 1.1 had just made a lint **error** — every scaffolded skill would have
+  failed lint on creation. Fixed here, with a regression test that scaffolds and lints.
+  **Also noticed, deliberately not fixed here:** the dogfood install under `packages/cli/`
+  is pinned at `swiftui-navigation` 1.0.1 while the source is 1.1.1, and `doctor` calls it
+  healthy because it compares emitted files against the lockfile, not the lockfile against
+  the source. Pre-existing and unrelated to this change; refreshing it here would drag two
+  unrelated content revisions into the diff. Worth its own item — `doctor` arguably should
+  report a lockfile that has fallen behind the content.
 - [ ] **1.3 Provenance via the spec's `metadata` map (M) — decision item.** Optionally emit
   `metadata: {version, snapshot-date, source}` (string→string, spec-legal, clients ignore
   what they don't know) on the Claude projection, so an installed skill self-describes its

@@ -1,6 +1,7 @@
 ---
 name: hig-action-button
 description: Design-critique guidance for the Apple Human Interface Guidelines Action button and Camera Control on iPhone, covering which app actions are appropriate to assign, making each press fast and unambiguous, primary versus secondary actions, light-press and full-press plus swipe behavior on Camera Control, and integrating through App Intents, Controls, and the locked-camera capture experience. Use when reviewing or specifying how an app hooks into the Action button or Camera Control, judging whether an assigned action is suitable, fast, and recoverable, or critiquing whether the hardware button is treated as a shortcut rather than the only path to a feature. Produces design recommendations and critique, not code.
+license: MIT
 ---
 
 # HIG Action button and Camera Control

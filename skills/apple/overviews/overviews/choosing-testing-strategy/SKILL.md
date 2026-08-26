@@ -1,6 +1,7 @@
 ---
 name: choosing-testing-strategy
 description: "Helps pick an Apple testing strategy — Swift Testing vs XCTest for new and existing code, plus the right mix of unit, integration, UI, and snapshot tests and how much to invest at each level. Use when starting a test suite, deciding which framework to adopt, planning a migration, or routing into specific testing skills."
+license: MIT
 tags: [decision]
 x-skills-master:
   domain: apple

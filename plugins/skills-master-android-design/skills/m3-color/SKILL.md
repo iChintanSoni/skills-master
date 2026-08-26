@@ -1,6 +1,7 @@
 ---
 name: m3-color
 description: "Design critique and guidance for the Material 3 color system on Android: tonal palettes, semantic color roles, light and dark schemes, dynamic color on Android 12+, accessible pairings, and role selection for hierarchy and emphasis. Use when designing or auditing a color palette, choosing between primary/secondary/tertiary roles, evaluating contrast in light or dark themes, or deciding whether to adopt dynamic color (Material You)."
+license: MIT
 ---
 
 ## When to use

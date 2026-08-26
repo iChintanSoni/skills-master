@@ -1,6 +1,7 @@
 ---
 name: m3-permissions
 description: "Design critique and recommendations for Android runtime permission UX following Material 3 principles: just-in-time requests tied to user actions, pre-permission rationale dialogs, graceful feature degradation when denied, handling permanent denial with a Settings redirect, and minimizing the permission surface of a feature. Use when reviewing or designing any permission request flow in an Android app and you need M3-grounded design judgment rather than implementation code."
+license: MIT
 tags: [privacy]
 x-skills-master:
   domain: android

@@ -1,6 +1,7 @@
 ---
 name: navigation-deep-links
 description: Covers deep links in Navigation Compose — declaring navDeepLink on destinations, handling incoming intents in Activities, and verifying Android App Links with Digital Asset Links. Use when adding implicit or explicit deep links to a NavHost destination, wiring intent handling in a Compose-first Activity, or testing that a URI correctly opens the right screen.
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

@@ -1,6 +1,7 @@
 ---
 name: hig-images
 description: "Design-critique guidance for images in Apple interfaces under the Human Interface Guidelines, covering when to use photographs versus illustrations versus SF Symbols, resolution and scale factors, intended aspect ratio and content fit, focal points and safe areas, keeping text legible over imagery, and labeling meaningful versus decorative images for accessibility. Use when reviewing or specifying photos, illustrations, thumbnails, hero images, or symbol artwork in a screen; deciding which image style fits a context; judging crop, scale, and aspect-ratio treatment; or checking that imagery carries the right alternative text. Produces UX critique and recommendations, not code."
+license: MIT
 tags: []
 x-skills-master:
   domain: apple

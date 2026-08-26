@@ -1,6 +1,7 @@
 ---
 name: instruments-profiling
 description: Guides profiling Apple apps with Instruments 26 — Time Profiler and CPU Profiler, Allocations and Leaks, the SwiftUI and Hangs and Hitches instruments, and OSSignposter points of interest. Use when an app is slow, janky, hangs, or grows in memory, when reading an Instruments timeline or call tree, or when adding signposts to measure and confirm a performance fix.
+license: MIT
 ---
 
 ## When to use

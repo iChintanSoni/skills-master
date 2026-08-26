@@ -1,6 +1,7 @@
 ---
 name: compose-gestures
 description: Covers touch interaction processing, drag/tap gesture detection, multitouch zoom/pan configurations, and custom pointer inputs in Jetpack Compose. Use when adding custom drag mechanics, complex swipe actions, or raw touch responders.
+license: MIT
 ---
 
 ## When to use

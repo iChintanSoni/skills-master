@@ -1,6 +1,7 @@
 ---
 name: choosing-navigation
 description: Decision guide for selecting a navigation approach in Android apps — Jetpack Navigation 3 with an app-owned back stack, Navigation Compose with type-safe routes, Fragment-based Navigation, or a lightweight custom solution. Use when starting a new app, adding a multi-screen flow, choosing between Navigation 3 and Navigation Compose, or evaluating a back-stack migration.
+license: MIT
 tags: [fragments, architecture, routing]
 x-skills-master:
   domain: android

@@ -1,6 +1,7 @@
 ---
 name: swiftui-documents
 description: "Builds document-based SwiftUI apps with DocumentGroup and the iOS 27 observable document family — Document, ReadableDocument, WritableDocument, DocumentReader, DocumentWriter — plus DocumentGroupLaunchScene and DocumentCreationSource for the launch experience. Use when creating or migrating a document-based app, routing between the deprecated FileDocument/ReferenceFileDocument protocols and the new reference-type model, implementing custom readers and writers with background file access and progress reporting, or customizing the document launch screen and creation sources."
+license: MIT
 globs:
   - "**/*.swift"
 tags: [files]

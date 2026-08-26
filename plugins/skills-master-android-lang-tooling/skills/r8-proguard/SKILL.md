@@ -1,6 +1,7 @@
 ---
 name: r8-proguard
 description: Covers R8 code and resource shrinking for Android release builds — enabling minification, writing keep rules, handling reflection and serialization, debugging with mapping.txt and retrace, and avoiding over-keeping. Use when configuring shrinking for a release build, diagnosing keep-rule gaps, or reducing APK/AAB size.
+license: MIT
 ---
 
 ## When to use

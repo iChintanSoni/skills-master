@@ -1,6 +1,7 @@
 ---
 name: compose-state
 description: Covers Jetpack Compose state — remember, mutableStateOf variants, state hoisting (state down/events up), stateful vs stateless composables, rememberSaveable with custom Savers, derivedStateOf, snapshot reads, and remember keys. Use when wiring mutable state into a composable, deciding how to hoist or persist state across recomposition or configuration changes, or optimizing with derivedStateOf.
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

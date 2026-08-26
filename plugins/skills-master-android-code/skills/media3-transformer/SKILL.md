@@ -1,6 +1,7 @@
 ---
 name: media3-transformer
 description: Covers Media3 Transformer for on-device video editing and export — single-asset transcode/trim, multi-asset composition, applied effects, and CodecDB's chipset-aware encoding recommendations for export quality. Use when implementing video editing, transcoding, format conversion, applying effects before export, stitching multiple clips into one output, or tuning export encoder settings per device.
+license: MIT
 ---
 
 ## When to use

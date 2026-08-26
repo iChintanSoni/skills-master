@@ -1,6 +1,7 @@
 ---
 name: testing-async-code
 description: "Guidance for testing async, concurrent, and time-based Swift code with Swift Testing: async test functions, confirmations for callbacks and streams, time limits, actor and MainActor isolation, and injected clocks. Use when writing or reviewing tests that await results, exercise AsyncStream or completion handlers, hit flaky sleeps, or need deterministic timing."
+license: MIT
 globs:
   - "**/*.swift"
 tags: [concurrency]

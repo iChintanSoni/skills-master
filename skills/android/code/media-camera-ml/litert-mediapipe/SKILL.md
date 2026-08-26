@@ -1,6 +1,7 @@
 ---
 name: litert-mediapipe
 description: Guides on-device ML on Android using LiteRT (formerly TensorFlow Lite) for custom model inference and MediaPipe Tasks for streaming perception pipelines. Use when you need to run custom .tflite models locally, configure GPU or NNAPI delegates, or build real-time vision/audio pipelines without a network round-trip.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [machine-learning]

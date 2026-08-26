@@ -1,6 +1,7 @@
 ---
 name: xr-arcore
 description: Covers ARCore perception for Jetpack XR — planes, anchors, hit testing, and hand tracking — plus the XR permission model and anchoring virtual Compose content to the real world. Use when building Android XR apps that need to detect real-world surfaces, place persistent virtual objects, or read hand-joint poses.
+license: MIT
 ---
 
 > **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.

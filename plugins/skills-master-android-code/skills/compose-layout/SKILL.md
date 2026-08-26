@@ -1,6 +1,7 @@
 ---
 name: compose-layout
 description: Covers Jetpack Compose layout primitives — Row, Column, Box, weight/fill modifiers, BoxWithConstraints, intrinsic measurements, the single-pass constraints model, custom Layout composables, and SubcomposeLayout for measure-dependent content. Use when arranging composables on screen, building adaptive UIs, implementing a custom layout algorithm, or needing slot-driven measurement.
+license: MIT
 ---
 
 ## When to use

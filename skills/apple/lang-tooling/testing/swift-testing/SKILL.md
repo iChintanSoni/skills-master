@@ -1,6 +1,7 @@
 ---
 name: swift-testing
 description: Writes tests with the Swift Testing framework — @Test functions, the expect and require macros, parameterized tests, suites, and async/throwing tests. Use when adding or restructuring tests for Apple-platform Swift code, migrating from XCTest, or parameterizing test cases.
+license: MIT
 globs:
   - "**/*Tests.swift"
   - "**/*Test.swift"

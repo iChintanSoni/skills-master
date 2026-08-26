@@ -1,6 +1,7 @@
 ---
 name: keyboard-mouse-stylus
 description: Covers hardware input on large-screen and ChromeOS surfaces — physical keyboard shortcuts (onKeyEvent, KeyboardShortcutGroup), pointer hover and right-click, mouse/trackpad scrolling, and stylus/pen input including low-latency rendering and motion prediction. Use when building apps that must feel native on tablets, foldables, or ChromeOS where keyboard, mouse, and stylus are primary input methods.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [pointer-input]

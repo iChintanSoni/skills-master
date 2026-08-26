@@ -1,6 +1,7 @@
 ---
 name: xr-scenecore
 description: Covers Jetpack XR SceneCore for Android XR apps — loading glTF/GLB models, managing entities and transforms, configuring environments and skyboxes, and composing 3D content alongside spatial panels. Use when building or extending an Android XR app that needs 3D objects, spatial layouts, or custom environments in SceneCore.
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

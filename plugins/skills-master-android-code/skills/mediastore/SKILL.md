@@ -1,6 +1,7 @@
 ---
 name: mediastore
 description: Covers MediaStore queries, inserts, edits, and deletions for images/video/audio, relative path usage, RecoverableSecurityException handling, and the photo picker as a permission-free alternative. Use when reading or writing shared media files on Android, presenting a file picker for images or video, or managing app-contributed media.
+license: MIT
 ---
 
 ## When to use

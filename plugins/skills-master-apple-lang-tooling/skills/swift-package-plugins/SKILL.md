@@ -1,6 +1,7 @@
 ---
 name: swift-package-plugins
 description: "Guidance for authoring and running SwiftPM plugins: build-tool plugins for code generation and command plugins for linting/formatting, declared in Package.swift with sandbox permissions. Use when generating source at build time, wiring a formatter or linter into a package, choosing prebuild vs build commands, or fixing plugin sandbox and write-permission errors in Xcode 26 or the swift CLI."
+license: MIT
 ---
 
 A SwiftPM plugin is a small Swift program that the package manager compiles and runs in a sandbox to extend your build. There are two kinds, and picking the right one is the first decision.

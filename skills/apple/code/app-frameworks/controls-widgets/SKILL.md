@@ -1,6 +1,7 @@
 ---
 name: controls-widgets
 description: "Build iOS 18+ control widgets that surface app actions in Control Center, the Lock Screen, and the Action button using ControlWidget with ControlWidgetButton/Toggle and App Intents. Use when adding a control, exposing a quick toggle or button outside the app, wiring a control to an App Intent, or driving control state with a value provider."
+license: MIT
 globs:
   - "**/*.swift"
 tags: [widgetkit]

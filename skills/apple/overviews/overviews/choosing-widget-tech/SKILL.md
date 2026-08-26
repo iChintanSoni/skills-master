@@ -1,6 +1,7 @@
 ---
 name: choosing-widget-tech
 description: "Decision guide for picking a glanceable extension on iPhone and iPad: home/Lock Screen widgets, Live Activities with the Dynamic Island, Control widgets, or App Intents and App Shortcuts. Use when deciding how to surface app content or actions outside the app, when a feature needs a static glance, an ongoing event, a quick toggle, or a system-wide action, or when unsure which WidgetKit, ActivityKit, or App Intents API fits."
+license: MIT
 tags: [controls]
 x-skills-master:
   domain: apple

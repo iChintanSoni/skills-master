@@ -1,6 +1,7 @@
 ---
 name: m3-search
 description: "Design guidance for Material 3 search patterns — Use when deciding between search bar and search view, placing search in navigation, handling suggestions and recent queries, supporting voice entry, and determining when search warrants a prominent surface."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

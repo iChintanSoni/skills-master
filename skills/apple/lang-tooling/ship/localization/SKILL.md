@@ -1,6 +1,7 @@
 ---
 name: localization
 description: "Internationalize and localize Apple apps with String Catalogs (.xcstrings), modern String(localized:)/LocalizedStringResource APIs, locale-aware formatting, and RTL layout. Use when adding languages, migrating from .strings/.stringsdict, handling plurals or format arguments, formatting dates/numbers/measurements per locale, or exchanging files with translators."
+license: MIT
 tags: [internationalization]
 x-skills-master:
   domain: apple

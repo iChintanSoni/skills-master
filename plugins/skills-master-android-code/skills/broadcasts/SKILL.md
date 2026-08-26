@@ -1,6 +1,7 @@
 ---
 name: broadcasts
 description: Covers Android BroadcastReceiver, context-registered vs manifest-declared receivers, implicit broadcast restrictions, exported flags and RECEIVER_EXPORTED/RECEIVER_NOT_EXPORTED, and modern alternatives like Flow for app-internal events. Use when sending or receiving system or custom broadcasts, or replacing legacy broadcast patterns with coroutines and Flow.
+license: MIT
 ---
 
 ## When to use

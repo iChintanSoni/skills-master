@@ -1,6 +1,7 @@
 ---
 name: m3-lists
 description: Material 3 design guidance for list components on Android — one-, two-, and three-line items with leading and trailing elements, dividers and grouping, density, selection, swipe actions, and when lists beat grids or cards. Use when designing or critiquing any scrollable list surface in an Android app that follows Material You / M3 Expressive.
+license: MIT
 ---
 
 ## When to use

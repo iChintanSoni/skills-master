@@ -20,9 +20,13 @@ export const claudeEmitter: Emitter = {
     const dir = `${ctx.paths.claude}/${skill.name}`;
     const xm = skill.frontmatter["x-skills-master"];
     const note = stabilityNote(xm.stability, xm.snapshot_date);
+    // `license` is a spec field, so it rides along when the skill declares one.
+    // Absent means absent: the emitter has no business inventing a license for
+    // content it did not author.
     const fm = {
       name: skill.frontmatter.name,
       description: skill.frontmatter.description,
+      ...(skill.frontmatter.license ? { license: skill.frontmatter.license } : {}),
     };
     const files: EmittedFile[] = [
       {

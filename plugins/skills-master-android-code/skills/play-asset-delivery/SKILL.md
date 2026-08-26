@@ -1,6 +1,7 @@
 ---
 name: play-asset-delivery
 description: Covers Google Play Asset Delivery — install-time, fast-follow, and on-demand asset packs declared with the com.android.asset-pack Gradle plugin, runtime download and progress tracking through AssetPackManager, texture compression format targeting, Play's per-pack and total size limits, and testing with bundletool local testing or internal app sharing. Use when a game ships gigabytes of assets, replaces legacy OBB expansion files, delivers per-GPU texture variants, or stages heavy content after install.
+license: MIT
 ---
 
 ## When to use

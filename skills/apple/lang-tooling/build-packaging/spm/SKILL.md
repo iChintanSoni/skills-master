@@ -1,6 +1,7 @@
 ---
 name: spm
 description: Guidance on authoring Swift Package Manager manifests, including products and targets, dependency version rules, local packages for app modularization, test targets, bundled resources, and platform-conditional build settings. Use when creating or editing a Package.swift file, splitting an app into local feature packages, adding or pinning third-party dependencies, declaring resources or test targets in a package, or resolving version-resolution and platform-condition issues.
+license: MIT
 globs:
   - "**/Package.swift"
 tags: []

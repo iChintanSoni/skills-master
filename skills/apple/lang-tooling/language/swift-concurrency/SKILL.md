@@ -1,6 +1,7 @@
 ---
 name: swift-concurrency
 description: Guidance for writing data-race-safe asynchronous Swift under Swift 6 strict concurrency, covering async/await, structured concurrency with async let and task groups, actors and isolation, the MainActor, Sendable, and Task cancellation. Use when adding or auditing async code, fixing strict-concurrency or Sendable diagnostics, deciding where work should run, choosing between structured and unstructured tasks, or modernizing callback-based APIs to async/await.
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

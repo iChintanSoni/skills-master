@@ -1,6 +1,7 @@
 ---
 name: robolectric
 description: Covers running Android-framework tests on the JVM with Robolectric — shadows, SDK level configuration, and the tradeoffs vs instrumented tests. Use when writing fast local tests that exercise Android APIs (Context, View, Intent, ContentResolver, etc.) without a device or emulator.
+license: MIT
 ---
 
 ## When to use

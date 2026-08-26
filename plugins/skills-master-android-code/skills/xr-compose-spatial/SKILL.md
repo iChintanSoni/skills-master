@@ -1,6 +1,7 @@
 ---
 name: xr-compose-spatial
 description: Covers Jetpack Compose for XR — Subspace, SpatialPanel, orbiters, spatial elevation, home space vs full space modes, SubspaceModifier, and adapting an existing adaptive app to spatial UI on Android XR. Use when building or adapting an Android app to run on XR headsets or wired XR glasses with spatial panels, 3D layout, floating orbiters, or immersive full-space experiences.
+license: MIT
 ---
 
 > **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.

@@ -1,6 +1,7 @@
 ---
 name: compose-lazy-lists
 description: Covers lazy scrolling containers in Jetpack Compose — LazyColumn, LazyRow, LazyVerticalGrid, LazyVerticalStaggeredGrid, item keys/contentType, sticky headers, LazyListState, programmatic scrolling, item placement animations, and Paging integration. Use when building any scrollable list, feed, grid, or paginated data surface in a Compose-first Android app.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [recycler]

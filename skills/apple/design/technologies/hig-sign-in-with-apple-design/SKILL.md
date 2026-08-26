@@ -1,6 +1,7 @@
 ---
 name: hig-sign-in-with-apple-design
 description: "Design guidance and UX critique for adopting Sign in with Apple, grounded in the Human Interface Guidelines. Use when reviewing or designing a sign-in or account-creation screen that offers Sign in with Apple, choosing the official button style (black, white, white-outline), sizing and placing the button relative to other providers, respecting Hide My Email private-relay addresses, or sequencing the account flow. Covers button prominence, localization, account-deletion, and offering Apple alongside Google or email sign-in. Produces design recommendations, not code."
+license: MIT
 tags: [authentication, accounts, privacy]
 x-skills-master:
   domain: apple

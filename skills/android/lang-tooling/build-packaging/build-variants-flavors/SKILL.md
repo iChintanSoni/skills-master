@@ -1,6 +1,7 @@
 ---
 name: build-variants-flavors
 description: Covers Android build types, product flavors, flavor dimensions, variant-specific source sets and resources, BuildConfig fields, and manifest placeholders using AGP 9 with Kotlin DSL. Use when configuring multi-environment or multi-tier Android builds that need distinct artifacts from a single codebase.
+license: MIT
 globs:
   - "**/*.gradle.kts"
   - "**/*.kts"

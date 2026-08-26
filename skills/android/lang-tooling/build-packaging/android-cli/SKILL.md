@@ -1,6 +1,7 @@
 ---
 name: android-cli
 description: "Covers Android CLI 1.0 — Google's agent-facing command-line toolchain for Android development: project scaffolding (android create), project metadata (android describe), SDK package management, emulator lifecycle, APK deployment (android run), screen capture and layout inspection, knowledge-base search, agent skills installation, and the Android Studio bridge commands (analyze-file, find-declaration, find-usages, render-compose-preview, version-lookup). Use when a coding agent needs to scaffold, inspect, deploy, or visually verify an Android app from the terminal, or when deciding whether a task belongs to Android CLI, ./gradlew, or Android Studio."
+license: MIT
 globs:
   - "**/*.gradle.kts"
   - "**/*.kts"

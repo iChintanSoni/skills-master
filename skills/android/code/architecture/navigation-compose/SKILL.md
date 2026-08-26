@@ -1,6 +1,7 @@
 ---
 name: navigation-compose
 description: Covers Navigation Compose — NavController, NavHost, type-safe routes with @Serializable objects, nested graphs, argument passing, back-stack manipulation, returning results, and adaptive navigation patterns. Use when building multi-screen Compose apps, wiring programmatic navigation, passing data between destinations, or structuring nested navigation graphs.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [jetpack]

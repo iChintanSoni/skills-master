@@ -1,6 +1,7 @@
 ---
 name: power-doze
 description: Covers Android Doze mode and App Standby buckets, background execution and network restrictions, battery-optimization exemptions, and designing work to survive maintenance windows. Use when building features that schedule background work, send notifications, sync data, or must behave correctly under power-saving constraints.
+license: MIT
 ---
 
 ## When to use

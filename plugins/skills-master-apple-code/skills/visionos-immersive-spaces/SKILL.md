@@ -1,6 +1,7 @@
 ---
 name: visionos-immersive-spaces
 description: Builds the unbounded half of a visionOS app — ImmersiveSpace scenes, the mixed, progressive, and full immersion styles, the openImmersiveSpace and dismissImmersiveSpace environment actions, immersion-change and upper-limb configuration, SpatialEventGesture for direct and indirect pinch input, and the ARKitSession authorization gate for hand tracking and world sensing. Use when content must escape a volume, when replacing passthrough, when opening or closing a space programmatically, or when reasoning about the privacy posture around eye and hand data on Apple Vision Pro.
+license: MIT
 ---
 
 ## When to use

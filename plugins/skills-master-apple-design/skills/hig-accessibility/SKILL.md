@@ -1,6 +1,7 @@
 ---
 name: hig-accessibility
 description: Design-critique guidance for Apple Human Interface Guidelines accessibility foundations, covering VoiceOver labels, traits, and hints, Dynamic Type and large text layouts, sufficient color contrast and never relying on color alone, Reduce Motion, adequate touch target sizes, and meaningful accessibility for custom controls. Use when reviewing or designing iOS, iPadOS, macOS, watchOS, tvOS, or visionOS interfaces for inclusive access, auditing a screen for VoiceOver and Dynamic Type support, deciding accessibility labels or traits, evaluating contrast or motion, or judging whether custom controls expose their meaning to assistive technologies.
+license: MIT
 ---
 
 # HIG accessibility foundations

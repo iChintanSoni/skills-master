@@ -1,6 +1,7 @@
 ---
 name: scenekit
 description: "Builds 3D scenes with SceneKit: SCNScene node graphs, geometry, materials, lights, cameras, asset loading, physics, animation, and hit testing, embedded in UIKit/AppKit or SwiftUI. Use when adding lightweight 3D content, viewers, or simple games on Apple platforms, working with .scn/.dae/USDZ assets via SceneKit, or deciding whether to stay on SceneKit or migrate to RealityKit."
+license: MIT
 ---
 
 ## When to use

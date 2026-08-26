@@ -1,6 +1,7 @@
 ---
 name: user-notifications
 description: "Use when adding local or remote (push) notifications to an Apple app: requesting authorization, scheduling with calendar/time-interval triggers, building content with categories and actions, registering for APNs, handling foreground and tapped notifications, setting interruption levels or time-sensitive alerts, and writing service/content extensions or communication notifications."
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

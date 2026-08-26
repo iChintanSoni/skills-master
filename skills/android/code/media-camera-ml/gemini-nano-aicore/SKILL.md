@@ -1,6 +1,7 @@
 ---
 name: gemini-nano-aicore
 description: On-device generative AI with Gemini Nano via AICore and the ML Kit GenAI APIs — summarization, proofreading, rewrite, and image description on Android 16+. Use when integrating on-device text or image intelligence into an Android app without sending user data to a server, when choosing between on-device Gemini Nano and a cloud model, or when checking capability availability before invoking an AICore feature.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [on-device-ai]

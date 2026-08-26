@@ -1,6 +1,7 @@
 ---
 name: app-store-connect-api
 description: "Guides REST automation against the App Store Connect API: signing ES256 JWT bearer tokens from an API key, navigating the apps/builds/versions/TestFlight/users/sales-reports resource model, handling pagination and rate limits, and generating a client from the published OpenAPI spec. Use when scripting CI uploads, managing TestFlight beta groups or testers, pulling sales or finance reports, or building tooling that talks to api.appstoreconnect.apple.com."
+license: MIT
 ---
 
 ## When to use

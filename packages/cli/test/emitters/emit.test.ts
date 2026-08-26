@@ -75,6 +75,29 @@ describe("emitters", () => {
     }
   });
 
+  // 1.2: `license` is a spec field, so the Claude projection carries it — but
+  // only when the skill declares one. An emitter that invented a license would
+  // be asserting terms for content it did not author.
+  it("carries an authored license into the Claude projection only", () => {
+    const skillMd = getEmitter("claude")!
+      .emit(loadFixture(), ctx())
+      .find((f) => f.path.endsWith("SKILL.md"))!;
+    expect(skillMd.contents).toContain("license: MIT");
+
+    for (const emitter of EMITTERS) {
+      if (emitter.id === "claude") continue;
+      for (const f of emitter.emit(loadFixture(), ctx())) {
+        expect(f.contents, `${emitter.id} -> ${f.path}`).not.toContain("license:");
+      }
+    }
+  });
+
+  it("emits no license line for a skill that declares none", () => {
+    const unlicensed = new ContentSource(CONTENT_ROOT).loadSkill("fixture-tool-skill");
+    const files = getEmitter("claude")!.emit(unlicensed, ctx());
+    expect(files[0]!.contents).not.toContain("license:");
+  });
+
   it("strips the x-skills-master block from every projection", () => {
     for (const emitter of EMITTERS) {
       for (const f of emitter.emit(loadFixture(), ctx())) {

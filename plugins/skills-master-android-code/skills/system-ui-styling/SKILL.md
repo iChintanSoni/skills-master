@@ -1,6 +1,7 @@
 ---
 name: system-ui-styling
 description: Covers configuring, styling, and toggling system status bars, navigation bars, edge-to-edge display modes, and display cutouts. Use when adjusting screen overlays, managing system visibility, or configuring notch/camera layout overlays.
+license: MIT
 ---
 
 ## When to use

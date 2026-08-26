@@ -1,6 +1,7 @@
 ---
 name: gradle-kotlin-dsl
 description: Covers the Android Gradle build system using the Kotlin DSL — build.gradle.kts structure, the android block, dependency configurations, plugins block, settings.gradle.kts, and where build logic belongs. Use when structuring or debugging Gradle build files for an Android project using Kotlin DSL and AGP 9+.
+license: MIT
 globs:
   - "**/*.gradle.kts"
   - "**/*.kts"

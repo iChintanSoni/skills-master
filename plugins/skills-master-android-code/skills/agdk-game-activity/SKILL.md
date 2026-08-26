@@ -1,6 +1,7 @@
 ---
 name: agdk-game-activity
 description: Covers the Android Game Development Kit runtime layer for native games — GameActivity as the modern replacement for NativeActivity, the androidx.games artifacts and their prefab/CMake wiring, the android_native_app_glue command and input-buffer loop, surface and lifecycle handling, GameTextInput for soft-keyboard editing, and AGDE for Visual Studio. Use when building, wiring, or migrating a C/C++ Android game that needs an activity host, native input plumbing, or text entry from native code.
+license: MIT
 ---
 
 ## When to use

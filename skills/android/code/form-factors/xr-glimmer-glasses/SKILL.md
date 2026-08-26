@@ -1,6 +1,7 @@
 ---
 name: xr-glimmer-glasses
 description: "Covers building for Android XR glasses with Jetpack Compose Glimmer — the Compose UI toolkit for display glasses — plus Jetpack Projected lifecycle, audio and voice interaction, and hands-free UX patterns for AI/display glasses. Use when targeting XR glasses hardware with the Jetpack XR SDK, authoring Glimmer UI, designing hands-free or audio-first flows, or adapting existing Compose UI for a constrained, head-worn display."
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

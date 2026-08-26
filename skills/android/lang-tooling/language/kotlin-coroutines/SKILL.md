@@ -1,6 +1,7 @@
 ---
 name: kotlin-coroutines
 description: Covers structured concurrency with Kotlin coroutines — CoroutineScope/Job, launch vs async/await, suspend functions, Dispatchers, withContext, cancellation, exception handling, and Android scopes. Use when writing async or concurrent code in an Android app with Kotlin.
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

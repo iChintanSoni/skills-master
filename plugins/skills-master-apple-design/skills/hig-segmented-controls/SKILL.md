@@ -1,6 +1,7 @@
 ---
 name: hig-segmented-controls
 description: Design-critique guidance for the Apple Human Interface Guidelines segmented control — a small set of mutually exclusive options of similar weight shown as concise, equal-width segments. Use when designing or reviewing a segmented control, deciding between a segmented control and a menu, pop-up button, picker, or tab view, judging how many segments are too many, or critiquing whether labels mix text and symbols. Produces design recommendations and critique, not code.
+license: MIT
 ---
 
 # HIG segmented controls

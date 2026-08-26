@@ -1,6 +1,7 @@
 ---
 name: os-logging
 description: Guidance for unified logging and performance tracing on Apple platforms with the Logger (OSLog) and OSSignposter APIs. Use when adding diagnostic logging, choosing log levels, redacting sensitive data with privacy annotations, picking subsystems/categories, reading logs in Console or via the log command, or measuring durations with signposts in Instruments.
+license: MIT
 ---
 
 # os-logging

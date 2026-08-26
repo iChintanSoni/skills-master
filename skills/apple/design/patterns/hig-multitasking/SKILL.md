@@ -1,6 +1,7 @@
 ---
 name: hig-multitasking
 description: "Design guidance and UX critique for iPad multitasking and the iPadOS 26 windowing system: resizable windows, full-screen vs windowed apps, Stage Manager, Split View, size classes, state preservation across configurations, and external displays. Use when reviewing or designing an iPad app's window behavior, evaluating layouts that must adapt to any window size, deciding minimum window sizes, or planning external-display support. Produces HIG-grounded recommendations, not code."
+license: MIT
 tags: []
 x-skills-master:
   domain: apple

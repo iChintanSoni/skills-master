@@ -1,6 +1,7 @@
 ---
 name: choosing-di
 description: Decision guide for selecting a dependency injection strategy on Android in 2026. Use when starting a new Android app or module, evaluating whether to adopt Hilt, or weighing compile-time annotation processing against runtime container approaches.
+license: MIT
 tags: [koin, architecture, testing]
 x-skills-master:
   domain: android

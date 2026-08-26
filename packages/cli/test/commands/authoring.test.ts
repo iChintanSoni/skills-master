@@ -57,6 +57,15 @@ describe("new", () => {
     }
   });
 
+  // The template shipped "Use when <triggers go here>" — tag-shaped text, which
+  // 1.1 made a lint error. A scaffold that cannot pass lint is a broken scaffold.
+  it("scaffolds a skill that lints without errors", async () => {
+    const p = await newSkillCommand({ spec: "testdomain/code/fixtures/brand-new", content });
+    expect(readFileSync(p, "utf8")).toContain("license: MIT");
+    const res = lintSkills(content);
+    expect(res.diagnostics.filter((d) => d.level === "error")).toEqual([]);
+  });
+
   it("rejects a spec with too few segments", async () => {
     await expect(newSkillCommand({ spec: "testdomain/code/foo", content })).rejects.toThrow(
       /Expected "domain\/class\/category\/name"/,

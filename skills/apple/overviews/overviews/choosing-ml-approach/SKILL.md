@@ -1,6 +1,7 @@
 ---
 name: choosing-ml-approach
 description: Decision router for picking an on-device machine learning or AI approach on Apple platforms, covering the Foundation Models framework, Core ML, Create ML, and the task-specific Vision, Natural Language, and Speech frameworks. Use when deciding which Apple ML technology fits a feature, comparing the on-device language model against a custom Core ML model, evaluating privacy or offline constraints, or routing a "should this be ML, an LLM, or a built-in framework" question before writing code.
+license: MIT
 tags: []
 x-skills-master:
   domain: apple

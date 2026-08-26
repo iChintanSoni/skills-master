@@ -1,6 +1,7 @@
 ---
 name: hig-carplay-design
 description: "Design-review guidance for CarPlay apps per the Human Interface Guidelines. Use when designing, auditing, or critiquing an in-car experience: choosing a supported app category (audio, communication, navigation, EV charging, fueling, parking, public safety, quick food ordering, driving task), composing the system templates (tab bar, list, grid, information, point of interest, map, now playing), keeping interactions brief and glanceable while driving, sizing touch targets, leaning on Siri/voice, or limiting menu depth. Produces UX critique grounded in the HIG, not code. Triggers: CarPlay design review, in-car UX, minimal glances, large touch targets, template depth, driver distraction, CarPlay category eligibility, Liquid Glass in the car."
+license: MIT
 ---
 
 # hig-carplay-design

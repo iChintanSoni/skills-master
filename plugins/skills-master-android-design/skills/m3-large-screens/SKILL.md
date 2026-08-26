@@ -1,6 +1,7 @@
 ---
 name: m3-large-screens
 description: Material 3 design guidance for large screens and foldables, covering window size class breakpoints, canonical multi-pane layouts, navigation rail and drawer at expanded widths, foldable postures and hinge-aware design, keyboard and pointer affordances, and the four adaptive quality tiers. Use when designing or critiquing an Android app for tablets, foldables, or ChromeOS; evaluating whether a layout earns its place on a large canvas; deciding between navigation rail and permanent drawer; specifying pointer and keyboard behavior; or auditing an app against the large-screen quality tiers before submission to the Play Store.
+license: MIT
 ---
 
 ## When to use

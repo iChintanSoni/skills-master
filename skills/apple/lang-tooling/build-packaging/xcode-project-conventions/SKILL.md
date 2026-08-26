@@ -1,6 +1,7 @@
 ---
 name: xcode-project-conventions
 description: "Conventions for structuring Xcode projects so they stay reviewable and reproducible — targets versus schemes versus build configurations, xcconfig files, Info.plist and entitlements, asset catalogs, low project-file churn, and modularization with local Swift packages. Use when setting up a new Xcode project, deciding where a build setting belongs, taming noisy pbxproj diffs, splitting an app into feature modules, or onboarding a team to a shared project layout."
+license: MIT
 tags: [build-settings, project-structure]
 x-skills-master:
   domain: apple

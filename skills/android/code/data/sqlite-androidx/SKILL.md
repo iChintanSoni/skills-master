@@ -1,6 +1,7 @@
 ---
 name: sqlite-androidx
 description: AndroidX SQLite and raw SQL access on Android — Use when you need direct SQLite control below Room, including the androidx.sqlite driver API, bundled SQLite, raw SQL execution, and tradeoffs vs Room.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [database]

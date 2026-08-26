@@ -1,6 +1,7 @@
 ---
 name: hig-alerts
 description: "Design critique and recommendations for alerts on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing an alert, confirmation, or interruption, deciding whether an alert is warranted at all, writing a clear title and concise optional message, choosing one or two buttons and labeling them with specific verbs, emphasizing the safe default action and marking destructive actions, and avoiding alert fatigue. Covers the 26 design cycle with Liquid Glass alerts that morph from their presenting control. Produces UX guidance, not code."
+license: MIT
 tags: [modality]
 x-skills-master:
   domain: apple

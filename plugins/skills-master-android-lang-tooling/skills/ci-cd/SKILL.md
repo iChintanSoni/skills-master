@@ -1,6 +1,7 @@
 ---
 name: ci-cd
 description: Covers continuous integration and delivery for Android — building and testing from the command line with Gradle, Gradle Managed Devices for instrumented tests in CI, build caching, secure signing in CI, and automating Play Store uploads. Use when setting up or improving a CI/CD pipeline for an Android project.
+license: MIT
 ---
 
 ## When to use

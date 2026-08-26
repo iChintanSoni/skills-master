@@ -1,6 +1,7 @@
 ---
 name: swiftui-state-data-flow
 description: Guidance for managing SwiftUI state and data flow with the Observation framework, covering State for view-owned value data and for Observable reference models, Binding, passing Observable models down the view tree, Environment for dependency injection, and Bindable. Use when deciding which property wrapper owns a piece of state, when a child needs to mutate a parent's value, when injecting a shared model across many screens, or when migrating from the legacy StateObject, ObservedObject, and Published trio to Observable.
+license: MIT
 ---
 
 # SwiftUI state and data flow with Observation

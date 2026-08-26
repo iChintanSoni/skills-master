@@ -1,6 +1,7 @@
 ---
 name: hig-apple-pencil
 description: Design-critique guidance for Apple Human Interface Guidelines on Apple Pencil and Scribble, covering low-latency drawing and handwriting, hover feedback, double-tap and squeeze (Pencil controls), roll and barrel-tip expression, Scribble for text entry, palm-rejection expectations, and always offering equivalent touch alternatives. Use when reviewing or designing an iPadOS or visionOS drawing, note-taking, markup, or handwriting feature, judging Pencil gesture and hover affordances, evaluating Scribble in text fields, or deciding whether a Pencil-only interaction needs a non-Pencil fallback. Produces UX recommendations, not code.
+license: MIT
 ---
 
 # HIG Apple Pencil and Scribble

@@ -1,6 +1,7 @@
 ---
 name: swift-macros
 description: "Guidance for authoring and adopting Swift macros, covering freestanding (#) versus attached (@) macro roles, what each expands to, building a macro plugin with SwiftSyntax and the SwiftPM macro target, testing expansions, and choosing a macro over a function or protocol. Use when writing a custom macro, deciding whether a macro is the right tool, debugging an expansion, wiring up a macro package, or understanding how @Observable and #Preview generate code."
+license: MIT
 ---
 
 ## When to use

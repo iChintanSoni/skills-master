@@ -4,7 +4,7 @@ An emitter projects one canonical skill into the files a specific AI tool reads.
 
 | Emitter | Output(s) | Frontmatter emitted | Body | Fidelity |
 |---------|-----------|---------------------|------|----------|
-| `claude` | `.claude/skills/<name>/SKILL.md` + verbatim copies of `reference.md`/`examples.md`/`checklist.md` | `name`, `description` | verbatim (Level-3 links resolve) | **lossless** |
+| `claude` | `.claude/skills/<name>/SKILL.md` + verbatim copies of `reference.md`/`examples.md`/`checklist.md` | `name`, `description`, `license` (when authored) | verbatim (Level-3 links resolve) | **lossless** |
 | `cursor` | `.cursor/rules/<name>.mdc` | `description`, `globs` (if any), `alwaysApply: false` | condensed | single-file |
 | `copilot` | `.github/instructions/<name>.instructions.md` **and** a pointer block in `.github/copilot-instructions.md` | `applyTo` (← globs; omitted when the skill has none, so glob-less guidance stays manual-attach instead of always-on), `description` | condensed | single-file |
 | `agents` | `AGENTS.md` (a `### <Title>` block) | none (plain Markdown) | digest: description + top guidance/pitfall bullets | broad, lossy |
@@ -56,6 +56,8 @@ Notes for whoever touches this next:
 - **The validator is pinned.** Unpinned, an upstream edit becomes a red build on an unrelated PR. Bumping the pin is a deliberate, reviewed change.
 - **Imported, not shelled out to.** `skills-ref` 0.1.1 renamed its console script to `agentskills`; the Python API is the part that did not move.
 - Anything an emitter adds to frontmatter must be a spec field or this gate fails — which is the point.
+
+`license` is the one spec field beyond `name`/`description` the Claude projection carries today. It is **passed through from authored frontmatter, never invented**: the CLI can be pointed at any content root (`--content`, `SKILLS_MASTER_REPO`), and an emitter that stamped a constant would assert terms for content it did not author. A skill with no `license` emits no `license` line. The tool-specific targets (`.mdc`, `.instructions.md`, `AGENTS.md`) do not carry it — their frontmatter vocabularies are Cursor's and Copilot's, not the spec's.
 
 ## Adding a target
 

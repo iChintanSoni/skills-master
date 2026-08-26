@@ -1,6 +1,7 @@
 ---
 name: hig-lists-tables
 description: Applies Apple Human Interface Guidelines to lists and tables — organizing rows and sections, choosing plain vs grouped vs inset-grouped styles, selection and edit-mode affordances, swipe actions, disclosure/outline hierarchy, and deciding between a list, a collection/grid, and a true multi-column table. Use when designing or reviewing scrollable row-based UI, picking a list style, critiquing swipe actions or reordering, or choosing the right container for a data set. Produces design critique and recommendations, not code.
+license: MIT
 ---
 
 ## When to use

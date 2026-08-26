@@ -1,6 +1,7 @@
 ---
 name: passkit-apple-pay
 description: "Use when integrating Apple Pay checkout or Wallet passes in an Apple app: configuring the merchant ID and in-app-payments entitlement, building a PKPaymentRequest, presenting PKPaymentAuthorizationController or the SwiftUI PayWithApplePayButton, handling authorization callbacks and payment tokens, and adding PKPass objects to Wallet."
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

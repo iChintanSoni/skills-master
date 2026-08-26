@@ -1,6 +1,7 @@
 ---
 name: car-driving-constraints
 description: Covers Android Auto and Automotive OS driver-distraction constraints — driving vs parked state detection, template and list limits, task step quotas, CarContext restriction APIs, and Automotive OS vehicle-property access. Use when building Car App Library experiences that must respect system-enforced distraction rules and surface the correct UI based on driving state.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [vehicle-properties]

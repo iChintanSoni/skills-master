@@ -1,6 +1,7 @@
 ---
 name: fixture-skill
 description: A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
+license: MIT
 globs:
   - "**/*.swift"
 tags: [fixture, test]
