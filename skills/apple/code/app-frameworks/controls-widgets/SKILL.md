@@ -18,7 +18,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/controlwidget
     - https://developer.apple.com/documentation/widgetkit/adding-refinements-and-configuration-to-controls
   snapshot_date: "2026-08-25"
-  stability: emerging
+  stability: stable
   version: 1.0.1
 ---
 

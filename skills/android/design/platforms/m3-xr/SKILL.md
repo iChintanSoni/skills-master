@@ -12,7 +12,7 @@ x-skills-master:
     - https://developer.android.com/design/ui/xr
     - https://developer.android.com/develop/xr
   snapshot_date: "2026-06-06"
-  stability: stable
+  stability: emerging
   version: 1.0.0
 ---
 

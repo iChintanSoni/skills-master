@@ -209,13 +209,32 @@ restated against that total.
     so the 25 `m3-*` component skills pair to the design siblings you actually need
     alongside them (`m3-icon-buttons` ↔ `m3-icons` + `m3-tooltips`) rather than to a code
     twin that does not exist. Worth a future coverage item, not a pairing fudge.
-- [ ] **7.2 Stability re-audit (M).** Re-judge `stable` vs `emerging` per skill (17/433
+- [x] **7.2 Stability re-audit (M).** Re-judge `stable` vs `emerging` per skill (17/433
   `emerging` is implausible); `contested` skills present tradeoffs per authoring.md.
+  The label had no written definition — only `contested` did — so the pass began by
+  defining all three in `docs/authoring.md` ("What `stability` means"): `emerging` tracks
+  **the subject**, not the skill's age, and means pre-1.0 at `snapshot_date`, first cycle
+  unrevised, or visibly still moving. 11 changes on that rule: 9 stable → emerging (the
+  four Jetpack XR skills and `m3-ai-glasses`/`m3-xr`, all on the Developer Preview 4 /
+  `1.0.0-beta02` track; `uwb-ranging` at `1.0.0-alpha09`; `gemini-nano-aicore` and
+  `choosing-ml` for the beta Prompt API) and 2 emerging → stable (`media3-transformer`,
+  mature since 1.0; `controls-widgets`, two full cycles old). 17 → 24 emerging.
+  All 9 newly-emerging skills already flagged provisionality in prose, so label and body
+  agree. Contested set verified and unchanged at 7 — each carries a real `## Open question`
+  laying out both cases. `choosing-http-client` was considered and rejected: it prescribes
+  a default with a clear rule, which is settled, not contested.
 - [ ] **7.3 Platforms honesty pass (M).** Stop claiming watchOS/tvOS/visionOS on skills
   with no form-factor content; make the facet discriminating again (watchos 137, tvos 150,
   visionos 174 of 433 today).
 - [ ] **7.4 Tag consolidation (M).** 543 of 887 tags are used once. Define a canonical
   vocabulary (or drop tags), lint against it.
+- [ ] **7.5 Surface `stability` to the agent (S)** *(found during 7.2)*. `stability` is
+  stripped with the rest of `x-skills-master`, so it reaches no emit target — an agent
+  cannot tell `emerging` guidance from settled guidance. `contested` skills get through on
+  content (`## Open question` is body text); `emerging` relies on each author remembering
+  to say so in prose. Per the mission ("content an agent never sees is a bug"), consider
+  emitting a one-line provisionality note for non-`stable` skills. Touches every emitter
+  snapshot, so it wants its own PR.
 
 ## Phase 8 — CLI test depth
 
