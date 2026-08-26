@@ -107,7 +107,7 @@ broken emit formats) is a bug, not a nice-to-have.
   emitter's "summarized aggressively" comment was aspirational. Blocks now
   carry description + top-6 Core guidance bullets + top-3 Pitfalls + pointer
   (mean ~584 tokens, 3.3x lighter), with L3 links flattened.
-- [ ] **1.10 Copilot applyTo scoping (S).** 176 glob-less skills emit
+- [x] **1.10 Copilot applyTo scoping (S).** 176 glob-less skills emit
   `applyTo: "**"`, attaching them to every Copilot request. Omit `applyTo`
   for glob-less skills (manual attach + always-loaded pointer line instead).
 
@@ -172,7 +172,7 @@ broken emit formats) is a bug, not a nice-to-have.
 - [ ] **6.1 `android/code/graphics-games` (L).** ~8 skills mirroring apple's category:
   Vulkan, AGDK, game loops/input, Play Games Services, Play Asset Delivery, performance
   (ADPF), etc.
-- [ ] **6.2 `apple/code/form-factors` (L).** ~8–12 skills: watchOS apps + complications +
+- [x] **6.2 `apple/code/form-factors` (L).** ~8–12 skills: watchOS apps + complications +
   workout/health patterns, tvOS apps + focus engine, CarPlay, visionOS spatial patterns.
   Resolves the 123-skills-claim-watchos contradiction together with 7.3.
 - [ ] **6.3 Overview parity (M).** 7 `choosing-X` overviews: apple gains di,

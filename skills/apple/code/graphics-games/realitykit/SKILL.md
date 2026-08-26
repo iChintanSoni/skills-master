@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "18"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [visionos-immersive-spaces]
   sources:
     - https://developer.apple.com/documentation/realitykit
     - https://developer.apple.com/documentation/RealityKit/RealityView

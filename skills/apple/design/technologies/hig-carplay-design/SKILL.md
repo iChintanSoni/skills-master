@@ -7,13 +7,13 @@ x-skills-master:
   class: design
   category: technologies
   platforms: [ios]
-  pairs_with: []
+  pairs_with: [carplay-templates]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/carplay
     - https://developer.apple.com/wwdc26/guides/ios/
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # hig-carplay-design
@@ -65,7 +65,7 @@ skill produces design judgment, not implementation.
 
 ### iOS 27 (WWDC 2026)
 
-- CarPlay adds a video-browsing app category, a MiniPlayer template for compact playback control, and expanded voice-control coverage — media apps should re-check template fit before maintaining custom-negotiated designs that the new templates now cover.
+- CarPlay adds a video-browsing app category (playback is blocked while the car is in motion, falling back to audio), a MiniPlayer treatment of the now-playing template for compact playback control, and Voice Control availability across every app category — media apps should re-check template fit before maintaining custom-negotiated designs the templates now cover. The MiniPlayer is not a separate template: it appears automatically for apps that show now-playing, and you opt out per-app rather than adopting it.
 
 ## Platform notes
 
@@ -96,6 +96,7 @@ skill produces design judgment, not implementation.
 ## References
 
 - **Human Interface Guidelines:** [CarPlay](https://developer.apple.com/design/human-interface-guidelines/carplay)
+- **WWDC:** [Rev up your CarPlay app (WWDC26)](https://developer.apple.com/videos/play/wwdc2026/212/)
 - **WWDC:** [Turbocharge your app for CarPlay (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/216/)
 - **WWDC:** [Accelerate your app with CarPlay (WWDC20)](https://developer.apple.com/videos/play/wwdc2020/10635/)
 - **Documentation:** [CarPlay framework](https://developer.apple.com/documentation/carplay)

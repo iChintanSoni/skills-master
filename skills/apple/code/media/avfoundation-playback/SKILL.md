@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [now-playing]
+  pairs_with: [now-playing, tvos-media-playback]
   sources:
     - https://developer.apple.com/documentation/avfoundation/media-playback
     - https://developer.apple.com/documentation/avkit/videoplayer
