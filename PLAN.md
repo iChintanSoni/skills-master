@@ -133,11 +133,18 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   too, because that name becomes the folder: catching it at lint time would mean moving a
   directory rather than fixing a line. All 433 skills still lint clean (0 errors,
   0 warnings), confirming the audit's "zero violations in content" finding.
-- [ ] **0.2 XML-tag lint rule (S).** Warn (error?) when `name` or `description` matches an
+- [x] **0.2 XML-tag lint rule (S).** Warn (error?) when `name` or `description` matches an
   XML/HTML-tag-shaped pattern (`<[A-Za-z/]`). Generic types are the known trap
   (`VerificationResult<Transaction>`, `Result<T, E>`); the fix at authoring time is to
   reword ("verifying the transaction's VerificationResult"), the same policy authoring.md
   already applies to the ` #` YAML hazard — document it alongside. *(G2)*
+  **Landed as a warn, deliberately.** Error level would turn CI red on `main` for the
+  window between this gate and 1.1's content fix, which is exactly the "red build everyone
+  learns to ignore" failure the crawl workflow already avoids; 1.1 promotes it to an error
+  in the same PR that removes the last violation. Checks `description` only: `name` is held
+  to `[a-z0-9-]` by the schema, so it cannot carry a tag, and a second unreachable branch
+  would be dead surface. The rule fires on exactly one skill today — `storekit`, as the
+  audit predicted — so the library lints at 0 errors, 1 warning until 1.1.
 - [ ] **0.3 `skills-ref validate` in CI (M).** Add a CI step that runs the spec's reference
   validator over emitted output: the committed dogfood `.claude/skills/` and every skill dir
   under `plugins/*/skills/`. Vendor or pin the tool (it lives in
@@ -156,7 +163,9 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
 - [ ] **1.1 Reword the `storekit` description (S).** Remove `VerificationResult<Transaction>`
   (and re-grep the library for any other tag-shaped text 0.2's rule surfaces). Patch-bump
   the skill's `version`; `snapshot_date` does not move (no re-verification happened).
-  Regenerate registry/taxonomy/plugins. Blocked on 0.2 so the fix lands with its gate. *(G2)*
+  Regenerate registry/taxonomy/plugins. Blocked on 0.2 so the fix lands with its gate.
+  Promote 0.2's rule from warn to **error** in the same PR — with the last violation gone,
+  the gate can hold the line instead of describing it. *(G2)*
 - [ ] **1.2 Emit `license` (S).** Add `license: MIT` to the Claude-emitter frontmatter
   (spec-legal optional field), flowing to `.claude/skills/` installs and all 8 plugins.
   One emitter line + snapshot updates + a note in `docs/emitters.md`. Decision to record:

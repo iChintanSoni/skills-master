@@ -185,6 +185,12 @@ emitted output is byte-identical and neither `version` nor `snapshot_date` shoul
 
 An unquoted YAML scalar treats ` #` (space then hash) as a **comment** and silently truncates the value. Descriptions mentioning macros (`#expect`, `#Preview`) are a common trap. Either avoid `#` (write "the expect macro") or quote the whole value. The linter warns when it detects this, but prefer to avoid it.
 
+## Description hazard: XML-tag-shaped text
+
+Claude's skill validation rejects a `name` or `description` containing XML tags, and a generic type written the natural way is indistinguishable from markup: `VerificationResult<Transaction>`, `Result<T, E>`, `Flow<UiState>`. A projection carrying one can be refused on upload to claude.ai or the Skills API, so the linter warns.
+
+Reword rather than escape — the description is read by a model, not rendered. Write "a VerificationResult of Transaction", "the Result type", or "a Flow of UI state". Angle brackets that are not tag-shaped (`<16ms`) are fine.
+
 ## Verify before committing
 
 ```bash
