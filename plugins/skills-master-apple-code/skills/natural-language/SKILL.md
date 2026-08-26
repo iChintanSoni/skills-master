@@ -18,6 +18,7 @@ Reach for Natural Language when you need lightweight, fully on-device text under
 - Don't assume embeddings exist everywhere: `NLEmbedding.wordEmbedding(for:)` and `sentenceEmbedding(for:)` cover only a fixed set of languages and return `nil` otherwise, so guard the optional.
 - Prefer `NLContextualEmbedding` (iOS 17+, transformer-based, multilingual) for richer semantic vectors, but call `load()` first and handle the downloadable asset not being present yet.
 - Wrap a Create ML `.mlmodel` in `NLModel` for custom classification or word tagging instead of touching Core ML directly.
+- As of iOS 27, the expanded Foundation Models framework (multimodal, third-party model providers) answers a growing share of open-ended text tasks; keep Natural Language for fast, deterministic structured tagging and embeddings, and re-check the boundary case by case.
 
 ```swift
 let tagger = NLTagger(tagSchemes: [.lemma, .nameType])

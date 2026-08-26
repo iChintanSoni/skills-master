@@ -32,6 +32,10 @@ for obs in observations {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- When the built-in requests fall short, "train my own model" is no longer the only next step: the new Core AI framework (on-device model loading and specialization) and the expanded multimodal Foundation Models now sit in that decision — route through choosing-ml-approach before building a custom `CoreMLRequest` model.
+
 ## Platform notes
 
 - **iOS/iPadOS/macOS/visionOS:** Full Swift API support from iOS 18 / iPadOS 18 / macOS 15 / visionOS 2.

@@ -13,6 +13,7 @@ Match the store to the data and the constraints, not to novelty:
 
 - **Files + Codable** — best for small, document-shaped, or export-friendly data with no relational queries. Lowest ceremony, no schema engine.
 - **SwiftData** — the modern, Swift-native object store. Choose it for new apps that want `@Model`, value-typed queries, and tight SwiftUI integration, and whose deployment target is iOS 17+ across the board.
+- **SwiftData's iOS 27 additions** — `@Attribute(.codable)`, enum-aware predicates, and `@Query(sectionBy:)` — close gaps that previously pushed borderline projects toward Core Data, further strengthening the SwiftData branch for new work.
 - **Core Data** — the mature, battle-tested object graph. Choose it when you need capabilities SwiftData has not yet matched (complex fetched-results edge cases, fine-grained migration control, long-standing production schemas) or must support OS versions below the SwiftData baseline.
 - **CloudKit** — layer it under SwiftData or Core Data for cross-device sync, or use it directly for shared/public databases. It imposes schema constraints (optional relationships, defaults, no unique attributes) that you must design for up front.
 

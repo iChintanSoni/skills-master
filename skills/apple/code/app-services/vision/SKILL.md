@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/vision
     - https://developer.apple.com/documentation/vision/recognizetextrequest
     - https://developer.apple.com/documentation/vision/normalizedrect/toimagecoordinates(from:imagesize:origin:)
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -50,6 +50,10 @@ for obs in observations {
     print(top, rect)   // rect is ready for an overlay path
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- When the built-in requests fall short, "train my own model" is no longer the only next step: the new Core AI framework (on-device model loading and specialization) and the expanded multimodal Foundation Models now sit in that decision — route through choosing-ml-approach before building a custom `CoreMLRequest` model.
 
 ## Platform notes
 

@@ -15,9 +15,9 @@ x-skills-master:
   sources:
     - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/advancedoperators/#Result-Builders
     - https://developer.apple.com/documentation/swiftui/viewbuilder
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -49,7 +49,7 @@ func args(verbose: Bool, @CommandLine _ build: () -> [String]) -> [String] { bui
 
 ## Platform notes
 
-Result builders are a pure language feature (SE-0289, with `buildPartialBlock` added by SE-0348 in Swift 5.7), so they behave identically across every Apple platform and on Linux and Windows toolchains; nothing here depends on a framework or OS version. What differs is which builders ship in the SDKs you import: `@ViewBuilder` and the scene/commands/toolbar builders come with SwiftUI, and `RegexBuilder` is a standalone standard-library module. Foundation's `#Predicate` and `#Expression` read like DSLs but are macros over closures, not result builders, so the build-method vocabulary in this skill does not apply to them. Under Swift 6 language mode the usual `Sendable` and isolation rules apply to a builder's component and final types; a `@MainActor`-isolated builder closure (as SwiftUI uses) keeps its body on the main actor.
+Result builders are a pure language feature (SE-0289, with `buildPartialBlock` added by SE-0348 in Swift 5.7), so they behave identically across every Apple platform and on Linux and Windows toolchains; nothing here depends on a framework or OS version. What differs is which builders ship in the SDKs you import: `@ViewBuilder` and the scene/commands/toolbar builders come with SwiftUI, and `RegexBuilder` is a standalone standard-library module. In the Xcode 27 SDKs SwiftUI exposes `ViewBuilder` under the `ContentBuilder` alias, with restructured build methods that sharply cut type-checking time — a live case study in how builder overload design drives compile cost. Foundation's `#Predicate` and `#Expression` read like DSLs but are macros over closures, not result builders, so the build-method vocabulary in this skill does not apply to them. Under Swift 6 language mode the usual `Sendable` and isolation rules apply to a builder's component and final types; a `@MainActor`-isolated builder closure (as SwiftUI uses) keeps its body on the main actor.
 
 ## Pitfalls
 

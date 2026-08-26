@@ -30,6 +30,10 @@ final class Downloader {
 }
 ```
 
+### Swift 6.4 (WWDC 2026)
+
+- Noncopyable (`~Copyable`) types gain iteration support: containers of noncopyable elements can be traversed with a `for` loop that borrows each element, removing the manual index-juggling that previously kept them out of hot-path collections.
+
 ## Platform notes
 
 - ARC behavior is identical across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS; the runtime functions and Instruments templates are the same everywhere.

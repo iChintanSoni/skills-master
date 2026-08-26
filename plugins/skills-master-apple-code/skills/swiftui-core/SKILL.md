@@ -35,6 +35,10 @@ struct LabeledValue: View {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- The Xcode 27 SDKs expose `ViewBuilder` as `ContentBuilder`, a typealias over restructured builder internals that sharply cuts type-checking time for deeply nested hierarchies, on any deployment target. Existing code compiles unchanged; only spots that leaned on implicit builder constraints to resolve ambiguity may now need an explicit type annotation.
+
 ## Platform notes
 
 - Lazy containers earn their keep on memory-constrained targets such as watchOS and when lists are long; for a handful of children an eager `VStack` is simpler and often faster.

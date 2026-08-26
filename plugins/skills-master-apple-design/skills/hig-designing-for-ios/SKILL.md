@@ -26,6 +26,11 @@ This skill yields design judgment and review notes. It does not produce SwiftUI/
 - **Make every text style Dynamic Type-ready.** Design layouts that reflow and grow at the largest accessibility sizes without truncation or clipping; don't lock text to fixed point sizes or assume a single line.
 - **Honor light and dark.** Use semantic system colors and materials so surfaces, separators, and glass adapt automatically; don't hardcode hex values that break contrast or vibrancy when the appearance flips.
 
+### iOS 27 (WWDC 2026)
+
+- iPhone apps are now resizable — stop assuming a fixed, edge-to-edge canvas; let layouts adapt by size class and preserve scroll position and in-progress state through resizes.
+- Sidebar-style tab bars reach iPhone, and a prominent tab role (`Tab(role: .prominent)`) can spotlight the app's single defining action — reserve it for that action, not the busiest tab.
+
 ## Platform notes
 
 - **iOS 26 / Liquid Glass:** Tab bars are now capsule-shaped, inset from the edges, and float over scrolling content; they can compact to just the active tab on scroll and re-expand on scroll-up. A bottom accessory (a "shelf" above the tab bar, e.g. a now-playing strip) can persist across tabs and blends into the bar when it minimizes.

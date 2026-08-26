@@ -12,9 +12,9 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/lists-and-tables
     - https://developer.apple.com/design/human-interface-guidelines/collections
     - https://developer.apple.com/design/human-interface-guidelines/outline-views
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -30,6 +30,11 @@ Use when designing or reviewing scrollable, row-based content and deciding how t
 - **Design selection and editing as distinct modes.** Tapping a row should navigate or act; multi-select for bulk operations belongs in an explicit edit mode. Offer reordering when sequence is meaningful — people value rearranging even when they can't add or remove. Keep edit-mode controls (delete badge, reorder grip) obvious and reversible.
 - **Use disclosure to reveal hierarchy, not to hide essentials.** A disclosure triangle/row expands nested children in place (an outline); use it for genuinely hierarchical data. Don't bury primary actions or first-run content behind a collapsed row.
 - **Load progressively and keep rows scannable.** Fill visible rows with text immediately and stream slower content (thumbnails, counts) in; show a clear loading state for long fetches and a meaningful empty state when there's nothing yet. Keep row text succinct so it doesn't truncate or wrap awkwardly.
+
+### iOS 27 (WWDC 2026)
+
+- Reordering is now a first-class, platform-wide affordance: SwiftUI's `.reorderable()` brings drag-to-rearrange to stacks, grids, and custom layouts, not just `List` — offer rearrangement wherever sequence is meaningful, not only in list rows.
+- Swipe actions likewise extend beyond `List`, so the leading/trailing risk conventions above apply to swipeable rows in other containers too.
 
 ## Platform notes
 

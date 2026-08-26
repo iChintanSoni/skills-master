@@ -39,7 +39,7 @@
         "ipados"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "activitykit",
         "live-activities",
@@ -277,7 +277,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swift-6",
         "concurrency",
@@ -758,7 +758,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "appstoreconnect",
         "rest",
@@ -813,7 +813,7 @@
         "macos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "appkit",
         "macos",
@@ -981,7 +981,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "avfoundation",
         "camera",
@@ -1011,7 +1011,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "avfoundation",
         "avkit",
@@ -1042,7 +1042,7 @@
         "watchos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "backgroundtasks",
         "scheduling",
@@ -1840,7 +1840,7 @@
         "visionos"
       ],
       "stability": "contested",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "persistence",
         "swiftdata",
@@ -1902,7 +1902,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "testing",
         "swift-testing",
@@ -1933,7 +1933,7 @@
         "visionos"
       ],
       "stability": "contested",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "uikit",
@@ -1990,7 +1990,7 @@
         "ipados"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "widgetkit",
         "activitykit",
@@ -2755,7 +2755,7 @@
         "ipados"
       ],
       "stability": "emerging",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "widgetkit",
         "control-center",
@@ -2874,7 +2874,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "coreimage",
         "graphics",
@@ -2935,7 +2935,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "coreml",
         "machine-learning",
@@ -3313,7 +3313,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swift",
         "error-handling",
@@ -3452,7 +3452,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "gamekit",
         "game-center",
@@ -3621,7 +3621,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "accessibility",
         "hig",
@@ -3794,7 +3794,7 @@
         "watchos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "apple-pay",
         "payments",
@@ -4035,7 +4035,7 @@
         "ios"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "ios",
         "hig",
@@ -4061,7 +4061,7 @@
         "ipados"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "ipados",
         "layout",
@@ -4087,7 +4087,7 @@
         "macos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "macos",
         "hig",
@@ -4113,7 +4113,7 @@
         "tvos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "tvos",
         "hig",
@@ -4139,7 +4139,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "visionos",
         "spatial",
@@ -4435,7 +4435,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "hig",
         "design",
@@ -4464,7 +4464,7 @@
         "ipados"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "live-activities",
         "dynamic-island",
@@ -4558,7 +4558,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "menus",
         "hig",
@@ -4650,7 +4650,7 @@
         "ios"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "ipados",
         "multitasking",
@@ -4984,7 +4984,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "search",
         "components",
@@ -5015,7 +5015,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "search",
         "hig",
@@ -5138,7 +5138,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "sidebars",
         "navigation",
@@ -5419,7 +5419,7 @@
         "watchos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "widgets",
         "hig",
@@ -5910,7 +5910,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "localization",
         "internationalization",
@@ -7949,7 +7949,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "metal",
         "gpu",
@@ -8066,7 +8066,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "musickit",
         "apple-music",
@@ -8098,7 +8098,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "naturallanguage",
         "nlp",
@@ -8421,7 +8421,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "swiftui",
         "observation",
@@ -8509,7 +8509,7 @@
         "watchos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "apple-pay",
         "passkit",
@@ -8800,7 +8800,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "swift",
         "property-wrappers",
@@ -8950,7 +8950,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "swift",
         "result-builder",
@@ -9552,7 +9552,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swift6",
         "concurrency",
@@ -9738,7 +9738,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swift",
         "performance",
@@ -9863,7 +9863,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "accessibility",
@@ -9894,7 +9894,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "swiftui",
         "animation",
@@ -9925,7 +9925,7 @@
         "visionos"
       ],
       "stability": "contested",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "swiftui",
         "architecture",
@@ -9989,7 +9989,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "concurrency",
@@ -10020,7 +10020,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "swiftui",
         "views",
@@ -10051,7 +10051,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "layout",
@@ -10082,7 +10082,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "drawing",
@@ -10113,7 +10113,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "swiftui",
         "environment",
@@ -10206,7 +10206,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "swiftui",
         "gestures",
@@ -10239,7 +10239,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "swiftui",
         "layout",
@@ -10614,7 +10614,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "testflight",
         "app-store-connect",
@@ -10811,7 +10811,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "uikit",
         "autolayout",
@@ -10840,7 +10840,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "uikit",
         "collectionview",
@@ -10898,7 +10898,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "uikit",
         "swiftui",
@@ -10955,7 +10955,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "testing",
         "strategy",
@@ -11095,7 +11095,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "vision",
         "ocr",
@@ -11378,7 +11378,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "xcode",
         "build-settings",
@@ -11408,7 +11408,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "testing",
         "xcuitest",

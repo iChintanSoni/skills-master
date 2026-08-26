@@ -16,9 +16,9 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/swiftui/view
     - https://developer.apple.com/documentation/swiftui/view/refreshable(action:)
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -56,6 +56,10 @@ struct ArticleView: View {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- `AsyncImage` now applies default HTTP caching, and `AsyncImage(request:)` plus `.asyncImageURLSession(_:)` accept a custom `URLRequest` and session — retire view-owned loaders written solely to add caching or headers to image fetches.
 
 ## Platform notes
 

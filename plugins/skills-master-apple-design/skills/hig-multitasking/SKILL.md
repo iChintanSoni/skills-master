@@ -30,7 +30,7 @@ Critique and shape how an iPad app behaves as a window. In iPadOS 26 the windowi
 - **iPadOS 26 windowing:** Any multitasking-capable app shows a resize handle and window controls. Window arrangements are remembered per orientation, so verify your layout reads well in both the landscape and portrait versions of a tiled set.
 - **Stage Manager:** Apps appear as overlapping, resizable windows grouped into stages, optionally spanning an external display. Don't design assuming a single foreground app — background windows stay visible and should remain legible.
 - **Split View and Slide Over (legacy):** Still part of the multitasking vocabulary; a side-by-side split and a narrow floating overlay impose compact widths, so confirm compact-width behavior even if you target windowing primarily.
-- **iOS / iPhone:** No free windowing, but the same adaptive-layout and state-preservation discipline pays off in Slide Over-width and split contexts on iPad and in iPhone size-class transitions.
+- **iOS / iPhone:** As of iOS 27, iPhone apps are resizable too, so the same adaptive-layout and state-preservation discipline applies directly on the phone — don't treat iPhone as a guaranteed fixed, full-screen canvas.
 
 ## Pitfalls
 

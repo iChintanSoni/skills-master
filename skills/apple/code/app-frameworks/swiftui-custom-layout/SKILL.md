@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/layout
     - https://developer.apple.com/documentation/swiftui/composing-custom-layouts-with-swiftui
     - https://developer.apple.com/documentation/swiftui/view/coordinatespace(_:)
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -58,6 +58,10 @@ struct EqualWidthHStack: Layout {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- `.reorderable()` and `.reorderContainer(for:isEnabled:move:)` work inside custom `Layout` containers too, so a flow or radial layout can offer drag-to-reorder without abandoning the `Layout` protocol for a stock container.
 
 ## Platform notes
 

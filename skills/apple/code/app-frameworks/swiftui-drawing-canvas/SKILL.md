@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/canvas
     - https://developer.apple.com/documentation/swiftui/graphicscontext
     - https://developer.apple.com/documentation/swiftui/drawing-and-graphics
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -80,6 +80,10 @@ struct Ring: Shape {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- WWDC26's "Compose advanced graphics effects with SwiftUI" session codifies graphics composition as the path to rich effects: drive layer shaders (`.layerEffect` with a `Shader`) from `TimelineView(.animation)` time and anchor participating views with alignment guides, instead of simulating GPU effects through per-frame `Canvas` redraws.
 
 ## Platform notes
 

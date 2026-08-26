@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/swift/adoptingswift6
     - https://www.swift.org/migration/documentation/swift-6-concurrency-migration-guide/migrationstrategy/
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Adopting Swift 6 Concurrency
@@ -36,6 +36,11 @@ The Swift 6 language mode turns data-race risks into compile-time errors instead
 - **Do use `@preconcurrency` to quarantine un-migrated dependencies**, but know it only silences *cross-module compile-time* checks — Swift 6 still enforces isolation at runtime, so a non-`Sendable` escaping closure passed into Swift 5 code can still trap.
 - **Don't migrate a module while its dependencies still emit concurrency warnings.** You will re-fix the same boundary twice.
 - **Do consider deferring** for stable, low-churn code near a release; the payoff is largest for code under active concurrent development.
+
+### Swift 6.4 (WWDC 2026)
+
+- `defer` blocks can now contain `await`, so async cleanup no longer forces restructuring around teardown paths — one less workaround to carry through a migration.
+- Xcode 27's Instruments adds a dedicated Swift Concurrency instrument; use it to check that new isolation annotations behave as intended (actor contention, task scheduling) rather than reasoning from diagnostics alone.
 
 ## Platform notes
 

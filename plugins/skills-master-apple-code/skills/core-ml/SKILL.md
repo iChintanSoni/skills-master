@@ -45,6 +45,11 @@ let output = try await classifier.prediction(from: .init(image: pixelBuffer))
 print(output.classLabel, output.classLabelProbs)
 ```
 
+### iOS 27 (WWDC 2026)
+
+- The new Core AI framework layers on-device model loading, specialization, and AOT compilation above raw Core ML — evaluate it before hand-managing model lifecycles for new work.
+- Foundation Models expands with multimodal input, Dynamic Profiles, Private Cloud Compute, and third-party model providers — revisit choosing-ml-approach before shipping your own model.
+
 ## Platform notes
 
 - **All platforms (iOS/iPadOS 17+, macOS 14+, tvOS, visionOS):** the generated

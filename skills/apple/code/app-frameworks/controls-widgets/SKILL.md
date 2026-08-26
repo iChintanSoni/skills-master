@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/widgetkit/creating-controls-to-perform-actions-across-the-system
     - https://developer.apple.com/documentation/swiftui/controlwidget
     - https://developer.apple.com/documentation/widgetkit/adding-refinements-and-configuration-to-controls
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: emerging
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -54,6 +54,11 @@ struct FocusToggleControl: ControlWidget {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- Widget customization across the extension is now App Intents-driven, so a `ControlConfigurationIntent` slots into the same configuration model as iOS 27 home-screen widgets — share intent types across surfaces instead of duplicating them.
+- The new `systemExtraLargePortrait` family applies to timeline widgets in the same extension, not to controls; controls keep their fixed, system-templated appearance.
 
 ## Platform notes
 

@@ -47,6 +47,10 @@ func parse(_ data: Data) throws(ImportError) -> [Row] {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- SwiftUI's `alert(error:actions:message:)` binds an optional `LocalizedError` directly to an alert, so conforming recoverable, user-facing errors to `LocalizedError` now pays off directly at the presentation layer.
+
 ## Platform notes
 
 Error handling is a pure language feature, so behavior is identical across iOS,

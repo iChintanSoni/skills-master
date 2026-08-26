@@ -13,9 +13,9 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog
     - https://developer.apple.com/documentation/xcode/exporting-localizations
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Localization
@@ -44,6 +44,10 @@ let when = date.formatted(.dateTime.weekday().day().month())
 let dist = Measurement(value: 5, unit: UnitLength.kilometers)
     .formatted(.measurement(width: .abbreviated))
 ```
+
+### Xcode 27 (WWDC 2026)
+
+- Xcode 27's coding agents can drive localization end-to-end: they find hardcoded literals, convert them into localizable references in a String Catalog, and generate translations informed by how each string is used in code. Steer quality with custom terminology and guidelines, and still have native speakers review before shipping.
 
 ## Platform notes
 

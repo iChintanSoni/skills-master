@@ -12,7 +12,7 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/apple-pay
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

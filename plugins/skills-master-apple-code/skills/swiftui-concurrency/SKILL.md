@@ -39,6 +39,10 @@ struct ArticleView: View {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `AsyncImage` now applies default HTTP caching, and `AsyncImage(request:)` plus `.asyncImageURLSession(_:)` accept a custom `URLRequest` and session — retire view-owned loaders written solely to add caching or headers to image fetches.
+
 ## Platform notes
 
 - **iOS / iPadOS / macOS / tvOS / visionOS:** `.task`, `task(id:)`, and `refreshable` behave consistently. `searchable` adapts its presentation per platform, but the async pattern (`task(id: query)`) is identical everywhere.

@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/coreml
     - https://developer.apple.com/documentation/coreml/mlmodelconfiguration/computeunits
     - https://developer.apple.com/documentation/coreml/mltensor
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -63,6 +63,11 @@ let classifier = try MNISTClassifier(configuration: config)
 let output = try await classifier.prediction(from: .init(image: pixelBuffer))
 print(output.classLabel, output.classLabelProbs)
 ```
+
+### iOS 27 (WWDC 2026)
+
+- The new Core AI framework layers on-device model loading, specialization, and AOT compilation above raw Core ML — evaluate it before hand-managing model lifecycles for new work.
+- Foundation Models expands with multimodal input, Dynamic Profiles, Private Cloud Compute, and third-party model providers — revisit choosing-ml-approach before shipping your own model.
 
 ## Platform notes
 

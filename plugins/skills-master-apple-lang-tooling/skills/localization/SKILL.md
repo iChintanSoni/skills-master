@@ -30,6 +30,10 @@ let dist = Measurement(value: 5, unit: UnitLength.kilometers)
     .formatted(.measurement(width: .abbreviated))
 ```
 
+### Xcode 27 (WWDC 2026)
+
+- Xcode 27's coding agents can drive localization end-to-end: they find hardcoded literals, convert them into localizable references in a String Catalog, and generate translations informed by how each string is used in code. Steer quality with custom terminology and guidelines, and still have native speakers review before shipping.
+
 ## Platform notes
 
 - **All platforms:** `String Catalog` symbol generation (Xcode 26) yields type-safe `LocalizedStringResource` constants with autocompletion — prefer these over stringly-typed keys in shared code.

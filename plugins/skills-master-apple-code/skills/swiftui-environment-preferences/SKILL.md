@@ -31,6 +31,10 @@ struct Badge: View {
 // Apply upstream: ContentView().environment(\.cardStyle, .compact)
 ```
 
+### iOS 27 (WWDC 2026)
+
+- The `appearsActive` environment value reports whether the surrounding scene currently appears active, giving views a direct signal for dimming or pausing secondary chrome when focus moves elsewhere.
+
 ## Platform notes
 
 - The `@Entry` macro requires Xcode 16 or newer to compile; because it generates back-deployable code it runs on earlier OS releases, so a project targeting iOS 17 can adopt it. Older code that conforms to `EnvironmentKey` directly still works and is not deprecated.

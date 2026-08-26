@@ -53,6 +53,13 @@ do. This skill produces design judgment and recommendations, not implementation.
   custom chrome, faux depth, or app branding that competes with content — the
   widget should feel native to the Home Screen, not like an embedded ad.
 
+### iOS 27 (WWDC 2026)
+
+- A new extra-large portrait size joins the lineup — compose for the tall canvas
+  (stacked groups, more rows of one idea), never a stretched extra large.
+- Widget customization is App Intents-driven, so treat the configuration choices
+  (which account, which room) as part of the design: few, meaningful options.
+
 ## Platform notes
 
 - **iOS:** Widgets live on the Home Screen, Lock Screen, StandBy, and the Smart

@@ -5,7 +5,7 @@ description: Guides what to test and how to design Swift code for testability �
 
 ## When to use
 
-Use when deciding *what* is worth testing rather than *how* to write a test, when a class resists testing because it reaches into the network, clock, or UI, or when reviewing a suite that is slow, flaky, or high-coverage-yet-low-confidence. This is the strategy layer above the `swift-testing` mechanics skill — prefer Swift Testing for new tests, but the principles here apply regardless of framework.
+Use when deciding *what* is worth testing rather than *how* to write a test, when a class resists testing because it reaches into the network, clock, or UI, or when reviewing a suite that is slow, flaky, or high-coverage-yet-low-confidence. This is the strategy layer above the `swift-testing` mechanics skill — prefer Swift Testing for new tests, but the principles here apply regardless of framework. Swift Testing's XCTest interoperability lets a mixed suite adopt them incrementally, without a wholesale rewrite.
 
 ## Core guidance
 
