@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "18"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [core-ml]
   sources:
     - https://developer.apple.com/documentation/vision
     - https://developer.apple.com/documentation/vision/recognizetextrequest

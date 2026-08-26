@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: inputs
   platforms: [ios]
-  pairs_with: []
+  pairs_with: [controls-widgets]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/action-button
     - https://developer.apple.com/design/human-interface-guidelines/camera-control

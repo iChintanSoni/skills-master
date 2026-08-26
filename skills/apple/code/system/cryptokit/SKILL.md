@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [keychain-security]
   sources:
     - https://developer.apple.com/documentation/cryptokit/
     - https://developer.apple.com/documentation/CryptoKit/performing-common-cryptographic-operations

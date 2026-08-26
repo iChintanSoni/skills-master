@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     macos: "14"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-ui-toolkit, hig-designing-for-macos, appkit-swiftui-interop]
   sources:
     - https://developer.apple.com/documentation/appkit
     - https://developer.apple.com/documentation/appkit/nsapplication

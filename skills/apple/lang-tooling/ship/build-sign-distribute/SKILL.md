@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "16"
-  pairs_with: []
+  pairs_with: [choosing-distribution, provisioning-code-signing, ci-cd-signing]
   sources:
     - https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases
     - https://developer.apple.com/documentation/security/customizing-the-notarization-workflow

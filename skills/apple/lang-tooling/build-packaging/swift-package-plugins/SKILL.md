@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [spm]
   sources:
     - https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/plugins/
     - https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/writingbuildtoolplugin/

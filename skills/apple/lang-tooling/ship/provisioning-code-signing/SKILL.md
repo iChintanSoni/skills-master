@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [choosing-distribution, build-sign-distribute, ci-cd-signing, entitlements-capabilities]
   sources:
     - https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles
     - https://developer.apple.com/support/certificates/

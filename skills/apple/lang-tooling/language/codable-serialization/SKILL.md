@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [networking-layer]
   sources:
     - https://developer.apple.com/documentation/foundation/encoding-and-decoding-custom-types
     - https://developer.apple.com/documentation/swift/codable

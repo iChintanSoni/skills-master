@@ -10,7 +10,7 @@ x-skills-master:
   category: web
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires: {}
-  pairs_with: []
+  pairs_with: [testflight-appstore-connect]
   sources:
     - https://developer.apple.com/documentation/appstoreconnectapi
     - https://developer.apple.com/documentation/appstoreconnectapi/creating-api-keys-for-app-store-connect-api

@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ipados, macos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-navigation]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/sidebars
     - https://developer.apple.com/design/human-interface-guidelines/tab-bars

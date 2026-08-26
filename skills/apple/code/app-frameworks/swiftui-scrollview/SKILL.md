@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [swiftui-grids, swiftui-lists-tables]
   sources:
     - https://developer.apple.com/documentation/swiftui/scrolltargetbehavior
     - https://developer.apple.com/documentation/swiftui/scrollposition

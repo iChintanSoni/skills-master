@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [choosing-testing-strategy, dependency-injection]
   sources:
     - https://developer.apple.com/documentation/testing
     - https://developer.apple.com/documentation/xcode/determining-how-much-code-your-tests-cover

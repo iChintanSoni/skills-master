@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [swift-generics-protocols, swift-performance-memory]
   sources:
     - https://www.swift.org/documentation/articles/value-and-reference-types.html
     - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/

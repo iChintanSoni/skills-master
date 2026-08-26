@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [build-sign-distribute, testflight-appstore-connect, provisioning-code-signing]
   sources:
     - https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/set-distribution-methods/
     - https://developer.apple.com/help/app-store-connect/test-a-beta-version/testflight-overview/

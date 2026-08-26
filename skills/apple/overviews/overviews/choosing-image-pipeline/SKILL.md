@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: [swiftui-images-symbols]
+  pairs_with: [swiftui-images-symbols, core-image, photokit]
   sources:
     - https://developer.apple.com/documentation/swiftui/asyncimage
     - https://developer.apple.com/documentation/imageio

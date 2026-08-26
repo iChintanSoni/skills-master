@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: [ios, ipados, macos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-gestures]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/drag-and-drop
   snapshot_date: "2026-05-30"

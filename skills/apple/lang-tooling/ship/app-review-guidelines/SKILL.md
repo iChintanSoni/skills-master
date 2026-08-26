@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [testflight-appstore-connect, privacy-manifests]
   sources:
     - https://developer.apple.com/app-store/review/guidelines/
     - https://developer.apple.com/support/offering-account-deletion-in-your-app/

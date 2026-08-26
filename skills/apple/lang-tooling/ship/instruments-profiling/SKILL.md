@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [os-logging, swift-performance-memory, crash-symbolication]
   sources:
     - https://developer.apple.com/tutorials/instruments
     - https://developer.apple.com/documentation/os/ossignposter

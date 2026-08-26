@@ -48,7 +48,8 @@
         "push"
       ],
       "pairs_with": [
-        "hig-live-activities-design"
+        "hig-live-activities-design",
+        "choosing-widget-tech"
       ],
       "path": "apple/code/app-frameworks/activitykit",
       "resources": {
@@ -110,7 +111,12 @@
         "spotlight",
         "widgets"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "app-intents",
+        "widgetkit",
+        "controls-widgets",
+        "core-spotlight"
+      ],
       "path": "apple/overviews/overviews/adopting-app-intents",
       "resources": {
         "reference": false,
@@ -227,7 +233,11 @@
         "uikit",
         "migration"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-materials-liquid-glass",
+        "hig-app-icons",
+        "swiftui-toolbars"
+      ],
       "path": "apple/overviews/overviews/adopting-liquid-glass",
       "resources": {
         "reference": false,
@@ -285,7 +295,10 @@
         "sendable",
         "mainactor"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swift-6-migration",
+        "swift-concurrency"
+      ],
       "path": "apple/overviews/overviews/adopting-swift-6-concurrency",
       "resources": {
         "reference": false,
@@ -715,7 +728,8 @@
       ],
       "pairs_with": [
         "hig-siri-design",
-        "hig-snippets"
+        "hig-snippets",
+        "adopting-app-intents"
       ],
       "path": "apple/code/app-frameworks/app-intents",
       "resources": {
@@ -747,7 +761,9 @@
         "appdelegate",
         "state-restoration"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-scenes-windows"
+      ],
       "path": "apple/lang-tooling/architecture/app-lifecycle",
       "resources": {
         "reference": false,
@@ -805,7 +821,10 @@
         "privacy",
         "in-app-purchase"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "testflight-appstore-connect",
+        "privacy-manifests"
+      ],
       "path": "apple/lang-tooling/ship/app-review-guidelines",
       "resources": {
         "reference": false,
@@ -888,7 +907,9 @@
         "testflight",
         "ci"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "testflight-appstore-connect"
+      ],
       "path": "apple/code/web/app-store-connect-api",
       "resources": {
         "reference": false,
@@ -944,7 +965,11 @@
         "nsdocument",
         "responder-chain"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-ui-toolkit",
+        "hig-designing-for-macos",
+        "appkit-swiftui-interop"
+      ],
       "path": "apple/code/app-frameworks/appkit-core",
       "resources": {
         "reference": false,
@@ -970,7 +995,9 @@
         "macos",
         "hosting"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "appkit-core"
+      ],
       "path": "apple/code/app-frameworks/appkit-swiftui-interop",
       "resources": {
         "reference": false,
@@ -1025,7 +1052,9 @@
         "augmented-reality",
         "spatial"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "realitykit"
+      ],
       "path": "apple/code/graphics-games/arkit",
       "resources": {
         "reference": false,
@@ -1056,7 +1085,10 @@
         "app-icon",
         "resources"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-app-icons",
+        "hig-color"
+      ],
       "path": "apple/lang-tooling/build-packaging/asset-catalogs",
       "resources": {
         "reference": false,
@@ -1112,7 +1144,10 @@
         "media",
         "ios17"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "photokit",
+        "screencapturekit"
+      ],
       "path": "apple/code/media/avfoundation-capture",
       "resources": {
         "reference": false,
@@ -1179,7 +1214,8 @@
       ],
       "pairs_with": [
         "storekit",
-        "background-tasks"
+        "background-tasks",
+        "choosing-background-execution"
       ],
       "path": "apple/code/system/background-assets",
       "resources": {
@@ -1353,7 +1389,11 @@
         "notarization",
         "ci"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-distribution",
+        "provisioning-code-signing",
+        "ci-cd-signing"
+      ],
       "path": "apple/lang-tooling/ship/build-sign-distribute",
       "resources": {
         "reference": false,
@@ -1516,7 +1556,9 @@
         "uikit"
       ],
       "pairs_with": [
-        "hig-carplay-design"
+        "hig-carplay-design",
+        "choosing-apple-platforms",
+        "now-playing"
       ],
       "path": "apple/code/form-factors/carplay-templates",
       "resources": {
@@ -1604,7 +1646,10 @@
         "decision"
       ],
       "pairs_with": [
-        "watchos-app-structure"
+        "watchos-app-structure",
+        "tvos-app-structure",
+        "visionos-windows-volumes",
+        "carplay-templates"
       ],
       "path": "apple/overviews/overviews/choosing-apple-platforms",
       "resources": {
@@ -1636,7 +1681,10 @@
         "combine",
         "decision"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swift-concurrency",
+        "swiftui-concurrency"
+      ],
       "path": "apple/overviews/overviews/choosing-async-pattern",
       "resources": {
         "reference": false,
@@ -1669,7 +1717,9 @@
         "decision"
       ],
       "pairs_with": [
-        "background-tasks"
+        "background-tasks",
+        "background-assets",
+        "user-notifications"
       ],
       "path": "apple/overviews/overviews/choosing-background-execution",
       "resources": {
@@ -1788,7 +1838,9 @@
         "decision"
       ],
       "pairs_with": [
-        "dependency-injection"
+        "dependency-injection",
+        "swiftui-environment-preferences",
+        "swiftui-app-architecture"
       ],
       "path": "apple/overviews/overviews/choosing-dependency-injection",
       "resources": {
@@ -1849,7 +1901,11 @@
         "notarization",
         "enterprise"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "build-sign-distribute",
+        "testflight-appstore-connect",
+        "provisioning-code-signing"
+      ],
       "path": "apple/overviews/overviews/choosing-distribution",
       "resources": {
         "reference": false,
@@ -1940,7 +1996,12 @@
         "swiftui",
         "decision"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "metal",
+        "realitykit",
+        "spritekit",
+        "swiftui-drawing-canvas"
+      ],
       "path": "apple/overviews/overviews/choosing-graphics-tech",
       "resources": {
         "reference": false,
@@ -2029,7 +2090,9 @@
         "decision"
       ],
       "pairs_with": [
-        "swiftui-images-symbols"
+        "swiftui-images-symbols",
+        "core-image",
+        "photokit"
       ],
       "path": "apple/overviews/overviews/choosing-image-pipeline",
       "resources": {
@@ -2090,7 +2153,9 @@
       ],
       "pairs_with": [
         "core-ai",
-        "foundation-models"
+        "foundation-models",
+        "core-ml",
+        "natural-language"
       ],
       "path": "apple/overviews/overviews/choosing-ml-approach",
       "resources": {
@@ -2149,7 +2214,11 @@
         "ipad",
         "architecture"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-navigation",
+        "swiftui-tab-views",
+        "navigation-architecture"
+      ],
       "path": "apple/overviews/overviews/choosing-navigation-pattern",
       "resources": {
         "reference": false,
@@ -2180,7 +2249,10 @@
         "websocket",
         "architecture"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "networking-layer",
+        "network-framework"
+      ],
       "path": "apple/overviews/overviews/choosing-networking",
       "resources": {
         "reference": false,
@@ -2212,7 +2284,9 @@
         "decision"
       ],
       "pairs_with": [
-        "swiftdata-modeling"
+        "swiftdata-modeling",
+        "core-data",
+        "cloudkit"
       ],
       "path": "apple/overviews/overviews/choosing-persistence",
       "resources": {
@@ -2273,7 +2347,12 @@
         "strategy",
         "decision"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swift-testing",
+        "unit-testing-strategy",
+        "xctest-ui-automation",
+        "snapshot-testing"
+      ],
       "path": "apple/overviews/overviews/choosing-testing-strategy",
       "resources": {
         "reference": false,
@@ -2305,7 +2384,11 @@
         "interop",
         "decision"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-core",
+        "uikit-core",
+        "appkit-core"
+      ],
       "path": "apple/overviews/overviews/choosing-ui-toolkit",
       "resources": {
         "reference": false,
@@ -2395,7 +2478,11 @@
         "controls",
         "overview"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "widgetkit",
+        "activitykit",
+        "controls-widgets"
+      ],
       "path": "apple/overviews/overviews/choosing-widget-tech",
       "resources": {
         "reference": false,
@@ -2486,7 +2573,10 @@
         "testflight",
         "xcode-cloud"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "build-sign-distribute",
+        "provisioning-code-signing"
+      ],
       "path": "apple/lang-tooling/ship/ci-cd-signing",
       "resources": {
         "reference": false,
@@ -2517,7 +2607,9 @@
         "sharing",
         "push"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-persistence"
+      ],
       "path": "apple/code/app-services/cloudkit",
       "resources": {
         "reference": false,
@@ -2548,7 +2640,9 @@
         "serialization",
         "foundation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "networking-layer"
+      ],
       "path": "apple/lang-tooling/language/codable-serialization",
       "resources": {
         "reference": false,
@@ -3196,7 +3290,11 @@
         "lock-screen",
         "ios18"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-app-intents",
+        "choosing-widget-tech",
+        "hig-action-button"
+      ],
       "path": "apple/code/app-frameworks/controls-widgets",
       "resources": {
         "reference": false,
@@ -3319,7 +3417,9 @@
         "concurrency",
         "migration"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-persistence"
+      ],
       "path": "apple/code/app-services/core-data",
       "resources": {
         "reference": false,
@@ -3349,7 +3449,9 @@
         "filters",
         "swiftui"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-image-pipeline"
+      ],
       "path": "apple/code/graphics-games/core-image",
       "resources": {
         "reference": false,
@@ -3380,7 +3482,10 @@
         "authorization",
         "privacy"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "mapkit",
+        "weatherkit"
+      ],
       "path": "apple/code/app-services/core-location",
       "resources": {
         "reference": false,
@@ -3411,7 +3516,9 @@
         "on-device"
       ],
       "pairs_with": [
-        "core-ai"
+        "core-ai",
+        "choosing-ml-approach",
+        "vision"
       ],
       "path": "apple/code/app-services/core-ml",
       "resources": {
@@ -3440,7 +3547,9 @@
         "app-intents",
         "deep-linking"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-app-intents"
+      ],
       "path": "apple/code/app-services/core-spotlight",
       "resources": {
         "reference": false,
@@ -3497,7 +3606,9 @@
         "metrickit",
         "debugging"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "instruments-profiling"
+      ],
       "path": "apple/lang-tooling/ship/crash-symbolication",
       "resources": {
         "reference": false,
@@ -3554,7 +3665,9 @@
         "keychain",
         "signing"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "keychain-security"
+      ],
       "path": "apple/code/system/cryptokit",
       "resources": {
         "reference": false,
@@ -3613,7 +3726,8 @@
         "swift6"
       ],
       "pairs_with": [
-        "choosing-dependency-injection"
+        "choosing-dependency-injection",
+        "unit-testing-strategy"
       ],
       "path": "apple/lang-tooling/architecture/dependency-injection",
       "resources": {
@@ -3761,7 +3875,10 @@
         "app-groups",
         "signing"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "info-plist-entitlements",
+        "provisioning-code-signing"
+      ],
       "path": "apple/lang-tooling/ship/entitlements-capabilities",
       "resources": {
         "reference": false,
@@ -3792,7 +3909,9 @@
         "result",
         "concurrency"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "networking-layer"
+      ],
       "path": "apple/lang-tooling/language/error-handling",
       "resources": {
         "reference": false,
@@ -3847,7 +3966,9 @@
         "permissions",
         "swiftui"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "user-notifications"
+      ],
       "path": "apple/code/app-services/eventkit",
       "resources": {
         "reference": false,
@@ -4022,7 +4143,9 @@
         "leaderboards",
         "achievements"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "spritekit"
+      ],
       "path": "apple/code/graphics-games/gamekit",
       "resources": {
         "reference": false,
@@ -4195,7 +4318,10 @@
         "dynamic-type",
         "design"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-accessibility",
+        "hig-typography-sf-symbols"
+      ],
       "path": "apple/design/foundations/hig-accessibility",
       "resources": {
         "reference": false,
@@ -4221,7 +4347,9 @@
         "ios",
         "inputs"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "controls-widgets"
+      ],
       "path": "apple/design/inputs/hig-action-button",
       "resources": {
         "reference": false,
@@ -4248,7 +4376,9 @@
         "destructive",
         "ios"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-sheets"
+      ],
       "path": "apple/design/components/hig-action-sheets",
       "resources": {
         "reference": false,
@@ -4279,7 +4409,9 @@
         "destructive",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-sheets"
+      ],
       "path": "apple/design/components/hig-alerts",
       "resources": {
         "reference": false,
@@ -4307,7 +4439,9 @@
         "handoff",
         "hig"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-onboarding"
+      ],
       "path": "apple/design/technologies/hig-app-clips-design",
       "resources": {
         "reference": false,
@@ -4339,7 +4473,10 @@
         "icon-composer",
         "branding"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-liquid-glass",
+        "asset-catalogs"
+      ],
       "path": "apple/design/foundations/hig-app-icons",
       "resources": {
         "reference": false,
@@ -4432,7 +4569,9 @@
         "hig",
         "actions"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-materials-liquid-glass"
+      ],
       "path": "apple/design/components/hig-buttons",
       "resources": {
         "reference": false,
@@ -4526,7 +4665,10 @@
         "materials",
         "foundations"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-dark-mode",
+        "asset-catalogs"
+      ],
       "path": "apple/design/foundations/hig-color",
       "resources": {
         "reference": false,
@@ -4555,7 +4697,9 @@
         "components",
         "discoverability"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-menus"
+      ],
       "path": "apple/design/components/hig-context-menus",
       "resources": {
         "reference": false,
@@ -4585,7 +4729,9 @@
         "materials",
         "contrast"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-color"
+      ],
       "path": "apple/design/foundations/hig-dark-mode",
       "resources": {
         "reference": false,
@@ -4611,7 +4757,9 @@
         "accessibility",
         "liquid-glass"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-materials-liquid-glass"
+      ],
       "path": "apple/design/platforms/hig-designing-for-ios",
       "resources": {
         "reference": false,
@@ -4637,7 +4785,10 @@
         "multitasking",
         "pointer"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-pointing-devices",
+        "hig-multitasking"
+      ],
       "path": "apple/design/platforms/hig-designing-for-ipados",
       "resources": {
         "reference": false,
@@ -4663,7 +4814,11 @@
         "menus",
         "toolbars"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-menus",
+        "appkit-core",
+        "swiftui-scenes-windows"
+      ],
       "path": "apple/design/platforms/hig-designing-for-macos",
       "resources": {
         "reference": false,
@@ -4747,7 +4902,8 @@
         "smart-stack"
       ],
       "pairs_with": [
-        "watchos-app-structure"
+        "watchos-app-structure",
+        "hig-digital-crown"
       ],
       "path": "apple/design/platforms/hig-designing-for-watchos",
       "resources": {
@@ -4775,7 +4931,9 @@
         "inputs",
         "haptics"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-designing-for-watchos"
+      ],
       "path": "apple/design/inputs/hig-digital-crown",
       "resources": {
         "reference": false,
@@ -4804,7 +4962,9 @@
         "patterns",
         "accessibility"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-gestures"
+      ],
       "path": "apple/design/patterns/hig-drag-and-drop",
       "resources": {
         "reference": false,
@@ -4836,7 +4996,9 @@
         "keyboards",
         "design"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-text-input"
+      ],
       "path": "apple/design/patterns/hig-entering-data",
       "resources": {
         "reference": false,
@@ -4867,7 +5029,9 @@
         "alerts",
         "progress"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-loading"
+      ],
       "path": "apple/design/patterns/hig-feedback",
       "resources": {
         "reference": false,
@@ -4896,7 +5060,8 @@
         "visionos"
       ],
       "pairs_with": [
-        "swiftui-gestures"
+        "swiftui-gestures",
+        "hig-undo-redo"
       ],
       "path": "apple/design/inputs/hig-gestures-design",
       "resources": {
@@ -4928,7 +5093,9 @@
         "accessibility",
         "sf-symbols"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-images-symbols"
+      ],
       "path": "apple/design/foundations/hig-images",
       "resources": {
         "reference": false,
@@ -4957,7 +5124,9 @@
         "focus",
         "inputs"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-focus"
+      ],
       "path": "apple/design/inputs/hig-keyboards-design",
       "resources": {
         "reference": false,
@@ -4986,7 +5155,9 @@
         "adaptivity",
         "accessibility"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-core"
+      ],
       "path": "apple/design/foundations/hig-layout",
       "resources": {
         "reference": false,
@@ -5080,7 +5251,10 @@
         "performance",
         "patterns"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-progress-indicators",
+        "hig-feedback"
+      ],
       "path": "apple/design/patterns/hig-loading",
       "resources": {
         "reference": false,
@@ -5109,7 +5283,11 @@
         "liquid-glass",
         "accessibility"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-liquid-glass",
+        "hig-buttons",
+        "hig-designing-for-ios"
+      ],
       "path": "apple/design/foundations/hig-materials-liquid-glass",
       "resources": {
         "reference": false,
@@ -5141,7 +5319,10 @@
         "macos",
         "design"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-context-menus",
+        "hig-designing-for-macos"
+      ],
       "path": "apple/design/components/hig-menus",
       "resources": {
         "reference": false,
@@ -5173,7 +5354,9 @@
         "navigation",
         "hig"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-sheets"
+      ],
       "path": "apple/design/patterns/hig-modality",
       "resources": {
         "reference": false,
@@ -5205,7 +5388,9 @@
         "transitions",
         "hig"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-animations-transitions"
+      ],
       "path": "apple/design/foundations/hig-motion",
       "resources": {
         "reference": false,
@@ -5232,7 +5417,10 @@
         "stage-manager",
         "layout"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-designing-for-ipados",
+        "swiftui-scenes-windows"
+      ],
       "path": "apple/design/patterns/hig-multitasking",
       "resources": {
         "reference": false,
@@ -5262,7 +5450,9 @@
         "search",
         "liquid-glass"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-navigation"
+      ],
       "path": "apple/design/components/hig-navigation-bars",
       "resources": {
         "reference": false,
@@ -5293,7 +5483,9 @@
         "ux",
         "alerts"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "user-notifications"
+      ],
       "path": "apple/design/patterns/hig-notifications",
       "resources": {
         "reference": false,
@@ -5325,7 +5517,11 @@
         "hig",
         "design"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-privacy",
+        "tipkit",
+        "hig-app-clips-design"
+      ],
       "path": "apple/design/patterns/hig-onboarding",
       "resources": {
         "reference": false,
@@ -5357,7 +5553,10 @@
         "forms",
         "liquid-glass"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-forms-controls",
+        "hig-segmented-controls"
+      ],
       "path": "apple/design/components/hig-pickers",
       "resources": {
         "reference": false,
@@ -5384,7 +5583,9 @@
         "macos",
         "inputs"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-designing-for-ipados"
+      ],
       "path": "apple/design/inputs/hig-pointing-devices",
       "resources": {
         "reference": false,
@@ -5412,7 +5613,9 @@
         "macos",
         "presentation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-sheets"
+      ],
       "path": "apple/design/components/hig-popovers",
       "resources": {
         "reference": false,
@@ -5443,7 +5646,11 @@
         "foundations",
         "trust"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "privacy-manifests",
+        "info-plist-entitlements",
+        "hig-onboarding"
+      ],
       "path": "apple/design/foundations/hig-privacy",
       "resources": {
         "reference": false,
@@ -5475,7 +5682,9 @@
         "feedback",
         "loading"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-loading"
+      ],
       "path": "apple/design/components/hig-progress-indicators",
       "resources": {
         "reference": false,
@@ -5504,7 +5713,9 @@
         "app-store",
         "design"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "storekit"
+      ],
       "path": "apple/design/patterns/hig-ratings-reviews",
       "resources": {
         "reference": false,
@@ -5535,7 +5746,9 @@
         "accessibility",
         "foundations"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "localization"
+      ],
       "path": "apple/design/foundations/hig-right-to-left",
       "resources": {
         "reference": false,
@@ -5566,7 +5779,9 @@
         "tokens",
         "liquid-glass"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-searching"
+      ],
       "path": "apple/design/components/hig-search-fields",
       "resources": {
         "reference": false,
@@ -5598,7 +5813,9 @@
         "ios",
         "accessibility"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-search-fields"
+      ],
       "path": "apple/design/patterns/hig-searching",
       "resources": {
         "reference": false,
@@ -5629,7 +5846,9 @@
         "ios",
         "macos"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-pickers"
+      ],
       "path": "apple/design/components/hig-segmented-controls",
       "resources": {
         "reference": false,
@@ -5661,7 +5880,9 @@
         "hig",
         "onboarding"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-forms-controls"
+      ],
       "path": "apple/design/patterns/hig-settings",
       "resources": {
         "reference": false,
@@ -5691,7 +5912,8 @@
         "presentation"
       ],
       "pairs_with": [
-        "swiftui-sheets"
+        "swiftui-sheets",
+        "hig-modality"
       ],
       "path": "apple/design/components/hig-sheets",
       "resources": {
@@ -5720,7 +5942,9 @@
         "macos",
         "visionos"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-navigation"
+      ],
       "path": "apple/design/components/hig-sidebars",
       "resources": {
         "reference": false,
@@ -5817,7 +6041,9 @@
         "steppers",
         "controls"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-forms-controls"
+      ],
       "path": "apple/design/components/hig-sliders-steppers",
       "resources": {
         "reference": false,
@@ -5947,7 +6173,9 @@
         "macos",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-forms-controls"
+      ],
       "path": "apple/design/components/hig-toggles",
       "resources": {
         "reference": false,
@@ -6011,7 +6239,10 @@
         "dynamic-type",
         "design"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-accessibility",
+        "swiftui-images-symbols"
+      ],
       "path": "apple/design/foundations/hig-typography-sf-symbols",
       "resources": {
         "reference": false,
@@ -6041,7 +6272,9 @@
         "destructive",
         "patterns"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-gestures-design"
+      ],
       "path": "apple/design/patterns/hig-undo-redo",
       "resources": {
         "reference": false,
@@ -6105,7 +6338,9 @@
         "hig",
         "inclusion"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "localization"
+      ],
       "path": "apple/design/foundations/hig-writing",
       "resources": {
         "reference": false,
@@ -6166,7 +6401,10 @@
         "capabilities",
         "privacy"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-privacy",
+        "entitlements-capabilities"
+      ],
       "path": "apple/lang-tooling/build-packaging/info-plist-entitlements",
       "resources": {
         "reference": false,
@@ -6197,7 +6435,11 @@
         "signposts",
         "swiftui"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "os-logging",
+        "swift-performance-memory",
+        "crash-symbolication"
+      ],
       "path": "apple/lang-tooling/ship/instruments-profiling",
       "resources": {
         "reference": false,
@@ -6259,7 +6501,9 @@
         "biometrics",
         "secitem"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "cryptokit"
+      ],
       "path": "apple/code/system/keychain-security",
       "resources": {
         "reference": false,
@@ -6562,7 +6806,9 @@
         "rtl"
       ],
       "pairs_with": [
-        "xcode-coding-agents"
+        "xcode-coding-agents",
+        "hig-right-to-left",
+        "hig-writing"
       ],
       "path": "apple/lang-tooling/ship/localization",
       "resources": {
@@ -8401,7 +8647,9 @@
         "location",
         "directions"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "core-location"
+      ],
       "path": "apple/code/app-services/mapkit",
       "resources": {
         "reference": false,
@@ -8603,7 +8851,9 @@
         "metalkit",
         "metalfx"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-graphics-tech"
+      ],
       "path": "apple/code/graphics-games/metal",
       "resources": {
         "reference": false,
@@ -8689,7 +8939,9 @@
         "build-times",
         "swift6"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "spm"
+      ],
       "path": "apple/lang-tooling/architecture/modularization-local-spm",
       "resources": {
         "reference": false,
@@ -8788,7 +9040,10 @@
         "embeddings",
         "sentiment"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-ml-approach",
+        "speech"
+      ],
       "path": "apple/code/app-services/natural-language",
       "resources": {
         "reference": false,
@@ -8819,7 +9074,9 @@
         "deep-linking",
         "architecture"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-navigation-pattern"
+      ],
       "path": "apple/lang-tooling/architecture/navigation-architecture",
       "resources": {
         "reference": false,
@@ -8967,7 +9224,9 @@
         "connectivity",
         "concurrency"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-networking"
+      ],
       "path": "apple/code/system/network-framework",
       "resources": {
         "reference": false,
@@ -9024,7 +9283,11 @@
         "codable",
         "testing"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-networking",
+        "codable-serialization",
+        "error-handling"
+      ],
       "path": "apple/lang-tooling/architecture/networking-layer",
       "resources": {
         "reference": false,
@@ -9115,7 +9378,8 @@
       ],
       "pairs_with": [
         "avfoundation-playback",
-        "musickit"
+        "musickit",
+        "carplay-templates"
       ],
       "path": "apple/code/media/now-playing",
       "resources": {
@@ -9147,7 +9411,9 @@
         "view-models",
         "ios17"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-state-data-flow"
+      ],
       "path": "apple/code/app-frameworks/observation",
       "resources": {
         "reference": false,
@@ -9179,7 +9445,9 @@
         "diagnostics",
         "privacy"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "instruments-profiling"
+      ],
       "path": "apple/code/system/os-logging",
       "resources": {
         "reference": false,
@@ -9327,7 +9595,10 @@
         "privacy",
         "ios"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-image-pipeline",
+        "avfoundation-capture"
+      ],
       "path": "apple/code/media/photokit",
       "resources": {
         "reference": false,
@@ -9557,7 +9828,10 @@
         "sdk",
         "compliance"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-privacy",
+        "app-review-guidelines"
+      ],
       "path": "apple/lang-tooling/ship/privacy-manifests",
       "resources": {
         "reference": false,
@@ -9588,7 +9862,9 @@
         "swiftui",
         "observation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swift-macros"
+      ],
       "path": "apple/lang-tooling/language/property-wrappers",
       "resources": {
         "reference": false,
@@ -9619,7 +9895,12 @@
         "entitlements",
         "ci"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-distribution",
+        "build-sign-distribute",
+        "ci-cd-signing",
+        "entitlements-capabilities"
+      ],
       "path": "apple/lang-tooling/ship/provisioning-code-signing",
       "resources": {
         "reference": false,
@@ -9677,7 +9958,10 @@
         "ecs"
       ],
       "pairs_with": [
-        "visionos-immersive-spaces"
+        "visionos-immersive-spaces",
+        "choosing-graphics-tech",
+        "arkit",
+        "scenekit"
       ],
       "path": "apple/code/graphics-games/realitykit",
       "resources": {
@@ -9709,7 +9993,9 @@
         "regexbuilder",
         "unicode"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "result-builders"
+      ],
       "path": "apple/lang-tooling/language/regex-strings",
       "resources": {
         "reference": false,
@@ -9740,7 +10026,10 @@
         "swiftui",
         "metaprogramming"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "regex-strings",
+        "swift-macros"
+      ],
       "path": "apple/lang-tooling/language/result-builders",
       "resources": {
         "reference": false,
@@ -9911,7 +10200,9 @@
         "physics",
         "realitykit"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "realitykit"
+      ],
       "path": "apple/code/graphics-games/scenekit",
       "resources": {
         "reference": false,
@@ -9964,7 +10255,9 @@
         "recording",
         "audio"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "avfoundation-capture"
+      ],
       "path": "apple/code/media/screencapturekit",
       "resources": {
         "reference": false,
@@ -10081,7 +10374,9 @@
         "swift-testing",
         "regression"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-testing-strategy"
+      ],
       "path": "apple/lang-tooling/testing/snapshot-testing",
       "resources": {
         "reference": false,
@@ -10110,7 +10405,9 @@
         "audio",
         "avfoundation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "natural-language"
+      ],
       "path": "apple/code/app-services/speech",
       "resources": {
         "reference": false,
@@ -10170,7 +10467,10 @@
         "dependencies",
         "modularization"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "modularization-local-spm",
+        "swift-package-plugins"
+      ],
       "path": "apple/lang-tooling/build-packaging/spm",
       "resources": {
         "reference": false,
@@ -10200,7 +10500,10 @@
         "physics",
         "swiftui"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-graphics-tech",
+        "gamekit"
+      ],
       "path": "apple/code/graphics-games/spritekit",
       "resources": {
         "reference": false,
@@ -10285,7 +10588,8 @@
         "monetization"
       ],
       "pairs_with": [
-        "background-assets"
+        "background-assets",
+        "hig-ratings-reviews"
       ],
       "path": "apple/code/app-services/storekit",
       "resources": {
@@ -10345,7 +10649,10 @@
         "actors",
         "migration"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-swift-6-concurrency",
+        "swift-concurrency"
+      ],
       "path": "apple/lang-tooling/language/swift-6-migration",
       "resources": {
         "reference": false,
@@ -10376,7 +10683,12 @@
         "actors",
         "sendable"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-swift-6-concurrency",
+        "choosing-async-pattern",
+        "swift-6-migration",
+        "testing-async-code"
+      ],
       "path": "apple/lang-tooling/language/swift-concurrency",
       "resources": {
         "reference": false,
@@ -10407,7 +10719,9 @@
         "opaque-types",
         "existentials"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swift-language-core"
+      ],
       "path": "apple/lang-tooling/language/swift-generics-protocols",
       "resources": {
         "reference": false,
@@ -10438,7 +10752,10 @@
         "properties",
         "protocols"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swift-generics-protocols",
+        "swift-performance-memory"
+      ],
       "path": "apple/lang-tooling/language/swift-language-core",
       "resources": {
         "reference": false,
@@ -10469,7 +10786,10 @@
         "metaprogramming",
         "spm"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "property-wrappers",
+        "result-builders"
+      ],
       "path": "apple/lang-tooling/language/swift-macros",
       "resources": {
         "reference": false,
@@ -10500,7 +10820,9 @@
         "code-generation",
         "tooling"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "spm"
+      ],
       "path": "apple/lang-tooling/build-packaging/swift-package-plugins",
       "resources": {
         "reference": false,
@@ -10531,7 +10853,10 @@
         "arc",
         "ownership"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swift-language-core",
+        "instruments-profiling"
+      ],
       "path": "apple/lang-tooling/language/swift-performance-memory",
       "resources": {
         "reference": false,
@@ -10561,7 +10886,10 @@
         "xctest",
         "unit-tests"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-testing-strategy",
+        "testing-async-code"
+      ],
       "path": "apple/lang-tooling/testing/swift-testing",
       "resources": {
         "reference": false,
@@ -10593,7 +10921,8 @@
         "database"
       ],
       "pairs_with": [
-        "choosing-persistence"
+        "choosing-persistence",
+        "swiftdata-queries-migration"
       ],
       "path": "apple/code/app-frameworks/swiftdata-modeling",
       "resources": {
@@ -10625,7 +10954,9 @@
         "query",
         "predicate"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftdata-modeling"
+      ],
       "path": "apple/code/app-frameworks/swiftdata-queries-migration",
       "resources": {
         "reference": false,
@@ -10656,7 +10987,9 @@
         "dynamic-type",
         "a11y"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-accessibility"
+      ],
       "path": "apple/code/app-frameworks/swiftui-accessibility",
       "resources": {
         "reference": false,
@@ -10687,7 +11020,9 @@
         "accessibility",
         "ui"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-motion"
+      ],
       "path": "apple/code/app-frameworks/swiftui-animations-transitions",
       "resources": {
         "reference": false,
@@ -10718,7 +11053,10 @@
         "mvvm",
         "state"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-dependency-injection",
+        "swiftui-state-data-flow"
+      ],
       "path": "apple/lang-tooling/architecture/swiftui-app-architecture",
       "resources": {
         "reference": false,
@@ -10782,7 +11120,9 @@
         "mainactor",
         "task"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-async-pattern"
+      ],
       "path": "apple/code/app-frameworks/swiftui-concurrency",
       "resources": {
         "reference": false,
@@ -10813,7 +11153,11 @@
         "viewbuilder",
         "composition"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-ui-toolkit",
+        "hig-layout",
+        "swiftui-custom-layout"
+      ],
       "path": "apple/code/app-frameworks/swiftui-core",
       "resources": {
         "reference": false,
@@ -10844,7 +11188,9 @@
         "adaptive",
         "geometry"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-core"
+      ],
       "path": "apple/code/app-frameworks/swiftui-custom-layout",
       "resources": {
         "reference": false,
@@ -10906,7 +11252,9 @@
         "shape",
         "animation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-graphics-tech"
+      ],
       "path": "apple/code/app-frameworks/swiftui-drawing-canvas",
       "resources": {
         "reference": false,
@@ -10937,7 +11285,10 @@
         "observable",
         "data-flow"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-dependency-injection",
+        "swiftui-state-data-flow"
+      ],
       "path": "apple/code/app-frameworks/swiftui-environment-preferences",
       "resources": {
         "reference": false,
@@ -10968,7 +11319,10 @@
         "tvos",
         "visionos"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-keyboards-design",
+        "tvos-focus-engine"
+      ],
       "path": "apple/code/app-frameworks/swiftui-focus",
       "resources": {
         "reference": false,
@@ -10999,7 +11353,12 @@
         "picker",
         "settings"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-pickers",
+        "hig-sliders-steppers",
+        "hig-toggles",
+        "hig-settings"
+      ],
       "path": "apple/code/app-frameworks/swiftui-forms-controls",
       "resources": {
         "reference": false,
@@ -11031,7 +11390,8 @@
         "hit-testing"
       ],
       "pairs_with": [
-        "hig-gestures-design"
+        "hig-gestures-design",
+        "hig-drag-and-drop"
       ],
       "path": "apple/code/app-frameworks/swiftui-gestures",
       "resources": {
@@ -11063,7 +11423,9 @@
         "lazyvgrid",
         "griditem"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-scrollview"
+      ],
       "path": "apple/code/app-frameworks/swiftui-grids",
       "resources": {
         "reference": false,
@@ -11095,7 +11457,9 @@
         "accessibility"
       ],
       "pairs_with": [
-        "choosing-image-pipeline"
+        "choosing-image-pipeline",
+        "hig-images",
+        "hig-typography-sf-symbols"
       ],
       "path": "apple/code/app-frameworks/swiftui-images-symbols",
       "resources": {
@@ -11129,7 +11493,8 @@
         "search"
       ],
       "pairs_with": [
-        "hig-lists-tables"
+        "hig-lists-tables",
+        "swiftui-scrollview"
       ],
       "path": "apple/code/app-frameworks/swiftui-lists-tables",
       "resources": {
@@ -11162,7 +11527,10 @@
         "ui"
       ],
       "pairs_with": [
-        "swiftui-toolbars"
+        "swiftui-toolbars",
+        "choosing-navigation-pattern",
+        "hig-navigation-bars",
+        "hig-sidebars"
       ],
       "path": "apple/code/app-frameworks/swiftui-navigation",
       "resources": {
@@ -11195,7 +11563,10 @@
         "visionos"
       ],
       "pairs_with": [
-        "swiftui-documents"
+        "swiftui-documents",
+        "hig-multitasking",
+        "hig-designing-for-macos",
+        "app-lifecycle"
       ],
       "path": "apple/code/app-frameworks/swiftui-scenes-windows",
       "resources": {
@@ -11227,7 +11598,10 @@
         "animation",
         "ios17"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swiftui-grids",
+        "swiftui-lists-tables"
+      ],
       "path": "apple/code/app-frameworks/swiftui-scrollview",
       "resources": {
         "reference": false,
@@ -11257,7 +11631,10 @@
         "detents"
       ],
       "pairs_with": [
-        "hig-sheets"
+        "hig-sheets",
+        "hig-action-sheets",
+        "hig-alerts",
+        "hig-popovers"
       ],
       "path": "apple/code/app-frameworks/swiftui-sheets",
       "resources": {
@@ -11289,7 +11666,11 @@
         "data-flow",
         "bindable"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "observation",
+        "swiftui-environment-preferences",
+        "swiftui-app-architecture"
+      ],
       "path": "apple/code/app-frameworks/swiftui-state-data-flow",
       "resources": {
         "reference": false,
@@ -11321,7 +11702,8 @@
         "liquid-glass"
       ],
       "pairs_with": [
-        "hig-tab-bars"
+        "hig-tab-bars",
+        "choosing-navigation-pattern"
       ],
       "path": "apple/code/app-frameworks/swiftui-tab-views",
       "resources": {
@@ -11354,7 +11736,8 @@
         "focus"
       ],
       "pairs_with": [
-        "hig-text-fields"
+        "hig-text-fields",
+        "hig-entering-data"
       ],
       "path": "apple/code/app-frameworks/swiftui-text-input",
       "resources": {
@@ -11388,7 +11771,8 @@
       ],
       "pairs_with": [
         "swiftui-navigation",
-        "hig-toolbars"
+        "hig-toolbars",
+        "adopting-liquid-glass"
       ],
       "path": "apple/code/app-frameworks/swiftui-toolbars",
       "resources": {
@@ -11478,7 +11862,11 @@
         "release",
         "ship"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-distribution",
+        "app-store-connect-api",
+        "app-review-guidelines"
+      ],
       "path": "apple/lang-tooling/ship/testflight-appstore-connect",
       "resources": {
         "reference": false,
@@ -11509,7 +11897,10 @@
         "swift-testing",
         "clocks"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "swift-concurrency",
+        "swift-testing"
+      ],
       "path": "apple/lang-tooling/testing/testing-async-code",
       "resources": {
         "reference": false,
@@ -11540,7 +11931,9 @@
         "feature-discovery",
         "cloudkit"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "hig-onboarding"
+      ],
       "path": "apple/code/app-services/tipkit",
       "resources": {
         "reference": false,
@@ -11649,7 +12042,8 @@
       ],
       "pairs_with": [
         "hig-designing-for-tvos",
-        "tvos-focus-engine"
+        "tvos-focus-engine",
+        "choosing-apple-platforms"
       ],
       "path": "apple/code/form-factors/tvos-app-structure",
       "resources": {
@@ -11680,7 +12074,8 @@
         "navigation"
       ],
       "pairs_with": [
-        "tvos-app-structure"
+        "tvos-app-structure",
+        "swiftui-focus"
       ],
       "path": "apple/code/form-factors/tvos-focus-engine",
       "resources": {
@@ -11766,7 +12161,9 @@
         "uistackview",
         "layout-anchors"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "uikit-core"
+      ],
       "path": "apple/code/app-frameworks/uikit-auto-layout",
       "resources": {
         "reference": false,
@@ -11795,7 +12192,9 @@
         "diffable",
         "lists"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "uikit-core"
+      ],
       "path": "apple/code/app-frameworks/uikit-collection-views",
       "resources": {
         "reference": false,
@@ -11824,7 +12223,12 @@
         "scene",
         "traits"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-ui-toolkit",
+        "uikit-swiftui-interop",
+        "uikit-auto-layout",
+        "uikit-collection-views"
+      ],
       "path": "apple/code/app-frameworks/uikit-core",
       "resources": {
         "reference": false,
@@ -11853,7 +12257,9 @@
         "representable",
         "hosting"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "uikit-core"
+      ],
       "path": "apple/code/app-frameworks/uikit-swiftui-interop",
       "resources": {
         "reference": false,
@@ -11910,7 +12316,10 @@
         "test-doubles",
         "coverage"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-testing-strategy",
+        "dependency-injection"
+      ],
       "path": "apple/lang-tooling/testing/unit-testing-strategy",
       "resources": {
         "reference": false,
@@ -11940,7 +12349,11 @@
         "usernotifications",
         "extensions"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-background-execution",
+        "hig-notifications",
+        "eventkit"
+      ],
       "path": "apple/code/app-services/user-notifications",
       "resources": {
         "reference": false,
@@ -12050,7 +12463,9 @@
         "image-analysis",
         "swift-concurrency"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "core-ml"
+      ],
       "path": "apple/code/app-services/vision",
       "resources": {
         "reference": false,
@@ -12109,7 +12524,8 @@
       ],
       "pairs_with": [
         "visionos-immersive-spaces",
-        "hig-designing-for-visionos"
+        "hig-designing-for-visionos",
+        "choosing-apple-platforms"
       ],
       "path": "apple/code/form-factors/visionos-windows-volumes",
       "resources": {
@@ -12393,7 +12809,9 @@
         "app-services",
         "rest-api"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "core-location"
+      ],
       "path": "apple/code/app-services/weatherkit",
       "resources": {
         "reference": false,
@@ -12453,7 +12871,9 @@
       ],
       "pairs_with": [
         "hig-widgets-design",
-        "watchos-complications"
+        "watchos-complications",
+        "adopting-app-intents",
+        "choosing-widget-tech"
       ],
       "path": "apple/code/app-frameworks/widgetkit",
       "resources": {
@@ -12608,7 +13028,9 @@
         "accessibility",
         "automation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-testing-strategy"
+      ],
       "path": "apple/lang-tooling/testing/xctest-ui-automation",
       "resources": {
         "reference": false,

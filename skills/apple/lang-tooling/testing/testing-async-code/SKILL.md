@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [swift-concurrency, swift-testing]
   sources:
     - https://developer.apple.com/documentation/testing/testing-asynchronous-code
     - https://developer.apple.com/documentation/testing/expectations

@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [instruments-profiling]
   sources:
     - https://developer.apple.com/documentation/os/logger
     - https://developer.apple.com/documentation/os/oslogprivacy

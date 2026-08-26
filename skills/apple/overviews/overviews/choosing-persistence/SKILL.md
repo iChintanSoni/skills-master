@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: [swiftdata-modeling]
+  pairs_with: [swiftdata-modeling, core-data, cloudkit]
   sources:
     - https://developer.apple.com/documentation/swiftdata
     - https://developer.apple.com/documentation/coredata

@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [adopting-swift-6-concurrency, swift-concurrency]
   sources:
     - https://www.swift.org/migration/documentation/swift-6-concurrency-migration-guide/migrationstrategy/
     - https://developer.apple.com/documentation/swift/adoptingswift6

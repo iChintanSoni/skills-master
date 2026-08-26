@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "16"
     swift: "6.0"
-  pairs_with: [hig-siri-design, hig-snippets]
+  pairs_with: [hig-siri-design, hig-snippets, adopting-app-intents]
   sources:
     - https://developer.apple.com/documentation/appintents
     - https://developer.apple.com/documentation/appintents/app-shortcuts

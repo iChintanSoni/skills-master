@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [cryptokit]
   sources:
     - https://developer.apple.com/documentation/security/keychain-services
     - https://developer.apple.com/documentation/security/keychain-items

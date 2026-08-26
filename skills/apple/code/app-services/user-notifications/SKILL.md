@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-background-execution, hig-notifications, eventkit]
   sources:
     - https://developer.apple.com/documentation/usernotifications
     - https://developer.apple.com/documentation/usernotifications/asking-permission-to-use-notifications

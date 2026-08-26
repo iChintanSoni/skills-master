@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [hig-accessibility]
   sources:
     - https://developer.apple.com/documentation/swiftui/view-accessibility
     - https://developer.apple.com/documentation/swiftui/accessibility-fundamentals

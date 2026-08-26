@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: [macos]
-  pairs_with: []
+  pairs_with: [hig-menus, appkit-core, swiftui-scenes-windows]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-macos
     - https://developer.apple.com/design/human-interface-guidelines/the-menu-bar

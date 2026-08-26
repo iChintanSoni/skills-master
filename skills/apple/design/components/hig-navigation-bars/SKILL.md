@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, tvos, watchos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-navigation]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/navigation-bars
     - https://developer.apple.com/design/human-interface-guidelines/searching

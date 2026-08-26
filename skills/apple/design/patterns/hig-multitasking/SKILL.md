@@ -10,7 +10,7 @@ x-skills-master:
     - ipados
     - ios
   requires: { ipados: "26" }
-  pairs_with: []
+  pairs_with: [hig-designing-for-ipados, swiftui-scenes-windows]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/multitasking
     - https://developer.apple.com/design/human-interface-guidelines/split-views

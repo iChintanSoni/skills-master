@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [hig-lists-tables]
+  pairs_with: [hig-lists-tables, swiftui-scrollview]
   sources:
     - https://developer.apple.com/documentation/swiftui/list
     - https://developer.apple.com/documentation/swiftui/table

@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, visionos]
-  pairs_with: [core-ai, foundation-models]
+  pairs_with: [core-ai, foundation-models, core-ml, natural-language]
   sources:
     - https://developer.apple.com/documentation/foundationmodels
     - https://developer.apple.com/documentation/coreml

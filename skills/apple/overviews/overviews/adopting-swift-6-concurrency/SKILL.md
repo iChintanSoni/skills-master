@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [swift-6-migration, swift-concurrency]
   sources:
     - https://developer.apple.com/documentation/swift/adoptingswift6
     - https://www.swift.org/migration/documentation/swift-6-concurrency-migration-guide/migrationstrategy/

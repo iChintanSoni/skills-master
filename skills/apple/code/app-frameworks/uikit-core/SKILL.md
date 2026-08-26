@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-ui-toolkit, uikit-swiftui-interop, uikit-auto-layout, uikit-collection-views]
   sources:
     - https://developer.apple.com/documentation/uikit/uiviewcontroller
     - https://developer.apple.com/documentation/uikit/uiwindowscene

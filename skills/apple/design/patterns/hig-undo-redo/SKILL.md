@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: [ios, ipados, macos, visionos]
-  pairs_with: []
+  pairs_with: [hig-gestures-design]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/undo-and-redo
     - https://developer.apple.com/design/human-interface-guidelines/inputs/touchscreen-gestures

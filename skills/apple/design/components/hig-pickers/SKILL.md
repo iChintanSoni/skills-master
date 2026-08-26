@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-forms-controls, hig-segmented-controls]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/pickers
   snapshot_date: "2026-05-30"

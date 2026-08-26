@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [build-sign-distribute, provisioning-code-signing]
   sources:
     - https://developer.apple.com/documentation/appstoreconnectapi/creating-api-keys-for-app-store-connect-api
     - https://developer.apple.com/documentation/xcode/xcode-cloud

@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [networking-layer, network-framework]
   sources:
     - https://developer.apple.com/documentation/technotes/tn3151-choosing-the-right-networking-api
     - https://developer.apple.com/documentation/foundation/urlsession

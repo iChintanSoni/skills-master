@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [info-plist-entitlements, provisioning-code-signing]
   sources:
     - https://developer.apple.com/documentation/xcode/adding-capabilities-to-your-app
     - https://developer.apple.com/help/account/reference/provisioning-with-managed-capabilities/

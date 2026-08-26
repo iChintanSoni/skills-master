@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [swift-testing, unit-testing-strategy, xctest-ui-automation, snapshot-testing]
   sources:
     - https://developer.apple.com/xcode/swift-testing/
     - https://developer.apple.com/documentation/testing/migratingfromxctest

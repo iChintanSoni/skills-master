@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [instruments-profiling]
   sources:
     - https://developer.apple.com/documentation/xcode/diagnosing-issues-using-crash-reports-and-device-logs
     - https://developer.apple.com/documentation/xcode/adding-identifiable-symbol-names-to-a-crash-report

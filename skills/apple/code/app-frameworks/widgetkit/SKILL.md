@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [hig-widgets-design, watchos-complications]
+  pairs_with: [hig-widgets-design, watchos-complications, adopting-app-intents, choosing-widget-tech]
   sources:
     - https://developer.apple.com/documentation/widgetkit
     - https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date

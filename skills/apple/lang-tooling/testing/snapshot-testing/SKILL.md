@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [choosing-testing-strategy]
   sources:
     - https://developer.apple.com/documentation/testing
     - https://developer.apple.com/documentation/testing/attachments

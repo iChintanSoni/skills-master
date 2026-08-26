@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [swiftui-documents]
+  pairs_with: [swiftui-documents, hig-multitasking, hig-designing-for-macos, app-lifecycle]
   sources:
     - https://developer.apple.com/documentation/swiftui/windowgroup
     - https://developer.apple.com/documentation/swiftui/windowresizability

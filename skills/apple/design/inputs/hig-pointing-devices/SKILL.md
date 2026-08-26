@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: inputs
   platforms: [ipados, macos]
-  pairs_with: []
+  pairs_with: [hig-designing-for-ipados]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/pointing-devices
   snapshot_date: "2026-05-30"

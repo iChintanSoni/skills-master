@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [swift-language-core]
   sources:
     - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/generics/
     - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/opaquetypes/

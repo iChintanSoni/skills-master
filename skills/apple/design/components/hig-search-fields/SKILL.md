@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [hig-searching]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/search-fields
     - https://developer.apple.com/design/human-interface-guidelines/searching

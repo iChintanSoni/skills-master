@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, macos, visionos]
-  pairs_with: []
+  pairs_with: [hig-menus]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/context-menus
     - https://developer.apple.com/design/human-interface-guidelines/edit-menus

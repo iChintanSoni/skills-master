@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "27"
     swift: "6.4"
-  pairs_with: [swiftui-navigation, hig-toolbars]
+  pairs_with: [swiftui-navigation, hig-toolbars, adopting-liquid-glass]
   sources:
     - https://developer.apple.com/documentation/swiftui/toolbars
     - https://developer.apple.com/documentation/swiftui/toolbaritemvisibilitypriority

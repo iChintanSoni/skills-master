@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [hig-context-menus, hig-designing-for-macos]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/menus-and-actions
     - https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons

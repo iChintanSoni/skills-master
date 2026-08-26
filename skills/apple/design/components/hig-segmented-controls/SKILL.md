@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, macos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [hig-pickers]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/segmented-controls
     - https://developer.apple.com/design/human-interface-guidelines/selection-and-input

@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: [dependency-injection]
+  pairs_with: [dependency-injection, swiftui-environment-preferences, swiftui-app-architecture]
   sources:
     - https://developer.apple.com/documentation/swiftui/environment
     - https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app

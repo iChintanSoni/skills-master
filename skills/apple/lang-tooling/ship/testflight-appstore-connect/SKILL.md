@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [choosing-distribution, app-store-connect-api, app-review-guidelines]
   sources:
     - https://developer.apple.com/help/app-store-connect/test-a-beta-version/testflight-overview/
     - https://developer.apple.com/help/app-store-connect/manage-builds/upload-builds/

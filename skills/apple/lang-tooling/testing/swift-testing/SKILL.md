@@ -13,7 +13,7 @@ x-skills-master:
   requires:
     swift: "6.0"
     xcode: "16"
-  pairs_with: []
+  pairs_with: [choosing-testing-strategy, testing-async-code]
   sources:
     - https://developer.apple.com/documentation/testing
     - https://developer.apple.com/documentation/testing/migratingfromxctest

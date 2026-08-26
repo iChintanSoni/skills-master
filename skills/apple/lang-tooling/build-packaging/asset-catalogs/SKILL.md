@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [hig-app-icons, hig-color]
   sources:
     - https://developer.apple.com/documentation/xcode/managing-assets-with-asset-catalogs
     - https://developer.apple.com/documentation/xcode/asset-management

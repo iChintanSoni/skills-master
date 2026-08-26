@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     visionos: "1"
     swift: "6.0"
-  pairs_with: [visionos-immersive-spaces, hig-designing-for-visionos]
+  pairs_with: [visionos-immersive-spaces, hig-designing-for-visionos, choosing-apple-platforms]
   sources:
     - https://developer.apple.com/documentation/visionos/positioning-and-sizing-windows
     - https://developer.apple.com/documentation/swiftui/windowstyle/volumetric

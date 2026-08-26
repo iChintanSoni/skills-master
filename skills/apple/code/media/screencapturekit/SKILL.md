@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     macos: "14"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [avfoundation-capture]
   sources:
     - https://developer.apple.com/documentation/screencapturekit/
     - https://developer.apple.com/documentation/screencapturekit/sccontentsharingpicker

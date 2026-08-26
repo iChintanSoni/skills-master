@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "16"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [swiftui-core]
   sources:
     - https://developer.apple.com/documentation/swiftui/layout
     - https://developer.apple.com/documentation/swiftui/composing-custom-layouts-with-swiftui

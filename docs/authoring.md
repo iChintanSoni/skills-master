@@ -66,8 +66,32 @@ The primary Documentation/HIG URLs should also appear in the `sources` frontmatt
 2. **Original, minimal code.** Write snippets from first principles to show an idiom. Use Apple samples only to verify currency.
 3. **Cite + snapshot.** Every skill carries `sources` and a `snapshot_date`. Bump `snapshot_date` (and a `version` patch) whenever you re-verify against changed docs.
 4. **Contested topics present tradeoffs.** For genuinely debated choices (MV vs MVVM, SwiftUI vs UIKit), set `stability: contested`, add a `## Open question` section, and do **not** prescribe a single answer. Route the decision through an `overviews/` skill.
-5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. Pairs link a `design` skill to its `code` counterpart.
+5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. See [What earns a pair](#what-earns-a-pair) for what belongs in the list.
 6. **L2/L3 split.** When the body grows past ~500 lines, move long examples → `examples.md`, step lists → `checklist.md`, and deep reference tables → `reference.md` (a defined slot no skill currently uses — prefer the first two unless a true lookup table outgrows them), and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
+
+## What earns a pair
+
+`pairs_with` is not a "related reading" list — it drives `skills-master add --with-pairs`,
+which installs a skill's partners alongside it. So the bar is: **someone who loaded A for a
+task will almost certainly need B for that same task.** Three shapes clear it:
+
+- **Design ↔ code twin.** The HIG or Material skill for a component and the skill that
+  implements it — `hig-sheets` ↔ `swiftui-sheets`, `hig-motion` ↔ `swiftui-animations-transitions`.
+- **Overview ↔ the implementations it routes to.** A `choosing-*` / `adopting-*` router pairs
+  with the two to four skills that are its actual destinations, not with everything it mentions.
+- **Tight couples.** Two skills that are half-answers apart — `cryptokit` ↔ `keychain-security`,
+  `swiftdata-modeling` ↔ `swiftdata-queries-migration`, `uikit-core` ↔ `uikit-swiftui-interop`.
+
+Keep the list to roughly **1–4 partners**; the linter warns past four. Hub skills
+(`swiftui-sheets`, `choosing-testing-strategy`) sit at the top of that range because several
+design skills legitimately point at them — that is the ceiling, not the target. A skill with no
+genuine partner keeps `pairs_with: []`; padding it costs the facet its meaning.
+
+Broader "you might also want to read" cross-references belong in `## See also`, which has no
+cap and no reciprocity requirement.
+
+Editing pairs is metadata-only: `x-skills-master` is stripped from every projection, so the
+emitted output is byte-identical and neither `version` nor `snapshot_date` should move.
 
 ## YAML hazard: `#` in scalars
 
