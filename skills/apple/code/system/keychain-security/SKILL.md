@@ -3,7 +3,7 @@ name: keychain-security
 description: "Stores credentials, tokens, and cryptographic keys securely using Keychain Services (SecItem APIs), accessibility levels, and SecAccessControl biometric/passcode gating. Use when persisting passwords, OAuth/session tokens, API keys, or private keys; when migrating secrets out of UserDefaults; or when sharing items across apps via keychain access groups."
 globs:
   - "**/*.swift"
-tags: [keychain, security, credentials, biometrics, secitem]
+tags: [biometrics]
 x-skills-master:
   domain: apple
   class: code

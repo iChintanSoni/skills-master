@@ -3,7 +3,7 @@ name: xctest-ui-automation
 description: "Drives end-to-end UI tests with XCUITest — launching XCUIApplication, querying elements, waiting on expectations, asserting state, and structuring page objects. Use when writing or stabilizing automated UI tests, fixing flaky element lookups, or wiring accessibility identifiers for reliable selectors."
 globs:
   - "**/*.swift"
-tags: [testing, xcuitest, ui-testing, accessibility, automation]
+tags: [ui-testing]
 x-skills-master:
   domain: apple
   class: lang-tooling

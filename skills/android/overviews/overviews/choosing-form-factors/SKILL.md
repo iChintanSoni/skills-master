@@ -1,7 +1,7 @@
 ---
 name: choosing-form-factors
 description: Decision router for targeting Android device form factors beyond the phone — large screens, foldables, Wear OS, TV, Automotive, ChromeOS, and XR. Use when planning which surfaces to support, estimating reach-versus-effort tradeoffs, applying the adaptive quality tiers, or sequencing multi-form-factor investment for a Kotlin/Compose app.
-tags: [adaptive, large-screen, foldable, wear-os, android-tv, form-factors]
+tags: [android-tv]
 x-skills-master:
   domain: android
   class: overview

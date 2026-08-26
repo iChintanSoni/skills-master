@@ -1,7 +1,7 @@
 ---
 name: m3-icon-buttons
 description: "Design guidance for Material 3 icon buttons — standard, filled, tonal, and outlined variants, toggleable states, sizing, and accessibility. Use when deciding which icon button variant fits a surface, whether an icon-only action is appropriate, and how to meet 48dp touch targets."
-tags: [m3, design, icon-button, android, components, accessibility]
+tags: []
 x-skills-master:
   domain: android
   class: design

@@ -3,7 +3,7 @@ name: swift-performance-memory
 description: "Guides Swift performance and memory work: value semantics and copy-on-write, ARC and reference cycles, weak/unowned capture lists, inout, the borrowing/consuming ownership keywords, and Span. Use when a profile shows retain/release or allocation hotspots, when designing hot-path data structures, when fixing leaks or retain cycles, or when reaching for unsafe pointers."
 globs:
   - "**/*.swift"
-tags: [swift, performance, memory, arc, ownership]
+tags: []
 x-skills-master:
   domain: apple
   class: lang-tooling

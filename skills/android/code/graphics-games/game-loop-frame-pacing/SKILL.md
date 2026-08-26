@@ -5,7 +5,7 @@ globs:
   - "**/*.kt"
   - "**/*.cpp"
   - "**/*.h"
-tags: [games, frame-pacing, choreographer, vsync, jank, surfaceview, android]
+tags: []
 x-skills-master:
   domain: android
   class: code

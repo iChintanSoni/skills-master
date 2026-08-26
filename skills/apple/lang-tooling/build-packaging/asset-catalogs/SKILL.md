@@ -1,7 +1,7 @@
 ---
 name: asset-catalogs
 description: "Organize images, colors, SF Symbols, and app icons in Xcode asset catalogs with appearance and device variants, and access them type-safely via generated ImageResource/ColorResource symbols. Use when adding image/color/symbol sets, configuring app icons, supporting dark/tinted appearances or per-device assets, replacing string-based asset lookups, or setting up On-Demand Resources."
-tags: [assets, xcode, sf-symbols, app-icon, resources]
+tags: []
 x-skills-master:
   domain: apple
   class: lang-tooling

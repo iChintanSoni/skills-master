@@ -3,7 +3,7 @@ name: watchos-app-structure
 description: "Builds the skeleton of a SwiftUI watchOS app — App and scene declaration, NavigationStack and NavigationSplitView on a tiny screen, vertical-page TabView, Digital Crown input, watch toolbars, safe-area and scene-padding layout, the frontmost/Always On lifecycle, background refresh tasks, and extended runtime sessions. Use when starting an Apple Watch app, porting an iPhone screen to the wrist, wiring digitalCrownRotation, laying out for multiple watch sizes, or deciding how the app keeps running after the wrist drops."
 globs:
   - "**/*.swift"
-tags: [watchos, swiftui, digital-crown, always-on, extended-runtime]
+tags: []
 x-skills-master:
   domain: apple
   class: code

@@ -1,7 +1,7 @@
 ---
 name: hig-widgets-design
 description: "Design-review guidance for widgets on Apple platforms per the Human Interface Guidelines. Use when designing, auditing, or critiquing Home Screen, Lock Screen, StandBy, Smart Stack, or desktop widgets, choosing what content is glanceable, supporting multiple sizes (small, medium, large, extra large), ensuring legibility in accented and tinted rendering with Liquid Glass, planning tap targets and deep links, or tuning personalization. Produces UX critique and recommendations grounded in the HIG, not code. Triggers: widget design review, glanceability, widget sizes, Lock Screen widget, StandBy, Smart Stack, accented/tinted widget, deep link vs interactive, widget legibility."
-tags: [widgets, hig, glanceable, standby, lock-screen, ux]
+tags: []
 x-skills-master:
   domain: apple
   class: design

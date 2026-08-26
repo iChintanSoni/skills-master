@@ -3,7 +3,7 @@ name: xr-arcore
 description: Covers ARCore perception for Jetpack XR — planes, anchors, hit testing, and hand tracking — plus the XR permission model and anchoring virtual Compose content to the real world. Use when building Android XR apps that need to detect real-world surfaces, place persistent virtual objects, or read hand-joint poses.
 globs:
   - "**/*.kt"
-tags: [xr, arcore, anchors, spatial-computing, hand-tracking]
+tags: [spatial-computing]
 x-skills-master:
   domain: android
   class: code

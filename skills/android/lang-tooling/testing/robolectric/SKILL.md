@@ -3,7 +3,7 @@ name: robolectric
 description: Covers running Android-framework tests on the JVM with Robolectric — shadows, SDK level configuration, and the tradeoffs vs instrumented tests. Use when writing fast local tests that exercise Android APIs (Context, View, Intent, ContentResolver, etc.) without a device or emulator.
 globs:
   - "**/*.kt"
-tags: [testing, robolectric, android, unit-tests, jvm]
+tags: [unit-tests]
 x-skills-master:
   domain: android
   class: lang-tooling

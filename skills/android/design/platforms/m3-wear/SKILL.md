@@ -1,7 +1,7 @@
 ---
 name: m3-wear
 description: "Design-critique guidance for Material 3 on Wear OS — glanceable round-screen layouts, M3 Expressive surface hierarchy, tile/app/notification surfaces, rotary and physical-button input, ambient mode, and battery-aware design. Use when designing or critiquing a Wear OS watch face, tile, app screen, or notification, evaluating glanceability and thumb-zone ergonomics, specifying rotary or crown input affordances, or auditing a design for ambient-mode and power constraints."
-tags: [m3, design, wear-os, glanceable, platforms]
+tags: []
 x-skills-master:
   domain: android
   class: design

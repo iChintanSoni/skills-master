@@ -3,7 +3,7 @@ name: wear-data-health
 description: Covers the Wearable Data Layer API (MessageClient, DataClient, CapabilityClient) for phone-watch communication and Health Services for low-power sensor and exercise tracking on Wear OS. Use when building Wear OS apps that need to sync data with a paired phone, exchange messages, or read real-time health and sensor data during workouts or ongoing activities.
 globs:
   - "**/*.kt"
-tags: [wear-os, data-layer, health-services, wearable, exercise]
+tags: []
 x-skills-master:
   domain: android
   class: code

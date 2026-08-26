@@ -2,6 +2,7 @@ import { CLASS_DIR, type Frontmatter } from "../schema/frontmatter";
 import type { SkillResources } from "../types";
 import { findSkillDirs, relPathOf } from "./discover";
 import { loadRawSkill, type RawSkill, validateFrontmatter } from "./parse";
+import { searchableText, searchNormalize } from "./search-text";
 
 export type DiagnosticLevel = "error" | "warn";
 
@@ -151,6 +152,22 @@ export function lintSkills(skillsRoot: string): LintResult {
     // sources cap (authoring.md: 1-3 canonical citation URLs)
     if (xm.sources.length > 3) {
       push("warn", `${xm.sources.length} sources — keep at most 3 canonical citation URLs`);
+    }
+
+    // Tags exist only to add search terms the skill is not already findable by.
+    // `search` matches on letters and digits alone, so a tag whose text is
+    // already in the name, description, or facets can never change a result.
+    const findable = searchableText({
+      name: fm.name,
+      description: fm.description,
+      domain: xm.domain,
+      category: xm.category,
+      class: xm.class,
+    });
+    for (const tag of fm.tags ?? []) {
+      if (findable.includes(searchNormalize(tag))) {
+        push("warn", `tag "${tag}" is already in the name or description — it adds no search term`);
+      }
     }
 
     // Level-3 resources must be linked from the body: condense flattens links

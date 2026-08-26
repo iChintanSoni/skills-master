@@ -3,7 +3,7 @@ name: compose-custom-layouts
 description: Covers designing custom layouts, subcomposition, and intrinsic measurements in Jetpack Compose. Use when building non-standard layout containers, custom flow layouts, or dynamic sizing components.
 globs:
   - "**/*.kt"
-tags: [compose, custom-layout, subcompose-layout, intrinsics, measure, layout]
+tags: [subcompose-layout, intrinsics]
 x-skills-master:
   domain: android
   class: code

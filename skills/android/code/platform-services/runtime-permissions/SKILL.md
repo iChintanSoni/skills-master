@@ -3,7 +3,7 @@ name: runtime-permissions
 description: Covers Android runtime permissions — requesting dangerous permissions with ActivityResult APIs and rememberLauncherForActivityResult, showing rationale, handling permanent denial, one-time and partial grants for location/media/notifications, and minimizing requests. Use when an Android app needs to request dangerous permissions, handle denial flows, or adapt behavior to partial grants such as approximate location or selected photos.
 globs:
   - "**/*.kt"
-tags: [permissions, android, jetpack-compose, activityresult, platform-services]
+tags: [jetpack-compose]
 x-skills-master:
   domain: android
   class: code

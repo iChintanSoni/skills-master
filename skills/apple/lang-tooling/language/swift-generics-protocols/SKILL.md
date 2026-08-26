@@ -3,7 +3,7 @@ name: swift-generics-protocols
 description: "Guidance for protocol-oriented and generic Swift, covering generic functions and types, associated types with where clauses, protocol composition, primary associated types, and choosing between opaque results (some) and existentials (any) by their performance and type-identity tradeoffs. Use when designing a protocol or generic API, deciding between some, any, or a generic parameter, constraining associated types, fixing protocol-as-type or associated-type errors, or replacing hand-written type erasure."
 globs:
   - "**/*.swift"
-tags: [swift, generics, protocols, opaque-types, existentials]
+tags: [opaque-types]
 x-skills-master:
   domain: apple
   class: lang-tooling

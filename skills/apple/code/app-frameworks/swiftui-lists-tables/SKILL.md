@@ -3,7 +3,7 @@ name: swiftui-lists-tables
 description: "Builds scrollable data UI with SwiftUI List and Table, including ForEach with stable identity, sections, selection, editing, swipe actions, pull-to-refresh, search, and multi-column tables. Use when displaying collections of rows, adding onDelete/onMove or swipeActions, wiring searchable or refreshable onto a list, or presenting tabular data with sortable columns on iPad and Mac."
 globs:
   - "**/*.swift"
-tags: [swiftui, list, table, collections, editing, search]
+tags: []
 x-skills-master:
   domain: apple
   class: code

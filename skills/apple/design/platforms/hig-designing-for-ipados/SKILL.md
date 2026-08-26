@@ -1,7 +1,7 @@
 ---
 name: hig-designing-for-ipados
 description: "Design guidance and critique for iPad apps under Apple's Human Interface Guidelines and the iPadOS 26 windowing model. Use when reviewing or designing iPad layouts, sidebars and multi-column navigation, pointer and keyboard support, drag and drop, or adapting an interface to resizable windows, Stage Manager, and the menu bar. Covers size classes, adaptive layout, Liquid Glass, scroll edge effects, and floating tab bars. Produces design recommendations and critique, not code."
-tags: [ipados, layout, navigation, multitasking, pointer]
+tags: [multitasking]
 x-skills-master:
   domain: apple
   class: design

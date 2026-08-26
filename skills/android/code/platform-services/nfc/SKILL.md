@@ -3,7 +3,7 @@ name: nfc
 description: Covers NFC tag reading and writing, NDEF data handling, the tag dispatch system, foreground dispatch, and Host Card Emulation (HCE) basics for Android apps. Use when building features that read or write NFC tags, emulate smart cards, or need to intercept NFC intents in the foreground.
 globs:
   - "**/*.kt"
-tags: [nfc, ndef, hce, connectivity, platform-services]
+tags: [connectivity]
 x-skills-master:
   domain: android
   class: code

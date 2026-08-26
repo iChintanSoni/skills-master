@@ -1,7 +1,7 @@
 ---
 name: m3-splash-screen
 description: "Design-critique guidance for Android splash screens under the Material 3 SplashScreen API: icon sizing, branding, background color, animated icon options, and avoiding legacy custom splash Activities. Use when reviewing or designing an Android app's launch experience; when deciding whether to add an animated icon; when choosing background color and icon treatment; when auditing for compliance with the system splash-screen contract; or when determining whether a splash screen adds value or just delays the user."
-tags: [m3, design, android, launch-screen]
+tags: [launch-screen]
 x-skills-master:
   domain: android
   class: design

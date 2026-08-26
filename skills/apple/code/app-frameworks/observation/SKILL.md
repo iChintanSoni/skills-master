@@ -3,7 +3,7 @@ name: observation
 description: Guidance on the Observation framework and the Observable macro for SwiftUI reference-type models, including fine-grained per-property view updates, ObservationIgnored, and migration away from ObservableObject. Use when defining a view model or shared model class, choosing between Observable and ObservableObject, deciding which view property wrapper to use, marking properties as non-tracked, or migrating existing Published code to the Observable macro.
 globs:
   - "**/*.swift"
-tags: [swiftui, observation, state, view-models, ios17]
+tags: [state, view-models, ios17]
 x-skills-master:
   domain: apple
   class: code

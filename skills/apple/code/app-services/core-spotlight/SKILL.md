@@ -3,7 +3,7 @@ name: core-spotlight
 description: "Use when making in-app content searchable from the system Spotlight index on iOS, iPadOS, and macOS. Triggers: indexing records with CSSearchableItem and CSSearchableItemAttributeSet, donating NSUserActivity for search and Handoff, deep-linking back from a Spotlight result, batch reindexing or deletion, or exposing App Intents entities to system search via IndexedEntity."
 globs:
   - "**/*.swift"
-tags: [spotlight, search, indexing, app-intents, deep-linking]
+tags: []
 x-skills-master:
   domain: apple
   class: code

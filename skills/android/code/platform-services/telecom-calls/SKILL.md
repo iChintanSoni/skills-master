@@ -3,7 +3,7 @@ name: telecom-calls
 description: Building a calling app with Jetpack Telecom (CallsManager) and self-managed ConnectionService — covers call registration, audio routing, call state management, and system dialer integration. Use when implementing VoIP, SIP, or any in-app calling feature that must coexist correctly with the Android telecom stack.
 globs:
   - "**/*.kt"
-tags: [telecom, voip, calls, audio-routing, connectionservice]
+tags: []
 x-skills-master:
   domain: android
   class: code

@@ -1,7 +1,7 @@
 ---
 name: hig-motion
 description: "Design critique for motion and animation in Apple apps, grounded in the Human Interface Guidelines. Use when reviewing transitions, animated feedback, navigation/scroll motion, parallax, or Liquid Glass effects, or when a design feels gratuitous, disorienting, or fails Reduce Motion. Produces UX/design guidance on purposeful motion, continuity, hierarchy, and accessibility-safe animation, not code."
-tags: [motion, animation, accessibility, liquid-glass, transitions, hig]
+tags: []
 x-skills-master:
   domain: apple
   class: design

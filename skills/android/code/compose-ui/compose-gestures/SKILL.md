@@ -3,7 +3,7 @@ name: compose-gestures
 description: Covers touch interaction processing, drag/tap gesture detection, multitouch zoom/pan configurations, and custom pointer inputs in Jetpack Compose. Use when adding custom drag mechanics, complex swipe actions, or raw touch responders.
 globs:
   - "**/*.kt"
-tags: [compose, gestures, touch, pointer-input, drag, pinch-zoom, draggable]
+tags: [pinch-zoom, draggable]
 x-skills-master:
   domain: android
   class: code

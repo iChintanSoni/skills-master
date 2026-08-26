@@ -1,7 +1,7 @@
 ---
 name: choosing-android-distribution
 description: Use when deciding how to distribute an Android app — Google Play vs alternative stores vs enterprise/direct sideload — and which delivery format (AAB vs APK), track strategy, and update mechanism to adopt.
-tags: [distribution, google-play, app-bundle, enterprise]
+tags: [app-bundle]
 x-skills-master:
   domain: android
   class: overview

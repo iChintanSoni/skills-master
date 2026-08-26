@@ -3,7 +3,7 @@ name: uwb-ranging
 description: Covers the Jetpack UWB API for centimeter-accurate ranging and direction-finding between Android devices — controller/controlee roles, RangingParameters, RangingResult, session lifecycle, permissions, and hardware availability. Use when building features like spatial device-finding, proximity-gated access, or precise peer-to-peer handoff on UWB-capable hardware.
 globs:
   - "**/*.kt"
-tags: [uwb, ranging, connectivity, bluetooth, proximity]
+tags: [connectivity, bluetooth]
 x-skills-master:
   domain: android
   class: code

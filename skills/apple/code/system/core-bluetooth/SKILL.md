@@ -3,7 +3,7 @@ name: core-bluetooth
 description: "Guidance for Bluetooth Low Energy with Core Bluetooth: CBCentralManager scanning and connecting, service/characteristic discovery, read/write/notify, the CBPeripheralManager peripheral role, and background state restoration. Use when scanning for or connecting to BLE devices, building a GATT peripheral, streaming notifications, running Bluetooth in the background, or fixing missing Bluetooth permission prompts."
 globs:
   - "**/*.swift"
-tags: [corebluetooth, ble, bluetooth, peripheral, background]
+tags: []
 x-skills-master:
   domain: apple
   class: code

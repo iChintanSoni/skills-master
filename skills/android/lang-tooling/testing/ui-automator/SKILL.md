@@ -3,7 +3,7 @@ name: ui-automator
 description: Covers UI Automator for cross-app and system UI instrumented tests on Android — UiDevice setup, element selectors, cross-process interactions, and combining UI Automator with Espresso or Compose test rules for end-to-end flows. Use when writing instrumented tests that must interact with system dialogs, other apps, or the notification shade.
 globs:
   - "**/*.kt"
-tags: [android, testing, ui-automator, instrumented-tests, end-to-end]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

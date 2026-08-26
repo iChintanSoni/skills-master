@@ -3,7 +3,7 @@ name: compose-text-fields
 description: Covers TextField, OutlinedTextField, and the state-based BasicTextField with TextFieldState for user text input in Jetpack Compose. Use when building any screen that accepts typed user input, including search bars, forms, login fields, or any editable text surface.
 globs:
   - "**/*.kt"
-tags: [compose, text-input, forms, material3, keyboard]
+tags: [material3, keyboard]
 x-skills-master:
   domain: android
   class: code

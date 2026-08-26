@@ -3,7 +3,7 @@ name: android-manifest
 description: Covers the structure, components, intent filters, deep links, permissions, and security configurations in the AndroidManifest.xml file. Use when configuring app declarations, declaring intents, setting permissions, or auditing security properties.
 globs:
   - "**/AndroidManifest.xml"
-tags: [manifest, security, deep-links, components, configuration, android]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

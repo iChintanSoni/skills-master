@@ -1,7 +1,7 @@
 ---
 name: hig-ratings-reviews
 description: "Design-critique guidance for Apple Human Interface Guidelines ratings and reviews, covering when to request a rating at a natural moment of satisfaction, using the system in-app prompt within its limited budget, never blocking the app or bribing for reviews, and responding to feedback gracefully. Use when designing or reviewing a rating-request flow, deciding the trigger moment for the system prompt, auditing whether an app gates content behind a review, evaluating a custom rating UI, or planning how to respond to App Store reviews on iOS, iPadOS, macOS, or tvOS. Produces UX recommendations, not code."
-tags: [ratings, reviews, hig, app-store, design]
+tags: []
 x-skills-master:
   domain: apple
   class: design

@@ -3,7 +3,7 @@ name: cloudkit
 description: "Use when storing app data in iCloud with CloudKit: CKContainer and private/public/shared CKDatabase, CKRecord and CKReference, async saving and querying, record zones, push subscriptions, CKShare sharing, and offline-first sync with CKSyncEngine, including account checks and conflict handling."
 globs:
   - "**/*.swift"
-tags: [cloudkit, icloud, sync, sharing, push]
+tags: []
 x-skills-master:
   domain: apple
   class: code

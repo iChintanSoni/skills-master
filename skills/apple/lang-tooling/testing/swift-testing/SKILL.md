@@ -4,7 +4,7 @@ description: Writes tests with the Swift Testing framework — @Test functions, 
 globs:
   - "**/*Tests.swift"
   - "**/*Test.swift"
-tags: [testing, swift-testing, xctest, unit-tests]
+tags: [unit-tests]
 x-skills-master:
   domain: apple
   class: lang-tooling

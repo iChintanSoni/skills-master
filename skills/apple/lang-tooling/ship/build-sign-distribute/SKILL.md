@@ -1,7 +1,7 @@
 ---
 name: build-sign-distribute
 description: Best practices for building, code signing, and distributing Apple apps across the App Store, TestFlight, and Developer ID channels, covering signing identities, provisioning profiles, automatic versus manual signing, archiving and exporting, App Store Connect uploads, and Mac notarization. Use when preparing a release build, setting up signing on continuous integration, archiving and exporting an app, distributing a beta through TestFlight, notarizing a Mac app outside the App Store, or debugging certificate and provisioning failures.
-tags: [signing, distribution, testflight, notarization, ci]
+tags: [distribution, ci]
 x-skills-master:
   domain: apple
   class: lang-tooling

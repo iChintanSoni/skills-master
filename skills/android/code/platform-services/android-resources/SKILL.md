@@ -3,7 +3,7 @@ name: android-resources
 description: Covers organizing project resources, configuration qualifiers, alternative resources selection, and resource compilation in Android projects. Use when organizing layouts, drawables, localized assets, values, or managing resource conflicts.
 globs:
   - "**/src/main/res/**/*"
-tags: [resources, configurations, localization, drawables, layouts, android]
+tags: [configurations, localization]
 x-skills-master:
   domain: android
   class: code

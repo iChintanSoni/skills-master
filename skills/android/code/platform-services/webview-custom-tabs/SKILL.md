@@ -3,7 +3,7 @@ name: webview-custom-tabs
 description: Covers embedding web content in Android apps via WebView, Custom Tabs, and Trusted Web Activities — use when deciding how to display URLs, integrate a JavaScript bridge, or wrap a PWA in a native shell.
 globs:
   - "**/*.kt"
-tags: [webview, custom-tabs, twa, web-content, android]
+tags: [twa]
 x-skills-master:
   domain: android
   class: code

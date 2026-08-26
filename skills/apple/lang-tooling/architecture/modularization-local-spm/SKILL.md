@@ -3,7 +3,7 @@ name: modularization-local-spm
 description: "Guides modularizing an app into local Swift packages with clean public interfaces, inward-flowing dependencies, faster builds, and a thin app target. Use when extracting feature or core modules, designing module boundaries, speeding up build and test cycles, or deciding how far to split a monolithic app."
 globs:
   - "**/*.swift"
-tags: [spm, modularization, architecture, build-times, swift6]
+tags: [build-times, swift6]
 x-skills-master:
   domain: apple
   class: lang-tooling

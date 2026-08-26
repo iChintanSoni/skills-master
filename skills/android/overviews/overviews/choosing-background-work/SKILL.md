@@ -1,7 +1,7 @@
 ---
 name: choosing-background-work
 description: Decision router for Android background work strategies in 2026. Use when choosing between WorkManager, foreground services, AlarmManager, and in-process coroutines for a task based on persistence requirements, timing precision, and user visibility.
-tags: [workmanager, background, coroutines, foreground-service, alarmmanager]
+tags: []
 x-skills-master:
   domain: android
   class: overview

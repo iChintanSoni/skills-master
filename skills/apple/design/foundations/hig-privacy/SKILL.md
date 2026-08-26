@@ -1,7 +1,7 @@
 ---
 name: hig-privacy
 description: "Design guidance and UX critique for privacy-respecting Apple apps, grounded in the Human Interface Guidelines. Use when reviewing or designing permission flows, just-in-time prompts, purpose strings, data-minimization decisions, App Store privacy nutrition labels, transparency about data use, or Sign in with Apple. Covers when and how to request access in context, how to justify it, and how to avoid surprising or coercing people. Produces design recommendations, not code."
-tags: [privacy, permissions, hig, foundations, trust]
+tags: [permissions, trust]
 x-skills-master:
   domain: apple
   class: design

@@ -3,7 +3,7 @@ name: swiftui-text-input
 description: "Guidance for building SwiftUI text entry with TextField, TextEditor, and SecureField. Use when accepting names, emails, passwords, numbers, dates, or multiline notes; when adding format/parse value binding, validation, focus management, keyboard and content types, submit handling, or text selection. Triggers include keyboardType, textContentType, FocusState, submitLabel, onSubmit, axis vertical, and TextSelection."
 globs:
   - "**/*.swift"
-tags: [swiftui, textfield, forms, keyboard, focus]
+tags: [forms]
 x-skills-master:
   domain: apple
   class: code

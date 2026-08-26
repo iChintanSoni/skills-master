@@ -3,7 +3,7 @@ name: natural-language
 description: "Use when analyzing or understanding text on-device with Apple's Natural Language framework: tokenizing, lemmatizing, tagging parts of speech, recognizing named entities, identifying language, computing word/sentence embeddings and similarity, running custom Create ML classifiers, or scoring sentiment, all without a network call."
 globs:
   - "**/*.swift"
-tags: [naturallanguage, nlp, nltagger, embeddings, sentiment]
+tags: [nlp, nltagger]
 x-skills-master:
   domain: apple
   class: code

@@ -1,7 +1,7 @@
 ---
 name: adopting-kmp
 description: Decision router for adopting Kotlin Multiplatform (KMP) to share code between Android and iOS — covering what to share vs keep native, an incremental rollout path, and team/tooling considerations. Use when evaluating whether KMP is right for a project, deciding which code layers to share first, planning an incremental rollout from a single shared module, or assessing team readiness and CI impact.
-tags: [kmp, kotlin-multiplatform, android, ios, architecture]
+tags: [architecture]
 x-skills-master:
   domain: android
   class: overview

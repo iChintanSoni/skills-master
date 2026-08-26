@@ -1,7 +1,7 @@
 ---
 name: hig-designing-for-macos
 description: "Design-critique guidance for making an app feel native to macOS under Apple's Human Interface Guidelines, covering the menu bar and full menu commands, resizable multi-window apps, pointer precision and hover, toolbars and sidebars, keyboard shortcuts, and Mac conventions in the macOS 26 Liquid Glass era. Use when reviewing or specifying a Mac app's window model, judging whether menus and shortcuts match Mac expectations, evaluating toolbar and sidebar structure, critiquing pointer and hover behavior, or deciding how a cross-platform design should adapt to the Mac. Produces design recommendations and critique, not code."
-tags: [macos, hig, windows, menus, toolbars]
+tags: [windows]
 x-skills-master:
   domain: apple
   class: design

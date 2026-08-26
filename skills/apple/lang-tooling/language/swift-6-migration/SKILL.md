@@ -3,7 +3,7 @@ name: swift-6-migration
 description: "Guides migrating a codebase to the Swift 6 language mode: enabling it per target, resolving strict data-race checking, making types Sendable, applying actor and @MainActor isolation, and fixing global state. Use when turning on complete concurrency checking, adopting Swift 6 mode, fixing Sendable or actor-isolation compiler errors, or planning an incremental module-by-module migration."
 globs:
   - "**/*.swift"
-tags: [swift6, concurrency, sendable, actors, migration]
+tags: [actors]
 x-skills-master:
   domain: apple
   class: lang-tooling

@@ -3,7 +3,7 @@ name: window-manager-foldables
 description: Covers Jetpack WindowManager for foldable and dual-screen Android devices — WindowInfoTracker, FoldingFeature, detecting tabletop and book postures, reading hinge bounds and occlusion type, and adapting Compose layouts to avoid or span the fold. Use when building layouts that respond to device fold state, avoiding content under the hinge, splitting UI across panels, or implementing posture-aware interactions on foldable hardware.
 globs:
   - "**/*.kt"
-tags: [foldables, window-manager, adaptive-layout, compose, large-screen]
+tags: [adaptive-layout, large-screen]
 x-skills-master:
   domain: android
   class: code

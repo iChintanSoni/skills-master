@@ -1,7 +1,7 @@
 ---
 name: hig-materials-liquid-glass
 description: Design-critique guidance for Apple's system materials, vibrancy, and the Liquid Glass design language across iOS, iPadOS, macOS, and visionOS. Use when reviewing or designing translucent surfaces, navigation bars, toolbars, sheets, sidebars, or floating controls; when deciding whether a surface should be glass or opaque; when judging legibility and contrast over busy or changing backgrounds; when tinting glass controls; or when adapting a refreshed interface to light and dark appearances for the 26 release cycle.
-tags: [design, hig, materials, liquid-glass, accessibility]
+tags: [accessibility]
 x-skills-master:
   domain: apple
   class: design

@@ -3,7 +3,7 @@ name: haptics-vibration
 description: Covers Android haptic feedback via VibratorManager and VibrationEffect — Use when adding tactile reinforcement to UI interactions, custom vibration patterns, or Compose haptic feedback in Android apps.
 globs:
   - "**/*.kt"
-tags: [haptics, vibration, ux, platform-services, compose]
+tags: [ux]
 x-skills-master:
   domain: android
   class: code

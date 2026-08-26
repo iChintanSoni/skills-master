@@ -1,7 +1,7 @@
 ---
 name: m3-widgets
 description: "Material 3 design guidance for Android app widgets, covering canonical layout tiers, responsive grid sizing, dynamic color and theming, picker preview content, refresh cadence decisions, and quality bar for production. Use when designing, critiquing, or specifying an Android home-screen or lock-screen widget — evaluating whether it scales gracefully across widget sizes, whether its theming respects user dynamic color, whether preview content sets realistic expectations in the picker, or whether its update cadence is appropriate for its information type."
-tags: [m3, design, widgets, android, home-screen, adaptive]
+tags: [adaptive]
 x-skills-master:
   domain: android
   class: design

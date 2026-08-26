@@ -4,7 +4,7 @@ description: Covers launcher shortcuts (static, dynamic, pinned) and Google Assi
 globs:
   - "**/*.kt"
   - "**/shortcuts.xml"
-tags: [shortcuts, app-actions, assistant, launcher, android]
+tags: []
 x-skills-master:
   domain: android
   class: code

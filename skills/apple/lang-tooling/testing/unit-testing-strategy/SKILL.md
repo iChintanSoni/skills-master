@@ -3,7 +3,7 @@ name: unit-testing-strategy
 description: "Guides what to test and how to design Swift code for testability — the test pyramid, isolating logic from UI and I/O via injection and pure functions, test doubles (fakes, stubs, spies), clear naming, and treating coverage as a signal not a target. Use when deciding what is worth testing, structuring a test suite, refactoring untestable code, or reviewing test quality."
 globs:
   - "**/*.swift"
-tags: [testing, strategy, testability, test-doubles, coverage]
+tags: []
 x-skills-master:
   domain: apple
   class: lang-tooling

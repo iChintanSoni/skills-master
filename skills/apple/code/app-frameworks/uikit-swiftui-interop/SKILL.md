@@ -3,7 +3,7 @@ name: uikit-swiftui-interop
 description: "Bridges UIKit and SwiftUI in both directions using representables, UIHostingController, and UIHostingConfiguration. Use when embedding a UIView or UIViewController in SwiftUI, hosting SwiftUI inside UIKit cells or controllers, wiring a Coordinator, or passing bindings across the boundary."
 globs:
   - "**/*.swift"
-tags: [uikit, swiftui, interop, representable, hosting]
+tags: []
 x-skills-master:
   domain: apple
   class: code

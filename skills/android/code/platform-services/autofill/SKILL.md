@@ -3,7 +3,7 @@ name: autofill
 description: Guides Android developers on optimizing app fields for the Autofill framework using autofill hints and proper view structure. Use when implementing login forms, address inputs, or payment fields to ensure compatibility with password managers and the system autofill service, or when building a custom autofill service.
 globs:
   - "**/*.kt"
-tags: [autofill, forms, security, ux, accessibility]
+tags: [security, ux, accessibility]
 x-skills-master:
   domain: android
   class: code

@@ -1,7 +1,7 @@
 ---
 name: adopting-m3-expressive
 description: Decision and adoption guide for Material 3 Expressive in Jetpack Compose — covering spring motion, shape morphing, emphasized typography, and new components. Use when evaluating whether to adopt M3 Expressive, deciding which surfaces benefit from expressive treatment, or planning an incremental opt-in strategy while maintaining accessibility and performance.
-tags: [material3, motion, shape, compose, design-system]
+tags: [design-system]
 x-skills-master:
   domain: android
   class: overview

@@ -1,7 +1,7 @@
 ---
 name: crash-anr-vitals
 description: Covers diagnosing crashes and ANRs on Android — reading stack traces and traces, applying the main-thread responsibility rule, identifying common ANR causes, and monitoring Android vitals in Play Console. Use when investigating stability regressions, integrating a crash reporter, or reducing crash/ANR rates to meet Play Store thresholds.
-tags: [android, stability, crash, anr, vitals]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

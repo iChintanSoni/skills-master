@@ -1,7 +1,7 @@
 ---
 name: hig-text-fields
 description: "Design-critique guidance for Apple Human Interface Guidelines on text fields across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS, covering clear labels and purposeful placeholders, matching the keyboard and content type to the field, inline validation and error presentation, clear buttons, secure entry for sensitive data, and minimizing required input. Use when critiquing or specifying a single-line text input, sign-in or password field, search box, address or payment row, or any form field, judging label and placeholder wording, keyboard and AutoFill choices, or how errors and required fields are shown. Produces UX critique and recommendations, not code."
-tags: [hig, text-fields, forms, autofill, validation, design]
+tags: [forms]
 x-skills-master:
   domain: apple
   class: design

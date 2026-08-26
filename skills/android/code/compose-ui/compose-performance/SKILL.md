@@ -3,7 +3,7 @@ name: compose-performance
 description: Covers Jetpack Compose performance — stability contracts, @Stable and @Immutable annotations, strong skipping mode, deferring state reads to layout/draw phases, remember for expensive work, stable keys in lazy lists, avoiding backwards writes, and diagnosing over-recomposition with Layout Inspector and compiler metrics. Use when profiling UI jank, cutting unnecessary recompositions, annotating model classes, or setting up baseline profiles.
 globs:
   - "**/*.kt"
-tags: [compose, performance, recomposition, stability, jetpack-compose]
+tags: []
 x-skills-master:
   domain: android
   class: code

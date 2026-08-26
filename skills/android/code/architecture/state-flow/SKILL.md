@@ -3,7 +3,7 @@ name: state-flow
 description: Covers exposing observable UI state from a ViewModel using StateFlow and SharedFlow — MutableStateFlow with immutable backing, stateIn with WhileSubscribed, collecting with collectAsStateWithLifecycle, the single UiState pattern, and modeling one-off events. Use when designing the state contract between a ViewModel and a Compose screen, choosing between StateFlow, SharedFlow, and LiveData, or wiring lifecycle-aware collection to avoid leaking background work.
 globs:
   - "**/*.kt"
-tags: [architecture, stateflow, viewmodel, coroutines, compose]
+tags: [coroutines]
 x-skills-master:
   domain: android
   class: code

@@ -3,7 +3,7 @@ name: swiftui-images-symbols
 description: "Guidance for displaying images and SF Symbols in SwiftUI: sizing with resizable and scaledToFit, choosing a symbol rendering mode (monochrome, hierarchical, palette, multicolor), animating with symbolEffect, loading remote images with AsyncImage, and labeling images for VoiceOver. Use when adding photos, icons, glyphs, remote thumbnails, or animated symbols to a SwiftUI view, or when fixing image scaling, blurry assets, or missing accessibility labels."
 globs:
   - "**/*.swift"
-tags: [swiftui, images, sf-symbols, asyncimage, accessibility]
+tags: []
 x-skills-master:
   domain: apple
   class: code

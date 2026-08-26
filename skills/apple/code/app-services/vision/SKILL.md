@@ -3,7 +3,7 @@ name: vision
 description: "Use when extracting text, detecting faces or barcodes, classifying images, or running a Core ML vision model on still images with Apple's Vision framework. Triggers: OCR, RecognizeTextRequest, DetectFaceRectanglesRequest, ClassifyImageRequest, DetectBarcodesRequest, CoreMLRequest, bounding-box overlays, or migrating off VNImageRequestHandler."
 globs:
   - "**/*.swift"
-tags: [vision, ocr, coreml, image-analysis, swift-concurrency]
+tags: [image-analysis, swift-concurrency]
 x-skills-master:
   domain: apple
   class: code

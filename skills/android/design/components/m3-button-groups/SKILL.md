@@ -1,7 +1,7 @@
 ---
 name: m3-button-groups
 description: "Design guidance and critique for Material 3 Expressive button groups on Android: choosing connected vs standard groups, orchestrating coordinated interactions and shape morphing, sizing and target rules, and knowing when to group related actions into a single expressive unit instead of placing buttons separately. Use when designing or reviewing toolbars, segmented action sets, filter bars, media controls, or any screen where two or more related actions belong side by side in a cohesive visual cluster."
-tags: [m3, design, button-groups, expressive, actions, components]
+tags: []
 x-skills-master:
   domain: android
   class: design

@@ -3,7 +3,7 @@ name: app-lifecycle
 description: "Guides the SwiftUI App/Scene lifecycle: @main entry, scenePhase transitions, delegate adaptors, launch sequence, and state restoration. Use when structuring an app's entry point, reacting to active/inactive/background changes, deciding whether you still need a UIApplicationDelegate or NSApplicationDelegate, or restoring per-scene UI state."
 globs:
   - "**/*.swift"
-tags: [swiftui, lifecycle, scenephase, appdelegate, state-restoration]
+tags: [appdelegate]
 x-skills-master:
   domain: apple
   class: lang-tooling

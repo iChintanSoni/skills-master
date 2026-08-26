@@ -3,7 +3,7 @@ name: watchos-connectivity
 description: "Moves data between an iPhone app and its paired watchOS app with WatchConnectivity — WCSession activation and reachability, and choosing between application context, user info, file transfer, and live messages. Use when syncing state to or from Apple Watch, debugging a WCSession that never activates or is never reachable, handling background watch-connectivity wakes, or deciding whether an independent watch app should sync via CloudKit or your own server instead."
 globs:
   - "**/*.swift"
-tags: [watchos, watchconnectivity, wcsession, sync, ios]
+tags: [ios]
 x-skills-master:
   domain: apple
   class: code

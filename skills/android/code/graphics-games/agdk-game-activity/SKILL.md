@@ -5,7 +5,7 @@ globs:
   - "**/*.kt"
   - "**/*.cpp"
   - "**/*.h"
-tags: [agdk, game-activity, ndk, native, games, cpp]
+tags: [ndk, cpp]
 x-skills-master:
   domain: android
   class: code

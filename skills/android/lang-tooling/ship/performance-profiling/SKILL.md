@@ -1,7 +1,7 @@
 ---
 name: performance-profiling
 description: Covers profiling and performance analysis on Android — Android Studio Profiler (CPU, memory, energy, network), system tracing with Perfetto, diagnosing jank and slow startup, and a repeatable workflow for finding and fixing hotspots. Use when investigating frame drops, slow app startup, memory growth, excessive battery drain, or unexplained ANRs in an Android Kotlin app.
-tags: [android, performance, profiling, jank, startup, tracing]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

@@ -4,7 +4,7 @@ description: Covers traditional View-based XML layouts, custom View drawing, lif
 globs:
   - "**/*.kt"
   - "**/layout/*.xml"
-tags: [views, xml, compose, interop, custom-view, canvas, android]
+tags: []
 x-skills-master:
   domain: android
   class: code

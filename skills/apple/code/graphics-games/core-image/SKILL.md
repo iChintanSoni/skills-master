@@ -3,7 +3,7 @@ name: core-image
 description: "Guidance for processing images with Core Image: building lazy CIImage filter graphs, applying typed CIFilter.* effects, rendering with a Metal-backed CIContext, and bridging to CGImage, UIImage, and SwiftUI. Use when applying photo or video filters, chaining effects, writing custom kernels, or rendering CIImage output to the screen."
 globs:
   - "**/*.swift"
-tags: [coreimage, graphics, metal, filters, swiftui]
+tags: []
 x-skills-master:
   domain: apple
   class: code

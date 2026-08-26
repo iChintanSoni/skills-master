@@ -1,7 +1,7 @@
 ---
 name: hig-dark-mode
 description: "Design guidance and critique for supporting Light and Dark appearances on Apple platforms per the Human Interface Guidelines. Use when reviewing or designing an interface that must adapt across appearances, choosing semantic colors and adaptive materials, planning per-appearance assets and elevation, or fixing contrast and pure-black issues. Triggers: dark mode, light/dark, appearance, semantic colors, dynamic colors, adaptive materials, elevation, vibrancy, per-appearance assets, contrast audit."
-tags: [dark-mode, appearance, color, materials, contrast]
+tags: []
 x-skills-master:
   domain: apple
   class: design

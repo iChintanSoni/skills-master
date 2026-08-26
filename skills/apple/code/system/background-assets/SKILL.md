@@ -3,7 +3,7 @@ name: background-assets
 description: "Guidance on the Background Assets framework for shipping large app content outside the binary: managed asset packs via the AssetPackManager actor, essential/prefetch/on-demand download policies, Apple-hosted asset packs up to 200 GB through App Store Connect, self-hosted managed packs, the legacy BADownloaderExtension path, localized packs, and StoreKit-gated unlock of purchasable content. Use when slimming an app or game binary, downloading level packs or media before first launch or on demand, adopting Apple hosting, delivering per-language assets, or gating premium asset packs behind an in-app purchase."
 globs:
   - "**/*.swift"
-tags: [backgroundassets, asset-packs, downloads, app-size, storekit, ios26]
+tags: [downloads, app-size, ios26]
 x-skills-master:
   domain: apple
   class: code

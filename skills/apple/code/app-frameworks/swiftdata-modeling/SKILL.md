@@ -3,7 +3,7 @@ name: swiftdata-modeling
 description: Designs SwiftData models with @Model, relationships, delete rules, and uniqueness for Apple-platform persistence. Use when modeling persistent data, choosing relationship or delete rules, adding @Attribute(.unique), setting up a ModelContainer, or deciding how to shape a SwiftData schema.
 globs:
   - "**/*.swift"
-tags: [swiftdata, persistence, model, schema, database]
+tags: [database]
 x-skills-master:
   domain: apple
   class: code

@@ -3,7 +3,7 @@ name: sign-in-with-apple
 description: "Implements Sign in with Apple using AuthenticationServices: the SwiftUI SignInWithAppleButton, ASAuthorizationAppleIDProvider requests, credential and identity-token handling, server-side token verification, and Sign in with Apple JS on the web. Use when adding Apple authentication, requesting name/email scope, validating identity tokens on a backend, handling the private relay email, or responding to account revocation and deletion."
 globs:
   - "**/*.swift"
-tags: [authentication, signinwithapple, authenticationservices, privacy, oauth]
+tags: [privacy, oauth]
 x-skills-master:
   domain: apple
   class: code

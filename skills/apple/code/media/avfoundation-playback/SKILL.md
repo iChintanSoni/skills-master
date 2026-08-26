@@ -3,7 +3,7 @@ name: avfoundation-playback
 description: "Guides media playback with AVPlayer/AVPlayerItem, SwiftUI VideoPlayer and AVKit AVPlayerViewController, audio session setup, and Now Playing integration. Use when playing audio or video, observing player status/time, enabling background audio, or wiring lock-screen and remote controls on Apple platforms."
 globs:
   - "**/*.swift"
-tags: [avfoundation, avkit, media, playback, audio, video]
+tags: []
 x-skills-master:
   domain: apple
   class: code

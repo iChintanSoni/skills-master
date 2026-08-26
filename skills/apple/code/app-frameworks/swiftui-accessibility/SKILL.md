@@ -3,7 +3,7 @@ name: swiftui-accessibility
 description: "Covers SwiftUI accessibility modifiers in code: labels, values, hints, traits, grouping with accessibilityElement(children:), hiding, custom actions, sort priority, and Dynamic Type. Use when adding or auditing VoiceOver/assistive-technology support, fixing mis-read controls, grouping or hiding elements, exposing custom actions, or making text and metrics scale."
 globs:
   - "**/*.swift"
-tags: [swiftui, accessibility, voiceover, dynamic-type, a11y]
+tags: [a11y]
 x-skills-master:
   domain: apple
   class: code

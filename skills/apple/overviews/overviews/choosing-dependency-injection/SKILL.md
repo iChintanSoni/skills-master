@@ -1,7 +1,7 @@
 ---
 name: choosing-dependency-injection
 description: "Decision router for wiring dependencies in a Swift app — initializer injection, the SwiftUI Environment, Observable model ownership, closure and protocol seams for testability, and whether a third-party container is warranted at all. Use when deciding how a new app or module supplies its collaborators, when a team asks which DI framework to adopt, when singletons have made code untestable, or when weighing a container against explicit wiring."
-tags: [dependency-injection, architecture, swiftui, environment, testing, decision]
+tags: [architecture, testing]
 x-skills-master:
   domain: apple
   class: overview

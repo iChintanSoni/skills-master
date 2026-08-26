@@ -1,7 +1,7 @@
 ---
 name: choosing-distribution
 description: "Decision guide for picking an Apple app distribution channel — App Store, TestFlight, Ad Hoc, Custom/Unlisted apps, the Enterprise Program, and notarized Developer ID for Mac. Use when shipping a build to users, choosing a delivery channel, planning beta testing, deciding between public and private release, or distributing a Mac app outside the Mac App Store."
-tags: [distribution, app-store, testflight, notarization, enterprise]
+tags: [notarization]
 x-skills-master:
   domain: apple
   class: overview

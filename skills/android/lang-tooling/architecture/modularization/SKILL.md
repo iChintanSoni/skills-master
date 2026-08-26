@@ -3,7 +3,7 @@ name: modularization
 description: Guides splitting an Android app into :app, :feature, and :core Gradle modules with clean dependency boundaries, cycle-free graphs, and shared convention plugins. Use when extracting features into dedicated modules, designing api vs implementation dependency scopes, speeding up build and test cycles, or reducing coupling in a growing monolithic app.
 globs:
   - "**/*.kt"
-tags: [modularization, architecture, gradle, build-speed, android]
+tags: [build-speed]
 x-skills-master:
   domain: android
   class: lang-tooling

@@ -3,7 +3,7 @@ name: compose-ui-testing
 description: Covers Jetpack Compose UI testing — createComposeRule, createAndroidComposeRule, semantic finders and matchers, assertions and actions, synchronization and idling, testTag, and screenshot/state testing. Use when writing instrumented or local Compose UI tests, verifying composable behavior through semantics, or diagnosing test flakiness caused by synchronization gaps.
 globs:
   - "**/*.kt"
-tags: [compose, testing, ui-testing, android, instrumented]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

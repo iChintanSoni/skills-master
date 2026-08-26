@@ -3,7 +3,7 @@ name: compose-accessibility
 description: Covers Compose accessibility APIs — semantics modifier, contentDescription, mergeDescendants, stateDescription, Role, heading, custom actions, traversal order, touch-target sizing, and testTag. Use when building or auditing Compose UIs for TalkBack, Switch Access, or any assistive technology.
 globs:
   - "**/*.kt"
-tags: [accessibility, compose, semantics, talkback, a11y, material3]
+tags: [a11y, material3]
 x-skills-master:
   domain: android
   class: code

@@ -1,7 +1,7 @@
 ---
 name: m3-elevation
 description: "Design critique and guidance for Material 3 elevation: when to use tonal elevation vs shadow elevation, the five elevation levels, how surface tint encodes depth via container roles, and how the system adapts on dark theme. Use when reviewing surface hierarchy, deciding whether to elevate a component, auditing how depth reads on light vs dark themes, or contrasting M3 with M2 shadow-only depth. Produces UX recommendations, not code."
-tags: [elevation, m3, design, material-you, surfaces, hierarchy]
+tags: [material-you, surfaces]
 x-skills-master:
   domain: android
   class: design

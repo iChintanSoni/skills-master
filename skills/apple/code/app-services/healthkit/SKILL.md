@@ -3,7 +3,7 @@ name: healthkit
 description: "Guidance for reading and writing Health data with HealthKit using modern async query descriptors, authorization, and background delivery. Use when an app requests Health permissions, queries samples or statistics, writes workouts, observes background updates, or runs watchOS/iOS workout sessions."
 globs:
   - "**/*.swift"
-tags: [healthkit, health, swift-concurrency, watchos, privacy]
+tags: [swift-concurrency, privacy]
 x-skills-master:
   domain: apple
   class: code

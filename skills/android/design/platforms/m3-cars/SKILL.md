@@ -1,7 +1,7 @@
 ---
 name: m3-cars
 description: "Design guidance and critique for Android Auto and Automotive OS in-vehicle UIs — distraction-optimized templates, voice-first interaction, large touch targets, driving vs parked experiences, and platform differences. Use when designing, reviewing, or critiquing a car app UI, evaluating whether a flow is safe for eyes-on-road operation, choosing between Auto and Automotive OS templates, or deciding which interactions require parked mode."
-tags: [m3, design, cars, android-auto, automotive-os]
+tags: []
 x-skills-master:
   domain: android
   class: design
