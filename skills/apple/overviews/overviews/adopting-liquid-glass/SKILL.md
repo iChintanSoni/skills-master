@@ -13,9 +13,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/technologyoverviews/adopting-liquid-glass
     - https://developer.apple.com/documentation/swiftui/applying-liquid-glass-to-custom-views
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/ios/
+  snapshot_date: "2026-08-25"
   stability: emerging
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Adopting Liquid Glass
@@ -47,6 +48,10 @@ GlassEffectContainer(spacing: 12) {
     .glassEffect(in: .capsule)
 }
 ```
+
+### Year two (WWDC 2026)
+
+- Adoption economics changed: on the 27-era SDKs, standard SwiftUI components pick up current Liquid Glass behavior automatically, including response to the new system-level tint control. The remaining adoption work concentrates in custom-drawn chrome and UIKit surfaces that bypass system materials — inventory those rather than re-auditing standard controls.
 
 ## Platform notes
 

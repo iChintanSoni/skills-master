@@ -25,6 +25,10 @@ Liquid Glass is the unified material introduced across Apple platforms in the 26
 - Treat glass as accent, not theme. A few floating controls feel vital; covering most of the screen in translucency flattens hierarchy and tires the eye.
 - Never bake the material's look into a static asset. The surface adapts to appearance, wallpaper, motion, and accessibility settings, so verify behavior live rather than against a single snapshot.
 
+### iOS 27 — year two (WWDC 2026)
+
+- Liquid Glass matures from adoption project to default: SwiftUI apps rebuilt against the 27-era SDKs pick up updated glass effects automatically, and the glass tint now responds to a system-level Liquid Glass appearance slider without app changes. Year-two design work shifts from "adopt the material" to auditing custom backgrounds and overlays that fight the system's tinting.
+
 ## Platform notes
 
 - iOS and iPadOS: Tab bars, toolbars, and navigation bars float as glass over scrolling content. Confirm controls remain readable as varied content scrolls beneath them, and that the bar's separation from content is clear at rest and in motion.

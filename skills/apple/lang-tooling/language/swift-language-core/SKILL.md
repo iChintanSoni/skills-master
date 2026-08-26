@@ -15,9 +15,10 @@ x-skills-master:
   sources:
     - https://www.swift.org/documentation/articles/value-and-reference-types.html
     - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/swift/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -47,6 +48,13 @@ struct Order {
     mutating func markDelivered(_ date: Date) { shipment = .delivered(on: date) }
 }
 ```
+
+### Swift 6.4 (WWDC 2026)
+
+- `anyAppleOS` availability shorthand collapses per-platform `@available` ladders when a declaration gates on "any Apple platform of this era".
+- `@diagnose` gives fine-grained control over individual warnings at the declaration level — prefer it to blanket `-suppress-warnings` style flags.
+- `for-in` now iterates noncopyable types: a new iteration protocol covers `Span` and `InlineArray`, so performance-critical buffers loop without copies or index arithmetic.
+- Foundation's URL parsing is up to 4x faster — hot paths that avoided `URL` for `String` munging can be revisited.
 
 ## Platform notes
 

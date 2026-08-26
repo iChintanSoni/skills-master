@@ -11,9 +11,10 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/typography
     - https://developer.apple.com/design/human-interface-guidelines/sf-symbols
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/design/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -29,6 +30,10 @@ Reach for this skill when critiquing a screen's text and icon treatment: judging
 - Match each SF Symbol to the weight and optical size of its adjacent text so glyph and label share one visual rhythm; a symbol beside body text should not look bolder or heavier than the words.
 - Pick a rendering mode deliberately and apply it consistently. Monochrome reads as neutral and typographic; hierarchical adds depth in a single hue; palette uses two or more deliberate colors; multicolor preserves a symbol's intrinsic colors. Mixing modes arbitrarily across one screen looks unintentional.
 - Use the system's symbol variants (outline versus fill, slash, enclosures) to signal state and selection, and align scale (small, medium, large) with surrounding type rather than resizing by hand.
+
+### iOS 27 (WWDC 2026)
+
+- SF Symbols 8 expands past 7,000 symbols across 9 weights and 3 scales, alongside refreshed system typography. Re-run symbol audits before commissioning custom glyphs — coverage gaps that justified custom art a year ago have likely closed.
 
 ## Platform notes
 

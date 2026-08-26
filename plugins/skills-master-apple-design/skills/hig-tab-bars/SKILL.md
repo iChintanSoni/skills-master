@@ -22,6 +22,11 @@ A tab bar gives people fast, persistent access to the top-level, peer sections o
 - **Design for the floating Liquid Glass bar.** The bar is inset, capsule-shaped, and translucent, and it can minimize on scroll to keep focus on content. Don't place critical content directly behind it where it could be obscured, and don't fight the system material with custom opaque backgrounds.
 - **Choose tabs vs sidebar vs hierarchy deliberately.** Tabs suit a few flat sections; a sidebar suits many sections or nested groups on wide layouts; hierarchical navigation suits drilling into a single section. Don't duplicate the same destinations in both a tab bar and a sidebar at once.
 
+### iOS 27 (WWDC 2026)
+
+- A prominent tab (`Tab(role: .prominent)` / `UITabBarController.prominentTabIdentifier`) visually separates the app's single most important action from ordinary tabs — reserve it for the action the app exists for, not the busiest tab.
+- Sidebars reach iPhone: the sidebar-adaptable tab bar is no longer iPad-only (`UITabBarControllerSidebar.preferredPlacement`), so information architectures with many sections can present as a sidebar on any size class where it earns its space.
+
 ## Platform notes
 
 - **iOS / iPadOS:** The bar floats and minimizes on scroll. On iPad, prefer the sidebar-adaptable pattern so a tab bar can morph into a sidebar in landscape or wide windows and back into a tab bar in portrait or compact widths, keeping a single source of truth for sections. A bottom accessory (such as a now-playing strip) can ride above the tab bar when warranted.

@@ -34,6 +34,11 @@ final class FeedModel {
 }
 ```
 
+### Swift 6.4 (WWDC 2026)
+
+- `defer` blocks may now contain `async` code — cleanup that must await (closing a connection, flushing a log actor) no longer needs the do/catch-and-duplicate pattern; it runs whether the function returns or throws.
+- Instruments ships a dedicated Swift Concurrency instrument: task scheduling, actor contention, and continuation waits become visible on a timeline — profile with it before restructuring actors on intuition (see `instruments-profiling`).
+
 ## Platform notes
 
 Swift 6 language mode enables strict concurrency checking everywhere; modules can opt in incrementally while still on the Swift 5 mode using the per-target strict-concurrency setting. Swift 6.2 advances an "approachable concurrency" direction that reduces boilerplate for common single-threaded apps: a target can default its isolation to the main actor, and a nonisolated async function can run on the caller's actor (`nonisolated(nonsending)`) rather than always hopping to the global executor, with `@concurrent` opting back into a fresh isolation context. These are migration ergonomics rather than semantic changes to the actor model, and the same Sendable and isolation rules still hold. On Apple platforms the cooperative thread pool is shared process-wide, so blocking one thread starves unrelated async work across the app and its frameworks.

@@ -35,6 +35,12 @@ func loadFeed() {
 }
 ```
 
+### Xcode 27 (WWDC 2026)
+
+- New Swift Concurrency instrument: task scheduling, actor contention, and continuation waits on a timeline — the first purpose-built tool for diagnosing async performance rather than inferring it from Time Profiler gaps.
+- Run comparisons land in Instruments: diff two profiling runs to verify a fix actually moved the metric.
+- Device Hub centralizes device management for profiling across connected hardware.
+
 ## Platform notes
 
 - **iOS / iPadOS / watchOS / tvOS / visionOS:** Always profile on hardware over Wi-Fi or cable; thermal state and slower I/O change results versus a Mac. Hitches matter most where displays run at 120 Hz ProMotion — a frame budget can be ~8 ms.

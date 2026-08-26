@@ -12,9 +12,10 @@ x-skills-master:
   pairs_with: []
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/app-icons
-  snapshot_date: "2026-05-30"
+    - https://developer.apple.com/wwdc26/guides/design/
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # HIG app icons
@@ -39,6 +40,10 @@ The app icon is the first and most repeated impression of an app: it appears on 
 - Prefer soft gradients to hard pure-white or pure-black fills, and keep the composition centered with comfortable margins so nothing important crowds the masked edge.
 - Design once and verify every appearance. Confirm the icon stays legible and on-brand in default, dark, clear (light and dark), and tinted (light and dark) looks; tinted and clear modes derive from your layers and luminance, so check that key shapes survive when color is stripped away.
 - Keep the icon visually consistent with the app's interface and the rest of the platform family, so the same brand reads across iPhone, Mac, Watch, and beyond rather than looking like several different apps.
+
+### iOS 27 (WWDC 2026)
+
+- Icon Composer becomes the canonical authoring tool: icons are layered compositions that pick up Liquid Glass material behavior and dynamic lighting from the system, rather than flat raster exports. Design icon layers (foreground, middle, background) with depth and translucency in mind; a single flattened PNG now reads as visibly legacy.
 
 ## Platform notes
 

@@ -31,6 +31,13 @@ struct Order {
 }
 ```
 
+### Swift 6.4 (WWDC 2026)
+
+- `anyAppleOS` availability shorthand collapses per-platform `@available` ladders when a declaration gates on "any Apple platform of this era".
+- `@diagnose` gives fine-grained control over individual warnings at the declaration level — prefer it to blanket `-suppress-warnings` style flags.
+- `for-in` now iterates noncopyable types: a new iteration protocol covers `Span` and `InlineArray`, so performance-critical buffers loop without copies or index arithmetic.
+- Foundation's URL parsing is up to 4x faster — hot paths that avoided `URL` for `String` munging can be revisited.
+
 ## Platform notes
 
 These fundamentals are pure language and behave identically across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS, and in command-line and server Swift. Under the Swift 6 language mode the same value-versus-reference distinctions also shape data-race safety: value types with `Sendable` members are trivially `Sendable` and cross isolation boundaries freely, whereas a mutable `class` instance is not `Sendable` without manual synchronization — another reason struct-first design pays off. SwiftUI leans hard on value types: `View`, `State` wrappers, and most model data are structs precisely because copy semantics make diffing and updates predictable. Reference-counting cost (and retain-cycle risk) only applies to the reference types — classes, actors, closures — so favoring values also reduces ARC overhead.

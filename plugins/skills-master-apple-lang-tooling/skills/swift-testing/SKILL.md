@@ -15,6 +15,10 @@ Use when writing or restructuring unit tests for Swift code with Apple's Swift T
 - Group related tests in a `struct` or `actor` marked `@Suite`. A fresh suite instance is created per test, so store per-test setup in stored properties and tear down in `deinit` — no shared mutable state across tests.
 - Write `async`/`throws` tests directly; `await` the code under test and `try #require` to unwrap. Use traits like `.tags(...)`, `.disabled("reason")`, and `.timeLimit(...)` instead of commenting tests out.
 
+### WWDC 2026
+
+- Swift Testing gains XCTest interoperability: mixed targets run both frameworks side by side, making incremental migration the recommended path — migrate suite-by-suite instead of big-bang, and stop maintaining parallel target structures during the transition.
+
 ## Platform notes
 
 Swift Testing ships with Swift 6 / Xcode 16 and runs on every Apple platform plus Linux. It coexists with XCTest in the same target, so migrate incrementally — keep XCTest UI tests while moving unit tests over.

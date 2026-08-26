@@ -26,6 +26,10 @@ The app icon is the first and most repeated impression of an app: it appears on 
 - Design once and verify every appearance. Confirm the icon stays legible and on-brand in default, dark, clear (light and dark), and tinted (light and dark) looks; tinted and clear modes derive from your layers and luminance, so check that key shapes survive when color is stripped away.
 - Keep the icon visually consistent with the app's interface and the rest of the platform family, so the same brand reads across iPhone, Mac, Watch, and beyond rather than looking like several different apps.
 
+### iOS 27 (WWDC 2026)
+
+- Icon Composer becomes the canonical authoring tool: icons are layered compositions that pick up Liquid Glass material behavior and dynamic lighting from the system, rather than flat raster exports. Design icon layers (foreground, middle, background) with depth and translucency in mind; a single flattened PNG now reads as visibly legacy.
+
 ## Platform notes
 
 - iOS and iPadOS: Icons use the unified rounded-rectangle grid with a rounder corner radius that matches current UI and hardware. The icon responds to device motion with light moving across its edges, so design for that dynamic Liquid Glass treatment rather than a static sticker.
