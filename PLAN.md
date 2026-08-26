@@ -169,7 +169,7 @@ broken emit formats) is a bug, not a nice-to-have.
 
 ## Phase 6 — New skills: structural gaps
 
-- [ ] **6.1 `android/code/graphics-games` (L).** ~8 skills mirroring apple's category:
+- [x] **6.1 `android/code/graphics-games` (L).** ~8 skills mirroring apple's category:
   Vulkan, AGDK, game loops/input, Play Games Services, Play Asset Delivery, performance
   (ADPF), etc.
 - [x] **6.2 `apple/code/form-factors` (L).** ~8–12 skills: watchOS apps + complications +

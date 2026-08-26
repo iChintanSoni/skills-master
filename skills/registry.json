@@ -294,6 +294,93 @@
       }
     },
     {
+      "name": "adpf-thermal-performance",
+      "domain": "android",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Covers the Android Dynamic Performance Framework for games — reading thermal status and headroom from PowerManager, driving CPU scheduling with PerformanceHintManager hint sessions, reading CPU and GPU headroom from SystemHealthManager, honouring the Game Mode API and reporting through the Game State API with GameManager, and degrading render fidelity smoothly under thermal pressure. Use when a game throttles during long sessions, misses its frame budget on mid-tier hardware, or needs to hit the Play Console Slow Sessions bar.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "adpf",
+        "thermal",
+        "performance",
+        "games",
+        "game-mode",
+        "power"
+      ],
+      "pairs_with": [
+        "performance-profiling"
+      ],
+      "path": "android/code/graphics-games/adpf-thermal-performance",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "agdk-game-activity",
+      "domain": "android",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Covers the Android Game Development Kit runtime layer for native games — GameActivity as the modern replacement for NativeActivity, the androidx.games artifacts and their prefab/CMake wiring, the android_native_app_glue command and input-buffer loop, surface and lifecycle handling, GameTextInput for soft-keyboard editing, and AGDE for Visual Studio. Use when building, wiring, or migrating a C/C++ Android game that needs an activity host, native input plumbing, or text entry from native code.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "agdk",
+        "game-activity",
+        "ndk",
+        "native",
+        "games",
+        "cpp"
+      ],
+      "pairs_with": [
+        "game-controller-input"
+      ],
+      "path": "android/code/graphics-games/agdk-game-activity",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "agsl-runtime-shaders",
+      "domain": "android",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Writing Android Graphics Shading Language (AGSL) fragment shaders and running them through RuntimeShader — uniforms, input shaders, color management, the AGSL/GLSL differences, applying a shader to a View with RenderEffect and to Compose with ShaderBrush or a graphicsLayer render effect. Use when adding a per-pixel effect such as noise, dissolve, distortion, gradient mesh, or a shader-driven tint to Android UI on API 33 and above, or when deciding whether an effect belongs in AGSL rather than a full OpenGL ES or Vulkan pipeline.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "agsl",
+        "runtimeshader",
+        "shaders",
+        "rendereffect",
+        "compose",
+        "android"
+      ],
+      "pairs_with": [
+        "compose-graphics"
+      ],
+      "path": "android/code/graphics-games/agsl-runtime-shaders",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "alarms-scheduling",
       "domain": "android",
       "class": "code",
@@ -562,7 +649,9 @@
         "size-optimisation",
         "dynamic-delivery"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "play-asset-delivery"
+      ],
       "path": "android/lang-tooling/build-packaging/app-bundles-size",
       "resources": {
         "reference": false,
@@ -2428,7 +2517,9 @@
         "drawing",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "agsl-runtime-shaders"
+      ],
       "path": "android/code/compose-ui/compose-graphics",
       "resources": {
         "reference": false,
@@ -3606,6 +3697,65 @@
         "core-ai"
       ],
       "path": "apple/code/app-services/foundation-models",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "game-controller-input",
+      "domain": "android",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Covers game controller support on Android — routing KeyEvent and MotionEvent by InputDevice source, axis and deadzone handling, hot-plug and multiple controllers via InputManager.InputDeviceListener, per-controller rumble through VibratorManager, controller sensors and lights, button glyph conventions across Xbox/Switch/PlayStation styles, switching between touch and controller UI, and the Paddleboat library plus the Play manifest flag. Use when adding or auditing gamepad support in an Android game, including local multiplayer and Play Games large-screen requirements.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "game-controller",
+        "gamepad",
+        "input",
+        "paddleboat",
+        "haptics",
+        "games"
+      ],
+      "pairs_with": [
+        "agdk-game-activity"
+      ],
+      "path": "android/code/graphics-games/game-controller-input",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "game-loop-frame-pacing",
+      "domain": "android",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Running a real-time render loop on Android — Choreographer and vsync, Android 13 frame timelines, the AGDK Frame Pacing library (Swappy) for OpenGL ES and Vulkan, presentation timestamps, setFrameRate and adaptive refresh rate, choosing between SurfaceView, GLSurfaceView, and TextureView, frame-time budgeting, ADPF performance hints, and reading jank in Perfetto traces. Use when a game or custom renderer stutters, when porting a fixed-timestep loop to Android, when picking a render target surface, or when deciding what frame rate to request on a multi-refresh-rate display.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "games",
+        "frame-pacing",
+        "choreographer",
+        "vsync",
+        "jank",
+        "surfaceview",
+        "android"
+      ],
+      "pairs_with": [
+        "vulkan-rendering"
+      ],
+      "path": "android/code/graphics-games/game-loop-frame-pacing",
       "resources": {
         "reference": false,
         "examples": false,
@@ -8906,7 +9056,9 @@
         "startup",
         "tracing"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adpf-thermal-performance"
+      ],
       "path": "android/lang-tooling/ship/performance-profiling",
       "resources": {
         "reference": false,
@@ -8974,6 +9126,35 @@
       }
     },
     {
+      "name": "play-asset-delivery",
+      "domain": "android",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Covers Google Play Asset Delivery — install-time, fast-follow, and on-demand asset packs declared with the com.android.asset-pack Gradle plugin, runtime download and progress tracking through AssetPackManager, texture compression format targeting, Play's per-pack and total size limits, and testing with bundletool local testing or internal app sharing. Use when a game ships gigabytes of assets, replaces legacy OBB expansion files, delivers per-GPU texture variants, or stages heavy content after install.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "play-asset-delivery",
+        "asset-packs",
+        "app-bundle",
+        "texture-compression",
+        "bundletool",
+        "games"
+      ],
+      "pairs_with": [
+        "app-bundles-size"
+      ],
+      "path": "android/code/graphics-games/play-asset-delivery",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
       "name": "play-billing",
       "domain": "android",
       "class": "lang-tooling",
@@ -9018,12 +9199,43 @@
         "ship",
         "app-bundle"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "play-games-services"
+      ],
       "path": "android/lang-tooling/ship/play-console-publishing",
       "resources": {
         "reference": false,
         "examples": true,
         "checklist": true
+      }
+    },
+    {
+      "name": "play-games-services",
+      "domain": "android",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Covers Play Games Services v2 on Android — PlayGamesSdk.initialize plus automatic platform sign-in through GamesSignInClient, achievements and leaderboards, saved games via SnapshotsClient, friends and player profile comparison, server-side access with requestServerSideAccess, and the Recall API for cross-device account linking. Use when adding social and progression features to an Android game, migrating a v1 integration off GoogleSignInClient before the v1 shutdown, or preparing a title for Google Play Games on PC.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "play-games-services",
+        "games",
+        "achievements",
+        "leaderboards",
+        "saved-games",
+        "recall"
+      ],
+      "pairs_with": [
+        "play-console-publishing"
+      ],
+      "path": "android/code/graphics-games/play-games-services",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
       }
     },
     {
@@ -11659,6 +11871,35 @@
         "hig-designing-for-visionos"
       ],
       "path": "apple/code/form-factors/visionos-windows-volumes",
+      "resources": {
+        "reference": false,
+        "examples": false,
+        "checklist": false
+      }
+    },
+    {
+      "name": "vulkan-rendering",
+      "domain": "android",
+      "class": "code",
+      "category": "graphics-games",
+      "description": "Vulkan rendering on Android — why Vulkan over OpenGL ES, ANativeWindow surface and swapchain creation, pre-rotation, NDK and CMake wiring, validation layers, Android Vulkan Profiles for device reach, AHardwareBuffer interop, and profiling with Android GPU Inspector. Use when building or porting a native renderer or game engine to Vulkan on Android, deciding between Vulkan and OpenGL ES or ANGLE, debugging a swapchain or a black frame, or checking which Vulkan features your target device fleet actually supports.",
+      "platforms": [
+        "android"
+      ],
+      "stability": "stable",
+      "version": "1.0.0",
+      "tags": [
+        "vulkan",
+        "ndk",
+        "rendering",
+        "gpu",
+        "games",
+        "android"
+      ],
+      "pairs_with": [
+        "game-loop-frame-pacing"
+      ],
+      "path": "android/code/graphics-games/vulkan-rendering",
       "resources": {
         "reference": false,
         "examples": false,
