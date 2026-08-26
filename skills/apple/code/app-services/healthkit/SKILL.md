@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/healthkit/setting-up-healthkit
     - https://developer.apple.com/documentation/healthkit/hksamplequerydescriptor
     - https://developer.apple.com/documentation/healthkit/hkanchoredobjectquerydescriptor
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 ## When to use
@@ -46,6 +46,11 @@ let descriptor = HKStatisticsCollectionQueryDescriptor(
     anchorDate: start, intervalComponents: DateComponents(day: 1))
 let collection = try await descriptor.result(for: store)   // bucketed daily totals
 ```
+
+### iOS/watchOS 27 (WWDC 2026)
+
+- Workout zones become API: heart-rate and cycling-power zone data is queryable rather than app-computed — replace hand-rolled zone math with the system's definitions so your zones match what users see in the Workout app.
+- Menopause and perimenopause cycle APIs extend reproductive-health coverage; handle with the same granular-authorization care as existing cycle data.
 
 ## Platform notes
 

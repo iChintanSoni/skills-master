@@ -50,6 +50,10 @@ skill produces design judgment, not implementation.
   bezel, and verify legibility under bright sun and at night, not just on a
   monitor.
 
+### iOS 27 (WWDC 2026)
+
+- CarPlay adds a video-browsing app category, a MiniPlayer template for compact playback control, and expanded voice-control coverage — media apps should re-check template fit before maintaining custom-negotiated designs that the new templates now cover.
+
 ## Platform notes
 
 - **CarPlay (iOS):** The only platform — the experience runs on the car's

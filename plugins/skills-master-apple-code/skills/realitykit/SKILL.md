@@ -30,6 +30,11 @@ RealityView { content in
 .gesture(TapGesture().targetedToAnyEntity().onEnded { $0.entity.spin() })
 ```
 
+### visionOS/iOS 27 (WWDC 2026)
+
+- Rendering realism jumps: physical-space lighting (virtual content lit by the room), a projective textures API, real-time cloth simulation, and a reverb-mesh API for audio that reflects scene geometry.
+- 3D Gaussian splat rendering arrives — photorealistic captured scenes render natively rather than through mesh reconstruction.
+
 ## Platform notes
 
 - **iOS / iPadOS 18+:** AR uses the rear camera; add an `NSCameraUsageDescription` string to Info.plist or the session fails to start. `RealityView` replaces the older `ARView` for SwiftUI apps. Some immersive-only components (hand/scene-understanding anchors) are visionOS-only.

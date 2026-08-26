@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/arkit/arsession
     - https://developer.apple.com/documentation/arkit/arkitsession
     - https://developer.apple.com/documentation/arkit/arworldtrackingconfiguration
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # ARKit
@@ -50,6 +50,10 @@ for await update in planes.anchorUpdates {
     handle(update.event, anchor: update.anchor) // added / updated / removed
 }
 ```
+
+### visionOS/iOS 27 (WWDC 2026)
+
+- Object tracking steps up: high-frame-rate tracking, a metric-space pose API, and reference objects that work cross-platform — plus 90 Hz tracking for spatial accessories. Re-benchmark tracking-latency workarounds; several exist to compensate for limits that no longer apply.
 
 ## Platform notes
 

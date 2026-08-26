@@ -32,6 +32,10 @@ for await update in planes.anchorUpdates {
 }
 ```
 
+### visionOS/iOS 27 (WWDC 2026)
+
+- Object tracking steps up: high-frame-rate tracking, a metric-space pose API, and reference objects that work cross-platform — plus 90 Hz tracking for spatial accessories. Re-benchmark tracking-latency workarounds; several exist to compensate for limits that no longer apply.
+
 ## Platform notes
 
 - **iOS / iPadOS:** Requires an `NSCameraUsageDescription` Info.plist string and the `arkit` device capability if AR is mandatory. The common rendering path is RealityKit's `ARView`, which owns the `ARSession` (set `arView.session.run(config)`); attach content via `AnchorEntity(anchor:)` or `AnchorEntity(.plane:)`. Object detection needs an `ARReferenceObject` (scanned ahead of time); image detection needs `ARReferenceImage`s with known physical size. Face tracking needs a TrueDepth front camera.

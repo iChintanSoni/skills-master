@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/realitykit
     - https://developer.apple.com/documentation/RealityKit/RealityView
     - https://developer.apple.com/documentation/realitykit/anchorentity
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.2
+  version: 1.1.0
 ---
 
 ## When to use
@@ -48,6 +48,11 @@ RealityView { content in
 }
 .gesture(TapGesture().targetedToAnyEntity().onEnded { $0.entity.spin() })
 ```
+
+### visionOS/iOS 27 (WWDC 2026)
+
+- Rendering realism jumps: physical-space lighting (virtual content lit by the room), a projective textures API, real-time cloth simulation, and a reverb-mesh API for audio that reflects scene geometry.
+- 3D Gaussian splat rendering arrives — photorealistic captured scenes render natively rather than through mesh reconstruction.
 
 ## Platform notes
 
