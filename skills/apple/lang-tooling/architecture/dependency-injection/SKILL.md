@@ -8,7 +8,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: architecture
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, macos]
   requires:
     swift: "6.0"
   pairs_with: [choosing-dependency-injection, unit-testing-strategy]

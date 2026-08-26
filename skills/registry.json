@@ -295,12 +295,7 @@
       "category": "overviews",
       "description": "Decision router for moving a codebase to Swift 6 strict concurrency and the Swift 6 language mode, covering whether to migrate now, an incremental per-module sequence, where to start, the cost versus benefit, and how MainActor and Sendable fit in. Use when planning a Swift 6 adoption, weighing strict concurrency checking against deadlines, choosing the first module to migrate, recompiling against the Xcode 26 SDK, or deciding between approachable defaults and full data-race safety.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -947,12 +942,7 @@
       "category": "web",
       "description": "Guides REST automation against the App Store Connect API: signing ES256 JWT bearer tokens from an API key, navigating the apps/builds/versions/TestFlight/users/sales-reports resource model, handling pagination and rate limits, and generating a client from the published OpenAPI spec. Use when scripting CI uploads, managing TestFlight beta groups or testers, pulling sales or finance reports, or building tooling that talks to api.appstoreconnect.apple.com.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.2",
@@ -1758,12 +1748,9 @@
       "category": "overviews",
       "description": "Decision guide for picking an asynchronous pattern in Swift in the 2026 (OS 26, Swift 6.x) cycle — async/await and structured concurrency as the default, AsyncSequence and AsyncStream for value streams, where Combine still earns its place (and that it is legacy-leaning), and completion handlers only at old API boundaries. Use when starting new async code and unsure which tool to reach for, when bridging a callback or Combine API into async/await, when modeling a stream of values over time, or when deciding whether to keep or retire a Combine pipeline.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
+        "apple",
         "watchos",
-        "tvos",
-        "visionos"
+        "tvos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -1924,12 +1911,9 @@
       "category": "overviews",
       "description": "Decision router for wiring dependencies in a Swift app — initializer injection, the SwiftUI Environment, Observable model ownership, closure and protocol seams for testability, and whether a third-party container is warranted at all. Use when deciding how a new app or module supplies its collaborators, when a team asks which DI framework to adopt, when singletons have made code untestable, or when weighing a container against explicit wiring.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "macos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -1990,11 +1974,9 @@
       "category": "overviews",
       "description": "Decision guide for picking an Apple app distribution channel — App Store, TestFlight, Ad Hoc, Custom/Unlisted apps, the Enterprise Program, and notarized Developer ID for Mac. Use when shipping a build to users, choosing a delivery channel, planning beta testing, deciding between public and private release, or distributing a Mac app outside the Mac App Store.",
       "platforms": [
-        "ios",
-        "ipados",
+        "apple",
         "macos",
         "watchos",
-        "tvos",
         "visionos"
       ],
       "stability": "stable",
@@ -2058,8 +2040,7 @@
       "category": "overviews",
       "description": "Decision router for Android graphics work — Compose drawing with Canvas and graphicsLayer, AGSL RuntimeShader effects applied through RenderEffect, the View Canvas, OpenGL ES and ANGLE, Vulkan for new native renderers, and the point where a game engine is the honest answer. Use when starting drawing, visual-effect, custom-rendering, or game work and the API is undecided, when weighing whether an effect justifies dropping to a native renderer, or when deciding what to do with an existing OpenGL ES codebase.",
       "platforms": [
-        "android",
-        "large-screen"
+        "android"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -2188,9 +2169,7 @@
       "category": "overviews",
       "description": "Decision router for image work on Apple platforms: SwiftUI AsyncImage and its 27-cycle caching and request support, URLSession with URLCache versus NSCache, ImageIO downsampling, Core Image versus Metal for processing, ImageRenderer for export, PhotosPicker versus PhotoKit for library access, and SF Symbols versus bitmap assets. Use when deciding how to load, cache, downsample, process, export, or source an image, when a scrolling grid blows its memory budget, or when weighing whether a third-party image loader is still justified.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
+        "apple",
         "watchos",
         "tvos",
         "visionos"
@@ -2355,12 +2334,10 @@
       "category": "overviews",
       "description": "Decision guide for picking an Apple networking approach. Use when starting networking work, evaluating URLSession vs Network framework, building WebSocket/peer-to-peer/custom-transport features, or deciding whether a third-party HTTP client is justified.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
         "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "watchos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -2389,12 +2366,9 @@
       "category": "overviews",
       "description": "Helps choose a persistence approach on Apple platforms — SwiftData, Core Data, files/Codable, or CloudKit — by weighing maturity, sync needs, and migration cost. Use when starting a new data layer, deciding between SwiftData and Core Data, or adding cross-device sync.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "macos"
       ],
       "stability": "contested",
       "version": "1.0.1",
@@ -2456,12 +2430,7 @@
       "category": "overviews",
       "description": "Helps pick an Apple testing strategy — Swift Testing vs XCTest for new and existing code, plus the right mix of unit, integration, UI, and snapshot tests and how much to invest at each level. Use when starting a test suite, deciding which framework to adopt, planning a migration, or routing into specific testing skills.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -2623,7 +2592,6 @@
       "description": "Decision router for Android glanceable surfaces — app widgets built with Jetpack Glance versus RemoteViews directly, Wear OS tiles and complications, Live Updates and ongoing notifications, and Quick Settings tiles. Use when deciding how to surface app content or an action outside the app, when choosing between Glance and RemoteViews for a new widget, or when a feature needs an ongoing status surface rather than a static glance.",
       "platforms": [
         "android",
-        "large-screen",
         "wear-os"
       ],
       "stability": "stable",
@@ -2685,11 +2653,9 @@
       "category": "ship",
       "description": "Guidance for building, testing, signing, and shipping Apple apps from CI: xcodebuild on headless runners, App Store Connect API keys, fastlane match, TestFlight upload, caching, and Xcode Cloud. Use when setting up a pipeline, fixing CI code-signing failures, automating archive/TestFlight delivery, or choosing between self-hosted CI and Xcode Cloud.",
       "platforms": [
-        "ios",
-        "ipados",
+        "apple",
         "macos",
         "watchos",
-        "tvos",
         "visionos"
       ],
       "stability": "stable",
@@ -2752,12 +2718,7 @@
       "category": "language",
       "description": "Guidance for serializing Swift types with Codable: conforming to Encodable/Decodable, CodingKeys, JSONEncoder/JSONDecoder strategies, custom encode(to:)/init(from:), nested and dynamic keys, optional/missing fields, property lists, and robust decoding of imperfect JSON. Use when modeling API responses, persisting data, parsing JSON or plists, mapping snake_case keys, decoding dates, or hardening a decoder against malformed input.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -2845,8 +2806,7 @@
       "category": "compose-ui",
       "description": "Covers designing custom layouts, subcomposition, and intrinsic measurements in Jetpack Compose. Use when building non-standard layout containers, custom flow layouts, or dynamic sizing components.",
       "platforms": [
-        "android",
-        "large-screen"
+        "android"
       ],
       "stability": "stable",
       "version": "1.0.2",
@@ -2909,8 +2869,6 @@
         "android",
         "large-screen",
         "wear-os",
-        "android-tv",
-        "chromeos",
         "xr"
       ],
       "stability": "stable",
@@ -2941,8 +2899,7 @@
       "category": "compose-ui",
       "description": "Covers touch interaction processing, drag/tap gesture detection, multitouch zoom/pan configurations, and custom pointer inputs in Jetpack Compose. Use when adding custom drag mechanics, complex swipe actions, or raw touch responders.",
       "platforms": [
-        "android",
-        "large-screen"
+        "android"
       ],
       "stability": "stable",
       "version": "1.0.2",
@@ -3579,12 +3536,9 @@
       "category": "app-services",
       "description": "Use when persisting an object graph with Apple's Core Data stack: setting up NSPersistentContainer, separating view and background contexts, writing fetch requests and predicates, running batch insert/delete/update, performing lightweight or staged migrations, enforcing perform-based concurrency, or mirroring a store to iCloud with NSPersistentCloudKitContainer. Also use when deciding between Core Data and SwiftData.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
+        "apple",
         "watchos",
-        "tvos",
-        "visionos"
+        "tvos"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -3771,11 +3725,9 @@
       "category": "ship",
       "description": "Guides diagnosing app crashes by symbolicating reports, mapping dSYMs, reading the Xcode 26 Organizer and MetricKit diagnostics, and recognizing common crash signatures. Use when a TestFlight or App Store build crashes, when reports show only hex addresses, when matching dSYM UUIDs, when wiring MXCrashDiagnostic, or when triaging force-unwrap, out-of-bounds, or threading crashes.",
       "platforms": [
-        "ios",
-        "ipados",
+        "apple",
         "macos",
         "watchos",
-        "tvos",
         "visionos"
       ],
       "stability": "stable",
@@ -3804,8 +3756,7 @@
       "category": "platform-services",
       "description": "Covers Android Credential Manager — the unified API for passkeys, saved passwords, and Sign in with Google that replaces legacy auth stacks. Use when implementing modern sign-in flows, adopting passkeys, migrating away from SmartLock or the deprecated One Tap library, or presenting the bottom-sheet credential picker on Android 16+.",
       "platforms": [
-        "android",
-        "large-screen"
+        "android"
       ],
       "stability": "stable",
       "version": "1.0.2",
@@ -3832,12 +3783,8 @@
       "category": "system",
       "description": "Use when adding hashing, HMAC, symmetric encryption (AES-GCM/ChaChaPoly), key agreement (Curve25519/P256/P384), signatures, HKDF, or Secure Enclave-backed keys to Swift code. Triggers: import CryptoKit, SymmetricKey, SHA256, AES.GCM.seal, sharedSecretFromKeyAgreement, SecureEnclave.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "ios"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -3896,12 +3843,8 @@
       "category": "architecture",
       "description": "Guidance on dependency injection in Swift apps: initializer injection, injecting collaborators through the SwiftUI Environment, protocol abstractions for testability, when a lightweight container helps versus when it hurts, and replacing singletons. Use when wiring services into types, making code testable, swapping real implementations for mocks or previews, or untangling global shared state.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "macos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -4052,12 +3995,9 @@
       "category": "ship",
       "description": "Guidance for declaring app capabilities in Xcode and the entitlements, App IDs, and provisioning profiles they generate, covering App Groups, Keychain Sharing, Push Notifications, iCloud and CloudKit, Sign in with Apple, and Associated Domains across platforms and build configurations. Use when adding a capability, debugging an entitlement or provisioning mismatch, sharing data between a host app and its extensions, splitting Debug and Release entitlements, or wiring per-platform identifiers.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "macos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -4086,12 +4026,7 @@
       "category": "language",
       "description": "Guidance on Swift error handling: the Error protocol, throws/try/do-catch, typed throws, Result, rethrows, defer, and propagating errors from async code. Use when designing failable APIs, deciding throw vs Result vs optional, modeling recoverable vs programmer errors, or migrating to typed throws.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -4210,8 +4145,7 @@
       "category": "platform-services",
       "description": "Covers Android foreground services — declaring service types, posting a required notification, handling background-start restrictions, and managing lifecycle. Use when building features that require long-running, user-visible work such as media playback, navigation, fitness tracking, or file transfers.",
       "platforms": [
-        "android",
-        "large-screen"
+        "android"
       ],
       "stability": "stable",
       "version": "1.0.2",
@@ -4427,8 +4361,7 @@
       "category": "platform-services",
       "description": "Covers Android haptic feedback via VibratorManager and VibrationEffect — Use when adding tactile reinforcement to UI interactions, custom vibration patterns, or Compose haptic feedback in Android apps.",
       "platforms": [
-        "android",
-        "large-screen"
+        "android"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -6206,12 +6139,10 @@
       "category": "technologies",
       "description": "Design guidance for Siri experiences per the Human Interface Guidelines Siri section, revised in the 2026 cycle for Siri AI and Apple Intelligence. Use when deciding which app actions and content to expose to Siri through App Intents, sharing onscreen context via view annotations and donations, writing response dialogue that works aloud and onscreen, reviewing App Shortcuts phrasing, or applying Apple's editorial rules for referring to Siri. Produces UX critique and copy guidance grounded in the HIG, not code. Triggers: Siri design review, response dialogue, App Shortcuts phrases, exposing actions to Siri, Siri AI, Apple Intelligence integration.",
       "platforms": [
+        "apple",
         "ios",
         "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "macos"
       ],
       "stability": "emerging",
       "version": "1.0.0",
@@ -6634,12 +6565,8 @@
       "category": "ship",
       "description": "Guides profiling Apple apps with Instruments 26 — Time Profiler and CPU Profiler, Allocations and Leaks, the SwiftUI and Hangs and Hitches instruments, and OSSignposter points of interest. Use when an app is slow, janky, hangs, or grows in memory, when reading an Instruments timeline or call tree, or when adding signposts to measure and confirm a performance fix.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "macos"
       ],
       "stability": "stable",
       "version": "1.1.0",
@@ -6701,12 +6628,9 @@
       "category": "system",
       "description": "Stores credentials, tokens, and cryptographic keys securely using Keychain Services (SecItem APIs), accessibility levels, and SecAccessControl biometric/passcode gating. Use when persisting passwords, OAuth/session tokens, API keys, or private keys; when migrating secrets out of UserDefaults; or when sharing items across apps via keychain access groups.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "macos"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -7489,8 +7413,8 @@
       "category": "platforms",
       "description": "Design critique and guidance for Material 3 on ChromeOS and Android desktop environments, covering pointer and keyboard-first interaction, resizable free-form windows, multitasking, hover and right-click affordances, and productivity patterns on a large display. Use when designing or auditing an Android app intended to run on ChromeOS, evaluating whether a UI is appropriately calibrated for mouse and keyboard input, reviewing window resize behavior, or specifying context menus, tooltips, and drag-and-drop flows for a desktop-class experience.",
       "platforms": [
-        "chromeos",
-        "large-screen"
+        "large-screen",
+        "chromeos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -9129,9 +9053,7 @@
       "category": "media-camera-ml",
       "description": "Covers Media3 MediaSession and MediaController for exposing playback to the system. Use when building background audio/video playback, media notification controls, or browsable media libraries with MediaSessionService or MediaLibraryService.",
       "platforms": [
-        "android",
-        "large-screen",
-        "android-tv"
+        "android"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -9314,12 +9236,8 @@
       "category": "architecture",
       "description": "Guides modularizing an app into local Swift packages with clean public interfaces, inward-flowing dependencies, faster builds, and a thin app target. Use when extracting feature or core modules, designing module boundaries, speeding up build and test cycles, or deciding how far to split a monolithic app.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "watchos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -9347,11 +9265,7 @@
       "category": "media",
       "description": "Guidance on the Music Understanding framework for on-device musical analysis of audio: the MusicUnderstandingSession actor built over an AVAsset or a streaming buffer provider, the rhythm, key, structure, pace, instrument-activity, and loudness analysis types, TimedValue and RangedValue results keyed to CMTime, the progressive loudnessResults sequence, and Codable results you can precompute and ship. Use when detecting beats, bars, or BPM, finding a track's key or section boundaries, syncing visuals or edits to musical energy, metering perceptual loudness in LUFS, or deciding between this framework, ShazamKit, and MusicKit.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "tvos",
-        "visionos",
+        "apple",
         "watchos"
       ],
       "stability": "emerging",
@@ -9415,12 +9329,9 @@
       "category": "app-services",
       "description": "Use when analyzing or understanding text on-device with Apple's Natural Language framework: tokenizing, lemmatizing, tagging parts of speech, recognizing named entities, identifying language, computing word/sentence embeddings and similarity, running custom Create ML classifiers, or scoring sentiment, all without a network call.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
+        "apple",
         "watchos",
-        "tvos",
-        "visionos"
+        "tvos"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -9671,12 +9582,8 @@
       "category": "architecture",
       "description": "Guidance for building a testable async networking layer with URLSession in Swift 6: endpoint modeling, Codable decoding, typed error handling, retries, timeouts, token refresh, and URLProtocol stubs. Use when designing an API client, wrapping URLSession, decoding JSON responses, adding auth/token refresh, or making network code unit-testable.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "watchos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -9763,12 +9670,10 @@
       "category": "media",
       "description": "Guidance on the Now Playing framework for publishing playback to the Lock Screen, Control Center, and connected accessories including CarPlay: an Observable model conforming to MediaSessionRepresentable that supplies content, playbackSnapshot, and commands, MediaSession activation through requestToBecomeApplicationPrimary and requestToBecomeSystemPrimary, typed content such as MusicContent and PodcastContent, size-driven Artwork providers, MediaCommand handlers, and RemoteMediaSession extensions driven by push for external devices. Use when surfacing metadata and transport controls outside your app, keeping the scrubber accurate, wiring remote commands, publishing artwork, or choosing between this framework and MPNowPlayingInfoCenter.",
       "platforms": [
+        "apple",
         "ios",
         "ipados",
-        "macos",
-        "tvos",
-        "visionos",
-        "watchos"
+        "macos"
       ],
       "stability": "emerging",
       "version": "1.0.0",
@@ -9800,12 +9705,7 @@
       "category": "app-frameworks",
       "description": "Guidance on the Observation framework and the Observable macro for SwiftUI reference-type models, including fine-grained per-property view updates, ObservationIgnored, and migration away from ObservableObject. Use when defining a view model or shared model class, choosing between Observable and ObservableObject, deciding which view property wrapper to use, marking properties as non-tracked, or migrating existing Published code to the Observable macro.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.2",
@@ -9833,12 +9733,10 @@
       "category": "system",
       "description": "Guidance for unified logging and performance tracing on Apple platforms with the Logger (OSLog) and OSSignposter APIs. Use when adding diagnostic logging, choosing log levels, redacting sensitive data with privacy annotations, picking subsystems/categories, reading logs in Console or via the log command, or measuring durations with signposts in Instruments.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
         "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "watchos"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -10202,8 +10100,7 @@
       "category": "architecture",
       "description": "Covers predictive back gesture integration for Android apps — opt-in via android:enableOnBackInvokedCallback, system back-to-home animations, PredictiveBackHandler and BackHandler in Compose, migration from legacy OnBackPressedCallback, and gesture testing. Use when implementing or migrating back-navigation handling in a Jetpack Compose or hybrid Android app.",
       "platforms": [
-        "android",
-        "large-screen"
+        "android"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -10233,12 +10130,7 @@
       "category": "ship",
       "description": "Guidance on authoring a PrivacyInfo.xcprivacy privacy manifest: declaring collected data types, tracking and tracking domains, required-reason API entries, and signing third-party SDK manifests. Use when adding or auditing a privacy manifest, fixing ITMS-91053/ITMS-91061 App Store upload errors, integrating an SDK on Apple's required list, or reconciling the manifest with the App Store privacy nutrition label.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -10267,12 +10159,9 @@
       "category": "language",
       "description": "Guidance on authoring and using Swift property wrappers: @propertyWrapper, wrappedValue, projectedValue via $, initialization, composition, and how SwiftUI's @State/@Binding/@Environment relate to the @Observable macro. Use when writing a custom @propertyWrapper, debugging $-projection or init order, deciding wrapper vs macro, or migrating ObservableObject models to @Observable.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "macos"
       ],
       "stability": "stable",
       "version": "1.0.2",
@@ -10300,11 +10189,9 @@
       "category": "ship",
       "description": "Guides Apple code signing and provisioning: signing identities and certificates, development vs distribution provisioning profiles, automatic vs manual signing, the App ID and entitlements relationship, and diagnosing signing errors. Use when configuring a target's Signing & Capabilities, fixing build errors like no profiles found or profile doesn't include signing certificate, or setting up signing on CI.",
       "platforms": [
-        "ios",
-        "ipados",
+        "apple",
         "macos",
         "watchos",
-        "tvos",
         "visionos"
       ],
       "stability": "stable",
@@ -10400,12 +10287,7 @@
       "category": "language",
       "description": "Guidance for Swift string processing with the Regex type, covering regex literals, the RegexBuilder DSL, Capture and TryCapture, matching/replacing/splitting, Unicode-correct grapheme handling, and localized comparison. Use when parsing or validating text, extracting structured fields, choosing between a regex and plain String APIs, fixing emoji or accent mismatches, or porting NSRegularExpression to Swift Regex.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -10433,12 +10315,7 @@
       "category": "language",
       "description": "Guidance for designing and using Swift result builders: the @resultBuilder attribute, the buildBlock/buildOptional/buildEither/buildArray transform methods, buildExpression/buildFinalResult/buildLimitedAvailability, and buildPartialBlock for avoiding overload explosion. Use when authoring a declarative DSL, understanding how SwiftUI ViewBuilder or RegexBuilder work, deciding which build methods to implement, or debugging confusing result-builder type errors and missing control-flow support.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.2",
@@ -10891,12 +10768,9 @@
       "category": "build-packaging",
       "description": "Guidance on authoring Swift Package Manager manifests, including products and targets, dependency version rules, local packages for app modularization, test targets, bundled resources, and platform-conditional build settings. Use when creating or editing a Package.swift file, splitting an app into local feature packages, adding or pinning third-party dependencies, declaring resources or test targets in a package, or resolving version-resolution and platform-condition issues.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "macos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -11018,12 +10892,9 @@
       "category": "app-services",
       "description": "Use when implementing in-app purchases or auto-renewable subscriptions with StoreKit 2 — loading Product objects, calling purchase() and handling PurchaseResult, verifying VerificationResult<Transaction>, reading current entitlements and subscription status, listening to Transaction.updates for renewals and refunds, finishing transactions, and building paywalls with ProductView or SubscriptionStoreView.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "ipados"
       ],
       "stability": "stable",
       "version": "1.1.0",
@@ -11053,8 +10924,7 @@
       "description": "Covers SupportingPaneScaffold from the Adaptive Navigation library — primary content pane paired with a contextual supporting pane on medium and expanded windows, the ThreePaneScaffoldNavigator, pane back-stack management, and when to choose SupportingPaneScaffold over ListDetailPaneScaffold. Use when building a feature screen that needs a persistent or slide-in contextual panel (metadata, filters, inspector, help) alongside the main content on large screens while remaining a single-pane layout on compact windows.",
       "platforms": [
         "android",
-        "large-screen",
-        "chromeos"
+        "large-screen"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -11083,12 +10953,7 @@
       "category": "language",
       "description": "Guides migrating a codebase to the Swift 6 language mode: enabling it per target, resolving strict data-race checking, making types Sendable, applying actor and @MainActor isolation, and fixing global state. Use when turning on complete concurrency checking, adopting Swift 6 mode, fixing Sendable or actor-isolation compiler errors, or planning an incremental module-by-module migration.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -11117,12 +10982,7 @@
       "category": "language",
       "description": "Guidance for writing data-race-safe asynchronous Swift under Swift 6 strict concurrency, covering async/await, structured concurrency with async let and task groups, actors and isolation, the MainActor, Sendable, and Task cancellation. Use when adding or auditing async code, fixing strict-concurrency or Sendable diagnostics, deciding where work should run, choosing between structured and unstructured tasks, or modernizing callback-based APIs to async/await.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.1.0",
@@ -11153,12 +11013,7 @@
       "category": "language",
       "description": "Guidance for protocol-oriented and generic Swift, covering generic functions and types, associated types with where clauses, protocol composition, primary associated types, and choosing between opaque results (some) and existentials (any) by their performance and type-identity tradeoffs. Use when designing a protocol or generic API, deciding between some, any, or a generic parameter, constraining associated types, fixing protocol-as-type or associated-type errors, or replacing hand-written type erasure.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -11186,12 +11041,7 @@
       "category": "language",
       "description": "Practical guidance for everyday Swift language fundamentals in app code — value versus reference types (struct/enum vs class), optionals and optional chaining, let vs var, stored/computed/lazy properties and observers, closures and capture semantics, protocols and extensions, and struct-first design. Use when modeling a new type and choosing struct vs class, taming optionals, deciding where to put behavior with protocol extensions, fixing a closure retain cycle, or reviewing idiomatic Swift in a pull request.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.1.0",
@@ -11220,12 +11070,7 @@
       "category": "language",
       "description": "Guidance for authoring and adopting Swift macros, covering freestanding (#) versus attached (@) macro roles, what each expands to, building a macro plugin with SwiftSyntax and the SwiftPM macro target, testing expansions, and choosing a macro over a function or protocol. Use when writing a custom macro, deciding whether a macro is the right tool, debugging an expansion, wiring up a macro package, or understanding how @Observable and #Preview generate code.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -11254,12 +11099,8 @@
       "category": "build-packaging",
       "description": "Guidance for authoring and running SwiftPM plugins: build-tool plugins for code generation and command plugins for linting/formatting, declared in Package.swift with sandbox permissions. Use when generating source at build time, wiring a formatter or linter into a package, choosing prebuild vs build commands, or fixing plugin sandbox and write-permission errors in Xcode 26 or the swift CLI.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "macos"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -11287,12 +11128,8 @@
       "category": "language",
       "description": "Guides Swift performance and memory work: value semantics and copy-on-write, ARC and reference cycles, weak/unowned capture lists, inout, the borrowing/consuming ownership keywords, and Span. Use when a profile shows retain/release or allocation hotspots, when designing hot-path data structures, when fixing leaks or retain cycles, or when reaching for unsafe pointers.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "watchos"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -11321,12 +11158,7 @@
       "category": "testing",
       "description": "Writes tests with the Swift Testing framework — @Test functions, the expect and require macros, parameterized tests, suites, and async/throwing tests. Use when adding or restructuring tests for Apple-platform Swift code, migrating from XCTest, or parameterizing test cases.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.1.0",
@@ -11354,12 +11186,7 @@
       "category": "app-frameworks",
       "description": "Designs SwiftData models with @Model, relationships, delete rules, and uniqueness for Apple-platform persistence. Use when modeling persistent data, choosing relationship or delete rules, adding @Attribute(.unique), setting up a ModelContainer, or deciding how to shape a SwiftData schema.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.1.0",
@@ -11388,12 +11215,7 @@
       "category": "app-frameworks",
       "description": "Guidance on reading and evolving a SwiftData store, covering the Query macro with the Predicate macro, sort descriptors, FetchDescriptor for imperative fetches, fetching through the model context, and schema migration with VersionedSchema and SchemaMigrationPlan stages. Use when filtering or sorting persisted models, paging large result sets, fetching outside a view, designing versioned schemas, or planning lightweight versus custom migrations between store versions.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.1.0",
@@ -11487,11 +11309,9 @@
       "category": "architecture",
       "description": "Guides choosing and applying SwiftUI app architecture: the MV pattern (Observable models in the environment) versus MVVM (one ViewModel per view), where state and business logic belong, and how to keep views thin and testable. Use when structuring a new SwiftUI app, deciding whether a view needs a ViewModel, refactoring fat views, placing shared model state, or debating MV vs MVVM in code review.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
         "macos",
-        "watchos",
-        "tvos",
         "visionos"
       ],
       "stability": "contested",
@@ -11554,12 +11374,9 @@
       "category": "app-frameworks",
       "description": "Guides view-scoped async work in SwiftUI using the task and task(id:) modifiers, refreshable and searchable async closures, and main-actor state updates. Use when wiring async loads, async sequences, pull-to-refresh, or live search into a view, when a task must cancel on disappear or restart on an id change, or when updating Observable or State models from background work without data races.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "watchos"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -11587,11 +11404,9 @@
       "category": "app-frameworks",
       "description": "Covers SwiftUI fundamentals including views as value types, the body computed property, view composition and subview extraction, layout containers (VStack, HStack, ZStack, Grid, and lazy stacks), modifier ordering, ViewBuilder, and previews. Use when building or refactoring SwiftUI view hierarchies, deciding when to extract a subview, reasoning about why modifier order changes layout or appearance, choosing between eager and lazy containers, or wiring up Xcode previews. Excludes navigation and state-flow concerns, which belong to dedicated skills.",
       "platforms": [
-        "ios",
-        "ipados",
+        "apple",
         "macos",
         "watchos",
-        "tvos",
         "visionos"
       ],
       "stability": "stable",
@@ -11622,11 +11437,9 @@
       "category": "app-frameworks",
       "description": "Guidance for building SwiftUI custom layouts with the Layout protocol (sizeThatFits/placeSubviews), layout caches, alignment guides, ViewThatFits, anchors, and coordinate spaces. Use when arranging subviews in a flow, radial, or measurement-driven pattern that nested HStack/VStack/Grid cannot express, when adapting between layouts by available space, or when reading one view's geometry relative to another.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
         "watchos",
-        "tvos",
         "visionos"
       ],
       "stability": "stable",
@@ -12100,11 +11913,9 @@
       "category": "app-frameworks",
       "description": "Guidance for managing SwiftUI state and data flow with the Observation framework, covering State for view-owned value data and for Observable reference models, Binding, passing Observable models down the view tree, Environment for dependency injection, and Bindable. Use when deciding which property wrapper owns a piece of state, when a child needs to mutate a parent's value, when injecting a shared model across many screens, or when migrating from the legacy StateObject, ObservedObject, and Published trio to Observable.",
       "platforms": [
-        "ios",
-        "ipados",
+        "apple",
         "macos",
         "watchos",
-        "tvos",
         "visionos"
       ],
       "stability": "stable",
@@ -12298,12 +12109,10 @@
       "category": "ship",
       "description": "Guides shipping Apple apps through TestFlight beta testing and App Store Connect: archiving and uploading a build, internal vs external testing groups, export-compliance, metadata and versions, submitting for review, and phased release. Use when you need to distribute a beta, set up TestFlight groups, fix Missing Compliance, manage app versions, or submit a release for review.",
       "platforms": [
+        "apple",
         "ios",
-        "ipados",
-        "macos",
         "watchos",
-        "tvos",
-        "visionos"
+        "tvos"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -12333,12 +12142,7 @@
       "category": "testing",
       "description": "Guidance for testing async, concurrent, and time-based Swift code with Swift Testing: async test functions, confirmations for callbacks and streams, time limits, actor and MainActor isolation, and injected clocks. Use when writing or reviewing tests that await results, exercise AsyncStream or completion handlers, hit flaky sleeps, or need deterministic timing.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -12367,12 +12171,8 @@
       "category": "app-services",
       "description": "Guidance for surfacing contextual feature-discovery tips with TipKit. Use when defining a Tip, gating it with parameter- or event-based rules, presenting via popoverTip or TipView, grouping tips, or syncing tip status across devices with CloudKit.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "ios"
       ],
       "stability": "stable",
       "version": "1.0.0",
@@ -12766,12 +12566,7 @@
       "category": "testing",
       "description": "Guides what to test and how to design Swift code for testability — the test pyramid, isolating logic from UI and I/O via injection and pure functions, test doubles (fakes, stubs, spies), clear naming, and treating coverage as a signal not a target. Use when deciding what is worth testing, structuring a test suite, refactoring untestable code, or reviewing test quality.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -13280,12 +13075,7 @@
       "category": "app-services",
       "description": "Fetch current conditions, hourly and daily forecasts, severe weather alerts, and next-hour minute precipitation from Apple WeatherKit on Apple platforms or via the REST API. Use when an app shows weather data, when wiring WeatherService.shared, when required Apple Weather attribution and legal links are missing, or when a server needs signed JWT REST access.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -13434,12 +13224,8 @@
       "category": "build-packaging",
       "description": "Operational guidance for the coding agents and coding assistant in Xcode 27 — setting up agents and chat models in Intelligence settings, plan mode before edits, reviewing agent changes in the artifacts pane, conversation-history rollback, command and tool permissions, AGENTS.md/CLAUDE.md configuration files, MCP servers and plug-ins, and the agent-driven localization workflow. Use when adopting Xcode's coding assistant on a project or team, deciding which tasks to hand to an agent, configuring permissions or agent instruction files, reviewing or rolling back agent edits, or running agent translations.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple",
+        "macos"
       ],
       "stability": "emerging",
       "version": "1.0.0",
@@ -13469,12 +13255,7 @@
       "category": "build-packaging",
       "description": "Conventions for structuring Xcode projects so they stay reviewable and reproducible — targets versus schemes versus build configurations, xcconfig files, Info.plist and entitlements, asset catalogs, low project-file churn, and modularization with local Swift packages. Use when setting up a new Xcode project, deciding where a build setting belongs, taming noisy pbxproj diffs, splitting an app into feature modules, or onboarding a team to a shared project layout.",
       "platforms": [
-        "ios",
-        "ipados",
-        "macos",
-        "watchos",
-        "tvos",
-        "visionos"
+        "apple"
       ],
       "stability": "stable",
       "version": "1.0.1",
@@ -13593,7 +13374,6 @@
       "category": "form-factors",
       "description": "Covers building for Android XR glasses with Jetpack Compose Glimmer — the Compose UI toolkit for display glasses — plus Jetpack Projected lifecycle, audio and voice interaction, and hands-free UX patterns for AI/display glasses. Use when targeting XR glasses hardware with the Jetpack XR SDK, authoring Glimmer UI, designing hands-free or audio-first flows, or adapting existing Compose UI for a constrained, head-worn display.",
       "platforms": [
-        "xr",
         "glasses"
       ],
       "stability": "emerging",

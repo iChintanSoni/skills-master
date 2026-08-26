@@ -8,7 +8,7 @@ x-skills-master:
   domain: android
   class: code
   category: form-factors
-  platforms: ["xr", "glasses"]
+  platforms: [glasses]
   requires: {android: "16", kotlin: "2.2", xr-compose: "1.0"}
   pairs_with: [m3-ai-glasses]
   sources:

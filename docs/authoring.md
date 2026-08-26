@@ -69,6 +69,32 @@ The primary Documentation/HIG URLs should also appear in the `sources` frontmatt
 5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. See [What earns a pair](#what-earns-a-pair) for what belongs in the list.
 6. **L2/L3 split.** When the body grows past ~500 lines, move long examples → `examples.md`, step lists → `checklist.md`, and deep reference tables → `reference.md` (a defined slot no skill currently uses — prefer the first two unless a true lookup table outgrows them), and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
 
+## What `platforms` means
+
+`platforms` is the facet behind `skills-master catalog --platform <p>`, so it answers one
+question: **for which platforms does this skill carry guidance you would act on?** It is not
+an availability matrix — "this API also compiles on tvOS" is not guidance, and listing every
+platform a framework happens to ship on makes the filter useless.
+
+- **List a platform** when the skill says something specific about it: a `## Platform notes`
+  bullet, a behavioral difference, a capability that is missing there. `swiftui-concurrency`
+  lists `watchos` because `refreshable` is unavailable on most watch layouts — that changes
+  what you write.
+- **Do not list a platform** just because the code runs there. Availability belongs in
+  `requires` and in prose.
+- **A domain-wide skill with nothing platform-specific to say** uses the domain as its only
+  value: `platforms: [apple]`. `swift-concurrency` is identical on all six Apple platforms,
+  so that is the honest entry — and `catalog --platform apple` is how you find that set.
+- **A subset is already a statement.** `[ios, ipados]` says "not on Mac, watch, or TV", which
+  is worth knowing; leave such lists alone rather than collapsing them to the baseline.
+
+The two domains use different vocabularies on purpose, the same way their categories do (see
+`docs/architecture.md`, "Categories mirror the vendor, not each other"). Apple has six
+co-equal OSes, so it enumerates them and falls back to `apple`. Android has one dominant OS
+plus form factors, so `android` is the handset baseline and `large-screen`, `wear-os`,
+`android-tv`, `android-auto`, `automotive-os`, `chromeos`, `xr`, and `glasses` mark the
+form-factor-specific guidance.
+
 ## What `stability` means
 
 `stability` describes **the subject, not the skill**. It answers: can a reader act on this

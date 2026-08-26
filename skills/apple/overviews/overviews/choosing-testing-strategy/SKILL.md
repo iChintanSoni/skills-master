@@ -6,7 +6,7 @@ x-skills-master:
   domain: apple
   class: overview
   category: overviews
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple]
   pairs_with: [swift-testing, unit-testing-strategy, xctest-ui-automation, snapshot-testing]
   sources:
     - https://developer.apple.com/xcode/swift-testing/

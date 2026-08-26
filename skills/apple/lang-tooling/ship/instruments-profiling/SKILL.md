@@ -6,7 +6,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: ship
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, macos]
   requires:
     xcode: "26"
   pairs_with: [os-logging, swift-performance-memory, crash-symbolication]

@@ -6,7 +6,7 @@ x-skills-master:
   domain: apple
   class: overview
   category: overviews
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple, watchos, tvos]
   pairs_with: [swift-concurrency, swiftui-concurrency]
   sources:
     - https://developer.apple.com/documentation/swift/concurrency

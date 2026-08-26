@@ -6,9 +6,7 @@ x-skills-master:
   domain: apple
   class: design
   category: patterns
-  platforms:
-    - ipados
-    - ios
+  platforms: [ipados, ios]
   requires: { ipados: "26" }
   pairs_with: [hig-designing-for-ipados, swiftui-scenes-windows]
   sources:

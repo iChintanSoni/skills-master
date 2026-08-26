@@ -223,9 +223,26 @@ restated against that total.
   agree. Contested set verified and unchanged at 7 — each carries a real `## Open question`
   laying out both cases. `choosing-http-client` was considered and rejected: it prescribes
   a default with a clear rule, which is settled, not contested.
-- [ ] **7.3 Platforms honesty pass (M).** Stop claiming watchOS/tvOS/visionOS on skills
+- [x] **7.3 Platforms honesty pass (M).** Stop claiming watchOS/tvOS/visionOS on skills
   with no form-factor content; make the facet discriminating again (watchos 137, tvos 150,
-  visionos 174 of 433 today).
+  visionos 174 of 433 today). Like `stability`, the facet had no written meaning
+  ("free-form per domain"), so `docs/authoring.md` now defines it ("What `platforms`
+  means"): it answers *for which platforms does this skill carry guidance you would act
+  on*, not where the API happens to compile. Availability stays in `requires` and prose.
+  A domain-wide skill with nothing platform-specific to say gets `platforms: [apple]`.
+  Apple: **56 skills changed** — watchos 137 → 100, tvos 150 → 99, visionos 174 → 127,
+  ios 187 → 148, ipados 188 → 135, macos 171 → 136, with 56 gaining the new `apple` value.
+  Android: **13 changed** — large-screen 154 → 145, android-tv 8 → 6, chromeos 9 → 7,
+  xr 6 → 5. Android's convention was already sound (its large-screen notes are real
+  guidance: "ensure `contentIntent` opens the correct split-pane destination"), so the
+  disease was almost entirely apple's — 121 of 208 skills claimed all six OSes.
+  The vocabularies stay different on purpose, per `docs/architecture.md`: apple has six
+  co-equal OSes, android has one baseline plus form factors.
+  **A linter rule was considered and rejected.** A domain-agnostic check ("claimed platform
+  must appear in the body") false-positives badly, because bodies use product names —
+  `hig-charts`, `hig-sheets` and `hig-toolbars` all say "iPhone", never "iOS". Getting it
+  right needs a per-domain synonym map, which would hardcode domain vocabulary into a
+  linter the schema deliberately keeps domain-agnostic.
 - [ ] **7.4 Tag consolidation (M).** 543 of 887 tags are used once. Define a canonical
   vocabulary (or drop tags), lint against it.
 - [ ] **7.5 Surface `stability` to the agent (S)** *(found during 7.2)*. `stability` is

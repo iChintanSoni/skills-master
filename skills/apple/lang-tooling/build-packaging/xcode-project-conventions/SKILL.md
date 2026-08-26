@@ -6,7 +6,7 @@ x-skills-master:
   domain: apple
   class: lang-tooling
   category: build-packaging
-  platforms: [ios, ipados, macos, watchos, tvos, visionos]
+  platforms: [apple]
   requires:
     xcode: "16"
   pairs_with: [xcode-coding-agents]

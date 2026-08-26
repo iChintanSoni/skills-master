@@ -8,7 +8,7 @@ x-skills-master:
   domain: android
   class: code
   category: compose-ui
-  platforms: [android, large-screen, wear-os, android-tv, chromeos, xr]
+  platforms: [android, large-screen, wear-os, xr]
   requires:
     android: "16"
     kotlin: "2.2"
