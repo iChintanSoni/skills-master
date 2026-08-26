@@ -1,400 +1,316 @@
-# Improvement Plan
+# Agent Skills spec alignment plan
 
-Working plan for the 2026-08 improvement effort. Each numbered item is one branch + PR;
-check items off as they merge. Baseline audit date: **2026-08-25** (lint clean, typecheck
-clean, 24/24 tests passing, 393 skills).
+Working plan for the 2026-08/09 **Agent Skills specification alignment** effort. The previous
+plan (the 2026-08 improvement effort, phases 0–10) completed in full and is preserved in git
+history at `22d24b4`; its one unfinished leftover is carried forward as item 0.4 below.
 
-**Mission:** this library exists to give coding agents (Claude Code, Codex, Cursor,
-Copilot) an edge. Every decision below optimizes for that: content must be current and
-high-signal, emitted output must actually reach agent context intact, and skill
-descriptions must trigger reliably. Content that an agent never sees (orphaned resources,
-broken emit formats) is a bug, not a nice-to-have.
+**Audit question:** do the skills in this repo follow the Agent Skills specification
+([agentskills.io/specification](https://agentskills.io/specification)) and the authoring
+guidance from agentskills.io and Anthropic
+([platform.claude.com — Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview))?
+
+**Audit verdict (2026-08-26, 433 skills):** **yes on every hard requirement — with caveats.**
+The canonical `skills/` library is deliberately a *superset* format that the CLI compiles down,
+and the compiled projections (`.claude/skills/`, `plugins/`) are what an agent actually reads.
+Those projections carry exactly the spec's required fields and nothing else. The gaps are:
+the linter enforces a *looser* name rule than the spec, so compliance is currently a fact
+about the content rather than a guarantee; one description contains XML-tag-shaped text that
+Claude's upload validator rejects; and several best practices from the two authoring guides
+(reference-file tables of contents, conditional load hints, the spec's `license`/`metadata`
+fields, description trigger evals) are unexploited. None are emergencies; all are cheap
+relative to their value.
 
 ## Ground rules
 
-- **PR per item.** One branch + PR per numbered item below; CI must be green; Chintan merges.
-- **Tooling gates before content.** Phases 0–2 land before bulk content edits so every
-  content change is machine-checked.
-- **Generated files travel with their cause.** Any skill edit regenerates
-  `registry.json`, `docs/taxonomy.md`, and `plugins/` in the same PR.
-- **Content policy holds.** New/refreshed prose is original, summarized from official
-  vendor docs, linked via `sources` — never pasted. Every re-verified skill bumps
-  `snapshot_date` and `version` (patch for re-verify, minor for substantive rewrite).
-- **Release tags.** Suggest `#minor` in the merge commit for PRs that add CLI commands
-  (9.1, 9.2); everything else defaults to patch.
+- **PR per numbered item.** CI green; Chintan merges. Suggest `#minor` only where noted.
+- **Tooling gates before content edits** (Phase 0 lands before Phases 1–2 touch skills),
+  so every content change is machine-checked — same discipline as the last effort.
+- **Generated files travel with their cause.** Any skill edit regenerates `registry.json`,
+  `docs/taxonomy.md`, and `plugins/` in the same PR.
+- **Docs stay in sync.** Items that change the pipeline update `docs/architecture.md` /
+  `docs/authoring.md` / `docs/emitters.md` in the same PR.
+- **Evidence before rewrites.** Description/content changes at library scale (Phase 3) are
+  gated on eval data, not taste. A 433-skill rewrite on an untested hypothesis is how a
+  library gets worse while its diffs look busy.
 
-## Baseline findings (2026-08-25)
+## Baseline audit findings (2026-08-26)
 
-- **Staleness:** whole library carries two bulk stamps — apple `2026-05-30` (9 days
-  before WWDC 2026), android `2026-06-06`. All 393 skills still `version: 1.0.0`;
-  zero mentions of iOS 27 / WWDC 2026 / Android 17. 6 dead URLs (9 occurrences).
-- **Structure:** 175/176 Level-3 files unlinked from bodies (invisible to non-claude
-  emitters); `reference.md` documented everywhere, zero on disk; 5 skills at wrong
-  directory depth; 303/393 with empty `pairs_with`; only 3 `emerging` skills.
-- **Coverage:** android has no graphics/games category; apple has no code-side
-  watchOS/tvOS/CarPlay skills while 123 apple skills claim `watchos`; 7 overviews
-  missing their sibling-domain counterpart.
-- **CLI:** `add --no-commit` poisons consumer `.gitignore` with `.github`/`AGENTS.md`;
-  `doctor` always exits 0; AGENTS.md emit nests h2 under h3; "Swiftui Navigation"
-  title-casing; committed `registry.json` never read at runtime (architecture.md says
-  it is); dead programmatic API + dead conflict plumbing; 7 silent `catch {}` sites.
-- **Tests:** `core/lint.ts` (the CI gate for all content) has zero coverage; so do
-  `bin.ts`, `init`, `catalog`, `content/source.ts`; `update`'s source-changed path
-  untested; no coverage reporting.
-- **Infra:** `corepack pnpm` (the documented invocation) fails on the 11.5.1 pin;
-  no TS formatter/linter; weekly crawl uploads an artifact nobody reads; `LICENSE`
-  absent from npm tarball; Node engine ranges disagree (`>=20` vs `>=22` vs CI 22).
+Measured over all 433 `SKILL.md` files plus the emitted projections.
+
+### What already conforms (the spec's hard requirements)
+
+| Spec requirement | Status in this repo |
+| --- | --- |
+| Skill = directory containing `SKILL.md` | ✅ all 433, `domain/class/category/name/SKILL.md` |
+| `name` ≤ 64 chars, lowercase `[a-z0-9-]` | ✅ longest name is 37 chars; zero violations |
+| `name`: no leading/trailing/consecutive hyphens | ✅ zero violations **in content** — but see gap G1: the linter does not enforce this |
+| `name` = parent directory name | ✅ linter error since day one |
+| `description` non-empty, ≤ 1024 chars | ✅ max is 747 chars (mean 424); schema-enforced |
+| Description says what + when | ✅ all 433 contain a "Use when …" clause (linted) |
+| Body ≤ 500 lines / < 5k tokens recommended | ✅ max body is 246 lines / ~4.7k tokens (mean 90 lines / ~2.0k tokens); 500 is a lint **error** |
+| File references relative, one level deep | ✅ all L3 links are `(examples.md)`-style; **zero** resource files link onward to another file |
+| Resource files linked from `SKILL.md` | ✅ linted (warn) since the last effort's 2.2/3.2 |
+| No Windows-style paths | ✅ none |
+| Emitted frontmatter = spec fields only | ✅ Claude emitter writes exactly `name` + `description`; `x-skills-master`, `globs`, `tags` stripped (snapshot-tested for every emitter) |
+| Deterministic output | ✅ byte-identical repeat runs asserted by e2e tests |
+| Claude-specific: no reserved words "claude"/"anthropic" in `name` | ✅ zero violations in content — but not enforced (G1) |
+| Claude-specific: no XML tags in `name`/`description` | ⚠️ one violation — see G2 |
+
+Two structural notes that are **by design, not gaps**, and should stay that way:
+
+- **The canonical `skills/` tree is not itself a spec-conformant skills directory.** Authored
+  frontmatter carries three top-level keys the spec does not define (`globs`, `tags`,
+  `x-skills-master`); the spec's stated home for non-spec properties is the `metadata` map,
+  which is string→string and cannot hold our structured block. This is the whole point of the
+  compile step: agents consume the projections, never `skills/` directly. Item 1.4 documents
+  this boundary explicitly so nobody points a spec validator (or an agent) at the source tree
+  and files a bug.
+- **`scripts/` is unused (0 directories).** Both guides' script guidance (PEP 723 inline deps,
+  `--help` design, validation loops) targets skills that *execute* things. This is a prose
+  knowledge library; its "executable" analogue is the checklist file, which we already have.
+  No action — revisit only if a skill ever genuinely needs a deterministic tool.
+
+### Gaps (ordered by risk)
+
+- **G1 — The linter's name rule is looser than the spec.** `NAME_RE` is
+  `/^[a-z0-9-]{1,64}$/`, which accepts `-pdf`, `pdf-`, and `pdf--processing`; the spec
+  forbids all three. Claude's platform additionally rejects names containing the reserved
+  words "anthropic"/"claude". Zero current violations — meaning compliance is luck plus
+  convention, and nothing stops skill 434 from breaking it.
+- **G2 — One description contains XML-tag-shaped text.** `storekit`'s description includes
+  `VerificationResult<Transaction>`. Claude's platform validation states descriptions
+  "cannot contain XML tags", and tag-shaped generics are exactly what a naive validator
+  matches — a claude.ai zip upload or Skills API upload of this projection can be rejected.
+  Nothing lints for this.
+- **G3 — No conformance gate against the spec's reference validator.** The spec ships
+  `skills-ref validate`. Nothing in CI validates the *emitted* projections (the dogfood
+  `.claude/skills/` or the 8 plugins' 433 skill dirs) against it, so a future emitter change
+  could silently drift off-spec. Our snapshot tests pin our own expectations, not the spec's.
+- **G4 — 46 of 176 resource files exceed 100 lines with no table of contents.** Claude's
+  best-practices guide: reference files > 100 lines should open with a ToC so an agent that
+  previews with a partial read (`head -100`) still sees the full scope. Worst offenders are
+  android `examples.md` files (up to 436 lines).
+- **G5 — Resource links carry no load-time guidance.** Bodies point at resources as
+  bare `- **Worked examples:** [examples.md](examples.md)` list entries. Both guides are
+  explicit that the useful form is conditional — "read X *when* Y" — because that is what
+  makes progressive disclosure work at decision time rather than as an afterthought.
+- **G6 — The spec's `license` and `metadata` fields are unused in projections.** Emitted
+  skills carry no license (the repo is MIT, and plugins are distributed artifacts) and no
+  provenance — a consumer looking at an installed skill cannot see its version,
+  snapshot date, or source without the lockfile. `metadata` (string→string) fits
+  `version`/`snapshot-date`/`source` exactly; the last effort's item 1.8 already flagged
+  this as spec-legal and deferred it.
+- **G7 — Description quality is asserted, never measured.** agentskills.io's
+  optimizing-descriptions guide defines a trigger-eval loop (should-trigger /
+  should-not-trigger query sets, trigger rates, train/validation split). We have 433
+  hand-written descriptions, 19 of which lead with the trigger clause, and zero eval
+  queries. The 1.8 audit judged them "all carry use-when" by grep, which checks the
+  *letter* of the guidance, not whether skills actually activate on realistic prompts —
+  especially for near-miss discrimination between our own sibling skills
+  (`swiftui-sheets` vs `hig-sheets` vs `choosing-navigation-pattern`), which is precisely
+  the hard case the guide says descriptions must solve.
+- **G8 — Always-loaded metadata cost at plugin scale.** Every installed skill's
+  name+description sits in the consumer's system prompt permanently. Measured today:
+  `skills-master-android-code` ≈ 10.3k tokens of descriptions across 107 skills;
+  `apple-code` ≈ 9.7k over 88; installing one full domain ≈ 21–23k tokens *before any skill
+  triggers*. Each description is individually within guidance (mean ~106 tokens); the
+  aggregate is a real cost the guides' per-skill advice never has to confront, and nothing
+  in the repo reports it.
 
 ---
 
-## Phase 0 — Infra unblockers
+## Phase 0 — Conformance gates (tooling only, no content)
 
-- [x] **0.1 Fix pnpm invocation + engines (S).** Make `corepack pnpm install` work again
-  (align `packageManager` with what corepack resolves, or add `devEngines.packageManager`);
-  align Node engines to `>=22` across root, CLI `package.json`, and `tsup` target;
-  update CLAUDE.md if the documented command changes.
-- [x] **0.2 Publish metadata (S).** Ship `LICENSE` in the npm tarball; drop shipped
-  sourcemaps or include them deliberately; fix Zod deprecations (`z.string().url()` →
-  `z.url()`, `.passthrough()` → `z.looseObject()`).
-- [x] **0.3 TS formatter/linter (M).** Add Biome (single tool: format + lint), format the
-  package once, wire a CI check. Keep rules light — codify the existing style.
-- [x] **0.4 Release pipeline was silently broken (S)** *(found during 9.1 — not in the
-  original audit)*. Every merge from #78 onward failed at "Publish to GitHub Packages", so
-  nothing from Phases 7–9 was tagged or released; npmjs sat at 0.1.6 from 2026-08-25 while
-  tags sat at v0.1.5. Root cause: both publish steps wrote credentials to a **project-level**
-  `.npmrc`, and pnpm 11 deliberately refuses to expand `${VAR}` in registry credentials
-  read from a committed file. npmjs happened to keep working because `setup-node` had
-  already written a *user-level* entry for it; GitHub Packages had no such fallback and
-  401'd. Credentials now go to the user config via `npm config --location=user set`.
-  Three follow-ons: the committed `.npmrc` is deleted and gitignored (it also mis-scoped
-  `@ichintansoni` to GitHub Packages, breaking `npm view` locally, and was the source of the
-  pnpm warning on every command); version computation now baselines on
-  **max(latest tag, latest npmjs version)**, so a publish that succeeds and then fails
-  before tagging self-heals instead of re-publishing a version npmjs already has; and
-  `actionlint` runs in CI, because shellcheck flags this exact bug (SC2016) and nothing was
-  running it. Next release computes 0.1.7.
+- [ ] **0.1 Tighten the name rule to the spec (S).** Extend schema/lint so `name` (and
+  `pairs_with` entries) must not start/end with a hyphen or contain `--`, and error on the
+  reserved words "claude"/"anthropic" anywhere in the name (Claude platform rule). Update
+  the `NAME_RE` doc comment to cite the spec. Zero content changes expected — this converts
+  observed compliance into enforced compliance. Unit tests per the 2.3 pattern. *(G1)*
+- [ ] **0.2 XML-tag lint rule (S).** Warn (error?) when `name` or `description` matches an
+  XML/HTML-tag-shaped pattern (`<[A-Za-z/]`). Generic types are the known trap
+  (`VerificationResult<Transaction>`, `Result<T, E>`); the fix at authoring time is to
+  reword ("verifying the transaction's VerificationResult"), the same policy authoring.md
+  already applies to the ` #` YAML hazard — document it alongside. *(G2)*
+- [ ] **0.3 `skills-ref validate` in CI (M).** Add a CI step that runs the spec's reference
+  validator over emitted output: the committed dogfood `.claude/skills/` and every skill dir
+  under `plugins/*/skills/`. Vendor or pin the tool (it lives in
+  `github.com/agentskills/agentskills/skills-ref`); if running it proves impractical in CI,
+  port its checks into a small script — the point is an *external* definition of conformance
+  guarding the emitters, not our own snapshots agreeing with themselves. Document in
+  `docs/emitters.md` that the Claude projection tracks the Agent Skills spec and this gate
+  is what holds it. *(G3)*
+- [ ] **0.4 Dead-surface deletion, carried over (S).** From the previous plan (found during
+  7.5): `CondenseOptions.openQuestion: "summarize"` and `summarizeOpenQuestion()` are
+  exercised only by their own tests — no emitter has passed that option since the 1.9 digest
+  landed. Delete both, plus their tests, per the 1.5-style rule.
 
-## Phase 1 — CLI correctness
+## Phase 1 — Spec-surface fixes (small, concrete, land fast)
 
-- [x] **1.1 `.gitignore` poisoning (S).** `add` with `commit: false` writes target *roots*
-  (`.github`, `AGENTS.md`) to consumer `.gitignore` (`commands/add.ts:114`). Introduce
-  per-emitter ignorable paths; only ignore files the emitter owns. Add regression test.
-- [x] **1.2 Exit codes & help-text correctness (S).** `doctor` gets `exitOnFalse` so drift
-  fails CI (`bin.ts:172`); fix `new`'s help string (says 3 segments, parser needs 4);
-  rename value-taking `--version` on `registry build`/`marketplace build` to
-  `--set-version`; add the ~17 missing option descriptions; add `.catch()` on
-  `parseAsync`.
-- [x] **1.3 Emitter output bugs (S).** Demote body headings under the `###` title in the
-  AGENTS.md emitter; teach `titleFromName` compound tokens (SwiftUI, SwiftData, watchOS…);
-  re-record snapshots; refresh the committed dogfood outputs under `packages/cli/`.
-- [x] **1.4 Error handling honesty (M).** `update` must distinguish "skill deleted
-  upstream" from load errors; `resolveContent` errors on nonexistent `--content` path;
-  config/lockfile parse failures name the file instead of dumping raw Zod; wrap
-  `fetchRemote` failures with actionable hints; guard the cache-dir wipe on empty ref;
-  fix `remove` over-reporting when target filtering empties the set.
-- [x] **1.5 Delete dead surface (S).** Remove `src/index.ts` (unbuilt programmatic API),
-  `onConflict` plumbing, `setQuiet`, `readBlock`/`readBlockVersion`,
-  `DetailedWriteResult.before/after`, `CondenseOptions.fullSkillNote`, unused
-  `scope`/`generatedAt` schema fields. (Decision: CLI-only package, per Chintan.)
-- [x] **1.6 Registry fast path + perf (M).** Make `ContentSource` actually read the
-  committed `registry.json` (falling back to a scan), as `docs/architecture.md` already
-  claims; memoize `skillDirs()` (kills the O(n²) walk in `marketplace build`); update
-  architecture.md if behavior ends up differing.
-- [x] **1.7 Auto-detect heuristics (S).** Copilot currently triggers on `.github` existing
-  (nearly always true); AGENTS.md only on the file pre-existing (nearly always false).
-  Rebalance and document detection rules.
-- [x] **1.8 Agent-consumption audit (M).** Verify each emitted format against what the
-  consuming agent actually reads today: Claude Code skill frontmatter + description-based
-  triggering, Cursor `.mdc` rule fields and glob semantics, Copilot `applyTo` instructions,
-  AGENTS.md conventions. Check emitted block token weight is proportionate. Audit skill
-  `description` fields as trigger phrases ("Use when…" quality) since that is what makes
-  an agent load the skill at the right moment. Findings feed Phases 3–7.
-  **Findings (2026-08-25):** cursor emitter fully current (comma-string globs,
-  `alwaysApply: false` + description = "Apply Intelligently"); claude emitter
-  spec-portable (x-skills-master stripped; name/description caps match the Agent
-  Skills spec; optional future: spec-legal `metadata` map for provenance);
-  copilot `applyTo` string format correct, `excludeAgent`/`description` newly
-  available; AGENTS.md now read natively by Cursor and Copilot, nesting is
-  standard. Two defects found → items 1.9/1.10. Description audit: all 393
-  carry "use when", only 18 lead with it → fold into 7.2/7.3 passes.
-- [x] **1.9 AGENTS.md digest (M).** Blocks averaged ~1.9k tokens (755k for a
-  full install) in a file consumers inject wholesale on every request; the
-  emitter's "summarized aggressively" comment was aspirational. Blocks now
-  carry description + top-6 Core guidance bullets + top-3 Pitfalls + pointer
-  (mean ~584 tokens, 3.3x lighter), with L3 links flattened.
-- [x] **1.10 Copilot applyTo scoping (S).** 176 glob-less skills emit
-  `applyTo: "**"`, attaching them to every Copilot request. Omit `applyTo`
-  for glob-less skills (manual attach + always-loaded pointer line instead).
+- [ ] **1.1 Reword the `storekit` description (S).** Remove `VerificationResult<Transaction>`
+  (and re-grep the library for any other tag-shaped text 0.2's rule surfaces). Patch-bump
+  the skill's `version`; `snapshot_date` does not move (no re-verification happened).
+  Regenerate registry/taxonomy/plugins. Blocked on 0.2 so the fix lands with its gate. *(G2)*
+- [ ] **1.2 Emit `license` (S).** Add `license: MIT` to the Claude-emitter frontmatter
+  (spec-legal optional field), flowing to `.claude/skills/` installs and all 8 plugins.
+  One emitter line + snapshot updates + a note in `docs/emitters.md`. Decision to record:
+  either bare `MIT` or `MIT (see repository LICENSE)` — keep it short per the spec. *(G6)*
+- [ ] **1.3 Provenance via the spec's `metadata` map (M) — decision item.** Optionally emit
+  `metadata: {version, snapshot-date, source}` (string→string, spec-legal, clients ignore
+  what they don't know) on the Claude projection, so an installed skill self-describes its
+  currency — today that information dies with the strip of `x-skills-master`, and staleness
+  is invisible to the consumer without our lockfile. Costs ~3 frontmatter lines per emitted
+  skill (zero context cost until triggered — frontmatter beyond name/description is not
+  what's preloaded; verify that claim against Claude Code's actual loader before landing).
+  If accepted: emitter + snapshots + emitters.md. If rejected: record why here, per the
+  6.4/7.4 precedent of documenting non-changes. *(G6)*
+- [ ] **1.4 Document the spec boundary (S).** `docs/architecture.md` gains a short section:
+  the canonical `skills/` format is a superset of the Agent Skills spec (extra top-level
+  keys by design; the spec's `metadata` map can't hold structured facets); projections are
+  the conformance surface; `skills-ref validate` is not expected to pass on `skills/` and
+  is enforced on emitted output (0.3). Cross-link from authoring.md's frontmatter section.
 
-## Phase 2 — Linter gates (protect all later content work)
+## Phase 2 — Progressive-disclosure polish (content, machine-checked by Phase 0)
 
-- [x] **2.1 Taxonomy-depth lint rule (S).** Error when a skill's on-disk path isn't
-  `domain/class/category/name` or the directory doesn't match frontmatter
-  `class`/`category`. (Catches the 5 current offenders.)
-- [x] **2.2 Rule tightening (S).** Error on `## Open question` in non-`contested` skills
-  (reverse direction of existing rule); warn on >3 `sources` (authoring.md says 1–3);
-  warn on L3 files present but unlinked from the body.
-- [x] **2.3 lint.ts test suite (M).** Unit tests for every rule in `core/lint.ts` —
-  duplicate names, `pairs_with` reciprocity, future `snapshot_date`, YAML `" #"`
-  truncation, body caps, canonical headings, plus the new 2.1/2.2 rules. Add fixture
-  skills as needed.
+- [ ] **2.1 Tables of contents for long resource files (M).** Add a short `## Contents`
+  block to the 46 resource files over 100 lines (android examples files are the bulk).
+  Mechanical, high-leverage for partial reads; add a lint warn (>100 lines, no ToC within
+  the first ~15 lines) so the rule outlives the pass. Metadata-only edits do not bump
+  `version`/`snapshot_date` (nothing was re-verified) — but note these edits *do* change
+  emitted claude-target bytes, so regenerate plugins. *(G4)*
+- [ ] **2.2 Conditional load hints on resource links (M).** Rephrase the `## References`
+  resource entries from bare pointers to trigger-bearing ones, e.g.
+  `[examples.md](examples.md) — read when you need full working implementations` /
+  `[checklist.md](checklist.md) — run before merging navigation changes`. One line each,
+  90 skills. Keep the `(examples.md)` link shape exactly — `condense.ts`'s `L3_LINK_RE`
+  and the lint rule key on it; verify emitted output for both modes afterwards (the 3.2
+  lesson). Wording guidance goes into authoring.md. *(G5)*
+- [ ] **2.3 Metadata-footprint report (S).** Extend the weekly crawl report (or
+  `registry build`) with per-plugin totals: skill count, description tokens, worst-10
+  longest descriptions. This makes G8 visible and continuously measured rather than a
+  one-off audit figure, the same move 10.1 made for staleness. No content edits here —
+  trimming, if any, happens in Phase 3 with eval evidence. *(G8)*
 
-## Phase 3 — Content structural fixes
+## Phase 3 — Description optimization, eval-driven (the expensive one — evidence first)
 
-- [x] **3.1 Re-home the 5 mis-placed skills (S).** Move 4 apple overviews to
-  `apple/overviews/overviews/<name>` and `hig-sheets` up to `design/components/`;
-  regenerate registry/taxonomy/marketplace (marketplace build prunes old plugin paths).
-- [x] **3.2 Link all orphaned L3 files (M).** Add body links (`## References` or inline)
-  to `examples.md`/`checklist.md` in all ~90 affected skills so condense/pointers work
-  in every emitter; spot-check emitted output for both modes.
-- [x] **3.3 Dead links + small conformance (S).** Replace the 6 dead URLs; fix the 2
-  `stable` skills carrying `## Open question`; add "Use when" to the 3 noncompliant
-  descriptions; add `globs` to the 2 bare `code` skills; trim the 39 skills with >3
-  sources.
-- [x] **3.4 `reference.md` decision (S).** Either author `reference.md` where depth
-  genuinely exists to be split out, or remove it from authoring.md/emitters.md/registry
-  schema so docs stop promising a file type with zero instances. (Default: remove from
-  docs now; reintroduce when a real one exists.)
+The guides' loop (agentskills.io "Optimizing skill descriptions"): ~20 labeled queries per
+skill, 3 runs each, trigger-rate threshold, 60/40 train/validation split. At 433 skills that
+is ~26k agent invocations per iteration — not a thing to run wholesale. Sample instead:
 
-## Phase 4 — Targeted staleness refresh (WWDC 2026 / I/O 2026)
+- [ ] **3.1 Build the trigger-eval harness (M).** A script (per the guide's
+  `claude -p --output-format json` pattern) that takes `eval_queries.json` for a skill,
+  computes trigger rates against a project with the relevant plugin installed, and reports
+  pass/fail per query. Store query sets in-repo (e.g. `scripts/trigger-evals/<skill>/`).
+  `#minor` if it lands as a CLI command; a repo script is fine too.
+- [ ] **3.2 Pilot on the hard cases (M).** Pick ~10 skills where triggering is genuinely
+  ambiguous — sibling pairs the near-miss guidance warns about (`swiftui-sheets` vs
+  `hig-sheets`, `choosing-*` routers vs their destinations, `m3-*` design vs compose code
+  twins) — write ~20 queries each with should/should-not labels, and measure. The
+  should-not sets come free: the sibling's should-trigger queries.
+- [ ] **3.3 Act on the data (M/L, scope unknown until 3.2).** Only rewrite what measurably
+  misfires. Candidate hypotheses to test, not presume: leading with "Use when" (the
+  agentskills.io imperative-lead recommendation — currently 19/433 do; note Anthropic's own
+  examples are what-then-when, so this is genuinely open); adding "even if the user doesn't
+  mention X" pushiness for under-triggering skills; trimming p90+ descriptions (≥573 chars)
+  if length shows no trigger benefit — which would also buy back G8 tokens. Whatever wins
+  becomes an authoring.md rule with a rationale; whatever loses gets recorded here as
+  rejected, with numbers.
+- [ ] **3.4 Description policy for new skills (S).** authoring.md: new skills in ambiguous
+  territory ship with a query set and a harness run in the PR. Cheap at one-skill scale,
+  and it stops the library from re-accumulating unmeasured descriptions.
 
-- [x] **4.1 Apple refresh shortlist (S).** From the WWDC26 guides, map announcements to
-  affected skills (expect: swiftui lists/toolbars/navigation/sheets/error-handling,
-  liquid-glass adoption, app-intents/Siri, documents, Xcode/tooling). Commit the
-  shortlist into this file under 4.2.
-- [x] **4.2 Apple re-verification pass (L).** Re-verify each shortlisted skill against
-  current docs; note iOS 27 changes where behavior shifted; mark moved-fast areas
-  `emerging`; bump `snapshot_date`/`version`. Batch PRs by category.
-- [x] **4.3 Android refresh pass (L).** Compose-first is now official policy: revisit
-  Views-adjacent guidance and stability labels; fold in Android 17 behavior changes
-  (mandatory large-screen resizability, local-network restrictions, certificate
-  transparency) into the affected skills; bump stamps/versions. Batch by category.
-- [x] **4.4 Refresh the rest honestly (S).** Skills reviewed and found unchanged get a
-  `snapshot_date` bump only when actually re-verified — never a blind bulk stamp.
+## Phase 4 — Output-quality evals (policy, not blanket coverage)
 
-## Phase 5 — New skills: headline APIs (all `emerging`)
+- [ ] **4.1 Sampled output evals (L) — decision item.** The guides' with-skill vs
+  without-skill benchmark answers one question these docs never ask of a *knowledge*
+  library: does having the skill measurably beat the model's raw knowledge? For a library
+  whose whole mission is "give coding agents an edge", that is worth answering honestly on
+  a sample: ~2 skills per class (code / design / lang-tooling / overview), 2–3 eval tasks
+  each, assertions after first outputs per the guide. If the delta is zero on some class
+  (plausible for well-trodden stable APIs, unlikely for post-cutoff iOS 27 / Android 17
+  content), that finding should reshape what we author next — currency-first — and is
+  worth more than any compliance polish in this file. If run: results and per-class
+  verdicts get recorded here.
 
-- [x] **5.1 iOS 27 SwiftUI additions (M).** ~4–6 skills: new Document API
-  (ReadableDocument/WritableDocument family), toolbar overflow/priority model,
-  list reordering, error-presentation bindings; update `adopting-liquid-glass` for
-  automatic adoption.
-- [x] **5.2 Android 17 / Compose-first additions (M).** ~3–5 skills: Android 17
-  migration/behavior changes, media lifecycle toolkit (CameraX Viewfinder composable,
-  Media3 AI Effects), Compose-first architecture implications; update relevant overviews.
+## Phase 5 — Agent reach: the `.agents/skills/` standard directory
 
-## Phase 6 — New skills: structural gaps
+*Added 2026-08-26 after surveying the current agent landscape.* The top five coding agents
+by adoption today are **Claude Code, GitHub Copilot, Cursor, OpenAI Codex, and Gemini CLI**
+(JetBrains' 2026 adoption research has Claude Code as the most-adopted agent at work;
+Copilot holds the largest cumulative install base). How this library reaches each of them
+today:
 
-- [x] **6.1 `android/code/graphics-games` (L).** ~8 skills mirroring apple's category:
-  Vulkan, AGDK, game loops/input, Play Games Services, Play Asset Delivery, performance
-  (ADPF), etc.
-- [x] **6.2 `apple/code/form-factors` (L).** ~8–12 skills: watchOS apps + complications +
-  workout/health patterns, tvOS apps + focus engine, CarPlay, visionOS spatial patterns.
-  Resolves the 123-skills-claim-watchos contradiction together with 7.3.
-- [x] **6.3 Overview parity (M).** 7 `choosing-X` overviews: apple gains di,
-  background-work, form-factors, image-loading, web-integration counterparts; android
-  gains graphics-tech and widget-tech.
-- [x] **6.4 Design gaps (M).** **Resolved as not-a-gap — no skills added.** Both halves
-  assumed the two domains should carry matching `design` categories; they should not.
-  Apple's HIG has an **Inputs** section and folds color/typography/motion/icons into
-  **Foundations**; Material 3 is **foundations/styles/components**, with a **Styles**
-  section and no Inputs section. So `apple/design` correctly lacks `styles`, and
-  `android/design` correctly lacks `inputs` — its input guidance already lives, with real
-  depth, in `design/platforms/m3-{wear,tv,large-screens,chromeos-desktop}`,
-  `design/patterns/m3-gestures`, and `design/foundations/m3-interaction-states`. Adding
-  ~6 `android/design/inputs` skills would have duplicated that coverage and misrepresented
-  Material's structure. Rationale documented in `docs/architecture.md`
-  ("Categories mirror the vendor, not each other").
+| Agent | Served today via | Quality of what it sees |
+| --- | --- | --- |
+| Claude Code | `.claude/skills/` emitter + 8 plugins | **Full** — lossless, progressive disclosure |
+| Cursor | `.cursor/rules/*.mdc` + reads AGENTS.md | **Good** — condensed body, description-triggered |
+| GitHub Copilot | `.github/instructions/` + reads AGENTS.md | **Good** — condensed body, `applyTo`-scoped |
+| OpenAI Codex | AGENTS.md digest only | **Weakest** — ~584-token digest; no code examples, no platform notes, no L3 resources |
+| Gemini CLI | nothing by default (AGENTS.md only if the user sets `context.fileName`) | **None** out of the box |
 
-## Phase 7 — Metadata full sweep (after content lands)
+The mission statement has named Codex since the last effort, yet Codex is the *least*-served
+of the four named agents. What changed externally: the Agent Skills format this plan aligns
+to is no longer Claude-only. Codex reads skills from `.agents/skills/` (since Dec 2025),
+VS Code Copilot's default skills directory is `.agents/skills/`, and Gemini CLI reads
+`.gemini/skills/` with `.agents/skills/` as an alias. One emitter therefore upgrades three
+of the top five from digest-or-nothing to full progressive-disclosure skills.
 
-The library grew to **433 skills** across phases 5–6, so the baseline counts below are
-restated against that total.
+- [ ] **5.1 `agents-skills` emitter → `.agents/skills/<name>/` (M).** Same projection as the
+  Claude emitter (spec frontmatter + verbatim body + co-located resource files) at the
+  standard path — mostly a shared-code, second-mount-point change. Per-emitter details:
+  detection heuristic (`.agents/` dir, or Codex/VS Code markers — apply the 1.7 rebalancing
+  lessons); lockfile/`doctor`/`update`/`remove` come free (generic over the interface);
+  snapshot + e2e tests; `docs/emitters.md`. Two decisions to record in the PR: (a) dedupe
+  policy when a consumer enables both `claude` and `agents-skills` and an agent reads both
+  roots — verify what Claude Code, Codex, and Gemini each scan before choosing defaults;
+  (b) whether the AGENTS.md digest block should shrink to a pointer for consumers who also
+  emit full skills to `.agents/skills/`. Covered by the 0.3 conformance gate automatically.
+  `#minor`.
+- [ ] **5.2 Re-run the 1.8-style consumption audit for the new target (S).** Verify against
+  current docs how Codex, VS Code, and Gemini actually discover/trigger `.agents/skills/`
+  (metadata preload? `$name` mention? description matching?), and whether our description
+  format triggers well there — feed anything surprising into the Phase 3 eval harness
+  rather than guessing.
 
-- [x] **7.1 `pairs_with` build-out (L).** Dedicated pass over all 433: design↔code twins,
-  overview↔implementation links, lang-tooling pairs. Keep the bidirectional invariant;
-  land per-domain PRs.
-  - [x] **apple** — 46 → 188 edges; unpaired 139/208 → 1 (`core-bluetooth`, which has no
-    genuine partner). What earns a pair is now written down in `docs/authoring.md`
-    ("What earns a pair"): design↔code twin, overview↔its destinations, or a tight couple —
-    with wider cross-references left to `## See also`. A new linter warning caps the list
-    at 4 so the facet stays a signal rather than a dump. Metadata-only: `x-skills-master`
-    is stripped from every projection, so no `version`/`snapshot_date` moved.
-  - [x] **android** — 50 → 232 edges; unpaired 136/225 → 2 (`m3-sharing`, `nfc`). Material
-    has no single "M3 components" code skill the way SwiftUI has `swiftui-forms-controls`,
-    so the 25 `m3-*` component skills pair to the design siblings you actually need
-    alongside them (`m3-icon-buttons` ↔ `m3-icons` + `m3-tooltips`) rather than to a code
-    twin that does not exist. Worth a future coverage item, not a pairing fudge.
-- [x] **7.2 Stability re-audit (M).** Re-judge `stable` vs `emerging` per skill (17/433
-  `emerging` is implausible); `contested` skills present tradeoffs per authoring.md.
-  The label had no written definition — only `contested` did — so the pass began by
-  defining all three in `docs/authoring.md` ("What `stability` means"): `emerging` tracks
-  **the subject**, not the skill's age, and means pre-1.0 at `snapshot_date`, first cycle
-  unrevised, or visibly still moving. 11 changes on that rule: 9 stable → emerging (the
-  four Jetpack XR skills and `m3-ai-glasses`/`m3-xr`, all on the Developer Preview 4 /
-  `1.0.0-beta02` track; `uwb-ranging` at `1.0.0-alpha09`; `gemini-nano-aicore` and
-  `choosing-ml` for the beta Prompt API) and 2 emerging → stable (`media3-transformer`,
-  mature since 1.0; `controls-widgets`, two full cycles old). 17 → 24 emerging.
-  All 9 newly-emerging skills already flagged provisionality in prose, so label and body
-  agree. Contested set verified and unchanged at 7 — each carries a real `## Open question`
-  laying out both cases. `choosing-http-client` was considered and rejected: it prescribes
-  a default with a clear rule, which is settled, not contested.
-- [x] **7.3 Platforms honesty pass (M).** Stop claiming watchOS/tvOS/visionOS on skills
-  with no form-factor content; make the facet discriminating again (watchos 137, tvos 150,
-  visionos 174 of 433 today). Like `stability`, the facet had no written meaning
-  ("free-form per domain"), so `docs/authoring.md` now defines it ("What `platforms`
-  means"): it answers *for which platforms does this skill carry guidance you would act
-  on*, not where the API happens to compile. Availability stays in `requires` and prose.
-  A domain-wide skill with nothing platform-specific to say gets `platforms: [apple]`.
-  Apple: **56 skills changed** — watchos 137 → 100, tvos 150 → 99, visionos 174 → 127,
-  ios 187 → 148, ipados 188 → 135, macos 171 → 136, with 56 gaining the new `apple` value.
-  Android: **13 changed** — large-screen 154 → 145, android-tv 8 → 6, chromeos 9 → 7,
-  xr 6 → 5. Android's convention was already sound (its large-screen notes are real
-  guidance: "ensure `contentIntent` opens the correct split-pane destination"), so the
-  disease was almost entirely apple's — 121 of 208 skills claimed all six OSes.
-  The vocabularies stay different on purpose, per `docs/architecture.md`: apple has six
-  co-equal OSes, android has one baseline plus form factors.
-  **A linter rule was considered and rejected.** A domain-agnostic check ("claimed platform
-  must appear in the body") false-positives badly, because bodies use product names —
-  `hig-charts`, `hig-sheets` and `hig-toolbars` all say "iPhone", never "iOS". Getting it
-  right needs a per-domain synonym map, which would hardcode domain vocabulary into a
-  linter the schema deliberately keeps domain-agnostic.
-- [x] **7.4 Tag consolidation (M).** 543 of 887 tags are used once. Define a canonical
-  vocabulary (or drop tags), lint against it. **Neither, on the evidence.** `tags` reach no
-  emit target and nothing groups by them — `domain`/`class`/`category`/`platforms` already
-  do the faceting — so their one job is feeding `search`. Measured against that job, 76% of
-  tag instances were already findable via the skill's own name/description/facets, and of
-  the 165 terms that would have gone dead without tags, **118 were pure spelling variants**
-  (`wear-os` ← "Wear OS", `ios17` ← "iOS 17", `async-await` ← "async/await").
-  So the fix was mostly in the matcher, not the vocabulary: `search` now compares on letters
-  and digits alone (`core/search-text.ts`), which makes "wear os", "wear-os" and "WearOS"
-  equivalent for every query, not just tagged ones. Tags are then redefined as what is left
-  — **a search term the skill is not already findable by** — and pruned to it:
-  887 → 204 distinct, 2307 → 343 instances, 186 skills now carry none.
-  Survivors are real synonyms no normalization would produce: `i18n`, `nlp`, `cryptography`,
-  `biometrics`, `monetization`. A linter warning holds the rule (three tests), and unlike
-  7.3's rejected rule this one needs no vocabulary map — it compares the tag against the
-  skill's own text. Verified no recall was lost: replaying all 896 former tag and facet
-  terms as queries, **0 lost a hit and 234 returned strictly more**.
-- [x] **7.5 Surface `stability` to the agent (S)** *(found during 7.2)*. `stability` is
-  stripped with the rest of `x-skills-master`, so it reached no emit target — an agent
-  could not tell `emerging` guidance from settled guidance. `core/stability-note.ts` now
-  turns a non-`stable` label into a one-line blockquote at the top of the emitted body, and
-  all four emitters carry it; `stable` skills are untouched, so the committed dogfood output
-  (`swiftui-navigation`, stable) does not move. The AGENTS.md digest was the worst case and
-  is the biggest win: it drops `## Open question` along with every other section, so a
-  contested skill previously read there as settled fact. 31 skills gain a banner (24
-  emerging + 7 contested) for about 1.5k tokens across a full AGENTS.md install — roughly
-  0.6% on top of what 1.9 brought it down to. Deterministic: the only variable is the
-  authored `snapshot_date`. Docs corrected in three places — `authoring.md` asserted the
-  opposite ("`stability` never reaches the consuming agent today"), and `emitters.md`
-  claimed the agents emitter summarizes `## Open question`, which stopped being true at 1.9.
-  - [ ] **Dead surface found:** `CondenseOptions.openQuestion: "summarize"` and
-    `summarizeOpenQuestion()` are exercised only by their own tests — no emitter has passed
-    that option since the 1.9 digest landed. Candidate for the 1.5-style deletion pass;
-    left in place here to keep this PR to one concern.
+**Priority note:** this phase is listed after the spec-alignment phases but ahead of
+Phase 6 on merit — it is the single highest-leverage reach item because it serves Codex,
+which the mission already names. It does not depend on Phases 1–4; only 0.1–0.3 (the
+gates) should land first. Pull it forward if Codex reach matters sooner.
 
-## Phase 8 — CLI test depth
+## Phase 6 — Long-tail agents (explicitly last priority)
 
-- [x] **8.1 E2E gaps (M).** `init` end-to-end; `update` with an actually-changed source;
-  `doctor`'s three failure modes; conflict/skip path (hand-edited file, no
-  `--overwrite`); `remove --target` subset; `commit: false` gitignore behavior;
-  multi-skill AGENTS.md block composition. 18 tests added (10 → 28 in
-  `test/e2e/lifecycle.test.ts`, suite 89 → 107). `commit: false` was already covered, so
-  the other six gaps are the new work: `init` (detection, all-targets fallback, explicit
-  options, the `--force` guard, and that its targets really drive a later `add`); `update`
-  against a forked content library that actually changed (re-emit, lockfile re-hash, block
-  sentinel moving `v1.0.0` → `v2.0.0` without duplicating the block); `doctor`'s three
-  modes (deleted file, edited file, block cut out of a shared file); the no-`--overwrite`
-  skip and its `--overwrite` counterpart on the same edited file; `remove --target` leaving
-  the skill installed to its other targets; and AGENTS.md holding two skills at once —
-  composition order, hand-written content surviving an update, removing one block, and the
-  file being deleted only when the last one goes.
-  **Every new assertion was mutation-checked**: breaking `doctor`'s missing-file branch,
-  its `hasBlock` branch, `update`'s `userEdited` guard and `init`'s `--force` guard each
-  failed exactly the test that claims to cover it, and nothing else.
-- [x] **8.2 Unit gaps + coverage reporting (M).** `catalog` filters/`--json`,
-  `content/source.ts` resolution chain, `markers.ts`, `project.ts` round-trip,
-  `parseTargets`; add `@vitest/coverage-v8` with a CI summary so gaps stay visible.
-  Coverage landed first, so the work was aimed at measured holes rather than the list
-  above: **79.61% → 96.01% statements, 72.89% → 87.55% branches, 83.76% → 100% functions**,
-  107 → 181 tests. Six new files — `catalog` (was 0%), `content/source` (45% → 87%),
-  `markers` (now 100%), `project` round-trip, `parseTargets`, and `add`'s token expansion
-  (74% → 96%), which coverage flagged as the biggest hole and the plan's list did not
-  mention. `new`/`registry build`/`lint` command wrappers were also 0% and are now covered.
-  `parseTargets` moved out of `bin.ts` into `src/util/targets.ts` — validating a flag is
-  real behavior, and it was untestable where it sat.
-  **Coverage is reported, never gated**: a threshold tends to get met with tests written
-  for the number. `scripts/coverage-summary.mjs` writes a table plus the ten least-covered
-  files to the CI job summary on every PR. Also aligned `vitest` and `@vitest/coverage-v8`
-  (4.1.10 vs 4.1.11 was emitting a mixed-version warning).
-  Remaining thin spots, all visible in the summary: `writer.ts` 89%, `update.ts` 89%,
-  `discover.ts` 83%, `remove.ts` 92%.
+The remaining agent ecosystem — Windsurf (`.windsurf/rules/`), Cline/Roo Code
+(`.clinerules/`), JetBrains Junie (`.junie/guidelines.md`), Amazon Q / Kiro
+(`.amazonq/rules/`), Aider (conventions file) — is deliberately **not** targeted now.
+Rationale, recorded so it stays decided:
 
-## Phase 9 — CLI UX
+- Most of these already read AGENTS.md natively or by configuration, so they get the
+  digest today without any new code.
+- Several are adopting the Agent Skills standard, in which case 5.1 covers them for free
+  the moment they ship it — building per-tool rule emitters now would be writing code the
+  ecosystem is in the middle of obsoleting.
+- The emitter interface makes any one of them a small, independent addition (new file in
+  `src/emitters/`, one registry line, one snapshot) if demand shows up.
 
-- [x] **9.1 `status` command (M).** Show installed skills from lockfile: versions, targets,
-  edited/drifted state (shares doctor's detection). `#minor`.
-  "Shares doctor's detection" taken literally: drift detection moved out of `doctor` into
-  `core/installed-state.ts`, and both commands now render the same `SkillDiagnosis[]`, so
-  they cannot drift apart on what "edited" means. `doctor`'s message strings are unchanged,
-  which the existing e2e tests confirm.
-  The two are deliberate siblings answering different questions — `doctor` asks "is anything
-  wrong?" and exits non-zero for CI; `status` asks "what do I have?", always exits 0, and is
-  safe to pipe. `status` is fully offline: lockfile plus disk, no content resolution, so it
-  works in a checkout with no skills library or network nearby.
-  Flags: `[names...]`, `--problems`, `--json`. 13 tests, mutation-checked — and one of them
-  initially passed by luck (it broke the alphabetically-first target, so a "first target
-  wins" rollup would still have looked right); rewritten to break the *second* target so it
-  actually pins the worst-of rule.
-  Also corrected the published README, which still advertised "183 skills" and Apple-only
-  content; it is 433 across apple and android.
-- [x] **9.2 `sync` command (M).** Re-emit from current config — covers added targets and
-  edited paths that `update` never repopulates. `#minor`.
-  Verified the gap first: with `claude` installed and `cursor` added to config afterwards,
-  `update` reports "up-to-date 2" and writes nothing. `sync` treats the configured target
-  set as the source of truth and reconciles disk to it.
-  Two kinds of leftover, deliberately treated differently. A **dropped target** is a
-  removal — reported, deleted only with `--prune`. A **changed `paths` override** is a
-  *move*, cleaned up immediately: leaving the old copy would have agents loading the same
-  guidance twice, and `doctor` cannot see it because the lockfile already points at the new
-  path. My first cut gated that behind `--prune` and printed "re-run with `--prune`" —
-  which could never work, since by the second run the lockfile had moved and the staleness
-  was undetectable. Caught by actually running it.
-  Shares `resolveTargets` with `add` and edit detection with `doctor`/`status`.
-  15 tests, mutation-checked against three core behaviours (emit-to-configured-targets,
-  stale cleanup, the `--prune` gate) — each failed exactly its own tests.
-- [x] **9.3 Scripting + docs polish (S).** `--json` on `search`/`view`/`doctor`; persist
-  `--target`/`--ref` on `add` into existing config; document all 12 commands in the CLI
-  README. `doctor --json` suppresses every human-facing line, including the "No
-  skills-master.json found" warning that would otherwise corrupt the document, and keeps its
-  exit-code contract — verified end to end (`exit=1` with valid JSON on drift).
-  `view --json` returns metadata *and* body in one document, so a scripted reader needs one
-  call rather than `view` plus `view --raw`.
-  **`--target` widens rather than replaces.** Adding one skill to a new tool must not
-  silently drop the tools already configured; only a genuine change writes the file, so a
-  no-op `add` leaves `skills-master.json` byte-identical. `--dry-run` never writes it.
-  README now documents all 14 commands in three groups (browse / project / maintain), with
-  the `update` (follows content) vs `sync` (follows config) distinction called out. Also
-  corrected the closing licence note, still Apple-only despite 225 android skills.
-  14 tests, mutation-checked (replace-instead-of-widen, and JSON purity).
+- [ ] **6.1 (unscheduled) Per-tool emitters on demand (S each).** Only when a real consumer
+  asks, and only for tools that have not adopted `.agents/skills/` by then. Until that
+  happens, the answer to "does skills-master support tool X?" is: point X at AGENTS.md
+  (most support it), or at `.agents/skills/` once 5.1 lands.
 
-## Phase 10 — Staleness that surfaces itself
+## Deliberate non-goals (recorded so they stay decided)
 
-- [x] **10.1 Crawl → visible report (M).** Weekly crawl writes a GitHub job summary and
-  opens/updates a pinned issue with staleness top-N + link-check results (fold
-  `check-links.mjs --strict` into the crawl job); artifact stays for the raw JSON.
-  `check-links.mjs` gained `--json=<path>` so its results can be folded in;
-  `scripts/crawl/report.mjs` renders every report as Markdown for both the job summary and
-  the issue. The issue is found by a `crawl-report` label and rewritten in place, so the repo
-  carries one live dashboard rather than a weekly stack; pinning is best-effort (GraphQL,
-  capped at 3 per repo) and never fails the run. The artifact stays — a diff against last
-  week's raw JSON is sometimes what you actually want.
-  **Deliberately not `--strict`**, contrary to the item as written. Running the checker for
-  real found 2 "dead" links, and one of them — `support.google.com/.../answer/9859372` — returns
-  200 on every manual retry. Vendor hosts rate-limit under concurrency and emit one-off 404s
-  for live URLs, so `--strict` would redden the weekly run on vendor mood and train everyone
-  to ignore it. The count goes in the report instead, with a caveat telling the reader to
-  re-check before editing.
-  The other one was real and is fixed: `compose-gestures` cited
-  `touch-input/gestures` (404 on 3/3 retries), now `touch-input/pointer-input/understand-gestures`.
-  Report degrades gracefully — missing link data omits that section, no reports at all says so.
+- **Gerund renames** (`swiftui-navigation` → `navigating-swiftui`): Anthropic lists noun
+  phrases as an acceptable convention; renames would break every installed lockfile,
+  `pairs_with` edge, and registry key for zero measured trigger benefit. Rejected.
+- **Dropping `## When to use` as description-redundant:** after activation the section costs
+  ~50–80 tokens repeating the trigger, *but* the condensed Cursor/Copilot/AGENTS-adjacent
+  projections inject bodies into contexts where the frontmatter description isn't
+  necessarily surfaced — there the section is the scoping statement. Keep, unless Phase 3/4
+  evals show otherwise.
+- **`compatibility` frontmatter:** the spec says most skills don't need it; prose skills
+  have no environment requirements. Skip.
+- **`allowed-tools`:** experimental in the spec, and meaningless for knowledge skills that
+  invoke nothing. Skip.
+- **Making canonical `skills/` spec-valid** (folding `globs`/`tags`/`x-skills-master` into
+  `metadata`): the spec's `metadata` is flat string→string; our facets are structured, and
+  flattening them to strings to satisfy a validator agents never run against the source
+  tree is compliance theater. The projections are the conformance surface (1.4). Rejected.
