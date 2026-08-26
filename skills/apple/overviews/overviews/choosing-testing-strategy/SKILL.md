@@ -12,9 +12,9 @@ x-skills-master:
     - https://developer.apple.com/xcode/swift-testing/
     - https://developer.apple.com/documentation/testing/migratingfromxctest
     - https://developer.apple.com/documentation/xctest
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -27,7 +27,7 @@ Pick the framework per layer, then size the suite to the risk it covers:
 
 - **Default new unit and integration tests to Swift Testing.** As of the Xcode 26 / Swift 6.x cycle it is the modern default: `@Test`/`#expect`/`#require` macros, parallel execution, parameterized cases, and traits give less boilerplate and clearer failures than `XCTAssert`.
 - **Keep XCTest for what Swift Testing does not cover.** UI automation (`XCUIApplication`/XCUIAutomation) and `measure {}` performance baselines are still XCTest-only. Don't try to force these into Swift Testing.
-- **Don't rewrite working XCTest unit tests on a schedule.** The two frameworks coexist in one target — even one file. Migrate opportunistically when you touch a suite, not as a standalone project.
+- **Don't rewrite working XCTest unit tests on a schedule.** The two frameworks coexist in one target — even one file. Migrate opportunistically when you touch a suite, not as a standalone project. Swift Testing's XCTest interoperability runs both frameworks side by side in a mixed target, so suite-by-suite migration now carries little structural cost.
 - **Shape the suite as a pyramid.** Many fast unit tests, fewer integration tests across real boundaries, a thin layer of UI smoke tests. Heavy UI suites are slow and flaky; lean on them only for critical end-to-end flows.
 - **Test behavior at the lowest level that exercises it.** Push logic into pure, injectable types so a unit test suffices; reserve integration tests for wiring (persistence, networking, concurrency) and UI tests for the screens that lose money if they break.
 - **Treat snapshot tests as a focused tool, not a tier.** They guard rendered layout and design-system regressions cheaply, but reference images drift across OS/device, so scope them tightly and review diffs deliberately.

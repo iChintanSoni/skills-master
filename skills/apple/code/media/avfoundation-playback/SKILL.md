@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/avfoundation/media-playback
     - https://developer.apple.com/documentation/avkit/videoplayer
     - https://developer.apple.com/documentation/avfaudio/avaudiosession
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

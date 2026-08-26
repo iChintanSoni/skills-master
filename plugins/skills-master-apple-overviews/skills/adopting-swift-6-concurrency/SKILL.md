@@ -24,6 +24,11 @@ The Swift 6 language mode turns data-race risks into compile-time errors instead
 - **Don't migrate a module while its dependencies still emit concurrency warnings.** You will re-fix the same boundary twice.
 - **Do consider deferring** for stable, low-churn code near a release; the payoff is largest for code under active concurrent development.
 
+### Swift 6.4 (WWDC 2026)
+
+- `defer` blocks can now contain `await`, so async cleanup no longer forces restructuring around teardown paths — one less workaround to carry through a migration.
+- Xcode 27's Instruments adds a dedicated Swift Concurrency instrument; use it to check that new isolation annotations behave as intended (actor contention, task scheduling) rather than reasoning from diagnostics alone.
+
 ## Platform notes
 
 - **Xcode 26 / Swift 6.2:** new projects enable Approachable Concurrency and Default Actor Isolation set to `MainActor`. Existing projects keep their settings — adoption is a deliberate Build Settings change, not automatic on SDK bump.

@@ -15,6 +15,7 @@ Use this skill when an app must do work while not in the foreground: refreshing 
 - Always wire `task.expirationHandler` to cancel work and call `task.setTaskCompleted(success:)` exactly once. Treat expiration as imminent and save partial state; an unhandled expiration counts against your app and risks reduced future scheduling.
 - For `BGContinuedProcessingTask`, drive `task.progress` continuously — it is mandatory and feeds the system progress UI. Submit the request from a clear user action, set `strategy` to `.queue` (default) or `.fail` when you need immediate execution, and use a wildcard identifier (for example `com.example.export.*`) registered against a prefix.
 - Prefer a background `URLSession` for downloads and uploads instead of holding a task alive. Use `URLSessionConfiguration.background(withIdentifier:)`, a delegate (async/await and completion-handler transfer methods are unsupported here), and route relaunches through the app delegate.
+- For large content packs, iOS 27's Background Assets supports Apple-hosted asset packs up to 200 GB with StoreKit-gated unlock — prefer it over a hand-rolled background `URLSession` pipeline when the download is purchasable or bulky app content rather than arbitrary files.
 - Honor budgets: keep handlers short, batch I/O, avoid speculative work, and respect Low Power Mode and Background App Refresh being off. Over-scheduling earns fewer opportunities, not more.
 
 ```swift

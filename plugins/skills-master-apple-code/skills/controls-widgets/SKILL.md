@@ -36,6 +36,11 @@ struct FocusToggleControl: ControlWidget {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- Widget customization across the extension is now App Intents-driven, so a `ControlConfigurationIntent` slots into the same configuration model as iOS 27 home-screen widgets — share intent types across surfaces instead of duplicating them.
+- The new `systemExtraLargePortrait` family applies to timeline widgets in the same extension, not to controls; controls keep their fixed, system-templated appearance.
+
 ## Platform notes
 
 - **iOS / iPadOS 18+ only.** Controls are unavailable on macOS, watchOS, tvOS, and visionOS; guard any shared code by availability and platform.

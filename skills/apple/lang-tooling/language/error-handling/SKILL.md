@@ -16,9 +16,9 @@ x-skills-master:
     - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/errorhandling/
     - https://github.com/swiftlang/swift-evolution/blob/main/proposals/0413-typed-throws.md
     - https://developer.apple.com/documentation/swift/result
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -64,6 +64,10 @@ func parse(_ data: Data) throws(ImportError) -> [Row] {
     return rows
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- SwiftUI's `alert(error:actions:message:)` binds an optional `LocalizedError` directly to an alert, so conforming recoverable, user-facing errors to `LocalizedError` now pays off directly at the presentation layer.
 
 ## Platform notes
 

@@ -17,6 +17,11 @@ Use when designing or reviewing scrollable, row-based content and deciding how t
 - **Use disclosure to reveal hierarchy, not to hide essentials.** A disclosure triangle/row expands nested children in place (an outline); use it for genuinely hierarchical data. Don't bury primary actions or first-run content behind a collapsed row.
 - **Load progressively and keep rows scannable.** Fill visible rows with text immediately and stream slower content (thumbnails, counts) in; show a clear loading state for long fetches and a meaningful empty state when there's nothing yet. Keep row text succinct so it doesn't truncate or wrap awkwardly.
 
+### iOS 27 (WWDC 2026)
+
+- Reordering is now a first-class, platform-wide affordance: SwiftUI's `.reorderable()` brings drag-to-rearrange to stacks, grids, and custom layouts, not just `List` — offer rearrangement wherever sequence is meaningful, not only in list rows.
+- Swipe actions likewise extend beyond `List`, so the leading/trailing risk conventions above apply to swipeable rows in other containers too.
+
 ## Platform notes
 
 - **iOS / iPadOS:** Inset-grouped is the default for settings-style screens; plain for feeds. Swipe actions, drag-to-reorder, and an edit mode are core idioms. On iPad, the list is often the sidebar of a split view — pair it with a detail pane rather than deep push stacks, and consider a real multi-column table for data-dense detail.

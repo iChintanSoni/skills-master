@@ -12,9 +12,9 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados
     - https://developer.apple.com/design/human-interface-guidelines/multitasking
     - https://developer.apple.com/design/human-interface-guidelines/sidebars
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

@@ -35,6 +35,10 @@ ScrollView {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `.reorderable()` and `.reorderContainer(for:isEnabled:move:)` bring drag-to-reorder to lazy and eager grids (as well as List, stacks, and custom layouts), so a reorderable gallery no longer needs hand-rolled drag-and-drop plumbing.
+
 ## Platform notes
 
 - **iOS / iPadOS:** Adaptive columns shine across size classes — the same `LazyVGrid` reflows from two columns on iPhone to several on iPad without code changes.

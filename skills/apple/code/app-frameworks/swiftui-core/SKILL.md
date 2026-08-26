@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/view
     - https://developer.apple.com/documentation/swiftui/layout-fundamentals
     - https://developer.apple.com/documentation/swiftui/viewbuilder
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -53,6 +53,10 @@ struct LabeledValue: View {
     }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- The Xcode 27 SDKs expose `ViewBuilder` as `ContentBuilder`, a typealias over restructured builder internals that sharply cuts type-checking time for deeply nested hierarchies, on any deployment target. Existing code compiles unchanged; only spots that leaned on implicit builder constraints to resolve ambiguity may now need an explicit type annotation.
 
 ## Platform notes
 

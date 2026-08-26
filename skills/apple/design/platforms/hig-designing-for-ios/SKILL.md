@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-ios
     - https://developer.apple.com/design/human-interface-guidelines/tab-bars
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -38,6 +38,11 @@ This skill yields design judgment and review notes. It does not produce SwiftUI/
 - **Earn hierarchy through depth, not just contrast.** The new system signals importance via translucency, layering, and a single prominent accent. Avoid stacking many tinted glass surfaces, which muddies legibility — keep one clear focal control per context.
 - **Make every text style Dynamic Type-ready.** Design layouts that reflow and grow at the largest accessibility sizes without truncation or clipping; don't lock text to fixed point sizes or assume a single line.
 - **Honor light and dark.** Use semantic system colors and materials so surfaces, separators, and glass adapt automatically; don't hardcode hex values that break contrast or vibrancy when the appearance flips.
+
+### iOS 27 (WWDC 2026)
+
+- iPhone apps are now resizable — stop assuming a fixed, edge-to-edge canvas; let layouts adapt by size class and preserve scroll position and in-progress state through resizes.
+- Sidebar-style tab bars reach iPhone, and a prominent tab role (`Tab(role: .prominent)`) can spotlight the app's single defining action — reserve it for that action, not the busiest tab.
 
 ## Platform notes
 

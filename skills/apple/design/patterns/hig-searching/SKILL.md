@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/searching
     - https://developer.apple.com/design/human-interface-guidelines/search-fields
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # HIG Searching

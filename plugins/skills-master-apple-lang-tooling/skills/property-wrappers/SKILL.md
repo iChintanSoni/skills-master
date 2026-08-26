@@ -14,7 +14,7 @@ Reach for this skill when you author a `@propertyWrapper` to factor out repeated
 - Control initialization with `init(wrappedValue:)`, `init()`, or extra labeled arguments. `@Clamped(0...10) var x = 3` calls `init(wrappedValue:_:)`; mismatched signatures cause confusing "missing argument" errors, so provide the inits your call sites need.
 - Don't reach for a wrapper when behavior is a one-off — a computed property or `didSet` is simpler. Don't store reference semantics in a wrapper applied to a `struct` expecting value copies; the underlying instance is shared.
 - Compose wrappers by nesting (`@A @B var v`), but only when each wrapper's `wrappedValue` is itself a valid wrapped type for the next; order matters and the outermost wraps the result of the inner.
-- In SwiftUI, `@State` owns local, view-private state (including an `@Observable` model instance); `@Binding` borrows a two-way reference; `@Environment` reads injected dependencies. These remain wrappers.
+- In SwiftUI, `@State` owns local, view-private state (including an `@Observable` model instance); `@Binding` borrows a two-way reference; `@Environment` reads injected dependencies. `@Binding` and `@Environment` remain wrappers; as of the iOS 27 SDKs `@State` is itself a macro, though its use sites and `$` projection are unchanged.
 - `@Observable` is a macro, not a wrapper: it rewrites a `class` so per-property reads are tracked automatically — no `@Published`, no `ObservableObject`. Prefer it for shared model objects; keep `@State` for ownership and ephemeral UI state.
 
 ```swift

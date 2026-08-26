@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/environment
     - https://developer.apple.com/documentation/swiftui/environmentvalues
     - https://developer.apple.com/documentation/swiftui/preferencekey
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -49,6 +49,10 @@ struct Badge: View {
 }
 // Apply upstream: ContentView().environment(\.cardStyle, .compact)
 ```
+
+### iOS 27 (WWDC 2026)
+
+- The `appearsActive` environment value reports whether the surrounding scene currently appears active, giving views a direct signal for dimming or pausing secondary chrome when focus moves elsewhere.
 
 ## Platform notes
 

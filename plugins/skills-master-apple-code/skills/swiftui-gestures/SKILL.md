@@ -36,6 +36,11 @@ struct DraggableCard: View {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `GestureInputKinds` is an option set that restricts which input kinds a gesture recognizes — the foundation for treating touch and pointer input differently on the same view.
+- Lazy drag: inside a `dragContainer(for:itemID:in:_:)`, mark items with `draggable(containerItemID:containerNamespace:)` so a drag carries only identifiers and the container's payload closure is invoked only when a drag actually starts.
+
 ## Platform notes
 
 - **iOS / iPadOS:** Multi-touch gestures (`MagnifyGesture`, `RotateGesture`) need two fingers; test on device, not just Simulator pinch emulation. Apple Pencil hover and pointer events flow through the same modifiers on iPadOS.

@@ -12,9 +12,9 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/menus-and-actions
     - https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons
     - https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

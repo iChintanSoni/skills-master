@@ -16,9 +16,9 @@ x-skills-master:
     - https://www.swift.org/migration/documentation/swift-6-concurrency-migration-guide/migrationstrategy/
     - https://developer.apple.com/documentation/swift/adoptingswift6
     - https://developer.apple.com/documentation/Swift/updating-an-app-to-use-strict-concurrency
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Swift 6 migration

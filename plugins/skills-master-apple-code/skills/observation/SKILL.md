@@ -29,6 +29,11 @@ struct CartView: View {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- In the iOS 27 SDKs `@State` is a macro, and an `@Observable` default written inline (`@State private var cart = Cart()`) is created lazily, once per view lifetime, instead of on every container re-initialization.
+- Assigning the model inside an explicit `init` bypasses that laziness and rebuilds it on each init — keep defaults inline to get the once-per-lifetime behavior.
+
 ## Platform notes
 
 - Available from iOS 17, iPadOS 17, macOS 14, watchOS 10, tvOS 17, and on visionOS from its first release; the same macro and wrappers behave identically across all of them.

@@ -16,9 +16,9 @@ x-skills-master:
   sources:
     - https://developer.apple.com/documentation/observation
     - https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -46,6 +46,11 @@ struct CartView: View {
     var body: some View { Text(cart.total, format: .currency(code: "USD")) }
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- In the iOS 27 SDKs `@State` is a macro, and an `@Observable` default written inline (`@State private var cart = Cart()`) is created lazily, once per view lifetime, instead of on every container re-initialization.
+- Assigning the model inside an explicit `init` bypasses that laziness and rebuilds it on each init — keep defaults inline to get the once-per-lifetime behavior.
 
 ## Platform notes
 

@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/grid
     - https://developer.apple.com/documentation/swiftui/lazyvgrid
     - https://developer.apple.com/documentation/swiftui/griditem
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -53,6 +53,10 @@ ScrollView {
     .padding()
 }
 ```
+
+### iOS 27 (WWDC 2026)
+
+- `.reorderable()` and `.reorderContainer(for:isEnabled:move:)` bring drag-to-reorder to lazy and eager grids (as well as List, stacks, and custom layouts), so a reorderable gallery no longer needs hand-rolled drag-and-drop plumbing.
 
 ## Platform notes
 

@@ -40,6 +40,10 @@ struct EqualWidthHStack: Layout {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `.reorderable()` and `.reorderContainer(for:isEnabled:move:)` work inside custom `Layout` containers too, so a flow or radial layout can offer drag-to-reorder without abandoning the `Layout` protocol for a stock container.
+
 ## Platform notes
 
 - The `Layout` protocol, `ViewThatFits`, `Grid`, and `AnyLayout` are iOS 16 / iPadOS 16 / macOS 13 / tvOS 16 / watchOS 9 and later; visionOS supports them from 1.0.

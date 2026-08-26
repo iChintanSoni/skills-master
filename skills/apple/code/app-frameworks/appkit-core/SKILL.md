@@ -17,9 +17,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/appkit
     - https://developer.apple.com/documentation/appkit/nsapplication
     - https://developer.apple.com/documentation/appkit/nswindow
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/widgets
     - https://developer.apple.com/design/human-interface-guidelines/live-activities
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # hig-widgets-design
@@ -65,6 +65,13 @@ do. This skill produces design judgment and recommendations, not implementation.
   treatment, and material; let the platform draw the container. Don't add heavy
   custom chrome, faux depth, or app branding that competes with content — the
   widget should feel native to the Home Screen, not like an embedded ad.
+
+### iOS 27 (WWDC 2026)
+
+- A new extra-large portrait size joins the lineup — compose for the tall canvas
+  (stacked groups, more rows of one idea), never a stretched extra large.
+- Widget customization is App Intents-driven, so treat the configuration choices
+  (which account, which room) as part of the design: few, meaningful options.
 
 ## Platform notes
 

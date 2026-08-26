@@ -18,6 +18,10 @@ Use this skill when critiquing or designing a sidebar on iPad, Mac, or Vision Pr
 - **Do allow customization where it earns its keep.** Pinning, reordering, and dragging items between sidebar and tab bar reward power users. Don't make customization mandatory to reach core destinations, and keep sensible defaults for everyone else.
 - **Do keep labels short and lead with recognizable symbols.** Concise nouns plus consistent SF Symbols speed scanning. Don't mix verbs and nouns, truncate long titles, or use decorative icons that don't map to a clear meaning.
 
+### iOS 27 (WWDC 2026)
+
+- Sidebar-adaptable tab bars now reach iPhone, so "sidebar vs. tab bar" is no longer an iPad-and-up decision: an app with many peer sections can present its tab bar as a sidebar on any size class where the extra breadth earns its space, keeping one source of truth for destinations.
+
 ## Platform notes
 
 - **iPadOS:** The sidebar and the floating tab bar are two faces of one navigation system. In regular width the sidebar offers room for collections and customization; collapsing it returns to the tab bar over full-bleed content. Honor orientation and multitasking width changes gracefully.

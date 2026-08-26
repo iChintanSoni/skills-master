@@ -15,9 +15,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/appstoreconnectapi
     - https://developer.apple.com/documentation/appstoreconnectapi/creating-api-keys-for-app-store-connect-api
     - https://developer.apple.com/documentation/appstoreconnectapi/generating-tokens-for-api-requests
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

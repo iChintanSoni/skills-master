@@ -31,7 +31,7 @@ struct LegacyChart: UIViewRepresentable {
 
 ## Platform notes
 
-- iOS and iPadOS: the richest UIKit surface and the most interop in practice; representables remain common for cameras, web content, and custom collections.
+- iOS and iPadOS: the richest UIKit surface and the most interop in practice; representables remain common for cameras, web content, and custom collections. As of iOS 27 the UIScene lifecycle is mandatory for UIKit apps, so an app-delegate-only legacy codebase carries a scene-adoption cost before further UIKit investment.
 - macOS: AppKit still leads for document-based apps, complex menus, and precise window control; SwiftUI handles many utility and settings windows well and bridges through hosting and representable types.
 - watchOS and tvOS: SwiftUI is the practical default; the imperative toolkits are thin or absent there, so interop is rarely the answer.
 - visionOS: SwiftUI is the primary toolkit, and volumetric and immersive scenes have no UIKit equivalent; reserve drops to UIKit for embedded 2D content only.

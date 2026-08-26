@@ -16,9 +16,9 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app
     - https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro
     - https://developer.apple.com/documentation/Observation
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: contested
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

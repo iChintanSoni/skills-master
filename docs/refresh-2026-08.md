@@ -109,95 +109,95 @@ All paths relative to `skills/apple/`. Sources: the
 write-ups cited in each line of the research (kept in the PR descriptions).
 
 SwiftUI surface:
-- [ ] `code/app-frameworks/swiftui-lists-tables` — `.reorderable()`,
+- [x] `code/app-frameworks/swiftui-lists-tables` — `.reorderable()`,
   `.reorderContainer(for:isEnabled:move:)`, `ReorderDifference`; swipe actions beyond
   List.
-- [ ] `code/app-frameworks/swiftui-sheets` — `alert(error:actions:message:)` binding,
+- [x] `code/app-frameworks/swiftui-sheets` — `alert(error:actions:message:)` binding,
   `.alert(_:item:)` / `.confirmationDialog(_:item:)`.
-- [ ] `code/app-frameworks/swiftui-navigation` — `navigationTransition(.crossFade)`,
+- [x] `code/app-frameworks/swiftui-navigation` — `navigationTransition(.crossFade)`,
   `toolbarMinimizeBehavior(_:for:)`.
-- [ ] `code/app-frameworks/swiftui-images-symbols` — AsyncImage default HTTP caching,
+- [x] `code/app-frameworks/swiftui-images-symbols` — AsyncImage default HTTP caching,
   `AsyncImage(request:)`, `.asyncImageURLSession(_:)`; SF Symbols 8.
-- [ ] `code/app-frameworks/swiftui-state-data-flow` — `@State` as macro, lazy
+- [x] `code/app-frameworks/swiftui-state-data-flow` — `@State` as macro, lazy
   `@Observable` defaults.
-- [ ] `code/app-frameworks/swiftui-tab-views` — `Tab(role: .prominent)`, iPhone
+- [x] `code/app-frameworks/swiftui-tab-views` — `Tab(role: .prominent)`, iPhone
   sidebar tab bars.
-- [ ] `code/app-frameworks/swiftui-scrollview` — `.swipeActionsContainer()`, subview
+- [x] `code/app-frameworks/swiftui-scrollview` — `.swipeActionsContainer()`, subview
   prefetch.
-- [ ] `code/app-frameworks/swiftui-scenes-windows` — resizable iPhone apps,
+- [x] `code/app-frameworks/swiftui-scenes-windows` — resizable iPhone apps,
   `UIHostingSceneDelegate`, `appearsActive`, `DocumentGroupLaunchScene`.
 
 UIKit / lifecycle:
-- [ ] `code/app-frameworks/uikit-core` — UIScene lifecycle **required**; `UIScreen.main`
+- [x] `code/app-frameworks/uikit-core` — UIScene lifecycle **required**; `UIScreen.main`
   off-limits; scene-scoped display link; TextKit 2 additions fold in here.
-- [ ] `lang-tooling/architecture/app-lifecycle` — UIScene mandatory;
+- [x] `lang-tooling/architecture/app-lifecycle` — UIScene mandatory;
   orientation-delegate deprecation.
 
 Data / intents:
-- [ ] `code/app-frameworks/swiftdata-modeling` — `@Attribute(.codable)`, enum
+- [x] `code/app-frameworks/swiftdata-modeling` — `@Attribute(.codable)`, enum
   predicates.
-- [ ] `code/app-frameworks/swiftdata-queries-migration` — `@Query(sectionBy:)`,
+- [x] `code/app-frameworks/swiftdata-queries-migration` — `@Query(sectionBy:)`,
   `ResultsObserver`, `HistoryObserver`.
-- [ ] `code/app-frameworks/app-intents` — App Schemas, View Annotations,
+- [x] `code/app-frameworks/app-intents` — App Schemas, View Annotations,
   `SyncableEntity`, AppIntentsTesting.
-- [ ] `overviews/overviews/adopting-app-intents` — schema-era adoption path.
-- [ ] `code/app-services/core-spotlight` — entity schemas feed semantic index.
-- [ ] `code/app-frameworks/widgetkit` — App Intents-driven customization,
+- [x] `overviews/overviews/adopting-app-intents` — schema-era adoption path.
+- [x] `code/app-services/core-spotlight` — entity schemas feed semantic index.
+- [x] `code/app-frameworks/widgetkit` — App Intents-driven customization,
   `systemExtraLargePortrait`.
 
 Language / tooling:
-- [ ] `lang-tooling/language/swift-concurrency` — Swift 6.4 async `defer`; Concurrency
+- [x] `lang-tooling/language/swift-concurrency` — Swift 6.4 async `defer`; Concurrency
   instrument.
-- [ ] `lang-tooling/language/swift-language-core` — `anyAppleOS`, `@diagnose`,
+- [x] `lang-tooling/language/swift-language-core` — `anyAppleOS`, `@diagnose`,
   noncopyable iteration.
-- [ ] `lang-tooling/testing/swift-testing` — XCTest interop migration path.
-- [ ] `lang-tooling/ship/instruments-profiling` — Concurrency instrument, run
+- [x] `lang-tooling/testing/swift-testing` — XCTest interop migration path.
+- [x] `lang-tooling/ship/instruments-profiling` — Concurrency instrument, run
   comparisons, Device Hub.
 
 Design system:
-- [ ] `design/components/hig-toolbars` — overflow model (`ToolbarOverflowMenu`,
+- [x] `design/components/hig-toolbars` — overflow model (`ToolbarOverflowMenu`,
   `.visibilityPriority`, auto-minimize).
-- [ ] `design/components/hig-tab-bars` — prominent tab, iPhone sidebars.
-- [ ] `design/components/hig-navigation-bars` — bar minimization APIs.
-- [ ] `design/foundations/hig-app-icons` — Icon Composer layered format.
-- [ ] `design/foundations/hig-typography-sf-symbols` — SF Symbols 8.
-- [ ] `design/foundations/hig-materials-liquid-glass` +
+- [x] `design/components/hig-tab-bars` — prominent tab, iPhone sidebars.
+- [x] `design/components/hig-navigation-bars` — bar minimization APIs.
+- [x] `design/foundations/hig-app-icons` — Icon Composer layered format.
+- [x] `design/foundations/hig-typography-sf-symbols` — SF Symbols 8.
+- [x] `design/foundations/hig-materials-liquid-glass` +
   `overviews/overviews/adopting-liquid-glass` — year-2 automatic adoption.
 
 Frameworks:
-- [ ] `code/graphics-games/realitykit` — projective textures, cloth sim, Gaussian
+- [x] `code/graphics-games/realitykit` — projective textures, cloth sim, Gaussian
   splats.
-- [ ] `code/graphics-games/arkit` — enhanced object tracking, 90 Hz spatial
+- [x] `code/graphics-games/arkit` — enhanced object tracking, 90 Hz spatial
   accessories.
-- [ ] `code/app-services/healthkit` — workout zones, menopause APIs.
-- [ ] `code/app-services/storekit` — commitment subscriptions, volume subscriptions,
+- [x] `code/app-services/healthkit` — workout zones, menopause APIs.
+- [x] `code/app-services/storekit` — commitment subscriptions, volume subscriptions,
   Background Assets tie-in.
-- [ ] `overviews/overviews/choosing-ml-approach` — Core AI framework + Foundation
+- [x] `overviews/overviews/choosing-ml-approach` — Core AI framework + Foundation
   Models expansion reshape the tree.
-- [ ] `design/technologies/hig-carplay-design` — video browsing, MiniPlayer template.
+- [x] `design/technologies/hig-carplay-design` — video browsing, MiniPlayer template.
 
 ## Apple — SHOULD re-verify (batched by driver)
 
-- [ ] **SwiftUI ripple** — `swiftui-core` (ContentBuilder), `swiftui-grids`,
+- [x] **SwiftUI ripple** — `swiftui-core` (ContentBuilder), `swiftui-grids`,
   `swiftui-custom-layout` (reordering reach), `swiftui-animations-transitions`,
   `swiftui-drawing-canvas` (.crossFade, graphics composition), `swiftui-gestures`
   (GestureInputKinds, lazy drag), `swiftui-environment-preferences` (appearsActive),
   `swiftui-app-architecture`, `observation` (lazy @State), `swiftui-concurrency`
   (AsyncImage), `property-wrappers`, `result-builders`, `error-handling`
   (alert(error:)), `uikit-swiftui-interop` (UIHostingSceneDelegate).
-- [ ] **UIKit/AppKit ripple** — `uikit-collection-views`, `uikit-auto-layout`,
+- [x] **UIKit/AppKit ripple** — `uikit-collection-views`, `uikit-auto-layout`,
   `appkit-core`, `choosing-ui-toolkit`.
-- [ ] **Swift 6.4 ripple** — `swift-6-migration`, `adopting-swift-6-concurrency`,
+- [x] **Swift 6.4 ripple** — `swift-6-migration`, `adopting-swift-6-concurrency`,
   `swift-performance-memory`.
-- [ ] **Testing ripple** — `choosing-testing-strategy`, `unit-testing-strategy`,
+- [x] **Testing ripple** — `choosing-testing-strategy`, `unit-testing-strategy`,
   `xctest-ui-automation`.
-- [ ] **Xcode 27 ripple** — `localization` (agent-driven), `xcode-project-conventions`.
-- [ ] **Widgets/activities** — `controls-widgets`, `hig-widgets-design`,
+- [x] **Xcode 27 ripple** — `localization` (agent-driven), `xcode-project-conventions`.
+- [x] **Widgets/activities** — `controls-widgets`, `hig-widgets-design`,
   `choosing-widget-tech`, `activitykit`, `hig-live-activities-design`.
-- [ ] **HIG ripple** — `hig-sidebars`, `hig-lists-tables`, `hig-menus`,
+- [x] **HIG ripple** — `hig-sidebars`, `hig-lists-tables`, `hig-menus`,
   `hig-searching`, `hig-search-fields`, `hig-designing-for-{ios,ipados,macos,tvos,visionos}`,
   `hig-multitasking`, `hig-accessibility`, `swiftui-accessibility`.
-- [ ] **Services/media** — `passkit-apple-pay`, `hig-apple-pay-design`,
+- [x] **Services/media** — `passkit-apple-pay`, `hig-apple-pay-design`,
   `testflight-appstore-connect`, `app-store-connect-api`, `avfoundation-playback`,
   `avfoundation-capture`, `core-image`, `musickit`, `metal`, `gamekit`, `vision`,
   `core-ml`, `natural-language`, `background-tasks`, `choosing-persistence`.

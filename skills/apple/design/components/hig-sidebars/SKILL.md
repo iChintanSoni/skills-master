@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/sidebars
     - https://developer.apple.com/design/human-interface-guidelines/tab-bars
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -30,6 +30,10 @@ Use this skill when critiquing or designing a sidebar on iPad, Mac, or Vision Pr
 - **Do support collapse/show and remember the state.** Collapsing should animate the sidebar away to return focus to content; on iPad it folds back into the tab bar. Don't auto-collapse on every navigation or hide the only path to a destination behind a closed sidebar.
 - **Do allow customization where it earns its keep.** Pinning, reordering, and dragging items between sidebar and tab bar reward power users. Don't make customization mandatory to reach core destinations, and keep sensible defaults for everyone else.
 - **Do keep labels short and lead with recognizable symbols.** Concise nouns plus consistent SF Symbols speed scanning. Don't mix verbs and nouns, truncate long titles, or use decorative icons that don't map to a clear meaning.
+
+### iOS 27 (WWDC 2026)
+
+- Sidebar-adaptable tab bars now reach iPhone, so "sidebar vs. tab bar" is no longer an iPad-and-up decision: an app with many peer sections can present its tab bar as a sidebar on any size class where the extra breadth earns its space, keeping one source of truth for destinations.
 
 ## Platform notes
 

@@ -14,9 +14,9 @@ x-skills-master:
     - https://developer.apple.com/help/app-store-connect/test-a-beta-version/testflight-overview/
     - https://developer.apple.com/help/app-store-connect/manage-builds/upload-builds/
     - https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases/
-  snapshot_date: "2026-05-30"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
