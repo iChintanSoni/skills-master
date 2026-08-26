@@ -398,10 +398,3 @@ restated against that total.
   The other one was real and is fixed: `compose-gestures` cited
   `touch-input/gestures` (404 on 3/3 retries), now `touch-input/pointer-input/understand-gestures`.
   Report degrades gracefully — missing link data omits that section, no reports at all says so.
-
----
-
-## Status log
-
-| Date | Item | PR | Notes |
-|------|------|----|-------|
