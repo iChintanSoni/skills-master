@@ -32,8 +32,8 @@ answering one of them with the tool meant for another.
 ### Caching
 
 - `URLCache` caches HTTP *responses* — compressed bytes keyed by request,
-  honoring `Cache-Control` and validators. It answers "don't refetch," and it
-  is the layer `AsyncImage` and `URLSession` already use.
+  honoring `Cache-Control` and validators. It answers "don't refetch," and is
+  the layer `AsyncImage` and `URLSession` already use.
 - `NSCache` holds *decoded* objects in memory and is purged automatically under
   pressure. It answers "don't re-decode." Set `countLimit` or `totalCostLimit`
   deliberately — unbounded, it is still a hazard in a scrolling grid.
@@ -127,13 +127,11 @@ measured problem — name the capability you are buying, or take the built-in pa
 
 - Adding an image library before checking whether the 27-cycle `AsyncImage`
   already solves the caching complaint that motivated it.
-- Caching decoded full-resolution images for a thumbnail grid — the memory cost
-  is width times height times four bytes, and the compressed file size on disk
-  tells you nothing about it.
+- Caching decoded full-resolution images for a thumbnail grid — the cost is
+  width times height times four bytes; the file size on disk tells you nothing.
 - Confusing `URLCache` with `NSCache`. Sizing one when the pressure is on the
   other produces no improvement and a lot of confusion.
-- Decoding on the main thread, then blaming SwiftUI for the dropped frames.
-- Creating a `CIContext` per filtered image.
+- Decoding on the main thread, or creating a `CIContext` per filtered image.
 - Asking for full photo-library authorization when a `PhotosPicker` would have
   done the job with no prompt at all.
 

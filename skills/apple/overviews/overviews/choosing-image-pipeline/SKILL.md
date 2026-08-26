@@ -145,8 +145,7 @@ measured problem — name the capability you are buying, or take the built-in pa
   width times height times four bytes; the file size on disk tells you nothing.
 - Confusing `URLCache` with `NSCache`. Sizing one when the pressure is on the
   other produces no improvement and a lot of confusion.
-- Decoding on the main thread, then blaming SwiftUI for the dropped frames.
-- Creating a `CIContext` per filtered image.
+- Decoding on the main thread, or creating a `CIContext` per filtered image.
 - Asking for full photo-library authorization when a `PhotosPicker` would have
   done the job with no prompt at all.
 

@@ -56,14 +56,16 @@ Worth native investment for spatial-native categories. Do not mistake compatibil
 
 CarPlay is an extra scene on your existing iOS app, not a separate product. The blocker is administrative: **Apple grants the CarPlay entitlement per app category, and it is not a capability you check on in Xcode.** You request it on the developer site, agree to the CarPlay Entitlement Addendum, and Apple reviews the request against predefined criteria before adding it to your account as a managed capability — after which you must turn automatic signing off and manage an entitlements file by hand. The framework compiles fine without the entitlement, and the app then simply never appears in the car.
 
-Eligibility is category-based (audio, communication, navigation, EV charging, parking, and quick food ordering carry documented entitlement keys; Apple lists several further categories such as fueling, parking-adjacent driving tasks, and public safety). An app that fits no supported category cannot ship a CarPlay experience at all — check this before estimating anything. Once granted, the UI is composed from system templates rather than your own views; only navigation apps get a drawable window, and even they must render map content there and everything else as templates (`carplay-templates`, `hig-carplay-design`). Note the common false start: an audio app that only wants background playback and the system Now Playing screen needs no CarPlay entitlement.
+Eligibility is category-based (audio, communication, navigation, EV charging, parking, and quick food ordering carry documented entitlement keys; Apple lists several further categories, including fueling, driving task, and public safety). An app that fits no supported category cannot ship a CarPlay experience at all — check this before estimating anything. Once granted, the UI is composed from system templates rather than your own views; only navigation apps get a drawable window, and even they must render map content there and everything else as templates (`carplay-templates`, `hig-carplay-design`). Note the common false start: an audio app that only wants background playback and the system Now Playing screen needs no CarPlay entitlement.
 
 ### What genuinely does not port
 
 - **The imperative toolkits.** AppKit is macOS-only; UIKit does not exist on macOS except through Catalyst, and watchOS has no UIKit at all. A UIKit-heavy codebase shares less than a SwiftUI one.
 - **Input assumptions.** Touch does not exist on tvOS or the Mac; hover and right-click do not exist on iOS; the Digital Crown and gaze have no counterpart anywhere else. Gesture code is rarely portable.
+- **Specific frameworks, unevenly.** Web content is the sharpest edge: WebKit and `WKWebView` exist on iOS, iPadOS, macOS, and visionOS but on neither watchOS nor tvOS, so any feature built on an embedded web view simply cannot travel there. ARKit is iOS, iPadOS, and visionOS only. RealityKit is absent from watchOS and only reached tvOS in the 26 cycle. HealthKit and WidgetKit have no tvOS. `PHPickerViewController` is absent from watchOS and tvOS, and `MKMapView` is absent from watchOS even though MapKit itself is present — SwiftUI's `Map` is the watch path. WatchConnectivity has no macOS or tvOS. StoreKit and Core Bluetooth, by contrast, are available across all six.
 - **Dense UI.** Deep hierarchies, long forms, wide tables, and keyboard-heavy flows do not survive the trip to the watch, the TV, or the car regardless of framework support.
-- **Several frameworks.** Availability is genuinely uneven across watchOS, tvOS, and visionOS. Check the availability line on every framework a shared layer imports before assuming a target will build.
+
+Check the availability line on every framework a shared layer imports before promising a target will build; the list above is the shape of the problem, not a substitute for that check.
 
 ### Structure so that platforms stay cheap
 
@@ -86,9 +88,12 @@ Push the model, networking, persistence, and formatting into local Swift package
 
 ## References
 
+- **Documentation:** [SwiftUI technology overview](https://developer.apple.com/documentation/technologyoverviews/swiftui)
+- **Documentation:** [Mac Catalyst](https://developer.apple.com/documentation/uikit/mac-catalyst)
+- **Documentation:** [Making your app compatible with visionOS](https://developer.apple.com/documentation/visionos/making-your-app-compatible-with-visionos)
 - **Documentation:** [watchOS apps](https://developer.apple.com/documentation/watchos-apps)
-- **Documentation:** [visionOS](https://developer.apple.com/documentation/visionos)
 - **Documentation:** [Requesting CarPlay entitlements](https://developer.apple.com/documentation/carplay/requesting-carplay-entitlements)
+- **App Store Connect:** [iPhone and iPad apps on Macs with Apple silicon](https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/manage-availability-of-iphone-and-ipad-apps-on-macs-with-apple-silicon/)
 - **Human Interface Guidelines:** [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
 
 ## See also
