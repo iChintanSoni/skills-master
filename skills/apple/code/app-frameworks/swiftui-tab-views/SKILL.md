@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [hig-tab-bars]
+  pairs_with: [hig-tab-bars, choosing-navigation-pattern]
   sources:
     - https://developer.apple.com/documentation/SwiftUI/TabView
     - https://developer.apple.com/documentation/SwiftUI/Enhancing-your-app-content-with-tab-navigation

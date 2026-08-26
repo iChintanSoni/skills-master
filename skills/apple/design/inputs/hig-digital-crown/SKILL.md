@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: inputs
   platforms: [watchos]
-  pairs_with: []
+  pairs_with: [hig-designing-for-watchos]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/digital-crown
   snapshot_date: "2026-05-30"

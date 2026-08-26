@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, visionos]
   requires:
     ios: "26"
-  pairs_with: []
+  pairs_with: [adopting-liquid-glass, hig-buttons, hig-designing-for-ios]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/materials
     - https://developer.apple.com/documentation/TechnologyOverviews/liquid-glass

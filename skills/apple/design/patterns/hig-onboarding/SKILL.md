@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [hig-privacy, tipkit, hig-app-clips-design]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/onboarding
     - https://developer.apple.com/design/human-interface-guidelines/launching

@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-dependency-injection, swiftui-state-data-flow]
   sources:
     - https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app
     - https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro

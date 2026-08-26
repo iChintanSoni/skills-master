@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: [ios]
-  pairs_with: []
+  pairs_with: [hig-materials-liquid-glass]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-ios
     - https://developer.apple.com/design/human-interface-guidelines/tab-bars

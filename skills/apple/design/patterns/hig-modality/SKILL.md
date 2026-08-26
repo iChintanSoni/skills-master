@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [hig-sheets]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/modality
     - https://developer.apple.com/design/human-interface-guidelines/sheets

@@ -213,6 +213,12 @@ export function lintSkills(skillsRoot: string): LintResult {
     }
 
     // pairs_with referential integrity (bidirectional)
+    if (xm.pairs_with.length > 4) {
+      push(
+        "warn",
+        `${xm.pairs_with.length} pairs_with entries — keep at most 4; put wider cross-references in "## See also"`,
+      );
+    }
     for (const partner of xm.pairs_with) {
       const partnerFm = byName.get(partner);
       if (!partnerFm) {

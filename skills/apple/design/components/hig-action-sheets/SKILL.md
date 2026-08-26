@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados]
-  pairs_with: []
+  pairs_with: [swiftui-sheets]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/action-sheets
     - https://developer.apple.com/design/human-interface-guidelines/alerts

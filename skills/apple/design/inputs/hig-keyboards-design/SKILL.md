@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: inputs
   platforms: [ios, ipados, macos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-focus]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/keyboards
     - https://developer.apple.com/design/human-interface-guidelines/focus-and-selection

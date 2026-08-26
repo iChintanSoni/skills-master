@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [metal, realitykit, spritekit, swiftui-drawing-canvas]
   sources:
     - https://developer.apple.com/documentation/realitykit
     - https://developer.apple.com/metal/

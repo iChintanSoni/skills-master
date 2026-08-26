@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-networking]
   sources:
     - https://developer.apple.com/documentation/network
     - https://developer.apple.com/documentation/network/nwconnection

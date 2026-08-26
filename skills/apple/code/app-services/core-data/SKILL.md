@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-persistence]
   sources:
     - https://developer.apple.com/documentation/coredata/nspersistentcontainer
     - https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer

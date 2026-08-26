@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [app-intents, widgetkit, controls-widgets, core-spotlight]
   sources:
     - https://developer.apple.com/documentation/appintents
     - https://developer.apple.com/documentation/appintents/donations-and-discovery

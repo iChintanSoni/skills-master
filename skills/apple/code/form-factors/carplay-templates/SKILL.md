@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "14"
     swift: "6.0"
-  pairs_with: [hig-carplay-design]
+  pairs_with: [hig-carplay-design, choosing-apple-platforms, now-playing]
   sources:
     - https://developer.apple.com/documentation/carplay
     - https://developer.apple.com/documentation/carplay/requesting-carplay-entitlements

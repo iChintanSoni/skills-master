@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-accessibility, hig-typography-sf-symbols]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/accessibility
     - https://developer.apple.com/design/human-interface-guidelines/typography

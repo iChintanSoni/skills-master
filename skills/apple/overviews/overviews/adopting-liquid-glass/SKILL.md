@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, visionos]
   requires:
     ios: "26"
-  pairs_with: []
+  pairs_with: [hig-materials-liquid-glass, hig-app-icons, swiftui-toolbars]
   sources:
     - https://developer.apple.com/documentation/technologyoverviews/adopting-liquid-glass
     - https://developer.apple.com/documentation/swiftui/applying-liquid-glass-to-custom-views

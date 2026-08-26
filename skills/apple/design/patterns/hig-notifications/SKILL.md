@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: [ios, ipados, macos, watchos, visionos]
-  pairs_with: []
+  pairs_with: [user-notifications]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/notifications
     - https://developer.apple.com/design/human-interface-guidelines/managing-notifications

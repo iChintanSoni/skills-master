@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, macos, visionos]
-  pairs_with: [swiftui-sheets]
+  pairs_with: [swiftui-sheets, hig-modality]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/sheets
     - https://developer.apple.com/design/human-interface-guidelines/modality

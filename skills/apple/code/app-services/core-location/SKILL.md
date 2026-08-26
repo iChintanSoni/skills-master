@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [mapkit, weatherkit]
   sources:
     - https://developer.apple.com/documentation/corelocation/cllocationupdate
     - https://developer.apple.com/documentation/corelocation/clmonitor

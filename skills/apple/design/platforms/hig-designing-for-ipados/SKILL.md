@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: [ipados]
-  pairs_with: []
+  pairs_with: [hig-pointing-devices, hig-multitasking]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados
     - https://developer.apple.com/design/human-interface-guidelines/multitasking

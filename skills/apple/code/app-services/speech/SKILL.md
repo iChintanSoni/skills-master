@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [natural-language]
   sources:
     - https://developer.apple.com/documentation/speech/speechanalyzer
     - https://developer.apple.com/documentation/speech/sfspeechrecognizer

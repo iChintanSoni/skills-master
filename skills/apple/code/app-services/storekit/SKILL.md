@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [background-assets]
+  pairs_with: [background-assets, hig-ratings-reviews]
   sources:
     - https://developer.apple.com/documentation/storekit
     - https://developer.apple.com/documentation/storekit/product/purchaseresult

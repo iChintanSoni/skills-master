@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [choosing-persistence]
+  pairs_with: [choosing-persistence, swiftdata-queries-migration]
   sources:
     - https://developer.apple.com/documentation/swiftdata
     - https://developer.apple.com/documentation/swiftdata/preserving-your-apps-model-data-across-launches

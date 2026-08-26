@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: [watchos-app-structure]
+  pairs_with: [watchos-app-structure, tvos-app-structure, visionos-windows-volumes, carplay-templates]
   sources:
     - https://developer.apple.com/documentation/technologyoverviews/swiftui
     - https://developer.apple.com/documentation/uikit/mac-catalyst

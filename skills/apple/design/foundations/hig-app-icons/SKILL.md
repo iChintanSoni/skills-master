@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     ios: "26"
-  pairs_with: []
+  pairs_with: [adopting-liquid-glass, asset-catalogs]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/app-icons
     - https://developer.apple.com/wwdc26/guides/design/

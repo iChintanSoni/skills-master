@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [hig-progress-indicators, hig-feedback]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/loading
     - https://developer.apple.com/design/human-interface-guidelines/progress-indicators

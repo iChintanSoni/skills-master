@@ -12,72 +12,72 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 
 ## apple  ›  code  ›  app-frameworks  (36)
 
-- `activitykit`  — ↔ hig-live-activities-design
-- `app-intents`  — examples, checklist, ↔ hig-siri-design, ↔ hig-snippets
-- `appkit-core`
-- `appkit-swiftui-interop`
-- `controls-widgets`  — emerging
-- `observation`  — examples, checklist
-- `swiftdata-modeling`  — examples, checklist, ↔ choosing-persistence
-- `swiftdata-queries-migration`  — examples, checklist
-- `swiftui-accessibility`
-- `swiftui-animations-transitions`  — examples, checklist
+- `activitykit`  — ↔ choosing-widget-tech, ↔ hig-live-activities-design
+- `app-intents`  — examples, checklist, ↔ adopting-app-intents, ↔ hig-siri-design, ↔ hig-snippets
+- `appkit-core`  — ↔ appkit-swiftui-interop, ↔ choosing-ui-toolkit, ↔ hig-designing-for-macos
+- `appkit-swiftui-interop`  — ↔ appkit-core
+- `controls-widgets`  — emerging, ↔ adopting-app-intents, ↔ choosing-widget-tech, ↔ hig-action-button
+- `observation`  — examples, checklist, ↔ swiftui-state-data-flow
+- `swiftdata-modeling`  — examples, checklist, ↔ choosing-persistence, ↔ swiftdata-queries-migration
+- `swiftdata-queries-migration`  — examples, checklist, ↔ swiftdata-modeling
+- `swiftui-accessibility`  — ↔ hig-accessibility
+- `swiftui-animations-transitions`  — examples, checklist, ↔ hig-motion
 - `swiftui-charts`  — examples, checklist, ↔ hig-charts
-- `swiftui-concurrency`
-- `swiftui-core`  — examples, checklist
-- `swiftui-custom-layout`
+- `swiftui-concurrency`  — ↔ choosing-async-pattern
+- `swiftui-core`  — examples, checklist, ↔ choosing-ui-toolkit, ↔ hig-layout, ↔ swiftui-custom-layout
+- `swiftui-custom-layout`  — ↔ swiftui-core
 - `swiftui-documents`  — emerging, ↔ swiftui-scenes-windows
-- `swiftui-drawing-canvas`
-- `swiftui-environment-preferences`
-- `swiftui-focus`
-- `swiftui-forms-controls`
-- `swiftui-gestures`  — examples, checklist, ↔ hig-gestures-design
-- `swiftui-grids`
-- `swiftui-images-symbols`  — ↔ choosing-image-pipeline
-- `swiftui-lists-tables`  — examples, checklist, ↔ hig-lists-tables
-- `swiftui-navigation`  — examples, checklist, ↔ swiftui-toolbars
-- `swiftui-scenes-windows`  — ↔ swiftui-documents
-- `swiftui-scrollview`
-- `swiftui-sheets`  — ↔ hig-sheets
-- `swiftui-state-data-flow`  — examples, checklist
-- `swiftui-tab-views`  — ↔ hig-tab-bars
-- `swiftui-text-input`  — ↔ hig-text-fields
-- `swiftui-toolbars`  — emerging, ↔ hig-toolbars, ↔ swiftui-navigation
-- `uikit-auto-layout`
-- `uikit-collection-views`
-- `uikit-core`
-- `uikit-swiftui-interop`  — examples, checklist
-- `widgetkit`  — examples, checklist, ↔ hig-widgets-design, ↔ watchos-complications
+- `swiftui-drawing-canvas`  — ↔ choosing-graphics-tech
+- `swiftui-environment-preferences`  — ↔ choosing-dependency-injection, ↔ swiftui-state-data-flow
+- `swiftui-focus`  — ↔ hig-keyboards-design, ↔ tvos-focus-engine
+- `swiftui-forms-controls`  — ↔ hig-pickers, ↔ hig-settings, ↔ hig-sliders-steppers, ↔ hig-toggles
+- `swiftui-gestures`  — examples, checklist, ↔ hig-drag-and-drop, ↔ hig-gestures-design
+- `swiftui-grids`  — ↔ swiftui-scrollview
+- `swiftui-images-symbols`  — ↔ choosing-image-pipeline, ↔ hig-images, ↔ hig-typography-sf-symbols
+- `swiftui-lists-tables`  — examples, checklist, ↔ hig-lists-tables, ↔ swiftui-scrollview
+- `swiftui-navigation`  — examples, checklist, ↔ choosing-navigation-pattern, ↔ hig-navigation-bars, ↔ hig-sidebars, ↔ swiftui-toolbars
+- `swiftui-scenes-windows`  — ↔ app-lifecycle, ↔ hig-designing-for-macos, ↔ hig-multitasking, ↔ swiftui-documents
+- `swiftui-scrollview`  — ↔ swiftui-grids, ↔ swiftui-lists-tables
+- `swiftui-sheets`  — ↔ hig-action-sheets, ↔ hig-alerts, ↔ hig-popovers, ↔ hig-sheets
+- `swiftui-state-data-flow`  — examples, checklist, ↔ observation, ↔ swiftui-app-architecture, ↔ swiftui-environment-preferences
+- `swiftui-tab-views`  — ↔ choosing-navigation-pattern, ↔ hig-tab-bars
+- `swiftui-text-input`  — ↔ hig-entering-data, ↔ hig-text-fields
+- `swiftui-toolbars`  — emerging, ↔ adopting-liquid-glass, ↔ hig-toolbars, ↔ swiftui-navigation
+- `uikit-auto-layout`  — ↔ uikit-core
+- `uikit-collection-views`  — ↔ uikit-core
+- `uikit-core`  — ↔ choosing-ui-toolkit, ↔ uikit-auto-layout, ↔ uikit-collection-views, ↔ uikit-swiftui-interop
+- `uikit-swiftui-interop`  — examples, checklist, ↔ uikit-core
+- `widgetkit`  — examples, checklist, ↔ adopting-app-intents, ↔ choosing-widget-tech, ↔ hig-widgets-design, ↔ watchos-complications
 
 ## apple  ›  code  ›  app-services  (18)
 
-- `cloudkit`  — examples, checklist
+- `cloudkit`  — examples, checklist, ↔ choosing-persistence
 - `core-ai`  — emerging, ↔ choosing-ml-approach, ↔ core-ml, ↔ foundation-models
-- `core-data`
-- `core-location`
-- `core-ml`  — examples, checklist, ↔ core-ai
-- `core-spotlight`
-- `eventkit`
+- `core-data`  — ↔ choosing-persistence
+- `core-location`  — ↔ mapkit, ↔ weatherkit
+- `core-ml`  — examples, checklist, ↔ choosing-ml-approach, ↔ core-ai, ↔ vision
+- `core-spotlight`  — ↔ adopting-app-intents
+- `eventkit`  — ↔ user-notifications
 - `foundation-models`  — emerging, ↔ choosing-ml-approach, ↔ core-ai
 - `healthkit`  — ↔ watchos-workouts
-- `mapkit`  — examples, checklist
-- `natural-language`
+- `mapkit`  — examples, checklist, ↔ core-location
+- `natural-language`  — ↔ choosing-ml-approach, ↔ speech
 - `passkit-apple-pay`  — ↔ hig-apple-pay-design
-- `speech`
-- `storekit`  — examples, checklist, ↔ background-assets
-- `tipkit`
-- `user-notifications`
-- `vision`
-- `weatherkit`
+- `speech`  — ↔ natural-language
+- `storekit`  — examples, checklist, ↔ background-assets, ↔ hig-ratings-reviews
+- `tipkit`  — ↔ hig-onboarding
+- `user-notifications`  — ↔ choosing-background-execution, ↔ eventkit, ↔ hig-notifications
+- `vision`  — ↔ core-ml
+- `weatherkit`  — ↔ core-location
 
 ## apple  ›  code  ›  form-factors  (10)
 
-- `carplay-templates`  — ↔ hig-carplay-design
-- `tvos-app-structure`  — ↔ hig-designing-for-tvos, ↔ tvos-focus-engine
-- `tvos-focus-engine`  — ↔ tvos-app-structure
+- `carplay-templates`  — ↔ choosing-apple-platforms, ↔ hig-carplay-design, ↔ now-playing
+- `tvos-app-structure`  — ↔ choosing-apple-platforms, ↔ hig-designing-for-tvos, ↔ tvos-focus-engine
+- `tvos-focus-engine`  — ↔ swiftui-focus, ↔ tvos-app-structure
 - `tvos-media-playback`  — ↔ avfoundation-playback
 - `visionos-immersive-spaces`  — ↔ realitykit, ↔ visionos-windows-volumes
-- `visionos-windows-volumes`  — ↔ hig-designing-for-visionos, ↔ visionos-immersive-spaces
+- `visionos-windows-volumes`  — ↔ choosing-apple-platforms, ↔ hig-designing-for-visionos, ↔ visionos-immersive-spaces
 - `watchos-app-structure`  — ↔ choosing-apple-platforms, ↔ hig-designing-for-watchos, ↔ watchos-complications, ↔ watchos-connectivity
 - `watchos-complications`  — ↔ watchos-app-structure, ↔ widgetkit
 - `watchos-connectivity`  — ↔ watchos-app-structure
@@ -85,115 +85,115 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 
 ## apple  ›  code  ›  graphics-games  (8)
 
-- `arkit`
-- `core-image`
-- `gamekit`
-- `metal`
+- `arkit`  — ↔ realitykit
+- `core-image`  — ↔ choosing-image-pipeline
+- `gamekit`  — ↔ spritekit
+- `metal`  — ↔ choosing-graphics-tech
 - `pencilkit`  — ↔ hig-apple-pencil
-- `realitykit`  — examples, checklist, ↔ visionos-immersive-spaces
-- `scenekit`
-- `spritekit`
+- `realitykit`  — examples, checklist, ↔ arkit, ↔ choosing-graphics-tech, ↔ scenekit, ↔ visionos-immersive-spaces
+- `scenekit`  — ↔ realitykit
+- `spritekit`  — ↔ choosing-graphics-tech, ↔ gamekit
 
 ## apple  ›  code  ›  media  (7)
 
-- `avfoundation-capture`
+- `avfoundation-capture`  — ↔ photokit, ↔ screencapturekit
 - `avfoundation-playback`  — ↔ now-playing, ↔ tvos-media-playback
 - `music-understanding`  — emerging, ↔ musickit
 - `musickit`  — ↔ music-understanding, ↔ now-playing
-- `now-playing`  — emerging, ↔ avfoundation-playback, ↔ musickit
-- `photokit`
-- `screencapturekit`
+- `now-playing`  — emerging, ↔ avfoundation-playback, ↔ carplay-templates, ↔ musickit
+- `photokit`  — ↔ avfoundation-capture, ↔ choosing-image-pipeline
+- `screencapturekit`  — ↔ avfoundation-capture
 
 ## apple  ›  code  ›  system  (7)
 
-- `background-assets`  — emerging, ↔ background-tasks, ↔ storekit
+- `background-assets`  — emerging, ↔ background-tasks, ↔ choosing-background-execution, ↔ storekit
 - `background-tasks`  — ↔ background-assets, ↔ choosing-background-execution
 - `core-bluetooth`
-- `cryptokit`
-- `keychain-security`
-- `network-framework`
-- `os-logging`
+- `cryptokit`  — ↔ keychain-security
+- `keychain-security`  — ↔ cryptokit
+- `network-framework`  — ↔ choosing-networking
+- `os-logging`  — ↔ instruments-profiling
 
 ## apple  ›  code  ›  web  (2)
 
-- `app-store-connect-api`
+- `app-store-connect-api`  — ↔ testflight-appstore-connect
 - `sign-in-with-apple`  — ↔ choosing-web-embedding, ↔ hig-sign-in-with-apple-design
 
 ## apple  ›  design  ›  components  (21)
 
-- `hig-action-sheets`
-- `hig-alerts`
-- `hig-buttons`  — checklist
+- `hig-action-sheets`  — ↔ swiftui-sheets
+- `hig-alerts`  — ↔ swiftui-sheets
+- `hig-buttons`  — checklist, ↔ hig-materials-liquid-glass
 - `hig-charts`  — ↔ swiftui-charts
-- `hig-context-menus`
+- `hig-context-menus`  — ↔ hig-menus
 - `hig-lists-tables`  — checklist, ↔ swiftui-lists-tables
-- `hig-menus`
-- `hig-navigation-bars`
-- `hig-pickers`
-- `hig-popovers`
-- `hig-progress-indicators`
-- `hig-search-fields`
-- `hig-segmented-controls`
-- `hig-sheets`  — ↔ swiftui-sheets
-- `hig-sidebars`
-- `hig-sliders-steppers`
+- `hig-menus`  — ↔ hig-context-menus, ↔ hig-designing-for-macos
+- `hig-navigation-bars`  — ↔ swiftui-navigation
+- `hig-pickers`  — ↔ hig-segmented-controls, ↔ swiftui-forms-controls
+- `hig-popovers`  — ↔ swiftui-sheets
+- `hig-progress-indicators`  — ↔ hig-loading
+- `hig-search-fields`  — ↔ hig-searching
+- `hig-segmented-controls`  — ↔ hig-pickers
+- `hig-sheets`  — ↔ hig-modality, ↔ swiftui-sheets
+- `hig-sidebars`  — ↔ swiftui-navigation
+- `hig-sliders-steppers`  — ↔ swiftui-forms-controls
 - `hig-snippets`  — emerging, ↔ app-intents, ↔ hig-siri-design
 - `hig-tab-bars`  — checklist, ↔ swiftui-tab-views
 - `hig-text-fields`  — ↔ swiftui-text-input
-- `hig-toggles`
+- `hig-toggles`  — ↔ swiftui-forms-controls
 - `hig-toolbars`  — ↔ swiftui-toolbars
 
 ## apple  ›  design  ›  foundations  (12)
 
-- `hig-accessibility`
-- `hig-app-icons`
-- `hig-color`
-- `hig-dark-mode`
-- `hig-images`
-- `hig-layout`
-- `hig-materials-liquid-glass`  — emerging
-- `hig-motion`
-- `hig-privacy`
-- `hig-right-to-left`
-- `hig-typography-sf-symbols`
-- `hig-writing`
+- `hig-accessibility`  — ↔ hig-typography-sf-symbols, ↔ swiftui-accessibility
+- `hig-app-icons`  — ↔ adopting-liquid-glass, ↔ asset-catalogs
+- `hig-color`  — ↔ asset-catalogs, ↔ hig-dark-mode
+- `hig-dark-mode`  — ↔ hig-color
+- `hig-images`  — ↔ swiftui-images-symbols
+- `hig-layout`  — ↔ swiftui-core
+- `hig-materials-liquid-glass`  — emerging, ↔ adopting-liquid-glass, ↔ hig-buttons, ↔ hig-designing-for-ios
+- `hig-motion`  — ↔ swiftui-animations-transitions
+- `hig-privacy`  — ↔ hig-onboarding, ↔ info-plist-entitlements, ↔ privacy-manifests
+- `hig-right-to-left`  — ↔ localization
+- `hig-typography-sf-symbols`  — ↔ hig-accessibility, ↔ swiftui-images-symbols
+- `hig-writing`  — ↔ localization
 
 ## apple  ›  design  ›  inputs  (6)
 
-- `hig-action-button`
+- `hig-action-button`  — ↔ controls-widgets
 - `hig-apple-pencil`  — ↔ pencilkit
-- `hig-digital-crown`
-- `hig-gestures-design`  — ↔ swiftui-gestures
-- `hig-keyboards-design`
-- `hig-pointing-devices`
+- `hig-digital-crown`  — ↔ hig-designing-for-watchos
+- `hig-gestures-design`  — ↔ hig-undo-redo, ↔ swiftui-gestures
+- `hig-keyboards-design`  — ↔ swiftui-focus
+- `hig-pointing-devices`  — ↔ hig-designing-for-ipados
 
 ## apple  ›  design  ›  patterns  (12)
 
-- `hig-drag-and-drop`
-- `hig-entering-data`
-- `hig-feedback`
-- `hig-loading`
-- `hig-modality`
-- `hig-multitasking`
-- `hig-notifications`
-- `hig-onboarding`  — checklist
-- `hig-ratings-reviews`
-- `hig-searching`
-- `hig-settings`
-- `hig-undo-redo`
+- `hig-drag-and-drop`  — ↔ swiftui-gestures
+- `hig-entering-data`  — ↔ swiftui-text-input
+- `hig-feedback`  — ↔ hig-loading
+- `hig-loading`  — ↔ hig-feedback, ↔ hig-progress-indicators
+- `hig-modality`  — ↔ hig-sheets
+- `hig-multitasking`  — ↔ hig-designing-for-ipados, ↔ swiftui-scenes-windows
+- `hig-notifications`  — ↔ user-notifications
+- `hig-onboarding`  — checklist, ↔ hig-app-clips-design, ↔ hig-privacy, ↔ tipkit
+- `hig-ratings-reviews`  — ↔ storekit
+- `hig-searching`  — ↔ hig-search-fields
+- `hig-settings`  — ↔ swiftui-forms-controls
+- `hig-undo-redo`  — ↔ hig-gestures-design
 
 ## apple  ›  design  ›  platforms  (6)
 
-- `hig-designing-for-ios`
-- `hig-designing-for-ipados`
-- `hig-designing-for-macos`
+- `hig-designing-for-ios`  — ↔ hig-materials-liquid-glass
+- `hig-designing-for-ipados`  — ↔ hig-multitasking, ↔ hig-pointing-devices
+- `hig-designing-for-macos`  — ↔ appkit-core, ↔ hig-menus, ↔ swiftui-scenes-windows
 - `hig-designing-for-tvos`  — ↔ tvos-app-structure
 - `hig-designing-for-visionos`  — ↔ visionos-windows-volumes
-- `hig-designing-for-watchos`  — ↔ watchos-app-structure
+- `hig-designing-for-watchos`  — ↔ hig-digital-crown, ↔ watchos-app-structure
 
 ## apple  ›  design  ›  technologies  (7)
 
-- `hig-app-clips-design`
+- `hig-app-clips-design`  — ↔ hig-onboarding
 - `hig-apple-pay-design`  — ↔ passkit-apple-pay
 - `hig-carplay-design`  — ↔ carplay-templates
 - `hig-live-activities-design`  — ↔ activitykit
@@ -203,77 +203,77 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 
 ## apple  ›  lang-tooling  ›  architecture  (6)
 
-- `app-lifecycle`
-- `dependency-injection`  — ↔ choosing-dependency-injection
-- `modularization-local-spm`
-- `navigation-architecture`
-- `networking-layer`
-- `swiftui-app-architecture`  — examples, checklist, contested
+- `app-lifecycle`  — ↔ swiftui-scenes-windows
+- `dependency-injection`  — ↔ choosing-dependency-injection, ↔ unit-testing-strategy
+- `modularization-local-spm`  — ↔ spm
+- `navigation-architecture`  — ↔ choosing-navigation-pattern
+- `networking-layer`  — ↔ choosing-networking, ↔ codable-serialization, ↔ error-handling
+- `swiftui-app-architecture`  — examples, checklist, contested, ↔ choosing-dependency-injection, ↔ swiftui-state-data-flow
 
 ## apple  ›  lang-tooling  ›  build-packaging  (6)
 
-- `asset-catalogs`
-- `info-plist-entitlements`
-- `spm`
-- `swift-package-plugins`
+- `asset-catalogs`  — ↔ hig-app-icons, ↔ hig-color
+- `info-plist-entitlements`  — ↔ entitlements-capabilities, ↔ hig-privacy
+- `spm`  — ↔ modularization-local-spm, ↔ swift-package-plugins
+- `swift-package-plugins`  — ↔ spm
 - `xcode-coding-agents`  — emerging, ↔ localization, ↔ xcode-project-conventions
 - `xcode-project-conventions`  — ↔ xcode-coding-agents
 
 ## apple  ›  lang-tooling  ›  language  (11)
 
-- `codable-serialization`
-- `error-handling`
-- `property-wrappers`
-- `regex-strings`
-- `result-builders`
-- `swift-6-migration`
-- `swift-concurrency`  — examples, checklist
-- `swift-generics-protocols`
-- `swift-language-core`
-- `swift-macros`
-- `swift-performance-memory`
+- `codable-serialization`  — ↔ networking-layer
+- `error-handling`  — ↔ networking-layer
+- `property-wrappers`  — ↔ swift-macros
+- `regex-strings`  — ↔ result-builders
+- `result-builders`  — ↔ regex-strings, ↔ swift-macros
+- `swift-6-migration`  — ↔ adopting-swift-6-concurrency, ↔ swift-concurrency
+- `swift-concurrency`  — examples, checklist, ↔ adopting-swift-6-concurrency, ↔ choosing-async-pattern, ↔ swift-6-migration, ↔ testing-async-code
+- `swift-generics-protocols`  — ↔ swift-language-core
+- `swift-language-core`  — ↔ swift-generics-protocols, ↔ swift-performance-memory
+- `swift-macros`  — ↔ property-wrappers, ↔ result-builders
+- `swift-performance-memory`  — ↔ instruments-profiling, ↔ swift-language-core
 
 ## apple  ›  lang-tooling  ›  ship  (10)
 
-- `app-review-guidelines`
-- `build-sign-distribute`
-- `ci-cd-signing`
-- `crash-symbolication`
-- `entitlements-capabilities`
-- `instruments-profiling`
-- `localization`  — ↔ xcode-coding-agents
-- `privacy-manifests`
-- `provisioning-code-signing`
-- `testflight-appstore-connect`
+- `app-review-guidelines`  — ↔ privacy-manifests, ↔ testflight-appstore-connect
+- `build-sign-distribute`  — ↔ choosing-distribution, ↔ ci-cd-signing, ↔ provisioning-code-signing
+- `ci-cd-signing`  — ↔ build-sign-distribute, ↔ provisioning-code-signing
+- `crash-symbolication`  — ↔ instruments-profiling
+- `entitlements-capabilities`  — ↔ info-plist-entitlements, ↔ provisioning-code-signing
+- `instruments-profiling`  — ↔ crash-symbolication, ↔ os-logging, ↔ swift-performance-memory
+- `localization`  — ↔ hig-right-to-left, ↔ hig-writing, ↔ xcode-coding-agents
+- `privacy-manifests`  — ↔ app-review-guidelines, ↔ hig-privacy
+- `provisioning-code-signing`  — ↔ build-sign-distribute, ↔ choosing-distribution, ↔ ci-cd-signing, ↔ entitlements-capabilities
+- `testflight-appstore-connect`  — ↔ app-review-guidelines, ↔ app-store-connect-api, ↔ choosing-distribution
 
 ## apple  ›  lang-tooling  ›  testing  (5)
 
-- `snapshot-testing`
-- `swift-testing`  — examples, checklist
-- `testing-async-code`
-- `unit-testing-strategy`
-- `xctest-ui-automation`
+- `snapshot-testing`  — ↔ choosing-testing-strategy
+- `swift-testing`  — examples, checklist, ↔ choosing-testing-strategy, ↔ testing-async-code
+- `testing-async-code`  — ↔ swift-concurrency, ↔ swift-testing
+- `unit-testing-strategy`  — ↔ choosing-testing-strategy, ↔ dependency-injection
+- `xctest-ui-automation`  — ↔ choosing-testing-strategy
 
 ## apple  ›  overview  ›  overviews  (18)
 
-- `adopting-app-intents`
-- `adopting-liquid-glass`  — emerging
-- `adopting-swift-6-concurrency`
-- `choosing-apple-platforms`  — ↔ watchos-app-structure
-- `choosing-async-pattern`
-- `choosing-background-execution`  — ↔ background-tasks
-- `choosing-dependency-injection`  — ↔ dependency-injection
-- `choosing-distribution`
-- `choosing-graphics-tech`
-- `choosing-image-pipeline`  — ↔ swiftui-images-symbols
-- `choosing-ml-approach`  — ↔ core-ai, ↔ foundation-models
-- `choosing-navigation-pattern`
-- `choosing-networking`
-- `choosing-persistence`  — contested, ↔ swiftdata-modeling
-- `choosing-testing-strategy`
-- `choosing-ui-toolkit`  — contested
+- `adopting-app-intents`  — ↔ app-intents, ↔ controls-widgets, ↔ core-spotlight, ↔ widgetkit
+- `adopting-liquid-glass`  — emerging, ↔ hig-app-icons, ↔ hig-materials-liquid-glass, ↔ swiftui-toolbars
+- `adopting-swift-6-concurrency`  — ↔ swift-6-migration, ↔ swift-concurrency
+- `choosing-apple-platforms`  — ↔ carplay-templates, ↔ tvos-app-structure, ↔ visionos-windows-volumes, ↔ watchos-app-structure
+- `choosing-async-pattern`  — ↔ swift-concurrency, ↔ swiftui-concurrency
+- `choosing-background-execution`  — ↔ background-assets, ↔ background-tasks, ↔ user-notifications
+- `choosing-dependency-injection`  — ↔ dependency-injection, ↔ swiftui-app-architecture, ↔ swiftui-environment-preferences
+- `choosing-distribution`  — ↔ build-sign-distribute, ↔ provisioning-code-signing, ↔ testflight-appstore-connect
+- `choosing-graphics-tech`  — ↔ metal, ↔ realitykit, ↔ spritekit, ↔ swiftui-drawing-canvas
+- `choosing-image-pipeline`  — ↔ core-image, ↔ photokit, ↔ swiftui-images-symbols
+- `choosing-ml-approach`  — ↔ core-ai, ↔ core-ml, ↔ foundation-models, ↔ natural-language
+- `choosing-navigation-pattern`  — ↔ navigation-architecture, ↔ swiftui-navigation, ↔ swiftui-tab-views
+- `choosing-networking`  — ↔ network-framework, ↔ networking-layer
+- `choosing-persistence`  — contested, ↔ cloudkit, ↔ core-data, ↔ swiftdata-modeling
+- `choosing-testing-strategy`  — ↔ snapshot-testing, ↔ swift-testing, ↔ unit-testing-strategy, ↔ xctest-ui-automation
+- `choosing-ui-toolkit`  — contested, ↔ appkit-core, ↔ swiftui-core, ↔ uikit-core
 - `choosing-web-embedding`  — ↔ sign-in-with-apple
-- `choosing-widget-tech`
+- `choosing-widget-tech`  — ↔ activitykit, ↔ controls-widgets, ↔ widgetkit
 
 ## android  ›  code  ›  architecture  (12)
 

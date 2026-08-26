@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "27"
     swift: "6.0"
-  pairs_with: [avfoundation-playback, musickit]
+  pairs_with: [avfoundation-playback, musickit, carplay-templates]
   sources:
     - https://developer.apple.com/documentation/nowplaying
     - https://developer.apple.com/documentation/nowplaying/publishing-media-sessions

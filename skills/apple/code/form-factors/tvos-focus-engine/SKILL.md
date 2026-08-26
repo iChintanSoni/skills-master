@@ -13,7 +13,7 @@ x-skills-master:
     tvos: "17"
     ios: "17"
     swift: "6.0"
-  pairs_with: [tvos-app-structure]
+  pairs_with: [tvos-app-structure, swiftui-focus]
   sources:
     - https://developer.apple.com/documentation/swiftui/focus
     - https://developer.apple.com/documentation/uikit/focus-based-navigation

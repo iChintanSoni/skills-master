@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-image-pipeline, avfoundation-capture]
   sources:
     - https://developer.apple.com/documentation/photokit
     - https://developer.apple.com/documentation/photosui/photospicker

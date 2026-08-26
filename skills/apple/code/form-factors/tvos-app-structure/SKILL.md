@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     tvos: "18"
     swift: "6.0"
-  pairs_with: [hig-designing-for-tvos, tvos-focus-engine]
+  pairs_with: [hig-designing-for-tvos, tvos-focus-engine, choosing-apple-platforms]
   sources:
     - https://developer.apple.com/documentation/tvservices
     - https://developer.apple.com/documentation/tvuikit

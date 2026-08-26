@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "16"
     swift: "6.0"
-  pairs_with: [storekit, background-tasks]
+  pairs_with: [storekit, background-tasks, choosing-background-execution]
   sources:
     - https://developer.apple.com/documentation/backgroundassets
     - https://developer.apple.com/documentation/backgroundassets/downloading-apple-hosted-asset-packs

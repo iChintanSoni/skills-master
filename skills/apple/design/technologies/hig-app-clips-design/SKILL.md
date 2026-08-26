@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: technologies
   platforms: [ios, ipados]
-  pairs_with: []
+  pairs_with: [hig-onboarding]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/app-clips
   snapshot_date: "2026-08-25"

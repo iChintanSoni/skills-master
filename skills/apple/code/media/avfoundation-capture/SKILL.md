@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [photokit, screencapturekit]
   sources:
     - https://developer.apple.com/documentation/avfoundation/avcapturesession
     - https://developer.apple.com/documentation/avfoundation/setting-up-a-capture-session

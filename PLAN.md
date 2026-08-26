@@ -192,14 +192,25 @@ broken emit formats) is a bug, not a nice-to-have.
 
 ## Phase 7 — Metadata full sweep (after content lands)
 
-- [ ] **7.1 `pairs_with` build-out (L).** Dedicated pass over all 393: design↔code twins,
-  overview↔implementation links, lang-tooling pairs (currently 0/37 on apple). Keep the
-  bidirectional invariant; land per-domain PRs.
-- [ ] **7.2 Stability re-audit (M).** Re-judge `stable` vs `emerging` per skill (3/393
+The library grew to **433 skills** across phases 5–6, so the baseline counts below are
+restated against that total.
+
+- [ ] **7.1 `pairs_with` build-out (L).** Dedicated pass over all 433: design↔code twins,
+  overview↔implementation links, lang-tooling pairs. Keep the bidirectional invariant;
+  land per-domain PRs.
+  - [x] **apple** — 46 → 188 edges; unpaired 139/208 → 1 (`core-bluetooth`, which has no
+    genuine partner). What earns a pair is now written down in `docs/authoring.md`
+    ("What earns a pair"): design↔code twin, overview↔its destinations, or a tight couple —
+    with wider cross-references left to `## See also`. A new linter warning caps the list
+    at 4 so the facet stays a signal rather than a dump. Metadata-only: `x-skills-master`
+    is stripped from every projection, so no `version`/`snapshot_date` moved.
+  - [ ] **android** — 50 edges today; 136/225 unpaired.
+- [ ] **7.2 Stability re-audit (M).** Re-judge `stable` vs `emerging` per skill (17/433
   `emerging` is implausible); `contested` skills present tradeoffs per authoring.md.
 - [ ] **7.3 Platforms honesty pass (M).** Stop claiming watchOS/tvOS/visionOS on skills
-  with no form-factor content; make the facet discriminating again.
-- [ ] **7.4 Tag consolidation (M).** 490 of 797 tags are used once. Define a canonical
+  with no form-factor content; make the facet discriminating again (watchos 137, tvos 150,
+  visionos 174 of 433 today).
+- [ ] **7.4 Tag consolidation (M).** 543 of 887 tags are used once. Define a canonical
   vocabulary (or drop tags), lint against it.
 
 ## Phase 8 — CLI test depth

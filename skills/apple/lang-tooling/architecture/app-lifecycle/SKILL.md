@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [swiftui-scenes-windows]
   sources:
     - https://developer.apple.com/documentation/swiftui/scenephase
     - https://developer.apple.com/documentation/swiftui/uiapplicationdelegateadaptor

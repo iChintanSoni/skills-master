@@ -244,6 +244,28 @@ describe("lintSkills — tightened rules", () => {
     );
   });
 
+  it("warns when pairs_with exceeds the 4-partner cap", () => {
+    const partners = ["p1", "p2", "p3", "p4", "p5"];
+    writeSkill({ dir: "apple/code/app-frameworks/over-paired", pairsWith: partners });
+    for (const p of partners) {
+      writeSkill({ dir: `apple/code/app-frameworks/${p}`, pairsWith: ["over-paired"] });
+    }
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([expect.stringContaining("5 pairs_with entries — keep at most 4")]),
+    );
+  });
+
+  it("accepts a skill sitting exactly at the 4-partner cap", () => {
+    const partners = ["q1", "q2", "q3", "q4"];
+    writeSkill({ dir: "apple/code/app-frameworks/at-cap", pairsWith: partners });
+    for (const p of partners) {
+      writeSkill({ dir: `apple/code/app-frameworks/${p}`, pairsWith: ["at-cap"] });
+    }
+    const res = lintSkills(root);
+    expect(res.warnCount).toBe(0);
+    expect(res.errorCount).toBe(0);
+  });
+
   it("warns when a resource file exists but is never linked", () => {
     writeSkill({ dir: "apple/code/app-frameworks/orphaned-resources", resources: ["examples.md"] });
     expect(messagesOf("warn")).toEqual(

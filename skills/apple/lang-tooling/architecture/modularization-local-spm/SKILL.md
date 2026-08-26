@@ -11,7 +11,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [spm]
   sources:
     - https://developer.apple.com/documentation/xcode/organizing-your-code-with-local-packages
     - https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/

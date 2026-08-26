@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados]
-  pairs_with: []
+  pairs_with: [widgetkit, activitykit, controls-widgets]
   sources:
     - https://developer.apple.com/documentation/widgetkit
     - https://developer.apple.com/documentation/ActivityKit

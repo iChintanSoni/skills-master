@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-core, uikit-core, appkit-core]
   sources:
     - https://developer.apple.com/documentation/swiftui/uikit-integration
     - https://developer.apple.com/documentation/swiftui/uihostingcontroller

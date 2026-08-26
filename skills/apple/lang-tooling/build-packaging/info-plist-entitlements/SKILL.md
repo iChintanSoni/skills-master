@@ -9,7 +9,7 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   requires:
     xcode: "26"
-  pairs_with: []
+  pairs_with: [hig-privacy, entitlements-capabilities]
   sources:
     - https://developer.apple.com/documentation/bundleresources/information-property-list
     - https://developer.apple.com/documentation/BundleResources/managing-your-app-s-information-property-list

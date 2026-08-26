@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: [ios, ipados, macos, tvos]
-  pairs_with: []
+  pairs_with: [storekit]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/ratings-and-reviews
     - https://developer.apple.com/app-store/ratings-and-reviews/

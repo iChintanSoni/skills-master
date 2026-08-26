@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-forms-controls]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/toggles
     - https://developer.apple.com/design/human-interface-guidelines/buttons

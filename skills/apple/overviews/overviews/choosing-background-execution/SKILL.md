@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: [background-tasks]
+  pairs_with: [background-tasks, background-assets, user-notifications]
   sources:
     - https://developer.apple.com/documentation/backgroundtasks
     - https://developer.apple.com/documentation/backgroundtasks/performing-long-running-tasks-on-ios-and-ipados

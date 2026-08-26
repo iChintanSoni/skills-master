@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [choosing-ui-toolkit, hig-layout, swiftui-custom-layout]
   sources:
     - https://developer.apple.com/documentation/swiftui/view
     - https://developer.apple.com/documentation/swiftui/layout-fundamentals

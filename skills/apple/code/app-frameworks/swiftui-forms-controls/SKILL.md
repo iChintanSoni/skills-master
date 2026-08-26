@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [hig-pickers, hig-sliders-steppers, hig-toggles, hig-settings]
   sources:
     - https://developer.apple.com/documentation/swiftui/form
     - https://developer.apple.com/documentation/swiftui/picker

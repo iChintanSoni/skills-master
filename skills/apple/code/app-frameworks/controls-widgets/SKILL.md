@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "18"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [adopting-app-intents, choosing-widget-tech, hig-action-button]
   sources:
     - https://developer.apple.com/documentation/widgetkit/creating-controls-to-perform-actions-across-the-system
     - https://developer.apple.com/documentation/swiftui/controlwidget

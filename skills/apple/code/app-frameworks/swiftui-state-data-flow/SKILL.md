@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [observation, swiftui-environment-preferences, swiftui-app-architecture]
   sources:
     - https://developer.apple.com/documentation/swiftui/state-and-data-flow
     - https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro

@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: [ios, ipados, macos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-core]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/layout
     - https://developer.apple.com/design/human-interface-guidelines/right-to-left

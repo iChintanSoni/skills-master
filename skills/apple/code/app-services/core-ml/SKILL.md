@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [core-ai]
+  pairs_with: [core-ai, choosing-ml-approach, vision]
   sources:
     - https://developer.apple.com/documentation/coreml
     - https://developer.apple.com/documentation/coreml/mlmodelconfiguration/computeunits

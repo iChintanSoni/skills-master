@@ -7,7 +7,7 @@ x-skills-master:
   class: overview
   category: overviews
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [swiftui-navigation, swiftui-tab-views, navigation-architecture]
   sources:
     - https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types
     - https://developer.apple.com/documentation/swiftui/navigation

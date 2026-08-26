@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [swiftui-toolbars]
+  pairs_with: [swiftui-toolbars, choosing-navigation-pattern, hig-navigation-bars, hig-sidebars]
   sources:
     - https://developer.apple.com/documentation/swiftui/navigationstack
     - https://developer.apple.com/documentation/swiftui/navigationsplitview

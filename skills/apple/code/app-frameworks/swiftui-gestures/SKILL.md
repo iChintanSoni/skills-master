@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: [hig-gestures-design]
+  pairs_with: [hig-gestures-design, hig-drag-and-drop]
   sources:
     - https://developer.apple.com/documentation/swiftui/gestures
     - https://developer.apple.com/documentation/swiftui/composing-swiftui-gestures

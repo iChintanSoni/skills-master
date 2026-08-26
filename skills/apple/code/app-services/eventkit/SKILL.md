@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [user-notifications]
   sources:
     - https://developer.apple.com/documentation/technotes/tn3153-adopting-api-changes-for-eventkit-in-ios-macos-and-watchos
     - https://developer.apple.com/documentation/eventkit/ekeventstore/requestfullaccesstoevents(completion:)

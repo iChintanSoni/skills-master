@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     ios: "17"
     swift: "6.0"
-  pairs_with: []
+  pairs_with: [core-location]
   sources:
     - https://developer.apple.com/documentation/mapkit/mapkit-for-swiftui
     - https://developer.apple.com/documentation/mapkit/lookaroundpreview

@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: [watchos]
-  pairs_with: [watchos-app-structure]
+  pairs_with: [watchos-app-structure, hig-digital-crown]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos
     - https://developer.apple.com/design/human-interface-guidelines/complications

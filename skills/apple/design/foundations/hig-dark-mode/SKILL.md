@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: [ios, ipados, macos, tvos, visionos]
-  pairs_with: []
+  pairs_with: [hig-color]
   sources:
     - https://developer.apple.com/design/human-interface-guidelines/dark-mode
     - https://developer.apple.com/design/human-interface-guidelines/color
