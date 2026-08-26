@@ -20,6 +20,16 @@ describe("condenseBody", () => {
     expect(condenseBody("no links here")).not.toMatch(/full Claude Code skill/i);
   });
 
+  // 0.4 removed the "summarize" option: condensed targets carry the section as
+  // authored, so a contested skill never reads as settled there.
+  it("passes an Open question section through unchanged", () => {
+    const body =
+      "## Open question\n\nFirst paragraph states the tradeoff.\n\nSecond paragraph elaborates.\n";
+    const out = condenseBody(body);
+    expect(out).toContain("First paragraph states the tradeoff.");
+    expect(out).toContain("Second paragraph elaborates.");
+  });
+
   // Regression: the L3 link regex used [^\]]+ for link text, which can itself
   // match "[", making every "[" an overlapping restart position — quadratic
   // blowup on bracket-heavy input (CodeQL js/polynomial-redos). The unfixed
@@ -34,33 +44,6 @@ describe("condenseBody", () => {
       condenseBody(attack);
       expect(performance.now() - started).toBeLessThan(2_000);
     }
-  });
-});
-
-describe("summarizeOpenQuestion (via condenseBody)", () => {
-  const body =
-    "## Core guidance\n\ntext\n\n## Open question\n\nFirst paragraph states the tradeoff.\n\nSecond paragraph elaborates at length.\n";
-
-  it("collapses the section to its first paragraph", () => {
-    const out = condenseBody(body, { openQuestion: "summarize" });
-    expect(out).toContain("Tradeoff: First paragraph states the tradeoff.");
-    expect(out).not.toContain("Second paragraph");
-  });
-
-  it("summarizes a section that ends at the end of the body", () => {
-    const out = condenseBody("## Open question\n\nOnly paragraph.\n", {
-      openQuestion: "summarize",
-    });
-    expect(out).toContain("Tradeoff: Only paragraph.");
-    // Regression: with the old \s*$ lookahead the capture matched nothing and
-    // the output was a bare "Tradeoff: " with the paragraph left behind.
-    expect(out).not.toMatch(/Tradeoff:\s*\n/);
-  });
-
-  it("stops at the next h2", () => {
-    const out = condenseBody(`${body}## References\n\n- link\n`, { openQuestion: "summarize" });
-    expect(out).toContain("## References");
-    expect(out).not.toContain("Second paragraph");
   });
 });
 

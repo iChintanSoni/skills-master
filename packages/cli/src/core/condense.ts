@@ -4,8 +4,10 @@
  *
  *  - Links to reference.md / examples.md / checklist.md are flattened to plain
  *    text and a one-line pointer to the full skill is appended ("drop-and-note").
- *  - The `## Open question` section can optionally be summarized to a single
- *    tradeoff line for terse targets.
+ *
+ * `## Open question` is left intact: a contested skill that reads as settled is
+ * worse than a long one, and the terse target (AGENTS.md) takes the digest path
+ * below, which drops every section and carries a stability banner instead.
  */
 
 // The character classes deliberately exclude their own delimiters and newlines.
@@ -16,8 +18,6 @@
 const L3_LINK_RE = /\[([^\][\n]+)\]\((?:\.\/)?(reference|examples|checklist)\.md(?:#[^()\n]*)?\)/g;
 
 export interface CondenseOptions {
-  /** "keep" (default) leaves the section intact; "summarize" collapses it. */
-  openQuestion?: "keep" | "summarize";
   /** whether the source skill had any resource files (drives the pointer note). */
   hadResources?: boolean;
 }
@@ -34,10 +34,6 @@ export function condenseBody(body: string, opts: CondenseOptions = {}): string {
     return text;
   });
 
-  if (opts.openQuestion === "summarize") {
-    out = summarizeOpenQuestion(out);
-  }
-
   out = out.replace(/\n{3,}/g, "\n\n").trim();
 
   if (opts.hadResources || strippedLink) {
@@ -45,23 +41,6 @@ export function condenseBody(body: string, opts: CondenseOptions = {}): string {
   }
 
   return out + "\n";
-}
-
-function summarizeOpenQuestion(body: string): string {
-  // The section runs to the next h2 or the true end of input. `$` must not be
-  // line-end here (the pattern is /m for the heading anchor), so absolute end
-  // is spelled (?![\s\S]) — with \s*$ the lazy capture stopped at the first
-  // newline and "summarized" every section to an empty string.
-  const re = /^## Open question[ \t]*\n([\s\S]*?)(?=\n## |(?![\s\S]))/m;
-  return body.replace(re, (_m, section: string) => {
-    const firstPara =
-      section
-        .trim()
-        .split(/\n\s*\n/)[0]
-        ?.replace(/\s+/g, " ")
-        .trim() ?? "";
-    return `## Open question\n\nTradeoff: ${firstPara}\n`;
-  });
 }
 
 /** First `max` top-level bullets of a `## <section>`, or its first paragraph as fallback. */
