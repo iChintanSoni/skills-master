@@ -102,7 +102,7 @@ The Credential Manager bottom sheet is a system-owned UI; it adapts to window si
 - **API 34+ (Android 14):** Full passkey support including cross-device flows via QR code. Hardware security key support is included.
 - **API 35+ (Android 15):** Password managers can offer passkey upgrade suggestions in the bottom sheet automatically.
 - **Google Play Services requirement:** On devices without Play Services (AOSP, some enterprise devices), `GetGoogleIdOption` silently produces no candidates. Structure the UI to show Google sign-in as one option rather than the only path.
-- **Jetpack Compose:** There is no Compose-specific API for Credential Manager. Call from the ViewModel and pass `LocalActivity.current` via a lambda to the ViewModel call site; never pass `LocalContext.current` when an `Activity` is required.
+- **Jetpack Compose:** current Compose releases add Credential Manager semantics to text fields, so sign-in fields can surface credential suggestions the way autofill hints do; the credential flow itself is still driven by `CredentialManager` calls from the ViewModel. Pass `LocalActivity.current` via a lambda to the ViewModel call site; never pass `LocalContext.current` when an `Activity` is required.
 
 ## Pitfalls
 

@@ -12,9 +12,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/ai
     - https://developers.google.com/ml-kit
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -89,6 +89,12 @@ Cloud calls carry per-request cost, require network access, and send user data o
 | Proprietary domain, custom model, wide device range | LiteRT / MediaPipe |
 | Frontier capability needed, network available, cost acceptable | Cloud model |
 | All tiers, offline fallback needed | ML Kit or LiteRT as fallback |
+
+### Android 17 era (2026)
+
+- Tier 2's integration path is now the ML Kit GenAI Prompt API (beta): open-ended prompts with Structured Output for schema-constrained responses and Prefix Caching for recurring prompt prefixes; Gemini Nano 4 is previewable via the AICore Developer Preview ahead of flagship devices later in 2026.
+- Android 17 adds a fifth option: instead of embedding a model, expose app capabilities as agent-orchestrable tools with `@AppFunction` through Android's on-device MCP, letting a system agent supply the intelligence — see the `app-functions` skill.
+- For the on-device/cloud split, Firebase AI Logic hybrid inference offers explicit routing modes (`PREFER_ON_DEVICE`, `PREFER_CLOUD`, `ONLY_ON_DEVICE`, `ONLY_CLOUD`) instead of hand-rolled fallback logic.
 
 ## Platform notes
 

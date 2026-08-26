@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://m3.material.io/components/top-app-bar/overview
     - https://developer.android.com/develop/ui/compose/components/app-bars
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -51,7 +51,7 @@ x-skills-master:
 
 - **The headline is a location label, not a marketing phrase.** It should match how users refer to the screen ("Inbox," "Settings," "John's Profile") rather than brand copy. Sentence case is correct for M3; avoid ALL CAPS headlines in bars.
 - **Large and medium bar headlines can wrap.** Unlike small bars, medium and large bars accommodate two-line titles. Use this intentionally for long destination names (e.g., "Privacy and Security Settings") rather than forcing a truncated single line.
-- **Do not put subtitles in top app bars.** If the screen needs a subtitle, place it as a `Text` below the main content's first heading, not in the bar itself. A subtitle in the bar reduces space for actions and can crowd the nav icon.
+- **Use the optional subtitle sparingly.** As of material3 1.4.0, the stable app bar APIs support a one-line subtitle beneath the headline. Reserve it for secondary orientation context — an account name, a sync status — not content-level detail, which still belongs in the content area. A subtitle crowds the bar at compact widths; when in doubt, omit it.
 
 ### Bottom app bar
 
@@ -73,7 +73,7 @@ x-skills-master:
 - Putting more than two trailing action icons without an overflow, causing the bar to overflow or icons to become too small to tap.
 - Using the bottom app bar as a tab or navigation bar — it is an action surface, not a navigation surface.
 - Choosing a center-aligned bar for list or feed screens, where the title reads as a floating caption rather than a section anchor.
-- Adding a subtitle or secondary label inside the bar, crowding out the action area.
+- Adding a bar subtitle that repeats the title or carries content-level detail, crowding the action area without aiding orientation.
 - Using enter-always scroll behavior on feed or article screens, where re-expanding the bar on every minor upward scroll interrupts reading flow.
 - Placing destructive actions (delete, clear all) in the primary action slots of the bar — overflow them to reduce accidental activation.
 - Omitting `contentDescription` on icon-only actions, making the bar inaccessible for screen reader users.

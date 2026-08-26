@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://m3.material.io/styles/motion/overview
     - https://m3.material.io/styles/shape/overview-principles
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -29,6 +29,8 @@ x-skills-master:
 ### What M3 Expressive is
 
 Material 3 Expressive is the next evolution of Material You, announced at Google I/O 2025. It extends the existing M3 design system with four primary additions: physics-based spring motion as the default animation model for expressive contexts, animated shape morphing as a first-class interaction primitive, a refreshed and expanded component library with new variants and updated defaults, and typography emphasis that gives Display and Headline roles more expressive range. These additions do not replace the existing system — they layer on top of it. Standard M3 tokens, components, and motion patterns remain valid and are still the correct choice for the majority of utility UI.
+
+As of Compose Material 3 1.4.0 (2026), the expressive component set and motion scheme ship as stable APIs — no experimental opt-in is required. Adopting expressive treatment is therefore purely a design decision about where expressiveness serves users, not a bet on a shifting API surface.
 
 ### The two motion schemes
 
@@ -113,4 +115,4 @@ Expressive treatment is earned, not given. Apply it where it creates delight and
 
 ## See also
 
-The m3-motion design skill covers the full M3 motion system in depth, including all four named transition patterns, choreography, duration tokens, and reduce-motion design. The m3-shape design skill covers the shape scale, corner families, component-to-shape assignments, and shape-as-hierarchy principles that underpin the shape morphing guidance here. The m3-typography design skill covers the five type-role families and variable font axes that expressive typography builds on. For the implementation side — configuring spring specs via `MaterialTheme.motionScheme`, using `ShapeKeyframe` and `MorphingShape` for shape morphing, and applying `AnimatedContent` or `AnimatedVisibility` with expressive spring parameters in Jetpack Compose — consult the compose-animation code skill.
+The m3-motion design skill covers the full M3 motion system in depth, including all four named transition patterns, choreography, duration tokens, and reduce-motion design. The m3-shape design skill covers the shape scale, corner families, component-to-shape assignments, and shape-as-hierarchy principles that underpin the shape morphing guidance here. The m3-typography design skill covers the five type-role families and variable font axes that expressive typography builds on. For the implementation side — configuring spring specs via `MaterialTheme.motionScheme`, using `Morph` over `MaterialShapes`/`RoundedPolygon` polygons for shape morphing, and applying `AnimatedContent` or `AnimatedVisibility` with expressive spring parameters in Jetpack Compose — consult the compose-animation code skill.

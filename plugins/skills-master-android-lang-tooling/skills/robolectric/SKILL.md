@@ -22,7 +22,7 @@ Do not reach for Robolectric when the test genuinely requires hardware (camera, 
 ```kotlin
 // build.gradle.kts (app)
 dependencies {
-    testImplementation("org.robolectric:robolectric:4.13")
+    testImplementation("org.robolectric:robolectric:4.16.1")
     testImplementation("androidx.test:core-ktx:1.6.1")
     testImplementation("androidx.test.ext:junit-ktx:1.2.1")
     testImplementation("junit:junit:4.13.2")
@@ -82,7 +82,7 @@ class NotificationHelperTest {
 
 ## Platform notes
 
-- **SDK simulation range** — Robolectric 4.13 supports simulating SDK 19 through 35. Always specify `@Config(sdk = [...])` explicitly rather than relying on the default; CI should test at least the `minSdk` and `targetSdk` values used by your app.
+- **SDK simulation range** — the current stable line (Robolectric 4.16.x) simulates up to SDK 36 (Baklava); simulating SDK 36 requires running tests on JDK 21, and SDK 21/22 simulation was dropped in 4.16. Android 17 (SDK 37) simulation ships in the 4.17 betas, so on a compileSdk 37 project pin `@Config(sdk = [...])` at 36 or below until 4.17 goes stable. Always specify the SDK explicitly rather than relying on the default; CI should test at least the `minSdk` and `targetSdk` values used by your app.
 - **`isIncludeAndroidResources = true`** — required to resolve strings, drawables, and layouts from `R`. Without it, resource access silently returns zero/null or throws.
 - **Binary resources** — Robolectric downloads pre-built Android framework jars keyed to the requested SDK. Gradle caches them in `~/.m2`; CI pipelines should cache this directory to avoid repeated downloads.
 - **Compose on Robolectric** — works with `robolectric-shadows-framework` and `compose-ui-test-manifest`. Set `@Config(instrumentedPackages = ["androidx.loader.content"])` if you encounter class-loading issues with some Compose versions.

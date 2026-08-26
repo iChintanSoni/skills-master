@@ -125,6 +125,7 @@ On foldables and tablets, activities can be in a split-screen state and still co
 - **Android 14 (API 34):** `foregroundServiceType` is mandatory; omitting it throws `InvalidForegroundServiceTypeException`. The `shortService` type was introduced here.
 - **Android 15 (API 35):** `mediaProcessing` type added; `dataSync` services are now time-limited (6 hours per 24-hour window). Plan uploads/downloads to resume via `WorkManager` if they may exceed that window.
 - **Android 16 (API 36, minSdk for this skill):** No additional foreground service type additions at time of writing; verify release notes before targeting.
+- **Android 17 (API 37):** No new service types, but background audio hardening ties audio to foreground-service state — apps targeting 37 that play audio, request audio focus, or change volume while in the background must be running a foreground service with while-in-use capabilities (the exception: apps holding the exact-alarm permission playing on `USAGE_ALARM` streams). Outside those states, playback and volume calls fail silently and focus requests return `AUDIOFOCUS_REQUEST_FAILED`.
 - The `FOREGROUND_SERVICE` base permission (normal level) is still required in addition to the type-specific permission.
 - Notification channels must be created before posting. Use `IMPORTANCE_LOW` or higher; `IMPORTANCE_NONE` silently drops the notification on some OEMs.
 - On Wear OS, foreground services are more restricted; prefer `TileService` or `ComplicationDataSourceService` for surface-level updates.

@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/develop/background-work/services/alarms/schedule
     - https://developer.android.com/training/scheduling/alarms
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -124,6 +124,8 @@ Avoid `setRepeating()` with short intervals (< 60 s) — the system enforces a m
 **Doze and App Standby:** Doze restricts alarms during maintenance windows. `setExactAndAllowWhileIdle()` punches through Doze but is rate-limited. Apps in the `RARE` standby bucket face additional quota limits on exact alarms. Battery-optimized apps in restricted standby may see alarms deferred indefinitely — inform users if your app requires disabling battery optimization for reliable delivery.
 
 **Android 14+ (API 34) background restriction:** Apps targeting API 34+ that call `setExactAndAllowWhileIdle()` while in the background without `USE_EXACT_ALARM` will throw a `SecurityException` if `SCHEDULE_EXACT_ALARM` was revoked. Guard every exact alarm call with `canScheduleExactAlarms()`.
+
+**Android 17 (API 37):** No new exact-alarm restrictions, but the exact-alarm permission gains a role in background audio hardening — an app targeting 37 that holds it and plays audio on `USAGE_ALARM` streams is exempt from the new requirement that background audio run under a while-in-use foreground service. Alarm and timer apps should keep the permission granted and tag their alarm sounds with `USAGE_ALARM`.
 
 **Testing:** Use `adb shell cmd alarm set` to inject test alarms without waiting for real time. Use `adb shell dumpsys alarm` to inspect scheduled alarms. For Doze simulation, run `adb shell dumpsys deviceidle force-idle`.
 

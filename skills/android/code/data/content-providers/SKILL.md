@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/topics/providers/content-providers
     - https://developer.android.com/guide/topics/providers/content-provider-creating
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -186,6 +186,8 @@ context.startActivity(intent)
 **Runtime permissions:** `READ_EXTERNAL_STORAGE` and `WRITE_EXTERNAL_STORAGE` are deprecated on Android 13+. Use `READ_MEDIA_IMAGES`, `READ_MEDIA_VIDEO`, `READ_MEDIA_AUDIO`, or the photo picker instead.
 
 **Content URI security:** A `content://` URI carries no inherent authentication. Always validate that the calling app holds the correct permission before returning data; use `checkCallingPermission` or rely on the `<provider>` permission attributes.
+
+**Android 17 (API 37):** Contacts Provider access tightens at target 37 — the account columns (`ACCOUNT_NAME`, `ACCOUNT_TYPE`, `ACCOUNT_TYPE_AND_DATA_SET`) are no longer readable through the `ContactsContract.Data` view (join `ContactsContract.RawContacts` via `RAW_CONTACT_ID` instead), and `ContactsContract.Data` queries made without `READ_CONTACTS` run under strict SQL validation that rejects nonstandard column and grammar usage with exceptions. Separately, Android 18 will stop auto-granting URI permissions on `ACTION_SEND`, `ACTION_SEND_MULTIPLE`, and `ACTION_IMAGE_CAPTURE` intents — always set `FLAG_GRANT_READ_URI_PERMISSION` (plus write for image capture) explicitly; `StrictMode`'s `detectImplicitUriPermissionGrant()` flags offending call sites today.
 
 ## Pitfalls
 

@@ -17,36 +17,36 @@ Android **17** (API 37, stable 2026-06-16), Room 3.0.1, Navigation 3 1.1, Compos
 
 All paths relative to `skills/android/`.
 
-- [ ] `overviews/overviews/choosing-navigation` — recommendation is now stable
+- [x] `overviews/overviews/choosing-navigation` — recommendation is now stable
   Navigation 3 (`androidx.navigation3` 1.1.0), not Nav2.
-- [ ] `code/architecture/navigation-compose` — needs Nav3 positioning: back-stack-as-
+- [x] `code/architecture/navigation-compose` — needs Nav3 positioning: back-stack-as-
   state model, scenes, migration path.
-- [ ] `lang-tooling/architecture/android-navigation-architecture` — Nav3 inverts the
+- [x] `lang-tooling/architecture/android-navigation-architecture` — Nav3 inverts the
   architecture (developer-owned back stack, adaptive scenes, shared elements).
-- [ ] `code/data/room` — Room 3.0.1: new `androidx.room3` package, KSP mandatory,
+- [x] `code/data/room` — Room 3.0.1: new `androidx.room3` package, KSP mandatory,
   suspend/reactive DAO functions required.
-- [ ] `overviews/overviews/choosing-storage` — route Room advice to room3 + migration
+- [x] `overviews/overviews/choosing-storage` — route Room advice to room3 + migration
   cost.
-- [ ] `code/media-camera-ml/camerax` — `CameraXViewfinder` composable replaces
+- [x] `code/media-camera-ml/camerax` — `CameraXViewfinder` composable replaces
   PreviewView-in-AndroidView as the recommended Compose pattern (CameraX 1.5).
-- [ ] `code/media-camera-ml/media3-exoplayer` — scrubbing mode + CodecDB stable;
+- [x] `code/media-camera-ml/media3-exoplayer` — scrubbing mode + CodecDB stable;
   Android 17 codec additions (Eclipsa Video HDR, xHE-AAC encode, H.266, RAW14).
-- [ ] `code/form-factors/adaptive-window-size-classes` — API 37: orientation/
+- [x] `code/form-factors/adaptive-window-size-classes` — API 37: orientation/
   resizability/aspect-ratio locks ignored on sw≥600dp, no opt-out.
-- [ ] `code/form-factors/window-manager-foldables` — same enforcement.
-- [ ] `design/platforms/m3-large-screens` — "Tier" framing obsolete; resizability now
+- [x] `code/form-factors/window-manager-foldables` — same enforcement.
+- [x] `design/platforms/m3-large-screens` — "Tier" framing obsolete; resizability now
   platform-mandated.
-- [ ] `code/platform-services/runtime-permissions` — new `ACCESS_LOCAL_NETWORK`
+- [x] `code/platform-services/runtime-permissions` — new `ACCESS_LOCAL_NETWORK`
   runtime permission (NEARBY_DEVICES group) at target 37.
-- [ ] `code/platform-services/security-crypto` — Certificate Transparency enforced by
+- [x] `code/platform-services/security-crypto` — Certificate Transparency enforced by
   default at target 37; ECH default + `<domainEncryption>` NSC element.
-- [ ] `lang-tooling/ship/performance-profiling` — per-app RAM-based memory limits,
+- [x] `lang-tooling/ship/performance-profiling` — per-app RAM-based memory limits,
   `TRIGGER_TYPE_ANOMALY` heap dumps, generational CMC GC.
-- [ ] `code/media-camera-ml/app-actions-assistant` — Android 17 AppFunctions (MCP-
+- [x] `code/media-camera-ml/app-actions-assistant` — Android 17 AppFunctions (MCP-
   orchestrable app capabilities) supersede App-Actions-only guidance.
-- [ ] `code/architecture/android-activities` — BAL hardening:
+- [x] `code/architecture/android-activities` — BAL hardening:
   `MODE_BACKGROUND_ACTIVITY_START_ALLOWED` deprecated → `..._ALLOW_IF_VISIBLE`.
-- [ ] `lang-tooling/build-packaging/android-manifest` — orientation/resizeable
+- [x] `lang-tooling/build-packaging/android-manifest` — orientation/resizeable
   attributes ignored on large screens at 37; `ACCESS_LOCAL_NETWORK` declaration.
 
 Primary sources: [Android 17 behavior changes](https://developer.android.com/about/versions/17/behavior-changes-17),
@@ -58,47 +58,47 @@ Primary sources: [Android 17 behavior changes](https://developer.android.com/abo
 
 ## Android — SHOULD re-verify (batched by driver)
 
-- [ ] **Compose 1.12 / BOM 2026.08.00 wave** — all `code/compose-ui/*` pinned to BOM
+- [x] **Compose 1.12 / BOM 2026.08.00 wave** — all `code/compose-ui/*` pinned to BOM
   2026.05.00; notable: `compose-side-effects` (SideEffect key args),
   `compose-text-fields`/`compose-text` (rich-text BasicTextField, SelectionState,
   Credential Manager), `compose-graphics` (mesh gradients, P3/HDR),
   `compose-animation` (DeferredTargetAnimation stable), `compose-performance`,
   `compose-layout`/`compose-custom-layouts` (Grid 2D), `lang-tooling/testing/compose-ui-testing`
   (new test APIs). Breaking floor: compileSdk 37 + AGP 9.1.1.
-- [ ] **material3 1.4.0 stable** — remove "experimental" caveats:
+- [x] **material3 1.4.0 stable** — remove "experimental" caveats:
   `overviews/adopting-m3-expressive`, `design/technologies/m3-expressive`,
   `design/components/m3-{app-bars,buttons,button-groups,loading-indicator,progress-indicators,search,menus-pickers}`.
-- [ ] **Compose-first / Material Views maintenance** — `overviews/choosing-compose-or-views`,
+- [x] **Compose-first / Material Views maintenance** — `overviews/choosing-compose-or-views`,
   `overviews/adopting-compose`, `code/compose-ui/{android-views-interop,compose-view-interop}`.
-- [ ] **Behavior-changes ripple** — `lang-tooling/architecture/networking-data-layer`,
+- [x] **Behavior-changes ripple** — `lang-tooling/architecture/networking-data-layer`,
   `code/platform-services/{retrofit-okhttp,ktor-client,bluetooth-ble,broadcasts,autofill,credential-manager,notifications,foreground-services,alarms-scheduling}`,
   `code/data/content-providers`, `lang-tooling/testing/{unit-testing,robolectric}`,
   `overviews/choosing-concurrency-pattern`, `code/form-factors/keyboard-mouse-stylus`,
   `code/media-camera-ml/media3-session`.
-- [ ] **Adaptive-mandate ripple** — `design/foundations/{m3-adaptive-layout,m3-canonical-layouts}`,
+- [x] **Adaptive-mandate ripple** — `design/foundations/{m3-adaptive-layout,m3-canonical-layouts}`,
   `overviews/choosing-form-factors`.
-- [ ] **Memory/perf ripple** — `lang-tooling/ship/crash-anr-vitals`,
+- [x] **Memory/perf ripple** — `lang-tooling/ship/crash-anr-vitals`,
   `lang-tooling/testing/macrobenchmark-baseline-profiles`.
-- [ ] **WorkManager 2.12 (at stable)** — `code/platform-services/workmanager`,
+- [x] **WorkManager 2.12 (at stable)** — `code/platform-services/workmanager`,
   `overviews/choosing-background-work`.
-- [ ] **XR DP4 wave** — `code/form-factors/xr-{scenecore,arcore,compose-spatial,glimmer-glasses}`,
+- [x] **XR DP4 wave** — `code/form-factors/xr-{scenecore,arcore,compose-spatial,glimmer-glasses}`,
   `design/platforms/m3-ai-glasses`.
-- [ ] **ML/agents** — `code/media-camera-ml/{gemini-nano-aicore,ml-kit}`,
+- [x] **ML/agents** — `code/media-camera-ml/{gemini-nano-aicore,ml-kit}`,
   `overviews/choosing-ml`, `lang-tooling/ship/ci-cd`,
   `lang-tooling/build-packaging/gradle-kotlin-dsl` (Android CLI 1.0, AGP floor).
 
 ## Android — NEW skills (7)
 
-- [ ] `navigation3` → `code/architecture/` (NavDisplay/NavEntry, back stack as state,
+- [x] `navigation3` → `code/architecture/` (NavDisplay/NavEntry, back stack as state,
   scene strategies; pairs_with navigation-compose, choosing-navigation)
-- [ ] `app-functions` → `code/platform-services/` (Android 17 AppFunctions / MCP tools)
-- [ ] `media3-ai-effects` → `code/media-camera-ml/`
-- [ ] `media3-transformer` → `code/media-camera-ml/` (multi-asset editing + CodecDB)
+- [x] `app-functions` → `code/platform-services/` (Android 17 AppFunctions / MCP tools)
+- [x] `media3-ai-effects` → `code/media-camera-ml/`
+- [x] `media3-transformer` → `code/media-camera-ml/` (multi-asset editing + CodecDB)
 - [ ] `android-cli` → `lang-tooling/build-packaging/` (agent-facing toolchain)
-- [ ] `compose-grids` → `code/compose-ui/` (or fold into compose-layout — decide at
-  authoring; still experimental)
-- [ ] `local-network-access` → `code/platform-services/` (or fold into
-  runtime-permissions — decide at authoring)
+- [x] `compose-grids` — decided: folded into compose-custom-layouts (Grid named
+  areas, A4); still experimental, no standalone skill
+- [x] `local-network-access` — decided: folded into runtime-permissions +
+  android-manifest + security-crypto (A1); no standalone skill
 
 ---
 

@@ -33,6 +33,10 @@ Use this skill when designing or critiquing an Android experience that targets A
 
 - **Accommodate the short interaction window around driving and physical activity.** Safety-critical activities demand the most extreme form of glanceability. If your feature may be used while operating a vehicle or in a high-attention physical task, apply the most aggressive reduction: maximum one line of text, a single binary action, system voice confirmation. Many categories of display output are appropriate only when the user is stationary — design feature flags and context-awareness to suppress display output when motion sensors indicate active transit.
 
+### Android 17 era (2026)
+
+- Glimmer's Developer Preview 4 refresh (mid-2026) sets Google Sans Flex as the toolkit typeface — tuned for legibility on optical see-through displays — and adds Stacks (browse one item at a time via touchpad) and Title Chips (category/context labels on content cards). Design card sequences around these system components rather than inventing carousels or custom labels.
+
 ## Platform notes
 
 - **Android XR glasses vs. headsets:** Android XR covers both full headsets (like the Samsung XR device) and lightweight display glasses. The Glimmer design language originated for glasses, where the display is smaller, the field of view is narrower, and the use cases are ambient rather than immersive. Do not apply headset-scale immersive space patterns (full environment replacement, large virtual screens) to glasses, and do not assume the glasses have six-degrees-of-freedom head tracking at headset fidelity.

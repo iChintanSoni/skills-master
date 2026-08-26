@@ -149,6 +149,11 @@ val isSpatialEnabled = session?.getSpatialCapabilities()
 | `.scale(float)` | Uniform scale |
 | `.testTag(tag)` | For spatial UI testing |
 
+### Android 17 era (2026)
+
+- Developer Preview 4 (mid-2026) adds `SceneCoreEntity` and `SpatialGltfModel` subspace composables — place SceneCore entities and glTF models directly relative to spatial UI, with `SpatialGltfModelState` exposing nodes and animations — so simple 3D content no longer requires dropping into raw SceneCore.
+- SceneCore, ARCore for Jetpack XR, and the XR Runtime reached beta in August 2026; Compose for XR (1.0.0-alpha17) is the announced next beta, so expect minor API renames until it lands.
+
 ## Platform notes
 
 - **Non-XR devices:** All `Subspace` content is compiled normally but produces no rendering output. `Orbiter` and spatial overlays also no-op. Maintain the full 2D UI tree as the primary user interface.

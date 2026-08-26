@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -33,6 +33,8 @@ Reach for this skill whenever a design must work across the full Android device 
 ### Pane composition and proportions
 
 - **Let window width drive pane count, not device category.** A foldable in portrait may be compact; the same device unfolded is medium or expanded. Design decisions should reference the three width breakpoints — compact (< 600 dp), medium (600–840 dp), and expanded (≥ 840 dp) — rather than phone/tablet labels, because those labels don't map cleanly to size classes.
+
+- **Plan for forced resize on large screens.** Since Android 17 (API 37), orientation, resizability, and aspect-ratio restrictions are ignored on windows 600 dp and wider with no opt-out — the canonical layouts are the required response to a resize the platform performs regardless, not an optional enhancement over a locked phone layout.
 
 - **On compact, collapse to a single pane and use standard back-stack navigation between list and detail.** Never show two panes at compact width — the resulting columns are too narrow to be useful and will crowd content.
 

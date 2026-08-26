@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/develop/xr/jetpack-xr-sdk/develop-ui
     - https://developer.android.com/develop/xr
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -164,6 +164,11 @@ val isSpatialEnabled = session?.getSpatialCapabilities()
 | `.alpha(float)` | Panel opacity (SpatialPanel only) |
 | `.scale(float)` | Uniform scale |
 | `.testTag(tag)` | For spatial UI testing |
+
+### Android 17 era (2026)
+
+- Developer Preview 4 (mid-2026) adds `SceneCoreEntity` and `SpatialGltfModel` subspace composables — place SceneCore entities and glTF models directly relative to spatial UI, with `SpatialGltfModelState` exposing nodes and animations — so simple 3D content no longer requires dropping into raw SceneCore.
+- SceneCore, ARCore for Jetpack XR, and the XR Runtime reached beta in August 2026; Compose for XR (1.0.0-alpha17) is the announced next beta, so expect minor API renames until it lands.
 
 ## Platform notes
 

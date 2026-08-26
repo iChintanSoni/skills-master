@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developers.google.com/ml-kit
     - https://developers.google.com/ml-kit/vision
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -130,6 +130,10 @@ Smart Reply works on a `List<TextMessage>` representing a conversation. Messages
 
 - Use `FakeImageProxy` (from `camera-testing`) or synthetic `Bitmap`-backed `InputImage` instances in unit tests.
 - For integration tests, provide a known test image from `androidTest/assets` and assert on the detector output.
+
+### Android 17 era (2026)
+
+- ML Kit now also hosts the GenAI APIs (I/O '26): Gemini Nano-backed Summarization, Proofreading, Rewriting, and Image Description (beta), an open-ended Prompt API (beta), and Speech Recognition (alpha, API 31+). Device support is far narrower than the classic vision/language APIs — gate on availability and see `gemini-nano-aicore` for integration.
 
 ## Platform notes
 

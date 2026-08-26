@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://m3.material.io/components/search/overview
     - https://developer.android.com/develop/ui/compose/components
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

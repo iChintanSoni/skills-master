@@ -7,6 +7,8 @@ description: Covers traditional View-based XML layouts, custom View drawing, lif
 
 Apply this skill when working with traditional View-based layout XMLs, custom subclassed Views (overriding `onMeasure`, `onLayout`, `onDraw`), or integrating traditional View elements (such as `MapView`, `WebView`, or legacy custom controls) into a Jetpack Compose UI (or vice-versa).
 
+Note that Google's UI guidance is officially Compose-first and the View toolkit is in maintenance mode — use this skill to maintain and bridge existing View investments, not as a foundation for new UI.
+
 ## Core guidance
 
 ### Views in Compose (AndroidView)

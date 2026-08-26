@@ -118,6 +118,7 @@ ktor-client-timeout     = { module = "io.ktor:ktor-client-timeout",            v
 - The OkHttp engine inherits Android's `CleartextTraffic` network security policy — always enforce HTTPS in production and configure `network_security_config.xml` accordingly.
 - On Android 16+ (API 36+), background network access is further restricted; perform requests inside `WorkManager` or foreground-service scopes, not bare `GlobalScope`.
 - Large-screen (tablet/foldable) apps often load more content simultaneously; use `HttpClient` with OkHttp's connection pool limits tuned for higher concurrency (`maxRequests`, `maxRequestsPerHost`).
+- On Android 17 (API 37), apps targeting 37 have Certificate Transparency verification and Encrypted Client Hello enabled by default in the platform TLS stack that the OkHttp engine rides on. Both are configured per-domain in `network_security_config.xml` (`<certificateTransparency>` to opt out for private-CA hosts, `<domainEncryption>` for ECH mode) — not in Ktor plugin configuration, so this applies only to the Android engine, not other KMP targets.
 
 **Kotlin Multiplatform**
 

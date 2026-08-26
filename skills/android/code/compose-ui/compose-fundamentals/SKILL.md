@@ -12,15 +12,15 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-    compose-bom: "2026.05.00"
+    compose-bom: "2026.08.00"
   pairs_with: []
   sources:
     - https://developer.android.com/develop/ui/compose/mental-model
     - https://developer.android.com/develop/ui/compose/phases
     - https://developer.android.com/develop/ui/compose/lifecycle
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

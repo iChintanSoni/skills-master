@@ -120,6 +120,11 @@ val planes by produceState(emptyList<Plane>()) {
 
 - Keep frame-callback work minimal. Heavy computation (mesh booleans, ML inference) should be dispatched to `Dispatchers.Default` and results posted back to the UI state.
 
+### Android 17 era (2026)
+
+- ARCore for Jetpack XR reached 1.0.0-beta02 (August 2026) — depth, hit testing, plane detection, and spatial anchors are stabilizing, and legacy Guava/RxJava3 API variants are removed in the Kotlin-first cleanup.
+- Developer Preview 4 adds an early Geospatial preview for wired XR glasses: VPS-backed anchoring of content to real-world locations in 87+ countries, complementing the local plane/hit-test anchors covered here.
+
 ## Platform notes
 
 - ARCore for XR runs only on Android XR headsets; it is not available on phones or tablets. Guard feature entry points with `Session.isSupported(context)` and degrade gracefully on unsupported hardware.

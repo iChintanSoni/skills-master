@@ -12,9 +12,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/build/building-cmdline
     - https://developer.android.com/studio/test/gradle-managed-devices
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -162,6 +162,10 @@ Then publish with:
 - **Do** target the `internal` track first; promote to `alpha`/`beta`/`production` via the Play Console or API once QA is satisfied.
 - **Do** scope the service account to only the necessary Play Developer API permissions (APKs and AABs, releases).
 - **Don't** use your personal Google account credentials — service account JSON is revocable without touching your account.
+
+### Android 17 era (2026)
+
+- Android CLI 1.0 (stable at I/O '26) is an agent-facing toolchain alongside Gradle — SDK and virtual-device management, dependency `version-lookup`, semantic `find-declaration`/`find-usages`/`analyze-file`, and `render-compose-preview` — installed via apt-get, Homebrew, or winget. It complements `./gradlew` for agent-driven automation; capabilities bridged through a running Android Studio (`android studio …`) are not available on headless CI runners.
 
 ---
 

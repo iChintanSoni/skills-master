@@ -12,13 +12,13 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-    compose-bom: "2026.05.00"
+    compose-bom: "2026.08.00"
   pairs_with: [keyboard-mouse-stylus]
   sources:
     - https://developer.android.com/develop/ui/compose/touch-input/gestures
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

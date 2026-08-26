@@ -21,6 +21,8 @@ Reach for this skill whenever a design must work across the full Android device 
 
 - **Let window width drive pane count, not device category.** A foldable in portrait may be compact; the same device unfolded is medium or expanded. Design decisions should reference the three width breakpoints — compact (< 600 dp), medium (600–840 dp), and expanded (≥ 840 dp) — rather than phone/tablet labels, because those labels don't map cleanly to size classes.
 
+- **Plan for forced resize on large screens.** Since Android 17 (API 37), orientation, resizability, and aspect-ratio restrictions are ignored on windows 600 dp and wider with no opt-out — the canonical layouts are the required response to a resize the platform performs regardless, not an optional enhancement over a locked phone layout.
+
 - **On compact, collapse to a single pane and use standard back-stack navigation between list and detail.** Never show two panes at compact width — the resulting columns are too narrow to be useful and will crowd content.
 
 - **On medium, decide deliberately whether one or two panes fit.** Medium windows are the hardest case. List-detail may show a narrow list alongside a detail, or stay single-pane depending on content density. The supporting pane is often worth showing at medium because the companion context adds direct value. Default to showing the second pane on medium only when both panes can hold at least ~280–300 dp of usable content width.

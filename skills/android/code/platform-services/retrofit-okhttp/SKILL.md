@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://square.github.io/retrofit/
     - https://square.github.io/okhttp/
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -120,6 +120,7 @@ class ArticleRepository @Inject constructor(private val api: ArticleService) {
 - Android 9+ enforces cleartext traffic restrictions; all production URLs must use HTTPS. Use `android:networkSecurityConfig` only for local debug servers, never for production exceptions.
 - On Android 14+ the OS may impose additional restrictions on background network access for apps targeting API 34+. Long-running background syncs belong in `WorkManager`, not in foreground coroutines that survive screen rotation.
 - When targeting large screens and foldables, be aware that network requests initiated during a configuration change (fold/unfold) are automatically survived if launched from a `ViewModel` — no special handling is needed beyond the standard ViewModel pattern.
+- On Android 17 (API 37), apps targeting 37 get Certificate Transparency verification enabled by default in the platform trust stack OkHttp uses — servers presenting certificates without valid CT proof fail the TLS handshake. For internal hosts on private CAs (often the same domains you pin), opt out per-domain with the `<certificateTransparency>` Network Security Config element; OkHttp `CertificatePinner` entries keep working unchanged. Encrypted Client Hello is also on by default at target 37, controllable via the NSC `<domainEncryption>` element.
 
 ## Pitfalls
 

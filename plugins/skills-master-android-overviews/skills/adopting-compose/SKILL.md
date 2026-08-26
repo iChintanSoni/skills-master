@@ -12,6 +12,7 @@ Reach for this skill when migrating an existing Android app from Views/XML to Je
 ### Migration philosophy
 
 - Treat the migration as a series of safe, shippable increments rather than a branch that blocks other work. Each increment should leave the app in a releasable state.
+- The destination is settled: Google's UI guidance is officially Compose-first and the View toolkit is in maintenance mode, so the open question for a team is migration pacing, not direction.
 - Prefer a **leaf-up** order: migrate small, self-contained leaf components first (buttons, cards, list items), then rows, then full screens, and finally navigation. This keeps risk contained.
 - Do not rewrite screens that are stable and have no upcoming changes — migrate when a screen needs a new feature or a significant rework, paying down the cost at the natural change point.
 

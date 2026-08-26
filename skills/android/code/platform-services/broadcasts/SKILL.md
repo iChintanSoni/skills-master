@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/develop/background-work/background-tasks/broadcasts
     - https://developer.android.com/reference/android/content/BroadcastReceiver
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -128,6 +128,10 @@ Context-registered receivers without an explicit export flag throw at runtime. U
 ### Android 16 (API 36)
 
 No new broadcast restrictions in this release, but health restrictions from the Android 15 foreground service changes indirectly reduce receiver lifetime in background processes. Confirm your use-case does not rely on a backgrounded process staying alive to receive sticky broadcasts.
+
+### Android 17 (API 37)
+
+SMS OTP protection withholds `SMS_RECEIVED_ACTION` for messages containing one-time passcodes for three hours after receipt — WebOTP-format messages are protected for all apps, and standard SMS OTPs too once you target 37 (SMS provider queries are filtered for the same window). Receivers that parse OTPs out of incoming SMS silently stop seeing them; migrate to the SMS Retriever or SMS User Consent APIs. Registration, export-flag, and implicit-broadcast rules are otherwise unchanged at 17.
 
 ## Pitfalls
 

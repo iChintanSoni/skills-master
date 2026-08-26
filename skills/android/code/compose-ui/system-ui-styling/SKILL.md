@@ -12,13 +12,13 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-    compose-bom: "2026.05.00"
+    compose-bom: "2026.08.00"
   pairs_with: [compose-window-insets, adopting-edge-to-edge-predictive-back]
   sources:
     - https://developer.android.com/develop/ui/views/layout/edge-to-edge
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

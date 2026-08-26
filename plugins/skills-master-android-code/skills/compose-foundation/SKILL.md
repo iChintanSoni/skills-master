@@ -106,7 +106,7 @@ fun SwipeableCard(onDismiss: () -> Unit) {
 
 **Minimum API 16:** Foundation APIs compile down to API 16 via `minSdk 16`; no conditional guards needed for the APIs covered here.
 
-**Compose BOM 2026.05.00:** `IndicationNodeFactory` is the stable API for custom indications (replacing the deprecated `Indication` interface). `TextFieldState` + `BasicTextField` (the state-hoisted overload) is the recommended text input path.
+**Compose BOM 2026.08.00:** `IndicationNodeFactory` is the stable API for custom indications (replacing the deprecated `Indication` interface). `TextFieldState` + `BasicTextField` (the state-hoisted overload) is the recommended text input path.
 
 ## Pitfalls
 

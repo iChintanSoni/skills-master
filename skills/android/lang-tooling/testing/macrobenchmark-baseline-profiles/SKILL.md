@@ -14,9 +14,9 @@ x-skills-master:
   sources:
     - https://developer.android.com/topic/performance/baselineprofiles/overview
     - https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

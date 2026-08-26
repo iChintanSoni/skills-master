@@ -9,13 +9,13 @@ x-skills-master:
   class: code
   category: compose-ui
   platforms: ["android", "large-screen"]
-  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
+  requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: [m3-lists]
   sources:
     - https://developer.android.com/develop/ui/compose/lists
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -117,6 +117,10 @@ fun NewsFeed(
     }
 }
 ```
+
+### Compose 1.12 (BOM 2026.08.00)
+
+- For item impression and visibility tracking, use `Modifier.onVisibilityChanged()` — `Modifier.onFirstVisible()` is deprecated in Compose 1.12; migrate any first-view analytics hooks on list items.
 
 ## Platform notes
 

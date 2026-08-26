@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://m3.material.io/components/menus/overview
     - https://m3.material.io/components/date-pickers/overview
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

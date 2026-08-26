@@ -11,9 +11,9 @@ x-skills-master:
   sources:
     - https://m3.material.io/components/buttons/overview
     - https://developer.android.com/develop/ui/compose/components/button
-  snapshot_date: "2026-06-06"
+  snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
