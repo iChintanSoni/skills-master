@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-loading-indicator, m3-progress-indicators]
   sources:
     - https://m3.material.io/components/progress-indicators/overview
     - https://m3.material.io/components/loading-indicator/overview

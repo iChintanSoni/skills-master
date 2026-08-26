@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [bluetooth-ble]
   sources:
     - https://developer.android.com/develop/connectivity/uwb
     - https://developer.android.com/guide/topics/connectivity/uwb

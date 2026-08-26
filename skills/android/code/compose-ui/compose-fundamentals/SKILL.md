@@ -13,7 +13,7 @@ x-skills-master:
     android: "16"
     kotlin: "2.2"
     compose-bom: "2026.08.00"
-  pairs_with: []
+  pairs_with: [adopting-compose, choosing-compose-or-views, compose-state, compose-modifiers]
   sources:
     - https://developer.android.com/develop/ui/compose/mental-model
     - https://developer.android.com/develop/ui/compose/phases

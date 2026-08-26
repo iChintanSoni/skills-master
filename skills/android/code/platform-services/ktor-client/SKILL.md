@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [choosing-http-client, kotlin-serialization]
   sources:
     - https://ktor.io/docs/client-create-and-configure.html
     - https://ktor.io/docs/welcome.html

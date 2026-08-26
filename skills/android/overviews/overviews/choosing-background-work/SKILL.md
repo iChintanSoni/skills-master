@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: [workmanager]
+  pairs_with: [workmanager, foreground-services, alarms-scheduling, power-doze]
   sources:
     - https://developer.android.com/develop/background-work/background-tasks
     - https://developer.android.com/guide/background

@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["android-tv"]
   requires: { "android": "16", "kotlin": "2.2", "tv-compose": "1.0" }
-  pairs_with: [m3-tv]
+  pairs_with: [m3-tv, choosing-form-factors, tv-focus-input, tv-media-playback]
   sources:
     - https://developer.android.com/training/tv/get-started
     - https://developer.android.com/jetpack/androidx/releases/tv

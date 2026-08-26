@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "wear-os"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [wear-data-health]
   sources:
     - https://developer.android.com/health-and-fitness/guides/health-services
     - https://developer.android.com/health-and-fitness/guides/health-connect

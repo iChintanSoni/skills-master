@@ -10,7 +10,7 @@ x-skills-master:
   category: data
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [app-shortcuts]
   sources:
     - https://developer.android.com/guide/topics/search/appsearch
   snapshot_date: "2026-06-06"

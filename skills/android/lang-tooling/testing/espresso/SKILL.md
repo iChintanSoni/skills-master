@@ -10,7 +10,7 @@ x-skills-master:
   category: testing
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [compose-ui-testing, ui-automator]
   sources:
     - https://developer.android.com/training/testing/espresso
     - https://developer.android.com/training/testing/espresso/basics

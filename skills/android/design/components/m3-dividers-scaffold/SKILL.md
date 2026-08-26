@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-app-bars, m3-layout-spacing]
   sources:
     - https://m3.material.io/components/divider/overview
     - https://developer.android.com/develop/ui/compose/components/scaffold

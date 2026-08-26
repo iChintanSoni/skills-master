@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["android", "large-screen", "chromeos"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
-  pairs_with: [compose-gestures]
+  pairs_with: [compose-gestures, m3-chromeos-desktop]
   sources:
     - https://developer.android.com/develop/ui/compose/touch-input
     - https://developer.android.com/develop/ui/compose/touch-input/stylus-input

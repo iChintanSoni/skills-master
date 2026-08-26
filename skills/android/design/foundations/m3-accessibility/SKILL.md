@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: ["android", "large-screen"]
-  pairs_with: [compose-accessibility]
+  pairs_with: [compose-accessibility, accessibility-testing]
   sources:
     - https://m3.material.io/foundations/overview
     - https://developer.android.com/develop/ui/compose/accessibility

@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-text-fields]
   sources:
     - https://m3.material.io/components/menus/overview
     - https://m3.material.io/components/date-pickers/overview

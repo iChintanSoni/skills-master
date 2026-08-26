@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: [navigation-compose]
+  pairs_with: [navigation-compose, m3-badges, navigation-suite-scaffold, m3-tabs]
   sources:
     - https://m3.material.io/components/navigation-bar/overview
     - https://developer.android.com/develop/ui/compose/layouts/adaptive

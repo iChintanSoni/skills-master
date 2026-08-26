@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: [compose-lazy-lists]
+  pairs_with: [compose-lazy-lists, m3-cards]
   sources:
     - https://m3.material.io/components/lists/overview
     - https://developer.android.com/develop/ui/compose/lists

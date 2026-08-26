@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: technologies
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [adopting-m3-expressive, m3-shape, m3-motion]
   sources:
     - https://m3.material.io/styles/motion/overview
     - https://m3.material.io/styles/shape/overview-principles

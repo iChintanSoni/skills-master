@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-color, compose-theming, m3-elevation]
   sources:
     - https://m3.material.io/styles/color/system/overview
     - https://developer.android.com/develop/ui/views/theming/darktheme

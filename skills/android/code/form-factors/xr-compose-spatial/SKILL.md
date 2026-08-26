@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["xr"]
   requires: { "android": "16", "kotlin": "2.2", "xr-compose": "1.0" }
-  pairs_with: [m3-xr]
+  pairs_with: [m3-xr, xr-arcore, xr-scenecore]
   sources:
     - https://developer.android.com/develop/xr/jetpack-xr-sdk/develop-ui
     - https://developer.android.com/develop/xr

@@ -8,7 +8,7 @@ x-skills-master:
   category: ship
   platforms: ["android"]
   requires: {"android": "16", "kotlin": "2.2"}
-  pairs_with: []
+  pairs_with: [performance-profiling, play-console-publishing]
   sources:
     - https://developer.android.com/topic/performance/vitals
     - https://developer.android.com/topic/performance/vitals/anr

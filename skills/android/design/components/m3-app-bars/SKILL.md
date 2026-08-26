@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: components
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-dividers-scaffold, m3-search]
   sources:
     - https://m3.material.io/components/top-app-bar/overview
     - https://developer.android.com/develop/ui/compose/components/app-bars

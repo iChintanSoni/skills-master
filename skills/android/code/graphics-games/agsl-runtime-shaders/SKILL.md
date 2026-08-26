@@ -10,7 +10,7 @@ x-skills-master:
   category: graphics-games
   platforms: ["android"]
   requires: { android: "33", kotlin: "2.2", compose-bom: "2026.08.00" }
-  pairs_with: [compose-graphics]
+  pairs_with: [compose-graphics, choosing-graphics-api]
   sources:
     - https://developer.android.com/develop/ui/views/graphics/agsl
     - https://developer.android.com/develop/ui/views/graphics/agsl/using-agsl

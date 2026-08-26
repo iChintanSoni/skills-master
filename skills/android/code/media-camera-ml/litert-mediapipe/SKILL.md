@@ -10,7 +10,7 @@ x-skills-master:
   category: media-camera-ml
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [choosing-ml]
   sources:
     - https://ai.google.dev/edge/litert
     - https://ai.google.dev/edge/mediapipe/solutions/guide

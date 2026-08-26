@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [compose-images]
   sources:
     - https://developer.android.com/develop/ui/compose/graphics/images/loading
     - https://developer.android.com/topic/performance/network-xfer

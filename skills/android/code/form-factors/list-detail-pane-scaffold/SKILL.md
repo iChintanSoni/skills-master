@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["android", "large-screen", "chromeos"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
-  pairs_with: [m3-canonical-layouts]
+  pairs_with: [m3-canonical-layouts, supporting-pane-scaffold]
   sources:
     - https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
     - https://developer.android.com/develop/ui/compose/layouts/adaptive

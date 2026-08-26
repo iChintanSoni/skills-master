@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen", "wear-os"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: [app-widgets-glance]
+  pairs_with: [app-widgets-glance, wear-tiles, wear-complications]
   sources:
     - https://developer.android.com/develop/ui/compose/glance
     - https://developer.android.com/develop/ui/views/appwidgets/overview

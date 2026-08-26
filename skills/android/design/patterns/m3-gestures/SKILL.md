@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [compose-gestures]
   sources:
     - https://developer.android.com/develop/ui/compose/touch-input/pointer-input
     - https://m3.material.io/foundations/overview

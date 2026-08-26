@@ -10,7 +10,7 @@ x-skills-master:
   category: testing
   platforms: ["android"]
   requires: {"android": "16", "kotlin": "2.2"}
-  pairs_with: []
+  pairs_with: [choosing-android-testing, compose-preview-testing, espresso]
   sources:
     - https://developer.android.com/develop/ui/compose/testing
     - https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet

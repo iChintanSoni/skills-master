@@ -195,7 +195,7 @@ broken emit formats) is a bug, not a nice-to-have.
 The library grew to **433 skills** across phases 5–6, so the baseline counts below are
 restated against that total.
 
-- [ ] **7.1 `pairs_with` build-out (L).** Dedicated pass over all 433: design↔code twins,
+- [x] **7.1 `pairs_with` build-out (L).** Dedicated pass over all 433: design↔code twins,
   overview↔implementation links, lang-tooling pairs. Keep the bidirectional invariant;
   land per-domain PRs.
   - [x] **apple** — 46 → 188 edges; unpaired 139/208 → 1 (`core-bluetooth`, which has no
@@ -204,7 +204,11 @@ restated against that total.
     with wider cross-references left to `## See also`. A new linter warning caps the list
     at 4 so the facet stays a signal rather than a dump. Metadata-only: `x-skills-master`
     is stripped from every projection, so no `version`/`snapshot_date` moved.
-  - [ ] **android** — 50 edges today; 136/225 unpaired.
+  - [x] **android** — 50 → 232 edges; unpaired 136/225 → 2 (`m3-sharing`, `nfc`). Material
+    has no single "M3 components" code skill the way SwiftUI has `swiftui-forms-controls`,
+    so the 25 `m3-*` component skills pair to the design siblings you actually need
+    alongside them (`m3-icon-buttons` ↔ `m3-icons` + `m3-tooltips`) rather than to a code
+    twin that does not exist. Worth a future coverage item, not a pairing fudge.
 - [ ] **7.2 Stability re-audit (M).** Re-judge `stable` vs `emerging` per skill (17/433
   `emerging` is implausible); `contested` skills present tradeoffs per authoring.md.
 - [ ] **7.3 Platforms honesty pass (M).** Stop claiming watchOS/tvOS/visionOS on skills

@@ -10,7 +10,7 @@ x-skills-master:
   category: language
   platforms: ["android"]
   requires: {kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [files-serialization, ktor-client, kotlin-language-core]
   sources:
     - https://kotlinlang.org/docs/serialization.html
     - https://kotlinlang.org/api/kotlinx.serialization/

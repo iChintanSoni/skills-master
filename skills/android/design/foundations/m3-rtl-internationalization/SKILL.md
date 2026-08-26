@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [app-localization]
   sources:
     - https://developer.android.com/guide/topics/resources/localization
     - https://m3.material.io/foundations/overview

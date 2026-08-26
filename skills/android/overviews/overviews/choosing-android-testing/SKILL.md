@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [unit-testing, compose-ui-testing, robolectric, macrobenchmark-baseline-profiles]
   sources:
     - https://developer.android.com/training/testing
     - https://developer.android.com/training/testing/fundamentals

@@ -10,7 +10,7 @@ x-skills-master:
   category: data
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [android-manifest, scoped-storage]
   sources:
     - https://developer.android.com/guide/topics/providers/content-providers
     - https://developer.android.com/guide/topics/providers/content-provider-creating

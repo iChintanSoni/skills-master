@@ -12,7 +12,7 @@ x-skills-master:
   category: graphics-games
   platforms: ["android"]
   requires: { "android": "4.4", "kotlin": "2.2", "games-activity": "4.4.2" }
-  pairs_with: [game-controller-input]
+  pairs_with: [game-controller-input, game-loop-frame-pacing]
   sources:
     - https://developer.android.com/games/agdk/game-activity
     - https://developer.android.com/games/agdk/game-activity/get-started

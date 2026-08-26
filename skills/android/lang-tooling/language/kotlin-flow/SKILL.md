@@ -10,7 +10,7 @@ x-skills-master:
   category: language
   platforms: ["android"]
   requires: {kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [choosing-concurrency-pattern, state-flow, kotlin-coroutines]
   sources:
     - https://developer.android.com/kotlin/flow
     - https://kotlinlang.org/docs/flow.html

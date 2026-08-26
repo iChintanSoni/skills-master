@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: ["large-screen", "chromeos"]
-  pairs_with: [adaptive-window-size-classes]
+  pairs_with: [adaptive-window-size-classes, m3-adaptive-layout, window-manager-foldables]
   sources:
     - https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts
     - https://developer.android.com/develop/ui/compose/layouts/adaptive

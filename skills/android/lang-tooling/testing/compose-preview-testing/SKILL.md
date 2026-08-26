@@ -10,7 +10,7 @@ x-skills-master:
   category: testing
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [screenshot-testing, compose-ui-testing]
   sources:
     - https://developer.android.com/develop/ui/compose/tooling/previews
     - https://developer.android.com/develop/ui/compose/tooling

@@ -8,7 +8,7 @@ x-skills-master:
   category: ship
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: [adpf-thermal-performance]
+  pairs_with: [adpf-thermal-performance, crash-anr-vitals, macrobenchmark-baseline-profiles]
   sources:
     - https://developer.android.com/topic/performance/overview
     - https://developer.android.com/studio/profile

@@ -10,7 +10,7 @@ x-skills-master:
   category: platform-services
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [android-manifest]
   sources:
     - https://developer.android.com/develop/background-work/background-tasks/broadcasts
     - https://developer.android.com/reference/android/content/BroadcastReceiver

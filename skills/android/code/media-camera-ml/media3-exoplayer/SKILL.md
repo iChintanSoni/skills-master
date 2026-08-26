@@ -10,7 +10,7 @@ x-skills-master:
   category: media-camera-ml
   platforms: ["android", "large-screen", "android-tv"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: [media3-transformer]
+  pairs_with: [media3-transformer, picture-in-picture, tv-media-playback, media3-session]
   sources:
     - https://developer.android.com/media/media3/exoplayer
     - https://developer.android.com/media/media3

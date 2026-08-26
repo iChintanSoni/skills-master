@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: platforms
   platforms: ["android-auto", "automotive-os"]
-  pairs_with: [car-app-library]
+  pairs_with: [car-app-library, car-driving-constraints]
   sources:
     - https://developer.android.com/design/ui/cars
     - https://developer.android.com/training/cars

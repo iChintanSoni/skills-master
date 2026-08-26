@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: technologies
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-icons, android-resources]
   sources:
     - https://developer.android.com/about/versions/oreo/android-8.0
     - https://m3.material.io/styles/icons/overview

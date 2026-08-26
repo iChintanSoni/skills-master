@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: foundations
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-dividers-scaffold, compose-layout]
   sources:
     - https://m3.material.io/foundations/layout/understanding-layout/spacing
     - https://developer.android.com/develop/ui/compose/layouts/basics

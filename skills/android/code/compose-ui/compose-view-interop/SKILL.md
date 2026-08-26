@@ -10,7 +10,7 @@ x-skills-master:
   category: compose-ui
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
-  pairs_with: []
+  pairs_with: [android-views-interop]
   sources:
     - https://developer.android.com/develop/ui/compose/migrate/interoperability-apis
     - https://developer.android.com/develop/ui/compose/migrate

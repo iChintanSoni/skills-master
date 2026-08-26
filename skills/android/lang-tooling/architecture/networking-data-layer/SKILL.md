@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-  pairs_with: []
+  pairs_with: [choosing-http-client, retrofit-okhttp, app-architecture]
   sources:
     - https://developer.android.com/topic/architecture/data-layer
     - https://developer.android.com/topic/architecture/data-layer/offline-first

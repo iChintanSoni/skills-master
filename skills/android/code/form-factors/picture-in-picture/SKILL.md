@@ -10,7 +10,7 @@ x-skills-master:
   category: form-factors
   platforms: ["android", "large-screen", "android-tv"]
   requires: {android: "16", kotlin: "2.2", compose-bom: "2026.05.00"}
-  pairs_with: []
+  pairs_with: [media3-exoplayer]
   sources:
     - https://developer.android.com/develop/ui/views/picture-in-picture
     - https://developer.android.com/develop/ui/compose/system/picture-in-picture

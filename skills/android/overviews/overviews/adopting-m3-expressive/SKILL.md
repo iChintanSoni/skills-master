@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [m3-expressive, compose-theming, m3-motion]
   sources:
     - https://m3.material.io/styles/motion/overview
     - https://m3.material.io/styles/shape/overview-principles

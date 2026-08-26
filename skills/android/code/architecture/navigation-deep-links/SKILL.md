@@ -13,7 +13,7 @@ x-skills-master:
     android: "16"
     kotlin: "2.2"
     compose-bom: "2026.05.00"
-  pairs_with: []
+  pairs_with: [navigation-compose, android-manifest]
   sources:
     - https://developer.android.com/guide/navigation/design/deep-link
     - https://developer.android.com/training/app-links

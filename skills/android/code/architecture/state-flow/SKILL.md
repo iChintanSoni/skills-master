@@ -10,7 +10,7 @@ x-skills-master:
   category: architecture
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
-  pairs_with: []
+  pairs_with: [choosing-concurrency-pattern, viewmodel, kotlin-flow]
   sources:
     - https://developer.android.com/kotlin/flow/stateflow-and-sharedflow
     - https://developer.android.com/topic/architecture/ui-layer

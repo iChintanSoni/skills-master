@@ -8,7 +8,7 @@ x-skills-master:
   category: overviews
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [kotlin-coroutines, kotlin-flow, state-flow]
   sources:
     - https://developer.android.com/kotlin/coroutines
     - https://developer.android.com/topic/architecture/ui-layer

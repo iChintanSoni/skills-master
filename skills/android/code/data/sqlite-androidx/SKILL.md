@@ -10,7 +10,7 @@ x-skills-master:
   category: data
   platforms: ["android", "large-screen"]
   requires: {android: "16", kotlin: "2.2"}
-  pairs_with: []
+  pairs_with: [choosing-storage, room]
   sources:
     - https://developer.android.com/training/data-storage/sqlite
     - https://developer.android.com/jetpack/androidx/releases/sqlite

@@ -10,7 +10,7 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-  pairs_with: []
+  pairs_with: [m3-accessibility, compose-accessibility]
   sources:
     - https://developer.android.com/guide/topics/ui/accessibility/testing
     - https://developer.android.com/develop/ui/compose/accessibility

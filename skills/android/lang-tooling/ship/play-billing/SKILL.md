@@ -8,7 +8,7 @@ x-skills-master:
   category: ship
   platforms: ["android"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [play-console-publishing]
   sources:
     - https://developer.android.com/google/play/billing
     - https://developer.android.com/google/play/billing/integrate

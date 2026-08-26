@@ -13,7 +13,7 @@ x-skills-master:
     android: "16"
     kotlin: "2.2"
     compose-bom: "2026.08.00"
-  pairs_with: [keyboard-mouse-stylus]
+  pairs_with: [keyboard-mouse-stylus, m3-gestures]
   sources:
     - https://developer.android.com/develop/ui/compose/touch-input/gestures
   snapshot_date: "2026-08-25"

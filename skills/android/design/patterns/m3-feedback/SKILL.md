@@ -7,7 +7,7 @@ x-skills-master:
   class: design
   category: patterns
   platforms: ["android", "large-screen"]
-  pairs_with: []
+  pairs_with: [m3-dialogs, m3-snackbar]
   sources:
     - https://m3.material.io/components/snackbar/overview
     - https://m3.material.io/components/progress-indicators/overview

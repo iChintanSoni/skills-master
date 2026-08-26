@@ -20,7 +20,10 @@
         "talkback",
         "ci"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-accessibility",
+        "compose-accessibility"
+      ],
       "path": "android/lang-tooling/ship/accessibility-testing",
       "resources": {
         "reference": false,
@@ -79,7 +82,10 @@
         "material3"
       ],
       "pairs_with": [
-        "m3-large-screens"
+        "m3-large-screens",
+        "choosing-form-factors",
+        "m3-adaptive-layout",
+        "navigation-suite-scaffold"
       ],
       "path": "android/code/form-factors/adaptive-window-size-classes",
       "resources": {
@@ -144,7 +150,9 @@
         "viewmodel"
       ],
       "pairs_with": [
-        "android-views-interop"
+        "android-views-interop",
+        "compose-fundamentals",
+        "choosing-compose-or-views"
       ],
       "path": "android/overviews/overviews/adopting-compose",
       "resources": {
@@ -174,7 +182,10 @@
         "material3"
       ],
       "pairs_with": [
-        "system-ui-styling"
+        "system-ui-styling",
+        "compose-window-insets",
+        "predictive-back",
+        "edge-to-edge-compat"
       ],
       "path": "android/overviews/overviews/adopting-edge-to-edge-predictive-back",
       "resources": {
@@ -203,7 +214,8 @@
         "architecture"
       ],
       "pairs_with": [
-        "kotlin-multiplatform"
+        "kotlin-multiplatform",
+        "modularization"
       ],
       "path": "android/overviews/overviews/adopting-kmp",
       "resources": {
@@ -264,7 +276,11 @@
         "compose",
         "design-system"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-expressive",
+        "compose-theming",
+        "m3-motion"
+      ],
       "path": "android/overviews/overviews/adopting-m3-expressive",
       "resources": {
         "reference": false,
@@ -326,7 +342,8 @@
         "power"
       ],
       "pairs_with": [
-        "performance-profiling"
+        "performance-profiling",
+        "game-loop-frame-pacing"
       ],
       "path": "android/code/graphics-games/adpf-thermal-performance",
       "resources": {
@@ -355,7 +372,8 @@
         "cpp"
       ],
       "pairs_with": [
-        "game-controller-input"
+        "game-controller-input",
+        "game-loop-frame-pacing"
       ],
       "path": "android/code/graphics-games/agdk-game-activity",
       "resources": {
@@ -384,7 +402,8 @@
         "android"
       ],
       "pairs_with": [
-        "compose-graphics"
+        "compose-graphics",
+        "choosing-graphics-api"
       ],
       "path": "android/code/graphics-games/agsl-runtime-shaders",
       "resources": {
@@ -412,7 +431,10 @@
         "background-work",
         "doze"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-background-work",
+        "power-doze"
+      ],
       "path": "android/code/platform-services/alarms-scheduling",
       "resources": {
         "reference": false,
@@ -439,7 +461,10 @@
         "state-restoration",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "lifecycle",
+        "android-manifest"
+      ],
       "path": "android/code/architecture/android-activities",
       "resources": {
         "reference": false,
@@ -496,7 +521,12 @@
         "configuration",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-activities",
+        "navigation-deep-links",
+        "broadcasts",
+        "content-providers"
+      ],
       "path": "android/lang-tooling/build-packaging/android-manifest",
       "resources": {
         "reference": false,
@@ -523,7 +553,10 @@
         "routing",
         "jetpack"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-navigation",
+        "app-architecture"
+      ],
       "path": "android/lang-tooling/architecture/android-navigation-architecture",
       "resources": {
         "reference": false,
@@ -550,7 +583,11 @@
         "layouts",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-app-icons",
+        "build-variants-flavors",
+        "app-localization"
+      ],
       "path": "android/code/platform-services/android-resources",
       "resources": {
         "reference": false,
@@ -579,7 +616,9 @@
         "android"
       ],
       "pairs_with": [
-        "adopting-compose"
+        "adopting-compose",
+        "choosing-compose-or-views",
+        "compose-view-interop"
       ],
       "path": "android/code/compose-ui/android-views-interop",
       "resources": {
@@ -608,7 +647,8 @@
         "launcher"
       ],
       "pairs_with": [
-        "app-functions"
+        "app-functions",
+        "app-shortcuts"
       ],
       "path": "android/code/media-camera-ml/app-actions-assistant",
       "resources": {
@@ -636,7 +676,11 @@
         "udf",
         "compose"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-navigation-architecture",
+        "networking-data-layer",
+        "modularization"
+      ],
       "path": "android/lang-tooling/architecture/app-architecture",
       "resources": {
         "reference": false,
@@ -663,7 +707,9 @@
         "dynamic-delivery"
       ],
       "pairs_with": [
-        "play-asset-delivery"
+        "play-asset-delivery",
+        "choosing-android-distribution",
+        "r8-proguard"
       ],
       "path": "android/lang-tooling/build-packaging/app-bundles-size",
       "resources": {
@@ -790,7 +836,11 @@
         "rtl",
         "plurals"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-rtl-internationalization",
+        "m3-writing",
+        "android-resources"
+      ],
       "path": "android/lang-tooling/ship/app-localization",
       "resources": {
         "reference": false,
@@ -850,7 +900,10 @@
         "launcher",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "appsearch",
+        "app-actions-assistant"
+      ],
       "path": "android/code/platform-services/app-shortcuts",
       "resources": {
         "reference": false,
@@ -876,7 +929,10 @@
         "security",
         "gradle"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-android-distribution",
+        "ci-cd"
+      ],
       "path": "android/lang-tooling/build-packaging/app-signing",
       "resources": {
         "reference": false,
@@ -1024,7 +1080,9 @@
         "data",
         "jetpack"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "app-shortcuts"
+      ],
       "path": "android/code/data/appsearch",
       "resources": {
         "reference": false,
@@ -1115,7 +1173,9 @@
         "ux",
         "accessibility"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-text-fields"
+      ],
       "path": "android/code/platform-services/autofill",
       "resources": {
         "reference": false,
@@ -1277,7 +1337,9 @@
         "data",
         "jetpack"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "datastore"
+      ],
       "path": "android/code/data/backup-restore",
       "resources": {
         "reference": false,
@@ -1304,7 +1366,10 @@
         "cryptography",
         "identity"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "security-crypto",
+        "credential-manager"
+      ],
       "path": "android/code/platform-services/biometric",
       "resources": {
         "reference": false,
@@ -1332,7 +1397,9 @@
         "permissions",
         "connectivity"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "uwb-ranging"
+      ],
       "path": "android/code/platform-services/bluetooth-ble",
       "resources": {
         "reference": false,
@@ -1358,7 +1425,9 @@
         "platform-services",
         "background-work"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-manifest"
+      ],
       "path": "android/code/platform-services/broadcasts",
       "resources": {
         "reference": false,
@@ -1418,7 +1487,10 @@
         "build-variants",
         "product-flavors"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-resources",
+        "gradle-kotlin-dsl"
+      ],
       "path": "android/lang-tooling/build-packaging/build-variants-flavors",
       "resources": {
         "reference": false,
@@ -1445,7 +1517,10 @@
         "jetpack",
         "android-camera"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "mediastore",
+        "ml-kit"
+      ],
       "path": "android/code/media-camera-ml/camerax",
       "resources": {
         "reference": false,
@@ -1473,7 +1548,10 @@
         "carappservice"
       ],
       "pairs_with": [
-        "m3-cars"
+        "m3-cars",
+        "choosing-form-factors",
+        "car-driving-constraints",
+        "car-media-messaging"
       ],
       "path": "android/code/form-factors/car-app-library",
       "resources": {
@@ -1501,7 +1579,10 @@
         "driver-distraction",
         "vehicle-properties"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-cars",
+        "car-app-library"
+      ],
       "path": "android/code/form-factors/car-driving-constraints",
       "resources": {
         "reference": false,
@@ -1528,7 +1609,10 @@
         "mediabrowserservice",
         "messaging"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "car-app-library",
+        "media3-session"
+      ],
       "path": "android/code/form-factors/car-media-messaging",
       "resources": {
         "reference": false,
@@ -1585,7 +1669,11 @@
         "app-bundle",
         "enterprise"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "app-bundles-size",
+        "play-console-publishing",
+        "app-signing"
+      ],
       "path": "android/overviews/overviews/choosing-android-distribution",
       "resources": {
         "reference": false,
@@ -1612,7 +1700,12 @@
         "instrumentation",
         "strategy"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "unit-testing",
+        "compose-ui-testing",
+        "robolectric",
+        "macrobenchmark-baseline-profiles"
+      ],
       "path": "android/overviews/overviews/choosing-android-testing",
       "resources": {
         "reference": false,
@@ -1748,7 +1841,10 @@
         "alarmmanager"
       ],
       "pairs_with": [
-        "workmanager"
+        "workmanager",
+        "foreground-services",
+        "alarms-scheduling",
+        "power-doze"
       ],
       "path": "android/overviews/overviews/choosing-background-work",
       "resources": {
@@ -1777,7 +1873,11 @@
         "migration",
         "architecture"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-compose",
+        "compose-fundamentals",
+        "android-views-interop"
+      ],
       "path": "android/overviews/overviews/choosing-compose-or-views",
       "resources": {
         "reference": false,
@@ -1805,7 +1905,11 @@
         "async",
         "architecture"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "kotlin-coroutines",
+        "kotlin-flow",
+        "state-flow"
+      ],
       "path": "android/overviews/overviews/choosing-concurrency-pattern",
       "resources": {
         "reference": false,
@@ -1869,7 +1973,8 @@
         "testing"
       ],
       "pairs_with": [
-        "hilt-di"
+        "hilt-di",
+        "dependency-injection-patterns"
       ],
       "path": "android/overviews/overviews/choosing-di",
       "resources": {
@@ -1933,7 +2038,12 @@
         "android-tv",
         "form-factors"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adaptive-window-size-classes",
+        "wear-compose",
+        "tv-compose",
+        "car-app-library"
+      ],
       "path": "android/overviews/overviews/choosing-form-factors",
       "resources": {
         "reference": false,
@@ -1963,7 +2073,9 @@
         "decision"
       ],
       "pairs_with": [
-        "vulkan-rendering"
+        "vulkan-rendering",
+        "compose-graphics",
+        "agsl-runtime-shaders"
       ],
       "path": "android/overviews/overviews/choosing-graphics-api",
       "resources": {
@@ -2029,7 +2141,9 @@
         "cronet"
       ],
       "pairs_with": [
-        "retrofit-okhttp"
+        "retrofit-okhttp",
+        "ktor-client",
+        "networking-data-layer"
       ],
       "path": "android/overviews/overviews/choosing-http-client",
       "resources": {
@@ -2057,7 +2171,9 @@
         "compose",
         "performance"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-images"
+      ],
       "path": "android/overviews/overviews/choosing-image-loading",
       "resources": {
         "reference": false,
@@ -2121,7 +2237,9 @@
         "mlkit"
       ],
       "pairs_with": [
-        "ml-kit"
+        "ml-kit",
+        "gemini-nano-aicore",
+        "litert-mediapipe"
       ],
       "path": "android/overviews/overviews/choosing-ml",
       "resources": {
@@ -2183,7 +2301,11 @@
         "architecture",
         "routing"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "navigation3",
+        "navigation-compose",
+        "android-navigation-architecture"
+      ],
       "path": "android/overviews/overviews/choosing-navigation",
       "resources": {
         "reference": false,
@@ -2315,7 +2437,10 @@
         "persistence"
       ],
       "pairs_with": [
-        "room"
+        "room",
+        "datastore",
+        "files-serialization",
+        "sqlite-androidx"
       ],
       "path": "android/overviews/overviews/choosing-storage",
       "resources": {
@@ -2513,7 +2638,9 @@
         "decision"
       ],
       "pairs_with": [
-        "app-widgets-glance"
+        "app-widgets-glance",
+        "wear-tiles",
+        "wear-complications"
       ],
       "path": "android/overviews/overviews/choosing-widget-toolkit",
       "resources": {
@@ -2541,7 +2668,8 @@
         "android"
       ],
       "pairs_with": [
-        "android-cli"
+        "android-cli",
+        "app-signing"
       ],
       "path": "android/lang-tooling/ship/ci-cd",
       "resources": {
@@ -2671,7 +2799,8 @@
         "material3"
       ],
       "pairs_with": [
-        "m3-accessibility"
+        "m3-accessibility",
+        "accessibility-testing"
       ],
       "path": "android/code/compose-ui/compose-accessibility",
       "resources": {
@@ -2759,7 +2888,10 @@
         "scrollable",
         "custom-ui"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-interaction-states",
+        "compose-modifiers"
+      ],
       "path": "android/code/compose-ui/compose-foundation",
       "resources": {
         "reference": false,
@@ -2789,7 +2921,12 @@
         "recomposition",
         "ui"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-compose",
+        "choosing-compose-or-views",
+        "compose-state",
+        "compose-modifiers"
+      ],
       "path": "android/code/compose-ui/compose-fundamentals",
       "resources": {
         "reference": false,
@@ -2819,7 +2956,8 @@
         "draggable"
       ],
       "pairs_with": [
-        "keyboard-mouse-stylus"
+        "keyboard-mouse-stylus",
+        "m3-gestures"
       ],
       "path": "android/code/compose-ui/compose-gestures",
       "resources": {
@@ -2848,7 +2986,8 @@
         "android"
       ],
       "pairs_with": [
-        "agsl-runtime-shaders"
+        "agsl-runtime-shaders",
+        "choosing-graphics-api"
       ],
       "path": "android/code/compose-ui/compose-graphics",
       "resources": {
@@ -2876,7 +3015,9 @@
         "asyncimage",
         "contentscale"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-image-loading"
+      ],
       "path": "android/code/compose-ui/compose-images",
       "resources": {
         "reference": false,
@@ -2904,7 +3045,8 @@
         "custom-layout"
       ],
       "pairs_with": [
-        "compose-custom-layouts"
+        "compose-custom-layouts",
+        "m3-layout-spacing"
       ],
       "path": "android/code/compose-ui/compose-layout",
       "resources": {
@@ -2933,7 +3075,8 @@
         "android"
       ],
       "pairs_with": [
-        "m3-lists"
+        "m3-lists",
+        "paging"
       ],
       "path": "android/code/compose-ui/compose-lazy-lists",
       "resources": {
@@ -2961,7 +3104,10 @@
         "android",
         "material3"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-foundation",
+        "compose-fundamentals"
+      ],
       "path": "android/code/compose-ui/compose-modifiers",
       "resources": {
         "reference": false,
@@ -2988,7 +3134,10 @@
         "stability",
         "jetpack-compose"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-state",
+        "macrobenchmark-baseline-profiles"
+      ],
       "path": "android/code/compose-ui/compose-performance",
       "resources": {
         "reference": false,
@@ -3014,7 +3163,10 @@
         "ui-testing",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "screenshot-testing",
+        "compose-ui-testing"
+      ],
       "path": "android/lang-tooling/testing/compose-preview-testing",
       "resources": {
         "reference": false,
@@ -3040,7 +3192,10 @@
         "coroutines",
         "lifecycle"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "lifecycle",
+        "compose-state"
+      ],
       "path": "android/code/compose-ui/compose-side-effects",
       "resources": {
         "reference": false,
@@ -3067,7 +3222,11 @@
         "jetpack-compose",
         "recomposition"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-fundamentals",
+        "compose-performance",
+        "compose-side-effects"
+      ],
       "path": "android/code/compose-ui/compose-state",
       "resources": {
         "reference": false,
@@ -3094,7 +3253,9 @@
         "material3",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-typography"
+      ],
       "path": "android/code/compose-ui/compose-text",
       "resources": {
         "reference": false,
@@ -3122,7 +3283,8 @@
         "keyboard"
       ],
       "pairs_with": [
-        "m3-text-fields"
+        "m3-text-fields",
+        "autofill"
       ],
       "path": "android/code/compose-ui/compose-text-fields",
       "resources": {
@@ -3152,7 +3314,9 @@
       ],
       "pairs_with": [
         "m3-color",
-        "design-system-customization"
+        "design-system-customization",
+        "adopting-m3-expressive",
+        "m3-dark-theme"
       ],
       "path": "android/code/compose-ui/compose-theming",
       "resources": {
@@ -3179,7 +3343,11 @@
         "android",
         "instrumented"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-android-testing",
+        "compose-preview-testing",
+        "espresso"
+      ],
       "path": "android/lang-tooling/testing/compose-ui-testing",
       "resources": {
         "reference": false,
@@ -3207,7 +3375,9 @@
         "composeview",
         "fragments"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-views-interop"
+      ],
       "path": "android/code/compose-ui/compose-view-interop",
       "resources": {
         "reference": false,
@@ -3236,7 +3406,8 @@
       ],
       "pairs_with": [
         "m3-edge-to-edge",
-        "system-ui-styling"
+        "system-ui-styling",
+        "adopting-edge-to-edge-predictive-back"
       ],
       "path": "android/code/compose-ui/compose-window-insets",
       "resources": {
@@ -3263,7 +3434,10 @@
         "android",
         "data"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-manifest",
+        "scoped-storage"
+      ],
       "path": "android/code/data/content-providers",
       "resources": {
         "reference": false,
@@ -3321,7 +3495,11 @@
         "kotlin-dsl",
         "multi-module"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "modularization",
+        "gradle-kotlin-dsl",
+        "version-catalogs"
+      ],
       "path": "android/lang-tooling/build-packaging/convention-plugins",
       "resources": {
         "reference": false,
@@ -3575,7 +3753,10 @@
         "anr",
         "vitals"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "performance-profiling",
+        "play-console-publishing"
+      ],
       "path": "android/lang-tooling/ship/crash-anr-vitals",
       "resources": {
         "reference": false,
@@ -3634,7 +3815,9 @@
         "credential-manager",
         "sign-in"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "biometric"
+      ],
       "path": "android/code/platform-services/credential-manager",
       "resources": {
         "reference": false,
@@ -3694,7 +3877,11 @@
         "persistence",
         "flow"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-storage",
+        "m3-settings",
+        "backup-restore"
+      ],
       "path": "android/code/data/datastore",
       "resources": {
         "reference": false,
@@ -3754,7 +3941,10 @@
         "hilt",
         "koin"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-di",
+        "hilt-di"
+      ],
       "path": "android/lang-tooling/architecture/dependency-injection-patterns",
       "resources": {
         "reference": false,
@@ -3844,7 +4034,10 @@
         "predictive-back",
         "target-sdk"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-edge-to-edge-predictive-back",
+        "m3-edge-to-edge"
+      ],
       "path": "android/lang-tooling/ship/edge-to-edge-compat",
       "resources": {
         "reference": false,
@@ -3937,7 +4130,10 @@
         "ui-testing",
         "instrumentation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-ui-testing",
+        "ui-automator"
+      ],
       "path": "android/lang-tooling/testing/espresso",
       "resources": {
         "reference": false,
@@ -3995,7 +4191,11 @@
         "kotlinx-serialization",
         "io"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-storage",
+        "scoped-storage",
+        "kotlin-serialization"
+      ],
       "path": "android/code/data/files-serialization",
       "resources": {
         "reference": false,
@@ -4022,7 +4222,12 @@
         "background-work",
         "lifecycle"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-background-work",
+        "media-projection",
+        "telecom-calls",
+        "notifications"
+      ],
       "path": "android/code/platform-services/foreground-services",
       "resources": {
         "reference": false,
@@ -4112,7 +4317,9 @@
         "android"
       ],
       "pairs_with": [
-        "vulkan-rendering"
+        "vulkan-rendering",
+        "adpf-thermal-performance",
+        "agdk-game-activity"
       ],
       "path": "android/code/graphics-games/game-loop-frame-pacing",
       "resources": {
@@ -4172,7 +4379,9 @@
         "ml-kit",
         "genai"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-ml"
+      ],
       "path": "android/code/media-camera-ml/gemini-nano-aicore",
       "resources": {
         "reference": false,
@@ -4199,7 +4408,10 @@
         "agp"
       ],
       "pairs_with": [
-        "android-cli"
+        "android-cli",
+        "build-variants-flavors",
+        "convention-plugins",
+        "version-catalogs"
       ],
       "path": "android/lang-tooling/build-packaging/gradle-kotlin-dsl",
       "resources": {
@@ -4256,7 +4468,9 @@
         "fitness",
         "sensors"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "wear-data-health"
+      ],
       "path": "android/code/platform-services/health-services",
       "resources": {
         "reference": false,
@@ -6369,7 +6583,8 @@
         "testing"
       ],
       "pairs_with": [
-        "choosing-di"
+        "choosing-di",
+        "dependency-injection-patterns"
       ],
       "path": "android/code/architecture/hilt-di",
       "resources": {
@@ -6469,7 +6684,8 @@
         "pointer-input"
       ],
       "pairs_with": [
-        "compose-gestures"
+        "compose-gestures",
+        "m3-chromeos-desktop"
       ],
       "path": "android/code/form-factors/keyboard-mouse-stylus",
       "resources": {
@@ -6530,7 +6746,10 @@
         "async",
         "structured-concurrency"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-concurrency-pattern",
+        "kotlin-flow"
+      ],
       "path": "android/lang-tooling/language/kotlin-coroutines",
       "resources": {
         "reference": false,
@@ -6556,7 +6775,11 @@
         "reactive",
         "async"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-concurrency-pattern",
+        "state-flow",
+        "kotlin-coroutines"
+      ],
       "path": "android/lang-tooling/language/kotlin-flow",
       "resources": {
         "reference": false,
@@ -6583,7 +6806,9 @@
         "variance",
         "reified"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "kotlin-language-core"
+      ],
       "path": "android/lang-tooling/language/kotlin-generics-types",
       "resources": {
         "reference": false,
@@ -6610,7 +6835,10 @@
         "null-safety",
         "collections"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "kotlin-generics-types",
+        "kotlin-serialization"
+      ],
       "path": "android/lang-tooling/language/kotlin-language-core",
       "resources": {
         "reference": false,
@@ -6664,7 +6892,11 @@
         "android",
         "networking"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "files-serialization",
+        "ktor-client",
+        "kotlin-language-core"
+      ],
       "path": "android/lang-tooling/language/kotlin-serialization",
       "resources": {
         "reference": false,
@@ -6690,7 +6922,10 @@
         "kotlin-multiplatform",
         "coroutines"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-http-client",
+        "kotlin-serialization"
+      ],
       "path": "android/code/platform-services/ktor-client",
       "resources": {
         "reference": false,
@@ -6717,7 +6952,11 @@
         "architecture",
         "flow"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "android-activities",
+        "viewmodel",
+        "compose-side-effects"
+      ],
       "path": "android/code/architecture/lifecycle",
       "resources": {
         "reference": false,
@@ -6746,7 +6985,8 @@
         "form-factors"
       ],
       "pairs_with": [
-        "m3-canonical-layouts"
+        "m3-canonical-layouts",
+        "supporting-pane-scaffold"
       ],
       "path": "android/code/form-factors/list-detail-pane-scaffold",
       "resources": {
@@ -6774,7 +7014,9 @@
         "mediapipe",
         "on-device-ml"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-ml"
+      ],
       "path": "android/code/media-camera-ml/litert-mediapipe",
       "resources": {
         "reference": false,
@@ -6836,7 +7078,9 @@
         "fused-location",
         "activity-recognition"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "runtime-permissions"
+      ],
       "path": "android/code/platform-services/location-sensors",
       "resources": {
         "reference": false,
@@ -6864,7 +7108,8 @@
         "contrast"
       ],
       "pairs_with": [
-        "compose-accessibility"
+        "compose-accessibility",
+        "accessibility-testing"
       ],
       "path": "android/design/foundations/m3-accessibility",
       "resources": {
@@ -6893,7 +7138,10 @@
         "responsive",
         "foundations"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adaptive-window-size-classes",
+        "m3-large-screens"
+      ],
       "path": "android/design/foundations/m3-adaptive-layout",
       "resources": {
         "reference": false,
@@ -6949,7 +7197,10 @@
         "navigation",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-dividers-scaffold",
+        "m3-search"
+      ],
       "path": "android/design/components/m3-app-bars",
       "resources": {
         "reference": false,
@@ -6976,7 +7227,10 @@
         "android",
         "adaptive"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-icons",
+        "android-resources"
+      ],
       "path": "android/design/technologies/m3-app-icons",
       "resources": {
         "reference": false,
@@ -7004,7 +7258,9 @@
         "navigation",
         "indicators"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-navigation"
+      ],
       "path": "android/design/components/m3-badges",
       "resources": {
         "reference": false,
@@ -7032,7 +7288,10 @@
         "actions",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-buttons",
+        "m3-segmented-buttons"
+      ],
       "path": "android/design/components/m3-button-groups",
       "resources": {
         "reference": false,
@@ -7060,7 +7319,11 @@
         "material-you",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-button-groups",
+        "m3-fab",
+        "m3-icon-buttons"
+      ],
       "path": "android/design/components/m3-buttons",
       "resources": {
         "reference": false,
@@ -7088,7 +7351,8 @@
         "large-screen"
       ],
       "pairs_with": [
-        "list-detail-pane-scaffold"
+        "list-detail-pane-scaffold",
+        "supporting-pane-scaffold"
       ],
       "path": "android/design/foundations/m3-canonical-layouts",
       "resources": {
@@ -7117,7 +7381,10 @@
         "layout",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-lists",
+        "m3-carousel"
+      ],
       "path": "android/design/components/m3-cards",
       "resources": {
         "reference": false,
@@ -7144,7 +7411,9 @@
         "android",
         "scrolling"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-cards"
+      ],
       "path": "android/design/components/m3-carousel",
       "resources": {
         "reference": false,
@@ -7172,7 +7441,8 @@
         "automotive-os"
       ],
       "pairs_with": [
-        "car-app-library"
+        "car-app-library",
+        "car-driving-constraints"
       ],
       "path": "android/design/platforms/m3-cars",
       "resources": {
@@ -7201,7 +7471,10 @@
         "components",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-search",
+        "m3-selection-controls"
+      ],
       "path": "android/design/components/m3-chips",
       "resources": {
         "reference": false,
@@ -7229,7 +7502,9 @@
         "desktop",
         "productivity"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "keyboard-mouse-stylus"
+      ],
       "path": "android/design/platforms/m3-chromeos-desktop",
       "resources": {
         "reference": false,
@@ -7259,7 +7534,8 @@
       ],
       "pairs_with": [
         "compose-theming",
-        "design-system-customization"
+        "design-system-customization",
+        "m3-dark-theme"
       ],
       "path": "android/design/styles/m3-color",
       "resources": {
@@ -7287,7 +7563,11 @@
         "color",
         "foundations"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-color",
+        "compose-theming",
+        "m3-elevation"
+      ],
       "path": "android/design/foundations/m3-dark-theme",
       "resources": {
         "reference": false,
@@ -7315,7 +7595,10 @@
         "confirmation",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-sheets",
+        "m3-feedback"
+      ],
       "path": "android/design/components/m3-dialogs",
       "resources": {
         "reference": false,
@@ -7343,7 +7626,10 @@
         "layout",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-app-bars",
+        "m3-layout-spacing"
+      ],
       "path": "android/design/components/m3-dividers-scaffold",
       "resources": {
         "reference": false,
@@ -7402,7 +7688,8 @@
         "patterns"
       ],
       "pairs_with": [
-        "compose-window-insets"
+        "compose-window-insets",
+        "edge-to-edge-compat"
       ],
       "path": "android/design/patterns/m3-edge-to-edge",
       "resources": {
@@ -7431,7 +7718,10 @@
         "surfaces",
         "hierarchy"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-dark-theme",
+        "m3-shape"
+      ],
       "path": "android/design/styles/m3-elevation",
       "resources": {
         "reference": false,
@@ -7458,7 +7748,11 @@
         "motion",
         "material-you"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-m3-expressive",
+        "m3-shape",
+        "m3-motion"
+      ],
       "path": "android/design/technologies/m3-expressive",
       "resources": {
         "reference": false,
@@ -7486,7 +7780,9 @@
         "android",
         "navigation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-buttons"
+      ],
       "path": "android/design/components/m3-fab",
       "resources": {
         "reference": false,
@@ -7514,7 +7810,10 @@
         "snackbar",
         "error-states"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-dialogs",
+        "m3-snackbar"
+      ],
       "path": "android/design/patterns/m3-feedback",
       "resources": {
         "reference": false,
@@ -7541,7 +7840,9 @@
         "interaction",
         "touch"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-gestures"
+      ],
       "path": "android/design/patterns/m3-gestures",
       "resources": {
         "reference": false,
@@ -7599,7 +7900,11 @@
         "components",
         "accessibility"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-buttons",
+        "m3-icons",
+        "m3-tooltips"
+      ],
       "path": "android/design/components/m3-icon-buttons",
       "resources": {
         "reference": false,
@@ -7626,7 +7931,10 @@
         "material-symbols",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-icon-buttons",
+        "m3-app-icons"
+      ],
       "path": "android/design/styles/m3-icons",
       "resources": {
         "reference": false,
@@ -7654,7 +7962,9 @@
         "foundations",
         "accessibility"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-foundation"
+      ],
       "path": "android/design/foundations/m3-interaction-states",
       "resources": {
         "reference": false,
@@ -7683,7 +7993,9 @@
         "chromeos"
       ],
       "pairs_with": [
-        "adaptive-window-size-classes"
+        "adaptive-window-size-classes",
+        "m3-adaptive-layout",
+        "window-manager-foldables"
       ],
       "path": "android/design/platforms/m3-large-screens",
       "resources": {
@@ -7712,7 +8024,10 @@
         "foundations",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-dividers-scaffold",
+        "compose-layout"
+      ],
       "path": "android/design/foundations/m3-layout-spacing",
       "resources": {
         "reference": false,
@@ -7741,7 +8056,8 @@
         "components"
       ],
       "pairs_with": [
-        "compose-lazy-lists"
+        "compose-lazy-lists",
+        "m3-cards"
       ],
       "path": "android/design/components/m3-lists",
       "resources": {
@@ -7770,7 +8086,10 @@
         "perceived-performance",
         "ux"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-loading-indicator",
+        "m3-progress-indicators"
+      ],
       "path": "android/design/patterns/m3-loading",
       "resources": {
         "reference": false,
@@ -7798,7 +8117,10 @@
         "m3",
         "design"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-loading",
+        "m3-progress-indicators"
+      ],
       "path": "android/design/components/m3-loading-indicator",
       "resources": {
         "reference": false,
@@ -7826,7 +8148,9 @@
         "components",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-text-fields"
+      ],
       "path": "android/design/components/m3-menus-pickers",
       "resources": {
         "reference": false,
@@ -7855,7 +8179,9 @@
         "accessibility"
       ],
       "pairs_with": [
-        "compose-animation"
+        "compose-animation",
+        "adopting-m3-expressive",
+        "m3-expressive"
       ],
       "path": "android/design/styles/m3-motion",
       "resources": {
@@ -7884,7 +8210,10 @@
         "android"
       ],
       "pairs_with": [
-        "navigation-compose"
+        "navigation-compose",
+        "m3-badges",
+        "navigation-suite-scaffold",
+        "m3-tabs"
       ],
       "path": "android/design/components/m3-navigation",
       "resources": {
@@ -7942,7 +8271,9 @@
         "permissions",
         "patterns"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-splash-screen"
+      ],
       "path": "android/design/patterns/m3-onboarding",
       "resources": {
         "reference": false,
@@ -8030,7 +8361,10 @@
         "feedback",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-loading-indicator",
+        "m3-loading"
+      ],
       "path": "android/design/components/m3-progress-indicators",
       "resources": {
         "reference": false,
@@ -8058,7 +8392,9 @@
         "layout",
         "foundations"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "app-localization"
+      ],
       "path": "android/design/foundations/m3-rtl-internationalization",
       "resources": {
         "reference": false,
@@ -8085,7 +8421,10 @@
         "navigation",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-app-bars",
+        "m3-chips"
+      ],
       "path": "android/design/components/m3-search",
       "resources": {
         "reference": false,
@@ -8113,7 +8452,10 @@
         "components",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-button-groups",
+        "m3-tabs"
+      ],
       "path": "android/design/components/m3-segmented-buttons",
       "resources": {
         "reference": false,
@@ -8141,7 +8483,10 @@
         "components",
         "forms"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-chips",
+        "m3-settings"
+      ],
       "path": "android/design/components/m3-selection-controls",
       "resources": {
         "reference": false,
@@ -8168,7 +8513,11 @@
         "preferences",
         "patterns"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-selection-controls",
+        "m3-sliders",
+        "datastore"
+      ],
       "path": "android/design/patterns/m3-settings",
       "resources": {
         "reference": false,
@@ -8195,7 +8544,10 @@
         "material-you",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-elevation",
+        "m3-expressive"
+      ],
       "path": "android/design/styles/m3-shape",
       "resources": {
         "reference": false,
@@ -8251,7 +8603,9 @@
         "android",
         "side-sheets"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-dialogs"
+      ],
       "path": "android/design/components/m3-sheets",
       "resources": {
         "reference": false,
@@ -8279,7 +8633,9 @@
         "input",
         "components"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-settings"
+      ],
       "path": "android/design/components/m3-sliders",
       "resources": {
         "reference": false,
@@ -8307,7 +8663,9 @@
         "components",
         "transient"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-feedback"
+      ],
       "path": "android/design/components/m3-snackbar",
       "resources": {
         "reference": false,
@@ -8334,7 +8692,8 @@
         "launch-screen"
       ],
       "pairs_with": [
-        "splash-screen"
+        "splash-screen",
+        "m3-onboarding"
       ],
       "path": "android/design/technologies/m3-splash-screen",
       "resources": {
@@ -8363,7 +8722,10 @@
         "android",
         "material-you"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-segmented-buttons",
+        "m3-navigation"
+      ],
       "path": "android/design/components/m3-tabs",
       "resources": {
         "reference": false,
@@ -8392,7 +8754,8 @@
         "components"
       ],
       "pairs_with": [
-        "compose-text-fields"
+        "compose-text-fields",
+        "m3-menus-pickers"
       ],
       "path": "android/design/components/m3-text-fields",
       "resources": {
@@ -8420,7 +8783,9 @@
         "components",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-icon-buttons"
+      ],
       "path": "android/design/components/m3-tooltips",
       "resources": {
         "reference": false,
@@ -8447,7 +8812,8 @@
         "leanback"
       ],
       "pairs_with": [
-        "tv-compose"
+        "tv-compose",
+        "tv-focus-input"
       ],
       "path": "android/design/platforms/m3-tv",
       "resources": {
@@ -8476,7 +8842,8 @@
         "android"
       ],
       "pairs_with": [
-        "design-system-customization"
+        "design-system-customization",
+        "compose-text"
       ],
       "path": "android/design/styles/m3-typography",
       "resources": {
@@ -8504,7 +8871,8 @@
         "platforms"
       ],
       "pairs_with": [
-        "wear-compose"
+        "wear-compose",
+        "wear-tiles"
       ],
       "path": "android/design/platforms/m3-wear",
       "resources": {
@@ -8563,7 +8931,9 @@
         "android",
         "foundations"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "app-localization"
+      ],
       "path": "android/design/foundations/m3-writing",
       "resources": {
         "reference": false,
@@ -8590,7 +8960,8 @@
         "platforms"
       ],
       "pairs_with": [
-        "xr-compose-spatial"
+        "xr-compose-spatial",
+        "xr-scenecore"
       ],
       "path": "android/design/platforms/m3-xr",
       "resources": {
@@ -8617,7 +8988,11 @@
         "startup",
         "testing"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-android-testing",
+        "compose-performance",
+        "performance-profiling"
+      ],
       "path": "android/lang-tooling/testing/macrobenchmark-baseline-profiles",
       "resources": {
         "reference": false,
@@ -8675,7 +9050,9 @@
         "foreground-service",
         "virtual-display"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "foreground-services"
+      ],
       "path": "android/code/media-camera-ml/media-projection",
       "resources": {
         "reference": false,
@@ -8733,7 +9110,10 @@
         "adaptive-streaming"
       ],
       "pairs_with": [
-        "media3-transformer"
+        "media3-transformer",
+        "picture-in-picture",
+        "tv-media-playback",
+        "media3-session"
       ],
       "path": "android/code/media-camera-ml/media3-exoplayer",
       "resources": {
@@ -8762,7 +9142,10 @@
         "exoplayer",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "car-media-messaging",
+        "media3-exoplayer"
+      ],
       "path": "android/code/media-camera-ml/media3-session",
       "resources": {
         "reference": false,
@@ -8820,7 +9203,10 @@
         "media",
         "permissions"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "scoped-storage",
+        "camerax"
+      ],
       "path": "android/code/data/mediastore",
       "resources": {
         "reference": false,
@@ -8881,7 +9267,8 @@
         "cameraX"
       ],
       "pairs_with": [
-        "choosing-ml"
+        "choosing-ml",
+        "camerax"
       ],
       "path": "android/code/media-camera-ml/ml-kit",
       "resources": {
@@ -8908,7 +9295,11 @@
         "build-speed",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "adopting-kmp",
+        "app-architecture",
+        "convention-plugins"
+      ],
       "path": "android/lang-tooling/architecture/modularization",
       "resources": {
         "reference": false,
@@ -9105,7 +9496,9 @@
       ],
       "pairs_with": [
         "m3-navigation",
-        "navigation3"
+        "navigation3",
+        "choosing-navigation",
+        "navigation-deep-links"
       ],
       "path": "android/code/architecture/navigation-compose",
       "resources": {
@@ -9133,7 +9526,10 @@
         "compose",
         "architecture"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "navigation-compose",
+        "android-manifest"
+      ],
       "path": "android/code/architecture/navigation-deep-links",
       "resources": {
         "reference": false,
@@ -9161,7 +9557,10 @@
         "large-screen",
         "material3"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-navigation",
+        "adaptive-window-size-classes"
+      ],
       "path": "android/code/form-factors/navigation-suite-scaffold",
       "resources": {
         "reference": false,
@@ -9191,7 +9590,8 @@
         "architecture"
       ],
       "pairs_with": [
-        "navigation-compose"
+        "navigation-compose",
+        "choosing-navigation"
       ],
       "path": "android/code/architecture/navigation3",
       "resources": {
@@ -9252,7 +9652,11 @@
         "error-handling",
         "architecture"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-http-client",
+        "retrofit-okhttp",
+        "app-architecture"
+      ],
       "path": "android/lang-tooling/architecture/networking-data-layer",
       "resources": {
         "reference": false,
@@ -9342,7 +9746,8 @@
         "conversations"
       ],
       "pairs_with": [
-        "m3-notifications"
+        "m3-notifications",
+        "foreground-services"
       ],
       "path": "android/code/platform-services/notifications",
       "resources": {
@@ -9474,7 +9879,10 @@
         "architecture",
         "room"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-lazy-lists",
+        "room"
+      ],
       "path": "android/code/architecture/paging",
       "resources": {
         "reference": false,
@@ -9563,7 +9971,9 @@
         "tracing"
       ],
       "pairs_with": [
-        "adpf-thermal-performance"
+        "adpf-thermal-performance",
+        "crash-anr-vitals",
+        "macrobenchmark-baseline-profiles"
       ],
       "path": "android/lang-tooling/ship/performance-profiling",
       "resources": {
@@ -9626,7 +10036,9 @@
         "large-screen",
         "android-tv"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "media3-exoplayer"
+      ],
       "path": "android/code/form-factors/picture-in-picture",
       "resources": {
         "reference": false,
@@ -9681,7 +10093,9 @@
         "play-store",
         "ship"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "play-console-publishing"
+      ],
       "path": "android/lang-tooling/ship/play-billing",
       "resources": {
         "reference": false,
@@ -9709,7 +10123,10 @@
         "app-bundle"
       ],
       "pairs_with": [
-        "play-games-services"
+        "play-games-services",
+        "choosing-android-distribution",
+        "crash-anr-vitals",
+        "play-billing"
       ],
       "path": "android/lang-tooling/ship/play-console-publishing",
       "resources": {
@@ -9767,7 +10184,10 @@
         "workmanager",
         "power"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-background-work",
+        "alarms-scheduling"
+      ],
       "path": "android/code/platform-services/power-doze",
       "resources": {
         "reference": false,
@@ -9796,7 +10216,8 @@
         "architecture"
       ],
       "pairs_with": [
-        "m3-predictive-back"
+        "m3-predictive-back",
+        "adopting-edge-to-edge-predictive-back"
       ],
       "path": "android/code/architecture/predictive-back",
       "resources": {
@@ -9927,7 +10348,9 @@
         "android",
         "release"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "app-bundles-size"
+      ],
       "path": "android/lang-tooling/build-packaging/r8-proguard",
       "resources": {
         "reference": false,
@@ -10057,7 +10480,8 @@
         "coroutines"
       ],
       "pairs_with": [
-        "choosing-http-client"
+        "choosing-http-client",
+        "networking-data-layer"
       ],
       "path": "android/code/platform-services/retrofit-okhttp",
       "resources": {
@@ -10084,7 +10508,10 @@
         "unit-tests",
         "jvm"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-android-testing",
+        "unit-testing"
+      ],
       "path": "android/lang-tooling/testing/robolectric",
       "resources": {
         "reference": false,
@@ -10112,7 +10539,9 @@
         "flow"
       ],
       "pairs_with": [
-        "choosing-storage"
+        "choosing-storage",
+        "paging",
+        "sqlite-androidx"
       ],
       "path": "android/code/data/room",
       "resources": {
@@ -10141,7 +10570,8 @@
         "platform-services"
       ],
       "pairs_with": [
-        "m3-permissions"
+        "m3-permissions",
+        "location-sensors"
       ],
       "path": "android/code/platform-services/runtime-permissions",
       "resources": {
@@ -10169,7 +10599,9 @@
         "architecture",
         "lifecycle"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "viewmodel"
+      ],
       "path": "android/code/architecture/saved-state",
       "resources": {
         "reference": false,
@@ -10229,7 +10661,11 @@
         "saf",
         "permissions"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "files-serialization",
+        "mediastore",
+        "content-providers"
+      ],
       "path": "android/code/data/scoped-storage",
       "resources": {
         "reference": false,
@@ -10283,7 +10719,9 @@
         "regression",
         "roborazzi"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "compose-preview-testing"
+      ],
       "path": "android/lang-tooling/testing/screenshot-testing",
       "resources": {
         "reference": false,
@@ -10310,7 +10748,9 @@
         "encryption",
         "android"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "biometric"
+      ],
       "path": "android/code/platform-services/security-crypto",
       "resources": {
         "reference": false,
@@ -10529,7 +10969,10 @@
         "data",
         "androidx"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-storage",
+        "room"
+      ],
       "path": "android/code/data/sqlite-androidx",
       "resources": {
         "reference": false,
@@ -10556,7 +10999,11 @@
         "coroutines",
         "compose"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-concurrency-pattern",
+        "viewmodel",
+        "kotlin-flow"
+      ],
       "path": "android/code/architecture/state-flow",
       "resources": {
         "reference": false,
@@ -10618,7 +11065,10 @@
         "scaffold",
         "form-factors"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-canonical-layouts",
+        "list-detail-pane-scaffold"
+      ],
       "path": "android/code/form-factors/supporting-pane-scaffold",
       "resources": {
         "reference": false,
@@ -11831,7 +12281,9 @@
         "audio-routing",
         "connectionservice"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "foreground-services"
+      ],
       "path": "android/code/platform-services/telecom-calls",
       "resources": {
         "reference": false,
@@ -11960,7 +12412,10 @@
         "material3"
       ],
       "pairs_with": [
-        "m3-tv"
+        "m3-tv",
+        "choosing-form-factors",
+        "tv-focus-input",
+        "tv-media-playback"
       ],
       "path": "android/code/form-factors/tv-compose",
       "resources": {
@@ -11987,7 +12442,10 @@
         "dpad",
         "navigation"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-tv",
+        "tv-compose"
+      ],
       "path": "android/code/form-factors/tv-focus-input",
       "resources": {
         "reference": false,
@@ -12013,7 +12471,10 @@
         "playback",
         "tv-compose"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "tv-compose",
+        "media3-exoplayer"
+      ],
       "path": "android/code/form-factors/tv-media-playback",
       "resources": {
         "reference": false,
@@ -12132,7 +12593,9 @@
         "instrumented-tests",
         "end-to-end"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "espresso"
+      ],
       "path": "android/lang-tooling/testing/ui-automator",
       "resources": {
         "reference": false,
@@ -12285,7 +12748,10 @@
         "coroutines",
         "kotlin"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-android-testing",
+        "robolectric"
+      ],
       "path": "android/lang-tooling/testing/unit-testing",
       "resources": {
         "reference": false,
@@ -12380,7 +12846,9 @@
         "bluetooth",
         "proximity"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "bluetooth-ble"
+      ],
       "path": "android/code/platform-services/uwb-ranging",
       "resources": {
         "reference": false,
@@ -12406,7 +12874,10 @@
         "version-catalog",
         "kotlin-dsl"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "convention-plugins",
+        "gradle-kotlin-dsl"
+      ],
       "path": "android/lang-tooling/build-packaging/version-catalogs",
       "resources": {
         "reference": false,
@@ -12433,7 +12904,11 @@
         "hilt",
         "compose"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "lifecycle",
+        "saved-state",
+        "state-flow"
+      ],
       "path": "android/code/architecture/viewmodel",
       "resources": {
         "reference": false,
@@ -12699,7 +13174,10 @@
         "complication-data-source",
         "tiles"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-widget-toolkit",
+        "wear-tiles"
+      ],
       "path": "android/code/form-factors/wear-complications",
       "resources": {
         "reference": false,
@@ -12725,7 +13203,9 @@
         "wearables"
       ],
       "pairs_with": [
-        "m3-wear"
+        "m3-wear",
+        "choosing-form-factors",
+        "wear-data-health"
       ],
       "path": "android/code/form-factors/wear-compose",
       "resources": {
@@ -12752,7 +13232,10 @@
         "wearable",
         "exercise"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "wear-compose",
+        "health-services"
+      ],
       "path": "android/code/form-factors/wear-data-health",
       "resources": {
         "reference": false,
@@ -12778,7 +13261,11 @@
         "tileservice",
         "glanceable"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "choosing-widget-toolkit",
+        "m3-wear",
+        "wear-complications"
+      ],
       "path": "android/code/form-factors/wear-tiles",
       "resources": {
         "reference": false,
@@ -12901,7 +13388,9 @@
         "compose",
         "large-screen"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-large-screens"
+      ],
       "path": "android/code/form-factors/window-manager-foldables",
       "resources": {
         "reference": false,
@@ -13056,7 +13545,10 @@
         "spatial-computing",
         "hand-tracking"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "xr-scenecore",
+        "xr-compose-spatial"
+      ],
       "path": "android/code/form-factors/xr-arcore",
       "resources": {
         "reference": false,
@@ -13083,7 +13575,9 @@
         "material3"
       ],
       "pairs_with": [
-        "m3-xr"
+        "m3-xr",
+        "xr-arcore",
+        "xr-scenecore"
       ],
       "path": "android/code/form-factors/xr-compose-spatial",
       "resources": {
@@ -13139,7 +13633,11 @@
         "jetpack-xr",
         "spatial"
       ],
-      "pairs_with": [],
+      "pairs_with": [
+        "m3-xr",
+        "xr-arcore",
+        "xr-compose-spatial"
+      ],
       "path": "android/code/form-factors/xr-scenecore",
       "resources": {
         "reference": false,

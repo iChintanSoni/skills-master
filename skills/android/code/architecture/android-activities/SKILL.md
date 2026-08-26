@@ -12,7 +12,7 @@ x-skills-master:
   requires:
     android: "16"
     kotlin: "2.2"
-  pairs_with: []
+  pairs_with: [lifecycle, android-manifest]
   sources:
     - https://developer.android.com/guide/components/activities/intro-activities
     - https://developer.android.com/about/versions/17/behavior-changes-17

@@ -10,7 +10,7 @@ x-skills-master:
   category: media-camera-ml
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
-  pairs_with: []
+  pairs_with: [mediastore, ml-kit]
   sources:
     - https://developer.android.com/media/camera/camerax
     - https://developer.android.com/media/camera/camerax/architecture
