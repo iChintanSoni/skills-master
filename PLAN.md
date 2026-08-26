@@ -153,10 +153,17 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   guarding the emitters, not our own snapshots agreeing with themselves. Document in
   `docs/emitters.md` that the Claude projection tracks the Agent Skills spec and this gate
   is what holds it. *(G3)*
-- [ ] **0.4 Dead-surface deletion, carried over (S).** From the previous plan (found during
+- [x] **0.4 Dead-surface deletion, carried over (S).** From the previous plan (found during
   7.5): `CondenseOptions.openQuestion: "summarize"` and `summarizeOpenQuestion()` are
   exercised only by their own tests — no emitter has passed that option since the 1.9 digest
   landed. Delete both, plus their tests, per the 1.5-style rule.
+  **Landed:** the option, the function, its three tests, and the `openQuestion: "keep"`
+  arguments the cursor/copilot emitters were passing (the default, so a no-op) are gone;
+  `CondenseOptions` is down to `hadResources`. Emitted bytes are unchanged — every snapshot
+  and the e2e determinism assertions pass untouched. The behaviour that survives is now
+  stated as intent rather than as a default: condensed targets carry `## Open question` as
+  authored, and one test pins that. `docs/emitters.md` no longer advertises a mode that
+  does not exist.
 
 ## Phase 1 — Spec-surface fixes (small, concrete, land fast)
 

@@ -26,10 +26,7 @@ export const cursorEmitter: Emitter = {
 
     const xm = skill.frontmatter["x-skills-master"];
     const body = withStabilityNote(
-      condenseBody(skill.body, {
-        openQuestion: "keep",
-        hadResources: hasResources(skill.resources),
-      }),
+      condenseBody(skill.body, { hadResources: hasResources(skill.resources) }),
       stabilityNote(xm.stability, xm.snapshot_date),
     );
 

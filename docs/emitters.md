@@ -21,7 +21,9 @@ Single-file targets cannot carry Level-3 resources, so `core/condense.ts`:
 1. flattens links to `reference.md`/`examples.md`/`checklist.md` to plain text,
 2. appends a one-line pointer to the full Claude Code skill.
 
-`agents` goes further: `digestBody` keeps only the description, the leading six Core guidance bullets and three Pitfalls bullets, because consumers inject `AGENTS.md` in full on every request. (`CondenseOptions.openQuestion: "summarize"` predates that digest and no emitter passes it today.)
+`agents` goes further: `digestBody` keeps only the description, the leading six Core guidance bullets and three Pitfalls bullets, because consumers inject `AGENTS.md` in full on every request.
+
+Everything else passes through as authored — including `## Open question`, so a contested skill never reads as settled in a condensed target. (An `openQuestion: "summarize"` mode predated the digest and was never used by an emitter; it was deleted in 0.4.)
 
 **External links are preserved.** Condensation only rewrites links to the skill's own Level-3 files; `https` links in the `## References` section (Apple Documentation, HIG, WWDC, Sample Code) flow through to every target unchanged.
 
