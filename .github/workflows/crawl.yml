@@ -5,10 +5,12 @@ on:
     - cron: "0 6 * * 1" # Mondays 06:00 UTC
   workflow_dispatch:
 
-# Report-only: the job reads the repo and uploads an artifact, nothing else.
-# Without this the job inherits the repository default, which may be write.
+# The crawl reads the repo and writes reports. `issues: write` is the one
+# elevation: the report is published as a pinned issue, because an artifact
+# nobody downloads is the same as no report at all.
 permissions:
   contents: read
+  issues: write
 
 jobs:
   crawl:
@@ -24,9 +26,51 @@ jobs:
           package-manager-cache: false
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
+
       # Report-only: produces coverage/staleness/upstream reports. Never edits skills.
       - run: pnpm exec tsx scripts/crawl/bin.ts --fetch
+
+      # Dead links are the one finding worth acting on immediately, so they are
+      # folded into the same report rather than living in a separate job. Not
+      # --strict: a flaky vendor host must not turn the weekly report red and
+      # train everyone to ignore it. The count is in the report instead.
+      - name: Check documentation links
+        run: node scripts/check-links.mjs skills --json=scripts/crawl/reports/links.json
+
+      - name: Job summary
+        if: always()
+        run: node scripts/crawl/report.mjs >> "$GITHUB_STEP_SUMMARY"
+
+      # Open the report once, then keep rewriting that same issue, so the repo
+      # accumulates one live dashboard rather than a stack of weekly duplicates.
+      - name: Publish report issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TITLE="$(node scripts/crawl/report.mjs --title-only)"
+          node scripts/crawl/report.mjs > /tmp/report.md
+
+          NUMBER="$(gh issue list --state open --label crawl-report --limit 1 --json number --jq '.[0].number // empty')"
+          if [ -n "$NUMBER" ]; then
+            gh issue edit "$NUMBER" --title "$TITLE" --body-file /tmp/report.md
+            echo "Updated issue #$NUMBER"
+          else
+            gh label create crawl-report --description "Weekly library health report" --color ededed || true
+            NUMBER="$(gh issue create --title "$TITLE" --body-file /tmp/report.md --label crawl-report | grep -oE '[0-9]+$')"
+            echo "Created issue #$NUMBER"
+            # Pinning needs GraphQL and caps at 3 per repo; never fail the run over it.
+            ID="$(gh issue view "$NUMBER" --json id --jq .id)"
+            # shellcheck disable=SC2016  # $id is a GraphQL variable; it must reach the API unexpanded.
+            gh api graphql -f query='mutation($id:ID!){pinIssue(input:{issueId:$id}){issue{number}}}' -f id="$ID" || \
+              echo "Could not pin (up to 3 issues can be pinned) — the issue is still open."
+          fi
+
+      # The artifact stays: the rendered report is a summary, and a diff against
+      # last week's raw JSON is sometimes what you actually need.
       - uses: actions/upload-artifact@v7
+        if: always()
         with:
           name: crawl-reports
           path: scripts/crawl/reports/

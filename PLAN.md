@@ -380,9 +380,24 @@ restated against that total.
 
 ## Phase 10 — Staleness that surfaces itself
 
-- [ ] **10.1 Crawl → visible report (M).** Weekly crawl writes a GitHub job summary and
+- [x] **10.1 Crawl → visible report (M).** Weekly crawl writes a GitHub job summary and
   opens/updates a pinned issue with staleness top-N + link-check results (fold
   `check-links.mjs --strict` into the crawl job); artifact stays for the raw JSON.
+  `check-links.mjs` gained `--json=<path>` so its results can be folded in;
+  `scripts/crawl/report.mjs` renders every report as Markdown for both the job summary and
+  the issue. The issue is found by a `crawl-report` label and rewritten in place, so the repo
+  carries one live dashboard rather than a weekly stack; pinning is best-effort (GraphQL,
+  capped at 3 per repo) and never fails the run. The artifact stays — a diff against last
+  week's raw JSON is sometimes what you actually want.
+  **Deliberately not `--strict`**, contrary to the item as written. Running the checker for
+  real found 2 "dead" links, and one of them — `support.google.com/.../answer/9859372` — returns
+  200 on every manual retry. Vendor hosts rate-limit under concurrency and emit one-off 404s
+  for live URLs, so `--strict` would redden the weekly run on vendor mood and train everyone
+  to ignore it. The count goes in the report instead, with a caveat telling the reader to
+  re-check before editing.
+  The other one was real and is fixed: `compose-gestures` cited
+  `touch-input/gestures` (404 on 3/3 retries), now `touch-input/pointer-input/understand-gestures`.
+  Report degrades gracefully — missing link data omits that section, no reports at all says so.
 
 ---
 
