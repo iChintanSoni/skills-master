@@ -23,6 +23,7 @@ interface SkillSpec {
   stability?: string;
   snapshotDate?: string;
   pairsWith?: string[];
+  tags?: string[];
   body?: string;
   sources?: string[];
   /** resource filenames (examples.md / checklist.md / reference.md) to create alongside. */
@@ -65,6 +66,7 @@ function writeSkill(spec: SkillSpec): void {
     "---",
     `name: ${name}`,
     `description: "A test skill. Use when testing."`,
+    `tags: [${(spec.tags ?? []).join(", ")}]`,
     "x-skills-master:",
     `  domain: ${spec.domain ?? spec.dir.split("/")[0]}`,
     `  class: ${spec.cls ?? "code"}`,
@@ -261,6 +263,29 @@ describe("lintSkills — tightened rules", () => {
     for (const p of partners) {
       writeSkill({ dir: `apple/code/app-frameworks/${p}`, pairsWith: ["at-cap"] });
     }
+    const res = lintSkills(root);
+    expect(res.warnCount).toBe(0);
+    expect(res.errorCount).toBe(0);
+  });
+
+  it("warns when a tag repeats a term the skill is already findable by", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/echo-tags", tags: ["testing", "app-frameworks"] });
+    expect(messagesOf("warn")).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining('tag "testing" is already in the name or description'),
+        expect.stringContaining('tag "app-frameworks" is already in the name or description'),
+      ]),
+    );
+  });
+
+  it("catches a tag that only differs from the prose by spacing or case", () => {
+    // the shared body says "Use when testing."
+    writeSkill({ dir: "apple/code/app-frameworks/spaced-tags", tags: ["Use-When", "USEWHEN"] });
+    expect(messagesOf("warn").filter((m) => m.startsWith("tag "))).toHaveLength(2);
+  });
+
+  it("accepts a tag that contributes a term the skill never states", () => {
+    writeSkill({ dir: "apple/code/app-frameworks/useful-tags", tags: ["cryptography", "i18n"] });
     const res = lintSkills(root);
     expect(res.warnCount).toBe(0);
     expect(res.errorCount).toBe(0);

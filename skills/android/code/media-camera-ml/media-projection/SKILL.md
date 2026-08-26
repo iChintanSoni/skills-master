@@ -3,7 +3,7 @@ name: media-projection
 description: Covers screen capture with MediaProjection API — Use when building screen recording, live-streaming, or mirroring features that require capturing display output to a Surface or VirtualDisplay on Android 16+.
 globs:
   - "**/*.kt"
-tags: [media, screen-capture, foreground-service, virtual-display]
+tags: [foreground-service]
 x-skills-master:
   domain: android
   class: code

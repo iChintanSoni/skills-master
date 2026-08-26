@@ -1,7 +1,7 @@
 ---
 name: m3-dark-theme
 description: "Design guidance and critique for Material 3 dark theme on Android — surface tones, tonal elevation, container hierarchy, dynamic color in dark, contrast and legibility. Use when designing or reviewing a dark-theme UI, auditing tonal surface hierarchy, choosing between pure-black and M3 near-black surfaces, verifying contrast ratios in both themes, or deciding how dynamic color interacts with dark palettes."
-tags: [m3, design, dark-theme, color, foundations]
+tags: []
 x-skills-master:
   domain: android
   class: design

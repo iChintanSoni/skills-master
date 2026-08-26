@@ -3,7 +3,7 @@ name: kotlin-serialization
 description: Covers kotlinx.serialization for Android — @Serializable classes, Json format configuration, custom serializers, polymorphic sealed hierarchies, and Retrofit/Ktor converter integration. Use when encoding or decoding JSON (or other formats) in a Kotlin Android project without relying on Gson or Moshi.
 globs:
   - "**/*.kt"
-tags: [kotlin, serialization, json, android, networking]
+tags: [networking]
 x-skills-master:
   domain: android
   class: lang-tooling

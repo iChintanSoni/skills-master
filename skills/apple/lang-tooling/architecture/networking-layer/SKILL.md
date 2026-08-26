@@ -3,7 +3,7 @@ name: networking-layer
 description: "Guidance for building a testable async networking layer with URLSession in Swift 6: endpoint modeling, Codable decoding, typed error handling, retries, timeouts, token refresh, and URLProtocol stubs. Use when designing an API client, wrapping URLSession, decoding JSON responses, adding auth/token refresh, or making network code unit-testable."
 globs:
   - "**/*.swift"
-tags: [networking, urlsession, async-await, codable, testing]
+tags: [async-await, testing]
 x-skills-master:
   domain: apple
   class: lang-tooling

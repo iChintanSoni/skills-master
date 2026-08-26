@@ -3,7 +3,7 @@ name: system-ui-styling
 description: Covers configuring, styling, and toggling system status bars, navigation bars, edge-to-edge display modes, and display cutouts. Use when adjusting screen overlays, managing system visibility, or configuring notch/camera layout overlays.
 globs:
   - "**/*.kt"
-tags: [system-ui, status-bar, navigation-bar, edge-to-edge, cutout, compose, android]
+tags: []
 x-skills-master:
   domain: android
   class: code

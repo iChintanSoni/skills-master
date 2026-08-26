@@ -1,7 +1,7 @@
 ---
 name: m3-chromeos-desktop
 description: "Design critique and guidance for Material 3 on ChromeOS and Android desktop environments, covering pointer and keyboard-first interaction, resizable free-form windows, multitasking, hover and right-click affordances, and productivity patterns on a large display. Use when designing or auditing an Android app intended to run on ChromeOS, evaluating whether a UI is appropriately calibrated for mouse and keyboard input, reviewing window resize behavior, or specifying context menus, tooltips, and drag-and-drop flows for a desktop-class experience."
-tags: [m3, design, chromeos, large-screen, desktop, productivity]
+tags: [large-screen]
 x-skills-master:
   domain: android
   class: design

@@ -3,7 +3,7 @@ name: compose-modifiers
 description: Covers Modifier chains in Jetpack Compose — order semantics, scoped modifiers, common modifiers, reusable extraction, and custom Modifier.Node. Use when building or reviewing Composable layout/decoration/interaction code that relies on padding, size, background, clip, clickable, or scope-specific modifiers like weight and align.
 globs:
   - "**/*.kt"
-tags: [compose, modifiers, layout, android, material3]
+tags: [material3]
 x-skills-master:
   domain: android
   class: code

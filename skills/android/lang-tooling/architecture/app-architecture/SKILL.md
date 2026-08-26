@@ -3,7 +3,7 @@ name: app-architecture
 description: Covers modern Android layered architecture — UI, domain, and data layers — with unidirectional data flow, single source of truth, and immutable UI state. Use when designing a new Android app, refactoring an existing codebase into layers, deciding where logic belongs, or evaluating UI presentation patterns (MVVM vs. MVI vs. plain UDF) in code review.
 globs:
   - "**/*.kt"
-tags: [architecture, mvvm, mvi, viewmodel, udf, compose]
+tags: [viewmodel, compose]
 x-skills-master:
   domain: android
   class: lang-tooling

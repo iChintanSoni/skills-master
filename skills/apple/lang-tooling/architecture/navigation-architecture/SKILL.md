@@ -3,7 +3,7 @@ name: navigation-architecture
 description: "Guides modeling SwiftUI navigation as serializable state with value-based NavigationStack paths, a router/coordinator owning the path, type-erased vs typed routes, deep/universal link parsing, and scene restoration. Use when designing app navigation, choosing centralized vs local navigation state, building a router, handling incoming URLs, or restoring the stack after relaunch."
 globs:
   - "**/*.swift"
-tags: [swiftui, navigation, routing, deep-linking, architecture]
+tags: [routing, deep-linking]
 x-skills-master:
   domain: apple
   class: lang-tooling

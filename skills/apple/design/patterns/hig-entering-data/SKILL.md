@@ -1,7 +1,7 @@
 ---
 name: hig-entering-data
 description: "Design-critique guidance for Apple Human Interface Guidelines on entering data across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS, covering minimizing typing, matching the keyboard to the content, AutoFill and one-time codes, sensible defaults and formatting, inline validation, and reducing required fields. Use when critiquing or specifying a form, sign-in, sign-up, checkout, or settings screen, reviewing whether a design asks for too much manual input, judging keyboard and AutoFill choices, or evaluating how errors and required fields are presented. Produces UX critique and recommendations, not code."
-tags: [hig, forms, data-entry, autofill, keyboards, design]
+tags: [data-entry, keyboards]
 x-skills-master:
   domain: apple
   class: design

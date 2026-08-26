@@ -3,7 +3,7 @@ name: media3-session
 description: Covers Media3 MediaSession and MediaController for exposing playback to the system. Use when building background audio/video playback, media notification controls, or browsable media libraries with MediaSessionService or MediaLibraryService.
 globs:
   - "**/*.kt"
-tags: [media3, mediasession, background-playback, exoplayer, android]
+tags: [background-playback, exoplayer]
 x-skills-master:
   domain: android
   class: code

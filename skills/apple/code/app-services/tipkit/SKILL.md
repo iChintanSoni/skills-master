@@ -3,7 +3,7 @@ name: tipkit
 description: "Guidance for surfacing contextual feature-discovery tips with TipKit. Use when defining a Tip, gating it with parameter- or event-based rules, presenting via popoverTip or TipView, grouping tips, or syncing tip status across devices with CloudKit."
 globs:
   - "**/*.swift"
-tags: [tipkit, onboarding, swiftui, feature-discovery, cloudkit]
+tags: [onboarding, swiftui]
 x-skills-master:
   domain: apple
   class: code

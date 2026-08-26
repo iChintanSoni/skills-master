@@ -3,7 +3,7 @@ name: media3-ai-effects
 description: Covers the Media3 AI Effects library announced at I/O 2026 — a unified interface for image and video enhance, magic eraser, and studio sound that routes each effect to the most efficient path available on the device. Use when adding AI-driven media cleanup to capture or editing flows, removing objects from user photos or video, denoising voice recordings, or deciding how to ship premium media effects across a heterogeneous device fleet.
 globs:
   - "**/*.kt"
-tags: [media3, ai-effects, magic-eraser, enhance, studio-sound, media]
+tags: []
 x-skills-master:
   domain: android
   class: code

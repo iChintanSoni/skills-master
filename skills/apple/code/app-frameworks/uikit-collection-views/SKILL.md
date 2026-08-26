@@ -3,7 +3,7 @@ name: uikit-collection-views
 description: "Builds modern UICollectionView screens with compositional layout, diffable data sources, cell registrations, and content configurations. Use when laying out grids, lists, or outlines in UIKit, when sections need different layouts, when migrating off flow layout or register(_:forCellWithReuseIdentifier:), or when async data updates must animate safely off the main thread's reload path."
 globs:
   - "**/*.swift"
-tags: [uikit, collectionview, compositional-layout, diffable, lists]
+tags: []
 x-skills-master:
   domain: apple
   class: code

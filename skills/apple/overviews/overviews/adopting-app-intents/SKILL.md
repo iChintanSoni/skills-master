@@ -1,7 +1,7 @@
 ---
 name: adopting-app-intents
 description: Decision router for exposing app functionality through the App Intents framework across Siri, Shortcuts, Spotlight, interactive widgets, Controls, the Action button, and Visual Intelligence. Use when deciding which app actions and content to surface as intents, evaluating whether a feature is worth modeling as an intent, planning a phased adoption path, or routing into App Intents implementation work.
-tags: [app-intents, siri, shortcuts, spotlight, widgets]
+tags: []
 x-skills-master:
   domain: apple
   class: overview

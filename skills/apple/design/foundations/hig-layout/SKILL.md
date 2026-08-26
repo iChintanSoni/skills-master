@@ -1,7 +1,7 @@
 ---
 name: hig-layout
 description: Design-critique guidance for Apple Human Interface Guidelines layout foundations across iOS, iPadOS, macOS, and visionOS, covering safe areas and layout margins, Dynamic Type, size classes and resizable windows, alignment and consistent spacing, and edge-to-edge content under Liquid Glass. Use when critiquing or specifying a screen layout, reviewing whether a design respects safe areas and margins, evaluating how a UI adapts across device sizes, multitasking windows, or orientations, or judging spacing, alignment, and edge-to-edge content treatment for an Apple platform interface.
-tags: [hig, layout, design, adaptivity, accessibility]
+tags: [adaptivity, accessibility]
 x-skills-master:
   domain: apple
   class: design

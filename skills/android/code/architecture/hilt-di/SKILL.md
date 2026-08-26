@@ -3,7 +3,7 @@ name: hilt-di
 description: Covers Hilt dependency injection for Android — @HiltAndroidApp, @AndroidEntryPoint, @HiltViewModel, modules, scopes, qualifiers, assisted injection, EntryPoint, and testing. Use when wiring DI into an Android app with Hilt.
 globs:
   - "**/*.kt"
-tags: [hilt, dependency-injection, android, architecture, viewmodel, testing]
+tags: []
 x-skills-master:
   domain: android
   class: code

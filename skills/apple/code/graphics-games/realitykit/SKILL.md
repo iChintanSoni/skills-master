@@ -3,7 +3,7 @@ name: realitykit
 description: "Builds 3D and AR experiences with RealityKit's Entity-Component-System model, RealityView in SwiftUI, USDZ and Reality Composer Pro scenes, anchors, materials, animations, physics, and SwiftUI attachments. Use when adding 3D content, rendering models, placing AR anchors, handling collisions, or attaching SwiftUI views to entities on iOS, iPadOS, macOS, or visionOS."
 globs:
   - "**/*.swift"
-tags: [realitykit, swiftui, visionos, ar, 3d, ecs]
+tags: [ecs]
 x-skills-master:
   domain: apple
   class: code

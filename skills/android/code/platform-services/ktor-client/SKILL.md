@@ -3,7 +3,7 @@ name: ktor-client
 description: Ktor HTTP client for Android and large-screen apps — Use when building type-safe, coroutine-native HTTP networking with content negotiation, auth plugins, and Kotlin Multiplatform compatibility.
 globs:
   - "**/*.kt"
-tags: [networking, ktor, kotlin-multiplatform, coroutines]
+tags: [coroutines]
 x-skills-master:
   domain: android
   class: code

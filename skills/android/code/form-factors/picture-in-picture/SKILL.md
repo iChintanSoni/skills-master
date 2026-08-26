@@ -3,7 +3,7 @@ name: picture-in-picture
 description: Covers Android Picture-in-Picture (PiP) mode using PictureInPictureParams — entering PiP on home/pause, configuring aspect ratio and source-rect hints, the Compose pipLayout Modifier, auto-enter behavior, custom remote actions, and adapting UI when the window shrinks to PiP size. Use when building video players, video calls, navigation, or any feature that should continue playing or displaying content in a floating overlay while the user switches to another app.
 globs:
   - "**/*.kt"
-tags: [picture-in-picture, video, compose, large-screen, android-tv]
+tags: [large-screen, android-tv]
 x-skills-master:
   domain: android
   class: code

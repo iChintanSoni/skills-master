@@ -1,7 +1,7 @@
 ---
 name: m3-expressive
 description: "Design guidance for Material 3 Expressive — the evolution of Material You that adds physics-based spring motion, animated shape morphing, new and updated components, and the expressive motion scheme to the M3 design system. Use when deciding whether and how to apply expressive treatment (spring physics, shape morphing, emphasized typography, updated component variants) without sacrificing usability, clarity, or accessibility."
-tags: [m3, design, expressive, motion, material-you]
+tags: []
 x-skills-master:
   domain: android
   class: design

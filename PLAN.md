@@ -243,8 +243,23 @@ restated against that total.
   `hig-charts`, `hig-sheets` and `hig-toolbars` all say "iPhone", never "iOS". Getting it
   right needs a per-domain synonym map, which would hardcode domain vocabulary into a
   linter the schema deliberately keeps domain-agnostic.
-- [ ] **7.4 Tag consolidation (M).** 543 of 887 tags are used once. Define a canonical
-  vocabulary (or drop tags), lint against it.
+- [x] **7.4 Tag consolidation (M).** 543 of 887 tags are used once. Define a canonical
+  vocabulary (or drop tags), lint against it. **Neither, on the evidence.** `tags` reach no
+  emit target and nothing groups by them — `domain`/`class`/`category`/`platforms` already
+  do the faceting — so their one job is feeding `search`. Measured against that job, 76% of
+  tag instances were already findable via the skill's own name/description/facets, and of
+  the 165 terms that would have gone dead without tags, **118 were pure spelling variants**
+  (`wear-os` ← "Wear OS", `ios17` ← "iOS 17", `async-await` ← "async/await").
+  So the fix was mostly in the matcher, not the vocabulary: `search` now compares on letters
+  and digits alone (`core/search-text.ts`), which makes "wear os", "wear-os" and "WearOS"
+  equivalent for every query, not just tagged ones. Tags are then redefined as what is left
+  — **a search term the skill is not already findable by** — and pruned to it:
+  887 → 204 distinct, 2307 → 343 instances, 186 skills now carry none.
+  Survivors are real synonyms no normalization would produce: `i18n`, `nlp`, `cryptography`,
+  `biometrics`, `monetization`. A linter warning holds the rule (three tests), and unlike
+  7.3's rejected rule this one needs no vocabulary map — it compares the tag against the
+  skill's own text. Verified no recall was lost: replaying all 896 former tag and facet
+  terms as queries, **0 lost a hit and 234 returned strictly more**.
 - [ ] **7.5 Surface `stability` to the agent (S)** *(found during 7.2)*. `stability` is
   stripped with the rest of `x-skills-master`, so it reaches no emit target — an agent
   cannot tell `emerging` guidance from settled guidance. `contested` skills get through on

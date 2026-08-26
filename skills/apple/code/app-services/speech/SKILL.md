@@ -3,7 +3,7 @@ name: speech
 description: "Guidance for speech-to-text and text-to-speech on Apple platforms using the Speech and AVFAudio frameworks. Use when transcribing microphone or file audio with SpeechAnalyzer/SpeechTranscriber or SFSpeechRecognizer, handling speech and microphone authorization, streaming audio buffers, or synthesizing spoken output with AVSpeechSynthesizer including Personal Voice."
 globs:
   - "**/*.swift"
-tags: [speech, transcription, accessibility, audio, avfoundation]
+tags: [transcription, accessibility, avfoundation]
 x-skills-master:
   domain: apple
   class: code

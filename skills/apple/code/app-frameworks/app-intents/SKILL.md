@@ -3,7 +3,7 @@ name: app-intents
 description: "Defining AppIntent and AppEntity, parameters and resolution, AppShortcuts for Siri and Spotlight, intents that power interactive widgets and Controls, and the perform method. Use when exposing app actions or content to Siri, Spotlight, Shortcuts, widgets, Controls, or Apple Intelligence, or when designing AppEntity, AppShortcutsProvider, queries, or donations."
 globs:
   - "**/*.swift"
-tags: [app-intents, siri, shortcuts, widgets, spotlight, apple-intelligence]
+tags: []
 x-skills-master:
   domain: apple
   class: code

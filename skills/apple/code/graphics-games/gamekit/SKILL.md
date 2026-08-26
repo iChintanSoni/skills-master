@@ -3,7 +3,7 @@ name: gamekit
 description: "Use when adding Game Center to a game with GameKit — authenticating the local player via GKLocalPlayer.authenticateHandler, submitting leaderboard scores and reporting achievements, showing the dashboard with GKAccessPoint or GKGameCenterViewController, running real-time GKMatch or turn-based GKTurnBasedMatch matchmaking, saving games, and adopting the newer Challenges and Activities (GKGameActivity)."
 globs:
   - "**/*.swift"
-tags: [gamekit, game-center, multiplayer, leaderboards, achievements]
+tags: [multiplayer]
 x-skills-master:
   domain: apple
   class: code

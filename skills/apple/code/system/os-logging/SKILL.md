@@ -3,7 +3,7 @@ name: os-logging
 description: "Guidance for unified logging and performance tracing on Apple platforms with the Logger (OSLog) and OSSignposter APIs. Use when adding diagnostic logging, choosing log levels, redacting sensitive data with privacy annotations, picking subsystems/categories, reading logs in Console or via the log command, or measuring durations with signposts in Instruments."
 globs:
   - "**/*.swift"
-tags: [logging, oslog, signposts, instruments, diagnostics, privacy]
+tags: [diagnostics]
 x-skills-master:
   domain: apple
   class: code

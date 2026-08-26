@@ -5,7 +5,7 @@ globs:
   - "**/*.gradle.kts"
   - "**/*.kts"
   - "**/*.toml"
-tags: [r8, proguard, shrinking, build, android, release]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

@@ -3,7 +3,7 @@ name: core-data
 description: "Use when persisting an object graph with Apple's Core Data stack: setting up NSPersistentContainer, separating view and background contexts, writing fetch requests and predicates, running batch insert/delete/update, performing lightweight or staged migrations, enforcing perform-based concurrency, or mirroring a store to iCloud with NSPersistentCloudKitContainer. Also use when deciding between Core Data and SwiftData."
 globs:
   - "**/*.swift"
-tags: [core-data, persistence, cloudkit, concurrency, migration]
+tags: [persistence]
 x-skills-master:
   domain: apple
   class: code

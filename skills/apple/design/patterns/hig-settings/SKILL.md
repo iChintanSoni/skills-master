@@ -1,7 +1,7 @@
 ---
 name: hig-settings
 description: "Design critique and recommendations for app settings and configuration on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing a settings screen, deciding between in-app settings and the system Settings app, choosing sensible defaults, grouping and labeling options, or trimming options the app could decide itself. Produces UX guidance and critique, not code. Triggers: settings screen, preferences pane, configuration, onboarding setup choices, defaults, options grouping, Settings bundle, settings app."
-tags: [settings, configuration, defaults, patterns, hig, onboarding]
+tags: []
 x-skills-master:
   domain: apple
   class: design

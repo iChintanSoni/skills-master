@@ -1,7 +1,7 @@
 ---
 name: m3-loading
 description: "Material 3 design guidance for loading patterns in Android apps: choosing between skeletons, spinners, and determinate progress; managing perceived performance; avoiding layout shift; and deciding when to block versus load incrementally. Use when designing or reviewing any loading, wait, or in-progress state in a Material You app, or when auditing how asynchronous work is communicated to users across first-load, refresh, and partial-update scenarios."
-tags: [m3, design, loading, patterns, perceived-performance, ux]
+tags: [ux]
 x-skills-master:
   domain: android
   class: design

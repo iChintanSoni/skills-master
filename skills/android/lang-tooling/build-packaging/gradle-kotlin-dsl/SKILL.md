@@ -5,7 +5,7 @@ globs:
   - "**/*.gradle.kts"
   - "**/*.kts"
   - "**/*.toml"
-tags: [gradle, build, kotlin-dsl, android, agp]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

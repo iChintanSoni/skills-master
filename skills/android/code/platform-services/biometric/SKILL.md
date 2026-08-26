@@ -3,7 +3,7 @@ name: biometric
 description: Covers BiometricPrompt for fingerprint/face/device-credential authentication on Android — use when gating sensitive actions, protecting CryptoObject-bound keys, or choosing authenticator strength for your security model.
 globs:
   - "**/*.kt"
-tags: [biometric, security, authentication, cryptography, identity]
+tags: [cryptography, identity]
 x-skills-master:
   domain: android
   class: code

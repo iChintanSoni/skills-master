@@ -19,7 +19,7 @@ description: >-                      # third person, <=1024 chars, includes "Use
   Implements modern SwiftUI navigation … Use when building stacks, split views, or deep links.
 globs:                              # optional; include only for file-scoped code skills
   - "**/*.swift"
-tags: [swiftui, navigation]
+tags: []                            # usually empty; see "What `tags` are for"
 x-skills-master:
   domain: apple                     # ecosystem: apple | android | web | …
   class: code                       # code | design | lang-tooling | overview
@@ -68,6 +68,28 @@ The primary Documentation/HIG URLs should also appear in the `sources` frontmatt
 4. **Contested topics present tradeoffs.** For genuinely debated choices (MV vs MVVM, SwiftUI vs UIKit), set `stability: contested`, add a `## Open question` section, and do **not** prescribe a single answer. Route the decision through an `overviews/` skill.
 5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. See [What earns a pair](#what-earns-a-pair) for what belongs in the list.
 6. **L2/L3 split.** When the body grows past ~500 lines, move long examples → `examples.md`, step lists → `checklist.md`, and deep reference tables → `reference.md` (a defined slot no skill currently uses — prefer the first two unless a true lookup table outgrows them), and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
+
+## What `tags` are for
+
+`tags` feed exactly one thing: `skills-master search`, which matches a query against the
+skill's name, description, domain, category, class **and** tags. Nothing else reads them —
+they reach no emit target, and `domain`/`class`/`category`/`platforms` already carry the
+faceting. So a tag has one job: **add a search term the skill is not already findable by.**
+
+Search compares on letters and digits alone, so spelling is not a reason for a tag.
+"wear os", "wear-os" and "WearOS" all already find prose that says "Wear OS", and "ios17"
+finds "iOS 17". What a tag can add is a *word the skill never says*:
+
+```yaml
+# cryptokit — description covers hashing, HMAC, AES-GCM, Secure Enclave
+tags: [security, keychain, signing]   # none of these words appear in the prose
+```
+
+A tag echoing the name or description is dead weight — it cannot change a single search
+result. The linter warns on those. Most skills need **none**: 186 of 433 carry no tags,
+because a good "Use when …" description already contains every word you would search for.
+Reach for a tag only when you can name the query it rescues — `i18n` for localization,
+`nlp` for the Natural Language framework, `monetization` for StoreKit.
 
 ## What `platforms` means
 

@@ -3,7 +3,7 @@ name: compose-fundamentals
 description: Covers Jetpack Compose fundamentals — composable functions, declarative UI, the recomposition mental model, the composition, layout, and drawing phases, and stateless versus stateful composables. Use when starting a Compose UI, reasoning about why a composable recomposes or skips, breaking a screen into small composables, or setting up previews.
 globs:
   - "**/*.kt"
-tags: [compose, jetpack-compose, recomposition, ui]
+tags: []
 x-skills-master:
   domain: android
   class: code

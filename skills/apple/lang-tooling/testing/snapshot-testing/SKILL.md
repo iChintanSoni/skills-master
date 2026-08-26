@@ -3,7 +3,7 @@ name: snapshot-testing
 description: "Guidance on snapshot (approval) testing for SwiftUI and UIKit/AppKit UI — capturing reference images or serialized text, judging when they add value, keeping them stable across devices and OS versions, reviewing diffs, and pairing them with unit tests. Use when adding visual regression coverage, debugging flaky or device-dependent snapshots, deciding image-vs-text strategies, wiring snapshots into Swift Testing, or reviewing recorded reference changes in a PR."
 globs:
   - "**/*.swift"
-tags: [testing, snapshot, swiftui, swift-testing, regression]
+tags: []
 x-skills-master:
   domain: apple
   class: lang-tooling

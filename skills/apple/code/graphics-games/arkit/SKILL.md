@@ -3,7 +3,7 @@ name: arkit
 description: "Use when building augmented reality with ARKit on iOS/iPadOS (ARSession, world/face/body tracking, plane and image/object detection, ARAnchor, raycasting) or spatial tracking on visionOS (ARKitSession with world, hand, scene-reconstruction, and plane providers plus authorization), and when pairing ARKit with RealityKit for rendering."
 globs:
   - "**/*.swift"
-tags: [arkit, realitykit, visionos, augmented-reality, spatial]
+tags: []
 x-skills-master:
   domain: apple
   class: code

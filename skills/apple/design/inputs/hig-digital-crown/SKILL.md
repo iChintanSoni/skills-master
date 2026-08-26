@@ -1,7 +1,7 @@
 ---
 name: hig-digital-crown
 description: "Applies Apple Human Interface Guidelines to the Digital Crown on Apple Watch — precise scrolling, value adjustment, haptic detents, and keeping Crown input paired with on-screen focus. Use when designing or reviewing a watchOS screen that scrolls, paginates, or adjusts a value with the Crown, choosing whether the Crown or touch drives an interaction, or critiquing whether the Crown is overloaded. Produces design critique and recommendations, not code."
-tags: [hig, design, watchos, digital-crown, inputs, haptics]
+tags: [haptics]
 x-skills-master:
   domain: apple
   class: design

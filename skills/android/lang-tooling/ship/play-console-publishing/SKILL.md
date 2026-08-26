@@ -1,7 +1,7 @@
 ---
 name: play-console-publishing
 description: Covers shipping Android apps through Google Play — the Play Console, release tracks (internal/closed/open/production) and staged rollouts, Android App Bundles and Play App Signing, in-app updates and in-app reviews, Play Integrity API, and store listing and policy essentials. Use when setting up a Play release pipeline, managing track promotion, integrating flexible or immediate in-app updates, verifying app integrity, or preparing a store listing for review.
-tags: [android, play-console, publishing, release, ship, app-bundle]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

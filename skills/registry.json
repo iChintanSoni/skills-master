@@ -13,13 +13,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "accessibility",
-        "testing",
-        "espresso",
-        "talkback",
-        "ci"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-accessibility",
         "compose-accessibility"
@@ -44,11 +38,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "activitykit",
-        "live-activities",
-        "dynamic-island",
-        "widgetkit",
-        "push"
+        "widgetkit"
       ],
       "pairs_with": [
         "hig-live-activities-design",
@@ -75,8 +65,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "adaptive",
-        "window-size-classes",
         "large-screen",
         "compose",
         "material3"
@@ -110,13 +98,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "app-intents",
-        "siri",
-        "shortcuts",
-        "spotlight",
-        "widgets"
-      ],
+      "tags": [],
       "pairs_with": [
         "app-intents",
         "widgetkit",
@@ -143,11 +125,8 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "compose",
-        "migration",
         "interop",
-        "material3",
-        "viewmodel"
+        "material3"
       ],
       "pairs_with": [
         "android-views-interop",
@@ -174,11 +153,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "edge-to-edge",
-        "predictive-back",
-        "insets",
-        "window",
-        "compose",
         "material3"
       ],
       "pairs_with": [
@@ -207,10 +181,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "kmp",
-        "kotlin-multiplatform",
-        "android",
-        "ios",
         "architecture"
       ],
       "pairs_with": [
@@ -239,11 +209,8 @@
       "stability": "emerging",
       "version": "1.1.0",
       "tags": [
-        "liquid-glass",
-        "design",
         "swiftui",
-        "uikit",
-        "migration"
+        "uikit"
       ],
       "pairs_with": [
         "hig-materials-liquid-glass",
@@ -270,10 +237,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "material3",
-        "motion",
-        "shape",
-        "compose",
         "design-system"
       ],
       "pairs_with": [
@@ -300,11 +263,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "swift-6",
-        "concurrency",
-        "migration",
-        "sendable",
-        "mainactor"
+        "migration"
       ],
       "pairs_with": [
         "swift-6-migration",
@@ -328,14 +287,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "adpf",
-        "thermal",
-        "performance",
-        "games",
-        "game-mode",
-        "power"
-      ],
+      "tags": [],
       "pairs_with": [
         "performance-profiling",
         "game-loop-frame-pacing"
@@ -359,11 +311,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "agdk",
-        "game-activity",
         "ndk",
-        "native",
-        "games",
         "cpp"
       ],
       "pairs_with": [
@@ -388,14 +336,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "agsl",
-        "runtimeshader",
-        "shaders",
-        "rendereffect",
-        "compose",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-graphics",
         "choosing-graphics-api"
@@ -420,11 +361,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "alarms",
-        "alarmmanager",
-        "scheduling",
-        "background-work",
-        "doze"
+        "background-work"
       ],
       "pairs_with": [
         "choosing-background-work",
@@ -449,12 +386,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "activities",
-        "lifecycle",
-        "task-affinity",
-        "launchmode",
-        "state-restoration",
-        "android"
+        "task-affinity"
       ],
       "pairs_with": [
         "lifecycle",
@@ -478,14 +410,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.0",
-      "tags": [
-        "android-cli",
-        "agents",
-        "tooling",
-        "emulator",
-        "sdk",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "gradle-kotlin-dsl",
         "ci-cd"
@@ -508,14 +433,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "manifest",
-        "security",
-        "deep-links",
-        "components",
-        "configuration",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "android-activities",
         "navigation-deep-links",
@@ -541,9 +459,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "android",
-        "navigation",
-        "architecture",
         "deep-linking",
         "routing",
         "jetpack"
@@ -571,12 +486,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "resources",
         "configurations",
-        "localization",
-        "drawables",
-        "layouts",
-        "android"
+        "localization"
       ],
       "pairs_with": [
         "m3-app-icons",
@@ -601,15 +512,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "views",
-        "xml",
-        "compose",
-        "interop",
-        "custom-view",
-        "canvas",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "adopting-compose",
         "choosing-compose-or-views",
@@ -635,11 +538,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "app-actions",
-        "shortcuts",
-        "assistant",
-        "deep-linking",
-        "launcher"
+        "deep-linking"
       ],
       "pairs_with": [
         "app-functions",
@@ -664,11 +563,7 @@
       "stability": "contested",
       "version": "1.0.1",
       "tags": [
-        "architecture",
-        "mvvm",
-        "mvi",
         "viewmodel",
-        "udf",
         "compose"
       ],
       "pairs_with": [
@@ -695,9 +590,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "android",
-        "build-packaging",
-        "app-bundle",
         "size-optimisation",
         "dynamic-delivery"
       ],
@@ -725,12 +617,7 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "app-functions",
-        "agents",
-        "assistant",
         "mcp",
-        "gemini",
-        "platform-services",
         "android17"
       ],
       "pairs_with": [
@@ -759,14 +646,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "app-intents",
-        "siri",
-        "shortcuts",
-        "widgets",
-        "spotlight",
-        "apple-intelligence"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-siri-design",
         "hig-snippets",
@@ -796,11 +676,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "swiftui",
-        "lifecycle",
-        "scenephase",
-        "appdelegate",
-        "state-restoration"
+        "appdelegate"
       ],
       "pairs_with": [
         "swiftui-scenes-windows"
@@ -824,12 +700,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "android",
-        "localization",
-        "i18n",
-        "resources",
-        "rtl",
-        "plurals"
+        "i18n"
       ],
       "pairs_with": [
         "m3-rtl-internationalization",
@@ -859,13 +730,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "app-store",
-        "review",
-        "submission",
-        "privacy",
-        "in-app-purchase"
-      ],
+      "tags": [],
       "pairs_with": [
         "testflight-appstore-connect",
         "privacy-manifests"
@@ -888,13 +753,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "shortcuts",
-        "app-actions",
-        "assistant",
-        "launcher",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "appsearch",
         "app-actions-assistant"
@@ -918,11 +777,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "signing",
-        "build-packaging",
-        "release",
-        "security",
-        "gradle"
+        "security"
       ],
       "pairs_with": [
         "choosing-android-distribution",
@@ -946,13 +801,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "appstoreconnect",
-        "rest",
-        "jwt",
-        "testflight",
-        "ci"
-      ],
+      "tags": [],
       "pairs_with": [
         "testflight-appstore-connect"
       ],
@@ -975,13 +824,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "glance",
-        "widgets",
-        "appwidget",
-        "compose",
-        "home-screen"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-widgets",
         "choosing-widget-toolkit"
@@ -1005,11 +848,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "appkit",
-        "macos",
-        "nswindow",
-        "nsdocument",
-        "responder-chain"
+        "nsdocument"
       ],
       "pairs_with": [
         "choosing-ui-toolkit",
@@ -1034,13 +873,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "appkit",
-        "swiftui",
-        "interop",
-        "macos",
-        "hosting"
-      ],
+      "tags": [],
       "pairs_with": [
         "appkit-core"
       ],
@@ -1064,10 +897,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "appsearch",
-        "search",
-        "indexing",
-        "data",
         "jetpack"
       ],
       "pairs_with": [
@@ -1093,13 +922,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "arkit",
-        "realitykit",
-        "visionos",
-        "augmented-reality",
-        "spatial"
-      ],
+      "tags": [],
       "pairs_with": [
         "realitykit"
       ],
@@ -1126,13 +949,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "assets",
-        "xcode",
-        "sf-symbols",
-        "app-icon",
-        "resources"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-app-icons",
         "hig-color"
@@ -1157,8 +974,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "autofill",
-        "forms",
         "security",
         "ux",
         "accessibility"
@@ -1187,13 +1002,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "avfoundation",
-        "camera",
-        "capture",
-        "media",
-        "ios17"
-      ],
+      "tags": [],
       "pairs_with": [
         "photokit",
         "screencapturekit"
@@ -1220,14 +1029,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "avfoundation",
-        "avkit",
-        "media",
-        "playback",
-        "audio",
-        "video"
-      ],
+      "tags": [],
       "pairs_with": [
         "now-playing",
         "tvos-media-playback"
@@ -1255,11 +1057,8 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "backgroundassets",
-        "asset-packs",
         "downloads",
         "app-size",
-        "storekit",
         "ios26"
       ],
       "pairs_with": [
@@ -1290,11 +1089,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "backgroundtasks",
-        "scheduling",
-        "urlsession",
-        "ios26",
-        "system",
         "concurrency"
       ],
       "pairs_with": [
@@ -1321,10 +1115,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "backup",
-        "restore",
-        "autobackup",
-        "data",
         "jetpack"
       ],
       "pairs_with": [
@@ -1350,9 +1140,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "biometric",
-        "security",
-        "authentication",
         "cryptography",
         "identity"
       ],
@@ -1380,11 +1167,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "bluetooth",
-        "ble",
-        "gatt",
-        "android",
-        "permissions",
         "connectivity"
       ],
       "pairs_with": [
@@ -1410,9 +1192,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "broadcasts",
-        "broadcastreceiver",
-        "platform-services",
         "background-work"
       ],
       "pairs_with": [
@@ -1442,10 +1221,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "signing",
         "distribution",
-        "testflight",
-        "notarization",
         "ci"
       ],
       "pairs_with": [
@@ -1472,10 +1248,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "android",
-        "gradle",
-        "build-variants",
-        "product-flavors"
+        "gradle"
       ],
       "pairs_with": [
         "android-resources",
@@ -1501,10 +1274,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "camerax",
-        "camera",
-        "media",
-        "jetpack",
         "android-camera"
       ],
       "pairs_with": [
@@ -1530,13 +1299,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "car-app-library",
-        "android-auto",
-        "automotive-os",
-        "templates",
-        "carappservice"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-cars",
         "choosing-form-factors",
@@ -1563,10 +1326,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "android-auto",
-        "automotive-os",
-        "car-app-library",
-        "driver-distraction",
         "vehicle-properties"
       ],
       "pairs_with": [
@@ -1592,13 +1351,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "android-auto",
-        "automotive-os",
-        "car-app-library",
-        "mediabrowserservice",
-        "messaging"
-      ],
+      "tags": [],
       "pairs_with": [
         "car-app-library",
         "media3-session"
@@ -1622,8 +1375,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "carplay",
-        "templates",
         "scenes",
         "entitlements",
         "in-car",
@@ -1654,10 +1405,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "distribution",
-        "google-play",
-        "app-bundle",
-        "enterprise"
+        "app-bundle"
       ],
       "pairs_with": [
         "app-bundles-size",
@@ -1684,11 +1432,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "testing",
-        "compose",
-        "unit-tests",
-        "instrumentation",
-        "strategy"
+        "instrumentation"
       ],
       "pairs_with": [
         "unit-testing",
@@ -1721,12 +1465,7 @@
       "version": "1.0.0",
       "tags": [
         "multiplatform",
-        "form-factors",
-        "watchos",
-        "tvos",
-        "visionos",
-        "carplay",
-        "decision"
+        "form-factors"
       ],
       "pairs_with": [
         "watchos-app-structure",
@@ -1754,13 +1493,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "concurrency",
-        "async-await",
-        "asyncsequence",
-        "combine",
-        "decision"
-      ],
+      "tags": [],
       "pairs_with": [
         "swift-concurrency",
         "swiftui-concurrency"
@@ -1789,12 +1522,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "background",
         "backgroundtasks",
-        "urlsession",
-        "push",
-        "activitykit",
-        "decision"
+        "activitykit"
       ],
       "pairs_with": [
         "background-tasks",
@@ -1820,13 +1549,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "workmanager",
-        "background",
-        "coroutines",
-        "foreground-service",
-        "alarmmanager"
-      ],
+      "tags": [],
       "pairs_with": [
         "workmanager",
         "foreground-services",
@@ -1853,11 +1576,6 @@
       "stability": "contested",
       "version": "1.0.1",
       "tags": [
-        "compose",
-        "views",
-        "xml",
-        "ui",
-        "migration",
         "architecture"
       ],
       "pairs_with": [
@@ -1885,11 +1603,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "coroutines",
-        "flow",
-        "stateflow",
-        "livedata",
-        "async",
         "architecture"
       ],
       "pairs_with": [
@@ -1918,12 +1631,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "dependency-injection",
         "architecture",
-        "swiftui",
-        "environment",
-        "testing",
-        "decision"
+        "testing"
       ],
       "pairs_with": [
         "dependency-injection",
@@ -1950,8 +1659,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "dependency-injection",
-        "hilt",
         "koin",
         "architecture",
         "testing"
@@ -1982,11 +1689,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "distribution",
-        "app-store",
-        "testflight",
-        "notarization",
-        "enterprise"
+        "notarization"
       ],
       "pairs_with": [
         "build-sign-distribute",
@@ -2013,12 +1716,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "adaptive",
-        "large-screen",
-        "foldable",
-        "wear-os",
-        "android-tv",
-        "form-factors"
+        "android-tv"
       ],
       "pairs_with": [
         "adaptive-window-size-classes",
@@ -2045,13 +1743,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "graphics",
-        "vulkan",
-        "agsl",
-        "opengl",
-        "canvas",
-        "games",
-        "decision"
+        "games"
       ],
       "pairs_with": [
         "vulkan-rendering",
@@ -2081,14 +1773,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "graphics",
-        "metal",
-        "realitykit",
-        "spritekit",
-        "swiftui",
-        "decision"
-      ],
+      "tags": [],
       "pairs_with": [
         "metal",
         "realitykit",
@@ -2115,11 +1800,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "networking",
-        "retrofit",
-        "okhttp",
-        "ktor",
-        "cronet"
+        "networking"
       ],
       "pairs_with": [
         "retrofit-okhttp",
@@ -2147,9 +1828,6 @@
       "version": "1.0.0",
       "tags": [
         "images",
-        "coil",
-        "glide",
-        "compose",
         "performance"
       ],
       "pairs_with": [
@@ -2177,12 +1855,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "images",
-        "asyncimage",
-        "caching",
-        "imageio",
-        "sf-symbols",
-        "decision"
+        "images"
       ],
       "pairs_with": [
         "swiftui-images-symbols",
@@ -2208,13 +1881,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.1",
-      "tags": [
-        "ml",
-        "ai",
-        "on-device",
-        "gemini",
-        "mlkit"
-      ],
+      "tags": [],
       "pairs_with": [
         "ml-kit",
         "gemini-nano-aicore",
@@ -2241,13 +1908,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "ml",
-        "ai",
-        "on-device",
-        "foundation-models",
-        "coreml"
-      ],
+      "tags": [],
       "pairs_with": [
         "core-ai",
         "foundation-models",
@@ -2274,8 +1935,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "navigation",
-        "compose",
         "fragments",
         "architecture",
         "routing"
@@ -2309,10 +1968,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "swiftui",
-        "navigation",
-        "tabview",
-        "ipad",
         "architecture"
       ],
       "pairs_with": [
@@ -2342,10 +1997,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "networking",
-        "urlsession",
-        "network-framework",
-        "websocket",
         "architecture"
       ],
       "pairs_with": [
@@ -2373,10 +2024,6 @@
       "stability": "contested",
       "version": "1.0.1",
       "tags": [
-        "persistence",
-        "swiftdata",
-        "core-data",
-        "cloudkit",
         "decision"
       ],
       "pairs_with": [
@@ -2404,10 +2051,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "storage",
-        "room",
-        "datastore",
-        "serialization",
         "persistence"
       ],
       "pairs_with": [
@@ -2435,10 +2078,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "testing",
-        "swift-testing",
-        "xctest",
-        "strategy",
         "decision"
       ],
       "pairs_with": [
@@ -2471,12 +2110,7 @@
       "stability": "contested",
       "version": "1.0.1",
       "tags": [
-        "swiftui",
-        "uikit",
-        "appkit",
-        "architecture",
-        "interop",
-        "decision"
+        "architecture"
       ],
       "pairs_with": [
         "swiftui-core",
@@ -2509,10 +2143,7 @@
       "tags": [
         "webkit",
         "safariservices",
-        "authenticationservices",
-        "oauth",
-        "app-review",
-        "decision"
+        "authenticationservices"
       ],
       "pairs_with": [
         "sign-in-with-apple"
@@ -2537,11 +2168,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "webview",
-        "custom-tabs",
-        "twa",
-        "hybrid",
-        "web-integration"
+        "twa"
       ],
       "pairs_with": [
         "webview-custom-tabs"
@@ -2566,11 +2193,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "widgetkit",
-        "activitykit",
-        "app-intents",
-        "controls",
-        "overview"
+        "controls"
       ],
       "pairs_with": [
         "widgetkit",
@@ -2596,15 +2219,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "widgets",
-        "glance",
-        "remoteviews",
-        "wear-os",
-        "tiles",
-        "notifications",
-        "decision"
-      ],
+      "tags": [],
       "pairs_with": [
         "app-widgets-glance",
         "wear-tiles",
@@ -2628,13 +2243,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "ci-cd",
-        "gradle",
-        "testing",
-        "signing",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "android-cli",
         "app-signing"
@@ -2660,13 +2269,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "ci-cd",
-        "code-signing",
-        "fastlane",
-        "testflight",
-        "xcode-cloud"
-      ],
+      "tags": [],
       "pairs_with": [
         "build-sign-distribute",
         "provisioning-code-signing"
@@ -2694,13 +2297,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "cloudkit",
-        "icloud",
-        "sync",
-        "sharing",
-        "push"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-persistence"
       ],
@@ -2723,10 +2320,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "codable",
-        "json",
-        "decoding",
-        "serialization",
         "foundation"
       ],
       "pairs_with": [
@@ -2752,10 +2345,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "accessibility",
-        "compose",
-        "semantics",
-        "talkback",
         "a11y",
         "material3"
       ],
@@ -2783,10 +2372,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "compose",
-        "animation",
-        "motion",
-        "shared-element",
         "material3"
       ],
       "pairs_with": [
@@ -2811,12 +2396,8 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "compose",
-        "custom-layout",
         "subcompose-layout",
-        "intrinsics",
-        "measure",
-        "layout"
+        "intrinsics"
       ],
       "pairs_with": [
         "compose-layout"
@@ -2841,11 +2422,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "compose",
-        "foundation",
-        "gestures",
-        "focus",
-        "scrollable",
         "custom-ui"
       ],
       "pairs_with": [
@@ -2873,12 +2449,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "compose",
-        "jetpack-compose",
-        "recomposition",
-        "ui"
-      ],
+      "tags": [],
       "pairs_with": [
         "adopting-compose",
         "choosing-compose-or-views",
@@ -2904,11 +2475,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "compose",
-        "gestures",
-        "touch",
-        "pointer-input",
-        "drag",
         "pinch-zoom",
         "draggable"
       ],
@@ -2935,13 +2501,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "compose",
-        "canvas",
-        "graphics",
-        "drawing",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "agsl-runtime-shaders",
         "choosing-graphics-api"
@@ -2965,13 +2525,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "compose",
-        "images",
-        "coil",
-        "asyncimage",
-        "contentscale"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-image-loading"
       ],
@@ -2994,13 +2548,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "compose",
-        "layout",
-        "jetpack-compose",
-        "ui",
-        "custom-layout"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-custom-layouts",
         "m3-layout-spacing"
@@ -3025,11 +2573,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "compose",
-        "lazy-list",
-        "recycler",
-        "paging",
-        "android"
+        "recycler"
       ],
       "pairs_with": [
         "m3-lists",
@@ -3055,10 +2599,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "compose",
-        "modifiers",
-        "layout",
-        "android",
         "material3"
       ],
       "pairs_with": [
@@ -3084,13 +2624,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "compose",
-        "performance",
-        "recomposition",
-        "stability",
-        "jetpack-compose"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-state",
         "macrobenchmark-baseline-profiles"
@@ -3114,11 +2648,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "compose",
-        "preview",
         "screenshot-testing",
-        "ui-testing",
-        "android"
+        "ui-testing"
       ],
       "pairs_with": [
         "screenshot-testing",
@@ -3144,9 +2675,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "compose",
-        "side-effects",
-        "coroutines",
         "lifecycle"
       ],
       "pairs_with": [
@@ -3172,13 +2700,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "compose",
-        "state",
-        "state-hoisting",
-        "jetpack-compose",
-        "recomposition"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-fundamentals",
         "compose-performance",
@@ -3204,11 +2726,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "compose",
-        "text",
-        "typography",
-        "material3",
-        "android"
+        "material3"
       ],
       "pairs_with": [
         "m3-typography"
@@ -3233,9 +2751,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "compose",
-        "text-input",
-        "forms",
         "material3",
         "keyboard"
       ],
@@ -3262,13 +2777,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "compose",
-        "material3",
-        "theming",
-        "design-system",
-        "dark-mode"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-color",
         "design-system-customization",
@@ -3293,13 +2802,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "compose",
-        "testing",
-        "ui-testing",
-        "android",
-        "instrumented"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-android-testing",
         "compose-preview-testing",
@@ -3325,12 +2828,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "compose",
-        "interop",
-        "migration",
-        "androidview",
-        "composeview",
-        "fragments"
+        "migration"
       ],
       "pairs_with": [
         "android-views-interop"
@@ -3355,9 +2853,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "compose",
-        "insets",
-        "edge-to-edge",
         "ime",
         "material3"
       ],
@@ -3385,12 +2880,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "content-provider",
-        "contentresolver",
-        "android",
-        "data"
-      ],
+      "tags": [],
       "pairs_with": [
         "android-manifest",
         "scoped-storage"
@@ -3415,11 +2905,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "widgetkit",
-        "control-center",
-        "app-intents",
-        "lock-screen",
-        "ios18"
+        "widgetkit"
       ],
       "pairs_with": [
         "adopting-app-intents",
@@ -3445,12 +2931,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "gradle",
-        "android",
-        "build",
-        "convention-plugins",
-        "kotlin-dsl",
-        "multi-module"
+        "kotlin-dsl"
       ],
       "pairs_with": [
         "modularization",
@@ -3480,11 +2961,8 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "core-ai",
         "machine-learning",
-        "on-device",
-        "apple-silicon",
-        "inference"
+        "apple-silicon"
       ],
       "pairs_with": [
         "choosing-ml-approach",
@@ -3514,13 +2992,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "corebluetooth",
-        "ble",
-        "bluetooth",
-        "peripheral",
-        "background"
-      ],
+      "tags": [],
       "pairs_with": [],
       "path": "apple/code/system/core-bluetooth",
       "resources": {
@@ -3543,11 +3015,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "core-data",
-        "persistence",
-        "cloudkit",
-        "concurrency",
-        "migration"
+        "persistence"
       ],
       "pairs_with": [
         "choosing-persistence"
@@ -3574,13 +3042,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "coreimage",
-        "graphics",
-        "metal",
-        "filters",
-        "swiftui"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-image-pipeline"
       ],
@@ -3608,10 +3070,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "corelocation",
-        "location",
-        "geofencing",
-        "authorization",
         "privacy"
       ],
       "pairs_with": [
@@ -3641,10 +3099,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "coreml",
         "machine-learning",
-        "vision",
-        "neural-engine",
         "on-device"
       ],
       "pairs_with": [
@@ -3672,13 +3127,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "spotlight",
-        "search",
-        "indexing",
-        "app-intents",
-        "deep-linking"
-      ],
+      "tags": [],
       "pairs_with": [
         "adopting-app-intents"
       ],
@@ -3700,13 +3149,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "android",
-        "stability",
-        "crash",
-        "anr",
-        "vitals"
-      ],
+      "tags": [],
       "pairs_with": [
         "performance-profiling",
         "play-console-publishing"
@@ -3733,10 +3176,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "crashes",
-        "symbolication",
-        "dsym",
-        "metrickit",
         "debugging"
       ],
       "pairs_with": [
@@ -3760,12 +3199,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "auth",
-        "passkeys",
-        "credential-manager",
-        "sign-in"
-      ],
+      "tags": [],
       "pairs_with": [
         "biometric"
       ],
@@ -3789,9 +3223,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "cryptokit",
         "security",
-        "encryption",
         "keychain",
         "signing"
       ],
@@ -3818,11 +3250,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "android",
-        "datastore",
-        "preferences",
-        "persistence",
-        "flow"
+        "persistence"
       ],
       "pairs_with": [
         "choosing-storage",
@@ -3849,10 +3277,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "architecture",
-        "testability",
-        "swiftui",
-        "environment",
         "swift6"
       ],
       "pairs_with": [
@@ -3877,13 +3301,7 @@
       ],
       "stability": "contested",
       "version": "1.0.0",
-      "tags": [
-        "architecture",
-        "dependency-injection",
-        "testability",
-        "hilt",
-        "koin"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-di",
         "hilt-di"
@@ -3908,14 +3326,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "design-system",
-        "theming",
-        "material3",
-        "brand",
-        "typography",
-        "color",
-        "shape",
-        "compose"
+        "theming"
       ],
       "pairs_with": [
         "m3-color",
@@ -3942,13 +3353,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "compose",
-        "drag-and-drop",
-        "large-screen",
-        "chromeos",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-drag-drop"
       ],
@@ -3970,13 +3375,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "android",
-        "edge-to-edge",
-        "compatibility",
-        "predictive-back",
-        "target-sdk"
-      ],
+      "tags": [],
       "pairs_with": [
         "adopting-edge-to-edge-predictive-back",
         "m3-edge-to-edge"
@@ -4002,10 +3401,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "entitlements",
-        "capabilities",
-        "provisioning",
-        "app-groups",
         "signing"
       ],
       "pairs_with": [
@@ -4031,10 +3426,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "swift",
-        "error-handling",
-        "typed-throws",
-        "result",
         "concurrency"
       ],
       "pairs_with": [
@@ -4059,10 +3450,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "android",
-        "testing",
-        "espresso",
-        "ui-testing",
         "instrumentation"
       ],
       "pairs_with": [
@@ -4091,10 +3478,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "eventkit",
-        "calendar",
-        "reminders",
-        "permissions",
         "swiftui"
       ],
       "pairs_with": [
@@ -4119,13 +3502,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "files",
-        "serialization",
-        "storage",
-        "kotlinx-serialization",
-        "io"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-storage",
         "scoped-storage",
@@ -4150,11 +3527,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "foreground-service",
-        "service-types",
-        "notification",
-        "background-work",
-        "lifecycle"
+        "background-work"
       ],
       "pairs_with": [
         "choosing-background-work",
@@ -4184,10 +3557,7 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "foundation-models",
         "apple-intelligence",
-        "llm",
-        "on-device",
         "generative-ai"
       ],
       "pairs_with": [
@@ -4213,12 +3583,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "game-controller",
-        "gamepad",
-        "input",
-        "paddleboat",
-        "haptics",
-        "games"
+        "haptics"
       ],
       "pairs_with": [
         "agdk-game-activity"
@@ -4241,15 +3606,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "games",
-        "frame-pacing",
-        "choreographer",
-        "vsync",
-        "jank",
-        "surfaceview",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "vulkan-rendering",
         "adpf-thermal-performance",
@@ -4278,11 +3635,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "gamekit",
-        "game-center",
-        "multiplayer",
-        "leaderboards",
-        "achievements"
+        "multiplayer"
       ],
       "pairs_with": [
         "spritekit"
@@ -4307,11 +3660,7 @@
       "stability": "emerging",
       "version": "1.0.2",
       "tags": [
-        "gemini-nano",
-        "aicore",
-        "on-device-ai",
-        "ml-kit",
-        "genai"
+        "on-device-ai"
       ],
       "pairs_with": [
         "choosing-ml"
@@ -4334,13 +3683,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "gradle",
-        "build",
-        "kotlin-dsl",
-        "android",
-        "agp"
-      ],
+      "tags": [],
       "pairs_with": [
         "android-cli",
         "build-variants-flavors",
@@ -4366,11 +3709,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "haptics",
-        "vibration",
-        "ux",
-        "platform-services",
-        "compose"
+        "ux"
       ],
       "pairs_with": [
         "m3-haptics-sound"
@@ -4395,10 +3734,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "health-services",
-        "health-connect",
-        "wear-os",
-        "fitness",
         "sensors"
       ],
       "pairs_with": [
@@ -4426,10 +3761,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "healthkit",
-        "health",
         "swift-concurrency",
-        "watchos",
         "privacy"
       ],
       "pairs_with": [
@@ -4458,13 +3790,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "accessibility",
-        "hig",
-        "voiceover",
-        "dynamic-type",
-        "design"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-accessibility",
         "hig-typography-sf-symbols"
@@ -4488,11 +3814,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "action-button",
-        "camera-control",
-        "ios",
-        "inputs"
+        "ios"
       ],
       "pairs_with": [
         "controls-widgets"
@@ -4516,13 +3838,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "action-sheets",
-        "confirmation",
-        "destructive",
-        "ios"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-sheets"
       ],
@@ -4550,11 +3866,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "alerts",
-        "modality",
-        "confirmation",
-        "destructive",
-        "components"
+        "modality"
       ],
       "pairs_with": [
         "swiftui-sheets"
@@ -4579,12 +3891,8 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "app-clips",
         "focused-task",
-        "sign-in",
-        "permissions",
-        "handoff",
-        "hig"
+        "permissions"
       ],
       "pairs_with": [
         "hig-onboarding"
@@ -4613,11 +3921,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "design",
-        "hig",
-        "app-icons",
-        "liquid-glass",
-        "icon-composer",
         "branding"
       ],
       "pairs_with": [
@@ -4646,10 +3949,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "apple-pay",
-        "payments",
-        "checkout",
-        "hig",
         "commerce"
       ],
       "pairs_with": [
@@ -4674,14 +3973,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "apple-pencil",
-        "scribble",
-        "hig",
-        "ipados",
-        "inputs",
-        "design"
-      ],
+      "tags": [],
       "pairs_with": [
         "pencilkit"
       ],
@@ -4708,14 +4000,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "buttons",
-        "controls",
-        "prominence",
-        "liquid-glass",
-        "hig",
-        "actions"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-materials-liquid-glass"
       ],
@@ -4737,14 +4022,7 @@
       ],
       "stability": "stable",
       "version": "1.1.1",
-      "tags": [
-        "carplay",
-        "hig",
-        "in-car",
-        "safety",
-        "templates",
-        "ux"
-      ],
+      "tags": [],
       "pairs_with": [
         "carplay-templates"
       ],
@@ -4771,13 +4049,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "design",
-        "charts",
-        "data-visualization",
-        "accessibility"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-charts"
       ],
@@ -4805,12 +4077,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "color",
-        "accessibility",
-        "contrast",
-        "dark-mode",
-        "materials",
-        "foundations"
+        "accessibility"
       ],
       "pairs_with": [
         "hig-dark-mode",
@@ -4837,13 +4104,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "context-menus",
-        "menus",
-        "components",
-        "discoverability"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-menus"
       ],
@@ -4869,13 +4130,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "dark-mode",
-        "appearance",
-        "color",
-        "materials",
-        "contrast"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-color"
       ],
@@ -4898,11 +4153,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "ios",
-        "hig",
-        "navigation",
-        "accessibility",
-        "liquid-glass"
+        "accessibility"
       ],
       "pairs_with": [
         "hig-materials-liquid-glass"
@@ -4926,11 +4177,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "ipados",
-        "layout",
-        "navigation",
-        "multitasking",
-        "pointer"
+        "multitasking"
       ],
       "pairs_with": [
         "hig-pointing-devices",
@@ -4955,11 +4202,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "macos",
-        "hig",
-        "windows",
-        "menus",
-        "toolbars"
+        "windows"
       ],
       "pairs_with": [
         "hig-menus",
@@ -4984,13 +4227,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "tvos",
-        "hig",
-        "focus",
-        "top-shelf",
-        "parallax"
-      ],
+      "tags": [],
       "pairs_with": [
         "tvos-app-structure"
       ],
@@ -5013,9 +4250,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "visionos",
-        "spatial",
-        "hig",
         "accessibility",
         "immersion"
       ],
@@ -5040,14 +4274,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "design",
-        "watchos",
-        "glanceability",
-        "complications",
-        "smart-stack"
-      ],
+      "tags": [],
       "pairs_with": [
         "watchos-app-structure",
         "hig-digital-crown"
@@ -5071,11 +4298,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "design",
-        "watchos",
-        "digital-crown",
-        "inputs",
         "haptics"
       ],
       "pairs_with": [
@@ -5103,10 +4325,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "design",
-        "drag-and-drop",
-        "patterns",
         "accessibility"
       ],
       "pairs_with": [
@@ -5136,12 +4354,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "forms",
         "data-entry",
-        "autofill",
-        "keyboards",
-        "design"
+        "keyboards"
       ],
       "pairs_with": [
         "swiftui-text-input"
@@ -5169,13 +4383,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "feedback",
-        "status",
-        "haptics",
-        "alerts",
-        "progress"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-loading"
       ],
@@ -5199,13 +4407,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "gestures",
-        "inputs",
-        "touch",
-        "accessibility",
-        "visionos"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-gestures",
         "hig-undo-redo"
@@ -5233,13 +4435,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "images",
-        "design",
-        "accessibility",
-        "sf-symbols"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-images-symbols"
       ],
@@ -5264,13 +4460,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "keyboards",
-        "shortcuts",
-        "accessibility",
-        "focus",
-        "inputs"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-focus"
       ],
@@ -5296,9 +4486,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "layout",
-        "design",
         "adaptivity",
         "accessibility"
       ],
@@ -5329,10 +4516,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "hig",
-        "design",
-        "lists",
-        "tables",
         "collections"
       ],
       "pairs_with": [
@@ -5357,13 +4540,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "live-activities",
-        "dynamic-island",
-        "glanceable",
-        "lock-screen",
-        "activitykit"
-      ],
+      "tags": [],
       "pairs_with": [
         "activitykit"
       ],
@@ -5390,14 +4567,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "design",
-        "loading",
-        "progress",
-        "performance",
-        "patterns"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-progress-indicators",
         "hig-feedback"
@@ -5424,10 +4594,6 @@
       "stability": "emerging",
       "version": "1.1.0",
       "tags": [
-        "design",
-        "hig",
-        "materials",
-        "liquid-glass",
         "accessibility"
       ],
       "pairs_with": [
@@ -5459,12 +4625,8 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "menus",
-        "hig",
-        "components",
         "ios",
-        "macos",
-        "design"
+        "macos"
       ],
       "pairs_with": [
         "hig-context-menus",
@@ -5494,12 +4656,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "modality",
-        "sheets",
-        "alerts",
-        "popovers",
-        "navigation",
-        "hig"
+        "navigation"
       ],
       "pairs_with": [
         "hig-sheets"
@@ -5527,14 +4684,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "motion",
-        "animation",
-        "accessibility",
-        "liquid-glass",
-        "transitions",
-        "hig"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-animations-transitions"
       ],
@@ -5557,13 +4707,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "ipados",
-        "multitasking",
-        "windowing",
-        "stage-manager",
-        "layout"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-designing-for-ipados",
         "swiftui-scenes-windows"
@@ -5590,13 +4734,7 @@
       ],
       "stability": "stable",
       "version": "1.1.1",
-      "tags": [
-        "navigation",
-        "navigation-bar",
-        "titles",
-        "search",
-        "liquid-glass"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-navigation"
       ],
@@ -5622,14 +4760,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "notifications",
-        "hig",
-        "focus",
-        "interruption-levels",
-        "ux",
-        "alerts"
-      ],
+      "tags": [],
       "pairs_with": [
         "user-notifications"
       ],
@@ -5657,12 +4788,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "onboarding",
-        "launching",
-        "first-run",
-        "permissions",
-        "hig",
-        "design"
+        "permissions"
       ],
       "pairs_with": [
         "hig-privacy",
@@ -5693,11 +4819,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "pickers",
-        "selection",
-        "components",
-        "date-picker",
-        "forms",
         "liquid-glass"
       ],
       "pairs_with": [
@@ -5723,13 +4844,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "pointer",
-        "ipados",
-        "macos",
-        "inputs"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-designing-for-ipados"
       ],
@@ -5754,10 +4869,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "popovers",
-        "components",
-        "ipados",
-        "macos",
         "presentation"
       ],
       "pairs_with": [
@@ -5787,10 +4898,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "privacy",
         "permissions",
-        "hig",
-        "foundations",
         "trust"
       ],
       "pairs_with": [
@@ -5822,10 +4930,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "progress",
         "status",
-        "gauges",
-        "components",
         "feedback",
         "loading"
       ],
@@ -5853,13 +4958,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "ratings",
-        "reviews",
-        "hig",
-        "app-store",
-        "design"
-      ],
+      "tags": [],
       "pairs_with": [
         "storekit"
       ],
@@ -5887,11 +4986,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "rtl",
-        "localization",
-        "layout",
-        "accessibility",
-        "foundations"
+        "accessibility"
       ],
       "pairs_with": [
         "localization"
@@ -5919,13 +5014,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "search",
-        "components",
-        "scope-bar",
-        "tokens",
-        "liquid-glass"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-searching"
       ],
@@ -5953,9 +5042,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "search",
-        "hig",
-        "patterns",
         "navigation",
         "ios",
         "accessibility"
@@ -5986,9 +5072,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "segmented-control",
-        "controls",
         "selection",
         "ios",
         "macos"
@@ -6019,14 +5102,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "settings",
-        "configuration",
-        "defaults",
-        "patterns",
-        "hig",
-        "onboarding"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-forms-controls"
       ],
@@ -6052,11 +5128,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "design",
-        "sheets",
-        "modality",
-        "presentation"
+        "modality"
       ],
       "pairs_with": [
         "swiftui-sheets",
@@ -6083,8 +5155,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "sidebars",
-        "navigation",
         "ipados",
         "macos",
         "visionos"
@@ -6116,11 +5186,9 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "sign-in-with-apple",
         "authentication",
         "accounts",
-        "privacy",
-        "technologies"
+        "privacy"
       ],
       "pairs_with": [
         "sign-in-with-apple"
@@ -6147,12 +5215,7 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "siri",
-        "hig",
-        "apple-intelligence",
-        "app-intents",
-        "voice",
-        "ux"
+        "voice"
       ],
       "pairs_with": [
         "app-intents",
@@ -6180,10 +5243,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "design",
-        "sliders",
-        "steppers",
         "controls"
       ],
       "pairs_with": [
@@ -6209,14 +5268,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "design",
-        "snippets",
-        "siri",
-        "app-intents",
-        "components"
-      ],
+      "tags": [],
       "pairs_with": [
         "app-intents",
         "hig-siri-design"
@@ -6243,11 +5295,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "hig",
-        "tab-bars",
-        "navigation",
-        "liquid-glass",
-        "ios",
         "ipados"
       ],
       "pairs_with": [
@@ -6277,12 +5324,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "hig",
-        "text-fields",
-        "forms",
-        "autofill",
-        "validation",
-        "design"
+        "forms"
       ],
       "pairs_with": [
         "swiftui-text-input"
@@ -6311,12 +5353,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "toggles",
-        "switches",
-        "controls",
-        "settings",
-        "macos",
-        "components"
+        "controls"
       ],
       "pairs_with": [
         "swiftui-forms-controls"
@@ -6344,13 +5381,7 @@
       ],
       "stability": "stable",
       "version": "1.1.1",
-      "tags": [
-        "hig",
-        "design",
-        "toolbars",
-        "liquid-glass",
-        "components"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-toolbars"
       ],
@@ -6377,13 +5408,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "hig",
-        "typography",
-        "sf-symbols",
-        "dynamic-type",
-        "design"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-accessibility",
         "swiftui-images-symbols"
@@ -6409,14 +5434,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hig",
-        "undo",
-        "redo",
-        "gestures",
-        "destructive",
-        "patterns"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-gestures-design"
       ],
@@ -6441,14 +5459,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "widgets",
-        "hig",
-        "glanceable",
-        "standby",
-        "lock-screen",
-        "ux"
-      ],
+      "tags": [],
       "pairs_with": [
         "widgetkit"
       ],
@@ -6476,11 +5487,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "writing",
-        "ux-writing",
         "content",
-        "foundations",
-        "hig",
         "inclusion"
       ],
       "pairs_with": [
@@ -6505,14 +5512,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "hilt",
-        "dependency-injection",
-        "android",
-        "architecture",
-        "viewmodel",
-        "testing"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-di",
         "dependency-injection-patterns"
@@ -6540,13 +5540,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "info-plist",
-        "entitlements",
-        "build-settings",
-        "capabilities",
-        "privacy"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-privacy",
         "entitlements-capabilities"
@@ -6570,13 +5564,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "instruments",
-        "profiling",
-        "performance",
-        "signposts",
-        "swiftui"
-      ],
+      "tags": [],
       "pairs_with": [
         "os-logging",
         "swift-performance-memory",
@@ -6603,11 +5591,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "keyboard",
-        "stylus",
-        "mouse",
-        "large-screen",
-        "chromeos",
         "pointer-input"
       ],
       "pairs_with": [
@@ -6635,11 +5618,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "keychain",
-        "security",
-        "credentials",
-        "biometrics",
-        "secitem"
+        "biometrics"
       ],
       "pairs_with": [
         "cryptokit"
@@ -6662,14 +5641,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "kotlin",
-        "coroutines",
-        "concurrency",
-        "android",
-        "async",
-        "structured-concurrency"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-concurrency-pattern",
         "kotlin-flow"
@@ -6693,11 +5665,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "kotlin",
-        "flow",
-        "coroutines",
-        "reactive",
-        "async"
+        "coroutines"
       ],
       "pairs_with": [
         "choosing-concurrency-pattern",
@@ -6722,14 +5690,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "kotlin",
-        "android",
-        "generics",
-        "types",
-        "variance",
-        "reified"
-      ],
+      "tags": [],
       "pairs_with": [
         "kotlin-language-core"
       ],
@@ -6752,11 +5713,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "kotlin",
-        "android",
-        "language",
         "idioms",
-        "null-safety",
         "collections"
       ],
       "pairs_with": [
@@ -6782,9 +5739,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "kotlin",
-        "multiplatform",
-        "kmp",
         "shared-logic",
         "coroutines"
       ],
@@ -6810,10 +5764,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "kotlin",
-        "serialization",
-        "json",
-        "android",
         "networking"
       ],
       "pairs_with": [
@@ -6841,9 +5791,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "networking",
-        "ktor",
-        "kotlin-multiplatform",
         "coroutines"
       ],
       "pairs_with": [
@@ -6870,11 +5817,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "lifecycle",
-        "coroutines",
-        "compose",
-        "architecture",
-        "flow"
+        "coroutines"
       ],
       "pairs_with": [
         "android-activities",
@@ -6901,13 +5844,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "compose",
-        "adaptive",
-        "large-screen",
-        "list-detail",
-        "form-factors"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-canonical-layouts",
         "supporting-pane-scaffold"
@@ -6932,11 +5869,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "android",
-        "machine-learning",
-        "litert",
-        "mediapipe",
-        "on-device-ml"
+        "machine-learning"
       ],
       "pairs_with": [
         "choosing-ml"
@@ -6965,11 +5898,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "localization",
-        "internationalization",
-        "string-catalog",
-        "formatting",
-        "rtl"
+        "internationalization"
       ],
       "pairs_with": [
         "xcode-coding-agents",
@@ -6995,13 +5924,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "location",
-        "sensors",
-        "geofencing",
-        "fused-location",
-        "activity-recognition"
-      ],
+      "tags": [],
       "pairs_with": [
         "runtime-permissions"
       ],
@@ -7024,13 +5947,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "accessibility",
-        "m3",
-        "design",
-        "talkback",
-        "contrast"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-accessibility",
         "accessibility-testing"
@@ -7054,14 +5971,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "m3",
-        "design",
-        "layout",
-        "adaptive",
-        "responsive",
-        "foundations"
-      ],
+      "tags": [],
       "pairs_with": [
         "adaptive-window-size-classes",
         "m3-large-screens"
@@ -7084,14 +5994,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.1",
-      "tags": [
-        "glasses",
-        "xr",
-        "m3",
-        "design",
-        "glimmer",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "xr-glimmer-glasses"
       ],
@@ -7114,13 +6017,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "app-bars",
-        "navigation",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-dividers-scaffold",
         "m3-search"
@@ -7144,13 +6041,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "app-icons",
-        "android",
-        "adaptive"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-icons",
         "android-resources"
@@ -7175,12 +6066,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "badges",
-        "notifications",
-        "m3",
-        "design",
-        "navigation",
-        "indicators"
+        "notifications"
       ],
       "pairs_with": [
         "m3-navigation"
@@ -7204,14 +6090,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "button-groups",
-        "expressive",
-        "actions",
-        "components"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-buttons",
         "m3-segmented-buttons"
@@ -7236,12 +6115,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "m3",
-        "design",
-        "buttons",
-        "android",
-        "material-you",
-        "components"
+        "material-you"
       ],
       "pairs_with": [
         "m3-button-groups",
@@ -7267,13 +6141,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "m3",
-        "design",
-        "layout",
-        "adaptive",
-        "large-screen"
-      ],
+      "tags": [],
       "pairs_with": [
         "list-detail-pane-scaffold",
         "supporting-pane-scaffold"
@@ -7298,12 +6166,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "cards",
-        "containers",
-        "m3",
-        "design",
-        "layout",
-        "android"
+        "containers"
       ],
       "pairs_with": [
         "m3-lists",
@@ -7329,10 +6192,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "carousel",
-        "android",
         "scrolling"
       ],
       "pairs_with": [
@@ -7357,13 +6216,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "cars",
-        "android-auto",
-        "automotive-os"
-      ],
+      "tags": [],
       "pairs_with": [
         "car-app-library",
         "car-driving-constraints"
@@ -7387,14 +6240,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "chips",
-        "selection",
-        "components",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-search",
         "m3-selection-controls"
@@ -7419,12 +6265,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "chromeos",
-        "large-screen",
-        "desktop",
-        "productivity"
+        "large-screen"
       ],
       "pairs_with": [
         "keyboard-mouse-stylus"
@@ -7449,12 +6290,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "m3",
-        "design",
-        "color",
-        "accessibility",
-        "material-you",
-        "android"
+        "accessibility"
       ],
       "pairs_with": [
         "compose-theming",
@@ -7480,13 +6316,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "dark-theme",
-        "color",
-        "foundations"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-color",
         "compose-theming",
@@ -7512,12 +6342,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "m3",
-        "design",
-        "dialogs",
-        "modality",
-        "confirmation",
-        "components"
+        "modality"
       ],
       "pairs_with": [
         "m3-sheets",
@@ -7542,14 +6367,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "dividers",
-        "scaffold",
-        "layout",
-        "components"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-app-bars",
         "m3-layout-spacing"
@@ -7573,14 +6391,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "patterns",
-        "interaction",
-        "drag-and-drop",
-        "large-screen"
-      ],
+      "tags": [],
       "pairs_with": [
         "drag-and-drop"
       ],
@@ -7603,14 +6414,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "edge-to-edge",
-        "insets",
-        "system-bars",
-        "patterns"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-window-insets",
         "edge-to-edge-compat"
@@ -7635,12 +6439,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "elevation",
-        "m3",
-        "design",
         "material-you",
-        "surfaces",
-        "hierarchy"
+        "surfaces"
       ],
       "pairs_with": [
         "m3-dark-theme",
@@ -7665,13 +6465,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "expressive",
-        "motion",
-        "material-you"
-      ],
+      "tags": [],
       "pairs_with": [
         "adopting-m3-expressive",
         "m3-shape",
@@ -7697,11 +6491,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "fab",
-        "components",
-        "android",
         "navigation"
       ],
       "pairs_with": [
@@ -7726,14 +6515,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "feedback",
-        "patterns",
-        "snackbar",
-        "error-states"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-dialogs",
         "m3-snackbar"
@@ -7757,13 +6539,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "gestures",
-        "interaction",
-        "touch"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-gestures"
       ],
@@ -7786,14 +6562,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "haptics",
-        "sound",
-        "feedback",
-        "accessibility"
-      ],
+      "tags": [],
       "pairs_with": [
         "haptics-vibration"
       ],
@@ -7816,14 +6585,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "icon-button",
-        "android",
-        "components",
-        "accessibility"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-buttons",
         "m3-icons",
@@ -7848,13 +6610,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "icons",
-        "material-symbols",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-icon-buttons",
         "m3-app-icons"
@@ -7878,14 +6634,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "interaction",
-        "states",
-        "foundations",
-        "accessibility"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-foundation"
       ],
@@ -7908,14 +6657,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "m3",
-        "design",
-        "large-screen",
-        "adaptive",
-        "platforms",
-        "chromeos"
-      ],
+      "tags": [],
       "pairs_with": [
         "adaptive-window-size-classes",
         "m3-adaptive-layout",
@@ -7940,14 +6682,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "layout",
-        "spacing",
-        "foundations",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-dividers-scaffold",
         "compose-layout"
@@ -7971,14 +6706,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "lists",
-        "android",
-        "material-you",
-        "components"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-lazy-lists",
         "m3-cards"
@@ -8003,11 +6731,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "loading",
-        "patterns",
-        "perceived-performance",
         "ux"
       ],
       "pairs_with": [
@@ -8034,12 +6757,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "loading",
-        "progress",
-        "feedback",
-        "components",
-        "m3",
-        "design"
+        "feedback"
       ],
       "pairs_with": [
         "m3-loading",
@@ -8064,14 +6782,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "menus",
-        "pickers",
-        "components",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-text-fields"
       ],
@@ -8094,14 +6805,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "motion",
-        "animation",
-        "m3",
-        "design",
-        "transitions",
-        "accessibility"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-animation",
         "adopting-m3-expressive",
@@ -8126,13 +6830,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "navigation",
-        "adaptive",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "navigation-compose",
         "m3-badges",
@@ -8159,10 +6857,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "notifications",
-        "m3",
-        "design",
-        "channels",
         "android-ux"
       ],
       "pairs_with": [
@@ -8188,12 +6882,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "m3",
-        "design",
-        "onboarding",
-        "first-run",
-        "permissions",
-        "patterns"
+        "permissions"
       ],
       "pairs_with": [
         "m3-splash-screen"
@@ -8218,12 +6907,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "m3",
-        "design",
-        "permissions",
-        "patterns",
-        "privacy",
-        "android"
+        "privacy"
       ],
       "pairs_with": [
         "runtime-permissions"
@@ -8248,12 +6932,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "navigation",
-        "back-gesture",
-        "patterns",
-        "android"
+        "back-gesture"
       ],
       "pairs_with": [
         "predictive-back"
@@ -8277,14 +6956,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "m3",
-        "design",
-        "progress",
-        "loading",
-        "feedback",
-        "components"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-loading-indicator",
         "m3-loading"
@@ -8308,14 +6980,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "rtl",
-        "localization",
-        "m3",
-        "design",
-        "layout",
-        "foundations"
-      ],
+      "tags": [],
       "pairs_with": [
         "app-localization"
       ],
@@ -8338,13 +7003,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "search",
-        "navigation",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-app-bars",
         "m3-chips"
@@ -8369,12 +7028,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "segmented-buttons",
-        "selection",
-        "components",
-        "android"
+        "selection"
       ],
       "pairs_with": [
         "m3-button-groups",
@@ -8400,11 +7054,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "selection-controls",
-        "android",
-        "components",
         "forms"
       ],
       "pairs_with": [
@@ -8430,13 +7079,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "settings",
-        "preferences",
-        "patterns"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-selection-controls",
         "m3-sliders",
@@ -8462,11 +7105,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "shape",
-        "material-you",
-        "android"
+        "material-you"
       ],
       "pairs_with": [
         "m3-elevation",
@@ -8491,14 +7130,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "sharing",
-        "android",
-        "patterns",
-        "sharesheet"
-      ],
+      "tags": [],
       "pairs_with": [],
       "path": "android/design/patterns/m3-sharing",
       "resources": {
@@ -8519,14 +7151,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "sheets",
-        "bottom-sheets",
-        "android",
-        "side-sheets"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-dialogs"
       ],
@@ -8550,12 +7175,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "sliders",
-        "android",
-        "input",
-        "components"
+        "input"
       ],
       "pairs_with": [
         "m3-settings"
@@ -8579,14 +7199,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "snackbar",
-        "feedback",
-        "m3",
-        "design",
-        "components",
-        "transient"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-feedback"
       ],
@@ -8610,9 +7223,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "android",
         "launch-screen"
       ],
       "pairs_with": [
@@ -8639,11 +7249,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "tabs",
-        "navigation",
-        "android",
         "material-you"
       ],
       "pairs_with": [
@@ -8669,14 +7274,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "m3",
-        "design",
-        "text-fields",
-        "input",
-        "validation",
-        "components"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-text-fields",
         "m3-menus-pickers"
@@ -8700,13 +7298,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "tooltips",
-        "components",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-icon-buttons"
       ],
@@ -8729,10 +7321,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "android-tv",
-        "focus",
         "leanback"
       ],
       "pairs_with": [
@@ -8759,11 +7347,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "m3",
-        "design",
-        "typography",
-        "material-you",
-        "android"
+        "material-you"
       ],
       "pairs_with": [
         "design-system-customization",
@@ -8787,13 +7371,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "wear-os",
-        "glanceable",
-        "platforms"
-      ],
+      "tags": [],
       "pairs_with": [
         "wear-compose",
         "wear-tiles"
@@ -8818,11 +7396,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "m3",
-        "design",
-        "widgets",
-        "android",
-        "home-screen",
         "adaptive"
       ],
       "pairs_with": [
@@ -8847,14 +7420,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "ux-writing",
-        "content-design",
-        "android",
-        "foundations"
-      ],
+      "tags": [],
       "pairs_with": [
         "app-localization"
       ],
@@ -8876,13 +7442,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.0",
-      "tags": [
-        "m3",
-        "design",
-        "xr",
-        "spatial",
-        "platforms"
-      ],
+      "tags": [],
       "pairs_with": [
         "xr-compose-spatial",
         "xr-scenecore"
@@ -8906,11 +7466,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "performance",
-        "benchmarking",
-        "baseline-profiles",
-        "startup",
-        "testing"
+        "benchmarking"
       ],
       "pairs_with": [
         "choosing-android-testing",
@@ -8939,13 +7495,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "mapkit",
-        "swiftui",
-        "maps",
-        "location",
-        "directions"
-      ],
+      "tags": [],
       "pairs_with": [
         "core-location"
       ],
@@ -8969,10 +7519,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "media",
-        "screen-capture",
-        "foreground-service",
-        "virtual-display"
+        "foreground-service"
       ],
       "pairs_with": [
         "foreground-services"
@@ -8995,14 +7542,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.0",
-      "tags": [
-        "media3",
-        "ai-effects",
-        "magic-eraser",
-        "enhance",
-        "studio-sound",
-        "media"
-      ],
+      "tags": [],
       "pairs_with": [
         "media3-transformer"
       ],
@@ -9026,13 +7566,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "media3",
-        "exoplayer",
-        "video",
-        "playback",
-        "adaptive-streaming"
-      ],
+      "tags": [],
       "pairs_with": [
         "media3-transformer",
         "picture-in-picture",
@@ -9058,11 +7592,8 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "media3",
-        "mediasession",
         "background-playback",
-        "exoplayer",
-        "android"
+        "exoplayer"
       ],
       "pairs_with": [
         "car-media-messaging",
@@ -9087,14 +7618,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "media3",
-        "transformer",
-        "video-editing",
-        "transcoding",
-        "codecdb",
-        "export"
-      ],
+      "tags": [],
       "pairs_with": [
         "media3-exoplayer",
         "media3-ai-effects"
@@ -9119,10 +7643,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "mediastore",
-        "photo-picker",
         "storage",
-        "media",
         "permissions"
       ],
       "pairs_with": [
@@ -9151,14 +7672,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "metal",
-        "gpu",
-        "rendering",
-        "compute",
-        "metalkit",
-        "metalfx"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-graphics-tech"
       ],
@@ -9182,10 +7696,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "ml-kit",
         "machine-learning",
-        "vision",
-        "camera",
         "cameraX"
       ],
       "pairs_with": [
@@ -9211,11 +7722,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "modularization",
-        "architecture",
-        "gradle",
-        "build-speed",
-        "android"
+        "build-speed"
       ],
       "pairs_with": [
         "adopting-kmp",
@@ -9242,9 +7749,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "spm",
-        "modularization",
-        "architecture",
         "build-times",
         "swift6"
       ],
@@ -9271,10 +7775,7 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "musicunderstanding",
         "audio-analysis",
-        "on-device",
-        "media",
         "swift-concurrency",
         "ios27"
       ],
@@ -9304,11 +7805,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "musickit",
-        "apple-music",
-        "media",
-        "playback",
-        "swiftui",
         "ios17"
       ],
       "pairs_with": [
@@ -9336,11 +7832,8 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "naturallanguage",
         "nlp",
-        "nltagger",
-        "embeddings",
-        "sentiment"
+        "nltagger"
       ],
       "pairs_with": [
         "choosing-ml-approach",
@@ -9370,11 +7863,8 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "swiftui",
-        "navigation",
         "routing",
-        "deep-linking",
-        "architecture"
+        "deep-linking"
       ],
       "pairs_with": [
         "choosing-navigation-pattern"
@@ -9399,11 +7889,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "compose",
-        "navigation",
-        "jetpack",
-        "architecture",
-        "type-safe-routes"
+        "jetpack"
       ],
       "pairs_with": [
         "m3-navigation",
@@ -9430,13 +7916,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "navigation",
-        "deep-links",
-        "app-links",
-        "compose",
-        "architecture"
-      ],
+      "tags": [],
       "pairs_with": [
         "navigation-compose",
         "android-manifest"
@@ -9463,10 +7943,7 @@
       "version": "1.0.0",
       "tags": [
         "compose",
-        "navigation",
-        "adaptive",
-        "large-screen",
-        "material3"
+        "large-screen"
       ],
       "pairs_with": [
         "m3-navigation",
@@ -9491,15 +7968,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "compose",
-        "navigation3",
-        "navigation",
-        "back-stack",
-        "scenes",
-        "adaptive",
-        "architecture"
-      ],
+      "tags": [],
       "pairs_with": [
         "navigation-compose",
         "choosing-navigation"
@@ -9528,11 +7997,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "networking",
-        "sockets",
-        "tls",
-        "quic",
-        "connectivity",
         "concurrency"
       ],
       "pairs_with": [
@@ -9557,11 +8021,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "repository",
-        "offline-first",
-        "flow",
-        "error-handling",
-        "architecture"
+        "error-handling"
       ],
       "pairs_with": [
         "choosing-http-client",
@@ -9588,10 +8048,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "networking",
-        "urlsession",
         "async-await",
-        "codable",
         "testing"
       ],
       "pairs_with": [
@@ -9619,11 +8076,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "nfc",
-        "ndef",
-        "hce",
-        "connectivity",
-        "platform-services"
+        "connectivity"
       ],
       "pairs_with": [],
       "path": "android/code/platform-services/nfc",
@@ -9645,13 +8098,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "notifications",
-        "notificationcompat",
-        "channels",
-        "android-13",
-        "conversations"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-notifications",
         "foreground-services"
@@ -9678,12 +8125,6 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "nowplaying",
-        "media",
-        "playback",
-        "lock-screen",
-        "control-center",
-        "carplay",
         "ios27"
       ],
       "pairs_with": [
@@ -9710,8 +8151,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "swiftui",
-        "observation",
         "state",
         "view-models",
         "ios17"
@@ -9741,12 +8180,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "logging",
-        "oslog",
-        "signposts",
-        "instruments",
-        "diagnostics",
-        "privacy"
+        "diagnostics"
       ],
       "pairs_with": [
         "instruments-profiling"
@@ -9770,13 +8204,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "paging",
-        "compose",
-        "jetpack",
-        "architecture",
-        "room"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-lazy-lists",
         "room"
@@ -9802,13 +8230,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "apple-pay",
-        "passkit",
-        "wallet",
-        "payments",
-        "swiftui"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-apple-pay-design"
       ],
@@ -9832,13 +8254,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "pencilkit",
-        "apple-pencil",
-        "drawing",
-        "swiftui",
-        "canvas"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-apple-pencil"
       ],
@@ -9860,14 +8276,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "android",
-        "performance",
-        "profiling",
-        "jank",
-        "startup",
-        "tracing"
-      ],
+      "tags": [],
       "pairs_with": [
         "adpf-thermal-performance",
         "crash-anr-vitals",
@@ -9896,10 +8305,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "photokit",
-        "photos",
-        "photospicker",
-        "media",
         "privacy",
         "ios"
       ],
@@ -9928,9 +8333,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "picture-in-picture",
-        "video",
-        "compose",
         "large-screen",
         "android-tv"
       ],
@@ -9956,12 +8358,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "play-asset-delivery",
-        "asset-packs",
-        "app-bundle",
-        "texture-compression",
-        "bundletool",
-        "games"
+        "app-bundle"
       ],
       "pairs_with": [
         "app-bundles-size"
@@ -9985,11 +8382,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "billing",
-        "purchases",
-        "subscriptions",
-        "play-store",
-        "ship"
+        "play-store"
       ],
       "pairs_with": [
         "play-console-publishing"
@@ -10012,14 +8405,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "android",
-        "play-console",
-        "publishing",
-        "release",
-        "ship",
-        "app-bundle"
-      ],
+      "tags": [],
       "pairs_with": [
         "play-games-services",
         "choosing-android-distribution",
@@ -10044,14 +8430,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "play-games-services",
-        "games",
-        "achievements",
-        "leaderboards",
-        "saved-games",
-        "recall"
-      ],
+      "tags": [],
       "pairs_with": [
         "play-console-publishing"
       ],
@@ -10075,12 +8454,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "doze",
-        "app-standby",
-        "battery",
-        "background",
-        "workmanager",
-        "power"
+        "workmanager"
       ],
       "pairs_with": [
         "choosing-background-work",
@@ -10104,14 +8478,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "android",
-        "navigation",
-        "compose",
-        "gesture",
-        "back-navigation",
-        "architecture"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-predictive-back",
         "adopting-edge-to-edge-predictive-back"
@@ -10135,10 +8502,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "privacy",
-        "app-store",
-        "manifest",
-        "sdk",
         "compliance"
       ],
       "pairs_with": [
@@ -10166,10 +8529,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "swift",
-        "property-wrappers",
         "macros",
-        "swiftui",
         "observation"
       ],
       "pairs_with": [
@@ -10196,13 +8556,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "code-signing",
-        "provisioning",
-        "certificates",
-        "entitlements",
-        "ci"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-distribution",
         "build-sign-distribute",
@@ -10227,14 +8581,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "r8",
-        "proguard",
-        "shrinking",
-        "build",
-        "android",
-        "release"
-      ],
+      "tags": [],
       "pairs_with": [
         "app-bundles-size"
       ],
@@ -10260,11 +8607,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "realitykit",
-        "swiftui",
-        "visionos",
-        "ar",
-        "3d",
         "ecs"
       ],
       "pairs_with": [
@@ -10291,13 +8633,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "swift",
-        "regex",
-        "strings",
-        "regexbuilder",
-        "unicode"
-      ],
+      "tags": [],
       "pairs_with": [
         "result-builders"
       ],
@@ -10320,10 +8656,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "swift",
-        "result-builder",
-        "dsl",
-        "swiftui",
         "metaprogramming"
       ],
       "pairs_with": [
@@ -10350,10 +8682,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "networking",
-        "retrofit",
-        "okhttp",
-        "kotlin",
         "coroutines"
       ],
       "pairs_with": [
@@ -10379,11 +8707,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "testing",
-        "robolectric",
-        "android",
-        "unit-tests",
-        "jvm"
+        "unit-tests"
       ],
       "pairs_with": [
         "choosing-android-testing",
@@ -10409,11 +8733,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "room",
-        "database",
-        "persistence",
-        "coroutines",
-        "flow"
+        "coroutines"
       ],
       "pairs_with": [
         "choosing-storage",
@@ -10440,11 +8760,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "permissions",
-        "android",
-        "jetpack-compose",
-        "activityresult",
-        "platform-services"
+        "jetpack-compose"
       ],
       "pairs_with": [
         "m3-permissions",
@@ -10470,10 +8786,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "savedstate",
-        "viewmodel",
-        "compose",
-        "architecture",
         "lifecycle"
       ],
       "pairs_with": [
@@ -10502,12 +8814,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "scenekit",
-        "3d",
-        "graphics",
-        "rendering",
-        "physics",
-        "realitykit"
+        "rendering"
       ],
       "pairs_with": [
         "realitykit"
@@ -10532,9 +8839,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "storage",
-        "scoped-storage",
-        "file-provider",
         "saf",
         "permissions"
       ],
@@ -10561,13 +8865,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "macos",
-        "screencapture",
-        "media",
-        "recording",
-        "audio"
-      ],
+      "tags": [],
       "pairs_with": [
         "avfoundation-capture"
       ],
@@ -10589,13 +8887,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "testing",
-        "screenshot",
-        "compose",
-        "regression",
-        "roborazzi"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-preview-testing"
       ],
@@ -10619,11 +8911,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "security",
-        "cryptography",
-        "keystore",
-        "encryption",
-        "android"
+        "cryptography"
       ],
       "pairs_with": [
         "biometric"
@@ -10652,9 +8940,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "authentication",
-        "signinwithapple",
-        "authenticationservices",
         "privacy",
         "oauth"
       ],
@@ -10684,13 +8969,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "testing",
-        "snapshot",
-        "swiftui",
-        "swift-testing",
-        "regression"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-testing-strategy"
       ],
@@ -10716,10 +8995,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "speech",
         "transcription",
         "accessibility",
-        "audio",
         "avfoundation"
       ],
       "pairs_with": [
@@ -10745,11 +9022,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "splash-screen",
-        "architecture",
         "compose",
-        "app-launch",
-        "animation"
+        "app-launch"
       ],
       "pairs_with": [
         "m3-splash-screen"
@@ -10774,13 +9048,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "spm",
-        "swift",
-        "build-packaging",
-        "dependencies",
-        "modularization"
-      ],
+      "tags": [],
       "pairs_with": [
         "modularization-local-spm",
         "swift-package-plugins"
@@ -10807,13 +9075,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "spritekit",
-        "games",
-        "2d",
-        "physics",
-        "swiftui"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-graphics-tech",
         "gamekit"
@@ -10838,10 +9100,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "sqlite",
-        "database",
-        "data",
-        "androidx"
+        "database"
       ],
       "pairs_with": [
         "choosing-storage",
@@ -10867,11 +9126,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "architecture",
-        "stateflow",
-        "viewmodel",
-        "coroutines",
-        "compose"
+        "coroutines"
       ],
       "pairs_with": [
         "choosing-concurrency-pattern",
@@ -10899,9 +9154,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "storekit",
-        "in-app-purchase",
-        "subscriptions",
         "swiftui",
         "monetization"
       ],
@@ -10929,11 +9181,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "compose",
-        "adaptive",
-        "large-screen",
-        "scaffold",
-        "form-factors"
+        "compose"
       ],
       "pairs_with": [
         "m3-canonical-layouts",
@@ -10958,11 +9206,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "swift6",
-        "concurrency",
-        "sendable",
-        "actors",
-        "migration"
+        "actors"
       ],
       "pairs_with": [
         "adopting-swift-6-concurrency",
@@ -10986,13 +9230,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "swift",
-        "concurrency",
-        "async-await",
-        "actors",
-        "sendable"
-      ],
+      "tags": [],
       "pairs_with": [
         "adopting-swift-6-concurrency",
         "choosing-async-pattern",
@@ -11018,11 +9256,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "swift",
-        "generics",
-        "protocols",
-        "opaque-types",
-        "existentials"
+        "opaque-types"
       ],
       "pairs_with": [
         "swift-language-core"
@@ -11046,11 +9280,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "swift",
-        "value-types",
-        "optionals",
-        "properties",
-        "protocols"
+        "value-types"
       ],
       "pairs_with": [
         "swift-generics-protocols",
@@ -11075,9 +9305,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "swift",
-        "macros",
-        "swiftsyntax",
         "metaprogramming",
         "spm"
       ],
@@ -11105,11 +9332,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "swiftpm",
-        "plugins",
-        "build-tools",
-        "code-generation",
-        "tooling"
+        "build-tools"
       ],
       "pairs_with": [
         "spm"
@@ -11133,13 +9356,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "swift",
-        "performance",
-        "memory",
-        "arc",
-        "ownership"
-      ],
+      "tags": [],
       "pairs_with": [
         "swift-language-core",
         "instruments-profiling"
@@ -11163,9 +9380,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "testing",
-        "swift-testing",
-        "xctest",
         "unit-tests"
       ],
       "pairs_with": [
@@ -11191,10 +9405,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "swiftdata",
-        "persistence",
-        "model",
-        "schema",
         "database"
       ],
       "pairs_with": [
@@ -11220,11 +9430,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "swiftdata",
-        "persistence",
-        "migration",
-        "query",
-        "predicate"
+        "persistence"
       ],
       "pairs_with": [
         "swiftdata-modeling"
@@ -11253,10 +9459,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "swiftui",
-        "accessibility",
-        "voiceover",
-        "dynamic-type",
         "a11y"
       ],
       "pairs_with": [
@@ -11285,13 +9487,7 @@
       ],
       "stability": "stable",
       "version": "1.0.3",
-      "tags": [
-        "swiftui",
-        "animation",
-        "transitions",
-        "accessibility",
-        "ui"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-motion"
       ],
@@ -11316,13 +9512,7 @@
       ],
       "stability": "contested",
       "version": "1.0.2",
-      "tags": [
-        "swiftui",
-        "architecture",
-        "observable",
-        "mvvm",
-        "state"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-dependency-injection",
         "swiftui-state-data-flow"
@@ -11351,10 +9541,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "swiftui",
-        "charts",
         "dataviz",
-        "accessibility",
         "ios26"
       ],
       "pairs_with": [
@@ -11380,13 +9567,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "swiftui",
-        "concurrency",
-        "async",
-        "mainactor",
-        "task"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-async-pattern"
       ],
@@ -11411,13 +9592,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "swiftui",
-        "views",
-        "layout",
-        "viewbuilder",
-        "composition"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-ui-toolkit",
         "hig-layout",
@@ -11445,11 +9620,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "swiftui",
-        "layout",
-        "ui",
-        "adaptive",
-        "geometry"
+        "adaptive"
       ],
       "pairs_with": [
         "swiftui-core"
@@ -11476,11 +9647,7 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "swiftui",
-        "documents",
-        "documentgroup",
-        "files",
-        "ui"
+        "files"
       ],
       "pairs_with": [
         "swiftui-scenes-windows"
@@ -11508,13 +9675,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "swiftui",
-        "drawing",
-        "canvas",
-        "shape",
-        "animation"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-graphics-tech"
       ],
@@ -11542,10 +9703,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "swiftui",
-        "environment",
-        "preferences",
-        "observable",
         "data-flow"
       ],
       "pairs_with": [
@@ -11575,13 +9732,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "swiftui",
-        "focus",
-        "keyboard",
-        "tvos",
-        "visionos"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-keyboards-design",
         "tvos-focus-engine"
@@ -11609,13 +9760,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "swiftui",
-        "forms",
-        "controls",
-        "picker",
-        "settings"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-pickers",
         "hig-sliders-steppers",
@@ -11645,13 +9790,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "swiftui",
-        "gestures",
-        "interaction",
-        "accessibility",
-        "hit-testing"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-gestures-design",
         "hig-drag-and-drop"
@@ -11680,11 +9819,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "swiftui",
-        "layout",
-        "grid",
-        "lazyvgrid",
-        "griditem"
+        "layout"
       ],
       "pairs_with": [
         "swiftui-scrollview"
@@ -11712,13 +9847,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "swiftui",
-        "images",
-        "sf-symbols",
-        "asyncimage",
-        "accessibility"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-image-pipeline",
         "hig-images",
@@ -11747,14 +9876,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "swiftui",
-        "list",
-        "table",
-        "collections",
-        "editing",
-        "search"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-lists-tables",
         "swiftui-scrollview"
@@ -11782,13 +9904,7 @@
       ],
       "stability": "stable",
       "version": "1.1.1",
-      "tags": [
-        "swiftui",
-        "navigation",
-        "navigationstack",
-        "deeplink",
-        "ui"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-toolbars",
         "choosing-navigation-pattern",
@@ -11818,13 +9934,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "swiftui",
-        "windows",
-        "scenes",
-        "multiwindow",
-        "visionos"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-documents",
         "hig-multitasking",
@@ -11855,9 +9965,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "swiftui",
-        "scrollview",
-        "scrolling",
         "animation",
         "ios17"
       ],
@@ -11886,13 +9993,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "swiftui",
-        "sheets",
-        "modal",
-        "presentation",
-        "detents"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-sheets",
         "hig-action-sheets",
@@ -11920,13 +10021,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "swiftui",
-        "observation",
-        "state",
-        "data-flow",
-        "bindable"
-      ],
+      "tags": [],
       "pairs_with": [
         "observation",
         "swiftui-environment-preferences",
@@ -11956,9 +10051,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "swiftui",
-        "tabview",
-        "navigation",
         "ipados",
         "liquid-glass"
       ],
@@ -11990,11 +10082,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "swiftui",
-        "textfield",
-        "forms",
-        "keyboard",
-        "focus"
+        "forms"
       ],
       "pairs_with": [
         "hig-text-fields",
@@ -12023,13 +10111,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.0",
-      "tags": [
-        "swiftui",
-        "toolbars",
-        "overflow",
-        "navigationbar",
-        "ui"
-      ],
+      "tags": [],
       "pairs_with": [
         "swiftui-navigation",
         "hig-toolbars",
@@ -12053,15 +10135,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "system-ui",
-        "status-bar",
-        "navigation-bar",
-        "edge-to-edge",
-        "cutout",
-        "compose",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "compose-window-insets",
         "adopting-edge-to-edge-predictive-back"
@@ -12085,13 +10159,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "telecom",
-        "voip",
-        "calls",
-        "audio-routing",
-        "connectionservice"
-      ],
+      "tags": [],
       "pairs_with": [
         "foreground-services"
       ],
@@ -12117,11 +10185,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "testflight",
-        "app-store-connect",
-        "distribution",
-        "release",
-        "ship"
+        "distribution"
       ],
       "pairs_with": [
         "choosing-distribution",
@@ -12147,11 +10211,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "testing",
-        "concurrency",
-        "async",
-        "swift-testing",
-        "clocks"
+        "concurrency"
       ],
       "pairs_with": [
         "swift-concurrency",
@@ -12177,11 +10237,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "tipkit",
         "onboarding",
-        "swiftui",
-        "feature-discovery",
-        "cloudkit"
+        "swiftui"
       ],
       "pairs_with": [
         "hig-onboarding"
@@ -12205,11 +10262,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "android-tv",
-        "compose",
-        "leanback-migration",
-        "focus",
-        "material3"
+        "leanback-migration"
       ],
       "pairs_with": [
         "m3-tv",
@@ -12235,13 +10288,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "android-tv",
-        "compose",
-        "focus",
-        "dpad",
-        "navigation"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-tv",
         "tv-compose"
@@ -12264,13 +10311,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "android-tv",
-        "media3",
-        "exoplayer",
-        "playback",
-        "tv-compose"
-      ],
+      "tags": [],
       "pairs_with": [
         "tv-compose",
         "media3-exoplayer"
@@ -12293,14 +10334,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "tvos",
-        "swiftui",
-        "tabview",
-        "top-shelf",
-        "tvuikit",
-        "app-structure"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-designing-for-tvos",
         "tvos-focus-engine",
@@ -12327,11 +10361,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "tvos",
-        "focus",
-        "swiftui",
-        "uikit",
-        "siri-remote",
         "navigation"
       ],
       "pairs_with": [
@@ -12357,13 +10386,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "tvos",
         "avkit",
-        "avfoundation",
-        "video",
-        "hls",
-        "interstitials",
-        "picture-in-picture"
+        "avfoundation"
       ],
       "pairs_with": [
         "avfoundation-playback"
@@ -12386,13 +10410,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "android",
-        "testing",
-        "ui-automator",
-        "instrumented-tests",
-        "end-to-end"
-      ],
+      "tags": [],
       "pairs_with": [
         "espresso"
       ],
@@ -12418,11 +10436,8 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "uikit",
-        "autolayout",
         "constraints",
-        "uistackview",
-        "layout-anchors"
+        "uistackview"
       ],
       "pairs_with": [
         "uikit-core"
@@ -12448,13 +10463,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "uikit",
-        "collectionview",
-        "compositional-layout",
-        "diffable",
-        "lists"
-      ],
+      "tags": [],
       "pairs_with": [
         "uikit-core"
       ],
@@ -12480,10 +10489,6 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "uikit",
-        "viewcontroller",
-        "lifecycle",
-        "scene",
         "traits"
       ],
       "pairs_with": [
@@ -12513,13 +10518,7 @@
       ],
       "stability": "stable",
       "version": "1.0.3",
-      "tags": [
-        "uikit",
-        "swiftui",
-        "interop",
-        "representable",
-        "hosting"
-      ],
+      "tags": [],
       "pairs_with": [
         "uikit-core"
       ],
@@ -12541,13 +10540,7 @@
       ],
       "stability": "stable",
       "version": "1.0.2",
-      "tags": [
-        "testing",
-        "junit",
-        "mockk",
-        "coroutines",
-        "kotlin"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-android-testing",
         "robolectric"
@@ -12570,13 +10563,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "testing",
-        "strategy",
-        "testability",
-        "test-doubles",
-        "coverage"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-testing-strategy",
         "dependency-injection"
@@ -12603,13 +10590,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "notifications",
-        "apns",
-        "push",
-        "usernotifications",
-        "extensions"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-background-execution",
         "hig-notifications",
@@ -12635,11 +10616,8 @@
       "stability": "emerging",
       "version": "1.0.0",
       "tags": [
-        "uwb",
-        "ranging",
         "connectivity",
-        "bluetooth",
-        "proximity"
+        "bluetooth"
       ],
       "pairs_with": [
         "bluetooth-ble"
@@ -12663,10 +10641,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "gradle",
-        "build-packaging",
-        "dependencies",
-        "version-catalog",
         "kotlin-dsl"
       ],
       "pairs_with": [
@@ -12692,13 +10666,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "viewmodel",
-        "architecture",
-        "savedstate",
-        "hilt",
-        "compose"
-      ],
+      "tags": [],
       "pairs_with": [
         "lifecycle",
         "saved-state",
@@ -12727,9 +10695,6 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "vision",
-        "ocr",
-        "coreml",
         "image-analysis",
         "swift-concurrency"
       ],
@@ -12755,12 +10720,8 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "visionos",
         "swiftui",
-        "immersive-space",
-        "arkit",
-        "spatial-input",
-        "privacy"
+        "spatial-input"
       ],
       "pairs_with": [
         "visionos-windows-volumes",
@@ -12784,14 +10745,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "visionos",
-        "swiftui",
-        "volumes",
-        "windows",
-        "ornaments",
-        "spatial"
-      ],
+      "tags": [],
       "pairs_with": [
         "visionos-immersive-spaces",
         "hig-designing-for-visionos",
@@ -12815,14 +10769,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "vulkan",
-        "ndk",
-        "rendering",
-        "gpu",
-        "games",
-        "android"
-      ],
+      "tags": [],
       "pairs_with": [
         "game-loop-frame-pacing",
         "choosing-graphics-api"
@@ -12845,13 +10792,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "watchos",
-        "swiftui",
-        "digital-crown",
-        "always-on",
-        "extended-runtime"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-designing-for-watchos",
         "watchos-complications",
@@ -12876,13 +10817,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "watchos",
-        "widgetkit",
-        "complications",
-        "smart-stack",
-        "clockkit"
-      ],
+      "tags": [],
       "pairs_with": [
         "watchos-app-structure",
         "widgetkit"
@@ -12907,10 +10842,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "watchos",
-        "watchconnectivity",
-        "wcsession",
-        "sync",
         "ios"
       ],
       "pairs_with": [
@@ -12934,13 +10865,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "watchos",
-        "healthkit",
-        "workouts",
-        "fitness",
-        "heart-rate"
-      ],
+      "tags": [],
       "pairs_with": [
         "healthkit"
       ],
@@ -12963,10 +10888,6 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "wear-os",
-        "complications",
-        "watchface",
-        "complication-data-source",
         "tiles"
       ],
       "pairs_with": [
@@ -12992,9 +10913,6 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "wear-os",
-        "compose",
-        "material3",
         "wearables"
       ],
       "pairs_with": [
@@ -13020,13 +10938,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "wear-os",
-        "data-layer",
-        "health-services",
-        "wearable",
-        "exercise"
-      ],
+      "tags": [],
       "pairs_with": [
         "wear-compose",
         "health-services"
@@ -13049,13 +10961,7 @@
       ],
       "stability": "stable",
       "version": "1.0.0",
-      "tags": [
-        "wear-os",
-        "tiles",
-        "protolayout",
-        "tileservice",
-        "glanceable"
-      ],
+      "tags": [],
       "pairs_with": [
         "choosing-widget-toolkit",
         "m3-wear",
@@ -13079,13 +10985,7 @@
       ],
       "stability": "stable",
       "version": "1.0.1",
-      "tags": [
-        "weatherkit",
-        "weather",
-        "forecast",
-        "app-services",
-        "rest-api"
-      ],
+      "tags": [],
       "pairs_with": [
         "core-location"
       ],
@@ -13109,11 +11009,7 @@
       "stability": "stable",
       "version": "1.0.0",
       "tags": [
-        "webview",
-        "custom-tabs",
-        "twa",
-        "web-content",
-        "android"
+        "twa"
       ],
       "pairs_with": [
         "choosing-web-integration"
@@ -13139,13 +11035,7 @@
       ],
       "stability": "stable",
       "version": "1.1.0",
-      "tags": [
-        "widgetkit",
-        "widgets",
-        "swiftui",
-        "app-intents",
-        "timeline"
-      ],
+      "tags": [],
       "pairs_with": [
         "hig-widgets-design",
         "watchos-complications",
@@ -13172,10 +11062,7 @@
       "stability": "stable",
       "version": "1.1.0",
       "tags": [
-        "foldables",
-        "window-manager",
         "adaptive-layout",
-        "compose",
         "large-screen"
       ],
       "pairs_with": [
@@ -13201,10 +11088,7 @@
       "stability": "stable",
       "version": "1.0.2",
       "tags": [
-        "workmanager",
-        "background-work",
         "coroutines",
-        "android",
         "jetpack"
       ],
       "pairs_with": [
@@ -13229,14 +11113,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.0",
-      "tags": [
-        "xcode",
-        "coding-agents",
-        "coding-assistant",
-        "intelligence",
-        "agents-md",
-        "workflow"
-      ],
+      "tags": [],
       "pairs_with": [
         "xcode-project-conventions",
         "localization"
@@ -13260,10 +11137,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "xcode",
         "build-settings",
-        "xcconfig",
-        "modularization",
         "project-structure"
       ],
       "pairs_with": [
@@ -13292,11 +11166,7 @@
       "stability": "stable",
       "version": "1.0.1",
       "tags": [
-        "testing",
-        "xcuitest",
-        "ui-testing",
-        "accessibility",
-        "automation"
+        "ui-testing"
       ],
       "pairs_with": [
         "choosing-testing-strategy"
@@ -13320,11 +11190,7 @@
       "stability": "emerging",
       "version": "1.0.1",
       "tags": [
-        "xr",
-        "arcore",
-        "anchors",
-        "spatial-computing",
-        "hand-tracking"
+        "spatial-computing"
       ],
       "pairs_with": [
         "xr-scenecore",
@@ -13349,10 +11215,6 @@
       "stability": "emerging",
       "version": "1.0.2",
       "tags": [
-        "xr",
-        "compose",
-        "spatial",
-        "jetpack",
         "material3"
       ],
       "pairs_with": [
@@ -13378,13 +11240,7 @@
       ],
       "stability": "emerging",
       "version": "1.1.0",
-      "tags": [
-        "xr",
-        "glasses",
-        "glimmer",
-        "jetpack-xr",
-        "hands-free"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-ai-glasses"
       ],
@@ -13406,13 +11262,7 @@
       ],
       "stability": "emerging",
       "version": "1.0.1",
-      "tags": [
-        "xr",
-        "scenecore",
-        "3d",
-        "jetpack-xr",
-        "spatial"
-      ],
+      "tags": [],
       "pairs_with": [
         "m3-xr",
         "xr-arcore",

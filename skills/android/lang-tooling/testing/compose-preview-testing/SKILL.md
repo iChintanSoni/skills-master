@@ -3,7 +3,7 @@ name: compose-preview-testing
 description: Guidance on using Compose @Preview annotations as a testing tool — PreviewParameterProvider, multipreview annotations, adaptive/dark/font-scale preview variants, and wiring previews into screenshot test pipelines. Use when building a visual regression safety net for Jetpack Compose UIs, parameterizing preview states, scaling coverage across display configurations, or integrating previews with Paparazzi or Roborazzi.
 globs:
   - "**/*.kt"
-tags: [compose, preview, screenshot-testing, ui-testing, android]
+tags: [screenshot-testing, ui-testing]
 x-skills-master:
   domain: android
   class: lang-tooling

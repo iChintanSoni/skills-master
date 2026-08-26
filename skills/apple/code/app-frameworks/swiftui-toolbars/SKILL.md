@@ -3,7 +3,7 @@ name: swiftui-toolbars
 description: "Populates and tunes SwiftUI toolbars — toolbar(content:), ToolbarItem, ToolbarItemGroup, ToolbarItemPlacement, ToolbarSpacer, DefaultToolbarItem — plus the iOS 27 overflow model of ToolbarItemVisibilityPriority, ToolbarOverflowMenu, and topBarPinnedTrailing, and scroll-driven chrome through toolbarMinimizationBehavior. Use when choosing toolbar placements, controlling which actions collapse into the overflow menu as space shrinks, pinning a critical action, minimizing the navigation bar on scroll, or adapting one toolbar declaration across iPhone, iPad, Mac, Apple Watch, Apple TV, and Vision Pro."
 globs:
   - "**/*.swift"
-tags: [swiftui, toolbars, overflow, navigationbar, ui]
+tags: []
 x-skills-master:
   domain: apple
   class: code

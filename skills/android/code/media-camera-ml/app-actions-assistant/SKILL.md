@@ -3,7 +3,7 @@ name: app-actions-assistant
 description: Teaches how to expose app capabilities to Android system surfaces via App Actions and shortcuts — Use when integrating with Google Assistant, surfacing app capabilities in launcher search, or wiring static/dynamic/pinned shortcuts so the OS can deep-link into your features.
 globs:
   - "**/*.kt"
-tags: [app-actions, shortcuts, assistant, deep-linking, launcher]
+tags: [deep-linking]
 x-skills-master:
   domain: android
   class: code

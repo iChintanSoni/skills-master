@@ -3,7 +3,7 @@ name: viewmodel
 description: Covers the ViewModel architecture component — its responsibilities, lifecycle, obtaining instances via viewModel()/hiltViewModel(), scoping to an Activity or nav graph, surviving configuration changes and process death with SavedStateHandle, and exposing UI state. Use when designing the state-holder layer for a Compose screen, wiring a ViewModel to a nav destination, persisting UI state across process death, or debugging why state is lost on rotation.
 globs:
   - "**/*.kt"
-tags: [viewmodel, architecture, savedstate, hilt, compose]
+tags: []
 x-skills-master:
   domain: android
   class: code

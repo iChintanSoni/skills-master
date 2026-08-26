@@ -3,7 +3,7 @@ name: saved-state
 description: Covers preserving UI state across configuration changes and process death using SavedStateHandle in ViewModel, rememberSaveable in Compose, and custom Savers. Use when building screens that must restore scroll position, text input, selections, or other transient UI state after rotation, backgrounding, or system-initiated process termination.
 globs:
   - "**/*.kt"
-tags: [savedstate, viewmodel, compose, architecture, lifecycle]
+tags: [lifecycle]
 x-skills-master:
   domain: android
   class: code

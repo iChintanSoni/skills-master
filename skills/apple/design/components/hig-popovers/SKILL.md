@@ -1,7 +1,7 @@
 ---
 name: hig-popovers
 description: "Applies Apple Human Interface Guidelines to popovers — transient, focused content anchored to a control on iPad, Mac, and visionOS, including the pointer arrow, dismissal, sizing, and choosing popover vs sheet vs menu. Use when designing or critiquing a popover, deciding between a popover and a sheet or menu, or reviewing a contextual panel's anchoring and dismissal UX on iPadOS, macOS, or visionOS. Produces design guidance and critique, not code."
-tags: [popovers, components, ipados, macos, presentation]
+tags: [presentation]
 x-skills-master:
   domain: apple
   class: design

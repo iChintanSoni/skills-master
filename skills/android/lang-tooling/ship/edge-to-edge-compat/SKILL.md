@@ -3,7 +3,7 @@ name: edge-to-edge-compat
 description: Covers API-level compatibility and behavior changes for edge-to-edge display — targetSdk obligations, automatic enforcement on Android 15+, predictive back gesture opt-in, handling deprecated window APIs, and AndroidX compatibility shims. Use when migrating an app to a higher targetSdk, auditing edge-to-edge readiness, enabling predictive back, or resolving inset/gesture regressions introduced by Android 15 behavior changes.
 globs:
   - "**/*.kt"
-tags: [android, edge-to-edge, compatibility, predictive-back, target-sdk]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

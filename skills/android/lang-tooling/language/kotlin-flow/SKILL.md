@@ -3,7 +3,7 @@ name: kotlin-flow
 description: Covers Kotlin Flow — cold asynchronous streams, builders, intermediate and terminal operators, context and backpressure, combining streams, exception handling, and the relationship to StateFlow/SharedFlow. Use when modeling reactive data pipelines, exposing async data from a repository, collecting events in a ViewModel, or writing tests with Turbine.
 globs:
   - "**/*.kt"
-tags: [kotlin, flow, coroutines, reactive, async]
+tags: [coroutines]
 x-skills-master:
   domain: android
   class: lang-tooling

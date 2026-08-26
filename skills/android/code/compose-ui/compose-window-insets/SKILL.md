@@ -3,7 +3,7 @@ name: compose-window-insets
 description: Covers window insets and edge-to-edge layout in Jetpack Compose — Use when building screens that draw behind system bars, handle the soft keyboard, or need correct safe-area padding on phones and large screens.
 globs:
   - "**/*.kt"
-tags: [compose, insets, edge-to-edge, ime, material3]
+tags: [ime, material3]
 x-skills-master:
   domain: android
   class: code

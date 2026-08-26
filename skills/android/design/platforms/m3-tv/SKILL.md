@@ -1,7 +1,7 @@
 ---
 name: m3-tv
 description: "Design-critique and judgment guidance for Android TV: the 10-foot UI, D-pad focus navigation, browse and immersive-detail layout patterns, overscan-safe composition, and legibility at distance. Use when designing or reviewing an Android TV app screen, evaluating whether focus movement is logical and predictable across a D-pad, critiquing text sizes and contrast for a 10-foot viewing distance, assessing overscan margin compliance, or deciding between a browse row layout and an immersive full-screen detail experience."
-tags: [m3, design, android-tv, focus, leanback]
+tags: [leanback]
 x-skills-master:
   domain: android
   class: design

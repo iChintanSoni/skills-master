@@ -3,7 +3,7 @@ name: navigation-compose
 description: Covers Navigation Compose — NavController, NavHost, type-safe routes with @Serializable objects, nested graphs, argument passing, back-stack manipulation, returning results, and adaptive navigation patterns. Use when building multi-screen Compose apps, wiring programmatic navigation, passing data between destinations, or structuring nested navigation graphs.
 globs:
   - "**/*.kt"
-tags: [compose, navigation, jetpack, architecture, type-safe-routes]
+tags: [jetpack]
 x-skills-master:
   domain: android
   class: code

@@ -1,7 +1,7 @@
 ---
 name: choosing-ui-toolkit
 description: Decision router for selecting SwiftUI versus UIKit or AppKit when building a screen, feature, or whole app in the 2026 (OS 26) cycle, including when to mix toolkits through interop. Use when starting a new app or screen and deciding the primary toolkit, when weighing a SwiftUI rewrite of UIKit or AppKit code, when an advanced or legacy requirement (deep text editing, precise scroll or collection control, document-based macOS apps, fine-grained drawing) tempts a drop to UIKit or AppKit, or when wrapping one toolkit inside another with representable types or hosting controllers.
-tags: [swiftui, uikit, appkit, architecture, interop, decision]
+tags: [architecture]
 x-skills-master:
   domain: apple
   class: overview

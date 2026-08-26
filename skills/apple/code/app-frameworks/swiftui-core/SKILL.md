@@ -3,7 +3,7 @@ name: swiftui-core
 description: Covers SwiftUI fundamentals including views as value types, the body computed property, view composition and subview extraction, layout containers (VStack, HStack, ZStack, Grid, and lazy stacks), modifier ordering, ViewBuilder, and previews. Use when building or refactoring SwiftUI view hierarchies, deciding when to extract a subview, reasoning about why modifier order changes layout or appearance, choosing between eager and lazy containers, or wiring up Xcode previews. Excludes navigation and state-flow concerns, which belong to dedicated skills.
 globs:
   - "**/*.swift"
-tags: [swiftui, views, layout, viewbuilder, composition]
+tags: []
 x-skills-master:
   domain: apple
   class: code

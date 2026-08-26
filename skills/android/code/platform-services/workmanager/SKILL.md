@@ -3,7 +3,7 @@ name: workmanager
 description: Covers WorkManager for deferrable, guaranteed background work — OneTimeWorkRequest, PeriodicWorkRequest, Constraints, CoroutineWorker, input/output Data, chaining and unique work, expedited work, and observing WorkInfo. Use when scheduling background tasks that must survive process death, run under specific device conditions, or chain into multi-step pipelines.
 globs:
   - "**/*.kt"
-tags: [workmanager, background-work, coroutines, android, jetpack]
+tags: [coroutines, jetpack]
 x-skills-master:
   domain: android
   class: code

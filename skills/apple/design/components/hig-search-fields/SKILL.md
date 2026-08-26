@@ -1,7 +1,7 @@
 ---
 name: hig-search-fields
 description: "Design critique and recommendations for the search field component on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing a search field itself: its placement and prominence (toolbar, navigation bar, or search tab), scope bars, search tokens, suggestions and recent searches, the clear affordance, and how the field sits inside Liquid Glass toolbar and tab patterns. Triggers include search bar, scope control, filter chips, search tokens, search-role tab, and the iOS 26 bottom-toolbar search field. Produces UX guidance, not code."
-tags: [search, components, scope-bar, tokens, liquid-glass]
+tags: []
 x-skills-master:
   domain: apple
   class: design

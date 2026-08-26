@@ -1,7 +1,7 @@
 ---
 name: choosing-networking
 description: "Decision guide for picking an Apple networking approach. Use when starting networking work, evaluating URLSession vs Network framework, building WebSocket/peer-to-peer/custom-transport features, or deciding whether a third-party HTTP client is justified."
-tags: [networking, urlsession, network-framework, websocket, architecture]
+tags: [architecture]
 x-skills-master:
   domain: apple
   class: overview

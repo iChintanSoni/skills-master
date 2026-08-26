@@ -3,7 +3,7 @@ name: espresso
 description: Covers Espresso UI testing for Android — onView/onData, ViewMatchers, ViewActions, ViewAssertions, idling resources, and interop with Compose-first codebases. Use when writing or reviewing instrumented UI tests for View-based or mixed View/Compose screens on Android.
 globs:
   - "**/*.kt"
-tags: [android, testing, espresso, ui-testing, instrumentation]
+tags: [instrumentation]
 x-skills-master:
   domain: android
   class: lang-tooling

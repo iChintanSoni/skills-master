@@ -3,7 +3,7 @@ name: unit-testing
 description: Covers JVM unit testing for Android — JUnit 5 structure, test naming, fakes vs mocks with MockK, testing coroutines with runTest and TestDispatchers, testing Flow with Turbine, and deciding what belongs in a local JVM test versus an instrumented test. Use when writing or reviewing unit tests for Android Kotlin code, choosing test doubles, or testing coroutine and Flow-based logic without a device.
 globs:
   - "**/*.kt"
-tags: [testing, junit, mockk, coroutines, kotlin]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

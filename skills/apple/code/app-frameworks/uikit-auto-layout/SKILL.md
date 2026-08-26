@@ -3,7 +3,7 @@ name: uikit-auto-layout
 description: "Builds robust UIKit layouts with layout anchors, constraint priorities, and stack views. Use when writing programmatic Auto Layout, fixing ambiguous or unsatisfiable constraint logs, tuning content hugging and compression resistance, or anchoring views to safe area, layout margin, and keyboard guides."
 globs:
   - "**/*.swift"
-tags: [uikit, autolayout, constraints, uistackview, layout-anchors]
+tags: [constraints, uistackview]
 x-skills-master:
   domain: apple
   class: code

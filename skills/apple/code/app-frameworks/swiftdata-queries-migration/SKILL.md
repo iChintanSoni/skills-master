@@ -3,7 +3,7 @@ name: swiftdata-queries-migration
 description: Guidance on reading and evolving a SwiftData store, covering the Query macro with the Predicate macro, sort descriptors, FetchDescriptor for imperative fetches, fetching through the model context, and schema migration with VersionedSchema and SchemaMigrationPlan stages. Use when filtering or sorting persisted models, paging large result sets, fetching outside a view, designing versioned schemas, or planning lightweight versus custom migrations between store versions.
 globs:
   - "**/*.swift"
-tags: [swiftdata, persistence, migration, query, predicate]
+tags: [persistence]
 x-skills-master:
   domain: apple
   class: code

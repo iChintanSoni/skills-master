@@ -4,7 +4,7 @@ description: "Covers Google Play Asset Delivery — install-time, fast-follow, a
 globs:
   - "**/*.kt"
   - "**/*.gradle.kts"
-tags: [play-asset-delivery, asset-packs, app-bundle, texture-compression, bundletool, games]
+tags: [app-bundle]
 x-skills-master:
   domain: android
   class: code

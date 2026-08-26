@@ -3,7 +3,7 @@ name: dependency-injection-patterns
 description: Covers dependency injection approaches in Android — manual DI/service locator, Hilt, Koin, and compile-time alternatives (Metro/kotlin-inject) — with tradeoffs on compile safety, scoping, and testability. Use when choosing or evaluating a DI strategy, wiring services across Compose screens, or making code testable without a specific framework commitment.
 globs:
   - "**/*.kt"
-tags: [architecture, dependency-injection, testability, hilt, koin]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

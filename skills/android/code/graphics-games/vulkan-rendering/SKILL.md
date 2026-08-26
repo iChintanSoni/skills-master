@@ -5,7 +5,7 @@ globs:
   - "**/*.cpp"
   - "**/*.h"
   - "**/*.kt"
-tags: [vulkan, ndk, rendering, gpu, games, android]
+tags: []
 x-skills-master:
   domain: android
   class: code

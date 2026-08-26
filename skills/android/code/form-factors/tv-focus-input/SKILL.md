@@ -3,7 +3,7 @@ name: tv-focus-input
 description: Covers Jetpack Compose for TV focus management — focusRestorer, focus groups, D-pad key event handling, focused-state visuals, and predictable directional navigation. Use when building or debugging navigation on Android TV with Compose for TV, ensuring D-pad users can traverse every interactive element in a logical, predictable order.
 globs:
   - "**/*.kt"
-tags: [android-tv, compose, focus, dpad, navigation]
+tags: []
 x-skills-master:
   domain: android
   class: code

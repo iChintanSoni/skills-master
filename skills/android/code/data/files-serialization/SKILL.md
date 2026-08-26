@@ -3,7 +3,7 @@ name: files-serialization
 description: Covers app-specific file I/O, cache vs files directory, streaming large files, and persisting structured data with kotlinx.serialization to disk. Use when you need lightweight structured persistence without a full database, or when storing binary/text blobs in internal storage.
 globs:
   - "**/*.kt"
-tags: [files, serialization, storage, kotlinx-serialization, io]
+tags: []
 x-skills-master:
   domain: android
   class: code

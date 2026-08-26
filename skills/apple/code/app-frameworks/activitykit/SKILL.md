@@ -3,7 +3,7 @@ name: activitykit
 description: "Builds ActivityKit Live Activities that surface live data on the Lock Screen and in the Dynamic Island via a widget extension. Use when starting, updating, or ending an Activity, modeling ActivityAttributes and ContentState, laying out compact/minimal/expanded Dynamic Island regions, driving updates with push or broadcast channels, or managing the update budget and stale dates."
 globs:
   - "**/*.swift"
-tags: [activitykit, live-activities, dynamic-island, widgetkit, push]
+tags: [widgetkit]
 x-skills-master:
   domain: apple
   class: code

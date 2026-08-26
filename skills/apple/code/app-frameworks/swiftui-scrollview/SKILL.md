@@ -3,7 +3,7 @@ name: swiftui-scrollview
 description: "Builds modern SwiftUI scrolling with ScrollView, scroll target behaviors, scroll position binding, transitions, and content margins. Use when implementing carousels, paged or snapping scroll, programmatic scroll-to, parallax/fade scroll effects, or reacting to scroll offset and visibility. Triggers: scrollTargetBehavior, viewAligned, paging, scrollPosition, scrollTransition, contentMargins, scrollIndicators, ScrollViewReader."
 globs:
   - "**/*.swift"
-tags: [swiftui, scrollview, scrolling, animation, ios17]
+tags: [animation, ios17]
 x-skills-master:
   domain: apple
   class: code

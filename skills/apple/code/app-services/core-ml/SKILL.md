@@ -3,7 +3,7 @@ name: core-ml
 description: "Use when integrating a trained model into an Apple app with Core ML: loading the Xcode-generated model class, running sync/async/batch predictions, tuning MLModelConfiguration compute units for the Neural Engine, converting models with Core ML Tools, or wrapping image models in Vision. Triggers on .mlpackage/.mlmodel files, generated prediction classes, MLModelConfiguration, VNCoreMLModel, or CoreMLRequest."
 globs:
   - "**/*.swift"
-tags: [coreml, machine-learning, vision, neural-engine, on-device]
+tags: [machine-learning, on-device]
 x-skills-master:
   domain: apple
   class: code

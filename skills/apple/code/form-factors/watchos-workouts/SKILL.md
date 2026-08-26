@@ -3,7 +3,7 @@ name: watchos-workouts
 description: "Runs HealthKit workout sessions on Apple Watch — HKWorkoutSession lifecycle, HKLiveWorkoutBuilder and HKLiveWorkoutDataSource, background runtime and the workout-processing mode, live heart-rate and energy statistics, water lock, mirrored sessions on iPhone, crash recovery, and workout zones. Use when building a fitness app for the watch, starting or ending a workout session, reading live sensor statistics during a workout, or adopting the workout zone APIs."
 globs:
   - "**/*.swift"
-tags: [watchos, healthkit, workouts, fitness, heart-rate]
+tags: []
 x-skills-master:
   domain: apple
   class: code

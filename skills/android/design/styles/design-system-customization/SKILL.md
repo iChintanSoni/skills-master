@@ -1,7 +1,7 @@
 ---
 name: design-system-customization
 description: Guides mapping brand guidelines to Material 3 design tokens (colors, typography, shapes) and implementing custom design systems in Jetpack Compose. Use when establishing a brand theme, importing Figma design tokens, or defining custom semantic tokens.
-tags: [design-system, theming, material3, brand, typography, color, shape, compose]
+tags: [theming]
 x-skills-master:
   domain: android
   class: design

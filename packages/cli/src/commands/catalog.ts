@@ -1,4 +1,5 @@
 import { resolveContent } from "../content/source";
+import { searchNormalize } from "../core/search-text";
 import type { Registry, RegistryEntry } from "../schema/registry";
 import { log } from "../util/log";
 
@@ -65,12 +66,11 @@ export interface SearchOptions extends CatalogQuery {
 
 export async function searchCommand(opts: SearchOptions): Promise<RegistryEntry[]> {
   const reg = await registryOf(opts);
-  const q = opts.query.toLowerCase();
+  const q = searchNormalize(opts.query);
   const hits = reg.skills.filter((s) =>
-    [s.name, s.description, s.domain, s.category, s.class, ...s.tags]
-      .join(" ")
-      .toLowerCase()
-      .includes(q),
+    searchNormalize(
+      [s.name, s.description, s.domain, s.category, s.class, ...s.tags].join(" "),
+    ).includes(q),
   );
   if (hits.length === 0) {
     log.info(`No matches for "${opts.query}".`);

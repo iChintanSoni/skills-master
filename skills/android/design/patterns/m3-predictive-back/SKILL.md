@@ -1,7 +1,7 @@
 ---
 name: m3-predictive-back
 description: "Design critique and guidance for Material 3 predictive back in Android apps: evaluating system back-to-home preview behavior, specifying in-app back animations and shared-element transitions, maintaining consistent back semantics, and avoiding back hijacking. Use when reviewing or designing back navigation interactions in an Android app, specifying how a screen should respond to the predictive swipe gesture, auditing whether back behavior matches user expectations, or deciding when a custom back animation adds value versus when the system default is the right answer."
-tags: [m3, design, navigation, back-gesture, patterns, android]
+tags: [back-gesture]
 x-skills-master:
   domain: android
   class: design

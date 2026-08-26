@@ -3,7 +3,7 @@ name: alarms-scheduling
 description: Covers AlarmManager scheduling on Android — exact vs inexact alarms, setExactAndAllowWhileIdle, SCHEDULE_EXACT_ALARM permission, Doze interactions, and when alarms beat WorkManager. Use when you need to fire code at a precise wall-clock time that must survive device idle or Doze mode.
 globs:
   - "**/*.kt"
-tags: [alarms, alarmmanager, scheduling, background-work, doze]
+tags: [background-work]
 x-skills-master:
   domain: android
   class: code

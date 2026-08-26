@@ -5,7 +5,7 @@ globs:
   - "**/*.gradle.kts"
   - "**/*.kts"
   - "**/*.toml"
-tags: [android, build-packaging, app-bundle, size-optimisation, dynamic-delivery]
+tags: [size-optimisation, dynamic-delivery]
 x-skills-master:
   domain: android
   class: lang-tooling

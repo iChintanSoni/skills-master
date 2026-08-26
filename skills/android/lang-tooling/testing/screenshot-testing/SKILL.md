@@ -3,7 +3,7 @@ name: screenshot-testing
 description: Covers visual regression testing for Jetpack Compose and View-based Android UIs using Compose Preview Screenshot Testing, Roborazzi, and Paparazzi — capturing baselines, diffing renders, and gating UI regressions in CI. Use when adding screenshot coverage to a Compose-first project, choosing between JVM-rendered and device-rendered screenshot strategies, wiring baseline capture into a Gradle task, or enforcing that a PR cannot merge if a visual diff exceeds threshold.
 globs:
   - "**/*.kt"
-tags: [testing, screenshot, compose, regression, roborazzi]
+tags: []
 x-skills-master:
   domain: android
   class: lang-tooling

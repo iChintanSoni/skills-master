@@ -1,7 +1,7 @@
 ---
 name: app-review-guidelines
 description: "Guidance for passing Apple App Review: the top rejection reasons (crashes, incomplete info, privacy, misleading metadata), in-app purchase and account-deletion rules, permission and privacy requirements, and how to prepare a submission or respond to a rejection. Use when preparing an App Store Connect submission, planning a paywall or login, adding account deletion, writing purpose strings or metadata, or replying to an App Review rejection."
-tags: [app-store, review, submission, privacy, in-app-purchase]
+tags: []
 x-skills-master:
   domain: apple
   class: lang-tooling

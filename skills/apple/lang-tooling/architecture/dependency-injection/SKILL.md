@@ -3,7 +3,7 @@ name: dependency-injection
 description: "Guidance on dependency injection in Swift apps: initializer injection, injecting collaborators through the SwiftUI Environment, protocol abstractions for testability, when a lightweight container helps versus when it hurts, and replacing singletons. Use when wiring services into types, making code testable, swapping real implementations for mocks or previews, or untangling global shared state."
 globs:
   - "**/*.swift"
-tags: [architecture, testability, swiftui, environment, swift6]
+tags: [swift6]
 x-skills-master:
   domain: apple
   class: lang-tooling

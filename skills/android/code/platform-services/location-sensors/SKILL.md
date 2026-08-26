@@ -3,7 +3,7 @@ name: location-sensors
 description: Covers the Fused Location Provider for current location and updates, location permission tiers (coarse/fine/background/approximate), geofencing, and SensorManager for motion and position sensors including activity recognition. Use when requesting or streaming device location, setting up geofence triggers, reading accelerometer or gyroscope data, or classifying physical activity in an Android app.
 globs:
   - "**/*.kt"
-tags: [location, sensors, geofencing, fused-location, activity-recognition]
+tags: []
 x-skills-master:
   domain: android
   class: code

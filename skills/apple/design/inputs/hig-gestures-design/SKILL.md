@@ -1,7 +1,7 @@
 ---
 name: hig-gestures-design
 description: "Design critique and recommendations for gesture interaction on iOS, iPadOS, and visionOS per Apple's Human Interface Guidelines. Use when reviewing or designing touch and spatial gestures, custom swipes, drag, pinch, touch-and-hold, or gaze-and-pinch interactions, or when a screen relies on hidden gestures. Triggers: gesture conflicts with the back swipe or screen edges, undiscoverable custom gestures, missing visible alternatives, accessibility concerns (VoiceOver, AssistiveTouch, Switch Control), or weak gesture feedback. Produces HIG-grounded design guidance, not code."
-tags: [gestures, inputs, touch, accessibility, visionos]
+tags: []
 x-skills-master:
   domain: apple
   class: design
