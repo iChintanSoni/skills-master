@@ -3,7 +3,6 @@ import { Command } from "commander";
 // package.json before running the build, so the bundle carries the
 // released version; a literal here would silently report a stale one.
 import { version } from "../package.json";
-import { ALL_TARGETS, type TargetId } from "./types";
 import { initCommand } from "./commands/init";
 import { addCommand } from "./commands/add";
 import { updateCommand } from "./commands/update";
@@ -15,23 +14,7 @@ import { registryBuildCommand } from "./commands/registry";
 import { marketplaceBuildCommand } from "./commands/marketplace";
 import { newSkillCommand } from "./commands/new";
 import { log } from "./util/log";
-
-const VALID = new Set<string>(ALL_TARGETS);
-
-function parseTargets(value?: string): TargetId[] | undefined {
-  if (!value) return undefined;
-  if (value === "all") return ALL_TARGETS;
-  const ids = value
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-  for (const id of ids) {
-    if (!VALID.has(id)) {
-      throw new Error(`Unknown target "${id}". Valid: ${[...VALID, "all"].join(", ")}.`);
-    }
-  }
-  return ids as TargetId[];
-}
+import { parseTargets } from "./util/targets";
 
 async function run(fn: () => Promise<unknown> | unknown, exitOnFalse = false): Promise<void> {
   try {

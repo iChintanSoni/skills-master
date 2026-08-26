@@ -23,6 +23,7 @@ corepack pnpm install
 pnpm build          # tsup bundle → packages/cli/dist/bin.js
 pnpm typecheck      # tsc --noEmit
 pnpm test           # vitest run (unit + e2e)
+pnpm test:coverage  # same, plus a v8 coverage report (reported in CI, never gated)
 
 pnpm skills:lint       # validate the whole skill library — must be clean
 pnpm skills:registry   # regenerate skills/registry.json (commit the result)
