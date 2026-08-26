@@ -178,8 +178,17 @@ broken emit formats) is a bug, not a nice-to-have.
 - [x] **6.3 Overview parity (M).** 7 `choosing-X` overviews: apple gains di,
   background-work, form-factors, image-loading, web-integration counterparts; android
   gains graphics-tech and widget-tech.
-- [ ] **6.4 Design gaps (M).** `android/design/inputs` (~6 skills); decide whether apple
-  adopts a `design/styles` split or documents the foundations-folding as intentional.
+- [x] **6.4 Design gaps (M).** **Resolved as not-a-gap — no skills added.** Both halves
+  assumed the two domains should carry matching `design` categories; they should not.
+  Apple's HIG has an **Inputs** section and folds color/typography/motion/icons into
+  **Foundations**; Material 3 is **foundations/styles/components**, with a **Styles**
+  section and no Inputs section. So `apple/design` correctly lacks `styles`, and
+  `android/design` correctly lacks `inputs` — its input guidance already lives, with real
+  depth, in `design/platforms/m3-{wear,tv,large-screens,chromeos-desktop}`,
+  `design/patterns/m3-gestures`, and `design/foundations/m3-interaction-states`. Adding
+  ~6 `android/design/inputs` skills would have duplicated that coverage and misrepresented
+  Material's structure. Rationale documented in `docs/architecture.md`
+  ("Categories mirror the vendor, not each other").
 
 ## Phase 7 — Metadata full sweep (after content lands)
 
