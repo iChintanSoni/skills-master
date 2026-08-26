@@ -19,7 +19,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/backgroundtasks/performing-long-running-tasks-on-ios-and-ipados
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use
@@ -51,7 +51,7 @@ BGTaskScheduler.shared.register(
 
 ## Platform notes
 
-- The classic `BGAppRefreshTask` and `BGProcessingTask` paths require iOS 13+/iPadOS 13+ and are available on tvOS, watchOS, and visionOS; the SwiftUI `backgroundTask(_:action:)` scene modifier (with `.appRefresh` and `.urlSession`) is the concurrency-native way to handle them from iOS 17.
+- Mind where each half actually ships. BackgroundTasks — `BGAppRefreshTask`, `BGProcessingTask` — is iOS/iPadOS 13+, Mac Catalyst 13.1+, tvOS 13+, and visionOS 1+; there is **no watchOS and no native macOS** version of the framework, so do not plan a watch or AppKit refresh around it. Background `URLSession` transfers are the broader path, reaching macOS and watchOS as well. The SwiftUI `backgroundTask(_:action:)` scene modifier (with `.appRefresh` and `.urlSession`) is the concurrency-native way to handle them from iOS 17.
 - `BGContinuedProcessingTask` is new in iOS 26 and iPadOS 26 only; gate its use with availability checks and fall back to a foreground task or background `URLSession` elsewhere. It needs the continued-processing capability declared in the processing background mode.
 - visionOS and tvOS schedule background work conservatively; design refresh logic to tolerate long gaps between executions rather than fixed intervals.
 
