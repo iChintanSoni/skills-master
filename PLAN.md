@@ -178,12 +178,20 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
 
 ## Phase 1 — Spec-surface fixes (small, concrete, land fast)
 
-- [ ] **1.1 Reword the `storekit` description (S).** Remove `VerificationResult<Transaction>`
+- [x] **1.1 Reword the `storekit` description (S).** Remove `VerificationResult<Transaction>`
   (and re-grep the library for any other tag-shaped text 0.2's rule surfaces). Patch-bump
   the skill's `version`; `snapshot_date` does not move (no re-verification happened).
   Regenerate registry/taxonomy/plugins. Blocked on 0.2 so the fix lands with its gate.
   Promote 0.2's rule from warn to **error** in the same PR — with the last violation gone,
   the gate can hold the line instead of describing it. *(G2)*
+  **Landed:** "verifying `VerificationResult<Transaction>`" → "verifying each transaction's
+  VerificationResult" — same meaning, no tag shape; `version` 1.1.0 → 1.1.1,
+  `snapshot_date` held at 2026-08-25 since nothing was re-verified. 0.2's rule is now an
+  **error**, and the library lints at 0 errors, 0 warnings — the re-grep, done by the rule
+  itself rather than by eye. Generated output moved by exactly two lines (the plugin
+  projection's description and the registry entry); `docs/taxonomy.md` does not carry
+  descriptions, so it did not move at all. G2 is closed on both sides: the violation is
+  gone and the gate now refuses the next one.
 - [ ] **1.2 Emit `license` (S).** Add `license: MIT` to the Claude-emitter frontmatter
   (spec-legal optional field), flowing to `.claude/skills/` installs and all 8 plugins.
   One emitter line + snapshot updates + a note in `docs/emitters.md`. Decision to record:

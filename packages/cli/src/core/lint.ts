@@ -35,6 +35,9 @@ const WARN_BODY_LINES = 450;
  * are what trips it: a validator matching `<` followed by a letter or slash
  * cannot tell them from markup. Reword rather than escape — the description is
  * read by a model, not rendered.
+ *
+ * Error, not warn: an upload the platform refuses is a broken projection, and
+ * 1.1 cleared the library's one violation, so the gate can hold the line.
  */
 const XML_TAG_RE = /<[A-Za-z/]/;
 
@@ -149,7 +152,7 @@ export function lintSkills(skillsRoot: string): LintResult {
       const end = fm.description.indexOf(">", tagAt);
       const snippet = fm.description.slice(tagAt, end === -1 ? tagAt + 20 : end + 1);
       push(
-        "warn",
+        "error",
         `description contains XML-tag-shaped text "${snippet}" — Claude's skill validation rejects tags; reword it (e.g. "a VerificationResult of Transaction")`,
       );
     }
