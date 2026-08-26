@@ -1,6 +1,7 @@
 ---
 name: notifications
 description: Covers Android notifications using NotificationCompat — creating channels with appropriate importance levels, requesting the POST_NOTIFICATIONS runtime permission on Android 13+, applying rich styles (BigText, Inbox, Media, Messaging), adding actions and direct-reply, grouping related notifications, and implementing conversation/bubble notifications. Use when building any feature that needs to alert the user outside the foreground, add notification actions or direct reply, group related alerts, or surface chat conversations as bubbles.
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

@@ -1,6 +1,7 @@
 ---
 name: hig-navigation-bars
 description: "Design critique and Apple HIG guidance for navigation bars: large vs inline titles, the back affordance, leading and trailing bar buttons, integrating search, keeping the bar uncluttered, and the Liquid Glass bar treatment. Use when reviewing or designing a screen's top navigation bar, deciding between a large or inline title, placing back and bar-button items, adding a search field, or evaluating clutter and translucency on iOS, iPadOS, tvOS, watchOS, or visionOS. Produces design recommendations, not code."
+license: MIT
 ---
 
 # HIG Navigation Bars

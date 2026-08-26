@@ -1,6 +1,7 @@
 ---
 name: android-navigation-architecture
 description: Covers Android navigation architecture — where navigation logic lives, a single NavController as source of truth, type-safe routes with Navigation 2.x Kotlin DSL, decoupling destinations from feature modules, deep-link strategy, and testing navigation graphs. Use when designing app-wide navigation, choosing a single- vs multi-graph structure, wiring feature modules to a nav graph, handling deep links, or writing navigation unit tests.
+license: MIT
 ---
 
 ## When to use

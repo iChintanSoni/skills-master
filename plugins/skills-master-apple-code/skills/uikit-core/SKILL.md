@@ -1,6 +1,7 @@
 ---
 name: uikit-core
 description: "Covers UIKit fundamentals: the UIViewController lifecycle (viewDidLoad, viewIsAppearing, viewWillAppear, layoutSubviews), view controller containment with addChild and didMove, the UIView hierarchy and responder chain, the scene-based lifecycle with UIWindowScene and a scene delegate, trait collections and registerForTraitChanges, and when UIKit still fits versus SwiftUI. Use when building or maintaining a UIKit screen, debugging when lifecycle or layout code runs, embedding a child view controller, migrating to the scene lifecycle, reacting to trait or size-class changes, or routing events through the responder chain."
+license: MIT
 ---
 
 ## When to use

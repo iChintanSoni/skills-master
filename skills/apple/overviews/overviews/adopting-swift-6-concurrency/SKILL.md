@@ -1,6 +1,7 @@
 ---
 name: adopting-swift-6-concurrency
 description: "Decision router for moving a codebase to Swift 6 strict concurrency and the Swift 6 language mode, covering whether to migrate now, an incremental per-module sequence, where to start, the cost versus benefit, and how MainActor and Sendable fit in. Use when planning a Swift 6 adoption, weighing strict concurrency checking against deadlines, choosing the first module to migrate, recompiling against the Xcode 26 SDK, or deciding between approachable defaults and full data-race safety."
+license: MIT
 tags: [migration]
 x-skills-master:
   domain: apple

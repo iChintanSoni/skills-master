@@ -1,6 +1,7 @@
 ---
 name: choosing-navigation-pattern
 description: "Decision guide for selecting a SwiftUI navigation container: TabView for peer sections, NavigationStack for push hierarchies, NavigationSplitView for multi-column iPad/Mac, and sheets or full-screen covers for modal tasks. Use when starting a new screen flow, restructuring an app's top-level shell, deciding between a stack and a split view, or unsure where modals fit — routes into deeper swiftui-navigation work."
+license: MIT
 ---
 
 # Choosing a navigation pattern

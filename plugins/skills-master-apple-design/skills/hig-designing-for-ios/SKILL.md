@@ -1,6 +1,7 @@
 ---
 name: hig-designing-for-ios
 description: Design critique and guidance for iPhone apps grounded in Apple's Human Interface Guidelines and the iOS 26 Liquid Glass design system. Use when reviewing or designing an iOS layout, navigation, gestures, or touch ergonomics; when deciding between tab bars and navigation stacks; when checking reachability, the home indicator, system gestures, Dynamic Type, or dark mode; or when adopting floating Liquid Glass tab bars and glass toolbars. Produces UX recommendations and review notes, not code.
+license: MIT
 ---
 
 ## When to use

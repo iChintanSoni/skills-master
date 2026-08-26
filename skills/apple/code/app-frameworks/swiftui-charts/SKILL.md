@@ -1,6 +1,7 @@
 ---
 name: swiftui-charts
 description: "Builds data visualizations with Swift Charts in SwiftUI: Chart plus marks (BarMark, LineMark, PointMark, AreaMark, RuleMark, SectorMark), Plottable data, axes and scales, category styling, selection, and accessibility. Use when adding bar, line, area, scatter, or pie charts to a SwiftUI app, styling marks by category, wiring tap or drag selection, customizing axes, or making charts VoiceOver-friendly."
+license: MIT
 globs:
   - "**/*.swift"
 tags: [dataviz, ios26]

@@ -1,6 +1,7 @@
 ---
 name: swiftui-app-architecture
 description: "Guides choosing and applying SwiftUI app architecture: the MV pattern (Observable models in the environment) versus MVVM (one ViewModel per view), where state and business logic belong, and how to keep views thin and testable. Use when structuring a new SwiftUI app, deciding whether a view needs a ViewModel, refactoring fat views, placing shared model state, or debating MV vs MVVM in code review."
+license: MIT
 ---
 
 > **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.

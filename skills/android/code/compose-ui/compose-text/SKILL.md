@@ -1,6 +1,7 @@
 ---
 name: compose-text
 description: Covers text display in Jetpack Compose — Text composable, MaterialTheme typography, AnnotatedString, inline content, overflow, clickable links via LinkAnnotation, font scaling, and downloadable/variable fonts. Use when building or reviewing any Compose UI that renders, styles, or interacts with text.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [material3]

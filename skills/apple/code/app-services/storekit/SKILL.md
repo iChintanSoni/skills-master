@@ -1,6 +1,7 @@
 ---
 name: storekit
 description: "Use when implementing in-app purchases or auto-renewable subscriptions with StoreKit 2 — loading Product objects, calling purchase() and handling PurchaseResult, verifying each transaction's VerificationResult, reading current entitlements and subscription status, listening to Transaction.updates for renewals and refunds, finishing transactions, and building paywalls with ProductView or SubscriptionStoreView."
+license: MIT
 globs:
   - "**/*.swift"
 tags: [swiftui, monetization]

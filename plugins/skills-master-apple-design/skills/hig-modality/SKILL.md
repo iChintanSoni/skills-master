@@ -1,6 +1,7 @@
 ---
 name: hig-modality
 description: "Design critique and recommendations for modal experiences on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing interruptions and focused tasks: deciding whether to go modal at all, choosing between sheets, full-screen covers, alerts, action sheets/menus, and popovers, keeping modal tasks short and focused, providing clear dismissal and confirming unsaved changes, and avoiding nested or stacked modals. Covers the 26 design cycle (Liquid Glass sheets that morph from their source, dimming for focus). Produces UX guidance and review notes, not code."
+license: MIT
 ---
 
 # HIG Modality

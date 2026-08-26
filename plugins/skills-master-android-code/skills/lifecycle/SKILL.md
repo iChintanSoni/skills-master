@@ -1,6 +1,7 @@
 ---
 name: lifecycle
 description: Covers lifecycle-aware components in Android — the Lifecycle and LifecycleOwner contract, lifecycle states and events, safe Flow collection with repeatOnLifecycle and flowWithLifecycle, DefaultLifecycleObserver for non-Compose observers, and reacting to lifecycle events in Compose with LifecycleEventEffect. Use when collecting Flows safely across foreground/background transitions, observing lifecycle events outside Compose, or hooking side effects to specific lifecycle states in a composable.
+license: MIT
 ---
 
 ## When to use

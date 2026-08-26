@@ -1,6 +1,7 @@
 ---
 name: m3-gestures
 description: "Material 3 design judgment for gesture interactions on Android: standard gesture vocabulary (tap, swipe, long-press, drag, pinch), affordance and discoverability design, avoiding conflicts with Android system edge gestures and scroll containers, and ensuring every gesture-driven action has a non-gesture alternative for accessibility. Use when designing or critiquing touchscreen interactions, auditing a screen for gesture conflicts or discoverability gaps, or deciding how to surface hidden swipe actions and drag handles."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

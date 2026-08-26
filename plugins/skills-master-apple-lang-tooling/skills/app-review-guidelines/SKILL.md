@@ -1,6 +1,7 @@
 ---
 name: app-review-guidelines
 description: "Guidance for passing Apple App Review: the top rejection reasons (crashes, incomplete info, privacy, misleading metadata), in-app purchase and account-deletion rules, permission and privacy requirements, and how to prepare a submission or respond to a rejection. Use when preparing an App Store Connect submission, planning a paywall or login, adding account deletion, writing purpose strings or metadata, or replying to an App Review rejection."
+license: MIT
 ---
 
 This is engineering guidance, not legal advice. The guidelines change often, so treat the linked Apple pages as the authority and re-check them before each submission.

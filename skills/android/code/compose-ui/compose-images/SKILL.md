@@ -1,6 +1,7 @@
 ---
 name: compose-images
 description: Covers the Image composable, painterResource, vector vs raster assets, ContentScale, alignment, ColorFilter, remote image loading with Coil (AsyncImage, rememberAsyncImagePainter, placeholders, crossfade), ImageBitmap, and accessibility content descriptions. Use when displaying local or remote images, tinting icons, controlling how images scale and crop, or loading network images in Jetpack Compose.
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

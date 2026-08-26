@@ -1,6 +1,7 @@
 ---
 name: media3-session
 description: Covers Media3 MediaSession and MediaController for exposing playback to the system. Use when building background audio/video playback, media notification controls, or browsable media libraries with MediaSessionService or MediaLibraryService.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [background-playback, exoplayer]

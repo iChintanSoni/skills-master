@@ -1,6 +1,7 @@
 ---
 name: appkit-swiftui-interop
 description: Bridges AppKit and SwiftUI on macOS with NSViewRepresentable, NSViewControllerRepresentable, NSHostingController, and NSHostingView, plus menu and toolbar wiring. Use when embedding a SwiftUI view inside an AppKit window or vice versa, hosting an NSView/NSViewController in SwiftUI, sizing hosted content, or sharing menus, commands, and the responder chain across the two frameworks.
+license: MIT
 ---
 
 ## When to use

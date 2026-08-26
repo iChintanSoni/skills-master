@@ -1,6 +1,7 @@
 ---
 name: m3-ai-glasses
 description: "Design guidance and critique for Android XR AI/display glasses using the Glimmer design language: glanceable surfaces, audio-first and hands-free interaction patterns, world-sensing assistance UX, and adapting content to a constrained heads-up display. Use when designing or reviewing any experience targeting Android AI glasses, deciding what information belongs on the display versus in audio, or auditing a glasses UI for glanceability, cognitive load, and situational safety."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

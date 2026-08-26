@@ -1,6 +1,7 @@
 ---
 name: m3-dividers-scaffold
 description: "Design guidance for Material 3 dividers and the Scaffold screen skeleton: choosing full-width vs inset dividers, knowing when spacing alone is better, and structuring a screen with the Scaffold composable (top app bar, FAB, bottom bar, content slot). Use when reviewing or designing screen layout, deciding whether a visual separator is needed between list items or sections, or evaluating how the top app bar, floating action button, and navigation bar fit together as a cohesive screen frame."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

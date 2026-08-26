@@ -1,6 +1,7 @@
 ---
 name: choosing-http-client
 description: Decision guide for selecting an HTTP client library on Android in 2026. Use when starting a new network layer, evaluating Retrofit vs Ktor client vs raw OkHttp, or deciding whether Cronet/QUIC is warranted for a production app.
+license: MIT
 ---
 
 ## When to use

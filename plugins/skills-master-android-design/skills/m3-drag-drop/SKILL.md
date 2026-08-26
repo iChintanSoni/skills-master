@@ -1,6 +1,7 @@
 ---
 name: m3-drag-drop
 description: Material 3 design guidance for drag-and-drop interactions on Android — drag affordances, drag-state visual feedback, valid drop-target signaling, cross-app drops on large screens and ChromeOS, list reordering, and accessible alternatives to dragging. Use when designing or critiquing a drag-and-drop interaction, deciding what should be draggable, evaluating drag previews or drop-zone feedback, planning large-screen or multi-window drag behavior, or specifying non-drag fallbacks for accessibility.
+license: MIT
 ---
 
 ## When to use

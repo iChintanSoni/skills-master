@@ -1,6 +1,7 @@
 ---
 name: supporting-pane-scaffold
 description: Covers SupportingPaneScaffold from the Adaptive Navigation library — primary content pane paired with a contextual supporting pane on medium and expanded windows, the ThreePaneScaffoldNavigator, pane back-stack management, and when to choose SupportingPaneScaffold over ListDetailPaneScaffold. Use when building a feature screen that needs a persistent or slide-in contextual panel (metadata, filters, inspector, help) alongside the main content on large screens while remaining a single-pane layout on compact windows.
+license: MIT
 ---
 
 ## When to use

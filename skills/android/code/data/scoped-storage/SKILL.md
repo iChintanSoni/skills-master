@@ -1,6 +1,7 @@
 ---
 name: scoped-storage
 description: Covers Android scoped storage — app-specific internal and external dirs (no permission required), MediaStore for shared media, the Storage Access Framework for user-chosen documents and trees, FileProvider for sharing files with other apps, and the modern READ_MEDIA_* permission model. Use when reading or writing files on Android 10 and above, sharing a file URI with another app, letting the user pick or save a document, or auditing storage permission usage.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [saf, permissions]

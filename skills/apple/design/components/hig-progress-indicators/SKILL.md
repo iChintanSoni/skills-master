@@ -1,6 +1,7 @@
 ---
 name: hig-progress-indicators
 description: "Applies Apple Human Interface Guidelines to progress indicators and gauges — choosing a determinate bar when completion is estimable versus an indeterminate activity spinner, using gauges for levels within a range, giving the wait meaningful context, and not flashing an indicator for near-instant work. Use when designing or reviewing a download, export, sync, upload, or any wait that shows a bar, spinner, or gauge, or when critiquing whether the indicator type, accuracy, and placement are right. Produces design critique and recommendations, not code."
+license: MIT
 tags: [status, feedback, loading]
 x-skills-master:
   domain: apple

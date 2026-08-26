@@ -1,6 +1,7 @@
 ---
 name: swiftui-scenes-windows
 description: "Structure a SwiftUI app's window and scene topology using App, Scene, WindowGroup, Window, Settings, DocumentGroup, and MenuBarExtra. Use when building multi-window experiences, opening or dismissing windows with openWindow and dismissWindow, tuning windowStyle and windowResizability, or shipping volumetric windows and immersive spaces on visionOS."
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

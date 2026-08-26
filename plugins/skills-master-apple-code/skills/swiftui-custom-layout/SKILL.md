@@ -1,6 +1,7 @@
 ---
 name: swiftui-custom-layout
 description: Guidance for building SwiftUI custom layouts with the Layout protocol (sizeThatFits/placeSubviews), layout caches, alignment guides, ViewThatFits, anchors, and coordinate spaces. Use when arranging subviews in a flow, radial, or measurement-driven pattern that nested HStack/VStack/Grid cannot express, when adapting between layouts by available space, or when reading one view's geometry relative to another.
+license: MIT
 ---
 
 ## When to use

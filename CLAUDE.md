@@ -95,7 +95,7 @@ Read `docs/authoring.md` first. Hard rules the linter enforces (errors):
 - `stability: contested` requires an `## Open question` section, and such skills present tradeoffs rather than prescribing.
 - `snapshot_date` must not be in the future.
 
-Warnings worth honoring: description should contain a "Use when …" clause; `sources` should carry ≥1 canonical https doc URL; canonical headings (`## When to use`, `## Core guidance`, `## Pitfalls`, `## References`, `## See also`) should all be present.
+Warnings worth honoring: description should contain a "Use when …" clause; every skill should carry `license: MIT` (it ships as a standalone directory, so the repo `LICENSE` does not travel with it — the Claude projection passes the field through, never invents it); `sources` should carry ≥1 canonical https doc URL; canonical headings (`## When to use`, `## Core guidance`, `## Pitfalls`, `## References`, `## See also`) should all be present.
 
 **YAML hazard:** an unquoted scalar containing ` #` is silently truncated as a comment (`#expect`, `#Preview` in descriptions are the classic trap). Quote the value or reword. The linter warns.
 

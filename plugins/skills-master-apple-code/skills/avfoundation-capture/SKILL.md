@@ -1,6 +1,7 @@
 ---
 name: avfoundation-capture
 description: Guidance on capturing photos, video, and audio with AVCaptureSession, its device inputs and outputs (AVCapturePhotoOutput, AVCaptureMovieFileOutput, video data output), AVCaptureVideoPreviewLayer, device discovery and configuration, camera and microphone authorization, and modern rotation handling via RotationCoordinator. Use when building a camera or recorder, wiring a capture session, selecting or configuring a capture device, showing a live preview, requesting camera or microphone permission, or fixing video orientation on iOS 17 and later.
+license: MIT
 ---
 
 ## When to use

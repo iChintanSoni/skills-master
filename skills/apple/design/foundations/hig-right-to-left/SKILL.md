@@ -1,6 +1,7 @@
 ---
 name: hig-right-to-left
 description: "Design critique and guidance for right-to-left (RTL) layouts on Apple platforms per the Human Interface Guidelines. Use when reviewing or designing for Arabic, Hebrew, Farsi, or Urdu localizations, when deciding what to mirror vs. keep fixed (navigation, sliders, media controls, numerals), when aligning text or handling bidirectional content, or when a team still reasons in left/right instead of leading/trailing. Produces UX recommendations, not code."
+license: MIT
 tags: [accessibility]
 x-skills-master:
   domain: apple

@@ -1,6 +1,7 @@
 ---
 name: widgetkit
 description: "Use when building or refreshing Home Screen, Lock Screen, StandBy, or watch widgets with WidgetKit and SwiftUI. Triggers: creating a Widget/WidgetConfiguration, writing a TimelineProvider or AppIntentTimelineProvider, choosing reload policies and widget families, adding interactive Button/Toggle App Intents, applying containerBackground, or wiring push-based widget updates."
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

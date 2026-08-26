@@ -1,6 +1,7 @@
 ---
 name: m3-layout-spacing
 description: "Covers Material 3 layout and spacing design judgment — the 4dp/8dp grid, margins, padding, density, whitespace grouping, and rhythm — for Android UI. Use when designing or critiquing screen layouts, reviewing component spacing, or evaluating visual hierarchy and grouping across phone and large-screen form factors."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

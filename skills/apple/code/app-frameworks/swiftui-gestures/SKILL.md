@@ -1,6 +1,7 @@
 ---
 name: swiftui-gestures
 description: "Guides building and composing SwiftUI gestures (tap, long press, drag, magnify, rotate) with @GestureState, priority and composition modifiers, hit testing, and accessibility. Use when adding touch or pointer interactions, combining recognizers, tracking transient gesture state, fixing hit-testing or gesture-conflict bugs, or making custom gestures accessible."
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

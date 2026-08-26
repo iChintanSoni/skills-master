@@ -1,6 +1,7 @@
 ---
 name: property-wrappers
 description: "Guidance on authoring and using Swift property wrappers: @propertyWrapper, wrappedValue, projectedValue via $, initialization, composition, and how SwiftUI's @State/@Binding/@Environment relate to the @Observable macro. Use when writing a custom @propertyWrapper, debugging $-projection or init order, deciding wrapper vs macro, or migrating ObservableObject models to @Observable."
+license: MIT
 ---
 
 ## When to use

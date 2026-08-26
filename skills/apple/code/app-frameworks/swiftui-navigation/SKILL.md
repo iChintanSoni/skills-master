@@ -1,6 +1,7 @@
 ---
 name: swiftui-navigation
 description: Guidance for modern SwiftUI navigation using NavigationStack with a value-based path, navigationDestination(for:), and NavigationSplitView for multi-column layouts. Use when building navigation hierarchies, adding programmatic or deep-link navigation, choosing between stack and split layouts for iPhone, iPad, Mac, or visionOS, restoring navigation state, or migrating away from the deprecated NavigationView.
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

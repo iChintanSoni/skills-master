@@ -1,6 +1,7 @@
 ---
 name: adopting-liquid-glass
 description: Decision router for adopting the Liquid Glass design language across an existing app in the 2025-2026 OS cycle, covering what changes automatically, when to opt in versus defer, and where custom UI needs attention. Use when planning a Liquid Glass migration, recompiling an existing app against the iOS 26 SDK, deciding whether to keep the legacy appearance, or auditing custom controls and backgrounds that may not adapt cleanly to the new material.
+license: MIT
 tags: [swiftui, uikit]
 x-skills-master:
   domain: apple

@@ -1,6 +1,7 @@
 ---
 name: m3-feedback
 description: "Design critique and guidance for Material 3 feedback and status patterns on Android: choosing among snackbar, dialog, inline message, and banner; designing empty, loading, and error states; confirming actions and offering undo; and acknowledging long-running work without blocking. Use when reviewing or designing any moment where the app must communicate outcome, status, or system state to the user — from a reversible deletion to a multi-minute background export — and you need M3-grounded design judgment rather than implementation code."
+license: MIT
 ---
 
 ## When to use

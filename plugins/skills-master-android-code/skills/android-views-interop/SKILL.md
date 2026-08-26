@@ -1,6 +1,7 @@
 ---
 name: android-views-interop
 description: Covers traditional View-based XML layouts, custom View drawing, lifecycle interactions, and two-way interoperability between traditional Views and Jetpack Compose. Use when working with legacy layouts, custom canvas Views, or embedding Views/Compose in each other.
+license: MIT
 ---
 
 ## When to use

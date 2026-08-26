@@ -1,6 +1,7 @@
 ---
 name: kotlin-language-core
 description: Covers idiomatic Kotlin for Android development — val/var immutability, null-safety, data classes, sealed classes, when expressions, scope functions, extension functions, and collection operations. Use when writing or reviewing Kotlin code on Android to ensure correctness, expressiveness, and safety.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [idioms, collections]

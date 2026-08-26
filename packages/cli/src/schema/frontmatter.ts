@@ -88,6 +88,13 @@ export const FrontmatterSchema = z.looseObject({
     .string()
     .min(1, "description is required")
     .max(1024, "description must be <= 1024 characters"),
+  /**
+   * Spec field, projected verbatim onto the Claude target. Authored per skill
+   * rather than stamped by the emitter: an emitter cannot know the license of
+   * whatever content root it was pointed at, and inventing one would be a
+   * false claim about someone else's work.
+   */
+  license: z.string().min(1, "license must be a non-empty string").optional(),
   globs: GlobsSchema,
   tags: z.array(z.string()).default([]),
   "x-skills-master": XSkillsMasterSchema,

@@ -1,6 +1,7 @@
 ---
 name: version-catalogs
 description: Guidance on Gradle version catalogs — declaring versions, libraries, bundles, and plugins in libs.versions.toml, referencing libs.* accessors in build scripts, sharing a catalog across modules, and migrating hardcoded dependency strings. Use when adding or updating dependencies in a multi-module Android project, consolidating scattered version strings, or setting up a new project with a shared dependency catalog.
+license: MIT
 ---
 
 ## When to use

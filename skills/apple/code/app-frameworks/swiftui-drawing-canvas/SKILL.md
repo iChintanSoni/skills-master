@@ -1,6 +1,7 @@
 ---
 name: swiftui-drawing-canvas
 description: "Guidance for custom 2D drawing in SwiftUI using Shape, Path, built-in shapes, fill/stroke/gradients, and Canvas with GraphicsContext, including TimelineView-driven animation. Use when drawing custom graphics, designing a reusable Shape, deciding between composing shapes and dropping into Canvas, or rendering many primitives or particle effects efficiently."
+license: MIT
 globs:
   - "**/*.swift"
 tags: []

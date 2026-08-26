@@ -1,6 +1,7 @@
 ---
 name: hig-keyboards-design
 description: "Design critique and HIG guidance for hardware keyboard support: keyboard shortcuts, the hold-Command shortcut overlay on iPad, focus order, Full Keyboard Access, and standard key behaviors. Use when reviewing or designing how an iPad, Mac, or visionOS app responds to a physical keyboard, when deciding which actions deserve shortcuts, when auditing Tab focus order or motor accessibility, or when a design must work without a pointer. Produces UX recommendations, not code."
+license: MIT
 tags: []
 x-skills-master:
   domain: apple

@@ -21,7 +21,8 @@ function template(domain: string, cls: SkillClass, category: string, name: strin
   const today = new Date().toISOString().slice(0, 10);
   return `---
 name: ${name}
-description: TODO — one-line, third person. Use when <triggers go here>.
+description: TODO — one-line, third person. Use when the triggers go here.
+license: MIT
 globs:
   - "**/*"
 tags: []

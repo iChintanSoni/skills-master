@@ -1,6 +1,7 @@
 ---
 name: navigation3
 description: Covers Jetpack Navigation 3 — the Compose-native navigation library where your code owns the back stack as observable state, with NavDisplay, NavEntry, entryProvider, scene strategies for adaptive multi-pane layouts, shared elements between scenes, and the NavMetadata DSL. Use when starting navigation in a new Compose app, rendering two destinations at once on large screens, driving navigation from state you already own, or weighing a migration from Navigation Compose.
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

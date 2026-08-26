@@ -1,6 +1,7 @@
 ---
 name: swift-language-core
 description: Practical guidance for everyday Swift language fundamentals in app code — value versus reference types (struct/enum vs class), optionals and optional chaining, let vs var, stored/computed/lazy properties and observers, closures and capture semantics, protocols and extensions, and struct-first design. Use when modeling a new type and choosing struct vs class, taming optionals, deciding where to put behavior with protocol extensions, fixing a closure retain cycle, or reviewing idiomatic Swift in a pull request.
+license: MIT
 ---
 
 ## When to use

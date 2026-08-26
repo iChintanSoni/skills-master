@@ -1,6 +1,7 @@
 ---
 name: adopting-compose
 description: Migration guide for moving an existing Android View/XML app to Jetpack Compose incrementally — leaf-first or screen-by-screen — covering ComposeView in XML/Fragments, AndroidView for retained Views, shared ViewModels across the boundary, theme bridging, navigation, and testing. Use when planning or executing a Compose migration on a live app, choosing a migration order, wiring Compose screens into an existing Fragment/Navigation-Component stack, or deciding when to switch fully to Compose navigation.
+license: MIT
 ---
 
 ## When to use

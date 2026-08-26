@@ -1,6 +1,7 @@
 ---
 name: info-plist-entitlements
 description: "Guidance on Info.plist keys, privacy usage strings, and the .entitlements file: which to use, how capabilities populate them, driving values from build settings, and wiring URL schemes and associated domains. Use when configuring privacy purpose strings, adding a capability, debugging a missing-key crash or rejection, setting up universal links or custom schemes, or making these files reviewable."
+license: MIT
 tags: []
 x-skills-master:
   domain: apple

@@ -1,6 +1,7 @@
 ---
 name: media3-exoplayer
 description: Media3 ExoPlayer skill for Android — Use when building video/audio playback with adaptive streaming (DASH/HLS), DRM, playlists, track selection, or player surfaces in Jetpack Compose or Views.
+license: MIT
 globs:
   - "**/*.kt"
 tags: []

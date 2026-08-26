@@ -1,6 +1,7 @@
 ---
 name: swiftui-sheets
 description: Implements modal sheets in SwiftUI with .sheet, presentation detents, and programmatic dismissal. Use when presenting a sheet, setting partial/large detents, driving presentation from optional item state, or wiring a Cancel/Done flow. Pairs with the HIG sheets design skill.
+license: MIT
 ---
 
 ## When to use

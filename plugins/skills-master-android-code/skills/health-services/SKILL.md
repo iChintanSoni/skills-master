@@ -1,6 +1,7 @@
 ---
 name: health-services
 description: Covers Health Services on Wear OS for low-power sensor and exercise tracking, and Health Connect as the on-device health datastore and cross-app sharing layer including permissions. Use when building fitness or health features on Wear OS with real-time sensor data, or when reading/writing health records from a phone or watch app via Health Connect.
+license: MIT
 ---
 
 ## When to use

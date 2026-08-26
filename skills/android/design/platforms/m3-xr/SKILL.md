@@ -1,6 +1,7 @@
 ---
 name: m3-xr
 description: "Design critique and judgment for Android XR headset UIs: spatial panels and orbiters, depth and elevation in three-dimensional space, viewer comfort and accessibility at distance, environment design, and adapting 2D Material 3 layouts into immersive XR experiences. Use when reviewing or specifying UI for Android XR headsets, evaluating whether a panel layout respects spatial comfort zones, deciding how 2D screens translate into the volumetric canvas, or critiquing depth hierarchy and orbiter placement."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

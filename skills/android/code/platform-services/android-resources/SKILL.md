@@ -1,6 +1,7 @@
 ---
 name: android-resources
 description: Covers organizing project resources, configuration qualifiers, alternative resources selection, and resource compilation in Android projects. Use when organizing layouts, drawables, localized assets, values, or managing resource conflicts.
+license: MIT
 globs:
   - "**/src/main/res/**/*"
 tags: [configurations, localization]

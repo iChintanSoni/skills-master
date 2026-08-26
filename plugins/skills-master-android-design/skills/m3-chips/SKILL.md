@@ -1,6 +1,7 @@
 ---
 name: m3-chips
 description: Design judgment and critique for Material 3 chips on Android — covering the four chip types (assist, filter, input, suggestion), chip group layout, selection state, and when chips outperform buttons, menus, or segmented buttons. Use when choosing the right chip type for a context, reviewing filter or tag patterns, evaluating chip group density and wrapping behavior, or deciding whether chips are the appropriate control at all.
+license: MIT
 ---
 
 ## When to use

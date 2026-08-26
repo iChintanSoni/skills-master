@@ -1,6 +1,7 @@
 ---
 name: splash-screen
 description: Covers the AndroidX SplashScreen API — installSplashScreen, holding the splash on screen during async initialization with a keep condition, animated icon and window exit animation, and migrating away from a legacy custom splash Activity. Use when adding or updating a launch experience in an Android app, prolonging the splash while data loads, customizing the animated icon or exit transition, or removing an old custom-Activity splash implementation.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [compose, app-launch]

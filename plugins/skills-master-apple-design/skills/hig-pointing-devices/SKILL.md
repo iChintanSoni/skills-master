@@ -1,6 +1,7 @@
 ---
 name: hig-pointing-devices
 description: Design-critique guidance for Apple Human Interface Guidelines pointing-device support on iPadOS and macOS, covering pointer shapes, hover and highlight effects, the iPadOS 26 precise 1:1 pointer with its Liquid Glass highlight, hit regions and target sizing, and secondary (right) click actions. Use when reviewing or specifying how an iPad or Mac interface responds to a trackpad or mouse, judging hover feedback and pointer effects on controls, evaluating whether targets are large and precise enough to point at, or critiquing right-click and shortcut-menu behavior. Produces design recommendations, not code.
+license: MIT
 ---
 
 # HIG pointing devices

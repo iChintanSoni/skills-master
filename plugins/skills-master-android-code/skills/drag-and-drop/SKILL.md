@@ -1,6 +1,7 @@
 ---
 name: drag-and-drop
 description: Covers drag-and-drop in Jetpack Compose using dragAndDropSource and dragAndDropTarget modifiers, DragAndDropTransferData with MIME types, cross-app drop acceptance, and visual feedback. Use when implementing drag-and-drop interactions in Compose on Android — especially on large screens, tablets, and ChromeOS where multi-window drag is common.
+license: MIT
 ---
 
 ## When to use

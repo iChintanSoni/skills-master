@@ -1,6 +1,7 @@
 ---
 name: content-providers
 description: Covers authoring and consuming Android ContentProviders — content URIs, MIME types, ContentResolver, URI permission grants, and cross-app data sharing. Use when an app needs to expose structured data to other apps, integrate with system providers (contacts, media), or share files across process boundaries with fine-grained permission control.
+license: MIT
 ---
 
 ## When to use

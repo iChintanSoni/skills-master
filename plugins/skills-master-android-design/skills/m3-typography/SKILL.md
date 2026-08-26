@@ -1,6 +1,7 @@
 ---
 name: m3-typography
 description: Critiques typography choices against Material 3 design principles, covering the five type-role families (display, headline, title, body, label) at large/medium/small, mapping those roles to visual hierarchy, variable font usage, readable line lengths, and honoring the user's font-size preference. Use when reviewing a screen's text hierarchy, evaluating whether type roles are applied semantically, deciding between competing type roles, assessing readability at different densities, or auditing a layout for respect of system font-scale settings.
+license: MIT
 ---
 
 ## When to use

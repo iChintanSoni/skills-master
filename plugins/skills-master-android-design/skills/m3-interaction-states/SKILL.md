@@ -1,6 +1,7 @@
 ---
 name: m3-interaction-states
 description: Design critique and guidance for Material 3 interaction states — enabled, disabled, hover, focus, pressed, dragged, and selected — including state-layer opacities, ripple feedback, and applying states consistently so every interactive element clearly communicates its status. Use when auditing interactive elements for missing or inconsistent state feedback, choosing state-layer colors, evaluating ripple placement, or reviewing touch targets for accessibility compliance.
+license: MIT
 ---
 
 ## When to use

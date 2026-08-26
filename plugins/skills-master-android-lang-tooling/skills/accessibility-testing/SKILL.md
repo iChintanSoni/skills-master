@@ -1,6 +1,7 @@
 ---
 name: accessibility-testing
 description: Covers Android accessibility testing — Accessibility Scanner, Espresso/Compose a11y checks, TalkBack and Switch Access manual walkthroughs, contrast and touch-target audits, and gating a11y failures in CI. Use when validating that an Android app is usable by people who rely on assistive technology, auditing for WCAG contrast or touch-target failures, or adding accessibility checks to a CI pipeline.
+license: MIT
 ---
 
 ## When to use

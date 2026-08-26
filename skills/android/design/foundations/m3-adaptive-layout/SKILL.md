@@ -1,6 +1,7 @@
 ---
 name: m3-adaptive-layout
 description: "Design-critique guidance for Material 3 adaptive and responsive layout, covering window size classes and breakpoints, scaling margins and spacing, reflow vs reposition vs reveal strategies, multi-pane layout, and designing one UI that flexes across phones, foldables, tablets, and desktop. Use when critiquing or specifying a screen layout for Android, evaluating whether a design adapts gracefully across compact, medium, and expanded window sizes, deciding between a single-pane and list-detail arrangement, or reviewing how margins and spacing scale with available width."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

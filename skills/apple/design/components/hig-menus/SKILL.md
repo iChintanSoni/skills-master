@@ -1,6 +1,7 @@
 ---
 name: hig-menus
 description: "Design critique and guidance for menus on Apple platforms following the Human Interface Guidelines. Use when designing or reviewing pull-down menus, pop-up buttons, submenus, or menu items; deciding between a menu, action sheet, or context menu; ordering and grouping commands; styling destructive items; or judging whether a menu is too deep. Produces HIG-grounded UX recommendations and critique, not code."
+license: MIT
 tags: [ios, macos]
 x-skills-master:
   domain: apple

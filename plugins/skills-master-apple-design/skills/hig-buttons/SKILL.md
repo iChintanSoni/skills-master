@@ -1,6 +1,7 @@
 ---
 name: hig-buttons
 description: "Design guidance and critique for buttons on Apple platforms: choosing prominence (prominent/filled vs tinted vs bordered vs plain), button roles (default, destructive, cancel), clear concise labels, sizing and 44-point hit targets, link vs button decisions, and Liquid Glass button treatment. Use when designing or reviewing buttons, call-to-action controls, primary/secondary actions, confirmation dialogs, toolbar and tab-bar controls, or deciding between a link and a button on iOS, iPadOS, macOS, watchOS, tvOS, or visionOS."
+license: MIT
 ---
 
 ## When to use

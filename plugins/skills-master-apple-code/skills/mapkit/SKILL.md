@@ -1,6 +1,7 @@
 ---
 name: mapkit
 description: Build maps in SwiftUI with the declarative Map view, content builders, camera control, Look Around, search, and directions. Use when adding a map screen, placing markers or overlays, drawing routes, controlling the camera, showing user location, searching places with MKLocalSearch, or computing directions with MKDirections in a SwiftUI app.
+license: MIT
 ---
 
 ## When to use

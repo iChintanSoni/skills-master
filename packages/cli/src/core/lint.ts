@@ -145,6 +145,13 @@ export function lintSkills(skillsRoot: string): LintResult {
       push("warn", `description should include a "Use when ..." trigger clause`);
     }
 
+    // A skill ships as a standalone directory (plugins, zip uploads), so its
+    // terms have to travel with it — the repository LICENSE beside the source
+    // tree is not part of what a consumer installs.
+    if (fm.license == null) {
+      push("warn", `no license — add a "license" field (this library uses MIT)`);
+    }
+
     // XML-tag-shaped text. Claude validates `name` too, but the schema already
     // holds `name` to [a-z0-9-], so only `description` can carry a tag here.
     const tagAt = fm.description.search(XML_TAG_RE);

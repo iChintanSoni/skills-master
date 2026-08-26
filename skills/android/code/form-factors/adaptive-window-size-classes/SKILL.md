@@ -1,6 +1,7 @@
 ---
 name: adaptive-window-size-classes
 description: Covers WindowSizeClass computation via currentWindowAdaptiveInfo() and calculateWindowSizeClass(), the compact/medium/expanded width and height breakpoints, and driving adaptive decisions — navigation type, pane count, column count — from size class rather than device type. Use when building layouts that must adapt to phones, tablets, foldables, and ChromeOS windows without hard-coded device checks.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [large-screen, compose, material3]

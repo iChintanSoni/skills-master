@@ -1,6 +1,7 @@
 ---
 name: m3-accessibility
 description: "Design critique and judgment for Material 3 accessibility foundations: color contrast ratios, 48dp touch targets, scalable text, content descriptions, TalkBack traversal order, never-color-alone signaling, and motion sensitivity. Use when reviewing or designing Android UIs for inclusive access, auditing a screen for TalkBack and dynamic font support, evaluating contrast or touch-target adequacy, or deciding how custom components should communicate state to assistive technologies."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

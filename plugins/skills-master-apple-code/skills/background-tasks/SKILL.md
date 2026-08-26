@@ -1,6 +1,7 @@
 ---
 name: background-tasks
 description: "Guidance on the BackgroundTasks framework for deferred and long-running background execution: BGAppRefreshTask, BGProcessingTask, the iOS 26 BGContinuedProcessingTask for user-initiated work, and background URLSession transfers. Use when scheduling periodic refresh, running maintenance off-screen, continuing an export or upload after the user leaves, downloading large files in the background, or configuring the required BGTaskSchedulerPermittedIdentifiers and UIBackgroundModes entries."
+license: MIT
 ---
 
 ## When to use

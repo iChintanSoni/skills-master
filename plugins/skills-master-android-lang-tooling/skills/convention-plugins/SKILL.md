@@ -1,6 +1,7 @@
 ---
 name: convention-plugins
 description: Covers Gradle convention plugins (build-logic) for Android multi-module projects — precompiled script plugins, shared module configuration, the included build pattern, and eliminating buildscript duplication. Use when setting up or refactoring the Gradle build of a multi-module Android project to share build logic without copy-paste.
+license: MIT
 ---
 
 ## When to use

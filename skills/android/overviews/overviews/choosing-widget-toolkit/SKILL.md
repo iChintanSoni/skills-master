@@ -1,6 +1,7 @@
 ---
 name: choosing-widget-toolkit
 description: "Decision router for Android glanceable surfaces — app widgets built with Jetpack Glance versus RemoteViews directly, Wear OS tiles and complications, Live Updates and ongoing notifications, and Quick Settings tiles. Use when deciding how to surface app content or an action outside the app, when choosing between Glance and RemoteViews for a new widget, or when a feature needs an ongoing status surface rather than a static glance."
+license: MIT
 tags: []
 x-skills-master:
   domain: android

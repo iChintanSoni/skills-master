@@ -1,6 +1,7 @@
 ---
 name: foundation-models
 description: "Use when building on-device LLM features with the Foundation Models framework: prompting the system language model through LanguageModelSession, producing type-safe Swift output with the Generable macro and guided generation, adding tool calling, streaming partial responses, checking SystemLanguageModel availability, or adopting the iOS 27 additions — multimodal image prompts, Dynamic Profiles, Private Cloud Compute, and third-party model providers. Triggers on import FoundationModels, LanguageModelSession, Generable, Guide, SystemLanguageModel, or PrivateCloudComputeLanguageModel."
+license: MIT
 globs:
   - "**/*.swift"
 tags: [apple-intelligence, generative-ai]

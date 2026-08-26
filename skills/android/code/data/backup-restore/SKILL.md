@@ -1,6 +1,7 @@
 ---
 name: backup-restore
 description: Covers Android Auto Backup and Key/Value Backup — configuring rules, exclusions, device-to-device transfer, cloud restore, and test workflows. Use when implementing or debugging app data backup and restore behavior on Android 16+.
+license: MIT
 globs:
   - "**/*.kt"
 tags: [jetpack]

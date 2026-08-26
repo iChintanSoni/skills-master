@@ -1,6 +1,7 @@
 ---
 name: eventkit
 description: "Access Calendar events and Reminders with EventKit and EventKitUI on Apple platforms. Use when creating, editing, or querying EKEvent or EKReminder, requesting calendar/reminders authorization, building recurrence rules, or presenting EKEventEditViewController. Triggers: EKEventStore, requestFullAccessToEvents, write-only access, predicateForEvents, EKRecurrenceRule, calendar permission strings."
+license: MIT
 ---
 
 ## When to use

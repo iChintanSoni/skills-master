@@ -1,6 +1,7 @@
 ---
 name: xcode-coding-agents
 description: "Operational guidance for the coding agents and coding assistant in Xcode 27 — setting up agents and chat models in Intelligence settings, plan mode before edits, reviewing agent changes in the artifacts pane, conversation-history rollback, command and tool permissions, AGENTS.md/CLAUDE.md configuration files, MCP servers and plug-ins, and the agent-driven localization workflow. Use when adopting Xcode's coding assistant on a project or team, deciding which tasks to hand to an agent, configuring permissions or agent instruction files, reviewing or rolling back agent edits, or running agent translations."
+license: MIT
 tags: []
 x-skills-master:
   domain: apple

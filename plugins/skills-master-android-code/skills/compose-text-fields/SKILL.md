@@ -1,6 +1,7 @@
 ---
 name: compose-text-fields
 description: Covers TextField, OutlinedTextField, and the state-based BasicTextField with TextFieldState for user text input in Jetpack Compose. Use when building any screen that accepts typed user input, including search bars, forms, login fields, or any editable text surface.
+license: MIT
 ---
 
 ## When to use
