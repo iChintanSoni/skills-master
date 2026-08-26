@@ -16,7 +16,25 @@ skills/<domain>/<class>/<category>/<name>/
 
 - **domain** namespaces a technology ecosystem (`apple` and `android` today; `web` and others can follow).
 - **class** is one of `code` (produces code), `design` (produces UX critique), `lang-tooling` (cross-cutting language/build/test/ship), `overview` (decision routers). `class` maps to a directory via `CLASS_DIR` (`overview` → `overviews`).
+- **category** groups skills within a class. It is a free string validated only against the on-disk path, and it deliberately **follows each vendor's own information architecture rather than a shared cross-domain schema** — see below.
 - The folder name **is** the skill `name` (kebab-case), enforced by the linter.
+
+### Categories mirror the vendor, not each other
+
+Under `design`, the two domains do not carry the same category set, and that asymmetry is intentional:
+
+| | `apple/design` | `android/design` |
+|---|---|---|
+| has | `inputs` | `styles` |
+| lacks | `styles` | `inputs` |
+
+Apple's Human Interface Guidelines has an **Inputs** section (Action button, Apple Pencil, Digital Crown, gestures, keyboards, pointing devices) and folds color, typography, motion, icons, and materials into **Foundations**. Material Design 3 is organized as **foundations / styles / components** — it has a **Styles** section and no Inputs section, distributing input guidance across its platform and pattern pages instead.
+
+So `apple/design/foundations` legitimately holds what Android splits into `design/styles`, and Android's input guidance legitimately lives in `design/platforms/m3-{wear,tv,large-screens,chromeos-desktop}`, `design/patterns/m3-gestures`, and `design/foundations/m3-interaction-states` rather than a dedicated `inputs` category.
+
+Forcing symmetry here would misrepresent both design systems and duplicate substantive existing coverage. When adding a category, match the vendor's published structure; do not add one solely because the other domain has it.
+
+`code` categories diverge for the same reason, though less sharply — they track each platform's framework boundaries. Genuine coverage gaps (a topic neither the vendor's structure nor ours accounts for) are still worth closing; mirror-image category names are not.
 
 The canonical format is Claude's Agent Skills `SKILL.md` treated as a **strict superset**. Our metadata lives in a namespaced `x-skills-master:` frontmatter block that is stripped from every projection. See [authoring.md](authoring.md) for the full schema.
 
