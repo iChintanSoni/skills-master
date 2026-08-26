@@ -14,9 +14,12 @@ npx @ichintansoni/skills-master list --class code            # browse the catalo
 npx @ichintansoni/skills-master search navigation
 npx @ichintansoni/skills-master update                        # pull newer skill versions
 npx @ichintansoni/skills-master remove swiftui-sheets
+npx @ichintansoni/skills-master sync                          # re-emit to match the current config
 npx @ichintansoni/skills-master status                        # what's installed, and has it drifted?
 npx @ichintansoni/skills-master doctor                        # same detection, but fails on drift
 ```
+
+`update` pulls newer skill content, but only ever re-emits to the targets a skill was *already* installed to. So adding a target to `skills-master.json` after the fact, or changing a `paths` override, leaves config and disk disagreeing with nothing to reconcile them. `sync` is that reconciliation — it treats the configured target set as the source of truth and makes disk match. Local edits are preserved unless you pass `--overwrite`. A target you *dropped* from config is reported but only deleted with `--prune`; a `paths` change is a move, so the old copy is cleaned up straight away rather than left for agents to load twice.
 
 `status` and `doctor` share their drift detection but answer different questions. `status` is an inventory — it lists every installed skill with its version, targets, and whether the output has been edited or deleted, works entirely offline, and always exits 0, so it is safe to pipe (`status --json`, `status --problems`, `status <name>…`). `doctor` is the gate: same findings, but it exits non-zero, which is what you want in CI.
 

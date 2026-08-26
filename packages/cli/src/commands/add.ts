@@ -1,6 +1,5 @@
 import { resolvePaths } from "../schema/projectConfig";
-import { ALL_TARGETS, type TargetId } from "../types";
-import { detectTargets } from "../emitters";
+import type { TargetId } from "../types";
 import { resolveContent } from "../content/source";
 import { installSkill } from "../core/install";
 import {
@@ -12,6 +11,7 @@ import {
 } from "../core/project";
 import { ensureGitignored } from "../core/gitignore";
 import { log } from "../util/log";
+import { resolveTargets } from "../util/targets";
 
 export interface AddOptions {
   cwd: string;
@@ -35,9 +35,7 @@ export async function addCommand(opts: AddOptions): Promise<AddResult> {
   const cfg = loadConfigOrDefault(opts.cwd);
   const hadConfig = loadConfig(opts.cwd) != null;
 
-  let targets = opts.targets?.length ? opts.targets : cfg.targets;
-  if (!targets.length) targets = detectTargets(opts.cwd);
-  if (!targets.length) targets = ALL_TARGETS;
+  const targets = resolveTargets(opts.cwd, cfg.targets, opts.targets);
 
   const content = await resolveContent({
     content: opts.content,
