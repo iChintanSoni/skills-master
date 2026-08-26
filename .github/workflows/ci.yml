@@ -46,6 +46,25 @@ jobs:
       - uses: actions/checkout@v6
       - uses: raven-actions/actionlint@v2
 
+  # Our snapshot tests pin what we expect the emitters to write — our own
+  # expectations agreeing with themselves. This job pins what the Agent Skills
+  # specification expects, by running its reference implementation over the
+  # committed projections, so an emitter change cannot quietly drift off-spec.
+  # Only emitted output is checked: canonical skills/ is deliberately a superset
+  # (globs, tags, x-skills-master) and does not validate. See docs/emitters.md.
+  spec:
+    name: Agent Skills spec conformance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      # Pinned: an unpinned validator turns an upstream edit into a red build on
+      # an unrelated PR. Bumping the pin is a deliberate change, reviewed here.
+      - run: pip install skills-ref==0.1.1
+      - run: python3 scripts/spec-validate.py
+
   content:
     name: Lint skills + registry/taxonomy/marketplace drift
     runs-on: ubuntu-latest

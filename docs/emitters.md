@@ -39,6 +39,24 @@ This matters most for **AGENTS.md**: its digest drops `## Open question` along w
 - **Copilot** — `applyTo` globs scope the per-skill instructions file; the root `copilot-instructions.md` only holds short pointers so it stays small.
 - **AGENTS.md** — no per-skill activation; proximity/whole-file context only, so it suits a curated always-on core.
 
+## Spec conformance
+
+The `claude` projection tracks the [Agent Skills specification](https://agentskills.io/specification): a directory named for the skill, a `SKILL.md` whose frontmatter carries only spec-defined fields (`name`, `description`, plus the optional `license` / `metadata` / `compatibility` / `allowed-tools`), and relative one-level links to co-located resource files. Snapshot tests pin what *we* expect the emitters to write; they cannot notice the spec moving out from under us.
+
+So CI runs the spec's own reference implementation over the committed output:
+
+```bash
+pip install skills-ref==0.1.1
+pnpm spec:validate            # → scripts/spec-validate.py plugins + .claude/skills
+```
+
+Notes for whoever touches this next:
+
+- **Emitted output only.** Canonical `skills/` carries `globs`, `tags`, and `x-skills-master` as top-level keys, which the validator rejects as unexpected fields — by design, and the reason the compile step exists. Pointing this script at `skills/` is expected to fail.
+- **The validator is pinned.** Unpinned, an upstream edit becomes a red build on an unrelated PR. Bumping the pin is a deliberate, reviewed change.
+- **Imported, not shelled out to.** `skills-ref` 0.1.1 renamed its console script to `agentskills`; the Python API is the part that did not move.
+- Anything an emitter adds to frontmatter must be a spec field or this gate fails — which is the point.
+
 ## Adding a target
 
 1. Create `emitters/<tool>.ts` exporting an `Emitter`.
