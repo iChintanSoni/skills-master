@@ -3,6 +3,8 @@ name: core-ai
 description: "Use when shipping your own neural or generative model on-device with the Core AI framework (iOS 27): converting a PyTorch model to the .aimodel format, specializing and caching it for the current device with AIModel and AIModelCache, compiling ahead of time with the coreai-build tool, running inference through InferenceFunction with NDArray inputs, encoding async work onto a ComputeStream, or bridging a custom LLM into a Foundation Models session. Triggers on import CoreAI, AIModel, AIModelAsset, InferenceFunction, NDArray, ComputeStream, or .aimodel/.aimodelc assets."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Core AI (new in the 27 cycle) is the bring-your-own-model runtime for Apple

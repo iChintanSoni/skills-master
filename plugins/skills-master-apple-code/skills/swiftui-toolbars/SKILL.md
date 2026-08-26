@@ -3,6 +3,8 @@ name: swiftui-toolbars
 description: Populates and tunes SwiftUI toolbars — toolbar(content:), ToolbarItem, ToolbarItemGroup, ToolbarItemPlacement, ToolbarSpacer, DefaultToolbarItem — plus the iOS 27 overflow model of ToolbarItemVisibilityPriority, ToolbarOverflowMenu, and topBarPinnedTrailing, and scroll-driven chrome through toolbarMinimizationBehavior. Use when choosing toolbar placements, controlling which actions collapse into the overflow menu as space shrinks, pinning a critical action, minimizing the navigation bar on scroll, or adapting one toolbar declaration across iPhone, iPad, Mac, Apple Watch, Apple TV, and Vision Pro.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Reach for this skill when a SwiftUI screen needs a toolbar: populating `.toolbar { }` with `ToolbarItem`, `ToolbarItemGroup`, and `ToolbarSpacer`, picking a `ToolbarItemPlacement`, or deciding which actions survive as the bar runs out of room. It is the implementation counterpart to `hig-toolbars` — that skill decides which actions earn a spot on the bar, this one expresses the decision in API. It also covers the surface introduced in the 27 SDKs: the authored overflow model (`ToolbarItemVisibilityPriority`, `ToolbarOverflowMenu`, `topBarPinnedTrailing`) and scroll-driven bar minimization (`toolbarMinimizationBehavior(_:for:)`). For the stack and split-view containers the bar lives inside, see `swiftui-navigation`.

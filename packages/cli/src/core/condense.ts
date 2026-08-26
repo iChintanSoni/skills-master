@@ -94,6 +94,12 @@ export interface DigestOptions {
   name: string;
   /** frontmatter description (already carries the "use when" trigger clause). */
   description: string;
+  /**
+   * Provisionality banner for non-`stable` skills. The digest drops
+   * `## Open question` along with every other section, so without this the
+   * AGENTS.md projection is the one place a contested skill reads as settled.
+   */
+  stabilityNote?: string | null;
 }
 
 /**
@@ -110,7 +116,9 @@ export function digestBody(body: string, opts: DigestOptions): string {
   // consumer's AGENTS.md — flatten them like condenseBody does.
   const flatten = (lines: string[]) =>
     lines.map((l) => l.replace(L3_LINK_RE, (_m, text: string) => text));
-  const parts: string[] = [opts.description.trim()];
+  const parts: string[] = [];
+  if (opts.stabilityNote) parts.push(opts.stabilityNote);
+  parts.push(opts.description.trim());
   if (guidance.length > 0) parts.push(`#### Core guidance\n\n${flatten(guidance).join("\n")}`);
   if (pitfalls.length > 0) parts.push(`#### Pitfalls\n\n${flatten(pitfalls).join("\n")}`);
   parts.push(

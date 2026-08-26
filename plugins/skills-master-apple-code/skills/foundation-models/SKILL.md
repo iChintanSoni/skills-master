@@ -3,6 +3,8 @@ name: foundation-models
 description: "Use when building on-device LLM features with the Foundation Models framework: prompting the system language model through LanguageModelSession, producing type-safe Swift output with the Generable macro and guided generation, adding tool calling, streaming partial responses, checking SystemLanguageModel availability, or adopting the iOS 27 additions — multimodal image prompts, Dynamic Profiles, Private Cloud Compute, and third-party model providers. Triggers on import FoundationModels, LanguageModelSession, Generable, Guide, SystemLanguageModel, or PrivateCloudComputeLanguageModel."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Reach for Foundation Models when a feature needs open-ended language work over

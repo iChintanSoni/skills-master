@@ -3,6 +3,8 @@ name: app-architecture
 description: Covers modern Android layered architecture — UI, domain, and data layers — with unidirectional data flow, single source of truth, and immutable UI state. Use when designing a new Android app, refactoring an existing codebase into layers, deciding where logic belongs, or evaluating UI presentation patterns (MVVM vs. MVI vs. plain UDF) in code review.
 ---
 
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
+
 ## When to use
 
 Apply this skill when starting a new Android app and deciding how to partition code into layers, when a screen's ViewModel has grown fat with business logic that should belong elsewhere, when reviewing a pull request that mixes data fetching with UI rendering, or when the team debates whether every screen needs a domain use case. It covers Google's recommended three-layer architecture (UI / Domain / Data), unidirectional data flow (UDF), immutable UI state, and the contested choice between MVVM, MVI, and plain UDF structuring of the UI layer.

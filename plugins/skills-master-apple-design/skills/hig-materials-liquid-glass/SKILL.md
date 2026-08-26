@@ -3,6 +3,8 @@ name: hig-materials-liquid-glass
 description: Design-critique guidance for Apple's system materials, vibrancy, and the Liquid Glass design language across iOS, iPadOS, macOS, and visionOS. Use when reviewing or designing translucent surfaces, navigation bars, toolbars, sheets, sidebars, or floating controls; when deciding whether a surface should be glass or opaque; when judging legibility and contrast over busy or changing backgrounds; when tinting glass controls; or when adapting a refreshed interface to light and dark appearances for the 26 release cycle.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 # HIG materials and Liquid Glass
 
 Liquid Glass is the unified material introduced across Apple platforms in the 26 release cycle. It is a translucent, dynamic surface that refracts and reflects nearby content, floats above an app's content layer, and reacts to motion with specular highlights. This skill is a design-critique aid: it helps evaluate whether materials are used with restraint, remain legible, and adapt correctly to context. It does not cover implementation.

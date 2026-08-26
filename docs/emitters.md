@@ -19,10 +19,17 @@ An emitter projects one canonical skill into the files a specific AI tool reads.
 Single-file targets cannot carry Level-3 resources, so `core/condense.ts`:
 
 1. flattens links to `reference.md`/`examples.md`/`checklist.md` to plain text,
-2. appends a one-line pointer to the full Claude Code skill,
-3. (for `agents`) summarizes the `## Open question` section to a single tradeoff line.
+2. appends a one-line pointer to the full Claude Code skill.
+
+`agents` goes further: `digestBody` keeps only the description, the leading six Core guidance bullets and three Pitfalls bullets, because consumers inject `AGENTS.md` in full on every request. (`CondenseOptions.openQuestion: "summarize"` predates that digest and no emitter passes it today.)
 
 **External links are preserved.** Condensation only rewrites links to the skill's own Level-3 files; `https` links in the `## References` section (Apple Documentation, HIG, WWDC, Sample Code) flow through to every target unchanged.
+
+## Stability banner
+
+`stability` lives in `x-skills-master`, which every emitter strips — so a skill that is `emerging` or `contested` would otherwise read as settled fact in every projection. `core/stability-note.ts` turns the label into a one-line blockquote at the top of the emitted body, and all four emitters carry it. `stable` skills get nothing, so most output is unchanged.
+
+This matters most for **AGENTS.md**: its digest drops `## Open question` along with every other section, so before this the banner was the only way a contested skill could be recognized there. The banner's only variable is the authored `snapshot_date`, so output stays byte-reproducible.
 
 ## Activation semantics
 

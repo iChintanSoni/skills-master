@@ -3,6 +3,8 @@ name: music-understanding
 description: "Guidance on the Music Understanding framework for on-device musical analysis of audio: the MusicUnderstandingSession actor built over an AVAsset or a streaming buffer provider, the rhythm, key, structure, pace, instrument-activity, and loudness analysis types, TimedValue and RangedValue results keyed to CMTime, the progressive loudnessResults sequence, and Codable results you can precompute and ship. Use when detecting beats, bars, or BPM, finding a track's key or section boundaries, syncing visuals or edits to musical energy, metering perceptual loudness in LUFS, or deciding between this framework, ShazamKit, and MusicKit."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Reach for Music Understanding when your app needs to know *about* the music it is handling: where the beats and bars fall, what key a track sits in, where the chorus starts, how energetic a passage feels, which instruments are active, and how loud the result actually is. It runs entirely on device, so audio never leaves the user's hardware, and it removes the need to hand-roll DSP or train a model.

@@ -260,13 +260,23 @@ restated against that total.
   7.3's rejected rule this one needs no vocabulary map — it compares the tag against the
   skill's own text. Verified no recall was lost: replaying all 896 former tag and facet
   terms as queries, **0 lost a hit and 234 returned strictly more**.
-- [ ] **7.5 Surface `stability` to the agent (S)** *(found during 7.2)*. `stability` is
-  stripped with the rest of `x-skills-master`, so it reaches no emit target — an agent
-  cannot tell `emerging` guidance from settled guidance. `contested` skills get through on
-  content (`## Open question` is body text); `emerging` relies on each author remembering
-  to say so in prose. Per the mission ("content an agent never sees is a bug"), consider
-  emitting a one-line provisionality note for non-`stable` skills. Touches every emitter
-  snapshot, so it wants its own PR.
+- [x] **7.5 Surface `stability` to the agent (S)** *(found during 7.2)*. `stability` is
+  stripped with the rest of `x-skills-master`, so it reached no emit target — an agent
+  could not tell `emerging` guidance from settled guidance. `core/stability-note.ts` now
+  turns a non-`stable` label into a one-line blockquote at the top of the emitted body, and
+  all four emitters carry it; `stable` skills are untouched, so the committed dogfood output
+  (`swiftui-navigation`, stable) does not move. The AGENTS.md digest was the worst case and
+  is the biggest win: it drops `## Open question` along with every other section, so a
+  contested skill previously read there as settled fact. 31 skills gain a banner (24
+  emerging + 7 contested) for about 1.5k tokens across a full AGENTS.md install — roughly
+  0.6% on top of what 1.9 brought it down to. Deterministic: the only variable is the
+  authored `snapshot_date`. Docs corrected in three places — `authoring.md` asserted the
+  opposite ("`stability` never reaches the consuming agent today"), and `emitters.md`
+  claimed the agents emitter summarizes `## Open question`, which stopped being true at 1.9.
+  - [ ] **Dead surface found:** `CondenseOptions.openQuestion: "summarize"` and
+    `summarizeOpenQuestion()` are exercised only by their own tests — no emitter has passed
+    that option since the 1.9 digest landed. Candidate for the 1.5-style deletion pass;
+    left in place here to keep this PR to one concern.
 
 ## Phase 8 — CLI test depth
 

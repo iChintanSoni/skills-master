@@ -3,6 +3,8 @@ name: media3-ai-effects
 description: Covers the Media3 AI Effects library announced at I/O 2026 — a unified interface for image and video enhance, magic eraser, and studio sound that routes each effect to the most efficient path available on the device. Use when adding AI-driven media cleanup to capture or editing flows, removing objects from user photos or video, denoising voice recordings, or deciding how to ship premium media effects across a heterogeneous device fleet.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Reach for Media3 AI Effects when the product calls for the class of cleanup features users know from first-party camera apps — **Image and Video Enhance**, **Magic Eraser**-style object removal, and **Studio Sound** voice denoising — without building per-device ML pipelines yourself. The library's value is the routing: one interface per effect, with the implementation resolved to the most efficient and reliable path the device offers. It was announced at I/O 2026 as part of the media lifecycle toolkit; treat the API surface as young and verify current status against the Media3 release notes before committing a roadmap to it.

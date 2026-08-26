@@ -3,6 +3,8 @@ name: now-playing
 description: "Guidance on the Now Playing framework for publishing playback to the Lock Screen, Control Center, and connected accessories including CarPlay: an Observable model conforming to MediaSessionRepresentable that supplies content, playbackSnapshot, and commands, MediaSession activation through requestToBecomeApplicationPrimary and requestToBecomeSystemPrimary, typed content such as MusicContent and PodcastContent, size-driven Artwork providers, MediaCommand handlers, and RemoteMediaSession extensions driven by push for external devices. Use when surfacing metadata and transport controls outside your app, keeping the scrubber accurate, wiring remote commands, publishing artwork, or choosing between this framework and MPNowPlayingInfoCenter."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Use this skill when playback that happens inside your app has to appear outside it: on the Lock Screen, in Control Center, and on connected accessories including CarPlay and AirPlay-capable devices. It covers publishing the right metadata, keeping the scrubber honest, declaring which transport controls you support, supplying artwork the system can size, and representing playback that is actually running on a *different* device.

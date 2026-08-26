@@ -3,6 +3,8 @@ name: xcode-coding-agents
 description: Operational guidance for the coding agents and coding assistant in Xcode 27 — setting up agents and chat models in Intelligence settings, plan mode before edits, reviewing agent changes in the artifacts pane, conversation-history rollback, command and tool permissions, AGENTS.md/CLAUDE.md configuration files, MCP servers and plug-ins, and the agent-driven localization workflow. Use when adopting Xcode's coding assistant on a project or team, deciding which tasks to hand to an agent, configuring permissions or agent instruction files, reviewing or rolling back agent edits, or running agent translations.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Reach for this skill when bringing Xcode 27's coding agents into a project or team workflow: choosing between an agent and a plain chat model, deciding which tasks to delegate, setting up permissions and instruction files so agents behave predictably, and keeping every agent edit reviewable and reversible. It also covers the built-in localization agent. This is workflow and configuration guidance for using the tool well, not prompt-engineering or model advice.

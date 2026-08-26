@@ -1,6 +1,7 @@
 import type { Emitter, EmittedFile } from "../types";
 import { withFrontmatter } from "../core/yaml";
 import { condenseBody } from "../core/condense";
+import { stabilityNote, withStabilityNote } from "../core/stability-note";
 import { existsRel, globsToString, hasResources } from "./util";
 
 /**
@@ -23,10 +24,14 @@ export const cursorEmitter: Emitter = {
     if (globs) fm.globs = globs;
     fm.alwaysApply = false;
 
-    const body = condenseBody(skill.body, {
-      openQuestion: "keep",
-      hadResources: hasResources(skill.resources),
-    });
+    const xm = skill.frontmatter["x-skills-master"];
+    const body = withStabilityNote(
+      condenseBody(skill.body, {
+        openQuestion: "keep",
+        hadResources: hasResources(skill.resources),
+      }),
+      stabilityNote(xm.stability, xm.snapshot_date),
+    );
 
     return [
       {

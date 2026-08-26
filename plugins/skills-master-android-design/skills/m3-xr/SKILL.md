@@ -3,6 +3,8 @@ name: m3-xr
 description: "Design critique and judgment for Android XR headset UIs: spatial panels and orbiters, depth and elevation in three-dimensional space, viewer comfort and accessibility at distance, environment design, and adapting 2D Material 3 layouts into immersive XR experiences. Use when reviewing or specifying UI for Android XR headsets, evaluating whether a panel layout respects spatial comfort zones, deciding how 2D screens translate into the volumetric canvas, or critiquing depth hierarchy and orbiter placement."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-06-06. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 - Critiquing a spatial UI mockup for Android XR headsets — evaluating panel placement, depth hierarchy, and how the viewer's gaze and comfort zones are respected.

@@ -3,6 +3,8 @@ name: xr-arcore
 description: Covers ARCore perception for Jetpack XR — planes, anchors, hit testing, and hand tracking — plus the XR permission model and anchoring virtual Compose content to the real world. Use when building Android XR apps that need to detect real-world surfaces, place persistent virtual objects, or read hand-joint poses.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Use this skill whenever an Android XR app needs to perceive and interact with the physical world. Concrete scenarios include: detecting floor, wall, or ceiling planes and snapping content to them; hit-testing a ray from the user's gaze or controller into real geometry; creating persistent anchors so virtual objects survive head movement; and reading hand-joint positions to drive gestures or pointer interactions. This skill assumes you already have a Jetpack XR session established — see the XR session lifecycle guidance before consulting this document.

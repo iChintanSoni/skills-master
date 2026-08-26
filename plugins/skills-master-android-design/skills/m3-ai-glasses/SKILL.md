@@ -3,6 +3,8 @@ name: m3-ai-glasses
 description: "Design guidance and critique for Android XR AI/display glasses using the Glimmer design language: glanceable surfaces, audio-first and hands-free interaction patterns, world-sensing assistance UX, and adapting content to a constrained heads-up display. Use when designing or reviewing any experience targeting Android AI glasses, deciding what information belongs on the display versus in audio, or auditing a glasses UI for glanceability, cognitive load, and situational safety."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Use this skill when designing or critiquing an Android experience that targets AI-enabled display glasses — devices where content is projected onto a small optical display in the user's field of view while they remain physically active in the world. It applies when you are choosing what information to surface on the display versus what to route to audio, designing interaction flows that work without hands (or with only brief hands-free gestures), building world-sensing assistance features that respond to what the user sees or hears, or auditing a glasses UI for cognitive overload, situational safety, and glanceability. Implementation detail is left to the xr-glimmer-glasses code skill.

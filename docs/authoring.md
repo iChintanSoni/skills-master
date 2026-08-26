@@ -139,11 +139,19 @@ not contested**, however much people argue about it online. `choosing-http-clien
 Retrofit + OkHttp as the default and gives one axis (KMP or not) for departing from it — so
 it is `stable`, not `contested`.
 
-Changing `stability` is metadata-only in the same way `pairs_with` is: it is stripped from
-every projection, so no `version`/`snapshot_date` moves. Note the consequence — **`stability`
-never reaches the consuming agent today.** Contested skills communicate through their
-`## Open question` section; if a skill is `emerging`, the body has to say so in prose for a
-reader to ever learn it.
+Unlike the other facets, **`stability` changes what an agent reads.** The field itself is
+stripped with the rest of `x-skills-master`, so the compiler turns a non-`stable` label into a
+one-line banner at the top of the emitted body, in every projection:
+
+```markdown
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of
+> 2026-08-25. Treat the specifics as provisional and confirm against current documentation
+> before relying on them.
+```
+
+`stable` skills get nothing. So setting `emerging` or `contested` is a content decision, not
+bookkeeping — it puts a caveat in front of every reader. Say the same thing in the body prose
+too where it helps, but you no longer have to for the signal to survive.
 
 ## What earns a pair
 
