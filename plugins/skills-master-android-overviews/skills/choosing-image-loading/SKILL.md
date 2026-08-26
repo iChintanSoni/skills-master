@@ -3,6 +3,8 @@ name: choosing-image-loading
 description: Decision guide for choosing between Coil and Glide for image loading on Android in 2026. Use when starting a new Compose-first project, evaluating a library migration, or weighing tradeoffs between Kotlin/coroutine-native ergonomics and a mature, battle-tested View-oriented solution.
 ---
 
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
+
 ## When to use
 
 Reach for this skill when you need to pick an image-loading library for a new Android project, decide whether to migrate an existing Glide integration to Coil, or reason about tradeoffs between the two dominant options. It is also relevant when evaluating Kotlin Multiplatform (KMP) portability requirements, Compose integration depth, or memory/performance constraints on low-end devices.

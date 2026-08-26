@@ -3,6 +3,8 @@ name: app-functions
 description: Covers Android AppFunctions — exposing app capabilities as agent-orchestrable tools by annotating Kotlin functions with @AppFunction, served through Android's on-device Model Context Protocol so assistants like Gemini can discover and execute them against local app state. Use when making app features invocable by AI assistants and on-device agents, designing an agent-facing capability surface, or deciding between AppFunctions and the older App Actions/BII path.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Reach for AppFunctions (introduced with Android 17; the Jetpack library is in alpha) when you want an AI assistant or on-device agent to *do things* in your app — create a note, start a workout, add an item to a cart — rather than merely deep-link into a screen. It is the successor model to App Actions/BIIs: instead of mapping natural language onto a fixed catalog of built-in intents, you publish typed functions that agents discover and orchestrate through Android's on-device Model Context Protocol implementation. Stay on App Actions for shipping Assistant integrations; adopt AppFunctions for new agent-facing capability surface, accepting alpha-stage API churn.

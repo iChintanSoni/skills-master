@@ -3,6 +3,8 @@ name: choosing-compose-or-views
 description: Decision guide for picking Jetpack Compose versus the View/XML system in 2026. Use when starting a new Android UI feature or screen, evaluating a migration path, or weighing tradeoffs between modern declarative UI and an existing View-based codebase.
 ---
 
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
+
 ## When to use
 
 Reach for this skill when you need to make a conscious choice about which UI system to use for a screen, a feature, or an entire app — whether that's a greenfield project, a new module dropped into an existing app, or a long-term migration plan. Also useful when onboarding a team to a codebase that mixes both approaches and you need to establish clear conventions.

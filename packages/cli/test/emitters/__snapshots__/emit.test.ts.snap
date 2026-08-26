@@ -7,6 +7,8 @@ exports[`emitters > projects the fixture skill for agents 1`] = `
     "blockVersion": "1.0.0",
     "contents": "### Fixture Skill
 
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
+
 A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
 
 #### Core guidance
@@ -33,6 +35,8 @@ exports[`emitters > projects the fixture skill for claude 1`] = `
 name: fixture-skill
 description: A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
 ---
+
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
 
 ## When to use
 
@@ -102,6 +106,8 @@ applyTo: "**/*.swift"
 description: A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
 ---
 
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
+
 ## When to use
 
 Use this fixture to verify emitter output and the add/update/remove lifecycle.
@@ -151,6 +157,8 @@ description: A deterministic fixture skill for compiler tests. Use when exercisi
 globs: "**/*.swift"
 alwaysApply: false
 ---
+
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
 
 ## When to use
 

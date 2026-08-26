@@ -3,6 +3,8 @@ name: hig-snippets
 description: Applies Apple Human Interface Guidelines to snippets — the compact views Siri, Spotlight, and the Shortcuts app show when an app intent runs. Covers confirmation versus result snippets, the dialogue/custom-view/system-button anatomy, the 400-point height budget, legibility over the system background, descriptive confirmation button labels, and when to deep-link instead of adding detail. Use when designing or reviewing a snippet for an App Intents action, deciding between confirmation and result presentation, or critiquing snippet layout and content density. Produces design critique, not code.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Use when designing or reviewing a snippet — the compact view that appears when someone performs a task through Siri, Spotlight, or the Shortcuts app, either showing the result or asking for confirmation. Reach for it when deciding whether an intent needs a confirmation step, what the custom view should show, how much content fits, and what the confirmation button should say. Snippets are new as a distinct HIG page in the 2026 cycle; this skill produces design judgment, and the App Intents code skill implements the snippet.

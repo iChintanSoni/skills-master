@@ -3,6 +3,8 @@ name: xr-glimmer-glasses
 description: Covers building for Android XR glasses with Jetpack Compose Glimmer — the Compose UI toolkit for display glasses — plus Jetpack Projected lifecycle, audio and voice interaction, and hands-free UX patterns for AI/display glasses. Use when targeting XR glasses hardware with the Jetpack XR SDK, authoring Glimmer UI, designing hands-free or audio-first flows, or adapting existing Compose UI for a constrained, head-worn display.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Use this skill when building apps or features that run on Android XR glasses — audio glasses (voice-only) and display glasses (voice plus a small see-through display). It covers Jetpack Compose Glimmer, the Compose-based UI toolkit for display glasses, and Jetpack Projected, the library that launches and manages "projected" activities that run in your phone app but render and interact on the glasses. It does not cover immersive headset experiences with spatial panels; for headsets and wired XR glasses, use `xr-compose-spatial` instead.

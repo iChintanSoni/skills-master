@@ -42,6 +42,39 @@ describe("emitters", () => {
     expect(cursor.contents).toMatch(/full Claude Code skill/i);
   });
 
+  it("carries the provisionality banner into every projection, digest included", () => {
+    // The fixture is `contested`. AGENTS.md matters most here: its digest drops
+    // `## Open question`, so the banner is the only thing that survives.
+    for (const emitter of EMITTERS) {
+      for (const f of emitter.emit(loadFixture(), ctx())) {
+        if (!f.path.endsWith(".md") && !f.path.endsWith(".mdc")) continue;
+        if (/examples\.md|checklist\.md|reference\.md|copilot-instructions/.test(f.path)) continue;
+        expect(f.contents, `${emitter.id} -> ${f.path}`).toContain("**Contested**");
+      }
+    }
+  });
+
+  it("re-labels the banner when the skill's stability changes", () => {
+    const skill = loadFixture();
+    skill.frontmatter["x-skills-master"].stability = "emerging";
+    for (const emitter of EMITTERS) {
+      const first = emitter.emit(skill, ctx())[0]!;
+      expect(first.contents).toContain("**Emerging**");
+      expect(first.contents).toContain(skill.frontmatter["x-skills-master"].snapshot_date);
+      expect(first.contents).not.toContain("**Contested**");
+    }
+  });
+
+  it("leaves a stable skill's body unbannered", () => {
+    const skill = loadFixture();
+    skill.frontmatter["x-skills-master"].stability = "stable";
+    for (const emitter of EMITTERS) {
+      for (const f of emitter.emit(skill, ctx())) {
+        expect(f.contents).not.toMatch(/\*\*(Emerging|Contested)\*\*/);
+      }
+    }
+  });
+
   it("strips the x-skills-master block from every projection", () => {
     for (const emitter of EMITTERS) {
       for (const f of emitter.emit(loadFixture(), ctx())) {

@@ -3,6 +3,8 @@ name: dependency-injection-patterns
 description: Covers dependency injection approaches in Android — manual DI/service locator, Hilt, Koin, and compile-time alternatives (Metro/kotlin-inject) — with tradeoffs on compile safety, scoping, and testability. Use when choosing or evaluating a DI strategy, wiring services across Compose screens, or making code testable without a specific framework commitment.
 ---
 
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
+
 ## When to use
 
 Apply this skill when selecting a dependency injection strategy for a new Android project, evaluating whether to migrate away from an existing approach, or designing how services (repositories, use cases, analytics, network clients) reach their consumers. It also applies when testability is suffering because concrete types are constructed internally rather than injected, or when scoping issues are causing memory leaks or unintended state sharing.

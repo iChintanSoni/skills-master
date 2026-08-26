@@ -3,6 +3,8 @@ name: android-cli
 description: "Covers Android CLI 1.0 — Google's agent-facing command-line toolchain for Android development: project scaffolding (android create), project metadata (android describe), SDK package management, emulator lifecycle, APK deployment (android run), screen capture and layout inspection, knowledge-base search, agent skills installation, and the Android Studio bridge commands (analyze-file, find-declaration, find-usages, render-compose-preview, version-lookup). Use when a coding agent needs to scaffold, inspect, deploy, or visually verify an Android app from the terminal, or when deciding whether a task belongs to Android CLI, ./gradlew, or Android Studio."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Reach for Android CLI (stable 1.0 since Google I/O '26) when you are operating on an Android project from a terminal — scaffolding a new app, resolving what a project builds and where its artifacts land, managing SDK packages, driving an emulator, deploying an APK, or verifying UI visually. It is built for exactly this consumer: a coding agent that needs predictable, scriptable entry points into the Android toolchain instead of parsing Studio UI or guessing Gradle task names.

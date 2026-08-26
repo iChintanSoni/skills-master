@@ -3,6 +3,8 @@ name: hig-siri-design
 description: "Design guidance for Siri experiences per the Human Interface Guidelines Siri section, revised in the 2026 cycle for Siri AI and Apple Intelligence. Use when deciding which app actions and content to expose to Siri through App Intents, sharing onscreen context via view annotations and donations, writing response dialogue that works aloud and onscreen, reviewing App Shortcuts phrasing, or applying Apple's editorial rules for referring to Siri. Produces UX critique and copy guidance grounded in the HIG, not code. Triggers: Siri design review, response dialogue, App Shortcuts phrases, exposing actions to Siri, Siri AI, Apple Intelligence integration."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 # hig-siri-design
 
 ## When to use

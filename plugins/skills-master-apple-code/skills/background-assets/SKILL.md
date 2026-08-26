@@ -3,6 +3,8 @@ name: background-assets
 description: "Guidance on the Background Assets framework for shipping large app content outside the binary: managed asset packs via the AssetPackManager actor, essential/prefetch/on-demand download policies, Apple-hosted asset packs up to 200 GB through App Store Connect, self-hosted managed packs, the legacy BADownloaderExtension path, localized packs, and StoreKit-gated unlock of purchasable content. Use when slimming an app or game binary, downloading level packs or media before first launch or on demand, adopting Apple hosting, delivering per-language assets, or gating premium asset packs behind an in-app purchase."
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Use this skill when app content is too big or too optional to ship inside the binary: game levels, textures, media packs, tutorial assets, on-device model files, or purchasable expansions. Background Assets downloads that content as versioned asset packs — before first launch, right after install, or on demand — with the system handling scheduling, resumption, and updates. It replaces On-Demand Resources and hand-rolled CDN download pipelines for bulk app content. It is not for per-user file transfers (use a background `URLSession`) or for scheduled background work (use BackgroundTasks).

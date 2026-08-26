@@ -3,6 +3,8 @@ name: xr-scenecore
 description: Covers Jetpack XR SceneCore for Android XR apps — loading glTF/GLB models, managing entities and transforms, configuring environments and skyboxes, and composing 3D content alongside spatial panels. Use when building or extending an Android XR app that needs 3D objects, spatial layouts, or custom environments in SceneCore.
 ---
 
+> **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.
+
 ## When to use
 
 Apply this skill when your Android XR app needs to place 3D objects in space, load glTF or GLB model files, move or rotate entities via transforms, swap skyboxes and environments, or mix spatial UI panels with 3D scene geometry. This covers the SceneCore layer of the Jetpack XR SDK, which sits below the XR Compose helpers and gives you direct control over the scene graph.

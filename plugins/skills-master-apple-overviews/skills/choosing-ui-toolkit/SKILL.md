@@ -3,6 +3,8 @@ name: choosing-ui-toolkit
 description: Decision router for selecting SwiftUI versus UIKit or AppKit when building a screen, feature, or whole app in the 2026 (OS 26) cycle, including when to mix toolkits through interop. Use when starting a new app or screen and deciding the primary toolkit, when weighing a SwiftUI rewrite of UIKit or AppKit code, when an advanced or legacy requirement (deep text editing, precise scroll or collection control, document-based macOS apps, fine-grained drawing) tempts a drop to UIKit or AppKit, or when wrapping one toolkit inside another with representable types or hosting controllers.
 ---
 
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
+
 ## When to use
 
 Reach for this skill when deciding which toolkit owns a new app, a single screen, or a reusable component, and the choice is not obvious. It applies when a team debates a SwiftUI rewrite of working UIKit or AppKit code, when an advanced requirement pushes toward an imperative toolkit, or when a hybrid design is on the table. It is a routing guide, not a tutorial on either framework.

@@ -1,5 +1,6 @@
 import type { Emitter, EmittedFile } from "../types";
 import { digestBody } from "../core/condense";
+import { stabilityNote } from "../core/stability-note";
 import { existsRel, titleFromName } from "./util";
 
 /**
@@ -15,9 +16,11 @@ export const agentsEmitter: Emitter = {
   label: "AGENTS.md",
   detect: (root) => existsRel(root, "AGENTS.md"),
   emit(skill, ctx): EmittedFile[] {
+    const xm = skill.frontmatter["x-skills-master"];
     const body = digestBody(skill.body, {
       name: skill.name,
       description: skill.frontmatter.description,
+      stabilityNote: stabilityNote(xm.stability, xm.snapshot_date),
     });
     const section = `### ${titleFromName(skill.name)}\n\n${body.trim()}`;
     return [
