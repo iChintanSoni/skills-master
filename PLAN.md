@@ -280,10 +280,23 @@ restated against that total.
 
 ## Phase 8 — CLI test depth
 
-- [ ] **8.1 E2E gaps (M).** `init` end-to-end; `update` with an actually-changed source;
+- [x] **8.1 E2E gaps (M).** `init` end-to-end; `update` with an actually-changed source;
   `doctor`'s three failure modes; conflict/skip path (hand-edited file, no
   `--overwrite`); `remove --target` subset; `commit: false` gitignore behavior;
-  multi-skill AGENTS.md block composition.
+  multi-skill AGENTS.md block composition. 18 tests added (10 → 28 in
+  `test/e2e/lifecycle.test.ts`, suite 89 → 107). `commit: false` was already covered, so
+  the other six gaps are the new work: `init` (detection, all-targets fallback, explicit
+  options, the `--force` guard, and that its targets really drive a later `add`); `update`
+  against a forked content library that actually changed (re-emit, lockfile re-hash, block
+  sentinel moving `v1.0.0` → `v2.0.0` without duplicating the block); `doctor`'s three
+  modes (deleted file, edited file, block cut out of a shared file); the no-`--overwrite`
+  skip and its `--overwrite` counterpart on the same edited file; `remove --target` leaving
+  the skill installed to its other targets; and AGENTS.md holding two skills at once —
+  composition order, hand-written content surviving an update, removing one block, and the
+  file being deleted only when the last one goes.
+  **Every new assertion was mutation-checked**: breaking `doctor`'s missing-file branch,
+  its `hasBlock` branch, `update`'s `userEdited` guard and `init`'s `--force` guard each
+  failed exactly the test that claims to cover it, and nothing else.
 - [ ] **8.2 Unit gaps + coverage reporting (M).** `catalog` filters/`--json`,
   `content/source.ts` resolution chain, `markers.ts`, `project.ts` round-trip,
   `parseTargets`; add `@vitest/coverage-v8` with a CI summary so gaps stay visible.
