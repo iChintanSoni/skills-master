@@ -32,7 +32,7 @@ npx @ichintansoni/skills-master doctor                        # same detection, 
 | GitHub Copilot | `.github/instructions/<name>.instructions.md` |
 | AGENTS.md | a sentinel-marked block (your hand-written content is preserved) |
 
-Flags: `--target claude,cursor,copilot,agents|all` · `--with-pairs` (also install the paired code↔design skill) · `--dry-run` · `--overwrite` · `--content <dir>` (use a local skills checkout) · `--ref <git-ref>`.
+Flags: `--target claude,cursor,copilot,agents|all` · `--with-pairs` (also install the paired code↔design skill) · `--dry-run` · `--overwrite` · `--content <dir>` (use a local skills checkout) · `--ref <git-ref>`. An explicit `--target` or `--ref` is remembered in `skills-master.json`, and `--target` widens the configured set rather than replacing it.
 
 Claude Code users can alternatively install via the plugin marketplace:
 
@@ -41,8 +41,45 @@ Claude Code users can alternatively install via the plugin marketplace:
 /plugin install skills-master-apple-code@skills-master
 ```
 
+## Commands
+
+Run `skills-master <command> --help` for the full flag list on any of these.
+
+### Browsing the catalog
+
+| Command | What it does |
+|---|---|
+| `list` | List available skills. `--domain` · `--class` · `--category` · `--platform` · `--json` |
+| `search <query>` | Match a query against names, descriptions, facets, and tags. Spacing, hyphens and case are ignored, so `wear os`, `wear-os` and `WearOS` all find the same skills. `--json` |
+| `view <name>` | Show a skill's metadata and body. `--raw` prints the body alone; `--json` returns metadata *and* body in one document |
+
+### Working in a project
+
+| Command | What it does |
+|---|---|
+| `init` | Detect which tools the project uses and write `skills-master.json`. `--target` · `--commit` · `--ref` · `--force` |
+| `add <names…>` | Install skills by name, category, or class |
+| `update [names…]` | Re-install skills whose **content** changed upstream. Only touches targets a skill is already installed to |
+| `sync [names…]` | Re-emit to match the **current config** — new targets, moved `paths`, deleted files. `--overwrite` · `--prune` · `--dry-run` |
+| `remove <names…>` | Remove installed skills. `--target` removes from one tool only |
+| `status [names…]` | Inventory: versions, targets, and local-edit state. Offline, always exits 0. `--problems` · `--json` |
+| `doctor` | The same detection as `status`, but **exits non-zero** on drift — the CI gate. `--json` |
+
+`update` vs `sync` is the distinction worth knowing: `update` follows *content*, `sync` follows *config*.
+
+### Maintaining the library
+
+These operate on a skills checkout rather than a consuming project.
+
+| Command | What it does |
+|---|---|
+| `lint` | Validate the library: naming, reciprocal `pairs_with`, body caps, tag and source rules |
+| `new <domain/class/category/name>` | Scaffold a skill from the canonical template. `--force` |
+| `registry build` | Regenerate `registry.json`. `--check` fails on drift instead of rewriting |
+| `marketplace build` | Regenerate the Claude plugin marketplace. `--check` fails on drift |
+
 ## How it works
 
 Content lives in the [skills-master repo](https://github.com/iChintanSoni/skills-master) and is fetched on demand; the CLI compiles each skill into your tools' formats and records what it installed in `skills-master.json` + a lockfile so `update`/`remove` stay surgical. Generated files are committed to your repo by default, so teammates' IDEs pick them up without running anything.
 
-MIT licensed. Skill content is original prose that summarizes Apple's publicly documented best practices and links to the canonical docs — it does not reproduce Apple's copyrighted text or sample code.
+MIT licensed. Skill content is original prose that summarizes Apple's and Google's publicly documented best practices and links to the canonical docs — it does not reproduce either vendor's copyrighted text or sample code.

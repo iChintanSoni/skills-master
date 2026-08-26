@@ -112,6 +112,29 @@ export async function addCommand(opts: AddOptions): Promise<AddResult> {
     if (!hadConfig) {
       saveConfig(opts.cwd, { ...cfg, targets });
       log.info("Wrote skills-master.json.");
+    } else {
+      // An explicit --target/--ref is a decision about the project, not just
+      // this one invocation: persist it, or the next bare `add`/`sync` would
+      // silently revert to the old config and re-emit somewhere else.
+      // --target widens rather than replaces, so adding one skill to a new tool
+      // never quietly drops the tools already configured.
+      const merged = [...new Set([...cfg.targets, ...(opts.targets ?? [])])].sort();
+      const targetsChanged =
+        opts.targets?.length != null && merged.join() !== [...cfg.targets].sort().join();
+      const refChanged = opts.ref != null && opts.ref !== cfg.contentRef;
+      if (targetsChanged || refChanged) {
+        const next = {
+          ...cfg,
+          targets: targetsChanged ? (merged as TargetId[]) : cfg.targets,
+          contentRef: refChanged ? opts.ref! : cfg.contentRef,
+        };
+        saveConfig(opts.cwd, next);
+        const what = [
+          targetsChanged ? `targets: ${next.targets.join(", ")}` : null,
+          refChanged ? `ref: ${next.contentRef}` : null,
+        ].filter(Boolean);
+        log.info(`Updated skills-master.json (${what.join(", ")}).`);
+      }
     }
     if (!cfg.commit) {
       // Ignore only files the emitters own outright, anchored to the project

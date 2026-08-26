@@ -363,9 +363,20 @@ restated against that total.
   Shares `resolveTargets` with `add` and edit detection with `doctor`/`status`.
   15 tests, mutation-checked against three core behaviours (emit-to-configured-targets,
   stale cleanup, the `--prune` gate) — each failed exactly its own tests.
-- [ ] **9.3 Scripting + docs polish (S).** `--json` on `search`/`view`/`doctor`; persist
+- [x] **9.3 Scripting + docs polish (S).** `--json` on `search`/`view`/`doctor`; persist
   `--target`/`--ref` on `add` into existing config; document all 12 commands in the CLI
-  README.
+  README. `doctor --json` suppresses every human-facing line, including the "No
+  skills-master.json found" warning that would otherwise corrupt the document, and keeps its
+  exit-code contract — verified end to end (`exit=1` with valid JSON on drift).
+  `view --json` returns metadata *and* body in one document, so a scripted reader needs one
+  call rather than `view` plus `view --raw`.
+  **`--target` widens rather than replaces.** Adding one skill to a new tool must not
+  silently drop the tools already configured; only a genuine change writes the file, so a
+  no-op `add` leaves `skills-master.json` byte-identical. `--dry-run` never writes it.
+  README now documents all 14 commands in three groups (browse / project / maintain), with
+  the `update` (follows content) vs `sync` (follows config) distinction called out. Also
+  corrected the closing licence note, still Apple-only despite 225 android skills.
+  14 tests, mutation-checked (replace-instead-of-widen, and JSON purity).
 
 ## Phase 10 — Staleness that surfaces itself
 

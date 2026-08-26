@@ -83,8 +83,17 @@ program
   .description("Search skills by name, description, tags")
   .option("--content <dir>", "local skills directory")
   .option("--ref <ref>", "content git ref (tag/branch/sha)")
+  .option("--json", "machine-readable output")
   .action((query, opts) =>
-    run(() => searchCommand({ cwd: process.cwd(), query, content: opts.content, ref: opts.ref })),
+    run(() =>
+      searchCommand({
+        cwd: process.cwd(),
+        query,
+        content: opts.content,
+        ref: opts.ref,
+        json: opts.json,
+      }),
+    ),
   );
 
 program
@@ -93,12 +102,14 @@ program
   .option("--raw", "print the raw SKILL.md body")
   .option("--content <dir>", "local skills directory")
   .option("--ref <ref>", "content git ref (tag/branch/sha)")
+  .option("--json", "machine-readable output (metadata plus body)")
   .action((name, opts) =>
     run(() =>
       viewCommand({
         cwd: process.cwd(),
         name,
         raw: opts.raw,
+        json: opts.json,
         content: opts.content,
         ref: opts.ref,
       }),
@@ -208,7 +219,8 @@ program
 program
   .command("doctor")
   .description("Check installed skills for drift and missing files")
-  .action(() => run(() => doctorCommand({ cwd: process.cwd() }).ok, true));
+  .option("--json", "machine-readable output")
+  .action((opts) => run(() => doctorCommand({ cwd: process.cwd(), json: opts.json }).ok, true));
 
 program
   .command("lint")
