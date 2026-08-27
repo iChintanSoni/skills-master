@@ -1,0 +1,88 @@
+{
+  "skill": "foundation-models",
+  "install": ["foundation-models"],
+  "notes": "The recent-framework arm of the sample. Apple's on-device Foundation Models framework is new enough, and its iOS 27 additions newer still, that a model's own knowledge is the thing under test. Assertions encode practice that would be correct however the answer was arrived at — gate before use, constrain the output shape, separate durable instructions from per-turn prompt — not phrases the skill happens to use.",
+  "tasks": [
+    {
+      "prompt": "In a SwiftUI iOS app, use Apple's on-device Foundation Models framework to summarise an article into a title and three bullet points, and show the result. Write the Swift code.",
+      "expect": [
+        {
+          "label": "gates on model availability before offering the feature",
+          "pattern": "availability|isAvailable|unavailable"
+        },
+        {
+          "label": "uses a session rather than a bare one-shot API",
+          "pattern": "LanguageModelSession"
+        },
+        {
+          "label": "constrains output to a typed shape instead of parsing free text",
+          "pattern": "@Generable|Generable"
+        },
+        {
+          "label": "asks for the typed value rather than a string it must parse",
+          "pattern": "respond\\(to:\\s*generating:|generating:"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "hand-parses JSON out of a free-text completion",
+          "pattern": "JSONDecoder\\(\\)\\.decode|parse the (JSON|response) (string|text)"
+        }
+      ]
+    },
+    {
+      "prompt": "My Foundation Models feature should behave like a terse copy editor across a whole conversation, and stream its output as it arrives. How should I structure the session, and where do the persistent behaviour rules go versus the per-message text? Swift code please.",
+      "expect": [
+        {
+          "label": "puts durable behaviour in Instructions at session init",
+          "pattern": "Instructions"
+        },
+        {
+          "label": "reuses one session for the conversation",
+          "pattern": "LanguageModelSession"
+        },
+        {
+          "label": "streams partial output rather than awaiting the whole response",
+          "pattern": "streamResponse|stream|partial"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "re-sends the behaviour rules in every prompt instead of Instructions",
+          "pattern": "prepend (the )?(system )?(rules|instructions) to (each|every) prompt"
+        }
+      ]
+    },
+    {
+      "prompt": "Targeting iOS 27, I want my Foundation Models feature to (a) let the user attach a photo and ask questions about it, and (b) fall back to Apple's larger server-side model for long documents, without giving up the privacy guarantees. Which APIs do I use, and what do I have to request from Apple?",
+      "expect": [
+        {
+          "label": "names the attachment API for multimodal prompts",
+          "pattern": "Attachment|ImageReference"
+        },
+        {
+          "label": "names the Private Cloud Compute model type",
+          "pattern": "PrivateCloudComputeLanguageModel"
+        },
+        {
+          "label": "flags the PCC entitlement as something to request, not assume",
+          "pattern": "entitlement|com\\.apple\\.developer\\.private-cloud-compute"
+        },
+        {
+          "label": "keeps the same session API across both paths",
+          "pattern": "LanguageModelSession"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "sends the image or document to a non-Apple cloud service",
+          "pattern": "OpenAI|Anthropic API|upload (the )?(image|document) to (a|your) (server|cloud)"
+        },
+        {
+          "label": "claims the feature is unavailable or invents a substitute API",
+          "pattern": "not (yet )?(available|supported) (in|on) iOS 27|no (such )?API exists"
+        }
+      ]
+    }
+  ]
+}

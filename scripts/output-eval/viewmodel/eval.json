@@ -1,0 +1,65 @@
+{
+  "skill": "viewmodel",
+  "install": ["viewmodel"],
+  "notes": "The well-trodden arm of the sample, and the control on the whole exercise. Android ViewModel has been stable and heavily written about for years, so if a skill cannot beat the model's own knowledge anywhere, it is here. A near-zero delta on this skill is a finding, not a failure — it tells the library where its edge actually comes from.",
+  "tasks": [
+    {
+      "prompt": "Write an Android ViewModel for a book-detail screen in Jetpack Compose: it loads a book by id from a repository, exposes loading/success/error state to the UI, and survives both rotation and process death. Include how the composable obtains it.",
+      "expect": [
+        {
+          "label": "launches work in viewModelScope",
+          "pattern": "viewModelScope"
+        },
+        {
+          "label": "exposes read-only state, backed by a private mutable flow",
+          "pattern": "private val _|asStateFlow\\(\\)"
+        },
+        {
+          "label": "exposes StateFlow rather than LiveData",
+          "pattern": "StateFlow"
+        },
+        {
+          "label": "uses SavedStateHandle for the id, so it survives process death",
+          "pattern": "SavedStateHandle"
+        },
+        {
+          "label": "obtains the ViewModel through viewModel()/hiltViewModel(), not a constructor call",
+          "pattern": "viewModel\\(\\)|hiltViewModel\\(\\)"
+        },
+        {
+          "label": "collects with lifecycle awareness in the composable",
+          "pattern": "collectAsStateWithLifecycle"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "holds a Context, View or Activity in the ViewModel",
+          "pattern": "class \\w*ViewModel\\([^)]*\\b(Context|Activity|View)\\b"
+        },
+        {
+          "label": "constructs the ViewModel directly in the composable",
+          "pattern": "(val|var) \\w+ = \\w*ViewModel\\((?!\\))"
+        }
+      ]
+    },
+    {
+      "prompt": "Two screens in my Compose NavHost need to share the same ViewModel instance, and it should be cleared when the user leaves that part of the app. How do I scope it? Kotlin code.",
+      "expect": [
+        {
+          "label": "scopes to a parent nav graph's back stack entry",
+          "pattern": "getBackStackEntry"
+        },
+        {
+          "label": "passes that owner to viewModel()/hiltViewModel()",
+          "pattern": "hiltViewModel\\(|viewModel\\("
+        }
+      ],
+      "avoid": [
+        {
+          "label": "reaches for an Activity-scoped ViewModel as the default answer",
+          "pattern": "activityViewModels\\(\\)|LocalContext\\.current as ComponentActivity"
+        }
+      ]
+    }
+  ]
+}
