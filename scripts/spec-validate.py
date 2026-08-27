@@ -27,7 +27,11 @@ import sys
 from pathlib import Path
 
 PIN = "skills-ref==0.1.1"
-DEFAULT_ROOTS = ("plugins", "packages/cli/.claude/skills")
+DEFAULT_ROOTS = (
+    "plugins",
+    "packages/cli/.claude/skills",
+    "packages/cli/.agents/skills",
+)
 
 try:
     from skills_ref import validate

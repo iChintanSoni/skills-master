@@ -5,7 +5,8 @@
     "claude",
     "cursor",
     "copilot",
-    "agents"
+    "agents",
+    "agents-skills"
   ],
   "paths": {},
   "scope": "project",

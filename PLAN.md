@@ -216,6 +216,9 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   the source. Pre-existing and unrelated to this change; refreshing it here would drag two
   unrelated content revisions into the diff. Worth its own item — `doctor` arguably should
   report a lockfile that has fallen behind the content.
+  *(Refreshed once the content settled: the dogfood now runs 1.1.1, carries `license` and
+  `metadata`, and dogfoods `agents-skills` too, so the repo eats every target it serves.
+  The `doctor` gap itself is still open — see the note under "Open, no decision needed".)*
 - [x] **1.3 Provenance via the spec's `metadata` map (M) — decision item.** Optionally emit
   `metadata: {version, snapshot-date, source}` (string→string, spec-legal, clients ignore
   what they don't know) on the Claude projection, so an installed skill self-describes its
@@ -707,6 +710,23 @@ can answer.
   earlier, so nobody had installed one yet. The scaffold examples in CLAUDE.md,
   CONTRIBUTING.md and authoring.md moved to a category that still exists;
   `docs/refresh-2026-08.md` keeps its old paths, being a dated record of past work.
+
+## Open, no decision needed
+
+Found during the effort, not in the original audit, and small enough that anyone can pick
+them up:
+
+- **`doctor` cannot see a lockfile that has fallen behind the content.** It compares emitted
+  files against the lockfile, never the lockfile against the source, so an install pinned to
+  an old version reports healthy — which is what let the dogfood sit at 1.0.1 for three
+  content releases. `doctor` is offline by design and should stay that way, so the honest
+  home for this is `update --check`: resolve content, report which installed skills are
+  behind, exit non-zero. `#minor`, since it adds CLI surface.
+- **Finish the 4.1 output-eval sample** — six more skills, ~$12–15, for the per-class
+  verdicts the item asks for. Needs a go-ahead on spend, not on scope.
+- **3.2, the trigger pilot** — ~$130 a run. Largely superseded: 7.1/7.2/7.3 removed the
+  budget confound that would have muddied its results, but 3.3 and 3.4 already acted on the
+  parts that did not need it.
 
 ## Deliberate non-goals (recorded so they stay decided)
 

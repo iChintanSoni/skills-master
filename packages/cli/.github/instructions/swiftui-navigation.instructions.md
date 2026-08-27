@@ -36,6 +36,11 @@ struct RootView: View {
 }
 ```
 
+### iOS 27 (WWDC 2026)
+
+- `navigationTransition(.crossFade)` joins `.zoom` as a built-in `NavigationTransition`, giving push/pop a cross-fade without custom transition plumbing.
+- `toolbarMinimizationBehavior(_:for:)` lets the navigation bar minimize on scroll and re-expand on scroll-up — adopt it instead of hand-rolled scroll-offset observation for collapsing chrome. Note the spelling: WWDC prose calls it "toolbarMinimizeBehavior", but that symbol does not exist; `tabBarMinimizeBehavior(_:)` is the separate tab-bar API.
+
 ## Platform notes
 
 - iPhone and Apple Watch: a `NavigationStack` is the common shape; a `NavigationSplitView` automatically collapses into one in the compact horizontal size class.
@@ -60,8 +65,8 @@ struct RootView: View {
 - **Documentation:** [Migrating to new navigation types](https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types)
 - **Human Interface Guidelines:** [Navigation and search](https://developer.apple.com/design/human-interface-guidelines/navigation-and-search)
 - **WWDC:** [The SwiftUI cookbook for navigation (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10054/)
-- **Worked examples:** examples.md
-- **Review checklist:** checklist.md
+- **Worked examples:** examples.md — read when you want working SwiftUI navigation code to adapt
+- **Review checklist:** checklist.md — run before merging changes to SwiftUI navigation
 
 ## See also
 
