@@ -149,14 +149,17 @@ if (currency) {
       `**${currency.behind.length}** of ${currency.declared} skills with a declared upstream ` +
         `have shipped since their snapshot. This is the refresh queue, worst first.`,
       "",
-      "| Skill | Snapshot | Latest upstream | Days behind | Releases since |",
-      "|---|---|---|---:|---:|",
-      ...currency.behind
-        .slice(0, 20)
-        .map(
-          (b) =>
-            `| ${skillLink(b)} | ${b.snapshot} | ${b.latest} | ${b.behindDays} | ${b.releasesSince} |`,
-        ),
+      "| Skill | Why | Snapshot | Latest upstream | Days behind | Stable / all releases |",
+      "|---|---|---|---|---:|---:|",
+      ...currency.behind.slice(0, 20).map((b) => {
+        const why = b.versionLag
+          ? `**documents ${b.versionLag.documented}, stable is ${b.versionLag.stable}**`
+          : b.reason;
+        return (
+          `| ${skillLink(b)} | ${why} | ${b.snapshot} | ${b.latest} | ${b.behindDays ?? "—"} | ` +
+          `${b.stableSince ?? 0} / ${b.releasesSince} |`
+        );
+      }),
       "",
     );
   }

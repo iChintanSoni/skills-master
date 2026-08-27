@@ -13,7 +13,7 @@ x-skills-master:
   requires: { "android": "16", "kotlin": "2.2", "wear-compose": "1.6" }
   pairs_with: [m3-wear, choosing-form-factors, wear-data-health]
   upstream:
-    - Wear Compose
+    - Wear Compose@1.6
     - Wear
   sources:
     - https://developer.android.com/training/wearables/compose

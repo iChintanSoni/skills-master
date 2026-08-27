@@ -203,7 +203,7 @@ run (~$0.22 and ~$0.37 a session).
 - [ ] **1.3 Work the queue (L, scope from 1.1).** Only after the pilot says the queue is real.
   1.1 says it is **partly** real — 2 of 5 — so this waits on 1.4 rather than starting now.
 
-- [ ] **1.4 Rank by materiality, not just recency (S).** 1.1's three misses are all
+- [x] **1.4 Rank by materiality, not just recency (S).** 1.1's three misses are all
   identifiable from the version string alone: `3.5.1` is a patch, `1.3.0-alpha10` is an
   alpha, and a stable whose changes all predate the skill's snapshot brings nothing new.
   Weight the queue accordingly — a new stable minor or major outranks a patch, and a
@@ -212,6 +212,24 @@ run (~$0.22 and ~$0.37 a session).
   Worth checking at the same time: `releasesSince` currently counts *entries*, so a library
   shipping alpha weekly outranks one that shipped a considered stable release. Count what
   matters instead.
+  **Landed — but the filter this item proposed would have been wrong 2 times in 5, so it is
+  not what shipped.** Modelling it against 1.1's own results first: it would have **dropped
+  `wear-compose`**, the biggest real defect, because everything Wear Compose shipped after
+  the snapshot was a pre-release — its 1.6.2 stable landed *before* the bulk-stamped date.
+  And it would have **promoted `hilt-di`**, which had nothing, because 1.4.0 looks like a
+  minor release. Version strings are a weak proxy for materiality in both directions.
+  **What shipped instead: version lag, which is what both successful refreshes actually
+  were.** `upstream` entries may now pin the documented version — `Glance@1.2` — and a skill
+  whose pinned version trails current stable is ranked above everything else. That signal is
+  independent of dates, which is why it catches staleness a bulk `snapshot_date` hides —
+  exactly the `wear-compose` case.
+  Below it, rows are ranked and **labelled** by why they are in the queue: `new minor/major`
+  > `patch only` > `pre-release only`. Pre-releases are ranked last rather than filtered
+  out, because a queue that silently drops things is a queue that starts lying.
+  **Honest limit:** `hilt-di` still ranks top today under `new minor/major`, and 1.1 showed
+  1.4.0 was a stabilisation release with nothing new. The label says what the ranking is
+  based on so a reader can discount it — a cheap proxy that shows its working, not an
+  oracle.
 
 ## Phase 2 — Stop the bulk stamp from coming back
 
