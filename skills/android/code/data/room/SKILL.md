@@ -12,6 +12,8 @@ x-skills-master:
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
   pairs_with: [choosing-storage, paging, sqlite-androidx]
+  upstream:
+    - Room
   sources:
     - https://developer.android.com/training/data-storage/room
     - https://developer.android.com/training/data-storage/room/migrating-db-versions

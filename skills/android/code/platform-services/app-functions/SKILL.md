@@ -12,6 +12,8 @@ x-skills-master:
   platforms: ["android"]
   requires: { android: "17", kotlin: "2.2" }
   pairs_with: [app-actions-assistant]
+  upstream:
+    - Appfunctions
   sources:
     - https://android-developers.googleblog.com/2026/06/Android-17.html
     - https://developer.android.com/about/versions/17

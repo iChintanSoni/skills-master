@@ -101,6 +101,22 @@ Name the skill's subject in the clause — "run before a design review of onboar
 
 In condensed targets (Cursor, Copilot) the link flattens to plain text and the file isn't shipped — the hint then reads alongside the "full Claude Code skill" pointer note, which is what makes it coherent there rather than a dead reference.
 
+## Declare the upstream a skill tracks
+
+`snapshot_date` records when you checked. It cannot tell anyone whether the thing you checked has moved since — so a skill that documents a shipping library also declares it:
+
+```yaml
+x-skills-master:
+  upstream:
+    - Media3
+```
+
+Name the library **exactly as the vendor's release feed prints it** ("Media3 Version 1.11.0-beta01" → `Media3`). The weekly crawl joins these to the feeds and reports which skills have an upstream that shipped after their snapshot — that list is the refresh queue.
+
+It is **declared, not inferred**, because inference is wrong often enough to be useless: matching skill names against feed titles pairs `Compose UI` with `choosing-android-testing` and `Browser` with `car-media-messaging`. A staleness signal built on bad matches is worse than no signal, because people stop trusting it.
+
+Omit it for skills with no single upstream — design critique, decision routers, anything tracking a guideline rather than a release.
+
 ## Resource files over 100 lines need a `## Contents`
 
 An agent that opens `examples.md` often previews it — `head -100`, or a partial read — and sees the first section plus no evidence that four more exist. So any `reference.md` / `examples.md` / `checklist.md` past **100 lines** opens with a table of contents, and the linter warns when one is missing (it looks only at the first 15 lines: a ToC below the fold is a ToC nobody reads).

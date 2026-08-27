@@ -47,6 +47,7 @@ const staleness = readJson("staleness.json");
 const links = readJson("links.json");
 const upstream = readJson("upstream.json");
 const footprint = readJson("footprint.json");
+const currency = readJson("currency.json");
 
 const out = [];
 const say = (...lines) => out.push(...lines);
@@ -114,6 +115,35 @@ if (links) {
       "Re-check by hand before editing: the scan runs concurrently and vendor hosts " +
         "(support.google.com especially) rate-limit, which surfaces as a one-off 404 " +
         "against a URL that is perfectly alive.",
+      "",
+    );
+  }
+}
+
+// ── Currency ────────────────────────────────────────────────────────────────
+// Staleness by date says when a batch ran. This says whether the thing a skill
+// documents has moved since — the only version of "stale" worth acting on.
+if (currency) {
+  say("### Upstream currency", "");
+  if (currency.behind.length === 0) {
+    say(
+      `No skill with a declared upstream is behind it. ` +
+        `**${currency.declared}** skills declare one; **${currency.undeclared}** do not yet.`,
+      "",
+    );
+  } else {
+    say(
+      `**${currency.behind.length}** of ${currency.declared} skills with a declared upstream ` +
+        `have shipped since their snapshot. This is the refresh queue, worst first.`,
+      "",
+      "| Skill | Snapshot | Latest upstream | Days behind | Releases since |",
+      "|---|---|---|---:|---:|",
+      ...currency.behind
+        .slice(0, 20)
+        .map(
+          (b) =>
+            `| ${skillLink(b)} | ${b.snapshot} | ${b.latest} | ${b.behindDays} | ${b.releasesSince} |`,
+        ),
       "",
     );
   }

@@ -98,12 +98,34 @@ run (~$0.22 and ~$0.37 a session).
 
 ## Phase 0 — Make staleness mean something
 
-- [ ] **0.1 Relate skills to upstream releases (M).** Extend the crawl so each skill can be
+- [x] **0.1 Relate skills to upstream releases (M).** Extend the crawl so each skill can be
   matched to the upstream libraries it is about, and report, per skill: snapshot date, the
   latest upstream release seen, and whether that release post-dates the snapshot. The
   matching will be imperfect — `Compose UI → choosing-android-testing` is a false positive
   in today's naive version — so the mapping belongs in the skill (`x-skills-master.upstream`,
   a list of feed keys or library names) rather than in a guessing heuristic. Report-only.
+  **Landed.** `x-skills-master.upstream` is a declared list of library names as the vendor's
+  feed prints them; the crawl joins it to the feeds and writes `reports/currency.json`, and
+  the report renders the queue worst-first. Seeded on 20 skills to prove the join.
+  **The missing piece was dates, not matching.** The feed nests a day's releases inside one
+  dated `<entry>`, and the parser was extracting the inner links while discarding the
+  wrapper's `<updated>` — so the crawl could say *what* shipped but never *when*. Carrying
+  the entry date down to each link is what makes "behind" computable at all.
+  **Declared beats inferred, confirmed by trying it:** naive title matching pairs
+  `Compose UI` with `choosing-android-testing` and `Browser` with `car-media-messaging`.
+  114 such "matches" for stale Android skills, mostly noise.
+  **The uncomfortable first result: the primary Android feed has gone quiet.**
+  `androidx-release-notes.xml` carries 658 dated entries from 2025-01-14 to **2026-07-07**,
+  and its recent volume is 83 (Feb), 109 (Mar), 78 (Apr), 53 (May), **1 (Jun), 1 (Jul)** —
+  with the feed's own `<updated>` timestamp being yesterday, so this is not a fetch failure.
+  Exactly **one** library (Media3) has shipped since 2026-05-25, and the skills tracking it
+  were refreshed in August. So the queue is legitimately empty today, and that says more
+  about the signal source than about the library.
+  **What that means for 0.2:** an empty queue built on one feed is not evidence of currency.
+  Before ranking anything, 0.2 has to widen the sources — per-library release pages rather
+  than the roll-up feed, the Android developers blog (25 recent posts, currently unused for
+  this), and an Apple equivalent, since Apple's endpoints are a framework *index* with no
+  dates at all. Until then the honest report is "we cannot tell", which is what it now says.
 - [ ] **0.2 Rank the refresh queue by evidence, not date (S).** With 0.1 in place, produce a
   ranked list: skills whose upstream moved since their snapshot, worst first. That list —
   not the 217 — is the actual work queue. Publish it in the weekly report.

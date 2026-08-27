@@ -12,6 +12,9 @@ x-skills-master:
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2" }
   pairs_with: [mediastore, ml-kit]
+  upstream:
+    - Camera
+    - Camera Viewfinder
   sources:
     - https://developer.android.com/media/camera/camerax
     - https://developer.android.com/media/camera/camerax/architecture
