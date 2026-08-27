@@ -126,9 +126,31 @@ run (~$0.22 and ~$0.37 a session).
   than the roll-up feed, the Android developers blog (25 recent posts, currently unused for
   this), and an Apple equivalent, since Apple's endpoints are a framework *index* with no
   dates at all. Until then the honest report is "we cannot tell", which is what it now says.
-- [ ] **0.2 Rank the refresh queue by evidence, not date (S).** With 0.1 in place, produce a
+- [x] **0.2 Rank the refresh queue by evidence, not date (S).** With 0.1 in place, produce a
   ranked list: skills whose upstream moved since their snapshot, worst first. That list —
   not the 217 — is the actual work queue. Publish it in the weekly report.
+  **Landed for Android; Apple is still blind (see 0.3).** The ranking was already written in
+  0.1 — what was missing was a source telling the truth. Two bugs, both silent:
+  **(1) The androidx feed is stalled, and the real page is fine.** `all-channel` lists
+  releases every week through 26 August while `androidx-release-notes.xml` stops at 7 July.
+  The crawl now parses the page (dated `<h2>` headings, one `<ul>` of library links each),
+  and endpoints carry a `format` so a source can be HTML rather than a feed.
+  **(2) The fetch was being served Arabic.** Node's `fetch` sends no `Accept-Language`, the
+  CDN content-negotiated, and the date headings came back as `أحدث إصدار` — which
+  `Date.parse` rejects, so the parser found *zero* releases and reported everything current.
+  A localization bug that presents as good news is the worst kind. Fixed with `?hl=en` plus
+  an explicit header, and both are commented as load-bearing.
+  **The queue, first real run:** 5 of the 20 seeded skills are behind —
+  `app-widgets-glance` (80 days, **8 releases**), `wear-compose` (80 days, **14**), `paging`,
+  `datastore`, `hilt-di`. That is Phase 1's input, and it is evidence rather than a date.
+
+- [ ] **0.3 Give Apple a dated source (M).** Nothing here can flag an Apple skill: the three
+  Apple endpoints are a framework *index* and two taxonomies, with **no dates at all**, so
+  every `hig-*` and Swift skill is invisible to the currency report no matter how stale.
+  Candidates to evaluate, cheapest first: the per-framework "Updates" pages Apple publishes
+  under `developer.apple.com/documentation/updates`, the release-notes RSS, and WWDC session
+  metadata. Until one lands, the report should say Apple is unmeasured rather than imply it
+  is current — the same honesty 0.2's Arabic bug argues for.
 
 ## Phase 1 — Refresh what the evidence names
 
