@@ -29,7 +29,7 @@
       "name": "activitykit",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "widgets-intents",
       "description": "Builds ActivityKit Live Activities that surface live data on the Lock Screen and in the Dynamic Island via a widget extension. Use when starting, updating, or ending an Activity, modeling ActivityAttributes and ContentState, laying out compact/minimal/expanded Dynamic Island regions, driving updates with push or broadcast channels, or managing the update budget and stale dates.",
       "platforms": [
         "ios",
@@ -44,7 +44,7 @@
         "hig-live-activities-design",
         "choosing-widget-tech"
       ],
-      "path": "apple/code/app-frameworks/activitykit",
+      "path": "apple/code/widgets-intents/activitykit",
       "resources": {
         "reference": false,
         "examples": false,
@@ -634,7 +634,7 @@
       "name": "app-intents",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "widgets-intents",
       "description": "Defining AppIntent and AppEntity, parameters and resolution, AppShortcuts for Siri and Spotlight, intents that power interactive widgets and Controls, and the perform method. Use when exposing app actions or content to Siri, Spotlight, Shortcuts, widgets, Controls, or Apple Intelligence, or when designing AppEntity, AppShortcutsProvider, queries, or donations.",
       "platforms": [
         "ios",
@@ -652,7 +652,7 @@
         "hig-snippets",
         "adopting-app-intents"
       ],
-      "path": "apple/code/app-frameworks/app-intents",
+      "path": "apple/code/widgets-intents/app-intents",
       "resources": {
         "reference": false,
         "examples": true,
@@ -840,7 +840,7 @@
       "name": "appkit-core",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "uikit-appkit",
       "description": "Use when building or maintaining a native Mac app in AppKit, or deciding AppKit vs SwiftUI on macOS. Covers NSApplication, NSWindow, NSWindowController, NSViewController, the menu bar and NSMenu, NSToolbar, target-action and the responder chain, document-based apps, and Mac idioms like resizable windows, keyboard handling, and multiple windows.",
       "platforms": [
         "macos"
@@ -855,7 +855,7 @@
         "hig-designing-for-macos",
         "appkit-swiftui-interop"
       ],
-      "path": "apple/code/app-frameworks/appkit-core",
+      "path": "apple/code/uikit-appkit/appkit-core",
       "resources": {
         "reference": false,
         "examples": false,
@@ -866,7 +866,7 @@
       "name": "appkit-swiftui-interop",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "uikit-appkit",
       "description": "Bridges AppKit and SwiftUI on macOS with NSViewRepresentable, NSViewControllerRepresentable, NSHostingController, and NSHostingView, plus menu and toolbar wiring. Use when embedding a SwiftUI view inside an AppKit window or vice versa, hosting an NSView/NSViewController in SwiftUI, sizing hosted content, or sharing menus, commands, and the responder chain across the two frameworks.",
       "platforms": [
         "macos"
@@ -877,7 +877,7 @@
       "pairs_with": [
         "appkit-core"
       ],
-      "path": "apple/code/app-frameworks/appkit-swiftui-interop",
+      "path": "apple/code/uikit-appkit/appkit-swiftui-interop",
       "resources": {
         "reference": false,
         "examples": false,
@@ -2896,7 +2896,7 @@
       "name": "controls-widgets",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "widgets-intents",
       "description": "Build iOS 18+ control widgets that surface app actions in Control Center, the Lock Screen, and the Action button using ControlWidget with ControlWidgetButton/Toggle and App Intents. Use when adding a control, exposing a quick toggle or button outside the app, wiring a control to an App Intent, or driving control state with a value provider.",
       "platforms": [
         "ios",
@@ -2912,7 +2912,7 @@
         "choosing-widget-tech",
         "hig-action-button"
       ],
-      "path": "apple/code/app-frameworks/controls-widgets",
+      "path": "apple/code/widgets-intents/controls-widgets",
       "resources": {
         "reference": false,
         "examples": false,
@@ -8143,7 +8143,7 @@
       "name": "observation",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-data",
       "description": "Guidance on the Observation framework and the Observable macro for SwiftUI reference-type models, including fine-grained per-property view updates, ObservationIgnored, and migration away from ObservableObject. Use when defining a view model or shared model class, choosing between Observable and ObservableObject, deciding which view property wrapper to use, marking properties as non-tracked, or migrating existing Published code to the Observable macro.",
       "platforms": [
         "apple"
@@ -8158,7 +8158,7 @@
       "pairs_with": [
         "swiftui-state-data-flow"
       ],
-      "path": "apple/code/app-frameworks/observation",
+      "path": "apple/code/swiftui-data/observation",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9397,7 +9397,7 @@
       "name": "swiftdata-modeling",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftdata",
       "description": "Designs SwiftData models with @Model, relationships, delete rules, and uniqueness for Apple-platform persistence. Use when modeling persistent data, choosing relationship or delete rules, adding @Attribute(.unique), setting up a ModelContainer, or deciding how to shape a SwiftData schema.",
       "platforms": [
         "apple"
@@ -9411,7 +9411,7 @@
         "choosing-persistence",
         "swiftdata-queries-migration"
       ],
-      "path": "apple/code/app-frameworks/swiftdata-modeling",
+      "path": "apple/code/swiftdata/swiftdata-modeling",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9422,7 +9422,7 @@
       "name": "swiftdata-queries-migration",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftdata",
       "description": "Guidance on reading and evolving a SwiftData store, covering the Query macro with the Predicate macro, sort descriptors, FetchDescriptor for imperative fetches, fetching through the model context, and schema migration with VersionedSchema and SchemaMigrationPlan stages. Use when filtering or sorting persisted models, paging large result sets, fetching outside a view, designing versioned schemas, or planning lightweight versus custom migrations between store versions.",
       "platforms": [
         "apple"
@@ -9435,7 +9435,7 @@
       "pairs_with": [
         "swiftdata-modeling"
       ],
-      "path": "apple/code/app-frameworks/swiftdata-queries-migration",
+      "path": "apple/code/swiftdata/swiftdata-queries-migration",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9446,7 +9446,7 @@
       "name": "swiftui-accessibility",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-interaction",
       "description": "Covers SwiftUI accessibility modifiers in code: labels, values, hints, traits, grouping with accessibilityElement(children:), hiding, custom actions, sort priority, and Dynamic Type. Use when adding or auditing VoiceOver/assistive-technology support, fixing mis-read controls, grouping or hiding elements, exposing custom actions, or making text and metrics scale.",
       "platforms": [
         "ios",
@@ -9464,7 +9464,7 @@
       "pairs_with": [
         "hig-accessibility"
       ],
-      "path": "apple/code/app-frameworks/swiftui-accessibility",
+      "path": "apple/code/swiftui-interaction/swiftui-accessibility",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9475,7 +9475,7 @@
       "name": "swiftui-animations-transitions",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-interaction",
       "description": "Guides SwiftUI motion design with implicit animation(value:), explicit withAnimation, springs and timing curves, view transitions, matchedGeometryEffect, PhaseAnimator and KeyframeAnimator, custom Animatable conformances, and Reduce Motion support. Use when adding or fixing animations, transitions, hero effects, multi-step or keyframe motion, or when animations stutter, fire unexpectedly, or ignore accessibility.",
       "platforms": [
         "ios",
@@ -9491,7 +9491,7 @@
       "pairs_with": [
         "hig-motion"
       ],
-      "path": "apple/code/app-frameworks/swiftui-animations-transitions",
+      "path": "apple/code/swiftui-interaction/swiftui-animations-transitions",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9528,7 +9528,7 @@
       "name": "swiftui-charts",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Builds data visualizations with Swift Charts in SwiftUI: Chart plus marks (BarMark, LineMark, PointMark, AreaMark, RuleMark, SectorMark), Plottable data, axes and scales, category styling, selection, and accessibility. Use when adding bar, line, area, scatter, or pie charts to a SwiftUI app, styling marks by category, wiring tap or drag selection, customizing axes, or making charts VoiceOver-friendly.",
       "platforms": [
         "ios",
@@ -9547,7 +9547,7 @@
       "pairs_with": [
         "hig-charts"
       ],
-      "path": "apple/code/app-frameworks/swiftui-charts",
+      "path": "apple/code/swiftui-views/swiftui-charts",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9558,7 +9558,7 @@
       "name": "swiftui-concurrency",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-data",
       "description": "Guides view-scoped async work in SwiftUI using the task and task(id:) modifiers, refreshable and searchable async closures, and main-actor state updates. Use when wiring async loads, async sequences, pull-to-refresh, or live search into a view, when a task must cancel on disappear or restart on an id change, or when updating Observable or State models from background work without data races.",
       "platforms": [
         "apple",
@@ -9571,7 +9571,7 @@
       "pairs_with": [
         "choosing-async-pattern"
       ],
-      "path": "apple/code/app-frameworks/swiftui-concurrency",
+      "path": "apple/code/swiftui-data/swiftui-concurrency",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9582,7 +9582,7 @@
       "name": "swiftui-core",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Covers SwiftUI fundamentals including views as value types, the body computed property, view composition and subview extraction, layout containers (VStack, HStack, ZStack, Grid, and lazy stacks), modifier ordering, ViewBuilder, and previews. Use when building or refactoring SwiftUI view hierarchies, deciding when to extract a subview, reasoning about why modifier order changes layout or appearance, choosing between eager and lazy containers, or wiring up Xcode previews. Excludes navigation and state-flow concerns, which belong to dedicated skills.",
       "platforms": [
         "apple",
@@ -9598,7 +9598,7 @@
         "hig-layout",
         "swiftui-custom-layout"
       ],
-      "path": "apple/code/app-frameworks/swiftui-core",
+      "path": "apple/code/swiftui-views/swiftui-core",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9609,7 +9609,7 @@
       "name": "swiftui-custom-layout",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-layout-nav",
       "description": "Guidance for building SwiftUI custom layouts with the Layout protocol (sizeThatFits/placeSubviews), layout caches, alignment guides, ViewThatFits, anchors, and coordinate spaces. Use when arranging subviews in a flow, radial, or measurement-driven pattern that nested HStack/VStack/Grid cannot express, when adapting between layouts by available space, or when reading one view's geometry relative to another.",
       "platforms": [
         "apple",
@@ -9625,7 +9625,7 @@
       "pairs_with": [
         "swiftui-core"
       ],
-      "path": "apple/code/app-frameworks/swiftui-custom-layout",
+      "path": "apple/code/swiftui-layout-nav/swiftui-custom-layout",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9636,7 +9636,7 @@
       "name": "swiftui-documents",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-data",
       "description": "Builds document-based SwiftUI apps with DocumentGroup and the iOS 27 observable document family — Document, ReadableDocument, WritableDocument, DocumentReader, DocumentWriter — plus DocumentGroupLaunchScene and DocumentCreationSource for the launch experience. Use when creating or migrating a document-based app, routing between the deprecated FileDocument/ReferenceFileDocument protocols and the new reference-type model, implementing custom readers and writers with background file access and progress reporting, or customizing the document launch screen and creation sources.",
       "platforms": [
         "ios",
@@ -9652,7 +9652,7 @@
       "pairs_with": [
         "swiftui-scenes-windows"
       ],
-      "path": "apple/code/app-frameworks/swiftui-documents",
+      "path": "apple/code/swiftui-data/swiftui-documents",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9663,7 +9663,7 @@
       "name": "swiftui-drawing-canvas",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Guidance for custom 2D drawing in SwiftUI using Shape, Path, built-in shapes, fill/stroke/gradients, and Canvas with GraphicsContext, including TimelineView-driven animation. Use when drawing custom graphics, designing a reusable Shape, deciding between composing shapes and dropping into Canvas, or rendering many primitives or particle effects efficiently.",
       "platforms": [
         "ios",
@@ -9679,7 +9679,7 @@
       "pairs_with": [
         "choosing-graphics-tech"
       ],
-      "path": "apple/code/app-frameworks/swiftui-drawing-canvas",
+      "path": "apple/code/swiftui-views/swiftui-drawing-canvas",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9690,7 +9690,7 @@
       "name": "swiftui-environment-preferences",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-data",
       "description": "Guides reading and writing SwiftUI environment values, defining custom keys with the Entry macro, injecting Observable models, and flowing data up the tree with PreferenceKey. Use when sharing implicit dependencies across views, injecting a shared model, theming, or when a child must report size, position, or anchors back to an ancestor.",
       "platforms": [
         "ios",
@@ -9709,7 +9709,7 @@
         "choosing-dependency-injection",
         "swiftui-state-data-flow"
       ],
-      "path": "apple/code/app-frameworks/swiftui-environment-preferences",
+      "path": "apple/code/swiftui-data/swiftui-environment-preferences",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9720,7 +9720,7 @@
       "name": "swiftui-focus",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-interaction",
       "description": "Manages keyboard and focus-engine focus in SwiftUI with the FocusState property wrapper, focused(_:equals:), default focus, focus sections, focusable, and onKeyPress. Use when wiring text-field focus and tab order, dismissing the keyboard programmatically, setting initial focus, grouping focus regions, or building focus-driven navigation on tvOS and visionOS.",
       "platforms": [
         "ios",
@@ -9737,7 +9737,7 @@
         "hig-keyboards-design",
         "tvos-focus-engine"
       ],
-      "path": "apple/code/app-frameworks/swiftui-focus",
+      "path": "apple/code/swiftui-interaction/swiftui-focus",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9748,7 +9748,7 @@
       "name": "swiftui-forms-controls",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Use when building data-entry or settings UI in SwiftUI with Form, Section, Toggle, Picker, Slider, Stepper, DatePicker, ColorPicker, LabeledContent, or controlSize. Covers picker style selection, grouping and styling, control sizing, and deciding Form versus a custom layout.",
       "platforms": [
         "ios",
@@ -9767,7 +9767,7 @@
         "hig-toggles",
         "hig-settings"
       ],
-      "path": "apple/code/app-frameworks/swiftui-forms-controls",
+      "path": "apple/code/swiftui-views/swiftui-forms-controls",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9778,7 +9778,7 @@
       "name": "swiftui-gestures",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-interaction",
       "description": "Guides building and composing SwiftUI gestures (tap, long press, drag, magnify, rotate) with @GestureState, priority and composition modifiers, hit testing, and accessibility. Use when adding touch or pointer interactions, combining recognizers, tracking transient gesture state, fixing hit-testing or gesture-conflict bugs, or making custom gestures accessible.",
       "platforms": [
         "ios",
@@ -9795,7 +9795,7 @@
         "hig-gestures-design",
         "hig-drag-and-drop"
       ],
-      "path": "apple/code/app-frameworks/swiftui-gestures",
+      "path": "apple/code/swiftui-interaction/swiftui-gestures",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9806,7 +9806,7 @@
       "name": "swiftui-grids",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Guidance for choosing between SwiftUI's eager Grid/GridRow and lazy LazyVGrid/LazyHGrid, and for sizing tracks with GridItem (fixed, flexible, adaptive). Use when laying out content in rows and columns, building photo galleries or card collections, aligning form-like or spreadsheet content across columns, or deciding which grid container belongs inside a scroll view.",
       "platforms": [
         "ios",
@@ -9824,7 +9824,7 @@
       "pairs_with": [
         "swiftui-scrollview"
       ],
-      "path": "apple/code/app-frameworks/swiftui-grids",
+      "path": "apple/code/swiftui-views/swiftui-grids",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9835,7 +9835,7 @@
       "name": "swiftui-images-symbols",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Guidance for displaying images and SF Symbols in SwiftUI: sizing with resizable and scaledToFit, choosing a symbol rendering mode (monochrome, hierarchical, palette, multicolor), animating with symbolEffect, loading remote images with AsyncImage, and labeling images for VoiceOver. Use when adding photos, icons, glyphs, remote thumbnails, or animated symbols to a SwiftUI view, or when fixing image scaling, blurry assets, or missing accessibility labels.",
       "platforms": [
         "ios",
@@ -9853,7 +9853,7 @@
         "hig-images",
         "hig-typography-sf-symbols"
       ],
-      "path": "apple/code/app-frameworks/swiftui-images-symbols",
+      "path": "apple/code/swiftui-views/swiftui-images-symbols",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9864,7 +9864,7 @@
       "name": "swiftui-lists-tables",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Builds scrollable data UI with SwiftUI List and Table, including ForEach with stable identity, sections, selection, editing, swipe actions, pull-to-refresh, search, and multi-column tables. Use when displaying collections of rows, adding onDelete/onMove or swipeActions, wiring searchable or refreshable onto a list, or presenting tabular data with sortable columns on iPad and Mac.",
       "platforms": [
         "ios",
@@ -9881,7 +9881,7 @@
         "hig-lists-tables",
         "swiftui-scrollview"
       ],
-      "path": "apple/code/app-frameworks/swiftui-lists-tables",
+      "path": "apple/code/swiftui-views/swiftui-lists-tables",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9892,7 +9892,7 @@
       "name": "swiftui-navigation",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-layout-nav",
       "description": "Guidance for modern SwiftUI navigation using NavigationStack with a value-based path, navigationDestination(for:), and NavigationSplitView for multi-column layouts. Use when building navigation hierarchies, adding programmatic or deep-link navigation, choosing between stack and split layouts for iPhone, iPad, Mac, or visionOS, restoring navigation state, or migrating away from the deprecated NavigationView.",
       "platforms": [
         "ios",
@@ -9911,7 +9911,7 @@
         "hig-navigation-bars",
         "hig-sidebars"
       ],
-      "path": "apple/code/app-frameworks/swiftui-navigation",
+      "path": "apple/code/swiftui-layout-nav/swiftui-navigation",
       "resources": {
         "reference": false,
         "examples": true,
@@ -9922,7 +9922,7 @@
       "name": "swiftui-scenes-windows",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-layout-nav",
       "description": "Structure a SwiftUI app's window and scene topology using App, Scene, WindowGroup, Window, Settings, DocumentGroup, and MenuBarExtra. Use when building multi-window experiences, opening or dismissing windows with openWindow and dismissWindow, tuning windowStyle and windowResizability, or shipping volumetric windows and immersive spaces on visionOS.",
       "platforms": [
         "ios",
@@ -9941,7 +9941,7 @@
         "hig-designing-for-macos",
         "app-lifecycle"
       ],
-      "path": "apple/code/app-frameworks/swiftui-scenes-windows",
+      "path": "apple/code/swiftui-layout-nav/swiftui-scenes-windows",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9952,7 +9952,7 @@
       "name": "swiftui-scrollview",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Builds modern SwiftUI scrolling with ScrollView, scroll target behaviors, scroll position binding, transitions, and content margins. Use when implementing carousels, paged or snapping scroll, programmatic scroll-to, parallax/fade scroll effects, or reacting to scroll offset and visibility. Triggers: scrollTargetBehavior, viewAligned, paging, scrollPosition, scrollTransition, contentMargins, scrollIndicators, ScrollViewReader.",
       "platforms": [
         "ios",
@@ -9972,7 +9972,7 @@
         "swiftui-grids",
         "swiftui-lists-tables"
       ],
-      "path": "apple/code/app-frameworks/swiftui-scrollview",
+      "path": "apple/code/swiftui-views/swiftui-scrollview",
       "resources": {
         "reference": false,
         "examples": false,
@@ -9983,7 +9983,7 @@
       "name": "swiftui-sheets",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-layout-nav",
       "description": "Implements modal sheets in SwiftUI with .sheet, presentation detents, and programmatic dismissal. Use when presenting a sheet, setting partial/large detents, driving presentation from optional item state, or wiring a Cancel/Done flow. Pairs with the HIG sheets design skill.",
       "platforms": [
         "ios",
@@ -10000,7 +10000,7 @@
         "hig-alerts",
         "hig-popovers"
       ],
-      "path": "apple/code/app-frameworks/swiftui-sheets",
+      "path": "apple/code/swiftui-layout-nav/swiftui-sheets",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10011,7 +10011,7 @@
       "name": "swiftui-state-data-flow",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-data",
       "description": "Guidance for managing SwiftUI state and data flow with the Observation framework, covering State for view-owned value data and for Observable reference models, Binding, passing Observable models down the view tree, Environment for dependency injection, and Bindable. Use when deciding which property wrapper owns a piece of state, when a child needs to mutate a parent's value, when injecting a shared model across many screens, or when migrating from the legacy StateObject, ObservedObject, and Published trio to Observable.",
       "platforms": [
         "apple",
@@ -10027,7 +10027,7 @@
         "swiftui-environment-preferences",
         "swiftui-app-architecture"
       ],
-      "path": "apple/code/app-frameworks/swiftui-state-data-flow",
+      "path": "apple/code/swiftui-data/swiftui-state-data-flow",
       "resources": {
         "reference": false,
         "examples": true,
@@ -10038,7 +10038,7 @@
       "name": "swiftui-tab-views",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-layout-nav",
       "description": "Builds SwiftUI tab navigation with the type-safe Tab API, programmatic selection, the search role, the sidebar-adaptable style, paged TabView, and reorderable tabs. Use when adding a tab bar, wiring deep links to a selected tab, supporting iPad sidebar layouts, or adopting iOS 26 tab bar minimize and bottom-accessory behavior.",
       "platforms": [
         "ios",
@@ -10058,7 +10058,7 @@
         "hig-tab-bars",
         "choosing-navigation-pattern"
       ],
-      "path": "apple/code/app-frameworks/swiftui-tab-views",
+      "path": "apple/code/swiftui-layout-nav/swiftui-tab-views",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10069,7 +10069,7 @@
       "name": "swiftui-text-input",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-views",
       "description": "Guidance for building SwiftUI text entry with TextField, TextEditor, and SecureField. Use when accepting names, emails, passwords, numbers, dates, or multiline notes; when adding format/parse value binding, validation, focus management, keyboard and content types, submit handling, or text selection. Triggers include keyboardType, textContentType, FocusState, submitLabel, onSubmit, axis vertical, and TextSelection.",
       "platforms": [
         "ios",
@@ -10088,7 +10088,7 @@
         "hig-text-fields",
         "hig-entering-data"
       ],
-      "path": "apple/code/app-frameworks/swiftui-text-input",
+      "path": "apple/code/swiftui-views/swiftui-text-input",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10099,7 +10099,7 @@
       "name": "swiftui-toolbars",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "swiftui-layout-nav",
       "description": "Populates and tunes SwiftUI toolbars — toolbar(content:), ToolbarItem, ToolbarItemGroup, ToolbarItemPlacement, ToolbarSpacer, DefaultToolbarItem — plus the iOS 27 overflow model of ToolbarItemVisibilityPriority, ToolbarOverflowMenu, and topBarPinnedTrailing, and scroll-driven chrome through toolbarMinimizationBehavior. Use when choosing toolbar placements, controlling which actions collapse into the overflow menu as space shrinks, pinning a critical action, minimizing the navigation bar on scroll, or adapting one toolbar declaration across iPhone, iPad, Mac, Apple Watch, Apple TV, and Vision Pro.",
       "platforms": [
         "ios",
@@ -10117,7 +10117,7 @@
         "hig-toolbars",
         "adopting-liquid-glass"
       ],
-      "path": "apple/code/app-frameworks/swiftui-toolbars",
+      "path": "apple/code/swiftui-layout-nav/swiftui-toolbars",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10425,7 +10425,7 @@
       "name": "uikit-auto-layout",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "uikit-appkit",
       "description": "Builds robust UIKit layouts with layout anchors, constraint priorities, and stack views. Use when writing programmatic Auto Layout, fixing ambiguous or unsatisfiable constraint logs, tuning content hugging and compression resistance, or anchoring views to safe area, layout margin, and keyboard guides.",
       "platforms": [
         "ios",
@@ -10442,7 +10442,7 @@
       "pairs_with": [
         "uikit-core"
       ],
-      "path": "apple/code/app-frameworks/uikit-auto-layout",
+      "path": "apple/code/uikit-appkit/uikit-auto-layout",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10453,7 +10453,7 @@
       "name": "uikit-collection-views",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "uikit-appkit",
       "description": "Builds modern UICollectionView screens with compositional layout, diffable data sources, cell registrations, and content configurations. Use when laying out grids, lists, or outlines in UIKit, when sections need different layouts, when migrating off flow layout or register(_:forCellWithReuseIdentifier:), or when async data updates must animate safely off the main thread's reload path.",
       "platforms": [
         "ios",
@@ -10467,7 +10467,7 @@
       "pairs_with": [
         "uikit-core"
       ],
-      "path": "apple/code/app-frameworks/uikit-collection-views",
+      "path": "apple/code/uikit-appkit/uikit-collection-views",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10478,7 +10478,7 @@
       "name": "uikit-core",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "uikit-appkit",
       "description": "Covers UIKit fundamentals: the UIViewController lifecycle (viewDidLoad, viewIsAppearing, viewWillAppear, layoutSubviews), view controller containment with addChild and didMove, the UIView hierarchy and responder chain, the scene-based lifecycle with UIWindowScene and a scene delegate, trait collections and registerForTraitChanges, and when UIKit still fits versus SwiftUI. Use when building or maintaining a UIKit screen, debugging when lifecycle or layout code runs, embedding a child view controller, migrating to the scene lifecycle, reacting to trait or size-class changes, or routing events through the responder chain.",
       "platforms": [
         "ios",
@@ -10497,7 +10497,7 @@
         "uikit-auto-layout",
         "uikit-collection-views"
       ],
-      "path": "apple/code/app-frameworks/uikit-core",
+      "path": "apple/code/uikit-appkit/uikit-core",
       "resources": {
         "reference": false,
         "examples": false,
@@ -10508,7 +10508,7 @@
       "name": "uikit-swiftui-interop",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "uikit-appkit",
       "description": "Bridges UIKit and SwiftUI in both directions using representables, UIHostingController, and UIHostingConfiguration. Use when embedding a UIView or UIViewController in SwiftUI, hosting SwiftUI inside UIKit cells or controllers, wiring a Coordinator, or passing bindings across the boundary.",
       "platforms": [
         "ios",
@@ -10522,7 +10522,7 @@
       "pairs_with": [
         "uikit-core"
       ],
-      "path": "apple/code/app-frameworks/uikit-swiftui-interop",
+      "path": "apple/code/uikit-appkit/uikit-swiftui-interop",
       "resources": {
         "reference": false,
         "examples": true,
@@ -11025,7 +11025,7 @@
       "name": "widgetkit",
       "domain": "apple",
       "class": "code",
-      "category": "app-frameworks",
+      "category": "widgets-intents",
       "description": "Use when building or refreshing Home Screen, Lock Screen, StandBy, or watch widgets with WidgetKit and SwiftUI. Triggers: creating a Widget/WidgetConfiguration, writing a TimelineProvider or AppIntentTimelineProvider, choosing reload policies and widget families, adding interactive Button/Toggle App Intents, applying containerBackground, or wiring push-based widget updates.",
       "platforms": [
         "ios",
@@ -11042,7 +11042,7 @@
         "adopting-app-intents",
         "choosing-widget-tech"
       ],
-      "path": "apple/code/app-frameworks/widgetkit",
+      "path": "apple/code/widgets-intents/widgetkit",
       "resources": {
         "reference": false,
         "examples": true,

@@ -147,8 +147,10 @@ Every skill ships in **two** plugins:
 | | Example | Skills | Listing vs the ~8 KB budget |
 |---|---|---:|---|
 | per `(domain, class)` | `skills-master-apple-code` | 88 | 4.9× over |
-| per `(domain, class, category)` | `skills-master-apple-code-app-frameworks` | 36 | 1.9× over — and 32 of 36 category plugins fit outright |
+| per `(domain, class, category)` | `skills-master-apple-code-swiftui-views` | 9 | 0.5× — **every** category fits the budget |
 
 The class plugins are what the marketplace has always shipped and what existing installs name, so they stay. The category plugins exist because the agent's always-on skill listing is [budgeted](emitters.md#how-each-agent-triggers-a-skill): past roughly 8 KB, descriptions are replaced by a bare `- <name>`, so installing 107 skills at once means most of them arrive as names with no descriptions. A consumer picks a granularity; the skill bytes are identical either way, and a test asserts that.
 
 A class with only one category (both `overviews` classes) gets **no** category plugin — it would be a byte-identical twin under a clumsier name. The cost of the whole arrangement is a doubled `plugins/` tree on disk, which is a build artifact rather than something a consumer downloads twice.
+
+**A category that outgrows the budget is a category that needs splitting.** `apple/code/app-frameworks` reached 36 skills and 1.9× before being split into seven — `swiftui-views`, `swiftui-layout-nav`, `swiftui-data`, `swiftui-interaction`, `uikit-appkit`, `swiftdata`, `widgets-intents` — following the sections Apple's own SwiftUI documentation uses. Trimming could not have saved it: its median description was already 380 characters, so fitting 36 skills into 8 KB would have meant gutting all of them. `pnpm crawl` reports the multiple per category, so the next one is visible before it becomes a problem.

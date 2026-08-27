@@ -10,45 +10,6 @@ Generated from `skills/registry.json`. **433 skills** across 2 domains (`apple`,
 
 Skills with Level-3 resources (examples/checklist/reference): **90**.
 
-## apple  ›  code  ›  app-frameworks  (36)
-
-- `activitykit`  — ↔ choosing-widget-tech, ↔ hig-live-activities-design
-- `app-intents`  — examples, checklist, ↔ adopting-app-intents, ↔ hig-siri-design, ↔ hig-snippets
-- `appkit-core`  — ↔ appkit-swiftui-interop, ↔ choosing-ui-toolkit, ↔ hig-designing-for-macos
-- `appkit-swiftui-interop`  — ↔ appkit-core
-- `controls-widgets`  — ↔ adopting-app-intents, ↔ choosing-widget-tech, ↔ hig-action-button
-- `observation`  — examples, checklist, ↔ swiftui-state-data-flow
-- `swiftdata-modeling`  — examples, checklist, ↔ choosing-persistence, ↔ swiftdata-queries-migration
-- `swiftdata-queries-migration`  — examples, checklist, ↔ swiftdata-modeling
-- `swiftui-accessibility`  — ↔ hig-accessibility
-- `swiftui-animations-transitions`  — examples, checklist, ↔ hig-motion
-- `swiftui-charts`  — examples, checklist, ↔ hig-charts
-- `swiftui-concurrency`  — ↔ choosing-async-pattern
-- `swiftui-core`  — examples, checklist, ↔ choosing-ui-toolkit, ↔ hig-layout, ↔ swiftui-custom-layout
-- `swiftui-custom-layout`  — ↔ swiftui-core
-- `swiftui-documents`  — emerging, ↔ swiftui-scenes-windows
-- `swiftui-drawing-canvas`  — ↔ choosing-graphics-tech
-- `swiftui-environment-preferences`  — ↔ choosing-dependency-injection, ↔ swiftui-state-data-flow
-- `swiftui-focus`  — ↔ hig-keyboards-design, ↔ tvos-focus-engine
-- `swiftui-forms-controls`  — ↔ hig-pickers, ↔ hig-settings, ↔ hig-sliders-steppers, ↔ hig-toggles
-- `swiftui-gestures`  — examples, checklist, ↔ hig-drag-and-drop, ↔ hig-gestures-design
-- `swiftui-grids`  — ↔ swiftui-scrollview
-- `swiftui-images-symbols`  — ↔ choosing-image-pipeline, ↔ hig-images, ↔ hig-typography-sf-symbols
-- `swiftui-lists-tables`  — examples, checklist, ↔ hig-lists-tables, ↔ swiftui-scrollview
-- `swiftui-navigation`  — examples, checklist, ↔ choosing-navigation-pattern, ↔ hig-navigation-bars, ↔ hig-sidebars, ↔ swiftui-toolbars
-- `swiftui-scenes-windows`  — ↔ app-lifecycle, ↔ hig-designing-for-macos, ↔ hig-multitasking, ↔ swiftui-documents
-- `swiftui-scrollview`  — ↔ swiftui-grids, ↔ swiftui-lists-tables
-- `swiftui-sheets`  — ↔ hig-action-sheets, ↔ hig-alerts, ↔ hig-popovers, ↔ hig-sheets
-- `swiftui-state-data-flow`  — examples, checklist, ↔ observation, ↔ swiftui-app-architecture, ↔ swiftui-environment-preferences
-- `swiftui-tab-views`  — ↔ choosing-navigation-pattern, ↔ hig-tab-bars
-- `swiftui-text-input`  — ↔ hig-entering-data, ↔ hig-text-fields
-- `swiftui-toolbars`  — emerging, ↔ adopting-liquid-glass, ↔ hig-toolbars, ↔ swiftui-navigation
-- `uikit-auto-layout`  — ↔ uikit-core
-- `uikit-collection-views`  — ↔ uikit-core
-- `uikit-core`  — ↔ choosing-ui-toolkit, ↔ uikit-auto-layout, ↔ uikit-collection-views, ↔ uikit-swiftui-interop
-- `uikit-swiftui-interop`  — examples, checklist, ↔ uikit-core
-- `widgetkit`  — examples, checklist, ↔ adopting-app-intents, ↔ choosing-widget-tech, ↔ hig-widgets-design, ↔ watchos-complications
-
 ## apple  ›  code  ›  app-services  (18)
 
 - `cloudkit`  — examples, checklist, ↔ choosing-persistence
@@ -104,6 +65,47 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `photokit`  — ↔ avfoundation-capture, ↔ choosing-image-pipeline
 - `screencapturekit`  — ↔ avfoundation-capture
 
+## apple  ›  code  ›  swiftdata  (2)
+
+- `swiftdata-modeling`  — examples, checklist, ↔ choosing-persistence, ↔ swiftdata-queries-migration
+- `swiftdata-queries-migration`  — examples, checklist, ↔ swiftdata-modeling
+
+## apple  ›  code  ›  swiftui-data  (5)
+
+- `observation`  — examples, checklist, ↔ swiftui-state-data-flow
+- `swiftui-concurrency`  — ↔ choosing-async-pattern
+- `swiftui-documents`  — emerging, ↔ swiftui-scenes-windows
+- `swiftui-environment-preferences`  — ↔ choosing-dependency-injection, ↔ swiftui-state-data-flow
+- `swiftui-state-data-flow`  — examples, checklist, ↔ observation, ↔ swiftui-app-architecture, ↔ swiftui-environment-preferences
+
+## apple  ›  code  ›  swiftui-interaction  (4)
+
+- `swiftui-accessibility`  — ↔ hig-accessibility
+- `swiftui-animations-transitions`  — examples, checklist, ↔ hig-motion
+- `swiftui-focus`  — ↔ hig-keyboards-design, ↔ tvos-focus-engine
+- `swiftui-gestures`  — examples, checklist, ↔ hig-drag-and-drop, ↔ hig-gestures-design
+
+## apple  ›  code  ›  swiftui-layout-nav  (6)
+
+- `swiftui-custom-layout`  — ↔ swiftui-core
+- `swiftui-navigation`  — examples, checklist, ↔ choosing-navigation-pattern, ↔ hig-navigation-bars, ↔ hig-sidebars, ↔ swiftui-toolbars
+- `swiftui-scenes-windows`  — ↔ app-lifecycle, ↔ hig-designing-for-macos, ↔ hig-multitasking, ↔ swiftui-documents
+- `swiftui-sheets`  — ↔ hig-action-sheets, ↔ hig-alerts, ↔ hig-popovers, ↔ hig-sheets
+- `swiftui-tab-views`  — ↔ choosing-navigation-pattern, ↔ hig-tab-bars
+- `swiftui-toolbars`  — emerging, ↔ adopting-liquid-glass, ↔ hig-toolbars, ↔ swiftui-navigation
+
+## apple  ›  code  ›  swiftui-views  (9)
+
+- `swiftui-charts`  — examples, checklist, ↔ hig-charts
+- `swiftui-core`  — examples, checklist, ↔ choosing-ui-toolkit, ↔ hig-layout, ↔ swiftui-custom-layout
+- `swiftui-drawing-canvas`  — ↔ choosing-graphics-tech
+- `swiftui-forms-controls`  — ↔ hig-pickers, ↔ hig-settings, ↔ hig-sliders-steppers, ↔ hig-toggles
+- `swiftui-grids`  — ↔ swiftui-scrollview
+- `swiftui-images-symbols`  — ↔ choosing-image-pipeline, ↔ hig-images, ↔ hig-typography-sf-symbols
+- `swiftui-lists-tables`  — examples, checklist, ↔ hig-lists-tables, ↔ swiftui-scrollview
+- `swiftui-scrollview`  — ↔ swiftui-grids, ↔ swiftui-lists-tables
+- `swiftui-text-input`  — ↔ hig-entering-data, ↔ hig-text-fields
+
 ## apple  ›  code  ›  system  (7)
 
 - `background-assets`  — emerging, ↔ background-tasks, ↔ choosing-background-execution, ↔ storekit
@@ -114,10 +116,26 @@ Skills with Level-3 resources (examples/checklist/reference): **90**.
 - `network-framework`  — ↔ choosing-networking
 - `os-logging`  — ↔ instruments-profiling
 
+## apple  ›  code  ›  uikit-appkit  (6)
+
+- `appkit-core`  — ↔ appkit-swiftui-interop, ↔ choosing-ui-toolkit, ↔ hig-designing-for-macos
+- `appkit-swiftui-interop`  — ↔ appkit-core
+- `uikit-auto-layout`  — ↔ uikit-core
+- `uikit-collection-views`  — ↔ uikit-core
+- `uikit-core`  — ↔ choosing-ui-toolkit, ↔ uikit-auto-layout, ↔ uikit-collection-views, ↔ uikit-swiftui-interop
+- `uikit-swiftui-interop`  — examples, checklist, ↔ uikit-core
+
 ## apple  ›  code  ›  web  (2)
 
 - `app-store-connect-api`  — ↔ testflight-appstore-connect
 - `sign-in-with-apple`  — ↔ choosing-web-embedding, ↔ hig-sign-in-with-apple-design
+
+## apple  ›  code  ›  widgets-intents  (4)
+
+- `activitykit`  — ↔ choosing-widget-tech, ↔ hig-live-activities-design
+- `app-intents`  — examples, checklist, ↔ adopting-app-intents, ↔ hig-siri-design, ↔ hig-snippets
+- `controls-widgets`  — ↔ adopting-app-intents, ↔ choosing-widget-tech, ↔ hig-action-button
+- `widgetkit`  — examples, checklist, ↔ adopting-app-intents, ↔ choosing-widget-tech, ↔ hig-widgets-design, ↔ watchos-complications
 
 ## apple  ›  design  ›  components  (21)
 
