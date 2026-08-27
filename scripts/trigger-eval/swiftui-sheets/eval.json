@@ -1,0 +1,25 @@
+{
+  "skill": "swiftui-sheets",
+  "install": ["swiftui-sheets", "hig-sheets", "swiftui-navigation", "hig-modality"],
+  "notes": "The near-miss pair the plan names. `hig-sheets` covers the same subject from the design side ('produces design critique, not code'), so a query set that only asks about sheets in the abstract cannot tell the two apart. should-not-trigger is therefore mostly hig-sheets' own territory — design judgment about modality — plus one navigation query, because sheets and navigation both 'present' something.",
+  "shouldTrigger": [
+    "How do I present a sheet in SwiftUI?",
+    "I want a modal that the user can drag to half height in my SwiftUI app",
+    "What's the modern way to show a sheet from a button tap in SwiftUI?",
+    "My sheet should be dismissible from a Done button in its toolbar — how do I wire that up?",
+    "Show a sheet driven by an optional item rather than a boolean in SwiftUI",
+    "How do I set presentation detents so my sheet opens at medium and can expand to large?",
+    "The sheet in my SwiftUI view won't dismiss programmatically. How is dismissal supposed to work?",
+    "Add a sheet to this SwiftUI screen that shows the item's details",
+    "How do I stop a SwiftUI sheet from being swiped away?",
+    "What's the difference between .sheet and .fullScreenCover in SwiftUI code?"
+  ],
+  "shouldNotTrigger": [
+    "Should this flow be a sheet or a full-screen presentation? Review the UX.",
+    "Critique the modality in this iOS design — is a sheet the right choice here?",
+    "What do Apple's guidelines say about when a modal is appropriate?",
+    "Review this screen against the Human Interface Guidelines for modal presentation",
+    "How do I push a detail view onto a NavigationStack in SwiftUI?",
+    "Set up deep linking into a navigation path in SwiftUI"
+  ]
+}
