@@ -37,6 +37,24 @@ jobs:
       - name: Check documentation links
         run: node scripts/check-links.mjs skills --json=scripts/crawl/reports/links.json
 
+      # The repo's own install drifted three content releases behind before
+      # anyone noticed, because `doctor` compares emitted files against the
+      # lockfile and never the lockfile against the source. `update --check`
+      # closes that, but a gate nothing runs is not a gate. Report-only here for
+      # the same reason the link check is: a skill changing upstream is normal,
+      # not a build failure — it just should not go unseen for three releases.
+      - name: Check the dogfood install for drift
+        if: always()
+        run: |
+          {
+            echo "### Dogfood install"
+            echo
+            echo '```'
+            pnpm --filter @ichintansoni/skills-master exec tsx src/bin.ts update --check --content ../../skills 2>&1 || true
+            echo '```'
+            echo
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Job summary
         if: always()
         run: node scripts/crawl/report.mjs >> "$GITHUB_STEP_SUMMARY"

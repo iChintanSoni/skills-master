@@ -20,6 +20,37 @@ Claude's upload validator rejects; and several best practices from the two autho
 fields, description trigger evals) are unexploited. None are emergencies; all are cheap
 relative to their value.
 
+## Where this ended up (2026-08-27)
+
+**Every item is done except 3.2, which is left deliberately.** Phases 0, 1, 2, 5 and 7 are
+complete; Phase 3 landed everything that did not need trigger data; Phase 4's sample ran.
+The spec-alignment work the audit asked for turned out to be the smaller half of what the
+effort found.
+
+**What the audit predicted, confirmed:** the library met every hard spec requirement, and
+the gaps were unenforced constraints rather than violations. G1–G6 closed as scoped.
+
+**What the audit did not see, and mattered more.** Reading Claude Code's loader for 1.3 —
+to check a throwaway claim about frontmatter cost — turned up a **budgeted skills listing**:
+past roughly 8 KB the agent replaces descriptions with a bare `- <name>`. 5.2 then found
+Codex documenting the same ~8,000-character cap, making it an ecosystem constraint rather
+than one host's quirk. That reframed G8 from "we are expensive" to "**most of our
+descriptions were never being read**", and it is what the second half of the effort is
+about: measuring the footprint (2.3), trimming what overran (3.3), and repackaging so an
+install fits (7.1–7.3). Every category now sits inside the budget, 44 of 44.
+
+**What the output evals said, which nothing in the plan anticipated:** the library's edge is
+**not** coverage. On subjects that are stable and heavily documented, a skill adds nothing
+measurable — the control missed *nothing at all* on three of eight. The delta comes from
+post-cutoff specifics and from judgment the vendor's own docs bury. That is an argument for
+currency-first authoring, and it is the finding most worth carrying into whatever comes next.
+
+**Three assumptions the work corrected, each caught by running something rather than
+reasoning about it:** the canonical tree fails the spec validator on its *YAML dialect*
+before its extra fields (1.4); `cli new` was scaffolding a description its own linter would
+reject (1.2); and the 2026 Play Console thresholds I picked as a post-cutoff test were
+already known to the model (4.1).
+
 ## Ground rules
 
 - **PR per numbered item.** CI green; Chintan merges. Suggest `#minor` only where noted.
