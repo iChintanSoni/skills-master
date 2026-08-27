@@ -297,13 +297,30 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   the marker comments became headings. Worth noting the linter could not have caught this:
   it checks that resources are linked and now that they are navigable, but nothing asserts
   that a file which is entirely code is *marked up* as code.
-- [ ] **2.2 Conditional load hints on resource links (M).** Rephrase the `## References`
+- [x] **2.2 Conditional load hints on resource links (M).** Rephrase the `## References`
   resource entries from bare pointers to trigger-bearing ones, e.g.
   `[examples.md](examples.md) — read when you need full working implementations` /
   `[checklist.md](checklist.md) — run before merging navigation changes`. One line each,
   90 skills. Keep the `(examples.md)` link shape exactly — `condense.ts`'s `L3_LINK_RE`
   and the lint rule key on it; verify emitted output for both modes afterwards (the 3.2
   lesson). Wording guidance goes into authoring.md. *(G5)*
+  **Landed:** 175 links across all 90 skills. The condition is class-shaped, because the
+  reason to open a file differs by what the file is: `code`/`lang-tooling` examples are
+  code you *adapt* and checklists you *run before merging*; `design` examples are scenarios
+  you *compare a design against*; an `overviews` router's examples are the *comparisons
+  behind a decision*. Each hint names the skill's own subject, from a hand-written phrase
+  per skill — `titleFromName` alone yields "Bluetooth Ble", "SwiftUI State Data Flow",
+  "Kmp", which read like filenames rather than something a reader recognises their
+  situation in. Nine lines the templates mangled ("working a Play Console release code to
+  adapt") were rewritten individually.
+  **The 3.2 lesson, applied:** link shape verified intact (176 `](examples.md)`-style links,
+  lint still 0/0) and emitted output inspected for **all four** targets, not just Claude.
+  Worth recording what condensation does with it: Cursor and Copilot flatten the link to
+  bare text and never ship the file, so the hint lands next to the "full Claude Code skill"
+  pointer note. That reads as a coherent "here's what you're missing and when it matters"
+  rather than a dead reference — better than the bare pointer it replaces, but it is a
+  behaviour to keep in mind when wording future hints. The AGENTS.md digest drops these
+  lines entirely, as designed.
 - [x] **2.3 Metadata-footprint report (S).** Extend the weekly crawl report (or
   `registry build`) with per-plugin totals: skill count, description tokens, worst-10
   longest descriptions. This makes G8 visible and continuously measured rather than a

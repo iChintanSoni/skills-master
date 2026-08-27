@@ -187,8 +187,8 @@ dependencies {
 - **Guide:** [Share build logic between subprojects — Gradle docs](https://docs.gradle.org/current/samples/sample_convention_plugins.html)
 
 ---
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Gradle Kotlin DSL build files to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to the Gradle Kotlin DSL
 
 ## See also
 

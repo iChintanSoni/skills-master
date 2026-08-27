@@ -144,8 +144,8 @@ class BleGattCallback(
 - **Documentation:** [BLE overview — developer.android.com](https://developer.android.com/develop/connectivity/bluetooth/ble/ble-overview)
 - **Documentation:** [Connect to a GATT server — developer.android.com](https://developer.android.com/develop/connectivity/bluetooth/ble/connect-gatt-server)
 - **API reference:** [BluetoothGatt — developer.android.com](https://developer.android.com/reference/android/bluetooth/BluetoothGatt)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Bluetooth LE code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Bluetooth LE
 
 ## See also
 

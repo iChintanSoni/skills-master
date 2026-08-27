@@ -106,8 +106,8 @@ TV uses `TvLazyColumn` and focus-state highlighting. M3 phone list density and t
 - **Documentation:** [Lists and grids — Jetpack Compose](https://developer.android.com/develop/ui/compose/lists)
 
 ---
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for worked lists scenarios to compare a design against
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of lists
 
 ## See also
 

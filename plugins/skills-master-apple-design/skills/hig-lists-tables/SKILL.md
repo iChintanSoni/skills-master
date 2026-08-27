@@ -51,7 +51,7 @@ Use when designing or reviewing scrollable, row-based content and deciding how t
 - **Human Interface Guidelines:** [Disclosure controls](https://developer.apple.com/design/human-interface-guidelines/disclosure-controls)
 - **WWDC:** [Get to know the new design system (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/356/)
 - **WWDC:** [Build a SwiftUI app with the new design (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/323/)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of lists and tables
 
 ## See also
 

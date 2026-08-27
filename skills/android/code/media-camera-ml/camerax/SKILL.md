@@ -259,8 +259,8 @@ Always check availability before selecting an extension — it may not be presen
 - **Documentation:** [ImageAnalysis](https://developer.android.com/media/camera/camerax/analyze)
 - **Documentation:** [VideoCapture](https://developer.android.com/media/camera/camerax/video-capture)
 - **Documentation:** [Camera Extensions](https://developer.android.com/media/camera/camerax/extensions-api)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working CameraX code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to CameraX
 
 ## See also
 

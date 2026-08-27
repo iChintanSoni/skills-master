@@ -136,8 +136,8 @@ Navigation Compose supports URL-pattern deep links via `deepLinks = listOf(navDe
 - **Documentation:** [Navigation with Compose](https://developer.android.com/develop/ui/compose/navigation)
 - **Documentation:** [Type-safe navigation with Compose](https://developer.android.com/guide/navigation/design/type-safety)
 - **Documentation:** [Adaptive navigation layouts](https://developer.android.com/develop/ui/compose/layouts/adaptive)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Navigation Compose code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Navigation Compose
 
 ## See also
 

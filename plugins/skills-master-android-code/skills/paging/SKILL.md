@@ -240,8 +240,8 @@ All `PagingData` transformations must happen in the `ViewModel` (before `cachedI
 
 - **Documentation:** [Paging 3 overview](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
 - **Documentation:** [Load and display paged data](https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Paging code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Paging
 
 ## See also
 

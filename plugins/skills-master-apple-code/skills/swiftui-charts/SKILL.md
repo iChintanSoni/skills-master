@@ -58,8 +58,8 @@ Chart(sales) { row in
 - **WWDC:** [Hello Swift Charts (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10136/)
 - **WWDC:** [Explore pie charts and interactivity in Swift Charts (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10037/)
 - **WWDC:** [Bring Swift Charts to the third dimension (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/313/)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Swift Charts code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Swift Charts
 
 ## See also
 

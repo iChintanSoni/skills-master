@@ -112,8 +112,8 @@ kotlin {
 
 - **Documentation:** [Kotlin Multiplatform — Android Developer](https://developer.android.com/kotlin/multiplatform)
 - **Documentation:** [Kotlin Multiplatform — kotlinlang.org](https://kotlinlang.org/docs/multiplatform.html)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for the worked comparisons behind a Kotlin Multiplatform adoption
+- **Review checklist:** [checklist.md](checklist.md) — run before committing to a Kotlin Multiplatform adoption
 
 ## See also
 

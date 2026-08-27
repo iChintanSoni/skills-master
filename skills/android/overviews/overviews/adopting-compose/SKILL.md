@@ -124,8 +124,8 @@ class ProfileFragment : Fragment() {
 - **Documentation:** [Compose migration strategy](https://developer.android.com/develop/ui/compose/migrate/strategy)
 - **Documentation:** [ComposeView interop API](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/compose-in-views)
 - **Documentation:** [AndroidView — Views in Compose](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for the worked comparisons behind a Views-to-Compose migration
+- **Review checklist:** [checklist.md](checklist.md) — run before committing to a Views-to-Compose migration
 
 ## See also
 

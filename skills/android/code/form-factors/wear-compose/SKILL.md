@@ -172,8 +172,8 @@ fun RotaryList(items: List<String>) {
 
 - **Documentation:** [Compose for Wear OS](https://developer.android.com/training/wearables/compose)
 - **Documentation:** [Navigation in Compose for Wear OS](https://developer.android.com/training/wearables/compose/navigation)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Wear OS Compose code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Wear OS Compose
 
 ## See also
 

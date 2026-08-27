@@ -73,8 +73,8 @@ Use this skill when evaluating or designing how an Android app notifies its user
 - **Documentation:** [Notifications overview](https://developer.android.com/develop/ui/views/notifications)
 - **Documentation:** [Android mobile design](https://developer.android.com/design/ui/mobile)
 - **Material 3 Guidelines:** [Notifications — M3](https://m3.material.io/foundations/content-design/notifications)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for worked notifications scenarios to compare a design against
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of notifications
 
 ## See also
 

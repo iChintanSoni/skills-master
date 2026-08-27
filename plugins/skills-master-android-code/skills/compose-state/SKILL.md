@@ -125,8 +125,8 @@ fun SearchBar(
 - **Documentation:** [State hoisting in Compose](https://developer.android.com/develop/ui/compose/state-hoisting)
 - **Documentation:** [rememberSaveable and Savers](https://developer.android.com/develop/ui/compose/state#restore-ui-state)
 - **Guide:** [ViewModel and state in Compose](https://developer.android.com/topic/architecture/ui-layer/stateholders)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Compose state code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Compose state
 
 ## See also
 

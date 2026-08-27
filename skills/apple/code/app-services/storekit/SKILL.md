@@ -81,8 +81,8 @@ func unlock(_ product: Product) async throws -> Bool {
 - **Documentation:** [Setting up StoreKit Testing in Xcode](https://developer.apple.com/documentation/xcode/setting-up-storekit-testing-in-xcode/)
 - **WWDC:** [Meet StoreKit for SwiftUI (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10013/)
 - **Sample Code:** [SubscriptionStoreView](https://developer.apple.com/documentation/storekit/subscriptionstoreview)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working StoreKit code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to StoreKit
 
 ## See also
 

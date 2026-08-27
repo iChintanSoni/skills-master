@@ -188,8 +188,8 @@ Then publish with:
 - **Documentation:** [Gradle Managed Devices — Android Developers](https://developer.android.com/studio/test/gradle-managed-devices)
 
 ---
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want a working CI/CD pipeline config to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to CI/CD
 
 ## See also
 

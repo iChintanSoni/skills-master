@@ -102,8 +102,8 @@ x-skills-master:
 - **Material 3 Guidelines:** [Dynamic color](https://m3.material.io/styles/color/dynamic)
 - **Material 3 Guidelines:** [Dark theme](https://m3.material.io/styles/color/system/overview)
 - **Material 3 Guidelines:** [Accessibility — Color and contrast](https://m3.material.io/foundations/overview)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for worked color scenarios to compare a design against
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of color
 
 ## See also
 

@@ -113,8 +113,8 @@ Collect this in a `ViewModel` with `stateIn(viewModelScope, SharingStarted.While
 - **Documentation:** [Sensors overview](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview)
 - **Documentation:** [Request location permissions](https://developer.android.com/develop/sensors-and-location/location/permissions)
 - **Documentation:** [Create and monitor geofences](https://developer.android.com/develop/sensors-and-location/location/geofencing)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working location and sensors code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to location and sensors
 
 ## See also
 

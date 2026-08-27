@@ -93,8 +93,8 @@ class BookDetailViewModel @Inject constructor(
 - **Documentation:** [ViewModel overview](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - **Documentation:** [ViewModel and SavedStateHandle](https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-savedstate)
 - **Documentation:** [ViewModel APIs with Compose](https://developer.android.com/develop/ui/compose/libraries#viewmodel)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working ViewModel code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to ViewModel
 
 ## See also
 

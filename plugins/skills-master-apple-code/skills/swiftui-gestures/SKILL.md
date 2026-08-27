@@ -69,8 +69,8 @@ struct DraggableCard: View {
 - **Documentation:** [MagnifyGesture](https://developer.apple.com/documentation/swiftui/magnifygesture)
 - **Human Interface Guidelines:** [Gestures](https://developer.apple.com/design/human-interface-guidelines/gestures)
 - **WWDC:** [Meet SwiftUI for spatial computing (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10109/)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working SwiftUI gestures code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to SwiftUI gestures
 
 ## See also
 

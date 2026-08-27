@@ -117,8 +117,8 @@ Standard `TextField` and `OutlinedTextField` composables are not appropriate on 
 - **Material 3 Guidelines:** [Date pickers](https://m3.material.io/components/date-pickers/overview)
 - **Material 3 Guidelines:** [Menus](https://m3.material.io/components/menus/overview)
 - **Material 3 Guidelines:** [Search](https://m3.material.io/components/search/overview)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for worked text fields scenarios to compare a design against
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of text fields
 
 ## See also
 

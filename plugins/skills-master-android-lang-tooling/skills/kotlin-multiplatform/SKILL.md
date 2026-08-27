@@ -133,8 +133,8 @@ actual fun currentEpochMillis(): Long =
 - **Documentation:** [Android developer guide to Kotlin Multiplatform](https://developer.android.com/kotlin/multiplatform)
 - **Documentation:** [Share business logic between Android and iOS](https://kotlinlang.org/docs/multiplatform-share-on-platforms.html)
 - **Documentation:** [Ktor multiplatform client](https://ktor.io/docs/client-create-multiplatform-application.html)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Kotlin Multiplatform code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Kotlin Multiplatform
 
 ## See also
 
