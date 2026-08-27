@@ -1,3 +1,10 @@
+## Contents
+
+- [Full list-detail screen with ViewModel and predictive back](#full-list-detail-screen-with-viewmodel-and-predictive-back)
+- [Deep-link and initial destination](#deep-link-and-initial-destination)
+- [Forcing single-pane with a custom directive](#forcing-single-pane-with-a-custom-directive)
+- [Testing pane state with ComposeTestRule](#testing-pane-state-with-composetestrule)
+
 ## Full list-detail screen with ViewModel and predictive back
 
 A complete, production-ready email client list-detail screen. The ViewModel owns the data and selected ID (survives process death via `SavedStateHandle`); the navigator owns pane visibility.

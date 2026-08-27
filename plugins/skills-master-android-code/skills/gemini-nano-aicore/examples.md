@@ -1,3 +1,10 @@
+## Contents
+
+- [Streaming text summarization in a Compose screen](#streaming-text-summarization-in-a-compose-screen)
+- [Proofreading with diff highlights](#proofreading-with-diff-highlights)
+- [On-device image description for accessibility alt text](#on-device-image-description-for-accessibility-alt-text)
+- [Hybrid on-device / cloud rewrite with transparent fallback](#hybrid-on-device--cloud-rewrite-with-transparent-fallback)
+
 ## Streaming text summarization in a Compose screen
 
 A complete ViewModel plus UI that summarizes an article, streams tokens live, and gracefully handles the `AVAILABLE_AFTER_DOWNLOAD` case with a download progress indicator.

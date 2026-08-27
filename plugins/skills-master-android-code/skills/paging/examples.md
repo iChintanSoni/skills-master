@@ -1,3 +1,9 @@
+## Contents
+
+- [Example 1 — Network-only infinite scroll](#example-1--network-only-infinite-scroll)
+- [Example 2 — Offline-first with RemoteMediator and Room](#example-2--offline-first-with-remotemediator-and-room)
+- [Example 3 — Separators and sealed UI model](#example-3--separators-and-sealed-ui-model)
+
 ### Example 1 — Network-only infinite scroll
 
 A news feed that pages through an API with no local cache.

@@ -1,3 +1,10 @@
+## Contents
+
+- [Media playback foreground service with MediaSession](#media-playback-foreground-service-with-mediasession)
+- [Location tracking service with coroutine-based updates](#location-tracking-service-with-coroutine-based-updates)
+- [Short service for a brief critical task](#short-service-for-a-brief-critical-task)
+- [WorkManager foreground task as the correct alternative](#workmanager-foreground-task-as-the-correct-alternative)
+
 ## Media playback foreground service with MediaSession
 
 A music player that survives screen-off and responds to media button events.

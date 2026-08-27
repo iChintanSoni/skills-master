@@ -1,3 +1,10 @@
+## Contents
+
+- [CameraController with Compose viewfinder, photo capture, and front/back switch](#cameracontroller-with-compose-viewfinder-photo-capture-and-frontback-switch)
+- [Real-time ImageAnalysis with ML Kit barcode scanning](#real-time-imageanalysis-with-ml-kit-barcode-scanning)
+- [VideoCapture with start/stop recording](#videocapture-with-startstop-recording)
+- [Camera Extensions — night mode with availability check](#camera-extensions--night-mode-with-availability-check)
+
 ## CameraController with Compose viewfinder, photo capture, and front/back switch
 
 A complete camera screen backed by a ViewModel, using `LifecycleCameraController` for the preview and capture, with a button to flip between lenses.

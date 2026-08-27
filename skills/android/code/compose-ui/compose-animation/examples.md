@@ -1,3 +1,10 @@
+## Contents
+
+- [Animating a single value with animate*AsState](#animating-a-single-value-with-animateasstate)
+- [Multi-step keyframe animation with rememberInfiniteTransition](#multi-step-keyframe-animation-with-rememberinfinitetransition)
+- [Shared element transition between list and detail](#shared-element-transition-between-list-and-detail)
+- [Gesture-driven Animatable with fling physics](#gesture-driven-animatable-with-fling-physics)
+
 ## Animating a single value with animate*AsState
 
 A simple but complete example showing color, size, and alpha responding to a boolean toggle. All properties are independent but each smoothly tracks its target using M3 motion specs.

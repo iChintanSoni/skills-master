@@ -1,3 +1,10 @@
+## Contents
+
+- [Minimal CarAppService with session and root screen](#minimal-carappservice-with-session-and-root-screen)
+- [PaneTemplate detail screen with parked-only action](#panetemplate-detail-screen-with-parked-only-action)
+- [NavigationTemplate with live routing card](#navigationtemplate-with-live-routing-card)
+- [GridTemplate media category browser](#gridtemplate-media-category-browser)
+
 ## Minimal CarAppService with session and root screen
 
 A complete entry point: service declaration wiring, a `Session`, and a `PlaceListScreen` that loads data asynchronously and invalidates when results arrive.

@@ -1,3 +1,10 @@
+## Contents
+
+- [Full app scaffold with Wear navigation and two screens](#full-app-scaffold-with-wear-navigation-and-two-screens)
+- [Rotary-driven Picker for time selection](#rotary-driven-picker-for-time-selection)
+- [Confirmation dialog flow with AlertDialog](#confirmation-dialog-flow-with-alertdialog)
+- [Custom TimeText with live heart rate status](#custom-timetext-with-live-heart-rate-status)
+
 ## Full app scaffold with Wear navigation and two screens
 
 Demonstrates `AppScaffold`, `SwipeDismissableNavHost`, `ScreenScaffold`, `TransformingLazyColumn`, `EdgeButton`, rotary input, and `TimeText` wired together in a minimal but realistic app structure.

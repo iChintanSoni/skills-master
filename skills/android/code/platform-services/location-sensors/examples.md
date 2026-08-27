@@ -1,3 +1,10 @@
+## Contents
+
+- [Requesting and streaming fine location in a ViewModel](#requesting-and-streaming-fine-location-in-a-viewmodel)
+- [Setting up a geofence for a place of interest](#setting-up-a-geofence-for-a-place-of-interest)
+- [Reading accelerometer data with a DisposableEffect](#reading-accelerometer-data-with-a-disposableeffect)
+- [Activity recognition with the Activity Recognition API](#activity-recognition-with-the-activity-recognition-api)
+
 ## Requesting and streaming fine location in a ViewModel
 
 A fitness-tracking screen needs continuous GPS updates while the UI is visible. Permissions are checked before the ViewModel requests updates; updates stop automatically when the collector leaves the composition.

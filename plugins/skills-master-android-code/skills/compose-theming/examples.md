@@ -1,3 +1,10 @@
+## Contents
+
+- [Basic AppTheme setup with dynamic color](#basic-apptheme-setup-with-dynamic-color)
+- [Extending MaterialTheme with custom tokens via CompositionLocal](#extending-materialtheme-with-custom-tokens-via-compositionlocal)
+- [Custom FontFamily and brand typography](#custom-fontfamily-and-brand-typography)
+- [Previewing light, dark, and dynamic themes in the IDE](#previewing-light-dark-and-dynamic-themes-in-the-ide)
+
 ## Basic AppTheme setup with dynamic color
 
 A minimal but production-ready theme entry point showing dynamic color, light/dark switching, and edge-to-edge status-bar wiring.

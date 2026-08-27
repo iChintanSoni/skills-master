@@ -31,6 +31,8 @@ interface SkillSpec {
   sources?: string[];
   /** resource filenames (examples.md / checklist.md / reference.md) to create alongside. */
   resources?: string[];
+  /** contents for a resource file, when the default stub is not what's under test. */
+  resourceContent?: Record<string, string>;
 }
 
 const BODY = [
@@ -86,7 +88,7 @@ function writeSkill(spec: SkillSpec): void {
   ].join("\n");
   writeFileSync(join(dir, "SKILL.md"), fm + (spec.body ?? BODY), "utf8");
   for (const f of spec.resources ?? []) {
-    writeFileSync(join(dir, f), "## Resource\n\ncontent\n", "utf8");
+    writeFileSync(join(dir, f), spec.resourceContent?.[f] ?? "## Resource\n\ncontent\n", "utf8");
   }
 }
 
@@ -339,6 +341,63 @@ describe("lintSkills — tightened rules", () => {
     expect(messagesOf("warn")).toEqual(
       expect.arrayContaining([expect.stringContaining("examples.md exists but is never linked")]),
     );
+  });
+
+  // 2.1: a long resource is often previewed with `head -100`, which shows the
+  // first section and nothing about what follows.
+  describe("resource tables of contents", () => {
+    const linkedBody = BODY.replace(
+      "- [Docs](https://example.com/docs)",
+      "- [Docs](https://example.com/docs)\n- [Examples](examples.md)",
+    );
+    const long = (head: string) => `${head}${"filler line\n".repeat(120)}`;
+
+    it("warns when a resource over 100 lines has no Contents block", () => {
+      writeSkill({
+        dir: "apple/code/app-frameworks/sprawling-resource",
+        resources: ["examples.md"],
+        resourceContent: { "examples.md": long("## One\n\n") },
+        body: linkedBody,
+      });
+      expect(messagesOf("warn")).toEqual(
+        expect.arrayContaining([
+          expect.stringContaining('examples.md is 123 lines with no "## Contents"'),
+        ]),
+      );
+    });
+
+    it("accepts one that opens with a Contents block", () => {
+      writeSkill({
+        dir: "apple/code/app-frameworks/navigable-resource",
+        resources: ["examples.md"],
+        resourceContent: { "examples.md": long("## Contents\n\n- [One](#one)\n\n## One\n\n") },
+        body: linkedBody,
+      });
+      expect(lintSkills(root).warnCount).toBe(0);
+    });
+
+    it("ignores a Contents block buried past the preview window", () => {
+      const buried = `## One\n\n${"filler line\n".repeat(30)}## Contents\n\n${"filler line\n".repeat(90)}`;
+      writeSkill({
+        dir: "apple/code/app-frameworks/buried-contents",
+        resources: ["examples.md"],
+        resourceContent: { "examples.md": buried },
+        body: linkedBody,
+      });
+      expect(messagesOf("warn")).toEqual(
+        expect.arrayContaining([expect.stringContaining('no "## Contents"')]),
+      );
+    });
+
+    it("leaves a short resource alone", () => {
+      writeSkill({
+        dir: "apple/code/app-frameworks/short-resource",
+        resources: ["examples.md"],
+        resourceContent: { "examples.md": `## One\n\n${"filler line\n".repeat(50)}` },
+        body: linkedBody,
+      });
+      expect(lintSkills(root).warnCount).toBe(0);
+    });
   });
 
   it("accepts a linked resource, including anchored links", () => {

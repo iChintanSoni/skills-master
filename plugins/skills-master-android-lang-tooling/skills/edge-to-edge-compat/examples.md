@@ -1,3 +1,9 @@
+## Contents
+
+- [Scenario 1: Raising targetSdk from 34 to 35 — fixing a nav bar coverage regression](#scenario-1-raising-targetsdk-from-34-to-35--fixing-a-nav-bar-coverage-regression)
+- [Scenario 2: Enabling predictive back in a Compose app](#scenario-2-enabling-predictive-back-in-a-compose-app)
+- [Scenario 3: Migrating away from deprecated systemUiVisibility flags](#scenario-3-migrating-away-from-deprecated-systemuivisibility-flags)
+
 ## Scenario 1: Raising targetSdk from 34 to 35 — fixing a nav bar coverage regression
 
 An app ships with `targetSdkVersion 34`. After bumping to 35, testers report that the bottom navigation bar's last tab is hidden behind the gesture navigation indicator on Pixel phones.

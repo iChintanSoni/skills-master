@@ -1,3 +1,10 @@
+## Contents
+
+- [Search-as-you-type pipeline](#search-as-you-type-pipeline)
+- [Combining multiple upstream flows into a single UI state](#combining-multiple-upstream-flows-into-a-single-ui-state)
+- [One-shot events via SharedFlow](#one-shot-events-via-sharedflow)
+- [Testing a Flow with Turbine and virtual time](#testing-a-flow-with-turbine-and-virtual-time)
+
 ## Search-as-you-type pipeline
 
 A realistic ViewModel that debounces a query `StateFlow`, switches to the latest search flow via `flatMapLatest`, handles I/O errors in the repository, and exposes a sealed `UiState` to Compose.

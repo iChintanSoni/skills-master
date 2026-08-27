@@ -1,5 +1,12 @@
 # compose-state — examples
 
+## Contents
+
+- [Hoisting state through multiple layers](#hoisting-state-through-multiple-layers)
+- [Custom Saver for a non-Parcelable type](#custom-saver-for-a-non-parcelable-type)
+- [`mutableStateListOf` for a live checklist](#mutablestatelistof-for-a-live-checklist)
+- [Bridging state to a Flow with `snapshotFlow`](#bridging-state-to-a-flow-with-snapshotflow)
+
 ## Hoisting state through multiple layers
 
 A realistic search-and-filter screen where expansion state stays local but the query is hoisted to the screen composable, which delegates results to a ViewModel.

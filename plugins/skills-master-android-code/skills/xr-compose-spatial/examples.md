@@ -1,3 +1,10 @@
+## Contents
+
+- [Example: Single-activity app with Subspace and Orbiter](#example-single-activity-app-with-subspace-and-orbiter)
+- [Example: Multi-panel list-detail layout in SpatialRow](#example-multi-panel-list-detail-layout-in-spatialrow)
+- [Example: Requesting full-space mode with a capability check](#example-requesting-full-space-mode-with-a-capability-check)
+- [Example: SpatialElevation and PlanarEmbeddedSubspace for a floating badge](#example-spatialelevation-and-planarembeddedsubspace-for-a-floating-badge)
+
 ## Example: Single-activity app with Subspace and Orbiter
 
 A minimal XR-aware `MainActivity` that renders the same `HomeScreen` composable in both 2D (for non-XR devices) and inside a `SpatialPanel` (for XR), with a bottom `Orbiter` carrying the navigation bar.

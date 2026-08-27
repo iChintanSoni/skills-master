@@ -1,3 +1,10 @@
+## Contents
+
+- [Cold startup benchmark with profile verification](#cold-startup-benchmark-with-profile-verification)
+- [Scroll jank benchmark for a Compose LazyColumn feed](#scroll-jank-benchmark-for-a-compose-lazycolumn-feed)
+- [Baseline Profile generator covering startup and primary journeys](#baseline-profile-generator-covering-startup-and-primary-journeys)
+- [CI Gradle workflow snippet (GitHub Actions)](#ci-gradle-workflow-snippet-github-actions)
+
 ## Cold startup benchmark with profile verification
 
 A complete Macrobenchmark module measuring cold startup, confirming a Baseline Profile was applied, and failing CI if the profile is absent.

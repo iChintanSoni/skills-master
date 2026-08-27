@@ -1,3 +1,10 @@
+## Contents
+
+- [Posting a grouped email notification bundle](#posting-a-grouped-email-notification-bundle)
+- [Requesting POST_NOTIFICATIONS permission inside a Compose settings screen](#requesting-post_notifications-permission-inside-a-compose-settings-screen)
+- [MessagingStyle conversation with bubble support](#messagingstyle-conversation-with-bubble-support)
+- [Handling direct reply in a BroadcastReceiver](#handling-direct-reply-in-a-broadcastreceiver)
+
 ## Posting a grouped email notification bundle
 
 An email app receives three new messages for the same account. Each message gets its own notification with `BigTextStyle`, and a summary notification collapses them into a group on API 24+.

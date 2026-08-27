@@ -1,4 +1,15 @@
-// ===== EXAMPLE 1: Three-tier module graph =====
+## Contents
+
+- [Three-tier module graph](#three-tier-module-graph)
+- [:core:model — leaf module with no Android deps](#coremodel--leaf-module-with-no-android-deps)
+- [:feature:profile-api — thin public contract](#featureprofile-api--thin-public-contract)
+- [:feature:profile — full implementation](#featureprofile--full-implementation)
+- [:app — thin wiring layer](#app--thin-wiring-layer)
+- [Convention plugin for Android Library](#convention-plugin-for-android-library)
+
+## Three-tier module graph
+
+```kotlin
 // settings.gradle.kts — declare all modules
 
 rootProject.name = "MyApp"
@@ -21,8 +32,11 @@ include(":feature:settings")
 
 // Feature -api artifacts — thin public contracts for cross-feature navigation
 include(":feature:profile-api")
+```
 
-// ===== EXAMPLE 2: :core:model — leaf module with no Android deps =====
+## :core:model — leaf module with no Android deps
+
+```kotlin
 // :core:model/build.gradle.kts
 
 plugins {
@@ -41,8 +55,11 @@ sealed interface Result<out T> {
     data class Error(val exception: Throwable) : Result<Nothing>
     data object Loading : Result<Nothing>
 }
+```
 
-// ===== EXAMPLE 3: :feature:profile-api — thin public contract =====
+## :feature:profile-api — thin public contract
+
+```kotlin
 // :feature:profile-api/build.gradle.kts
 
 plugins {
@@ -56,8 +73,11 @@ dependencies {
 interface ProfileNavigator {
     fun navigateToProfile(userId: Long)
 }
+```
 
-// ===== EXAMPLE 4: :feature:profile — full implementation =====
+## :feature:profile — full implementation
+
+```kotlin
 // :feature:profile/build.gradle.kts
 
 plugins {
@@ -71,8 +91,11 @@ dependencies {
     implementation(project(":core:ui"))
     // :feature:home NOT imported here — no cross-feature impl dep
 }
+```
 
-// ===== EXAMPLE 5: :app — thin wiring layer =====
+## :app — thin wiring layer
+
+```kotlin
 // :app/build.gradle.kts
 
 plugins {
@@ -85,8 +108,11 @@ dependencies {
     implementation(project(":feature:settings"))
     // :core modules only needed if :app itself uses them directly
 }
+```
 
-// ===== EXAMPLE 6: Convention plugin for Android Library =====
+## Convention plugin for Android Library
+
+```kotlin
 // build-logic/convention/src/main/kotlin/AndroidLibraryConventionPlugin.kt
 
 import com.android.build.gradle.LibraryExtension
@@ -138,3 +164,4 @@ class ComposeConventionPlugin : Plugin<Project> {
         }
     }
 }
+```

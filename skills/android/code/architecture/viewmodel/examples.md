@@ -1,3 +1,10 @@
+## Contents
+
+- [BookDetail screen with full ViewModel wiring](#bookdetail-screen-with-full-viewmodel-wiring)
+- [Graph-scoped ViewModel shared across two nav destinations](#graph-scoped-viewmodel-shared-across-two-nav-destinations)
+- [SavedStateHandle for search query that survives process death](#savedstatehandle-for-search-query-that-survives-process-death)
+- [ViewModel factory pattern without Hilt (assisted injection)](#viewmodel-factory-pattern-without-hilt-assisted-injection)
+
 ## BookDetail screen with full ViewModel wiring
 
 A realistic nav-destination ViewModel that loads a book by route argument, exposes a sealed UI-state, handles a one-shot "share" event, and persists scroll position across process death.

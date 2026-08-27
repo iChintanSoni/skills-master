@@ -1,3 +1,10 @@
+## Contents
+
+- [Driving navigation chrome from WindowSizeClass](#driving-navigation-chrome-from-windowsizeclass)
+- [Two-pane list-detail on expanded windows](#two-pane-list-detail-on-expanded-windows)
+- [Adaptive grid column count](#adaptive-grid-column-count)
+- [Foldable posture + size class combined](#foldable-posture--size-class-combined)
+
 ## Driving navigation chrome from WindowSizeClass
 
 A root composable that switches between bottom bar, navigation rail, and modal navigation drawer based solely on `WindowWidthSizeClass`. No device checks, no pixel queries.

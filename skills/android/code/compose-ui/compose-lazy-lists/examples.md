@@ -1,3 +1,10 @@
+## Contents
+
+- [Basic LazyColumn with keys and animations](#basic-lazycolumn-with-keys-and-animations)
+- [Programmatic scroll with derivedStateOf scroll-to-top button](#programmatic-scroll-with-derivedstateof-scroll-to-top-button)
+- [Adaptive grid for large-screen support](#adaptive-grid-for-large-screen-support)
+- [Paging 3 integration with load-state handling](#paging-3-integration-with-load-state-handling)
+
 ## Basic LazyColumn with keys and animations
 
 A simple news feed demonstrating per-item keys, `contentType` for heterogeneous rows, and `Modifier.animateItem()`.
