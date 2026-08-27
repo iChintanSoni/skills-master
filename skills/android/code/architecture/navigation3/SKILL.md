@@ -12,6 +12,8 @@ x-skills-master:
   platforms: ["android", "large-screen"]
   requires: { android: "16", kotlin: "2.2", navigation3: "1.1" }
   pairs_with: [navigation-compose, choosing-navigation]
+  upstream:
+    - Navigation 3
   sources:
     - https://developer.android.com/guide/navigation/navigation-3
     - https://developer.android.com/jetpack/androidx/releases/navigation3

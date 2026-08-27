@@ -40,6 +40,28 @@ function loadRegistry(): Registry {
   return JSON.parse(readFileSync(REGISTRY, "utf8")) as Registry;
 }
 
+/** `upstream` isn't in registry.json either — read it from the frontmatter block. */
+function upstreamOf(entry: RegistryEntry): string[] {
+  try {
+    const text = readFileSync(join(REPO_ROOT, "skills", entry.path, "SKILL.md"), "utf8");
+    const block = /^\s+upstream:\s*\n((?:\s+- .*\n)+)/m.exec(text);
+    if (block)
+      return block[1]!
+        .split("\n")
+        .map((l) => l.replace(/^\s*-\s*/, "").trim())
+        .filter(Boolean);
+    const inline = /^\s+upstream:\s*\[(.+)\]\s*$/m.exec(text);
+    if (inline)
+      return inline[1]!
+        .split(",")
+        .map((s) => s.trim().replace(/^["']|["']$/g, ""))
+        .filter(Boolean);
+    return [];
+  } catch {
+    return [];
+  }
+}
+
 /** snapshot_date isn't in registry.json, so read it from each SKILL.md frontmatter. */
 function snapshotDateOf(entry: RegistryEntry): string | null {
   try {
@@ -163,6 +185,74 @@ function granularity(reg: Registry) {
   return { budgetBytes: budget, contextTokens: LISTING.contexts[0], units, categories };
 }
 
+/**
+ * Which skills document something that has shipped since they were last checked.
+ *
+ * `snapshot_date` on its own only says when a batch ran. This joins it to the
+ * vendor's own release feed through the `upstream` names a skill declares, so
+ * "89 days old" becomes "89 days old, and Media3 has shipped four times since".
+ * That difference is the whole point: the first is a date, the second is a
+ * reason to open the file.
+ */
+function currency(reg: Registry, upstream: Record<string, unknown>) {
+  const dated: { title: string; date: string }[] = [];
+  for (const value of Object.values(upstream)) {
+    const topics = (value as { topics?: Topic[] }).topics;
+    for (const t of topics ?? []) if (t.date) dated.push({ title: t.title, date: t.date });
+  }
+
+  const declared: {
+    name: string;
+    path: string;
+    snapshot: string | null;
+    upstream: string[];
+    latest: string | null;
+    behindDays: number | null;
+    releasesSince: number;
+  }[] = [];
+  let undeclared = 0;
+
+  for (const s of reg.skills) {
+    const names = upstreamOf(s);
+    if (names.length === 0) {
+      undeclared += 1;
+      continue;
+    }
+    const snapshot = snapshotDateOf(s);
+    // A feed title reads "Media3 Version 1.11.0-beta01"; match on the library
+    // half so a declaration does not have to name every version.
+    const matches = dated.filter((d) =>
+      names.some((n) => d.title.toLowerCase().startsWith(n.toLowerCase())),
+    );
+    const latest =
+      matches
+        .map((m) => m.date)
+        .sort()
+        .at(-1) ?? null;
+    const releasesSince = snapshot && latest ? matches.filter((m) => m.date > snapshot).length : 0;
+    declared.push({
+      name: s.name,
+      path: s.path,
+      snapshot,
+      upstream: names,
+      latest,
+      behindDays:
+        snapshot && latest && latest > snapshot
+          ? Math.round((Date.parse(latest) - Date.parse(snapshot)) / 86_400_000)
+          : null,
+      releasesSince,
+    });
+  }
+
+  declared.sort((a, b) => (b.behindDays ?? -1) - (a.behindDays ?? -1));
+  return {
+    declared: declared.length,
+    undeclared,
+    behind: declared.filter((d) => d.behindDays !== null),
+    current: declared.filter((d) => d.behindDays === null),
+  };
+}
+
 function footprint(reg: Registry) {
   const groups = groupBy(reg, pluginOf);
 
@@ -219,13 +309,35 @@ function stripHtmlTags(input: string): string {
   return current;
 }
 
-function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
-  const topics: { title: string; url: string }[] = [];
+interface Topic {
+  title: string;
+  url: string;
+  /** ISO date the feed published this entry, when it says. */
+  date?: string;
+}
+
+/** The entry's own timestamp — Atom `updated`/`published`, or RSS `pubDate`. */
+function entryDate(content: string): string | undefined {
+  const m =
+    /<updated>([\s\S]*?)<\/updated>/i.exec(content) ??
+    /<published>([\s\S]*?)<\/published>/i.exec(content) ??
+    /<pubDate>([\s\S]*?)<\/pubDate>/i.exec(content);
+  if (!m) return undefined;
+  const parsed = Date.parse(m[1].trim());
+  return Number.isNaN(parsed) ? undefined : new Date(parsed).toISOString().slice(0, 10);
+}
+
+function parseXmlFeed(xmlText: string): Topic[] {
+  const topics: Topic[] = [];
 
   // Extract <entry>...</entry> or <item>...</item>
   const entryRegex = /<(entry|item)>([\s\S]*?)<\/\1>/gi;
   for (let match = entryRegex.exec(xmlText); match !== null; match = entryRegex.exec(xmlText)) {
     const content = match[2];
+    // AndroidX groups a day's releases under one dated entry, so the date lives
+    // on the wrapper and has to be carried down to each library link inside it.
+    // Without this the feed can say what shipped but never when.
+    const date = entryDate(content);
 
     // Check if there are nested links inside <content> (specific to AndroidX release notes XML)
     const aTagRegex = /<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
@@ -234,7 +346,7 @@ function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
       const url = aMatch[1].trim();
       const title = stripHtmlTags(aMatch[2]).trim();
       if (url && title) {
-        topics.push({ title, url });
+        topics.push({ title, url, ...(date ? { date } : {}) });
         foundInnerLinks = true;
       }
     }
@@ -263,7 +375,7 @@ function parseXmlFeed(xmlText: string): { title: string; url: string }[] {
       }
 
       if (url && title) {
-        topics.push({ title, url });
+        topics.push({ title, url, ...(date ? { date } : {}) });
       }
     }
   }
@@ -368,6 +480,20 @@ async function main() {
     for (const [k, v] of Object.entries(upstream)) {
       const info = v as { count?: number; error?: string };
       console.log(`  ${k}: ${info.error ? `ERROR ${info.error}` : `${info.count} topics`}`);
+    }
+
+    // Only meaningful with a fresh fetch: a stale upstream.json would report
+    // skills as current because the feed itself had not been re-read.
+    const cur = currency(reg, upstream);
+    writeFileSync(join(REPORTS, "currency.json"), JSON.stringify(cur, null, 2) + "\n");
+    console.log(
+      `Currency: ${cur.behind.length} of ${cur.declared} skill(s) with a declared upstream ` +
+        `have shipped since their snapshot (${cur.undeclared} declare none yet)`,
+    );
+    for (const b of cur.behind.slice(0, 5)) {
+      console.log(
+        `  ${b.name.padEnd(30)} ${b.snapshot} → ${b.latest} (${b.releasesSince} release(s))`,
+      );
     }
   }
 

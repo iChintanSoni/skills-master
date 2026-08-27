@@ -12,6 +12,8 @@ x-skills-master:
   platforms: ["android", "large-screen"]
   requires: {"android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00"}
   pairs_with: [compose-lazy-lists, room]
+  upstream:
+    - Paging
   sources:
     - https://developer.android.com/topic/libraries/architecture/paging/v3-overview
     - https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data

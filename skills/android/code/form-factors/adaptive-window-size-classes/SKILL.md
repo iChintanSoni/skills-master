@@ -12,6 +12,8 @@ x-skills-master:
   platforms: ["android", "large-screen", "chromeos"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
   pairs_with: [m3-large-screens, choosing-form-factors, m3-adaptive-layout, navigation-suite-scaffold]
+  upstream:
+    - Window
   sources:
     - https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes
     - https://developer.android.com/develop/ui/compose/layouts/adaptive

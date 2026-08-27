@@ -12,6 +12,8 @@ x-skills-master:
   platforms: ["android"]
   requires: { android: "16", kotlin: "2.2" }
   pairs_with: [media3-transformer]
+  upstream:
+    - Media3
   sources:
     - https://android-developers.googleblog.com/2026/06/building-premium-android-experiences-google-io-26.html
     - https://developer.android.com/media/media3

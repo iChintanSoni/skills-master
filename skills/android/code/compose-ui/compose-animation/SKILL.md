@@ -12,6 +12,8 @@ x-skills-master:
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.08.00" }
   pairs_with: [m3-motion]
+  upstream:
+    - Compose Animation
   sources:
     - https://developer.android.com/develop/ui/compose/animation/introduction
     - https://developer.android.com/develop/ui/compose/animation/quick-guide

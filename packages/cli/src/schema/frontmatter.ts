@@ -66,6 +66,16 @@ export const XSkillsMasterSchema = z
     /** domain-defined version requirements, e.g. { ios: "17", swift: "6.0" }. */
     requires: z.record(z.string(), z.string()).optional(),
     pairs_with: z.array(SkillNameSchema).default([]),
+    /**
+     * Upstream libraries this skill tracks, named as the vendor's release feed
+     * names them (`Media3`, `Compose Animation`, `Datastore`).
+     *
+     * Declared rather than inferred: matching skill names against feed titles
+     * guesses `Compose UI → choosing-android-testing`, and a staleness signal
+     * built on bad matches is worse than none. The crawl uses these to report
+     * when a skill's upstream has shipped since its `snapshot_date`.
+     */
+    upstream: z.array(z.string().min(1)).optional(),
     /** citation URLs to canonical docs — never verbatim content. */
     sources: z.array(z.url()).default([]),
     snapshot_date: z.string().regex(ISO_DATE_RE, "must be an ISO date (YYYY-MM-DD)"),

@@ -12,6 +12,8 @@ x-skills-master:
   platforms: ["android", "large-screen"]
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00" }
   pairs_with: [m3-widgets, choosing-widget-toolkit]
+  upstream:
+    - Glance
   sources:
     - https://developer.android.com/develop/ui/compose/glance
     - https://developer.android.com/develop/ui/views/appwidgets/overview

@@ -12,6 +12,8 @@ x-skills-master:
   platforms: [android]
   requires: {android: "16", kotlin: "2.2"}
   pairs_with: [biometric]
+  upstream:
+    - Credentials
   sources:
     - https://developer.android.com/identity/sign-in/credential-manager
     - https://developer.android.com/training/sign-in/passkeys
