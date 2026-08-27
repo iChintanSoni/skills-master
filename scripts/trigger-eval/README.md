@@ -31,6 +31,10 @@ Every query is a real headless session. Measured on the first run: **~$0.22 per 
 
 So: `--dry-run` first, then one skill, and read the printed cost before committing to a pilot. `--concurrency` exists but hosts rate-limit; raise it carefully.
 
+## When a query set is expected
+
+Not for every skill — for every skill in **crowded territory**. `docs/authoring.md` has the test: search the topic first, and if an existing skill could plausibly match the same prompts, the PR ships a set and a run. The failure this catches is not "never triggers" but "the wrong sibling triggers, and nobody notices".
+
 ## Writing a query set
 
 `scripts/trigger-eval/<skill>/eval.json`:

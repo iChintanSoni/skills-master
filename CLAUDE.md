@@ -109,6 +109,8 @@ Warnings worth honoring: a `reference.md`/`examples.md`/`checklist.md` over 100 
 
 **Description hazard:** Claude's skill validation rejects XML tags in `name`/`description`, and a generic type reads as one (`VerificationResult<Transaction>`, `Flow<UiState>`). Reword ("a VerificationResult of Transaction") — escaping does not help, since the description is read, not rendered. The linter errors.
 
+**Trigger policy:** before writing a new skill's description, `pnpm cli search <topic> --content ../../skills`. If an existing skill could plausibly match the same prompts, the PR ships a query set at `scripts/trigger-eval/<name>/eval.json` plus a harness run — the linter can check that a description *has* a "Use when …" clause, never that it triggers. No lint rule enforces this: overlap is a judgment, and `m3-*`/`hig-*` pairs are supposed to cover a topic from two sides.
+
 **Content policy:** original prose and original minimal code only. Summarize Apple's / Google's documented best practices and link to them via `sources` + the `## References` section; never paste vendor text or sample code. Bump `snapshot_date` (and a `version` patch) whenever you re-verify against changed docs.
 
 `class` maps to a directory via `CLASS_DIR` — note `overview` → `overviews/` on disk.

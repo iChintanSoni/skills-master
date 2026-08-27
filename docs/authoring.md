@@ -234,6 +234,26 @@ Claude's skill validation rejects a `name` or `description` containing XML tags,
 
 Reword rather than escape — the description is read by a model, not rendered. Write "a VerificationResult of Transaction", "the Result type", or "a Flow of UI state". Angle brackets that are not tag-shaped (`<16ms`) are fine.
 
+## A new skill in crowded territory ships with a query set
+
+A description is a claim that a model will reach for this skill in a particular situation, and the linter cannot check that claim — a "Use when …" clause satisfies the grep whether or not it triggers. For most new skills that is fine. It is not fine when the new skill overlaps one that already exists, because the failure mode is not "never triggers", it is "the wrong sibling triggers" and nobody notices.
+
+**The test for "crowded":** before writing the description, run
+
+```bash
+pnpm cli search <the topic> --content ../../skills
+```
+
+If a result comes back whose description could plausibly match a prompt your new skill is meant to answer — a `code` ↔ `design` twin, a `choosing-*` router and one of its destinations, two components with overlapping names — you are in crowded territory. Then the PR carries three extra things:
+
+1. **A query set** at `scripts/trigger-eval/<name>/eval.json` — roughly 10 prompts that should trigger the new skill and 6 that should not. The should-not set is the neighbour's territory, written the way a user would phrase it. `install` names the whole neighbourhood so the run measures discrimination, not recognition.
+2. **A harness run pasted into the PR.** `node scripts/trigger-eval/bin.mjs <name> --runs=1` is enough for review (~$3.50 at the measured per-session cost); `--dry-run` first is free.
+3. **The numbers, honestly.** Aim for should-trigger ≥ 80% and false-fire ≤ 20%. Below that, fix the **description** — not the query set. A query set edited until it passes measures nothing.
+
+See [scripts/trigger-eval/README.md](../scripts/trigger-eval/README.md) for what the harness does and what it cannot see.
+
+There is deliberately **no lint rule** behind this. "Overlaps an existing skill" is a judgment about meaning, and a rule that guessed at it — shared name stems, same category — would fire on the many legitimate siblings this library is built from (`m3-*` and `hig-*` pairs are *supposed* to cover the same topic from two sides) while missing the genuine collisions. A policy a reviewer applies beats a rule that cries wolf.
+
 ## Verify before committing
 
 ```bash

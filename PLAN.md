@@ -408,9 +408,24 @@ is ~26k agent invocations per iteration — not a thing to run wholesale. Sample
   if length shows no trigger benefit — which would also buy back G8 tokens. Whatever wins
   becomes an authoring.md rule with a rationale; whatever loses gets recorded here as
   rejected, with numbers.
-- [ ] **3.4 Description policy for new skills (S).** authoring.md: new skills in ambiguous
+- [x] **3.4 Description policy for new skills (S).** authoring.md: new skills in ambiguous
   territory ship with a query set and a harness run in the PR. Cheap at one-skill scale,
   and it stops the library from re-accumulating unmeasured descriptions.
+  **Landed.** "Ambiguous territory" needed a test a reviewer can actually apply, so it is
+  one: `pnpm cli search <topic>` before writing the description, and if a result could
+  plausibly match the same prompts, the PR carries a query set, a `--runs=1` harness run
+  (~$3.50), and the numbers. Thresholds stated — should-trigger ≥ 80%, false-fire ≤ 20% —
+  along with the rule that matters more than either: when it fails, fix the **description**,
+  because a query set edited until it passes measures nothing.
+  **No lint rule, deliberately.** Overlap is a judgment about meaning. A rule guessing at it
+  from shared name stems or shared categories would fire on the many *intentional* siblings
+  this library is built from — `m3-*` and `hig-*` pairs are supposed to cover one topic from
+  two sides — while missing genuine collisions between differently-named skills. A policy a
+  reviewer applies beats a rule that cries wolf, and the 7.4 precedent covers recording a
+  non-change.
+  **Note this closes Phase 3's cheap half.** 3.2 (the ~$130 pilot) and 3.3 (act on its data)
+  remain open and now have a cheaper first question thanks to 7.1: the six over-budget
+  categories are the only place trimming has a measurable payoff.
 
 ## Phase 4 — Output-quality evals (policy, not blanket coverage)
 
