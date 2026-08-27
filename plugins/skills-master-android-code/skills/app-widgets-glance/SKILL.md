@@ -3,8 +3,8 @@ name: app-widgets-glance
 description: "Use when building or modernising Android home-screen and lock-screen widgets with Jetpack Glance: GlanceAppWidget and its Compose-style UI, Glance state and update strategies, actionRunCallback and actionStartActivity, responsive sizing, and the boundary with legacy RemoteViews."
 license: MIT
 metadata:
-  version: "1.0.2"
-  snapshot-date: "2026-06-06"
+  version: "1.0.3"
+  snapshot-date: "2026-08-27"
 ---
 
 ## When to use
@@ -101,9 +101,9 @@ class RefreshStepsCallback : ActionCallback {
 
 ## Platform notes
 
-- **API level:** Core Glance widget support targets API 23+, but `targetCellWidth`/`targetCellHeight` and multi-size previews require API 31+. With `minSdk 16` (as required here), guard cell-based sizing with a version check in XML via `tools:targetApi` or supply a separate `appwidget-provider` resource for older APIs.
+- **API level:** Glance itself declares `minSdk 23` as of 1.2.0 (raised from 21), so API 23 is the floor whether or not your app sets one. `targetCellWidth`/`targetCellHeight` and multi-size previews still need API 31+, so guard cell-based sizing with `tools:targetApi` in the metadata XML or ship a separate `appwidget-provider` resource for devices below 31.
 - **Large screens:** On foldables and tablets, widgets may be placed on the lock screen or on the always-on home panel at larger allocated sizes. `SizeMode.Responsive` breakpoints should include at least one size above 300 dp to take advantage of the extra space.
-- **Wear OS:** Glance for Wear OS (`androidx.glance:glance-wear-tiles`) has a different composable set and tile update model; do not mix it with app widget code.
+- **Wear OS:** Glance for Wear OS has a different composable set and update model; do not mix it with app widget code. Reach for `androidx.glance:glance-wear` — the older `glance-wear-tiles` artifact is deprecated as of Glance 1.2.0 and is the wrong starting point for new work.
 - **Android 12 widget enhancements:** The runtime can pass rounded-corner radii via `OPTION_APPWIDGET_HOST_CATEGORY` and automatically applies a rounded background. Set `android:widgetFeatures="reconfigurable|dynamicColors"` in the metadata XML to opt in to dynamic color theming.
 - **Dynamic color:** Use `GlanceTheme` from `androidx.glance.material3` with `colors = GlanceTheme.colors` (backed by `DynamicTheme`) to inherit Material You palette when running on Android 12+ devices that support it.
 

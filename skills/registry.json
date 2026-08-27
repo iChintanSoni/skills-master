@@ -823,7 +823,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [],
       "pairs_with": [
         "m3-widgets",
@@ -10911,7 +10911,7 @@
         "wear-os"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "wearables"
       ],
