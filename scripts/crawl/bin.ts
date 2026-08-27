@@ -2,6 +2,7 @@
  * Report-only crawler. Produces:
  *   - reports/coverage.json   — skill counts per domain/class/category
  *   - reports/staleness.json  — skills ranked by how old their snapshot_date is
+ *   - reports/footprint.json  — per-plugin always-on listing cost vs the agent's budget
  *
  * With `--fetch` it additionally pulls Apple's render-JSON endpoints and writes
  * reports/upstream.json (a structural snapshot of upstream topic titles/URLs)
@@ -28,6 +29,7 @@ interface RegistryEntry {
   path: string;
   version: string;
   stability: string;
+  description: string;
 }
 
 interface Registry {
@@ -71,6 +73,97 @@ function staleness(reg: Registry) {
   });
   rows.sort((a, b) => (b.ageDays ?? Infinity) - (a.ageDays ?? Infinity));
   return rows;
+}
+
+/**
+ * Claude Code's skill-listing loader, as measured against 2.1.231.
+ *
+ * Every installed skill contributes one `- <name>: <description>` line to the
+ * always-on listing, and the whole listing is capped at
+ * `contextWindow × bytesPerToken × budgetFraction`. Past that cap the agent
+ * keeps the highest-priority entries whole and degrades the rest to a bare
+ * `- <name>` — the description is dropped, not shortened. So the number that
+ * matters is not "how many tokens do our descriptions cost" but "how far past
+ * the cap are we", because past it the descriptions stop being read at all.
+ */
+const LISTING = {
+  bytesPerToken: 4,
+  /** `skillListingBudgetFraction` default. */
+  budgetFraction: 0.01,
+  /** `skillListingMaxDescChars` default — per description, not per listing. */
+  maxDescChars: 1536,
+  /** Context windows worth reporting against: a common model, and a large one. */
+  contexts: [200_000, 1_000_000],
+} as const;
+
+const budgetBytesFor = (contextTokens: number) =>
+  Math.floor(contextTokens * LISTING.bytesPerToken * LISTING.budgetFraction);
+
+/** The plugin a skill ships in — mirrors `CLASS_DIR` (overview → overviews). */
+function pluginOf(s: RegistryEntry): string {
+  return `skills-master-${s.domain}-${s.class === "overview" ? "overviews" : s.class}`;
+}
+
+/** Bytes one skill contributes to the listing, truncation included. */
+function listingBytesOf(s: RegistryEntry): number {
+  const desc =
+    s.description.length > LISTING.maxDescChars
+      ? `${s.description.slice(0, LISTING.maxDescChars - 1)}…`
+      : s.description;
+  return Buffer.byteLength(`- ${s.name}: ${desc}`, "utf8");
+}
+
+function footprint(reg: Registry) {
+  const groups = new Map<string, { skills: number; listingBytes: number }>();
+  for (const s of reg.skills) {
+    const key = pluginOf(s);
+    const g = groups.get(key) ?? { skills: 0, listingBytes: 0 };
+    g.skills += 1;
+    // +1 for the newline joining this entry to the previous one.
+    g.listingBytes += listingBytesOf(s) + (g.skills > 1 ? 1 : 0);
+    groups.set(key, g);
+  }
+
+  const budgets = Object.fromEntries(LISTING.contexts.map((c) => [c, budgetBytesFor(c)])) as Record<
+    string,
+    number
+  >;
+
+  const over = (bytes: number) =>
+    Object.fromEntries(
+      LISTING.contexts.map((c) => [c, Number((bytes / budgetBytesFor(c)).toFixed(2))]),
+    ) as Record<string, number>;
+
+  const plugins = [...groups.entries()]
+    .map(([plugin, g]) => ({
+      plugin,
+      skills: g.skills,
+      listingBytes: g.listingBytes,
+      approxTokens: Math.round(g.listingBytes / LISTING.bytesPerToken),
+      overBudget: over(g.listingBytes),
+    }))
+    .sort((a, b) => b.listingBytes - a.listingBytes);
+
+  const libraryBytes = reg.skills.reduce((n, s) => n + listingBytesOf(s) + 1, -1);
+  const truncated = reg.skills.filter((s) => s.description.length > LISTING.maxDescChars);
+
+  return {
+    loader: { ...LISTING, measuredAgainst: "Claude Code 2.1.231" },
+    budgets,
+    plugins,
+    library: {
+      skills: reg.skills.length,
+      listingBytes: libraryBytes,
+      approxTokens: Math.round(libraryBytes / LISTING.bytesPerToken),
+      overBudget: over(libraryBytes),
+    },
+    /** Descriptions the per-description cap would itself truncate (none, so far). */
+    truncatedDescriptions: truncated.map((s) => ({ name: s.name, chars: s.description.length })),
+    longestDescriptions: [...reg.skills]
+      .sort((a, b) => b.description.length - a.description.length)
+      .slice(0, 10)
+      .map((s) => ({ name: s.name, path: s.path, chars: s.description.length })),
+  };
 }
 
 function stripHtmlTags(input: string): string {
@@ -206,11 +299,23 @@ async function main() {
   const stale = staleness(reg);
   writeFileSync(join(REPORTS, "staleness.json"), JSON.stringify(stale, null, 2) + "\n");
 
+  const foot = footprint(reg);
+  writeFileSync(join(REPORTS, "footprint.json"), JSON.stringify(foot, null, 2) + "\n");
+
   console.log(`Coverage: ${cov.total} skills`);
   for (const [k, v] of Object.entries(cov.byClass)) console.log(`  ${k}: ${v}`);
   const oldest = stale[0];
   if (oldest?.ageDays != null) {
     console.log(`Oldest snapshot: ${oldest.name} (${oldest.snapshot_date}, ${oldest.ageDays}d)`);
+  }
+
+  const worst = foot.plugins[0];
+  if (worst) {
+    const budget200k = foot.budgets["200000"];
+    console.log(
+      `Listing footprint: worst plugin ${worst.plugin} = ${worst.listingBytes} bytes ` +
+        `(${worst.overBudget["200000"]}× the ${budget200k}-byte budget at 200k context)`,
+    );
   }
 
   if (doFetch) {

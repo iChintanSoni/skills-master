@@ -290,7 +290,7 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   90 skills. Keep the `(examples.md)` link shape exactly — `condense.ts`'s `L3_LINK_RE`
   and the lint rule key on it; verify emitted output for both modes afterwards (the 3.2
   lesson). Wording guidance goes into authoring.md. *(G5)*
-- [ ] **2.3 Metadata-footprint report (S).** Extend the weekly crawl report (or
+- [x] **2.3 Metadata-footprint report (S).** Extend the weekly crawl report (or
   `registry build`) with per-plugin totals: skill count, description tokens, worst-10
   longest descriptions. This makes G8 visible and continuously measured rather than a
   one-off audit figure, the same move 10.1 made for staleness. No content edits here —
@@ -304,6 +304,27 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   today `android-code` is 41.2k chars (5.2× over at 200k), `apple-code` 38.9k, whole
   library 192k. The per-description cap (`skillListingMaxDescChars`, 1536) is not binding
   for us: longest description is 747.
+  **Landed (taken out of order, ahead of 2.1/2.2, deliberately).** Both of those are content
+  sweeps whose payoff assumes skills trigger at all; this measures whether they do. The crawl
+  now writes `reports/footprint.json` and the report renders an **Always-on listing
+  footprint** section — per-plugin listing bytes, approximate tokens, and `× over budget` at
+  both 200k and 1M context, plus the whole-library row and the 10 longest descriptions.
+  Measured in **bytes, not characters**: the budget is derived from bytes-per-token, and our
+  descriptions are full of em dashes at 3 bytes each. First run:
+
+  | | skills | listing | ×@200k | ×@1M |
+  | --- | ---: | ---: | ---: | ---: |
+  | `android-code` | 107 | 41,532 B | **5.19×** | **1.04×** |
+  | `apple-code` | 88 | 38,998 B | 4.87× | 0.97× |
+  | whole library | 433 | 193,175 B | **24.15×** | **4.83×** |
+
+  **Seven of eight plugins blow the 200k budget on their own**, and `android-code` exceeds it
+  even at 1M context. The per-description cap is not the constraint (longest is 747 of 1536
+  allowed) — the aggregate is. Practical read for Phase 3: for a single-domain install most
+  descriptions are already replaced by bare names, so "write a better description" is
+  worthless for those skills until either the install is narrower or the listing is smaller.
+  That makes **install granularity** (per-category plugins? a curated core?) a candidate
+  lever the plan has not considered, alongside 3.3's trimming.
 
 ## Phase 3 — Description optimization, eval-driven (the expensive one — evidence first)
 
