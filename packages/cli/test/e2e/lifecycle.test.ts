@@ -16,7 +16,7 @@ import { updateCommand } from "../../src/commands/update";
 import { removeCommand } from "../../src/commands/remove";
 import { doctorCommand } from "../../src/commands/doctor";
 import { initCommand } from "../../src/commands/init";
-import { ALL_TARGETS } from "../../src/types";
+import { ALL_TARGETS, DEFAULT_TARGETS } from "../../src/types";
 
 const CONTENT_ROOT = fileURLToPath(new URL("../fixtures/content", import.meta.url));
 const NAME = "fixture-skill";
@@ -25,6 +25,7 @@ const TOOL_NAME = "fixture-tool-skill";
 const CONFIG = "skills-master.json";
 
 const CLAUDE = `.claude/skills/${NAME}/SKILL.md`;
+const AGENTS_SKILLS = `.agents/skills/${NAME}/SKILL.md`;
 const CURSOR = `.cursor/rules/${NAME}.mdc`;
 const COPILOT = `.github/instructions/${NAME}.instructions.md`;
 const COPILOT_ROOT = ".github/copilot-instructions.md";
@@ -78,6 +79,10 @@ describe("install lifecycle", () => {
 
     expect(has(CLAUDE)).toBe(true);
     expect(has(`.claude/skills/${NAME}/examples.md`)).toBe(true);
+    // Same projection at the cross-agent root, resource files included.
+    expect(has(AGENTS_SKILLS)).toBe(true);
+    expect(has(`.agents/skills/${NAME}/examples.md`)).toBe(true);
+    expect(read(AGENTS_SKILLS)).toBe(read(CLAUDE));
     expect(has(CURSOR)).toBe(true);
     expect(has(COPILOT)).toBe(true);
     expect(read(COPILOT_ROOT)).toContain(`BEGIN skills-master:${NAME}`);
@@ -128,6 +133,8 @@ describe("install lifecycle", () => {
 
     expect(has(CLAUDE)).toBe(false);
     expect(has(`.claude/skills/${NAME}`)).toBe(false); // dir pruned
+    expect(has(AGENTS_SKILLS)).toBe(false);
+    expect(has(`.agents/skills/${NAME}`)).toBe(false);
     expect(has(CURSOR)).toBe(false);
     expect(has(COPILOT)).toBe(false);
     // Shared files held only this block, so they are deleted when emptied.
@@ -227,9 +234,13 @@ describe("init", () => {
     expect(JSON.parse(read(CONFIG)).targets.sort()).toEqual(["agents", "cursor"]);
   });
 
-  it("falls back to every target when the project shows no sign of any tool", () => {
+  // 5.1: the fallback is DEFAULT_TARGETS, not ALL_TARGETS. `agents-skills`
+  // writes a second full copy of every skill, and VS Code Copilot reads both
+  // roots — so it is opt-in rather than a default nobody asked for.
+  it("falls back to the default targets when the project shows no sign of any tool", () => {
     const cfg = initCommand({ cwd: dir });
-    expect(cfg.targets.sort()).toEqual([...ALL_TARGETS].sort());
+    expect(cfg.targets.sort()).toEqual([...DEFAULT_TARGETS].sort());
+    expect(cfg.targets).not.toContain("agents-skills");
   });
 
   it("records explicit targets, commit, and contentRef verbatim", () => {

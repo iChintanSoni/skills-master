@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A **content library + compiler**. Skills are authored once in a canonical `SKILL.md` format under `skills/<domain>/<class>/<category>/<name>/`, and the TypeScript CLI in `packages/cli` projects ("emits") each skill into whatever format a given AI coding tool reads (Claude Code, Cursor, Copilot, `AGENTS.md`).
+A **content library + compiler**. Skills are authored once in a canonical `SKILL.md` format under `skills/<domain>/<class>/<category>/<name>/`, and the TypeScript CLI in `packages/cli` projects ("emits") each skill into whatever format a given AI coding tool reads (Claude Code, Cursor, Copilot, `AGENTS.md`, and `.agents/skills/` for Codex / Gemini CLI / VS Code).
 
 Two independent halves, and most tasks touch only one:
 
@@ -82,7 +82,7 @@ The CLI auto-resolves content in priority order: `--content` → `SKILLS_MASTER_
 
 Files land in one of two modes (`types.ts`):
 
-- **whole** — emitter owns the entire file (`.claude/skills/<n>/SKILL.md`, `.cursor/rules/<n>.mdc`, `.github/instructions/<n>.instructions.md`).
+- **whole** — emitter owns the entire file (`.claude/skills/<n>/SKILL.md`, `.agents/skills/<n>/SKILL.md`, `.cursor/rules/<n>.mdc`, `.github/instructions/<n>.instructions.md`).
 - **block** — emitter owns only a sentinel region inside a shared file (`AGENTS.md`, `.github/copilot-instructions.md`), delimited by `<!-- BEGIN skills-master:<name> v<ver> -->` / `<!-- END … -->` (`core/markers.ts`). Everything outside the markers must survive an update — the e2e test asserts this.
 
 Install state in a consuming project: `skills-master.json` (config) + `skills-master.lock.json` (per-skill `version`, `sourceHash`, per-target emitted files and a disk-computed `hash` used to detect local edits). `core/install.ts` computes both hashes; `doctor`/`update` reconcile against them.

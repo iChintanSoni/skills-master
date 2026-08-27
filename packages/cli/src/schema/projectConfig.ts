@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { TargetId } from "../types";
 
-export const TargetIdSchema = z.enum(["claude", "cursor", "copilot", "agents"]);
+export const TargetIdSchema = z.enum(["claude", "cursor", "copilot", "agents", "agents-skills"]);
 
 /** Default output location per target, relative to the project root. */
 export const DEFAULT_PATHS: Record<TargetId, string> = {
@@ -9,6 +9,7 @@ export const DEFAULT_PATHS: Record<TargetId, string> = {
   cursor: ".cursor/rules",
   copilot: ".github",
   agents: "AGENTS.md",
+  "agents-skills": ".agents/skills",
 };
 
 export const ProjectConfigSchema = z
@@ -27,6 +28,7 @@ export const ProjectConfigSchema = z
         cursor: z.string(),
         copilot: z.string(),
         agents: z.string(),
+        "agents-skills": z.string(),
       })
       .partial()
       .default({}),

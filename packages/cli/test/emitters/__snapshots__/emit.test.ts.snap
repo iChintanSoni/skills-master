@@ -28,6 +28,80 @@ A deterministic fixture skill for compiler tests. Use when exercising emitters, 
 ]
 `;
 
+exports[`emitters > projects the fixture skill for agents-skills 1`] = `
+[
+  {
+    "contents": "---
+name: fixture-skill
+description: A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
+license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-01-01"
+---
+
+> **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
+
+## When to use
+
+Use this fixture to verify emitter output and the add/update/remove lifecycle.
+
+## Core guidance
+
+- Do the first deterministic thing.
+- Do the second deterministic thing, referencing [examples.md](examples.md).
+- Deeper notes live in [reference.md](reference.md).
+
+## Platform notes
+
+Runs only on the imaginary testos platform.
+
+## Pitfalls
+
+- A representative pitfall.
+
+## Open question
+
+Whether fixtures should be exhaustive is a tradeoff; this one stays minimal but covers every code path. See [checklist.md](checklist.md).
+
+## See also
+
+- Apple-equivalent docs live at the source URL.
+",
+    "mode": "whole",
+    "path": ".agents/skills/fixture-skill/SKILL.md",
+  },
+  {
+    "contents": "# fixture-skill — reference
+
+Deterministic reference content used to verify that single-file targets drop and
+note Level-3 resources while Claude copies them verbatim.
+",
+    "mode": "whole",
+    "path": ".agents/skills/fixture-skill/reference.md",
+  },
+  {
+    "contents": "# fixture-skill — examples
+
+\`\`\`swift
+func deterministicExample() -> Int { 42 }
+\`\`\`
+",
+    "mode": "whole",
+    "path": ".agents/skills/fixture-skill/examples.md",
+  },
+  {
+    "contents": "# fixture-skill — checklist
+
+- [ ] Emitters produce deterministic output.
+- [ ] Sentinel blocks preserve surrounding edits.
+",
+    "mode": "whole",
+    "path": ".agents/skills/fixture-skill/checklist.md",
+  },
+]
+`;
+
 exports[`emitters > projects the fixture skill for claude 1`] = `
 [
   {
