@@ -96,7 +96,7 @@ The primary Documentation/HIG URLs should also appear in the `sources` frontmatt
 
 1. **Original prose only.** Summarize and synthesize; never paste Apple documentation or sample code. Cite via `sources` and link, don't quote.
 2. **Original, minimal code.** Write snippets from first principles to show an idiom. Use Apple samples only to verify currency.
-3. **Cite + snapshot.** Every skill carries `sources` and a `snapshot_date`. Bump `snapshot_date` (and a `version` patch) whenever you re-verify against changed docs.
+3. **Cite + snapshot.** Every skill carries `sources` and a `snapshot_date`. Bump `snapshot_date` (and a `version` patch) whenever you re-verify against changed docs — per skill, on the skills you actually re-read. See [A snapshot date means one skill](#a-snapshot-date-means-one-skill).
 4. **Contested topics present tradeoffs.** For genuinely debated choices (MV vs MVVM, SwiftUI vs UIKit), set `stability: contested`, add a `## Open question` section, and do **not** prescribe a single answer. Route the decision through an `overviews/` skill.
 5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. See [What earns a pair](#what-earns-a-pair) for what belongs in the list.
 6. **L2/L3 split.** When the body grows past ~500 lines, move long examples → `examples.md`, step lists → `checklist.md`, and deep reference tables → `reference.md` (a defined slot no skill currently uses — prefer the first two unless a true lookup table outgrows them), and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
@@ -115,6 +115,25 @@ Name the skill's subject in the clause — "run before a design review of onboar
 **Keep the `(examples.md)` link shape exactly.** `condense.ts`'s `L3_LINK_RE` and the linter's resource-linked rule both match on it, so `[examples.md](./examples.md — foo)` or a reworded target silently drops the resource from every projection. Put the hint *after* the closing paren.
 
 In condensed targets (Cursor, Copilot) the link flattens to plain text and the file isn't shipped — the hint then reads alongside the "full Claude Code skill" pointer note, which is what makes it coherent there rather than a dead reference.
+
+## A snapshot date means one skill
+
+`snapshot_date` records the day **this** skill was checked against **its own** sources. Not the day a batch ran, not the day the library was touched. A refresh sets it per skill, as it goes, on the skills it actually re-read — and leaves the rest alone.
+
+The library does not yet look like that. All 433 skills carry **four** distinct dates between them:
+
+| Date | Skills |
+|---|---:|
+| 2026-08-25 | 216 |
+| 2026-06-06 | 126 |
+| 2026-05-30 | 89 |
+| 2026-08-27 | 2 |
+
+The first three are bulk stamps. The two are the skills that went through the refresh loop one at a time. So today, a date in this library mostly records *when a batch ran* — which is the failure this rule exists to stop spreading, not a standard to match.
+
+A bump is a claim, and the cheap half is editing the field. The expensive half is having actually re-read the sources, because the alternative is worse than staleness: [1.2](../PLAN.md) caught a refresh that bumped a date, looked maintained, and introduced an API that does not exist. **A skill that quietly went stale gets routed around. A skill that is confidently wrong gets repeated.**
+
+**This is deliberately not a lint rule.** "These 126 dates are identical" is indistinguishable from "these 126 skills were genuinely checked on the same day" — a rule would fire on honest bulk re-verification and be trivially defeated by stamping the dishonest kind a day apart. The enforcement that works is evidential, not syntactic: declare the `upstream` below, and let the weekly crawl contradict a date with a release the skill does not reflect.
 
 ## Declare the upstream a skill tracks
 
