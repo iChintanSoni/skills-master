@@ -143,21 +143,26 @@ program
 program
   .command("update [names...]")
   .description("Re-install skills whose content changed")
+  .option("--check", "report which installed skills are behind; exit 1 if any are")
   .option("--dry-run", "preview without writing")
   .option("--overwrite", "force re-install, replacing local edits")
   .option("--content <dir>", "local skills directory")
   .option("--ref <ref>", "content git ref (tag/branch/sha)")
   .action((names, opts) =>
-    run(() =>
-      updateCommand({
+    run(async () => {
+      const res = await updateCommand({
         cwd: process.cwd(),
         names,
+        check: opts.check,
         dryRun: opts.dryRun,
         overwrite: opts.overwrite,
         content: opts.content,
         ref: opts.ref,
-      }),
-    ),
+      });
+      // Only --check gates the exit code; a plain update that changes nothing
+      // is a success, not a failure.
+      return opts.check ? (res.behind?.length ?? 0) === 0 : undefined;
+    }, true),
   );
 
 program

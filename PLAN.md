@@ -716,12 +716,15 @@ can answer.
 Found during the effort, not in the original audit, and small enough that anyone can pick
 them up:
 
-- **`doctor` cannot see a lockfile that has fallen behind the content.** It compares emitted
-  files against the lockfile, never the lockfile against the source, so an install pinned to
-  an old version reports healthy — which is what let the dogfood sit at 1.0.1 for three
-  content releases. `doctor` is offline by design and should stay that way, so the honest
-  home for this is `update --check`: resolve content, report which installed skills are
-  behind, exit non-zero. `#minor`, since it adds CLI surface.
+- ~~**`doctor` cannot see a lockfile that has fallen behind the content.**~~ **Done.**
+  `doctor` compares emitted files against the lockfile, never the lockfile against the
+  source, so an install pinned to an old version reports healthy — which is what let the
+  dogfood sit at 1.0.1 for three content releases. `doctor` is offline by design, so the
+  check landed as **`update --check`**: resolves the content, reports what is behind, exits
+  non-zero. It distinguishes three reasons — a newer release, **a content edit with no
+  version bump**, and a moved content ref — and the middle one is the case that actually
+  bit this repo, since resource-file and description edits do not always take a release.
+  Writes nothing and re-emits nothing; `--dry-run` remains the rehearsal, this is the gate.
 - **Finish the 4.1 output-eval sample** — six more skills, ~$12–15, for the per-class
   verdicts the item asks for. Needs a go-ahead on spend, not on scope.
 - **3.2, the trigger pilot** — ~$130 a run. Largely superseded: 7.1/7.2/7.3 removed the

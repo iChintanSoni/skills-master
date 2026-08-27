@@ -23,6 +23,8 @@ npx @ichintansoni/skills-master doctor                        # same detection, 
 
 `status` and `doctor` share their drift detection but answer different questions. `status` is an inventory — it lists every installed skill with its version, targets, and whether the output has been edited or deleted, works entirely offline, and always exits 0, so it is safe to pipe (`status --json`, `status --problems`, `status <name>…`). `doctor` is the gate: same findings, but it exits non-zero, which is what you want in CI.
 
+Both answer "is what I installed intact?" — neither answers "is what I installed **current?**", because both compare emitted files against the lockfile and never the lockfile against the source. An install pinned to a release from six months ago is perfectly healthy by that measure. `update --check` is the second gate: it resolves the content, reports which skills are behind, and exits non-zero. It catches the case a version comparison misses — a skill edited upstream *without* a version bump, which is what resource-file and description changes usually are.
+
 `add` writes, per detected tool:
 
 | Tool | Output |
@@ -59,7 +61,7 @@ Run `skills-master <command> --help` for the full flag list on any of these.
 |---|---|
 | `init` | Detect which tools the project uses and write `skills-master.json`. `--target` · `--commit` · `--ref` · `--force` |
 | `add <names…>` | Install skills by name, category, or class |
-| `update [names…]` | Re-install skills whose **content** changed upstream. Only touches targets a skill is already installed to |
+| `update [names…]` | Re-install skills whose **content** changed upstream. Only touches targets a skill is already installed to. `--check` reports what is behind and exits non-zero |
 | `sync [names…]` | Re-emit to match the **current config** — new targets, moved `paths`, deleted files. `--overwrite` · `--prune` · `--dry-run` |
 | `remove <names…>` | Remove installed skills. `--target` removes from one tool only |
 | `status [names…]` | Inventory: versions, targets, and local-edit state. Offline, always exits 0. `--problems` · `--json` |
