@@ -327,6 +327,43 @@ function entryDate(content: string): string | undefined {
   return Number.isNaN(parsed) ? undefined : new Date(parsed).toISOString().slice(0, 10);
 }
 
+/**
+ * A release page that groups links under dated headings:
+ *
+ *   <h2 id="august_26_2026" data-text="August 26, 2026">August 26, 2026</h2>
+ *   <ul><li><a href="…">Camera Version 1.6.2</a></li>…</ul>
+ *
+ * Same shape as the Atom feed's inner links, so the titles parse identically —
+ * the difference is that this page is actually current.
+ */
+function parseDatedHtml(html: string, baseUrl: string): Topic[] {
+  const topics: Topic[] = [];
+  const headingRegex = /<h2[^>]*data-text="([^"]+)"[^>]*>/gi;
+  const headings: { date: string; index: number }[] = [];
+  for (let m = headingRegex.exec(html); m !== null; m = headingRegex.exec(html)) {
+    const parsed = Date.parse(m[1]!);
+    if (!Number.isNaN(parsed)) {
+      headings.push({ date: new Date(parsed).toISOString().slice(0, 10), index: m.index });
+    }
+  }
+
+  for (const [i, h] of headings.entries()) {
+    const section = html.slice(h.index, headings[i + 1]?.index ?? html.length);
+    const linkRegex = /<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+    for (let m = linkRegex.exec(section); m !== null; m = linkRegex.exec(section)) {
+      const title = stripHtmlTags(m[2]!).trim();
+      if (!title) continue;
+      const href = m[1]!;
+      topics.push({
+        title,
+        url: href.startsWith("http") ? href : new URL(href, baseUrl).toString(),
+        date: h.date,
+      });
+    }
+  }
+  return topics;
+}
+
 function parseXmlFeed(xmlText: string): Topic[] {
   const topics: Topic[] = [];
 
@@ -424,16 +461,23 @@ async function fetchUpstream() {
     }
   }
 
-  // Android endpoints (XML parsing)
+  // Android endpoints: Atom/RSS feeds, or a page grouped by dated headings.
   for (const ep of ANDROID_ENDPOINTS) {
     try {
-      const res = await fetch(ep.url);
+      // Ask for English explicitly: these hosts content-negotiate, and a
+      // localized page yields date headings no parser here can read.
+      const res = await fetch(ep.url, { headers: { "accept-language": "en-US,en;q=0.9" } });
       if (!res.ok) {
         out[ep.key] = { error: `HTTP ${res.status}` };
         continue;
       }
-      const xmlText = await res.text();
-      const topics = parseXmlFeed(xmlText).slice(0, 2000);
+      const body = await res.text();
+      // Newest first, so the cap keeps the recent window and drops history we
+      // have no use for — "has anything shipped since my snapshot" only ever
+      // looks forward. At 2000 that window is currently ~3 months of androidx.
+      const topics = (
+        ep.format === "html" ? parseDatedHtml(body, ep.url) : parseXmlFeed(body)
+      ).slice(0, 2000);
       out[ep.key] = { count: topics.length, topics };
     } catch (err) {
       out[ep.key] = { error: err instanceof Error ? err.message : String(err) };
