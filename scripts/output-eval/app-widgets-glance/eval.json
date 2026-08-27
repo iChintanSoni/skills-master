@@ -1,0 +1,51 @@
+{
+  "skill": "app-widgets-glance",
+  "install": ["app-widgets-glance"],
+  "notes": "A refresh eval, not a coverage eval: run with --baseline=<pre-refresh ref>. Scoped to what 1.1's refresh touched — Glance 1.2.0 raising its own minSdk from 21 to 23, and glance-wear-tiles being deprecated. The first version of task 1's assertions was written from the refresh diff and asserted `androidx.glance:glance-wear`, an artifact that does not exist; that scored the stale arm 0% for giving the most accurate answer of the three. The assertions below were rewritten from the vendor release pages instead, which is the only source that cannot be talked into agreeing with the skill.",
+  "tasks": [
+    {
+      "prompt": "I have an Android app with a Jetpack Glance app widget and I now want to add a Wear OS tile from the same codebase. Which artifact do I depend on for the tile, and can I share composables between the widget and the tile?",
+      "expect": [
+        {
+          "label": "says glance-wear-tiles is not the path for new work (deprecated / discontinued / never stable)",
+          "pattern": "glance-wear-tiles[\\s\\S]{0,200}(deprecat|discontinu|abandon|never (?:reached|got past)|no longer)|(deprecat|discontinu|abandon|no longer)[\\s\\S]{0,200}glance-wear-tiles"
+        },
+        {
+          "label": "points at a real current path — androidx.glance.wear:wear, or wear.tiles/protolayout",
+          "pattern": "androidx\\.glance\\.wear:wear|androidx\\.wear\\.tiles|androidx\\.wear\\.protolayout|protolayout"
+        },
+        {
+          "label": "does not present the successor as production-ready without flagging it is alpha",
+          "pattern": "alpha|not (?:yet )?stable|pre-?release|still in development"
+        },
+        {
+          "label": "keeps the widget and tile composable sets apart rather than sharing them",
+          "pattern": "(can(?:not|'?t)|don'?t|do not|no)[^.\\n]{0,40}shar|shar[^.\\n]{0,40}(is not|isn'?t|not possible|\\bno\\b)|share composables\\?\\s*\\**\\s*no|no shared (?:node|composable)|do(?: n(?:o|')t| not) mix|separate module|different composable set"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "recommends androidx.glance:glance-wear, a coordinate that has never shipped (naming it to caution against it is fine, and the grader's negation guard does not catch that phrasing)",
+          "pattern": "(use|add|reach for|depend on|go with|implementation\\s*\\(?[\\\"'])[^.\\n]{0,50}androidx\\.glance:glance-wear(?!-tiles)"
+        }
+      ]
+    },
+    {
+      "prompt": "My Android app declares minSdk 21 and I want to add a Jetpack Glance app widget on the current stable Glance, with multi-size previews. What do I have to change in the build config, and what still needs an API-level guard?",
+      "expect": [
+        {
+          "label": "says Glance itself now floors at API 23, so minSdk must be raised",
+          "pattern": "(minSdk|API|api level)\\D{0,20}23"
+        },
+        {
+          "label": "keeps cell-based sizing behind an API guard",
+          "pattern": "targetCellWidth|targetCellHeight"
+        },
+        {
+          "label": "names API 31 as the level that gating needs",
+          "pattern": "(API|api level|minSdk|targetApi)\\D{0,20}31"
+        }
+      ]
+    }
+  ]
+}

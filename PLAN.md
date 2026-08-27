@@ -197,11 +197,43 @@ run (~$0.22 and ~$0.37 a session).
   move this plan's ground rules forbid.
   **So the queue needs a materiality filter, not just recency** — see 1.4. Ranking by
   "something shipped" put an alpha and a patch alongside a new stable major.
-- [ ] **1.2 Spot-check the refresh with an output eval (S).** Pick two refreshed skills whose
+- [x] **1.2 Spot-check the refresh with an output eval (S).** Pick two refreshed skills whose
   subject moved and run `scripts/output-eval` before and after. If a refresh does not move
   the delta, the refresh was cosmetic. ~$3.
+  **Landed. One refresh moved the answer; the other moved it backwards.** `--baseline=<ref>`
+  now adds a third arm holding the skill as of a git ref, so the same harness answers "did
+  this refresh change anything".
+  `wear-compose`: **100% refreshed / 83% stale / 67% no skill**, +17. But only one of its two
+  added facts did the work — the Navigation 3 integration was invisible without the skill,
+  while `LocalAmbientModeManager` came out of the **stale** arm too, because the old skill's
+  ambient section got the model to the right neighbourhood unaided. 1.1's "2 of 5 entries
+  were real" becomes "1 of 2 facts inside a real refresh was real" a level down.
+  `app-widgets-glance`: **all three arms 100%** — the refresh moved nothing — **and it
+  introduced an error.** 1.1 wrote "reach for `androidx.glance:glance-wear`", a coordinate
+  that has never been published; the real successor is `androidx.glance.wear:wear` +
+  `wear-core`, still `1.0.0-alpha17`, so the advice was wrong even spelled correctly. Fixed
+  here, and the corrected skill scores 100% against 88% for the control.
+  **The finding that outranks both numbers:** the *stale* arm was not misled — it said "the
+  skill guidance I loaded still references it as a live option; it isn't" and routed around
+  it — while the *refreshed* arm repeated the error. And the bare model had already named
+  that coordinate **with a hedge** ("could not confirm it has shipped; treat it as announced,
+  not available"), which is almost certainly where the refresh got it, minus the hedge. A
+  refresh drafted with model help inherits the model's guesses. **Stale is a slow leak;
+  wrong is a hole, and refreshing is how you make one.**
+  **And the method nearly lied.** The first grading said "refresh moved +33" because I wrote
+  the assertions from my own diff — measuring agreement, not correctness; the stale arm
+  scored 0% for the most accurate answer of the three. Rewriting them from the vendor release
+  pages inverted the result. Two instrument faults fixed alongside: an empty answer was being
+  graded 0% (the skill arms starved on `--max-turns 3`), and the grader's negation guard read
+  a hedge as an endorsement. ~$10.89, not ~$3 — a wasted run before the empty-answer fix, a
+  third arm, and a confirmation pass after the correction.
 - [ ] **1.3 Work the queue (L, scope from 1.1).** Only after the pilot says the queue is real.
   1.1 says it is **partly** real — 2 of 5 — so this waits on 1.4 rather than starting now.
+  1.4 has landed, so this is unblocked. But 1.2 changed what it should look like: a refresh
+  can make a skill **wrong**, and today's queue (`hilt-di` new-minor, `paging` patch,
+  `datastore` pre-release) contains nothing 1.1 did not already judge immaterial. Working it
+  now would spend edits to change nothing, at the one risk this plan has evidence for. Every
+  claim a refresh adds needs a vendor page open next to it, not a model's recollection.
 
 - [x] **1.4 Rank by materiality, not just recency (S).** 1.1's three misses are all
   identifiable from the version string alone: `3.5.1` is a patch, `1.3.0-alpha10` is an
