@@ -3,8 +3,8 @@ name: wear-compose
 description: "Use when building or modernising a Wear OS app with Compose: wear.compose.material3 components, TransformingLazyColumn and ScalingLazyColumn for round screens, AppScaffold and ScreenScaffold, rotary input via rotaryScrollable, TimeText, and SwipeDismissableNavHost."
 license: MIT
 metadata:
-  version: "1.0.2"
-  snapshot-date: "2026-06-06"
+  version: "1.0.3"
+  snapshot-date: "2026-08-27"
 ---
 
 ## When to use
@@ -16,7 +16,7 @@ Apply this guidance when building any Wear OS screen with Jetpack Compose. It co
 ### Dependencies
 
 - Import from `androidx.wear.compose:compose-material3` (not the phone `material3` artifact). The two share naming conventions but Wear's versions are tuned for small, round displays — do not mix them in the same module.
-- Add `androidx.wear.compose:compose-navigation` for `SwipeDismissableNavHost`.
+- Add `androidx.wear.compose:compose-navigation` for `SwipeDismissableNavHost`. If the app is on Navigation 3, use the Wear Compose Navigation 3 artifact instead (new in 1.6): it plugs into `NavDisplay` and supplies `SwipeDismissableSceneStrategy`, so swipe-to-dismiss keeps working without a second navigation system alongside it.
 - The Compose BOM does **not** pin wear-compose versions; add an explicit `wear-compose` BOM or pin each artifact independently.
 
 ### Scaffold: AppScaffold and ScreenScaffold
@@ -137,9 +137,9 @@ fun RotaryList(items: List<String>) {
 
 - **Round vs square displays:** Most modern Wear OS devices are round. Use `LocalConfiguration.current.isScreenRound` to branch layout only when absolutely necessary — prefer components designed for both (EdgeButton, TransformingLazyColumn). Square devices are legacy (some Fossil/Mobvoi).
 - **Screen density:** Wear displays range from ~300 dpi on entry-level to ~450 dpi on premium. Use `sp` for text and `dp` for layout — never hardcode pixel values.
-- **Ambient mode:** Wear OS handles ambient mode separately from the Compose layer. For always-on displays use `AmbientLifecycleObserver` and provide a simplified low-burn ambient layout, not the full interactive UI.
+- **Ambient mode:** Wear OS handles ambient mode separately from the Compose layer. For always-on displays use `AmbientLifecycleObserver` and provide a simplified low-burn ambient layout, not the full interactive UI. Inside composables, read `LocalAmbientModeManager` (1.6+) to branch UI or suppress animation rather than threading an "is ambient" flag down by hand.
 - **Tiles and Complications:** Compose-for-Wear handles the interactive app UI. Tiles use `androidx.wear.protolayout` (not Compose). If your app provides both, keep the Compose layer and the tile layer in separate modules to prevent dependency bleed.
-- **Minimum API:** Wear OS 3 maps to API 30; Wear OS 4 is API 33. The skill requires Android 16 (API 36) which aligns with Wear OS 5+. Wear Compose 1.5 and the M3 Expressive components require at minimum Wear OS 3 (API 30) with degraded theming, and full M3 Expressive on Wear OS 4+.
+- **Minimum API:** Wear OS 3 maps to API 30; Wear OS 4 is API 33. The skill requires Android 16 (API 36) which aligns with Wear OS 5+. Wear Compose (1.6 stable) and the M3 Expressive components require at minimum Wear OS 3 (API 30) with degraded theming, and full M3 Expressive on Wear OS 4+.
 - **Performance:** Wear CPUs and RAM are constrained. Apply the same `compose-performance` discipline: stable parameters, `key` on list items, `derivedStateOf` for scroll-derived state. Prefer `TransformingLazyColumn` over `LazyColumn` — the latter lacks the curvature transform and wastes layout passes on round screens.
 
 ## Pitfalls

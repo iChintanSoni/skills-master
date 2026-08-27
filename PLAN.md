@@ -172,15 +172,46 @@ run (~$0.22 and ~$0.37 a session).
 
 ## Phase 1 — Refresh what the evidence names
 
-- [ ] **1.1 Pilot the refresh loop on ~10 skills (M).** Take the top of 0.2's queue, verify
+- [x] **1.1 Pilot the refresh loop on ~10 skills (M).** Take the top of 0.2's queue, verify
   against current vendor docs, update prose, bump `snapshot_date` + `version`. Record for
   each: what changed, or that nothing did. The point of the pilot is to measure the hit rate
   — if half the queue turns out to need no change, the ranking is wrong and 0.1 needs work
   before anyone refreshes 200 skills.
+  **Piloted on the whole queue — all 5, since that is what Phase 0 produced. Hit rate: 2 of
+  5.** Two carried material change and were refreshed; three did not, and the reason is
+  visible in the version string.
+  **Refreshed — `app-widgets-glance`** (8 releases behind): Glance 1.2.0 went stable and
+  raised its own `minSdk` from 21 to 23, and `glance-wear-tiles` is deprecated in favour of
+  `androidx.glance:glance-wear` — the skill was recommending the deprecated artifact by
+  name. It also carried a confusing "with `minSdk 16`" phrasing that read as API 16 when it
+  meant the Android 16 baseline; rewritten.
+  **Refreshed — `wear-compose`** (14 releases behind): the skill pinned 1.5 while stable had
+  moved to 1.6.2 with 1.7 in beta, and it had no mention of the Wear Compose **Navigation 3**
+  integration (`SwipeDismissableSceneStrategy`) or `LocalAmbientModeManager`. Both added,
+  `requires` moved to 1.6.
+  **Not refreshed, and this is the useful half of the result:** `paging` (3.5.1, a patch),
+  `datastore` (1.3.0-**alpha**10), `hilt-di` (1.4.0 — checked rather than assumed: a
+  stabilisation release whose only developer-facing change, the simplified
+  `rememberHiltViewModelFactory()`, shipped in April, *before* the skill's June snapshot).
+  Bumping `snapshot_date` on these would be exactly the "looks maintained while going stale"
+  move this plan's ground rules forbid.
+  **So the queue needs a materiality filter, not just recency** — see 1.4. Ranking by
+  "something shipped" put an alpha and a patch alongside a new stable major.
 - [ ] **1.2 Spot-check the refresh with an output eval (S).** Pick two refreshed skills whose
   subject moved and run `scripts/output-eval` before and after. If a refresh does not move
   the delta, the refresh was cosmetic. ~$3.
 - [ ] **1.3 Work the queue (L, scope from 1.1).** Only after the pilot says the queue is real.
+  1.1 says it is **partly** real — 2 of 5 — so this waits on 1.4 rather than starting now.
+
+- [ ] **1.4 Rank by materiality, not just recency (S).** 1.1's three misses are all
+  identifiable from the version string alone: `3.5.1` is a patch, `1.3.0-alpha10` is an
+  alpha, and a stable whose changes all predate the skill's snapshot brings nothing new.
+  Weight the queue accordingly — a new stable minor or major outranks a patch, and a
+  pre-release ranks last or is excluded outright. Cheap, mechanical, and it roughly doubles
+  the hit rate before anyone spends time on a refresh that changes nothing.
+  Worth checking at the same time: `releasesSince` currently counts *entries*, so a library
+  shipping alpha weekly outranks one that shipped a considered stable release. Count what
+  matters instead.
 
 ## Phase 2 — Stop the bulk stamp from coming back
 
