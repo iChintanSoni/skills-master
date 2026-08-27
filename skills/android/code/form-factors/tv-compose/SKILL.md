@@ -1,6 +1,6 @@
 ---
 name: tv-compose
-description: Covers Compose for TV using the androidx.tv.material3 library — Cards, ImmersiveList, Carousel, TvNavigationDrawer, and focus-driven 10-foot navigation — for building browse and detail screens on Android TV. Use when building a new Android TV app with Jetpack Compose, migrating a Leanback-based app to Compose, designing browse/detail screen patterns, or wiring D-pad focus across a composable hierarchy on a TV form factor.
+description: "Use when building an Android TV app with Compose, migrating a Leanback app, designing browse and detail screens, or wiring D-pad focus across a composable hierarchy. Covers androidx.tv.material3: Cards, ImmersiveList, Carousel and TvNavigationDrawer."
 license: MIT
 globs:
   - "**/*.kt"
@@ -17,7 +17,7 @@ x-skills-master:
     - https://developer.android.com/jetpack/androidx/releases/tv
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

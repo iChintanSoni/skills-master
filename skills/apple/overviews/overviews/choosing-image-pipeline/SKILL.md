@@ -1,6 +1,6 @@
 ---
 name: choosing-image-pipeline
-description: "Decision router for image work on Apple platforms: SwiftUI AsyncImage and its 27-cycle caching and request support, URLSession with URLCache versus NSCache, ImageIO downsampling, Core Image versus Metal for processing, ImageRenderer for export, PhotosPicker versus PhotoKit for library access, and SF Symbols versus bitmap assets. Use when deciding how to load, cache, downsample, process, export, or source an image, when a scrolling grid blows its memory budget, or when weighing whether a third-party image loader is still justified."
+description: "Use when deciding how to load, cache, downsample, process, export or source an image on Apple platforms: AsyncImage versus URLSession with URLCache, ImageIO downsampling, Core Image versus Metal, ImageRenderer for export, PhotosPicker versus PhotoKit. Also when a scrolling grid blows its memory budget, or a third-party image loader needs justifying."
 license: MIT
 tags: [images]
 x-skills-master:
@@ -15,7 +15,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/photokit
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

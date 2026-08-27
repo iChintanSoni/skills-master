@@ -1,6 +1,6 @@
 ---
 name: car-app-library
-description: Covers building in-car experiences with the Jetpack Car App Library — CarAppService and Session lifecycle, the template model (ListTemplate, PaneTemplate, NavigationTemplate, GridTemplate), Screen and ScreenManager navigation, host constraints and template limits, and sharing one codebase between Android Auto and Automotive OS. Use when building any app that must run inside a car head unit, navigate between car screens, present media or point-of-interest lists in the car UI, or add turn-by-turn navigation within a vehicle display.
+description: "Use when building an app that runs inside a car head unit with the Jetpack Car App Library: CarAppService and Session lifecycle, the template model (ListTemplate, PaneTemplate, NavigationTemplate, GridTemplate), Screen and ScreenManager navigation, host template limits, or sharing one codebase between Android Auto and Automotive OS."
 license: MIT
 globs:
   - "**/*.kt"
@@ -17,7 +17,7 @@ x-skills-master:
     - https://developer.android.com/jetpack/androidx/releases/car-app
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

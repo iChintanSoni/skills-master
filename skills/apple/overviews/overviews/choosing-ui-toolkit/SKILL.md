@@ -1,6 +1,6 @@
 ---
 name: choosing-ui-toolkit
-description: Decision router for selecting SwiftUI versus UIKit or AppKit when building a screen, feature, or whole app in the 2026 (OS 26) cycle, including when to mix toolkits through interop. Use when starting a new app or screen and deciding the primary toolkit, when weighing a SwiftUI rewrite of UIKit or AppKit code, when an advanced or legacy requirement (deep text editing, precise scroll or collection control, document-based macOS apps, fine-grained drawing) tempts a drop to UIKit or AppKit, or when wrapping one toolkit inside another with representable types or hosting controllers.
+description: "Use when choosing between SwiftUI, UIKit and AppKit for a screen, feature or whole app, weighing a SwiftUI rewrite of existing code, judging whether an advanced requirement (deep text editing, precise scroll control, document-based macOS apps) justifies dropping to UIKit or AppKit, or mixing toolkits through representable types and hosting controllers. Decision router for the OS 26 cycle."
 license: MIT
 tags: [architecture]
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/swiftui/uihostingcontroller
   snapshot_date: "2026-08-25"
   stability: contested
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

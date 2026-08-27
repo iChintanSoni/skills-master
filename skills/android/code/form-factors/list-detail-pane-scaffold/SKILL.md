@@ -1,6 +1,6 @@
 ---
 name: list-detail-pane-scaffold
-description: Implements ListDetailPaneScaffold — the canonical two-pane adaptive layout in Jetpack Compose — including ThreePaneScaffoldNavigator for pane navigation, predictive back, single-pane vs dual-pane switching by window size, and preserving selection across config changes. Use when building a list-detail (or similar hierarchical) screen that must adapt between compact phones, large-screen tablets, foldables, and ChromeOS windows.
+description: "Use when building a list-detail or similar hierarchical screen that must adapt between compact phones, tablets, foldables and ChromeOS windows. Implements ListDetailPaneScaffold with ThreePaneScaffoldNavigator, predictive back, single- versus dual-pane switching, and selection preserved across config changes."
 license: MIT
 globs:
   - "**/*.kt"
@@ -17,7 +17,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/layouts/adaptive
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

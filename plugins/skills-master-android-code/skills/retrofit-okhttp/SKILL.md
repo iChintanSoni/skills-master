@@ -1,9 +1,9 @@
 ---
 name: retrofit-okhttp
-description: Covers HTTP networking with Retrofit and OkHttp — defining service interfaces, suspend functions and Flow, converters (kotlinx.serialization/Moshi), interceptors and auth, timeouts and caching, and error/exception handling. Use when building or reviewing an Android network layer, wiring a REST API, adding auth headers, handling HTTP errors, or configuring caching and timeouts.
+description: "Use when building or reviewing an Android network layer with Retrofit and OkHttp: service interfaces, suspend functions and Flow, kotlinx.serialization or Moshi converters, interceptors and auth headers, timeouts, caching, and HTTP error handling."
 license: MIT
 metadata:
-  version: "1.0.2"
+  version: "1.0.3"
   snapshot-date: "2026-08-25"
 ---
 

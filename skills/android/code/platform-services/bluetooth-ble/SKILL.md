@@ -1,6 +1,6 @@
 ---
 name: bluetooth-ble
-description: Covers Android Bluetooth Low Energy — Android 12+ runtime permissions (BLUETOOTH_SCAN/CONNECT/ADVERTISE), scanning with BluetoothLeScanner, connecting as a GATT client, discovering services and characteristics, read/write/notify, connection lifecycle and reliability patterns, and an overview of the peripheral (advertiser) role. Use when scanning for BLE peripherals, connecting to GATT servers, streaming characteristic notifications, or advertising as a BLE peripheral on Android.
+description: "Use when scanning for Bluetooth Low Energy peripherals on Android, connecting as a GATT client, discovering services and characteristics, reading, writing or streaming notifications, handling connection lifecycle and reliability, or advertising as a peripheral. Covers the Android 12+ BLUETOOTH_SCAN/CONNECT/ADVERTISE runtime permissions."
 license: MIT
 globs:
   - "**/*.kt"
@@ -17,7 +17,7 @@ x-skills-master:
     - https://developer.android.com/develop/connectivity/bluetooth/ble/connect-gatt-server
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.2
+  version: 1.0.3
 ---
 
 ## When to use

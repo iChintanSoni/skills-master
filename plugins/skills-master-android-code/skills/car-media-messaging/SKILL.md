@@ -1,9 +1,9 @@
 ---
 name: car-media-messaging
-description: Covers media and messaging apps for Android Auto and Automotive OS — MediaBrowserService for browsable audio playback, the Car App Library messaging template, notification-based messaging with CarCompatExtender reply and mark-as-read actions, and voice-first interaction patterns. Use when building an audio, podcast, or messaging app that must run on the car dashboard through Android Auto or a built-in Automotive OS head unit.
+description: "Use when building an audio, podcast or messaging app for Android Auto or Automotive OS: MediaBrowserService for browsable playback, the Car App Library messaging template, notification-based messaging with reply and mark-as-read actions, and voice-first interaction patterns."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-06-06"
 ---
 
