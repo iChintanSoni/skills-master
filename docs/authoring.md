@@ -38,6 +38,12 @@ x-skills-master:
 ---
 ```
 
+### This is a superset of the spec, on purpose
+
+Three of those keys — `globs`, `tags`, `x-skills-master` — are **not** Agent Skills spec fields, and the spec's reference validator rejects a file carrying them. That is expected: `skills/` is the authoring format, and the compiler strips or translates every non-spec key on the way out. Conformance is enforced on the **emitted** projections, never here. Don't "fix" a skill to satisfy a spec validator pointed at the source tree — see [architecture.md](architecture.md#the-spec-boundary).
+
+Two authored facts do reach consumers as spec-legal fields: `license` passes through verbatim, and `version` + `snapshot_date` are re-emitted inside the spec's `metadata` map.
+
 ### Why the license is per skill
 
 A skill installs as a **standalone directory** — a plugin's `skills/<name>/`, a zip uploaded to claude.ai, a folder copied into someone's `.claude/skills/`. The repository `LICENSE` sits next to the source tree and is not part of what ships, so the terms have to travel inside the skill. `license` is a spec field, and the Claude projection carries it verbatim.

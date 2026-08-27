@@ -36,7 +36,43 @@ Forcing symmetry here would misrepresent both design systems and duplicate subst
 
 `code` categories diverge for the same reason, though less sharply — they track each platform's framework boundaries. Genuine coverage gaps (a topic neither the vendor's structure nor ours accounts for) are still worth closing; mirror-image category names are not.
 
-The canonical format is Claude's Agent Skills `SKILL.md` treated as a **strict superset**. Our metadata lives in a namespaced `x-skills-master:` frontmatter block that is stripped from every projection. See [authoring.md](authoring.md) for the full schema.
+## The spec boundary
+
+`skills/` is a superset; the projections are the conformance surface.
+
+The canonical format is the [Agent Skills specification](https://agentskills.io/specification)'s `SKILL.md` treated as a **strict superset**. Authored frontmatter carries three top-level keys the spec does not define — `globs`, `tags`, and the namespaced `x-skills-master:` block — all of which are stripped or translated on the way out. See [authoring.md](authoring.md) for the full schema.
+
+**So the canonical tree does not validate against the spec, by design.** Point the spec's reference validator at `skills/` and it fails on the very first skill — twice over, for two independent reasons:
+
+```
+$ python3 scripts/spec-validate.py skills
+✗ skills/android/code/architecture/android-activities
+    - Invalid YAML in frontmatter: … line 7, column 7:
+        tags: [task-affinity]
+      Found ugly disallowed JSONesque flow mapping
+```
+
+The reference implementation parses with **strictyaml**, a restricted dialect that rejects flow sequences outright — so `tags: [swiftui, monetization]` and `platforms: [apple, ios]` are refused before any field is inspected. Rewrite those in block style and the second reason surfaces:
+
+```
+    - Unexpected fields in frontmatter: globs, tags, x-skills-master.
+      Only ['allowed-tools', 'compatibility', 'description', 'license',
+      'metadata', 'name'] are allowed.
+```
+
+Both are the expected result, not bugs to file. The spec's stated home for non-spec properties is its `metadata` map, which is flat **string→string** — it cannot hold `platforms: [ios, ipados]`, `requires: {ios: "17"}`, `pairs_with`, or `sources` without flattening structured facets into strings to satisfy a validator no agent ever runs against the source tree. The whole point of the compile step is that agents consume the **projections**, never `skills/`.
+
+What the projections carry is exactly what the spec defines:
+
+| | canonical `skills/` | emitted `.claude/skills/`, `plugins/` |
+|---|---|---|
+| spec fields | `name`, `description`, `license` | `name`, `description`, `license`, `metadata` |
+| non-spec keys | `globs`, `tags`, `x-skills-master` | none |
+| validates against the spec | **no, deliberately** | **yes, enforced in CI** |
+
+`metadata` is where two authored facts re-enter as spec-legal strings: `version` and `snapshot-date`, so an installed skill still says which release it is and when it was last checked. The rest of `x-skills-master` exists to drive *our* tooling — the registry, the taxonomy, the crawl, `pairs_with` integrity — none of which a consuming agent needs.
+
+CI enforces this boundary from the outside: `scripts/spec-validate.py` runs the spec's own reference implementation (`skills-ref`, pinned) over every committed projection — all 434 skill directories — and never over `skills/`. Snapshot tests pin what *we* expect the emitters to write; this pins what the *spec* expects. See [emitters.md](emitters.md#spec-conformance).
 
 ## Progressive disclosure
 

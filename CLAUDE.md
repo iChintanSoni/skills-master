@@ -13,6 +13,8 @@ Two independent halves, and most tasks touch only one:
 
 `docs/architecture.md`, `docs/authoring.md`, and `docs/emitters.md` are the design docs; keep them in sync when changing the pipeline. `docs/taxonomy.md` is the generated catalog.
 
+The authored `skills/` format is a deliberate **superset** of the Agent Skills spec (`globs`, `tags`, `x-skills-master` are ours). The spec's own validator is expected to reject it and is enforced in CI on the *emitted* projections only — don't "fix" a skill to satisfy a validator pointed at the source tree.
+
 ## Commands
 
 pnpm workspace, Node ≥ 22, pnpm via Corepack. Run these from the repo root.
