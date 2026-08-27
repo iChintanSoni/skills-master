@@ -46,6 +46,7 @@ const coverage = readJson("coverage.json");
 const staleness = readJson("staleness.json");
 const links = readJson("links.json");
 const upstream = readJson("upstream.json");
+const footprint = readJson("footprint.json");
 
 const out = [];
 const say = (...lines) => out.push(...lines);
@@ -82,6 +83,9 @@ const headline = [
   coverage ? `**${coverage.total}** skills` : null,
   staleness ? `**${buckets.stale}** stale (>180d)` : null,
   links ? `**${links.dead.length}** dead link(s) of ${links.checked}` : null,
+  footprint
+    ? `listing **${footprint.library.overBudget["200000"]}×** the 200k-context budget`
+    : null,
 ].filter(Boolean);
 say(headline.join(" · "), "");
 
@@ -141,6 +145,60 @@ if (staleness) {
       "",
     );
   }
+}
+
+// ── Listing footprint ───────────────────────────────────────────────────────
+// Descriptions are only worth writing if the agent reads them. Past the
+// listing budget it substitutes a bare `- <name>`, so this reports distance
+// from the cap rather than a raw token total.
+if (footprint) {
+  const b200 = footprint.budgets["200000"];
+  const b1m = footprint.budgets["1000000"];
+  const worst = footprint.plugins[0];
+  const overAt200k = footprint.plugins.filter((p) => p.overBudget["200000"] > 1).length;
+
+  say(
+    "### Always-on listing footprint",
+    "",
+    `Every installed skill puts one \`- <name>: <description>\` line in the agent's ` +
+      `system prompt. Claude Code caps that listing at ` +
+      `\`contextWindow × ${footprint.loader.bytesPerToken} × ${footprint.loader.budgetFraction}\` ` +
+      `— **${b200} bytes** at 200k context, **${b1m}** at 1M — and past the cap it drops ` +
+      `lower-priority entries to a bare \`- <name>\`, description and all.`,
+    "",
+    `**${overAt200k} of ${footprint.plugins.length}** plugins exceed the 200k budget on their own. ` +
+      `Worst: \`${worst.plugin}\` at **${worst.overBudget["200000"]}×**.`,
+    "",
+    "| Plugin | Skills | Listing | ~tokens | ×budget @200k | ×budget @1M |",
+    "|---|---:|---:|---:|---:|---:|",
+    ...footprint.plugins.map(
+      (p) =>
+        `| \`${p.plugin}\` | ${p.skills} | ${p.listingBytes}B | ${p.approxTokens} | ` +
+        `${p.overBudget["200000"] > 1 ? `**${p.overBudget["200000"]}×**` : `${p.overBudget["200000"]}×`} | ` +
+        `${p.overBudget["1000000"] > 1 ? `**${p.overBudget["1000000"]}×**` : `${p.overBudget["1000000"]}×`} |`,
+    ),
+    `| **whole library** | ${footprint.library.skills} | ${footprint.library.listingBytes}B | ` +
+      `${footprint.library.approxTokens} | **${footprint.library.overBudget["200000"]}×** | ` +
+      `**${footprint.library.overBudget["1000000"]}×** |`,
+    "",
+  );
+
+  const capped = footprint.truncatedDescriptions.length;
+  say(
+    `<details><summary>10 longest descriptions</summary>`,
+    "",
+    capped === 0
+      ? `No description hits the per-description cap (\`${footprint.loader.maxDescChars}\` chars) — ` +
+          `the aggregate budget above is the binding constraint, not individual length.`
+      : `**${capped}** description(s) exceed the per-description cap of \`${footprint.loader.maxDescChars}\` chars and are truncated with an ellipsis.`,
+    "",
+    "| Skill | Chars |",
+    "|---|---:|",
+    ...footprint.longestDescriptions.map((r) => `| ${skillLink(r)} | ${r.chars} |`),
+    "",
+    "</details>",
+    "",
+  );
 }
 
 // ── Coverage ────────────────────────────────────────────────────────────────

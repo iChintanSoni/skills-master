@@ -64,6 +64,12 @@ JSON stays as a run artifact. The link check is deliberately **not** `--strict` 
 hosts rate-limit under concurrency and return one-off 404s for live URLs, so a red weekly run
 would just train everyone to ignore it. Re-check any reported dead link by hand before editing.
 
+The report also tracks the **always-on listing footprint**: every installed skill puts one
+`- <name>: <description>` line in the agent's system prompt, and Claude Code caps that listing at
+`contextWindow × 4 × 0.01` (8 KB at 200k context). Past the cap it drops lower-priority entries to a
+bare `- <name>` — description gone. Seven of eight plugins exceed that on their own today, so a
+description's value depends on the listing fitting, not just on how it is written.
+
 The CLI auto-resolves content in priority order: `--content` → `SKILLS_MASTER_CONTENT` → walk upward for this repo (`package.json` name `skills-master-monorepo` + a `skills/` dir) → remote fetch via `giget`. So inside this repo `--content` is usually optional; the root scripts pass it because their cwd is `packages/cli`.
 
 ## Compiler pipeline
