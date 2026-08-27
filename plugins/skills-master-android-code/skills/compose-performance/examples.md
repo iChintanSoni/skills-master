@@ -1,3 +1,10 @@
+## Contents
+
+- [Stable data model with ImmutableList](#stable-data-model-with-immutablelist)
+- [Deferring animated state reads to layout phase](#deferring-animated-state-reads-to-layout-phase)
+- [derivedStateOf to decouple high-frequency state](#derivedstateof-to-decouple-high-frequency-state)
+- [@Stable wrapper for a third-party unstable type](#stable-wrapper-for-a-third-party-unstable-type)
+
 ## Stable data model with ImmutableList
 
 A realistic message feed where the list parameter is truly stable and the composable can be fully skipped on unrelated state changes.

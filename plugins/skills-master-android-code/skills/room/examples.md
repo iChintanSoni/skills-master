@@ -1,3 +1,10 @@
+## Contents
+
+- [Notes list with reactive Flow — full ViewModel + Compose screen](#notes-list-with-reactive-flow--full-viewmodel--compose-screen)
+- [One-to-many @Relation — Author with their Books](#one-to-many-relation--author-with-their-books)
+- [Manual migration — adding a column and backfilling data](#manual-migration--adding-a-column-and-backfilling-data)
+- [Room KMP — shared database in commonMain](#room-kmp--shared-database-in-commonmain)
+
 ## Notes list with reactive Flow — full ViewModel + Compose screen
 
 A notes app screen that observes all notes reactively from Room, supports creating and deleting notes, and surfaces loading/error states.

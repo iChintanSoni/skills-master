@@ -1,3 +1,12 @@
+## Contents
+
+- [1. Fake vs mock — prefer a fake for owned interfaces](#1-fake-vs-mock--prefer-a-fake-for-owned-interfaces)
+- [2. MockK for a third-party boundary](#2-mockk-for-a-third-party-boundary)
+- [3. ViewModel with `runTest` and `StandardTestDispatcher`](#3-viewmodel-with-runtest-and-standardtestdispatcher)
+- [4. Testing a `StateFlow` with Turbine](#4-testing-a-stateflow-with-turbine)
+- [5. Testing time-based logic (debounce) with virtual time](#5-testing-time-based-logic-debounce-with-virtual-time)
+- [6. Parameterized test — boundary cases in one block (JUnit 5)](#6-parameterized-test--boundary-cases-in-one-block-junit-5)
+
 ## Examples
 
 Short, focused snippets showing the most common unit-testing patterns for Android Kotlin code.

@@ -1,5 +1,12 @@
 # navigation-compose — examples
 
+## Contents
+
+- [End-to-end type-safe app with nested graphs](#end-to-end-type-safe-app-with-nested-graphs)
+- [Returning a result from a picker screen](#returning-a-result-from-a-picker-screen)
+- [Adaptive navigation scaffold (phone vs. large screen)](#adaptive-navigation-scaffold-phone-vs-large-screen)
+- [ViewModel-driven navigation events](#viewmodel-driven-navigation-events)
+
 ## End-to-end type-safe app with nested graphs
 
 ```kotlin

@@ -277,12 +277,26 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
 
 ## Phase 2 — Progressive-disclosure polish (content, machine-checked by Phase 0)
 
-- [ ] **2.1 Tables of contents for long resource files (M).** Add a short `## Contents`
+- [x] **2.1 Tables of contents for long resource files (M).** Add a short `## Contents`
   block to the 46 resource files over 100 lines (android examples files are the bulk).
   Mechanical, high-leverage for partial reads; add a lint warn (>100 lines, no ToC within
   the first ~15 lines) so the rule outlives the pass. Metadata-only edits do not bump
   `version`/`snapshot_date` (nothing was re-verified) — but note these edits *do* change
   emitted claude-target bytes, so regenerate plugins. *(G4)*
+  **Landed:** lint rule first (Phase 0 discipline), and it fired on exactly the 46 files the
+  audit named — then all 46 were fixed and the library is back to 0 warnings. Sections are
+  the `##` headings where a file has at least two, else the `###`s: `gradle-kotlin-dsl`'s
+  H3s are *filenames inside* two examples, so listing them would have been worse than
+  listing the examples. Anchors follow GitHub's slug algorithm including its double-hyphen
+  artifact for em dashes, and a verification pass confirmed **182 anchors, 0 dead** — a ToC
+  with broken links is worse than no ToC. 5 stray leading blank lines were normalized away.
+  **One file was not a ToC problem at all.** `modularization/examples.md` was 140 lines of
+  raw Kotlin with **no headings and no code fences** — separated by `// ===== EXAMPLE N =====`
+  comments, so every consumer has been rendering it as prose since it was written. Restructured
+  into six fenced `##` sections; a line-by-line diff confirms the code is byte-identical, only
+  the marker comments became headings. Worth noting the linter could not have caught this:
+  it checks that resources are linked and now that they are navigable, but nothing asserts
+  that a file which is entirely code is *marked up* as code.
 - [ ] **2.2 Conditional load hints on resource links (M).** Rephrase the `## References`
   resource entries from bare pointers to trigger-bearing ones, e.g.
   `[examples.md](examples.md) — read when you need full working implementations` /

@@ -1,3 +1,10 @@
+## Contents
+
+- [LaunchedEffect with debounced search](#launchedeffect-with-debounced-search)
+- [DisposableEffect for sensor subscription](#disposableeffect-for-sensor-subscription)
+- [produceState converting a callback API to State](#producestate-converting-a-callback-api-to-state)
+- [snapshotFlow driving analytics from scroll position](#snapshotflow-driving-analytics-from-scroll-position)
+
 ## LaunchedEffect with debounced search
 
 A real-world search bar that debounces user input before hitting a repository, then cancels the in-flight request when the query changes again.

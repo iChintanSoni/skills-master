@@ -1,3 +1,10 @@
+## Contents
+
+- [Open, read, and persist a user-chosen PDF](#open-read-and-persist-a-user-chosen-pdf)
+- [Share a private file via FileProvider](#share-a-private-file-via-fileprovider)
+- [Save a document to a user-chosen location](#save-a-document-to-a-user-chosen-location)
+- [Traverse a user-chosen directory tree](#traverse-a-user-chosen-directory-tree)
+
 ## Open, read, and persist a user-chosen PDF
 
 ```kotlin

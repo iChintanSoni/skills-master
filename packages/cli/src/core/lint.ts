@@ -28,6 +28,9 @@ const CANONICAL_HEADINGS = [
 ];
 const MAX_BODY_LINES = 500;
 const WARN_BODY_LINES = 450;
+/** Resource files past this length need a table of contents (Anthropic's guidance). */
+const TOC_REQUIRED_LINES = 100;
+const TOC_HEADING_RE = /^##\s+Contents\s*$/m;
 
 /**
  * Claude's platform rejects a skill whose `name` or `description` contains XML
@@ -210,12 +213,24 @@ export function lintSkills(skillsRoot: string): LintResult {
       ["checklist", "checklist.md"],
     ];
     for (const [key, file] of l3) {
-      if (
-        s.resources?.[key] != null &&
-        !s.body.includes(`(${file}`) &&
-        !s.body.includes(`(./${file}`)
-      ) {
+      const text = s.resources?.[key];
+      if (text == null) continue;
+      if (!s.body.includes(`(${file}`) && !s.body.includes(`(./${file}`)) {
         push("warn", `${file} exists but is never linked from the SKILL.md body`);
+      }
+
+      // A long resource is often previewed with a partial read (`head -100`),
+      // which shows the first section and nothing about what follows. A table
+      // of contents in that window is what makes the rest discoverable.
+      const lines = text.split("\n");
+      if (
+        lines.length > TOC_REQUIRED_LINES &&
+        !TOC_HEADING_RE.test(lines.slice(0, 15).join("\n"))
+      ) {
+        push(
+          "warn",
+          `${file} is ${lines.length} lines with no "## Contents" section in its first 15 lines — a partial read cannot see its full scope`,
+        );
       }
     }
 

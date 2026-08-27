@@ -1,5 +1,12 @@
 # runtime-permissions — examples
 
+## Contents
+
+- [Single permission with full rationale and Settings fallback](#single-permission-with-full-rationale-and-settings-fallback)
+- [Multiple permissions — microphone and camera for a video call](#multiple-permissions--microphone-and-camera-for-a-video-call)
+- [Location with precise vs approximate handling](#location-with-precise-vs-approximate-handling)
+- [POST_NOTIFICATIONS on Android 13+ with version guard](#post_notifications-on-android-13-with-version-guard)
+
 ## Single permission with full rationale and Settings fallback
 
 ```kotlin

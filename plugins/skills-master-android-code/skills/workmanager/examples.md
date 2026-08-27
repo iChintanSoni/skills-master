@@ -1,3 +1,10 @@
+## Contents
+
+- [Scenario 1: Uploading user-generated content with retry and progress](#scenario-1-uploading-user-generated-content-with-retry-and-progress)
+- [Scenario 2: Multi-step data pipeline with chaining](#scenario-2-multi-step-data-pipeline-with-chaining)
+- [Scenario 3: Periodic background sync with ExistingWorkPolicy.KEEP](#scenario-3-periodic-background-sync-with-existingworkpolicykeep)
+- [Scenario 4: Expedited work for a user-initiated action](#scenario-4-expedited-work-for-a-user-initiated-action)
+
 ## Scenario 1: Uploading user-generated content with retry and progress
 
 A photo-sharing app needs to upload selected photos to a remote server. Uploads must survive the user switching apps mid-upload, respect network availability, and report progress back to the UI.

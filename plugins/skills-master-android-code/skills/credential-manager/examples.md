@@ -1,3 +1,10 @@
+## Contents
+
+- [Example 1: Full passkey registration flow](#example-1-full-passkey-registration-flow)
+- [Example 2: Returning-user sign-in with layered fallbacks](#example-2-returning-user-sign-in-with-layered-fallbacks)
+- [Example 3: Google sign-in with new-account fallback](#example-3-google-sign-in-with-new-account-fallback)
+- [Example 4: Sign-out that clears all credential state](#example-4-sign-out-that-clears-all-credential-state)
+
 ## Example 1: Full passkey registration flow
 
 A user has just created an account with username and password. After the backend confirms the account, the app immediately offers to upgrade to a passkey — no separate settings screen required.

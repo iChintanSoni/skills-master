@@ -1,3 +1,9 @@
+## Contents
+
+- [Example: Shared repository with Ktor and kotlinx.serialization](#example-shared-repository-with-ktor-and-kotlinxserialization)
+- [Example: expect/actual for platform-specific file storage](#example-expectactual-for-platform-specific-file-storage)
+- [Example: Room KMP database in commonMain](#example-room-kmp-database-in-commonmain)
+
 ## Example: Shared repository with Ktor and kotlinx.serialization
 
 A `ProductRepository` that lives entirely in `commonMain`, uses Ktor for HTTP, and returns a `Flow` of domain models. Both Android and iOS consume it without any platform-specific code in the business layer.

@@ -1,3 +1,10 @@
+## Contents
+
+- [Example: ComposeView in a Fragment with shared ViewModel](#example-composeview-in-a-fragment-with-shared-viewmodel)
+- [Example: AndroidView for a retained legacy Map widget](#example-androidview-for-a-retained-legacy-map-widget)
+- [Example: Bridging a Material View theme to MaterialTheme](#example-bridging-a-material-view-theme-to-materialtheme)
+- [Example: Cutting over to Navigation Compose after screen migration](#example-cutting-over-to-navigation-compose-after-screen-migration)
+
 ## Example: ComposeView in a Fragment with shared ViewModel
 
 A Fragment that hosts Compose content while sharing a ViewModel scoped to the Activity, allowing the Compose screen and any sibling Fragment to observe the same state.

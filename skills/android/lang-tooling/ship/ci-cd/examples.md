@@ -1,3 +1,10 @@
+## Contents
+
+- [Minimal CI workflow (GitHub Actions)](#minimal-ci-workflow-github-actions)
+- [Signed release build + Play upload workflow](#signed-release-build--play-upload-workflow)
+- [Gradle Managed Devices — multi-device group](#gradle-managed-devices--multi-device-group)
+- [Gradle build-cache remote node setup (settings.gradle.kts)](#gradle-build-cache-remote-node-setup-settingsgradlekts)
+
 ## Minimal CI workflow (GitHub Actions)
 
 ```yaml

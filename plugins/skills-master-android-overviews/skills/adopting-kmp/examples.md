@@ -1,3 +1,9 @@
+## Contents
+
+- [Example: Shared domain model and repository interface](#example-shared-domain-model-and-repository-interface)
+- [Example: Incremental rollout — Android-only first, then iOS](#example-incremental-rollout--android-only-first-then-ios)
+- [Example: Evaluating KMP fit — decision walkthrough](#example-evaluating-kmp-fit--decision-walkthrough)
+
 ## Example: Shared domain model and repository interface
 
 A team building a finance app shares its account domain model and repository contract so both Android and iOS use the same types, validation, and coroutine-based fetch API.

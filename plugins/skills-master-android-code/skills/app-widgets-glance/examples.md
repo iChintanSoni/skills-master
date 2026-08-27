@@ -1,3 +1,9 @@
+## Contents
+
+- [Step counter widget with periodic WorkManager refresh](#step-counter-widget-with-periodic-workmanager-refresh)
+- [Weather widget with deep-link action and custom DataStore state](#weather-widget-with-deep-link-action-and-custom-datastore-state)
+- [Notes widget with item list and LazyColumn equivalent](#notes-widget-with-item-list-and-lazycolumn-equivalent)
+
 ## Step counter widget with periodic WorkManager refresh
 
 A realistic home-screen widget that counts steps, stores state in DataStore Preferences, and schedules a 15-minute periodic WorkManager job to refresh data in the background. Demonstrates `SizeMode.Responsive`, `actionRunCallback`, and state update patterns.

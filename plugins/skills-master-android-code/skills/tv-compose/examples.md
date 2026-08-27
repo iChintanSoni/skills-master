@@ -1,3 +1,10 @@
+## Contents
+
+- [Example: Full browse screen with sidebar navigation](#example-full-browse-screen-with-sidebar-navigation)
+- [Example: Auto-pausing Carousel with focus awareness](#example-auto-pausing-carousel-with-focus-awareness)
+- [Example: Detail screen with focus-restoring action row and related content](#example-detail-screen-with-focus-restoring-action-row-and-related-content)
+- [Example: Migrating a Leanback BrowseSupportFragment to Compose](#example-migrating-a-leanback-browsesupportfragment-to-compose)
+
 ## Example: Full browse screen with sidebar navigation
 
 A production-style browse screen with a collapsible `NavigationDrawer` sidebar and multiple content rows backed by a Hilt ViewModel.

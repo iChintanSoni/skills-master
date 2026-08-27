@@ -1,3 +1,11 @@
+## Contents
+
+- [1. Data layer — repository with mapping](#1-data-layer--repository-with-mapping)
+- [2. Domain layer — use case that earns its keep](#2-domain-layer--use-case-that-earns-its-keep)
+- [3. MVVM — direct event-handler functions](#3-mvvm--direct-event-handler-functions)
+- [4. MVI — sealed intent, single entry point](#4-mvi--sealed-intent-single-entry-point)
+- [5. One-off UI effects via Channel](#5-one-off-ui-effects-via-channel)
+
 ## Examples
 
 Minimal, original snippets showing the layered architecture in practice, contrasting MVVM and MVI in the UI layer, and illustrating the domain layer boundary.

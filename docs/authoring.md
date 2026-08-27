@@ -86,6 +86,21 @@ The primary Documentation/HIG URLs should also appear in the `sources` frontmatt
 5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. See [What earns a pair](#what-earns-a-pair) for what belongs in the list.
 6. **L2/L3 split.** When the body grows past ~500 lines, move long examples → `examples.md`, step lists → `checklist.md`, and deep reference tables → `reference.md` (a defined slot no skill currently uses — prefer the first two unless a true lookup table outgrows them), and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
 
+## Resource files over 100 lines need a `## Contents`
+
+An agent that opens `examples.md` often previews it — `head -100`, or a partial read — and sees the first section plus no evidence that four more exist. So any `reference.md` / `examples.md` / `checklist.md` past **100 lines** opens with a table of contents, and the linter warns when one is missing (it looks only at the first 15 lines: a ToC below the fold is a ToC nobody reads).
+
+```markdown
+## Contents
+
+- [Streaming text summarization in a Compose screen](#streaming-text-summarization-in-a-compose-screen)
+- [Proofreading with diff highlights](#proofreading-with-diff-highlights)
+```
+
+List the file's `##` sections. If it has fewer than two of those but several `###` ones — a single `## Examples` over five numbered cases, say — list the `###`s instead, since those are the real sections. Anchors follow GitHub's slug rules: lowercase, punctuation dropped, spaces to hyphens (so `Example 1 — Foo` becomes `#example-1--foo`, with the doubled hyphen left by the em dash).
+
+Adding or updating a ToC is a metadata-only edit: it does not move `version` or `snapshot_date`, but it **does** change emitted bytes, so regenerate `plugins/`.
+
 ## What `tags` are for
 
 `tags` feed exactly one thing: `skills-master search`, which matches a query against the

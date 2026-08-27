@@ -1,3 +1,10 @@
+## Contents
+
+- [Adaptive HLS playlist with live progress tracking](#adaptive-hls-playlist-with-live-progress-tracking)
+- [Widevine DRM with custom licence headers](#widevine-drm-with-custom-licence-headers)
+- [Manual track selection (audio language switching)](#manual-track-selection-audio-language-switching)
+- [Picture-in-Picture on large screens and foldables](#picture-in-picture-on-large-screens-and-foldables)
+
 ## Adaptive HLS playlist with live progress tracking
 
 ```kotlin

@@ -1,3 +1,10 @@
+## Contents
+
+- [Flexible in-app update with Kotlin coroutines](#flexible-in-app-update-with-kotlin-coroutines)
+- [In-app review after a meaningful user action](#in-app-review-after-a-meaningful-user-action)
+- [Play Integrity token request and server-side verification](#play-integrity-token-request-and-server-side-verification)
+- [Staged rollout with Gradle Play Publisher (CI)](#staged-rollout-with-gradle-play-publisher-ci)
+
 ## Flexible in-app update with Kotlin coroutines
 
 Check for an available update at app start and download it in the background. When the download is complete, prompt the user to install without interrupting their current task.

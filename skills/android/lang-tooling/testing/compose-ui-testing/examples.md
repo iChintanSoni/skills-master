@@ -1,5 +1,12 @@
 # compose-ui-testing — examples
 
+## Contents
+
+- [Full screen test with a fake ViewModel](#full-screen-test-with-a-fake-viewmodel)
+- [Scrollable list with performScrollToKey](#scrollable-list-with-performscrolltokey)
+- [Clock control for animation-gated state](#clock-control-for-animation-gated-state)
+- [Testing a custom stateless composable with merged and unmerged trees](#testing-a-custom-stateless-composable-with-merged-and-unmerged-trees)
+
 ## Full screen test with a fake ViewModel
 
 A login screen tested end-to-end using a hand-rolled fake ViewModel, covering idle, loading, and error states.

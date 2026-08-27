@@ -1,3 +1,8 @@
+## Contents
+
+- [Example: Minimal single-module app](#example-minimal-single-module-app)
+- [Example: Multi-module project with convention plugins](#example-multi-module-project-with-convention-plugins)
+
 ## Example: Minimal single-module app
 
 A single-module Android app with Compose and version catalog from scratch.

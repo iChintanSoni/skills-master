@@ -1,3 +1,10 @@
+## Contents
+
+- [Full repository with sealed result, auth interceptor, and token refresh](#full-repository-with-sealed-result-auth-interceptor-and-token-refresh)
+- [Disk cache with stale-while-revalidate strategy](#disk-cache-with-stale-while-revalidate-strategy)
+- [Multipart file upload with progress tracking](#multipart-file-upload-with-progress-tracking)
+- [Paginated Flow with Paging 3 and a Retrofit PagingSource](#paginated-flow-with-paging-3-and-a-retrofit-pagingsource)
+
 ## Full repository with sealed result, auth interceptor, and token refresh
 
 A realistic `NewsRepository` backed by a Retrofit service, an `AuthInterceptor` that attaches a Bearer token, and an `Authenticator` that refreshes an expired token before retrying.

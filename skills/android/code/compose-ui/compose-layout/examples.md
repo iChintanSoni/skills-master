@@ -1,3 +1,10 @@
+## Contents
+
+- [Adaptive two-pane layout with BoxWithConstraints](#adaptive-two-pane-layout-with-boxwithconstraints)
+- [Custom Layout — vertical equal-spacing grid](#custom-layout--vertical-equal-spacing-grid)
+- [SubcomposeLayout — bottom-sheet with dynamic peek height](#subcomposelayout--bottom-sheet-with-dynamic-peek-height)
+- [Intrinsics — equal-height row of cards](#intrinsics--equal-height-row-of-cards)
+
 ## Adaptive two-pane layout with BoxWithConstraints
 
 A detail screen that shows a list-detail side-by-side on wide screens and a stacked arrangement on compact screens.

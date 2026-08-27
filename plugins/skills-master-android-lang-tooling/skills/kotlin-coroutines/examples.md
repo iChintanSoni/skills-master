@@ -1,3 +1,10 @@
+## Contents
+
+- [Fetching data with error handling in a ViewModel](#fetching-data-with-error-handling-in-a-viewmodel)
+- [Parallel independent API calls with supervisorScope](#parallel-independent-api-calls-with-supervisorscope)
+- [CPU-bound work with cancellation cooperation](#cpu-bound-work-with-cancellation-cooperation)
+- [Lifecycle-aware Flow collection in a Composable](#lifecycle-aware-flow-collection-in-a-composable)
+
 ## Fetching data with error handling in a ViewModel
 
 A realistic ViewModel that loads a paginated list, handles errors distinctly from cancellation, and exposes a `UiState` sealed class to the UI layer.

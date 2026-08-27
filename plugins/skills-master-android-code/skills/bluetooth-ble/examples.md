@@ -1,3 +1,10 @@
+## Contents
+
+- [Scanning for a BLE peripheral by service UUID](#scanning-for-a-ble-peripheral-by-service-uuid)
+- [Connecting to a GATT server and enabling notifications](#connecting-to-a-gatt-server-and-enabling-notifications)
+- [Full ViewModel + Compose integration with connection state](#full-viewmodel--compose-integration-with-connection-state)
+- [Acting as a BLE peripheral (advertiser + GATT server)](#acting-as-a-ble-peripheral-advertiser--gatt-server)
+
 ## Scanning for a BLE peripheral by service UUID
 
 Wraps `BluetoothLeScanner` in a `callbackFlow` so scan results arrive as a `Flow<ScanResult>`. The ViewModel starts and stops the scan based on lifecycle, and exposes a list of discovered devices to the Compose UI.

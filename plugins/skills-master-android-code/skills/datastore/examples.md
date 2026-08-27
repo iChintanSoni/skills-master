@@ -1,3 +1,10 @@
+## Contents
+
+- [Preferences DataStore with Hilt — full wiring](#preferences-datastore-with-hilt--full-wiring)
+- [Proto DataStore — typed schema with versioning](#proto-datastore--typed-schema-with-versioning)
+- [Migrating from SharedPreferences](#migrating-from-sharedpreferences)
+- [Unit testing DataStore with in-memory storage](#unit-testing-datastore-with-in-memory-storage)
+
 ## Preferences DataStore with Hilt — full wiring
 
 A complete setup showing the Hilt module, repository, ViewModel, and Composable for a settings screen that persists theme and notification preferences.
