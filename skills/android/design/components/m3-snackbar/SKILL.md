@@ -1,6 +1,6 @@
 ---
 name: m3-snackbar
-description: "Design critique and recommendations for Material 3 Snackbars on Android. Use when reviewing or designing brief transient feedback messages, deciding whether a snackbar is the right feedback pattern at all, choosing action label copy, timing duration, handling placement relative to a floating action button, and knowing when a dialog, banner, or inline message is a better fit. Produces UX guidance, not code."
+description: "Use when reviewing or designing brief transient feedback: whether a snackbar is the right pattern at all, action label copy, timing and duration, placement relative to a floating action button, and when a dialog, banner or inline message fits better. M3 design critique, not code."
 license: MIT
 tags: []
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components/snackbar
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

@@ -1,6 +1,6 @@
 ---
 name: m3-selection-controls
-description: "Design critique and recommendations for Material 3 selection controls on Android: checkbox (including tri-state), radio button, and switch — when each control fits, single vs multiple selection, label placement and tap targets, and the distinction between immediate effect (switch) and deferred/confirmed effect (checkbox). Use when reviewing or specifying selection controls in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code."
+description: "Use when reviewing or specifying selection controls — checkbox (including tri-state), radio button and switch: when each fits, single versus multiple selection, label placement and tap targets, and immediate effect (switch) versus deferred or confirmed effect (checkbox). M3 design critique, not code."
 license: MIT
 tags: [forms]
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://m3.material.io/components/switch/overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

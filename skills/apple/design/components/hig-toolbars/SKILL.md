@@ -1,6 +1,6 @@
 ---
 name: hig-toolbars
-description: "Applies Apple Human Interface Guidelines to toolbars — placement (top vs bottom), grouping related controls, prioritizing the most-used actions, overflow handling, icon-only vs labeled items, and the Liquid Glass toolbar treatment in the 26 design cycle. Use when designing or reviewing a toolbar, deciding which actions earn a spot on the bar, choosing top vs bottom placement, or critiquing a glass toolbar's grouping and hierarchy. Produces design critique, not code."
+description: "Use when designing or reviewing a toolbar: which actions earn a spot on the bar, top versus bottom placement, grouping related controls, overflow handling, icon-only versus labelled items, and the Liquid Glass toolbar treatment. HIG design critique, not code."
 license: MIT
 tags: []
 x-skills-master:
@@ -15,7 +15,7 @@ x-skills-master:
     - https://developer.apple.com/wwdc26/guides/design/
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.1.1
+  version: 1.1.2
 ---
 
 ## When to use

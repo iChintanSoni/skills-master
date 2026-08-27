@@ -1,6 +1,6 @@
 ---
 name: hig-snippets
-description: "Applies Apple Human Interface Guidelines to snippets — the compact views Siri, Spotlight, and the Shortcuts app show when an app intent runs. Covers confirmation versus result snippets, the dialogue/custom-view/system-button anatomy, the 400-point height budget, legibility over the system background, descriptive confirmation button labels, and when to deep-link instead of adding detail. Use when designing or reviewing a snippet for an App Intents action, deciding between confirmation and result presentation, or critiquing snippet layout and content density. Produces design critique, not code."
+description: "Use when designing or reviewing a snippet — the compact view Siri, Spotlight and Shortcuts show when an App Intent runs: confirmation versus result presentation, the dialogue/custom-view/system-button anatomy, the 400-point height budget, legibility, and when to deep-link instead. HIG design critique, not code."
 license: MIT
 tags: []
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.apple.com/documentation/appintents
   snapshot_date: "2026-08-25"
   stability: emerging
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

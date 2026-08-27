@@ -424,10 +424,22 @@ is ~26k agent invocations per iteration — not a thing to run wholesale. Sample
   36 skills at 15,198 B and needs a **47%** cut — with a median description already at 380
   characters, that means gutting all 36 to ~200. The category is simply too large; the real
   remedy is splitting it (a taxonomy change, and a decision), not shorter prose.
-  **Still to do, and achievable:** `apple/design/components` (1.38×, fits at a ~360-char
-  cap) and `android/design/components` (1.43×, needs ~300). That is 46 more rewrites —
-  deliberately left for a follow-up rather than bundled here, because 67 hand-edited
-  descriptions in one diff is not reviewable.
+  **Follow-up landed: the two design categories, 41 more rewrites.**
+  `apple/design/components` 11,029 → 6,443 B (0.81×), `android/design/components`
+  11,478 → 7,562 B (0.95×). **37 of 38 units now fit**, up from 32 at the start of 3.3.
+  Those two shared a house style whose fat was visible once measured: a platform
+  enumeration ("across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS"), a preamble naming
+  the design system, and a closing sentence explaining the output is critique rather than
+  code. The last of those is a real discriminator against the code twin, so it was
+  *shortened* to "HIG design critique, not code" rather than dropped — and the
+  `hig-sheets` / `swiftui-sheets` / `m3-sheets` trio still reads distinctly.
+  **The obvious risk — that trimming costs a skill its trigger — was tested, not asserted.**
+  A query set for `m3-dialogs` (493 → 325 characters) against its interruption-family
+  neighbours scored **100% trigger, 0% false-fire** on a 4-session run: the sheet query went
+  to `m3-sheets` and the undo query to `m3-snackbar`. That is also 3.4's policy working as
+  intended — a description change shipping with the evidence that it still fires.
+  **One category remains over budget and will stay there:** `apple/code/app-frameworks` at
+  1.90×. Splitting it is the remedy, and that is a taxonomy decision.
 - [x] **3.4 Description policy for new skills (S).** authoring.md: new skills in ambiguous
   territory ship with a query set and a harness run in the PR. Cheap at one-skill scale,
   and it stops the library from re-accumulating unmeasured descriptions.

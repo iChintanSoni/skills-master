@@ -3831,13 +3831,13 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and guidance for iOS/iPadOS action sheets (SwiftUI confirmation dialogs): presenting a short set of choices tied to a user-initiated action, ordering options, marking and placing the destructive choice, offering Cancel on iPhone, and choosing between an action sheet, a menu, and an alert. Use when reviewing a delete/discard/share flow, a multiple-choice prompt, a confirmation step, or any moment that asks the user to confirm an intentional action, and you need HIG-grounded design recommendations rather than code.",
+      "description": "Use when reviewing a delete, discard or share flow, a multiple-choice prompt, or any moment asking the user to confirm an intentional action: ordering options, marking and placing the destructive choice, Cancel on iPhone, and action sheet versus menu versus alert. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "swiftui-sheets"
@@ -3854,7 +3854,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and recommendations for alerts on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing an alert, confirmation, or interruption, deciding whether an alert is warranted at all, writing a clear title and concise optional message, choosing one or two buttons and labeling them with specific verbs, emphasizing the safe default action and marking destructive actions, and avoiding alert fatigue. Covers the 26 design cycle with Liquid Glass alerts that morph from their presenting control. Produces UX guidance, not code.",
+      "description": "Use when reviewing or designing an alert, confirmation or interruption: whether an alert is warranted at all, a clear title and concise message, one or two buttons labelled with specific verbs, emphasising the safe default, marking destructive actions, and avoiding alert fatigue. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -3864,7 +3864,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "modality"
       ],
@@ -3989,7 +3989,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design guidance and critique for buttons on Apple platforms: choosing prominence (prominent/filled vs tinted vs bordered vs plain), button roles (default, destructive, cancel), clear concise labels, sizing and 44-point hit targets, link vs button decisions, and Liquid Glass button treatment. Use when designing or reviewing buttons, call-to-action controls, primary/secondary actions, confirmation dialogs, toolbar and tab-bar controls, or deciding between a link and a button on iOS, iPadOS, macOS, watchOS, tvOS, or visionOS.",
+      "description": "Use when designing or reviewing buttons, call-to-action controls, primary and secondary actions, or toolbar and tab-bar controls: prominence (prominent, tinted, bordered, plain), roles (default, destructive, cancel), concise labels, 44-point hit targets, link versus button, and Liquid Glass treatment. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -3999,7 +3999,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "hig-materials-liquid-glass"
@@ -4038,7 +4038,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Applies Apple Human Interface Guidelines to charts and data visualization — choosing the right chart type, labeling axes and values, accessible color that doesn't rely on hue alone, selection and interaction, and chart-versus-table judgment. Use when designing or reviewing a chart, picking a visualization, critiquing a dashboard, or auditing chart accessibility. Produces design critique and recommendations, not code.",
+      "description": "Use when designing or reviewing a chart, picking a visualisation, critiquing a dashboard or auditing chart accessibility: chart type choice, axis and value labelling, colour that does not rely on hue alone, selection and interaction, and chart versus table. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -4048,7 +4048,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "swiftui-charts"
@@ -4095,7 +4095,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and guidance for context menus that surface item-relevant actions via long-press or secondary-click, with optional previews, sensible grouping, destructive-item placement, and discoverability (the same actions must exist elsewhere). Use when reviewing or designing long-press/right-click menus, deciding context menu vs edit menu, choosing menu actions and previews, grouping or marking destructive commands, or auditing discoverability on iOS, iPadOS, macOS, or visionOS. Produces HIG-grounded design recommendations, not code.",
+      "description": "Use when reviewing or designing long-press and right-click menus: context menu versus edit menu, choosing actions and previews, sensible grouping, destructive-item placement, and the discoverability rule that the same actions must exist elsewhere. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -4103,7 +4103,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "hig-menus"
@@ -4504,7 +4504,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Applies Apple Human Interface Guidelines to lists and tables — organizing rows and sections, choosing plain vs grouped vs inset-grouped styles, selection and edit-mode affordances, swipe actions, disclosure/outline hierarchy, and deciding between a list, a collection/grid, and a true multi-column table. Use when designing or reviewing scrollable row-based UI, picking a list style, critiquing swipe actions or reordering, or choosing the right container for a data set. Produces design critique and recommendations, not code.",
+      "description": "Use when designing or reviewing scrollable row-based UI: plain versus grouped versus inset-grouped styles, sections, selection and edit-mode affordances, swipe actions, disclosure hierarchy, and choosing between a list, a grid and a true multi-column table. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -4514,7 +4514,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "collections"
       ],
@@ -4613,7 +4613,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and guidance for menus on Apple platforms following the Human Interface Guidelines. Use when designing or reviewing pull-down menus, pop-up buttons, submenus, or menu items; deciding between a menu, action sheet, or context menu; ordering and grouping commands; styling destructive items; or judging whether a menu is too deep. Produces HIG-grounded UX recommendations and critique, not code.",
+      "description": "Use when designing or reviewing pull-down menus, pop-up buttons, submenus or menu items: ordering and grouping commands, styling destructive items, judging whether a menu is too deep, and menu versus action sheet versus context menu. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -4623,7 +4623,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "ios",
         "macos"
@@ -4724,7 +4724,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and Apple HIG guidance for navigation bars: large vs inline titles, the back affordance, leading and trailing bar buttons, integrating search, keeping the bar uncluttered, and the Liquid Glass bar treatment. Use when reviewing or designing a screen's top navigation bar, deciding between a large or inline title, placing back and bar-button items, adding a search field, or evaluating clutter and translucency on iOS, iPadOS, tvOS, watchOS, or visionOS. Produces design recommendations, not code.",
+      "description": "Use when reviewing or designing a screen's top navigation bar: large versus inline titles, the back affordance, leading and trailing bar buttons, integrating search, keeping the bar uncluttered, and the Liquid Glass bar treatment. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -4733,7 +4733,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "tags": [],
       "pairs_with": [
         "swiftui-navigation"
@@ -4807,7 +4807,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and recommendations for pickers on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or specifying a control that selects one value from a set, choosing between a menu, inline, wheel, segmented, or date/time picker, deciding compact versus expanded presentation, setting a default selection, or judging whether the option set is manageable. Produces UX guidance and critique, not code. Triggers: picker, date picker, time picker, wheel picker, pull-down menu, inline picker, segmented control, dropdown, option selection, choose a value, compact picker.",
+      "description": "Use when reviewing or specifying a control that selects one value from a set: choosing between a menu, inline, wheel, segmented or date/time picker, compact versus expanded presentation, the default selection, and whether the option set is manageable. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -4817,7 +4817,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "liquid-glass"
       ],
@@ -4860,14 +4860,14 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Applies Apple Human Interface Guidelines to popovers — transient, focused content anchored to a control on iPad, Mac, and visionOS, including the pointer arrow, dismissal, sizing, and choosing popover vs sheet vs menu. Use when designing or critiquing a popover, deciding between a popover and a sheet or menu, or reviewing a contextual panel's anchoring and dismissal UX on iPadOS, macOS, or visionOS. Produces design guidance and critique, not code.",
+      "description": "Use when designing or critiquing a popover on iPadOS, macOS or visionOS: anchoring and the pointer arrow, sizing, dismissal, and choosing a popover over a sheet or a menu for transient focused content. HIG design critique, not code.",
       "platforms": [
         "ipados",
         "macos",
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "presentation"
       ],
@@ -4918,7 +4918,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Applies Apple Human Interface Guidelines to progress indicators and gauges — choosing a determinate bar when completion is estimable versus an indeterminate activity spinner, using gauges for levels within a range, giving the wait meaningful context, and not flashing an indicator for near-instant work. Use when designing or reviewing a download, export, sync, upload, or any wait that shows a bar, spinner, or gauge, or when critiquing whether the indicator type, accuracy, and placement are right. Produces design critique and recommendations, not code.",
+      "description": "Use when designing or reviewing a download, export, sync, upload or any wait that shows a bar, spinner or gauge: determinate versus indeterminate, gauges for levels within a range, giving the wait meaningful context, and not flashing an indicator for near-instant work. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -4928,7 +4928,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "status",
         "feedback",
@@ -5003,7 +5003,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and recommendations for the search field component on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing a search field itself: its placement and prominence (toolbar, navigation bar, or search tab), scope bars, search tokens, suggestions and recent searches, the clear affordance, and how the field sits inside Liquid Glass toolbar and tab patterns. Triggers include search bar, scope control, filter chips, search tokens, search-role tab, and the iOS 26 bottom-toolbar search field. Produces UX guidance, not code.",
+      "description": "Use when reviewing or designing a search field itself: placement and prominence (toolbar, navigation bar, or search-role tab), scope bars, search tokens, suggestions and recent searches, the clear affordance, and the iOS 26 bottom-toolbar search field. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -5013,7 +5013,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "hig-searching"
@@ -5061,7 +5061,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design-critique guidance for the Apple Human Interface Guidelines segmented control — a small set of mutually exclusive options of similar weight shown as concise, equal-width segments. Use when designing or reviewing a segmented control, deciding between a segmented control and a menu, pop-up button, picker, or tab view, judging how many segments are too many, or critiquing whether labels mix text and symbols. Produces design recommendations and critique, not code.",
+      "description": "Use when designing or reviewing a segmented control: whether the options are mutually exclusive and of similar weight, how many segments are too many, mixing text and symbols in labels, and segmented control versus menu, pop-up button, picker or tab view. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -5070,7 +5070,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "selection",
         "ios",
@@ -5146,14 +5146,14 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and HIG guidance for sidebars on iPad, Mac, and Vision Pro. Use when reviewing or designing top-level navigation, deciding sidebar vs. tab bar, sectioning destinations with headers, handling selection state, collapse/show behavior, or the sidebar-adaptable relationship with floating tab bars in the Liquid Glass era. Produces UX recommendations, not code.",
+      "description": "Use when reviewing or designing top-level navigation on iPad, Mac or Vision Pro: sidebar versus tab bar, sectioning destinations with headers, selection state, collapse and show behaviour, and the sidebar-adaptable relationship with floating tab bars. HIG design critique, not code.",
       "platforms": [
         "ipados",
         "macos",
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "ipados",
         "macos",
@@ -5233,7 +5233,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Applies Apple Human Interface Guidelines to sliders and steppers — sliders for continuous ranges, steppers for small discrete increments, showing the current value, sensible min/max/step, labels and tick marks, and accessible alternatives. Use when designing or reviewing a value-adjustment control, choosing between a slider and a stepper, or critiquing how a numeric input is presented. Produces design critique, not code.",
+      "description": "Use when designing or reviewing a value-adjustment control: a slider for a continuous range versus a stepper for small discrete increments, showing the current value, sensible min/max/step, labels and tick marks, and accessible alternatives. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -5241,7 +5241,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "controls"
       ],
@@ -5260,14 +5260,14 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Applies Apple Human Interface Guidelines to snippets — the compact views Siri, Spotlight, and the Shortcuts app show when an app intent runs. Covers confirmation versus result snippets, the dialogue/custom-view/system-button anatomy, the 400-point height budget, legibility over the system background, descriptive confirmation button labels, and when to deep-link instead of adding detail. Use when designing or reviewing a snippet for an App Intents action, deciding between confirmation and result presentation, or critiquing snippet layout and content density. Produces design critique, not code.",
+      "description": "Use when designing or reviewing a snippet — the compact view Siri, Spotlight and Shortcuts show when an App Intent runs: confirmation versus result presentation, the dialogue/custom-view/system-button anatomy, the 400-point height budget, legibility, and when to deep-link instead. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
         "macos"
       ],
       "stability": "emerging",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "app-intents",
@@ -5285,7 +5285,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design critique and guidance for tab bars across iPhone, iPad, tvOS, and visionOS, grounded in Apple's Human Interface Guidelines. Use when reviewing or designing top-level navigation, deciding tabs vs sidebar vs hierarchical navigation, choosing how many tabs to show, pairing icons with labels, or adopting the iOS 26 floating Liquid Glass tab bar, the search tab role, or the iPad sidebar-adaptable pattern. Produces UX recommendations and review notes, not code.",
+      "description": "Use when reviewing or designing top-level navigation: tabs versus sidebar versus hierarchical navigation, how many tabs to show, pairing icons with labels, and the iOS 26 floating Liquid Glass tab bar, search tab role and iPad sidebar-adaptable pattern. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -5293,7 +5293,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [
         "ipados"
       ],
@@ -5312,7 +5312,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design-critique guidance for Apple Human Interface Guidelines on text fields across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS, covering clear labels and purposeful placeholders, matching the keyboard and content type to the field, inline validation and error presentation, clear buttons, secure entry for sensitive data, and minimizing required input. Use when critiquing or specifying a single-line text input, sign-in or password field, search box, address or payment row, or any form field, judging label and placeholder wording, keyboard and AutoFill choices, or how errors and required fields are shown. Produces UX critique and recommendations, not code.",
+      "description": "Use when critiquing or specifying a text input — sign-in or password field, search box, address or payment row, any form field: label and placeholder wording, keyboard and content-type choices, AutoFill, inline validation and error presentation, secure entry, and how required fields are shown. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -5322,7 +5322,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "forms"
       ],
@@ -5341,7 +5341,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Design-critique guidance for Apple Human Interface Guidelines toggles and switches across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS, covering when a switch fits an immediate on/off setting, clear labeling of what 'on' means, avoiding switches for actions that need confirmation, and the switch-versus-checkbox choice on Mac. Use when critiquing or specifying a settings row, preferences pane, feature toggle, or control panel, judging whether a switch or a button is the right control, reviewing toggle labels, or deciding between switch and checkbox on macOS. Produces UX critique and recommendations, not code.",
+      "description": "Use when critiquing or specifying a settings row, preferences pane, feature toggle or control panel: whether a switch or a button is the right control, labelling what 'on' means, avoiding switches for actions that need confirmation, and switch versus checkbox on macOS. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -5351,7 +5351,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "controls"
       ],
@@ -5370,7 +5370,7 @@
       "domain": "apple",
       "class": "design",
       "category": "components",
-      "description": "Applies Apple Human Interface Guidelines to toolbars — placement (top vs bottom), grouping related controls, prioritizing the most-used actions, overflow handling, icon-only vs labeled items, and the Liquid Glass toolbar treatment in the 26 design cycle. Use when designing or reviewing a toolbar, deciding which actions earn a spot on the bar, choosing top vs bottom placement, or critiquing a glass toolbar's grouping and hierarchy. Produces design critique, not code.",
+      "description": "Use when designing or reviewing a toolbar: which actions earn a spot on the bar, top versus bottom placement, grouping related controls, overflow handling, icon-only versus labelled items, and the Liquid Glass toolbar treatment. HIG design critique, not code.",
       "platforms": [
         "ios",
         "ipados",
@@ -5380,7 +5380,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "tags": [],
       "pairs_with": [
         "swiftui-toolbars"
@@ -6010,13 +6010,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and Material 3 guidance for top app bars (small, center-aligned, medium, large) and the bottom app bar: choosing the right size, scroll behaviors, title and action placement, overflow menus, and how bars interact with FABs and navigation. Use when reviewing or designing an Android screen's top or bottom app bar, selecting between bar sizes and scroll behaviors, placing navigation icons and action items, or evaluating whether a bottom app bar is the right container for actions and a FAB.",
+      "description": "Use when reviewing or designing a screen's top or bottom app bar: choosing among small, center-aligned, medium and large, scroll behaviours, title and action placement, overflow menus, and how bars interact with FABs and navigation. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "m3-dividers-scaffold",
@@ -6058,13 +6058,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design guidance and critique for Material 3 badges on Android: choosing between small dot badges and large numbered badges, placement on navigation and icon targets, count formatting, and accessible labeling. Use when designing or reviewing notification counts, unread indicators, status dots, or any badge overlaid on a navigation item or action icon in a Compose-first Android UI.",
+      "description": "Use when designing or reviewing notification counts, unread indicators, status dots, or any badge overlaid on a navigation item or action icon: small dot versus large numbered badges, placement, count formatting, and accessible labelling. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "notifications"
       ],
@@ -6083,13 +6083,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design guidance and critique for Material 3 Expressive button groups on Android: choosing connected vs standard groups, orchestrating coordinated interactions and shape morphing, sizing and target rules, and knowing when to group related actions into a single expressive unit instead of placing buttons separately. Use when designing or reviewing toolbars, segmented action sets, filter bars, media controls, or any screen where two or more related actions belong side by side in a cohesive visual cluster.",
+      "description": "Use when designing or reviewing toolbars, segmented action sets, filter bars, media controls, or any screen where related actions belong side by side: connected versus standard groups, coordinated shape morphing, and sizing and target rules. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "m3-buttons",
@@ -6107,13 +6107,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design-critique guidance for Material 3 buttons on Android — covering the five button variants (filled, filled tonal, elevated, outlined, text), emphasis hierarchy, primary-action selection, sizing and shape including M3 Expressive morphing shapes, icons in buttons, and accessible touch targets. Use when reviewing or specifying button choices in a screen, judging whether a variant fits its emphasis level, critiquing hierarchy when multiple buttons compete, or evaluating whether an icon adds clarity or noise. Produces design recommendations and critique, not code.",
+      "description": "Use when reviewing or specifying button choices in a screen: whether a variant (filled, tonal, elevated, outlined, text) fits its emphasis level, hierarchy when several buttons compete, M3 Expressive morphing shapes, icons in buttons, and accessible touch targets. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "material-you"
       ],
@@ -6158,13 +6158,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design guidance and critique for Material 3 cards on Android: choosing between elevated, filled, and outlined card variants, deciding when a card beats a list item or plain surface, clickable vs container cards, sizing and touch targets, and grouping related content and actions. Use when designing or reviewing any card-based layout, content groupings, feed items, dashboard tiles, or deciding between a card and a list row in Compose-first Android UI.",
+      "description": "Use when designing or reviewing a card-based layout, content grouping, feed item or dashboard tile: elevated versus filled versus outlined variants, when a card beats a list row or plain surface, clickable versus container cards, and sizing and touch targets. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "containers"
       ],
@@ -6184,13 +6184,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design judgment and critique for Material 3 carousels on Android: choosing among multi-browse, uncontained, hero, and full-screen layouts, sizing items for clarity and touch, using parallax and peek to signal scrollability, and ensuring accessible scroll experiences. Use when deciding whether a carousel is the right pattern for a content row, when selecting a carousel variant, or when reviewing an existing carousel design for visual hierarchy, item density, and scroll accessibility.",
+      "description": "Use when deciding whether a carousel suits a content row, choosing a variant, or reviewing an existing one: multi-browse, uncontained, hero and full-screen layouts, item sizing for clarity and touch, parallax and peek to signal scrollability, and scroll accessibility. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "scrolling"
       ],
@@ -6233,13 +6233,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design judgment and critique for Material 3 chips on Android — covering the four chip types (assist, filter, input, suggestion), chip group layout, selection state, and when chips outperform buttons, menus, or segmented buttons. Use when choosing the right chip type for a context, reviewing filter or tag patterns, evaluating chip group density and wrapping behavior, or deciding whether chips are the appropriate control at all.",
+      "description": "Use when choosing a chip type for a context, reviewing filter or tag patterns, or judging whether chips are the right control at all: assist, filter, input and suggestion chips, group layout and wrapping, selection state, and chips versus buttons, menus or segmented buttons. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "m3-search",
@@ -6334,13 +6334,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and recommendations for Material 3 dialogs on Android: basic dialogs, full-screen dialogs, when a modal interruption is justified, confirm/dismiss action order and labeling, destructive confirmations, focus and accessibility, and when to choose a bottom sheet or inline message instead. Use when reviewing or designing any dialog, confirmation prompt, or interruption flow in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code.",
+      "description": "Use when reviewing or designing a dialog, confirmation prompt or interruption flow: basic versus full-screen dialogs, whether a modal interruption is justified, confirm and dismiss order and labelling, destructive confirmations, focus and accessibility, and when a bottom sheet fits better. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "modality"
       ],
@@ -6360,13 +6360,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design guidance for Material 3 dividers and the Scaffold screen skeleton: choosing full-width vs inset dividers, knowing when spacing alone is better, and structuring a screen with the Scaffold composable (top app bar, FAB, bottom bar, content slot). Use when reviewing or designing screen layout, deciding whether a visual separator is needed between list items or sections, or evaluating how the top app bar, floating action button, and navigation bar fit together as a cohesive screen frame.",
+      "description": "Use when reviewing screen layout: whether a separator is needed between list items or sections, full-width versus inset dividers, when spacing alone is better, and how Scaffold's top app bar, FAB, bottom bar and content slot fit together. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "m3-app-bars",
@@ -6749,13 +6749,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Applies Material 3 Expressive design guidance to the loading indicator component — choosing it for indefinite waits instead of a linear/circular progress indicator, understanding its animated personality, sizing and placement rules, and when to prefer alternatives such as skeleton screens or determinate progress. Use when designing or reviewing any screen that shows an indefinite wait state, deciding between a loading indicator and other progress patterns, or critiquing the expressiveness and appropriateness of a wait experience in an Android app.",
+      "description": "Use when designing or reviewing a screen with an indefinite wait: choosing the M3 Expressive loading indicator over a linear or circular progress indicator, its animated personality, sizing and placement, and when a skeleton screen or determinate progress answers better. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "feedback"
       ],
@@ -6775,13 +6775,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and recommendations for Material 3 menus and pickers on Android: dropdown menus, exposed dropdown menus, context menus, date pickers (dialog vs input mode), and time pickers — when each variant fits, how to keep selection efficient, and how to adapt across screen sizes. Use when reviewing or designing any in-context option list or date/time selection flow in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code.",
+      "description": "Use when reviewing or designing an in-context option list or a date/time selection: dropdown and exposed dropdown menus, context menus, date pickers (dialog versus input mode), time pickers, keeping selection efficient, and adapting across screen sizes. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "m3-text-fields"
@@ -6823,13 +6823,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Material 3 design guidance for primary navigation on Android: when to use a navigation bar, navigation rail, or navigation drawer based on window size class, how to handle 3-7 top destinations, and how to design adaptive navigation that transitions across compact, medium, and expanded layouts. Use when designing or critiquing app-level navigation structure, evaluating destination count, or auditing active-state treatment and accessibility of primary nav components.",
+      "description": "Use when designing or critiquing app-level navigation: navigation bar versus rail versus drawer by window size class, handling three to seven top destinations, adaptive transitions across compact, medium and expanded layouts, and active-state treatment and accessibility. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "navigation-compose",
@@ -6949,13 +6949,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Material 3 design guidance for progress indicators — choosing between linear and circular, determinate and indeterminate, the M3 Expressive loading indicator, and when to show no indicator at all. Use when designing or reviewing any loading state, background operation, or in-progress feedback in an Android app, or when deciding whether a LinearProgressIndicator, CircularProgressIndicator, or LoadingIndicator is the right choice for a given context.",
+      "description": "Use when designing or reviewing a loading state, background operation or in-progress feedback: linear versus circular, determinate versus indeterminate, the M3 Expressive loading indicator, and when to show no indicator at all. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [],
       "pairs_with": [
         "m3-loading-indicator",
@@ -7020,13 +7020,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design judgment and critique for Material 3 segmented buttons — a compact row of connected options for single-select or multi-select choices within a view. Use when designing or reviewing a segmented button group, deciding between segmented buttons and tabs, chips, or radio buttons, judging correct item counts, and evaluating label and icon clarity on Android.",
+      "description": "Use when designing or reviewing a segmented button group: single-select versus multi-select, judging correct item counts, label and icon clarity, and segmented buttons versus tabs, chips or radio buttons. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "selection"
       ],
@@ -7046,13 +7046,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and recommendations for Material 3 selection controls on Android: checkbox (including tri-state), radio button, and switch — when each control fits, single vs multiple selection, label placement and tap targets, and the distinction between immediate effect (switch) and deferred/confirmed effect (checkbox). Use when reviewing or specifying selection controls in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code.",
+      "description": "Use when reviewing or specifying selection controls — checkbox (including tri-state), radio button and switch: when each fits, single versus multiple selection, label placement and tap targets, and immediate effect (switch) versus deferred or confirmed effect (checkbox). M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "forms"
       ],
@@ -7144,13 +7144,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and guidance for Material 3 bottom sheets and side sheets on Android: choosing between modal and standard variants, setting drag handles and partial expansion, deciding when a sheet beats a dialog, and adapting to large-screen and foldable layouts with side sheets. Use when reviewing a contextual action panel, a filter drawer, a details overlay, or any surface that slides over the main content, and you need M3-grounded design recommendations rather than implementation code.",
+      "description": "Use when reviewing a contextual action panel, filter drawer, details overlay, or any surface that slides over the main content: modal versus standard variants, drag handles and partial expansion, sheet versus dialog, and side sheets on large screens and foldables. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "m3-dialogs"
@@ -7167,13 +7167,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and recommendations for Material 3 sliders on Android — covering continuous and range sliders, discrete steps and tick marks, value labels, when a slider is the right control versus a text field or stepper, and accessible adjustment. Use when reviewing or specifying any slider control in an Android app and you need M3-grounded design judgment rather than implementation code.",
+      "description": "Use when reviewing or specifying a slider: continuous versus range sliders, discrete steps and tick marks, value labels, whether a slider beats a text field or a stepper, and accessible adjustment. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "input"
       ],
@@ -7192,13 +7192,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and recommendations for Material 3 Snackbars on Android. Use when reviewing or designing brief transient feedback messages, deciding whether a snackbar is the right feedback pattern at all, choosing action label copy, timing duration, handling placement relative to a floating action button, and knowing when a dialog, banner, or inline message is a better fit. Produces UX guidance, not code.",
+      "description": "Use when reviewing or designing brief transient feedback: whether a snackbar is the right pattern at all, action label copy, timing and duration, placement relative to a floating action button, and when a dialog, banner or inline message fits better. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "m3-feedback"
@@ -7241,13 +7241,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and guidance for Material 3 tabs on Android, covering primary vs secondary tabs, fixed vs scrollable layout, when tabs complement or replace a navigation bar, label and icon conventions, and content-switching expectations. Use when reviewing or designing in-page navigation, choosing between primary and secondary tab styles, deciding on fixed vs scrollable tab layout, or determining whether tabs are the right component for a given navigational context.",
+      "description": "Use when reviewing or designing in-page navigation: primary versus secondary tabs, fixed versus scrollable layout, when tabs complement or replace a navigation bar, label and icon conventions, and whether tabs suit the navigational context at all. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "material-you"
       ],
@@ -7267,13 +7267,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and guidance for Material 3 text fields on Android — covering filled vs outlined variants, label behavior, placeholder usage, supporting and error text, leading and trailing icons, character counters, and validation feedback patterns. Use when reviewing or specifying text input in a Compose-first Android app, choosing between the two field variants for a surface context, auditing error and validation UX, or determining whether a text field is the right control at all. Produces design judgment and recommendations, not implementation code.",
+      "description": "Use when reviewing or specifying text input: filled versus outlined variants, label behaviour, placeholders, supporting and error text, leading and trailing icons, character counters, validation feedback, and whether a text field is the right control at all. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "compose-text-fields",
@@ -7291,13 +7291,13 @@
       "domain": "android",
       "class": "design",
       "category": "components",
-      "description": "Design critique and guidance for Material 3 tooltips on Android, covering plain vs rich variants, hover and long-press triggers, helper-text conciseness, and the rule that tooltips must never carry information essential to task completion. Use when designing or reviewing tooltip placement, variant selection, and copy for Compose-first Android apps.",
+      "description": "Use when designing or reviewing tooltip placement, variant and copy: plain versus rich tooltips, hover and long-press triggers, helper-text conciseness, and the rule that a tooltip must never carry information essential to completing the task. M3 design critique, not code.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "m3-icon-buttons"

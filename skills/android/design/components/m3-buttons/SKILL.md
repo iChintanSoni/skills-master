@@ -1,6 +1,6 @@
 ---
 name: m3-buttons
-description: "Design-critique guidance for Material 3 buttons on Android — covering the five button variants (filled, filled tonal, elevated, outlined, text), emphasis hierarchy, primary-action selection, sizing and shape including M3 Expressive morphing shapes, icons in buttons, and accessible touch targets. Use when reviewing or specifying button choices in a screen, judging whether a variant fits its emphasis level, critiquing hierarchy when multiple buttons compete, or evaluating whether an icon adds clarity or noise. Produces design recommendations and critique, not code."
+description: "Use when reviewing or specifying button choices in a screen: whether a variant (filled, tonal, elevated, outlined, text) fits its emphasis level, hierarchy when several buttons compete, M3 Expressive morphing shapes, icons in buttons, and accessible touch targets. M3 design critique, not code."
 license: MIT
 tags: [material-you]
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components/button
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.2
+  version: 1.0.3
 ---
 
 ## When to use

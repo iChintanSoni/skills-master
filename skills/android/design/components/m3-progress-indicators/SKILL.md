@@ -1,6 +1,6 @@
 ---
 name: m3-progress-indicators
-description: "Material 3 design guidance for progress indicators — choosing between linear and circular, determinate and indeterminate, the M3 Expressive loading indicator, and when to show no indicator at all. Use when designing or reviewing any loading state, background operation, or in-progress feedback in an Android app, or when deciding whether a LinearProgressIndicator, CircularProgressIndicator, or LoadingIndicator is the right choice for a given context."
+description: "Use when designing or reviewing a loading state, background operation or in-progress feedback: linear versus circular, determinate versus indeterminate, the M3 Expressive loading indicator, and when to show no indicator at all. M3 design critique, not code."
 license: MIT
 tags: []
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components/progress
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.2
+  version: 1.0.3
 ---
 
 ## When to use

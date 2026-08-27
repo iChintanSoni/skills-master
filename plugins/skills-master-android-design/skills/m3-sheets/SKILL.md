@@ -1,9 +1,9 @@
 ---
 name: m3-sheets
-description: "Design critique and guidance for Material 3 bottom sheets and side sheets on Android: choosing between modal and standard variants, setting drag handles and partial expansion, deciding when a sheet beats a dialog, and adapting to large-screen and foldable layouts with side sheets. Use when reviewing a contextual action panel, a filter drawer, a details overlay, or any surface that slides over the main content, and you need M3-grounded design recommendations rather than implementation code."
+description: "Use when reviewing a contextual action panel, filter drawer, details overlay, or any surface that slides over the main content: modal versus standard variants, drag handles and partial expansion, sheet versus dialog, and side sheets on large screens and foldables. M3 design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-06-06"
 ---
 

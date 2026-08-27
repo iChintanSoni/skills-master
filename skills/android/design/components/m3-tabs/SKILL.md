@@ -1,6 +1,6 @@
 ---
 name: m3-tabs
-description: "Design critique and guidance for Material 3 tabs on Android, covering primary vs secondary tabs, fixed vs scrollable layout, when tabs complement or replace a navigation bar, label and icon conventions, and content-switching expectations. Use when reviewing or designing in-page navigation, choosing between primary and secondary tab styles, deciding on fixed vs scrollable tab layout, or determining whether tabs are the right component for a given navigational context."
+description: "Use when reviewing or designing in-page navigation: primary versus secondary tabs, fixed versus scrollable layout, when tabs complement or replace a navigation bar, label and icon conventions, and whether tabs suit the navigational context at all. M3 design critique, not code."
 license: MIT
 tags: [material-you]
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

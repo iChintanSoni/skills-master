@@ -1,9 +1,9 @@
 ---
 name: m3-menus-pickers
-description: "Design critique and recommendations for Material 3 menus and pickers on Android: dropdown menus, exposed dropdown menus, context menus, date pickers (dialog vs input mode), and time pickers — when each variant fits, how to keep selection efficient, and how to adapt across screen sizes. Use when reviewing or designing any in-context option list or date/time selection flow in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code."
+description: "Use when reviewing or designing an in-context option list or a date/time selection: dropdown and exposed dropdown menus, context menus, date pickers (dialog versus input mode), time pickers, keeping selection efficient, and adapting across screen sizes. M3 design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.1"
+  version: "1.0.2"
   snapshot-date: "2026-08-25"
 ---
 

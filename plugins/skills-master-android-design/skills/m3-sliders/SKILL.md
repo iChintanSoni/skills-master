@@ -1,9 +1,9 @@
 ---
 name: m3-sliders
-description: Design critique and recommendations for Material 3 sliders on Android — covering continuous and range sliders, discrete steps and tick marks, value labels, when a slider is the right control versus a text field or stepper, and accessible adjustment. Use when reviewing or specifying any slider control in an Android app and you need M3-grounded design judgment rather than implementation code.
+description: "Use when reviewing or specifying a slider: continuous versus range sliders, discrete steps and tick marks, value labels, whether a slider beats a text field or a stepper, and accessible adjustment. M3 design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-06-06"
 ---
 

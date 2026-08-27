@@ -1,6 +1,6 @@
 ---
 name: hig-progress-indicators
-description: "Applies Apple Human Interface Guidelines to progress indicators and gauges — choosing a determinate bar when completion is estimable versus an indeterminate activity spinner, using gauges for levels within a range, giving the wait meaningful context, and not flashing an indicator for near-instant work. Use when designing or reviewing a download, export, sync, upload, or any wait that shows a bar, spinner, or gauge, or when critiquing whether the indicator type, accuracy, and placement are right. Produces design critique and recommendations, not code."
+description: "Use when designing or reviewing a download, export, sync, upload or any wait that shows a bar, spinner or gauge: determinate versus indeterminate, gauges for levels within a range, giving the wait meaningful context, and not flashing an indicator for near-instant work. HIG design critique, not code."
 license: MIT
 tags: [status, feedback, loading]
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/gauges
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

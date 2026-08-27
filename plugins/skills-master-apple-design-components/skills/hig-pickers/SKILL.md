@@ -1,9 +1,9 @@
 ---
 name: hig-pickers
-description: "Design critique and recommendations for pickers on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or specifying a control that selects one value from a set, choosing between a menu, inline, wheel, segmented, or date/time picker, deciding compact versus expanded presentation, setting a default selection, or judging whether the option set is manageable. Produces UX guidance and critique, not code. Triggers: picker, date picker, time picker, wheel picker, pull-down menu, inline picker, segmented control, dropdown, option selection, choose a value, compact picker."
+description: "Use when reviewing or specifying a control that selects one value from a set: choosing between a menu, inline, wheel, segmented or date/time picker, compact versus expanded presentation, the default selection, and whether the option set is manageable. HIG design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-05-30"
 ---
 
