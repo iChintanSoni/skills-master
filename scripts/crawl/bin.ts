@@ -113,16 +113,58 @@ function listingBytesOf(s: RegistryEntry): number {
   return Buffer.byteLength(`- ${s.name}: ${desc}`, "utf8");
 }
 
-function footprint(reg: Registry) {
+/** Listing bytes for an arbitrary grouping of skills. */
+function groupBy(reg: Registry, keyOf: (s: RegistryEntry) => string) {
   const groups = new Map<string, { skills: number; listingBytes: number }>();
   for (const s of reg.skills) {
-    const key = pluginOf(s);
+    const key = keyOf(s);
     const g = groups.get(key) ?? { skills: 0, listingBytes: 0 };
     g.skills += 1;
     // +1 for the newline joining this entry to the previous one.
     g.listingBytes += listingBytesOf(s) + (g.skills > 1 ? 1 : 0);
     groups.set(key, g);
   }
+  return groups;
+}
+
+/**
+ * How the library would sit against the budget if it were installed in smaller
+ * units. The budget is per *install*, not per library, so the question "are we
+ * too big?" is really "is the thing a consumer installs too big?" — which is a
+ * packaging decision, not a content one.
+ */
+function granularity(reg: Registry) {
+  const budget = budgetBytesFor(LISTING.contexts[0]!);
+  const shapes: [string, (s: RegistryEntry) => string][] = [
+    ["plugin (domain × class)", pluginOf],
+    ["category (domain × class × category)", (s) => `${s.domain}/${s.class}/${s.category}`],
+  ];
+
+  const units = shapes.map(([label, keyOf]) => {
+    const rows = [...groupBy(reg, keyOf).values()];
+    return {
+      shape: label,
+      units: rows.length,
+      fitting: rows.filter((r) => r.listingBytes <= budget).length,
+      worstOverBudget: Number((Math.max(...rows.map((r) => r.listingBytes)) / budget).toFixed(2)),
+      medianSkills: rows.map((r) => r.skills).sort((a, b) => a - b)[Math.floor(rows.length / 2)],
+    };
+  });
+
+  const categories = [...groupBy(reg, (s) => `${s.domain}/${s.class}/${s.category}`).entries()]
+    .map(([category, g]) => ({
+      category,
+      skills: g.skills,
+      listingBytes: g.listingBytes,
+      overBudget: Number((g.listingBytes / budget).toFixed(2)),
+    }))
+    .sort((a, b) => b.listingBytes - a.listingBytes);
+
+  return { budgetBytes: budget, contextTokens: LISTING.contexts[0], units, categories };
+}
+
+function footprint(reg: Registry) {
+  const groups = groupBy(reg, pluginOf);
 
   const budgets = Object.fromEntries(LISTING.contexts.map((c) => [c, budgetBytesFor(c)])) as Record<
     string,
@@ -159,6 +201,7 @@ function footprint(reg: Registry) {
     },
     /** Descriptions the per-description cap would itself truncate (none, so far). */
     truncatedDescriptions: truncated.map((s) => ({ name: s.name, chars: s.description.length })),
+    granularity: granularity(reg),
     longestDescriptions: [...reg.skills]
       .sort((a, b) => b.description.length - a.description.length)
       .slice(0, 10)

@@ -544,6 +544,46 @@ Rationale, recorded so it stays decided:
   happens, the answer to "does skills-master support tool X?" is: point X at AGENTS.md
   (most support it), or at `.agents/skills/` once 5.1 lands.
 
+## Phase 7 — Install granularity (added 2026-08-27, out of the G8 measurements)
+
+*Not in the original audit.* 2.3 measured the always-on listing against Claude Code's
+budget; 5.2 found Codex documenting the same ~8,000-character cap, making it an ecosystem
+constraint rather than one host's quirk. The consequence the plan had not considered: the
+budget is **per install**, so "is the library too big?" is really "is the unit a consumer
+installs too big?" — a *packaging* question, which no amount of description work in Phase 3
+can answer.
+
+- [x] **7.1 Measure whether smaller install units would fit (S).** Extend the footprint
+  report with candidate packagings rather than arguing about them.
+  **Landed, and the answer is unambiguous:**
+
+  | Install unit | Units | Fit the 8 KB budget | Worst | Median skills |
+  | --- | ---: | ---: | ---: | ---: |
+  | plugin (domain × class) — **today** | 8 | **1 / 8** | 5.19× | 63 |
+  | category (domain × class × category) | 38 | **32 / 38** | 1.90× | 9 |
+
+  Category-sized units are the natural fix: four fifths of them fit as-is, and the worst is
+  1.9× rather than 5.2×. The six that still overflow are `apple/code/app-frameworks` (1.90×),
+  `android/design/components` (1.43×), `apple/design/components` (1.38×),
+  `android/code/form-factors` (1.15×), `android/code/platform-services` (1.11×) and
+  `apple/overview/overviews` (1.07×) — all close enough that description trimming (3.3)
+  could close the gap, which is the first task where trimming would demonstrably pay.
+  The report now carries this table on every crawl, so the picture stays current as the
+  library grows.
+
+- [ ] **7.2 Ship category-sized plugins (M) — needs a decision, not just implementation.**
+  The marketplace build already groups by `(domain, class)`; grouping by
+  `(domain, class, category)` is a small change to `marketplace.ts` plus regenerated output.
+  What needs deciding first, because it is consumer-facing and hard to reverse:
+  (a) **replace** the 8 plugins with ~38, or **add** category plugins alongside them and let
+  the coarse ones stand as "I want everything, and I accept name-only listings"?
+  (b) plugin naming (`skills-master-android-code-compose-ui` is a mouthful) and whether the
+  marketplace listing stays navigable at 38+ entries;
+  (c) migration for anyone already installed from the current plugin names — the build
+  prunes output it no longer owns, so a rename is a remove-and-add for existing consumers.
+  Not started: this is Chintan's call on packaging, and 7.1 exists so the call is made with
+  numbers.
+
 ## Deliberate non-goals (recorded so they stay decided)
 
 - **Gerund renames** (`swiftui-navigation` → `navigating-swiftui`): Anthropic lists noun

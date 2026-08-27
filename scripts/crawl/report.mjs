@@ -183,6 +183,34 @@ if (footprint) {
     "",
   );
 
+  // The budget is per *install*, so "are we too big" is really "is the unit a
+  // consumer installs too big" — a packaging question, not a content one.
+  const g = footprint.granularity;
+  if (g) {
+    say(
+      "<details><summary>Would smaller install units fit?</summary>",
+      "",
+      `Against the ${g.budgetBytes}-byte budget at ${g.contextTokens / 1000}k context:`,
+      "",
+      "| Install unit | Units | Fit the budget | Worst | Median skills |",
+      "|---|---:|---:|---:|---:|",
+      ...g.units.map(
+        (u) =>
+          `| ${u.shape} | ${u.units} | **${u.fitting}/${u.units}** | ${u.worstOverBudget}× | ${u.medianSkills} |`,
+      ),
+      "",
+      `Categories still over budget: ${
+        g.categories
+          .filter((c) => c.overBudget > 1)
+          .map((c) => `\`${c.category}\` (${c.overBudget}×)`)
+          .join(", ") || "none"
+      }`,
+      "",
+      "</details>",
+      "",
+    );
+  }
+
   const capped = footprint.truncatedDescriptions.length;
   say(
     `<details><summary>10 longest descriptions</summary>`,
