@@ -1,6 +1,6 @@
 ---
 name: picture-in-picture
-description: Covers Android Picture-in-Picture (PiP) mode using PictureInPictureParams — entering PiP on home/pause, configuring aspect ratio and source-rect hints, the Compose pipLayout Modifier, auto-enter behavior, custom remote actions, and adapting UI when the window shrinks to PiP size. Use when building video players, video calls, navigation, or any feature that should continue playing or displaying content in a floating overlay while the user switches to another app.
+description: "Use when a video player, video call, navigation or similar feature should keep running in a floating overlay after the user switches apps. Covers Android Picture-in-Picture with PictureInPictureParams: entering PiP on home or pause, aspect ratio and source-rect hints, the Compose pipLayout modifier, auto-enter, and remote actions."
 license: MIT
 globs:
   - "**/*.kt"
@@ -17,7 +17,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/system/picture-in-picture
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

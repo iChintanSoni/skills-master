@@ -234,6 +234,23 @@ Claude's skill validation rejects a `name` or `description` containing XML tags,
 
 Reword rather than escape — the description is read by a model, not rendered. Write "a VerificationResult of Transaction", "the Result type", or "a Flow of UI state". Angle brackets that are not tag-shaped (`<16ms`) are fine.
 
+## Keep a description under ~450 characters, and lead with the trigger
+
+Not for elegance — for survival. Every installed skill contributes one `- <name>: <description>` line to the agent's always-on listing, and that listing is **budgeted**: roughly 8 KB on a 200k-context model, on Claude Code *and* Codex. Past the budget the agent does not shorten descriptions, it **drops** them, leaving a bare `- <name>`. So a category whose descriptions overrun costs its skills the descriptions entirely.
+
+Two rules follow, and Codex states the second outright — *"front-load the key use case and trigger words so a host can still match the skill if descriptions are shortened"*:
+
+1. **Stay under ~450 characters.** The spec allows 1024 and the linter enforces that ceiling, but a library of 1024-character descriptions is a library whose descriptions get discarded.
+2. **Lead with "Use when …".** Put the situations a reader would recognise first, and the API nouns after. If the tail gets cut, the trigger should not be in the tail.
+
+Trim by cutting **tail enumerations**, not distinguishing detail. This:
+
+> Use when building an Android TV app with Compose, migrating a Leanback app, designing browse and detail screens, or wiring D-pad focus across a composable hierarchy. Covers androidx.tv.material3: Cards, ImmersiveList, Carousel and TvNavigationDrawer.
+
+says everything its 425-character predecessor did in 250.
+
+`pnpm crawl` reports which categories are over budget, so this is measurable rather than a matter of taste. A description edit is a patch `version` bump; `snapshot_date` does not move, because nothing was re-verified.
+
 ## A new skill in crowded territory ships with a query set
 
 A description is a claim that a model will reach for this skill in a particular situation, and the linter cannot check that claim — a "Use when …" clause satisfies the grep whether or not it triggers. For most new skills that is fine. It is not fine when the new skill overlaps one that already exists, because the failure mode is not "never triggers", it is "the wrong sibling triggers" and nobody notices.

@@ -1,9 +1,9 @@
 ---
 name: runtime-permissions
-description: Covers Android runtime permissions — requesting dangerous permissions with ActivityResult APIs and rememberLauncherForActivityResult, showing rationale, handling permanent denial, one-time and partial grants for location/media/notifications, and minimizing requests. Use when an Android app needs to request dangerous permissions, handle denial flows, or adapt behavior to partial grants such as approximate location or selected photos.
+description: Use when an Android app requests dangerous permissions, handles denial flows, or adapts to partial grants such as approximate location or selected photos. Covers the ActivityResult APIs and rememberLauncherForActivityResult, showing rationale, permanent denial, and keeping requests to a minimum.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   snapshot-date: "2026-08-25"
 ---
 

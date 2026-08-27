@@ -1,6 +1,6 @@
 ---
 name: xr-glimmer-glasses
-description: "Covers building for Android XR glasses with Jetpack Compose Glimmer — the Compose UI toolkit for display glasses — plus Jetpack Projected lifecycle, audio and voice interaction, and hands-free UX patterns for AI/display glasses. Use when targeting XR glasses hardware with the Jetpack XR SDK, authoring Glimmer UI, designing hands-free or audio-first flows, or adapting existing Compose UI for a constrained, head-worn display."
+description: "Use when targeting Android XR glasses: authoring Glimmer UI with Jetpack Compose, the Jetpack Projected lifecycle, audio and voice interaction, or adapting existing Compose UI for a constrained head-worn display and hands-free flows."
 license: MIT
 globs:
   - "**/*.kt"
@@ -18,7 +18,7 @@ x-skills-master:
     - https://developer.android.com/jetpack/androidx/releases/xr-glimmer
   snapshot_date: "2026-08-25"
   stability: emerging
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 ## When to use

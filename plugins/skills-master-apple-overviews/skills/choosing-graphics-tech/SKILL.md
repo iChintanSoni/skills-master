@@ -1,9 +1,9 @@
 ---
 name: choosing-graphics-tech
-description: "Decision router for picking an Apple graphics technology in the 2026 (OS 26) cycle: SwiftUI shapes and Canvas for UI drawing, Core Graphics and Core Image for 2D and image processing, SpriteKit for 2D games, RealityKit for new 3D and AR (SceneKit is now soft-deprecated), and Metal with MetalFX for custom GPU work. Use when starting graphics, drawing, image-processing, game, or 3D work and choosing a framework, when weighing whether to drop from a high-level API to Metal, or when deciding whether to migrate a SceneKit project to RealityKit."
+description: Use when choosing an Apple graphics framework — SwiftUI shapes and Canvas, Core Graphics, Core Image, SpriteKit for 2D games, RealityKit for 3D and AR, or Metal with MetalFX for custom GPU work — when weighing a drop from a high-level API to Metal, or when deciding whether to migrate a SceneKit project to RealityKit. SceneKit is soft-deprecated in the OS 26 cycle.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-05-30"
 ---
 

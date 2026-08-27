@@ -1,6 +1,6 @@
 ---
 name: window-manager-foldables
-description: Covers Jetpack WindowManager for foldable and dual-screen Android devices — WindowInfoTracker, FoldingFeature, detecting tabletop and book postures, reading hinge bounds and occlusion type, and adapting Compose layouts to avoid or span the fold. Use when building layouts that respond to device fold state, avoiding content under the hinge, splitting UI across panels, or implementing posture-aware interactions on foldable hardware.
+description: "Use when a layout must respond to device fold state — avoiding content under the hinge, splitting UI across panels, or posture-aware interactions. Covers Jetpack WindowManager: WindowInfoTracker, FoldingFeature, tabletop and book postures, hinge bounds and occlusion type."
 license: MIT
 globs:
   - "**/*.kt"
@@ -18,7 +18,7 @@ x-skills-master:
     - https://developer.android.com/about/versions/17/behavior-changes-17
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 ## When to use

@@ -610,12 +610,12 @@
       "domain": "android",
       "class": "code",
       "category": "platform-services",
-      "description": "Covers Android AppFunctions — exposing app capabilities as agent-orchestrable tools by annotating Kotlin functions with @AppFunction, served through Android's on-device Model Context Protocol so assistants like Gemini can discover and execute them against local app state. Use when making app features invocable by AI assistants and on-device agents, designing an agent-facing capability surface, or deciding between AppFunctions and the older App Actions/BII path.",
+      "description": "Use when making app features invocable by AI assistants and on-device agents: annotating Kotlin functions with @AppFunction, serving them through Android's on-device Model Context Protocol so Gemini can discover and execute them against local app state, or choosing between AppFunctions and the older App Actions path.",
       "platforms": [
         "android"
       ],
       "stability": "emerging",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "mcp",
         "android17"
@@ -817,13 +817,13 @@
       "domain": "android",
       "class": "code",
       "category": "platform-services",
-      "description": "Covers home-screen widgets built with Jetpack Glance — GlanceAppWidget and its Compose-style UI API, Glance state and update strategies, actions (actionRunCallback, actionStartActivity), responsive and adaptive sizing, and the boundary with legacy RemoteViews. Use when building or modernizing Android home-screen or lock-screen widgets with a Compose-first approach on Android 16+ or targeting large-screen surfaces.",
+      "description": "Use when building or modernising Android home-screen and lock-screen widgets with Jetpack Glance: GlanceAppWidget and its Compose-style UI, Glance state and update strategies, actionRunCallback and actionStartActivity, responsive sizing, and the boundary with legacy RemoteViews.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "m3-widgets",
@@ -1159,13 +1159,13 @@
       "domain": "android",
       "class": "code",
       "category": "platform-services",
-      "description": "Covers Android Bluetooth Low Energy — Android 12+ runtime permissions (BLUETOOTH_SCAN/CONNECT/ADVERTISE), scanning with BluetoothLeScanner, connecting as a GATT client, discovering services and characteristics, read/write/notify, connection lifecycle and reliability patterns, and an overview of the peripheral (advertiser) role. Use when scanning for BLE peripherals, connecting to GATT servers, streaming characteristic notifications, or advertising as a BLE peripheral on Android.",
+      "description": "Use when scanning for Bluetooth Low Energy peripherals on Android, connecting as a GATT client, discovering services and characteristics, reading, writing or streaming notifications, handling connection lifecycle and reliability, or advertising as a peripheral. Covers the Android 12+ BLUETOOTH_SCAN/CONNECT/ADVERTISE runtime permissions.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "connectivity"
       ],
@@ -1292,13 +1292,13 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers building in-car experiences with the Jetpack Car App Library — CarAppService and Session lifecycle, the template model (ListTemplate, PaneTemplate, NavigationTemplate, GridTemplate), Screen and ScreenManager navigation, host constraints and template limits, and sharing one codebase between Android Auto and Automotive OS. Use when building any app that must run inside a car head unit, navigate between car screens, present media or point-of-interest lists in the car UI, or add turn-by-turn navigation within a vehicle display.",
+      "description": "Use when building an app that runs inside a car head unit with the Jetpack Car App Library: CarAppService and Session lifecycle, the template model (ListTemplate, PaneTemplate, NavigationTemplate, GridTemplate), Screen and ScreenManager navigation, host template limits, or sharing one codebase between Android Auto and Automotive OS.",
       "platforms": [
         "android-auto",
         "automotive-os"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "m3-cars",
@@ -1344,13 +1344,13 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers media and messaging apps for Android Auto and Automotive OS — MediaBrowserService for browsable audio playback, the Car App Library messaging template, notification-based messaging with CarCompatExtender reply and mark-as-read actions, and voice-first interaction patterns. Use when building an audio, podcast, or messaging app that must run on the car dashboard through Android Auto or a built-in Automotive OS head unit.",
+      "description": "Use when building an audio, podcast or messaging app for Android Auto or Automotive OS: MediaBrowserService for browsable playback, the Car App Library messaging template, notification-based messaging with reply and mark-as-read actions, and voice-first interaction patterns.",
       "platforms": [
         "android-auto",
         "automotive-os"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "car-app-library",
@@ -1485,14 +1485,14 @@
       "domain": "apple",
       "class": "overview",
       "category": "overviews",
-      "description": "Decision guide for picking an asynchronous pattern in Swift in the 2026 (OS 26, Swift 6.x) cycle — async/await and structured concurrency as the default, AsyncSequence and AsyncStream for value streams, where Combine still earns its place (and that it is legacy-leaning), and completion handlers only at old API boundaries. Use when starting new async code and unsure which tool to reach for, when bridging a callback or Combine API into async/await, when modeling a stream of values over time, or when deciding whether to keep or retire a Combine pipeline.",
+      "description": "Use when picking an asynchronous pattern in Swift: async/await and structured concurrency as the default, AsyncSequence or AsyncStream for value streams, bridging a callback or Combine API into async/await, or deciding whether a Combine pipeline still earns its place. Decision guide for the Swift 6.x cycle, where Combine is legacy-leaning.",
       "platforms": [
         "apple",
         "watchos",
         "tvos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "swift-concurrency",
@@ -1762,7 +1762,7 @@
       "domain": "apple",
       "class": "overview",
       "category": "overviews",
-      "description": "Decision router for picking an Apple graphics technology in the 2026 (OS 26) cycle: SwiftUI shapes and Canvas for UI drawing, Core Graphics and Core Image for 2D and image processing, SpriteKit for 2D games, RealityKit for new 3D and AR (SceneKit is now soft-deprecated), and Metal with MetalFX for custom GPU work. Use when starting graphics, drawing, image-processing, game, or 3D work and choosing a framework, when weighing whether to drop from a high-level API to Metal, or when deciding whether to migrate a SceneKit project to RealityKit.",
+      "description": "Use when choosing an Apple graphics framework — SwiftUI shapes and Canvas, Core Graphics, Core Image, SpriteKit for 2D games, RealityKit for 3D and AR, or Metal with MetalFX for custom GPU work — when weighing a drop from a high-level API to Metal, or when deciding whether to migrate a SceneKit project to RealityKit. SceneKit is soft-deprecated in the OS 26 cycle.",
       "platforms": [
         "ios",
         "ipados",
@@ -1772,7 +1772,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [],
       "pairs_with": [
         "metal",
@@ -1845,7 +1845,7 @@
       "domain": "apple",
       "class": "overview",
       "category": "overviews",
-      "description": "Decision router for image work on Apple platforms: SwiftUI AsyncImage and its 27-cycle caching and request support, URLSession with URLCache versus NSCache, ImageIO downsampling, Core Image versus Metal for processing, ImageRenderer for export, PhotosPicker versus PhotoKit for library access, and SF Symbols versus bitmap assets. Use when deciding how to load, cache, downsample, process, export, or source an image, when a scrolling grid blows its memory budget, or when weighing whether a third-party image loader is still justified.",
+      "description": "Use when deciding how to load, cache, downsample, process, export or source an image on Apple platforms: AsyncImage versus URLSession with URLCache, ImageIO downsampling, Core Image versus Metal, ImageRenderer for export, PhotosPicker versus PhotoKit. Also when a scrolling grid blows its memory budget, or a third-party image loader needs justifying.",
       "platforms": [
         "apple",
         "watchos",
@@ -1853,7 +1853,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "images"
       ],
@@ -2098,7 +2098,7 @@
       "domain": "apple",
       "class": "overview",
       "category": "overviews",
-      "description": "Decision router for selecting SwiftUI versus UIKit or AppKit when building a screen, feature, or whole app in the 2026 (OS 26) cycle, including when to mix toolkits through interop. Use when starting a new app or screen and deciding the primary toolkit, when weighing a SwiftUI rewrite of UIKit or AppKit code, when an advanced or legacy requirement (deep text editing, precise scroll or collection control, document-based macOS apps, fine-grained drawing) tempts a drop to UIKit or AppKit, or when wrapping one toolkit inside another with representable types or hosting controllers.",
+      "description": "Use when choosing between SwiftUI, UIKit and AppKit for a screen, feature or whole app, weighing a SwiftUI rewrite of existing code, judging whether an advanced requirement (deep text editing, precise scroll control, document-based macOS apps) justifies dropping to UIKit or AppKit, or mixing toolkits through representable types and hosting controllers. Decision router for the OS 26 cycle.",
       "platforms": [
         "ios",
         "ipados",
@@ -2108,7 +2108,7 @@
         "visionos"
       ],
       "stability": "contested",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "architecture"
       ],
@@ -5836,14 +5836,14 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Implements ListDetailPaneScaffold — the canonical two-pane adaptive layout in Jetpack Compose — including ThreePaneScaffoldNavigator for pane navigation, predictive back, single-pane vs dual-pane switching by window size, and preserving selection across config changes. Use when building a list-detail (or similar hierarchical) screen that must adapt between compact phones, large-screen tablets, foldables, and ChromeOS windows.",
+      "description": "Use when building a list-detail or similar hierarchical screen that must adapt between compact phones, tablets, foldables and ChromeOS windows. Implements ListDetailPaneScaffold with ThreePaneScaffoldNavigator, predictive back, single- versus dual-pane switching, and selection preserved across config changes.",
       "platforms": [
         "android",
         "large-screen",
         "chromeos"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "m3-canonical-layouts",
@@ -5917,13 +5917,13 @@
       "domain": "android",
       "class": "code",
       "category": "platform-services",
-      "description": "Covers the Fused Location Provider for current location and updates, location permission tiers (coarse/fine/background/approximate), geofencing, and SensorManager for motion and position sensors including activity recognition. Use when requesting or streaming device location, setting up geofence triggers, reading accelerometer or gyroscope data, or classifying physical activity in an Android app.",
+      "description": "Use when requesting or streaming device location, setting up geofence triggers, reading accelerometer or gyroscope data, or classifying physical activity on Android. Covers the Fused Location Provider, the coarse/fine/background/approximate permission tiers, geofencing, and SensorManager.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [],
       "pairs_with": [
         "runtime-permissions"
@@ -8091,13 +8091,13 @@
       "domain": "android",
       "class": "code",
       "category": "platform-services",
-      "description": "Covers Android notifications using NotificationCompat — creating channels with appropriate importance levels, requesting the POST_NOTIFICATIONS runtime permission on Android 13+, applying rich styles (BigText, Inbox, Media, Messaging), adding actions and direct-reply, grouping related notifications, and implementing conversation/bubble notifications. Use when building any feature that needs to alert the user outside the foreground, add notification actions or direct reply, group related alerts, or surface chat conversations as bubbles.",
+      "description": "Use when building Android notifications with NotificationCompat: creating channels with the right importance, requesting POST_NOTIFICATIONS on Android 13+, applying rich styles (BigText, Inbox, Media, Messaging), adding actions and direct reply, grouping related alerts, or surfacing chat conversations as bubbles.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [],
       "pairs_with": [
         "m3-notifications",
@@ -8324,14 +8324,14 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers Android Picture-in-Picture (PiP) mode using PictureInPictureParams — entering PiP on home/pause, configuring aspect ratio and source-rect hints, the Compose pipLayout Modifier, auto-enter behavior, custom remote actions, and adapting UI when the window shrinks to PiP size. Use when building video players, video calls, navigation, or any feature that should continue playing or displaying content in a floating overlay while the user switches to another app.",
+      "description": "Use when a video player, video call, navigation or similar feature should keep running in a floating overlay after the user switches apps. Covers Android Picture-in-Picture with PictureInPictureParams: entering PiP on home or pause, aspect ratio and source-rect hints, the Compose pipLayout modifier, auto-enter, and remote actions.",
       "platforms": [
         "android",
         "large-screen",
         "android-tv"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "large-screen",
         "android-tv"
@@ -8674,13 +8674,13 @@
       "domain": "android",
       "class": "code",
       "category": "platform-services",
-      "description": "Covers HTTP networking with Retrofit and OkHttp — defining service interfaces, suspend functions and Flow, converters (kotlinx.serialization/Moshi), interceptors and auth, timeouts and caching, and error/exception handling. Use when building or reviewing an Android network layer, wiring a REST API, adding auth headers, handling HTTP errors, or configuring caching and timeouts.",
+      "description": "Use when building or reviewing an Android network layer with Retrofit and OkHttp: service interfaces, suspend functions and Flow, kotlinx.serialization or Moshi converters, interceptors and auth headers, timeouts, caching, and HTTP error handling.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "coroutines"
       ],
@@ -8752,13 +8752,13 @@
       "domain": "android",
       "class": "code",
       "category": "platform-services",
-      "description": "Covers Android runtime permissions — requesting dangerous permissions with ActivityResult APIs and rememberLauncherForActivityResult, showing rationale, handling permanent denial, one-time and partial grants for location/media/notifications, and minimizing requests. Use when an Android app needs to request dangerous permissions, handle denial flows, or adapt behavior to partial grants such as approximate location or selected photos.",
+      "description": "Use when an Android app requests dangerous permissions, handles denial flows, or adapts to partial grants such as approximate location or selected photos. Covers the ActivityResult APIs and rememberLauncherForActivityResult, showing rationale, permanent denial, and keeping requests to a minimum.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [
         "jetpack-compose"
       ],
@@ -8903,13 +8903,13 @@
       "domain": "android",
       "class": "code",
       "category": "platform-services",
-      "description": "Covers encryption at rest on Android using the Android Keystore — generating and using AES/RSA keys, encrypting files and data, selecting algorithms, leveraging hardware-backed keys and StrongBox, and migrating away from the deprecated Jetpack Security crypto library. Use when you need to protect sensitive data stored on device or need guidance on Android cryptographic best practices.",
+      "description": "Use when protecting sensitive data stored on an Android device: generating and using AES/RSA keys in the Android Keystore, encrypting files and data, choosing algorithms, hardware-backed keys and StrongBox, and migrating off the deprecated Jetpack Security crypto library.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [
         "cryptography"
       ],
@@ -9173,13 +9173,13 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers SupportingPaneScaffold from the Adaptive Navigation library — primary content pane paired with a contextual supporting pane on medium and expanded windows, the ThreePaneScaffoldNavigator, pane back-stack management, and when to choose SupportingPaneScaffold over ListDetailPaneScaffold. Use when building a feature screen that needs a persistent or slide-in contextual panel (metadata, filters, inspector, help) alongside the main content on large screens while remaining a single-pane layout on compact windows.",
+      "description": "Use when a feature screen needs a persistent or slide-in contextual panel — metadata, filters, inspector, help — beside its main content on medium and expanded windows while staying single-pane on compact ones. Covers SupportingPaneScaffold, ThreePaneScaffoldNavigator, pane back-stack management, and choosing it over ListDetailPaneScaffold.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "compose"
       ],
@@ -10255,12 +10255,12 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers Compose for TV using the androidx.tv.material3 library — Cards, ImmersiveList, Carousel, TvNavigationDrawer, and focus-driven 10-foot navigation — for building browse and detail screens on Android TV. Use when building a new Android TV app with Jetpack Compose, migrating a Leanback-based app to Compose, designing browse/detail screen patterns, or wiring D-pad focus across a composable hierarchy on a TV form factor.",
+      "description": "Use when building an Android TV app with Compose, migrating a Leanback app, designing browse and detail screens, or wiring D-pad focus across a composable hierarchy. Covers androidx.tv.material3: Cards, ImmersiveList, Carousel and TvNavigationDrawer.",
       "platforms": [
         "android-tv"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "leanback-migration"
       ],
@@ -10906,12 +10906,12 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers Compose for Wear OS — wear.compose.material3 components, TransformingLazyColumn and ScalingLazyColumn for round-screen scrolling, AppScaffold and ScreenScaffold, rotary input via rotaryScrollable, edge-hugging buttons, TimeText, and Wear navigation with SwipeDismissableNavHost. Use when building or modernising Wear OS apps with a Compose-first approach, targeting round and square watch faces with Material 3 Expressive for Wear.",
+      "description": "Use when building or modernising a Wear OS app with Compose: wear.compose.material3 components, TransformingLazyColumn and ScalingLazyColumn for round screens, AppScaffold and ScreenScaffold, rotary input via rotaryScrollable, TimeText, and SwipeDismissableNavHost.",
       "platforms": [
         "wear-os"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "wearables"
       ],
@@ -11054,13 +11054,13 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers Jetpack WindowManager for foldable and dual-screen Android devices — WindowInfoTracker, FoldingFeature, detecting tabletop and book postures, reading hinge bounds and occlusion type, and adapting Compose layouts to avoid or span the fold. Use when building layouts that respond to device fold state, avoiding content under the hinge, splitting UI across panels, or implementing posture-aware interactions on foldable hardware.",
+      "description": "Use when a layout must respond to device fold state — avoiding content under the hinge, splitting UI across panels, or posture-aware interactions. Covers Jetpack WindowManager: WindowInfoTracker, FoldingFeature, tabletop and book postures, hinge bounds and occlusion type.",
       "platforms": [
         "android",
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [
         "adaptive-layout",
         "large-screen"
@@ -11234,12 +11234,12 @@
       "domain": "android",
       "class": "code",
       "category": "form-factors",
-      "description": "Covers building for Android XR glasses with Jetpack Compose Glimmer — the Compose UI toolkit for display glasses — plus Jetpack Projected lifecycle, audio and voice interaction, and hands-free UX patterns for AI/display glasses. Use when targeting XR glasses hardware with the Jetpack XR SDK, authoring Glimmer UI, designing hands-free or audio-first flows, or adapting existing Compose UI for a constrained, head-worn display.",
+      "description": "Use when targeting Android XR glasses: authoring Glimmer UI with Jetpack Compose, the Jetpack Projected lifecycle, audio and voice interaction, or adapting existing Compose UI for a constrained head-worn display and hands-free flows.",
       "platforms": [
         "glasses"
       ],
       "stability": "emerging",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tags": [],
       "pairs_with": [
         "m3-ai-glasses"

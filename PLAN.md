@@ -408,6 +408,26 @@ is ~26k agent invocations per iteration — not a thing to run wholesale. Sample
   if length shows no trigger benefit — which would also buy back G8 tokens. Whatever wins
   becomes an authoring.md rule with a rationale; whatever loses gets recorded here as
   rejected, with numbers.
+  **Started, on the half that needs no eval data.** 7.1/7.2 gave trimming a rationale
+  independent of trigger rates: in an over-budget install the choice is not "long
+  description versus short", it is "short description versus **no** description", because
+  past the cap the agent substitutes a bare `- <name>`. So the six over-budget categories,
+  not "the long ones", are the target.
+  **21 descriptions rewritten; three of the six categories now fit** — 35 of 38 units are
+  inside the budget, up from 32. `apple/overview/overviews` 8,593 → 7,847 B,
+  `android/code/platform-services` 8,857 → 7,935, `android/code/form-factors` 9,171 → 7,939.
+  Each rewrite leads with the trigger and cuts the tail enumeration, per 5.2's Codex
+  guidance; patch `version` bump each, `snapshot_date` unmoved (nothing was re-verified).
+  The rule is now in authoring.md with the budget as its rationale: under ~450 characters,
+  trigger first.
+  **What trimming cannot fix, stated rather than fudged.** `apple/code/app-frameworks` is
+  36 skills at 15,198 B and needs a **47%** cut — with a median description already at 380
+  characters, that means gutting all 36 to ~200. The category is simply too large; the real
+  remedy is splitting it (a taxonomy change, and a decision), not shorter prose.
+  **Still to do, and achievable:** `apple/design/components` (1.38×, fits at a ~360-char
+  cap) and `android/design/components` (1.43×, needs ~300). That is 46 more rewrites —
+  deliberately left for a follow-up rather than bundled here, because 67 hand-edited
+  descriptions in one diff is not reviewable.
 - [x] **3.4 Description policy for new skills (S).** authoring.md: new skills in ambiguous
   territory ship with a query set and a harness run in the PR. Cheap at one-skill scale,
   and it stops the library from re-accumulating unmeasured descriptions.

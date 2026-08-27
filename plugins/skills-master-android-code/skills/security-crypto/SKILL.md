@@ -1,9 +1,9 @@
 ---
 name: security-crypto
-description: Covers encryption at rest on Android using the Android Keystore — generating and using AES/RSA keys, encrypting files and data, selecting algorithms, leveraging hardware-backed keys and StrongBox, and migrating away from the deprecated Jetpack Security crypto library. Use when you need to protect sensitive data stored on device or need guidance on Android cryptographic best practices.
+description: "Use when protecting sensitive data stored on an Android device: generating and using AES/RSA keys in the Android Keystore, encrypting files and data, choosing algorithms, hardware-backed keys and StrongBox, and migrating off the deprecated Jetpack Security crypto library."
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   snapshot-date: "2026-08-25"
 ---
 

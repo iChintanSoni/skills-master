@@ -1,6 +1,6 @@
 ---
 name: location-sensors
-description: Covers the Fused Location Provider for current location and updates, location permission tiers (coarse/fine/background/approximate), geofencing, and SensorManager for motion and position sensors including activity recognition. Use when requesting or streaming device location, setting up geofence triggers, reading accelerometer or gyroscope data, or classifying physical activity in an Android app.
+description: "Use when requesting or streaming device location, setting up geofence triggers, reading accelerometer or gyroscope data, or classifying physical activity on Android. Covers the Fused Location Provider, the coarse/fine/background/approximate permission tiers, geofencing, and SensorManager."
 license: MIT
 globs:
   - "**/*.kt"
@@ -17,7 +17,7 @@ x-skills-master:
     - https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

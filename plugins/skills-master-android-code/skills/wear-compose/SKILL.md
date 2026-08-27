@@ -1,9 +1,9 @@
 ---
 name: wear-compose
-description: Covers Compose for Wear OS — wear.compose.material3 components, TransformingLazyColumn and ScalingLazyColumn for round-screen scrolling, AppScaffold and ScreenScaffold, rotary input via rotaryScrollable, edge-hugging buttons, TimeText, and Wear navigation with SwipeDismissableNavHost. Use when building or modernising Wear OS apps with a Compose-first approach, targeting round and square watch faces with Material 3 Expressive for Wear.
+description: "Use when building or modernising a Wear OS app with Compose: wear.compose.material3 components, TransformingLazyColumn and ScalingLazyColumn for round screens, AppScaffold and ScreenScaffold, rotary input via rotaryScrollable, TimeText, and SwipeDismissableNavHost."
 license: MIT
 metadata:
-  version: "1.0.1"
+  version: "1.0.2"
   snapshot-date: "2026-06-06"
 ---
 

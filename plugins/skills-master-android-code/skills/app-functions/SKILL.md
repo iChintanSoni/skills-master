@@ -1,9 +1,9 @@
 ---
 name: app-functions
-description: Covers Android AppFunctions — exposing app capabilities as agent-orchestrable tools by annotating Kotlin functions with @AppFunction, served through Android's on-device Model Context Protocol so assistants like Gemini can discover and execute them against local app state. Use when making app features invocable by AI assistants and on-device agents, designing an agent-facing capability surface, or deciding between AppFunctions and the older App Actions/BII path.
+description: "Use when making app features invocable by AI assistants and on-device agents: annotating Kotlin functions with @AppFunction, serving them through Android's on-device Model Context Protocol so Gemini can discover and execute them against local app state, or choosing between AppFunctions and the older App Actions path."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-08-25"
 ---
 
