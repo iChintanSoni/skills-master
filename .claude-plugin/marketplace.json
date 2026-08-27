@@ -167,13 +167,6 @@
       "category": "development"
     },
     {
-      "name": "skills-master-apple-code-app-frameworks",
-      "source": "./plugins/skills-master-apple-code-app-frameworks",
-      "description": "Apple code skills (frameworks & APIs) — app-frameworks only. Smaller install: keeps the agent's always-on skill listing within budget.",
-      "version": "0.1.0",
-      "category": "development"
-    },
-    {
       "name": "skills-master-apple-code-app-services",
       "source": "./plugins/skills-master-apple-code-app-services",
       "description": "Apple code skills (frameworks & APIs) — app-services only. Smaller install: keeps the agent's always-on skill listing within budget.",
@@ -202,6 +195,41 @@
       "category": "development"
     },
     {
+      "name": "skills-master-apple-code-swiftdata",
+      "source": "./plugins/skills-master-apple-code-swiftdata",
+      "description": "Apple code skills (frameworks & APIs) — swiftdata only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-swiftui-data",
+      "source": "./plugins/skills-master-apple-code-swiftui-data",
+      "description": "Apple code skills (frameworks & APIs) — swiftui-data only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-swiftui-interaction",
+      "source": "./plugins/skills-master-apple-code-swiftui-interaction",
+      "description": "Apple code skills (frameworks & APIs) — swiftui-interaction only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-swiftui-layout-nav",
+      "source": "./plugins/skills-master-apple-code-swiftui-layout-nav",
+      "description": "Apple code skills (frameworks & APIs) — swiftui-layout-nav only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-swiftui-views",
+      "source": "./plugins/skills-master-apple-code-swiftui-views",
+      "description": "Apple code skills (frameworks & APIs) — swiftui-views only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
       "name": "skills-master-apple-code-system",
       "source": "./plugins/skills-master-apple-code-system",
       "description": "Apple code skills (frameworks & APIs) — system only. Smaller install: keeps the agent's always-on skill listing within budget.",
@@ -209,9 +237,23 @@
       "category": "development"
     },
     {
+      "name": "skills-master-apple-code-uikit-appkit",
+      "source": "./plugins/skills-master-apple-code-uikit-appkit",
+      "description": "Apple code skills (frameworks & APIs) — uikit-appkit only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
       "name": "skills-master-apple-code-web",
       "source": "./plugins/skills-master-apple-code-web",
       "description": "Apple code skills (frameworks & APIs) — web only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-widgets-intents",
+      "source": "./plugins/skills-master-apple-code-widgets-intents",
+      "description": "Apple code skills (frameworks & APIs) — widgets-intents only. Smaller install: keeps the agent's always-on skill listing within budget.",
       "version": "0.1.0",
       "category": "development"
     },

@@ -16,7 +16,7 @@ Node ≥ 20 and pnpm (via Corepack) are required.
 Read [docs/authoring.md](docs/authoring.md) first. In short:
 
 ```bash
-pnpm cli new apple/code/app-frameworks/<name> --content ../../skills   # scaffold
+pnpm cli new apple/code/swiftui-views/<name> --content ../../skills   # scaffold
 # … write original prose + minimal original code …
 pnpm skills:lint                                                  # must be clean
 pnpm skills:registry                                             # regenerate registry.json

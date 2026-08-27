@@ -1,0 +1,8 @@
+{
+  "name": "skills-master-apple-code-uikit-appkit",
+  "version": "0.1.0",
+  "description": "Apple code skills (frameworks & APIs) — uikit-appkit only. Smaller install: keeps the agent's always-on skill listing within budget.",
+  "author": {
+    "name": "skills-master contributors"
+  }
+}

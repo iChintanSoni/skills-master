@@ -5,10 +5,10 @@ A skill encodes **best-practice judgment** for a topic — not a copy of the doc
 ## Scaffold
 
 ```bash
-pnpm cli new apple/code/app-frameworks/swiftui-grids --content ../../skills
+pnpm cli new apple/code/swiftui-views/swiftui-grids --content ../../skills
 ```
 
-This creates `skills/apple/code/app-frameworks/swiftui-grids/SKILL.md` from a template (today's date, `version: 0.1.0`, `stability: emerging`). The spec is `domain/class/category/name`.
+This creates `skills/apple/code/swiftui-views/swiftui-grids/SKILL.md` from a template (today's date, `version: 0.1.0`, `stability: emerging`). The spec is `domain/class/category/name`.
 
 ## Frontmatter
 
@@ -24,7 +24,7 @@ tags: []                            # usually empty; see "What `tags` are for"
 x-skills-master:
   domain: apple                     # ecosystem: apple | android | web | …
   class: code                       # code | design | lang-tooling | overview
-  category: app-frameworks
+  category: swiftui-views
   platforms: [ios, ipados, macos]   # free-form per domain (>= 1)
   requires:                         # optional, domain-defined version map
     ios: "17"

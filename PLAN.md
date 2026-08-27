@@ -438,8 +438,8 @@ is ~26k agent invocations per iteration — not a thing to run wholesale. Sample
   neighbours scored **100% trigger, 0% false-fire** on a 4-session run: the sheet query went
   to `m3-sheets` and the undo query to `m3-snackbar`. That is also 3.4's policy working as
   intended — a description change shipping with the evidence that it still fires.
-  **One category remains over budget and will stay there:** `apple/code/app-frameworks` at
-  1.90×. Splitting it is the remedy, and that is a taxonomy decision.
+  **One category remains over budget:** `apple/code/app-frameworks` at 1.90×. Splitting it
+  is the remedy, and that is a taxonomy decision. *(Taken in 7.3 — every category now fits.)*
 - [x] **3.4 Description policy for new skills (S).** authoring.md: new skills in ambiguous
   territory ship with a query set and a harness run in the PR. Cheap at one-skill scale,
   and it stops the library from re-accumulating unmeasured descriptions.
@@ -676,6 +676,37 @@ can answer.
   instead of 434, still 0 invalid.
   **Not done:** the six categories that remain over budget (7.1's table) still need
   description trimming to fit — that is 3.3, and now has a concrete target list.
+
+- [x] **7.3 Split `apple/code/app-frameworks` (M) — the last overrun.** 3.3 established that
+  trimming could not save it: 36 skills at 1.90×, with a median description already at 380
+  characters, so fitting would have meant gutting all of them. Chintan chose the seven-way
+  split over a strict four-way framework split, which would have left SwiftUI alone at 24
+  skills and **1.30× — still over**. Only the finer split actually solves it.
+  **Landed.** The seven follow the sections Apple's own SwiftUI documentation uses, which is
+  what architecture.md says categories must mirror:
+
+  | | skills | listing | ×budget |
+  | --- | ---: | ---: | ---: |
+  | `swiftui-views` | 9 | 3,848 B | 0.48× |
+  | `swiftui-layout-nav` | 6 | 2,515 B | 0.31× |
+  | `swiftui-data` | 5 | 2,421 B | 0.30× |
+  | `swiftui-interaction` | 4 | 1,602 B | 0.20× |
+  | `uikit-appkit` | 6 | 2,466 B | 0.31× |
+  | `swiftdata` | 2 | 814 B | 0.10× |
+  | `widgets-intents` | 4 | 1,526 B | 0.19× |
+
+  **Every category in the library now fits: 44 of 44, worst 0.98×** — the finish of the
+  arc that started with 1.3's loader read. The class plugins are unchanged and still
+  oversized by design (`apple-code` 4.87×): a consumer who wants everything accepts
+  name-only listings, and a consumer who does not installs a category.
+  **Path changes, and what did not change.** 36 skills moved on disk and their frontmatter
+  `category` moved with them — the linter requires the two to agree, which is what made this
+  safe to do mechanically. Skill **names** did not change, so `pairs_with` edges, registry
+  keys and any consumer lockfile are untouched; only the `app-frameworks` category plugin
+  disappears, replaced by seven. Timed deliberately: those plugins shipped in 7.2 hours
+  earlier, so nobody had installed one yet. The scaffold examples in CLAUDE.md,
+  CONTRIBUTING.md and authoring.md moved to a category that still exists;
+  `docs/refresh-2026-08.md` keeps its old paths, being a dated record of past work.
 
 ## Deliberate non-goals (recorded so they stay decided)
 
