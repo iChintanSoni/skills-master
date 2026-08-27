@@ -271,10 +271,23 @@ run (~$0.22 and ~$0.37 a session).
   identical" is indistinguishable from "these 128 skills were genuinely checked on the same
   day", so a rule would fire on honest work and miss the dishonest kind a week later. The
   enforcement that does work is 0.1: a date the upstream evidence contradicts.
-- [ ] **2.2 Currency-first authoring guidance (S).** Fold 4.1's finding into
+- [x] **2.2 Currency-first authoring guidance (S).** Fold 4.1's finding into
   `docs/authoring.md`: a new skill earns its place by carrying post-cutoff specifics or
   judgment the vendor's docs bury. Restating a stable, well-documented API measurably adds
   nothing — and still costs listing budget.
+  **Landed** as "What earns a new skill", ahead of the scaffold section, because it decides
+  whether to scaffold at all. It opens on the question the evidence supports — *what does the
+  model get wrong today without this skill?* — and carries the numbers rather than the
+  slogan: every stable-subject skill in the 8-skill sample scored a **zero** delta, and
+  `crash-anr-vitals` is written up as the case where my guess about *why* a skill wins was
+  wrong even though the delta was real.
+  Two guards added that 4.1 alone would not have justified. **It is not a delete argument** —
+  3.1 is open and a skill worth nothing to a frontier model may still be worth something to a
+  smaller one. And **it is not a licence to guess at what is new**: 1.2 caught a refresh
+  inventing an artifact, so the section says a currency claim is only worth carrying if it
+  came from a vendor page you had open. Mirrored as a "Currency policy" paragraph in
+  `CLAUDE.md`, next to the content and trigger policies, since that is the file agents
+  actually read before authoring.
 
 ## Phase 3 — The zero-delta question (evidence first, and genuinely open)
 

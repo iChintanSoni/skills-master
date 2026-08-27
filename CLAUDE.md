@@ -114,6 +114,8 @@ Warnings worth honoring: a `reference.md`/`examples.md`/`checklist.md` over 100 
 
 **Trigger policy:** before writing a new skill's description, `pnpm cli search <topic> --content ../../skills`. If an existing skill could plausibly match the same prompts, the PR ships a query set at `scripts/trigger-eval/<name>/eval.json` plus a harness run — the linter can check that a description *has* a "Use when …" clause, never that it triggers. No lint rule enforces this: overlap is a judgment, and `m3-*`/`hig-*` pairs are supposed to cover a topic from two sides.
 
+**Currency policy:** a new skill earns its place by carrying **post-cutoff specifics** or **judgment the vendor's docs bury** — measured, not assumed: every stable-subject skill in the 8-skill output-eval sample scored a delta of *zero* against a bare model. And a currency claim is only worth carrying if it came from a vendor page you had open — a skill that names an API which does not exist is worse than one that quietly went stale, because the stale one gets routed around and the wrong one gets repeated. See "What earns a new skill" in `docs/authoring.md`.
+
 **Content policy:** original prose and original minimal code only. Summarize Apple's / Google's documented best practices and link to them via `sources` + the `## References` section; never paste vendor text or sample code. Bump `snapshot_date` (and a `version` patch) whenever you re-verify against changed docs.
 
 `class` maps to a directory via `CLASS_DIR` — note `overview` → `overviews/` on disk.

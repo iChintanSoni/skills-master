@@ -2,6 +2,21 @@
 
 A skill encodes **best-practice judgment** for a topic — not a copy of the docs. Quality and currency matter more than coverage.
 
+## What earns a new skill
+
+Before scaffolding, answer one question: **what does the model get wrong today without this skill?** If you cannot name it, the skill will not measurably help — and it will still cost listing budget.
+
+That is measured, not assumed. `scripts/output-eval` ran eight skills against a control with no skill installed, and **every stable-subject skill scored a delta of zero**. On `m3-buttons`, `unit-testing` and `choosing-async-pattern` the control missed *nothing at all*: the model already knows Material button hierarchy, the JVM-versus-instrumented split, and when to reach for `AsyncStream`. Restating a well-documented, long-stable API adds nothing you can detect.
+
+The skills that did win won in one of two ways:
+
+- **Post-cutoff specifics** — facts training could not contain. `adopting-liquid-glass`'s control never named `UIDesignRequiresCompatibility` nor warned that content now shows through previously opaque bars; `foundation-models`' control never named `Attachment`.
+- **Judgment the vendor's docs bury** — true, documented, and not what the model reaches for. `crash-anr-vitals` was picked expecting its 2026 Play thresholds to be post-cutoff; **they were not**, and the control quoted them correctly. Its delta came from "prioritise clusters by *affected users*, not occurrences" — which is in the docs, several pages deep.
+
+So aim a new skill at the part of its subject that is newer than the model, or at the judgment call its docs make you dig for. Where a topic is mostly settled, scope the skill to the unsettled part rather than covering it evenly.
+
+Two things this does **not** mean. It is not a reason to delete existing skills — a skill that adds nothing to a frontier model may still help a smaller one, and that question is open. And it is not a licence to guess at what is new: a currency claim is only worth carrying if it came from a vendor page you had open. A skill that confidently names an artifact that does not exist is worse than one that quietly went stale — the stale one gets routed around, the wrong one gets repeated. See [`scripts/output-eval/README.md`](../scripts/output-eval/README.md) for both results and the ~$1.50 it costs to check a new skill in crowded territory before merging it.
+
 ## Scaffold
 
 ```bash
