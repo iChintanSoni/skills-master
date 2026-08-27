@@ -1,0 +1,28 @@
+{
+  "skill": "hig-ratings-reviews",
+  "install": ["hig-ratings-reviews"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "We want more App Store ratings. Plan: show the rating prompt on the third launch, and if the user dismisses it, show a custom sheet offering 100 in-game coins for a 5-star review. Review this plan.",
+      "expect": [
+        {
+          "label": "rejects incentivising reviews",
+          "pattern": "incentiv|bribe|reward|not allowed|against (?:the|App Store)|violat|prohibit"
+        },
+        {
+          "label": "uses the system review request API",
+          "pattern": "SKStoreReviewController|requestReview|RequestReviewAction|system prompt"
+        },
+        {
+          "label": "explains the system limits how often the prompt appears",
+          "pattern": "budget|three times|limited|quota|no guarantee|system decides|may not (?:be )?(?:appear|show)"
+        },
+        {
+          "label": "ties the trigger to a moment of satisfaction rather than a launch count",
+          "pattern": "moment|satisfaction|after[^.]{0,60}(succe|complet|accomplish)|not[^.]{0,40}launch"
+        }
+      ]
+    }
+  ]
+}

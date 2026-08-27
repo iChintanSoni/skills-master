@@ -302,12 +302,32 @@ run (~$0.22 and ~$0.37 a session).
 
 ## Phase 3 — The zero-delta question (evidence first, and genuinely open)
 
-- [ ] **3.1 Measure the zero-delta population (M) — decision item.** 4.1 sampled 8 skills.
+- [x] **3.1 Measure the zero-delta population (M) — decision item.** 4.1 sampled 8 skills.
   Before concluding anything about the ~300 whose subjects are stable, sample more widely and
   cheaply: 15–20 skills, one task each, one run. ~$12. If the zero-delta rate is as high as
   the pilot suggests, the library has a real question to answer — and it is **not** obviously
   "delete them": a skill that adds nothing to a frontier model may still help a smaller one,
   and it still occupies listing budget either way. Record the numbers; decide after.
+  **Landed. 15 skills by even stride across the path-sorted library, one task each: 14 zero,
+  1 positive, 0 negative. $9.74.** The one winner (`compose-custom-layouts`, +25) is the
+  hardest *construction* task in the set — the control got the structure right and botched
+  the constraint relaxation. Note what did **not** win: `car-app-library` and
+  `tvos-media-playback` are niche framework surfaces and the control handled both, so the
+  predictor is task difficulty and recency, **not** how specialised the topic is.
+  Sampling matters here and is the reason this is a separate item from 4.1: that sample was
+  stratified to over-represent recent subjects, which is right for "where does the delta come
+  from" and wrong for "how much of the library has one".
+  **Four caveats, all cutting against over-reading it,** are in the README: one task cannot
+  characterise a skill; the grader scores *concept coverage*, not prioritisation or code
+  quality, and saturates exactly where controls are strong; several assertion sets were drawn
+  partly from the skills' own guidance, so the bias favours the skill and the zero rate is if
+  anything understated; and two skills scored below 100% in **both** arms, which is the
+  evidence that the ties are real rather than a loose regex handing out full marks.
+  **The decision stays open, as designed.** What this settles is that the library's value is
+  **concentrated, not evenly spread** — about one skill in seven changes what a frontier model
+  produces. What it does not settle is the trade between listing budget (argues for pruning)
+  and the readers this did not measure: smaller models, agents with less context, humans
+  (argues against). That needs its own evidence rather than an inference from this table.
 
 ## Carried forward, undone on purpose
 

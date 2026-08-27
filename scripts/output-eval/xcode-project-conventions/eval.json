@@ -1,0 +1,28 @@
+{
+  "skill": "xcode-project-conventions",
+  "install": ["xcode-project-conventions"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "Our team keeps hitting project.pbxproj merge conflicts and build settings are scattered across targets. How should we restructure the Xcode project?",
+      "expect": [
+        {
+          "label": "moves build settings into xcconfig files",
+          "pattern": "xcconfig"
+        },
+        {
+          "label": "separates what belongs in a target, a scheme, and a configuration",
+          "pattern": "scheme"
+        },
+        {
+          "label": "modularises with local Swift packages",
+          "pattern": "Swift Package|local package|SPM|modulari"
+        },
+        {
+          "label": "addresses pbxproj churn directly",
+          "pattern": "pbxproj|synchroniz|folder reference|churn|conflict"
+        }
+      ]
+    }
+  ]
+}

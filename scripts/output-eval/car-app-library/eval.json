@@ -1,0 +1,32 @@
+{
+  "skill": "car-app-library",
+  "install": ["car-app-library"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "I'm adding Android Auto support to my Android app: a browsable list of the user's saved places, tapping one opens a detail view. What do I have to declare and build? Kotlin.",
+      "expect": [
+        {
+          "label": "declares a CarAppService",
+          "pattern": "CarAppService"
+        },
+        {
+          "label": "implements the Session lifecycle",
+          "pattern": "\\bSession\\b"
+        },
+        {
+          "label": "builds Screens and pushes them via ScreenManager",
+          "pattern": "ScreenManager|\\bScreen\\b"
+        },
+        {
+          "label": "uses the host template model rather than custom views",
+          "pattern": "ListTemplate|PaneTemplate|GridTemplate"
+        },
+        {
+          "label": "respects the host's template and item limits",
+          "pattern": "template limit|item limit|maximum of|limit of \\d|quota|6 items"
+        }
+      ]
+    }
+  ]
+}

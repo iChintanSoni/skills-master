@@ -1,0 +1,28 @@
+{
+  "skill": "choosing-graphics-api",
+  "install": ["choosing-graphics-api"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "We need a per-pixel dissolve effect on an image in our Compose app, and later a 2D particle background. Which Android graphics API for each, and when would we drop lower-level?",
+      "expect": [
+        {
+          "label": "names AGSL / RuntimeShader for the per-pixel effect",
+          "pattern": "AGSL|RuntimeShader"
+        },
+        {
+          "label": "applies it through RenderEffect / graphicsLayer",
+          "pattern": "RenderEffect|graphicsLayer"
+        },
+        {
+          "label": "keeps the ordinary drawing in Compose Canvas",
+          "pattern": "Canvas|drawWithCache|drawBehind"
+        },
+        {
+          "label": "names the point where you escalate off the Compose path",
+          "pattern": "Vulkan|OpenGL|game engine|native renderer"
+        }
+      ]
+    }
+  ]
+}

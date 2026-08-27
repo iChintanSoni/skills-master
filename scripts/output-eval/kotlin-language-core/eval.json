@@ -1,0 +1,32 @@
+{
+  "skill": "kotlin-language-core",
+  "install": ["kotlin-language-core"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "What are the most important Kotlin idioms to enforce when reviewing Android code on a team? Be specific about what you would flag.",
+      "expect": [
+        {
+          "label": "prefers val and immutability",
+          "pattern": "\\bval\\b|immutab"
+        },
+        {
+          "label": "flags the not-null assertion operator",
+          "pattern": "!!"
+        },
+        {
+          "label": "uses sealed hierarchies for closed state",
+          "pattern": "sealed"
+        },
+        {
+          "label": "uses data classes for value types",
+          "pattern": "data class"
+        },
+        {
+          "label": "applies scope functions deliberately",
+          "pattern": "let|apply|also|run\\b|with\\b"
+        }
+      ]
+    }
+  ]
+}

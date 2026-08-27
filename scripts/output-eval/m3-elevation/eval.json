@@ -1,0 +1,28 @@
+{
+  "skill": "m3-elevation",
+  "install": ["m3-elevation"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "Our Material 3 Android app puts a drop shadow on every card and dialog. In dark theme the hierarchy reads as flat. What is wrong and what should we do?",
+      "expect": [
+        {
+          "label": "names tonal elevation as the M3 mechanism",
+          "pattern": "tonal elevation"
+        },
+        {
+          "label": "explains depth through surface tint / container roles",
+          "pattern": "surface tint|surfaceContainer|surfaceColorAtElevation"
+        },
+        {
+          "label": "connects the dark-theme failure to shadows specifically",
+          "pattern": "dark[^.]{0,120}shadow|shadow[^.]{0,120}dark"
+        },
+        {
+          "label": "argues against elevating everything",
+          "pattern": "sparingly|not every|flat|flush|restraint|reserve"
+        }
+      ]
+    }
+  ]
+}

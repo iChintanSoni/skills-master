@@ -1,0 +1,28 @@
+{
+  "skill": "adopting-swift-6-concurrency",
+  "install": ["adopting-swift-6-concurrency"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "We have a 200k-line iOS app on Swift 5. Should we move to Swift 6 language mode now, and if so how do we sequence it?",
+      "expect": [
+        {
+          "label": "sequences the migration module by module",
+          "pattern": "per-module|module by module|module-by-module|incremental|one module"
+        },
+        {
+          "label": "uses strict concurrency checking as the stepping stone before the language mode",
+          "pattern": "strict concurrency|minimal|targeted|complete"
+        },
+        {
+          "label": "explains Sendable's role",
+          "pattern": "Sendable"
+        },
+        {
+          "label": "explains where MainActor isolation fits",
+          "pattern": "MainActor"
+        }
+      ]
+    }
+  ]
+}

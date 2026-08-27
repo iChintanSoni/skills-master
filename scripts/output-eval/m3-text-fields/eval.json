@@ -1,0 +1,28 @@
+{
+  "skill": "m3-text-fields",
+  "install": ["m3-text-fields"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "Review the sign-up form in our Material 3 Android app. It uses outlined text fields whose only label is a placeholder that vanishes on focus, and after submit it shows a red \"Invalid\" line under the email field. What should change?",
+      "expect": [
+        {
+          "label": "says a placeholder cannot serve as the label",
+          "pattern": "placeholder[^.]{0,100}(not|isn'?t|never|can'?t|disappear|vanish)|label[^.]{0,80}persist"
+        },
+        {
+          "label": "asks for error text that says what is wrong and how to fix it",
+          "pattern": "specific|actionable|what(?:'s| is) wrong|(?:how )?to fix|why it failed|tells? (?:the )?user nothing|complete the sentence"
+        },
+        {
+          "label": "addresses when validation fires rather than only what it says",
+          "pattern": "on blur|as they type|before submit|inline valid|after the user"
+        },
+        {
+          "label": "uses supporting text for the persistent hint",
+          "pattern": "supporting text"
+        }
+      ]
+    }
+  ]
+}
