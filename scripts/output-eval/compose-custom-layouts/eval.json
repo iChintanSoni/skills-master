@@ -1,0 +1,28 @@
+{
+  "skill": "compose-custom-layouts",
+  "install": ["compose-custom-layouts"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "I need a wrapping chip row in Jetpack Compose: chips flow onto the next line when they run out of width, and the container's height grows to fit. A Row just clips. Write it.",
+      "expect": [
+        {
+          "label": "reaches for the Layout composable rather than nesting standard containers",
+          "pattern": "\\bLayout\\s*\\("
+        },
+        {
+          "label": "measures children against constraints",
+          "pattern": "measurable|\\.measure\\("
+        },
+        {
+          "label": "places children inside the layout scope",
+          "pattern": "layout\\s*\\(|\\.place(?:Relative)?\\("
+        },
+        {
+          "label": "relaxes the incoming width constraint when measuring children",
+          "pattern": "copy\\(\\s*minWidth|Constraints\\.Infinity|constraints\\.copy"
+        }
+      ]
+    }
+  ]
+}

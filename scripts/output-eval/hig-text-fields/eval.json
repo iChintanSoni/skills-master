@@ -1,0 +1,28 @@
+{
+  "skill": "hig-text-fields",
+  "install": ["hig-text-fields"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "Critique this iOS sign-in form: email and password fields whose only labels are the placeholders \"Email\" and \"Password\", no AutoFill hints, and a generic \"Login failed\" message under the button.",
+      "expect": [
+        {
+          "label": "asks for textContentType so AutoFill works",
+          "pattern": "textContentType|AutoFill|content type"
+        },
+        {
+          "label": "sets an appropriate keyboard for the field",
+          "pattern": "keyboardType|email keyboard|keyboard type"
+        },
+        {
+          "label": "says the placeholder cannot be the only label",
+          "pattern": "placeholder[^.]{0,100}(not|isn'?t|never|only|disappear|vanish)"
+        },
+        {
+          "label": "wants the error specific and attached to the field it concerns",
+          "pattern": "specific|which field|next to|inline|beside the field"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "skill": "uikit-auto-layout",
+  "install": ["uikit-auto-layout"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "Programmatic UIKit: a wrapping label above a button, both inset from the safe area, and the button should hug its content. Also, how do I debug \"Unable to simultaneously satisfy constraints\"?",
+      "expect": [
+        {
+          "label": "turns off autoresizing mask translation",
+          "pattern": "translatesAutoresizingMaskIntoConstraints\\s*=\\s*false"
+        },
+        {
+          "label": "activates constraints in a batch",
+          "pattern": "NSLayoutConstraint\\.activate"
+        },
+        {
+          "label": "anchors to the safe area layout guide",
+          "pattern": "safeAreaLayoutGuide"
+        },
+        {
+          "label": "tunes hugging / compression resistance for the intrinsic-size behaviour",
+          "pattern": "ContentHugging|compression resistance|ContentCompressionResistance"
+        }
+      ]
+    }
+  ]
+}

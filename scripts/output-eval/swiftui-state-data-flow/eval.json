@@ -1,0 +1,34 @@
+{
+  "skill": "swiftui-state-data-flow",
+  "install": ["swiftui-state-data-flow"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "In SwiftUI with the Observation framework: which property wrapper owns what? Show a view-owned model, passing it to a child that mutates it, and injecting a shared model app-wide.",
+      "expect": [
+        {
+          "label": "uses the @Observable macro for the model",
+          "pattern": "@Observable"
+        },
+        {
+          "label": "owns the model with @State in the view that creates it",
+          "pattern": "@State"
+        },
+        {
+          "label": "uses @Bindable where a child needs bindings into it",
+          "pattern": "@Bindable"
+        },
+        {
+          "label": "injects the shared model through the environment",
+          "pattern": "@Environment|environment\\("
+        }
+      ],
+      "avoid": [
+        {
+          "label": "falls back to the legacy ObservableObject trio",
+          "pattern": "(@StateObject|@ObservedObject|@Published)"
+        }
+      ]
+    }
+  ]
+}

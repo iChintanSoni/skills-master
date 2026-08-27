@@ -31,6 +31,47 @@ Two skills per class, chosen in pairs: one whose subject is **recent**, one whos
 
 **Every stable-subject skill scored zero.** On `m3-buttons`, `unit-testing` and `choosing-async-pattern` the control missed *nothing at all* — the model already knows Material button hierarchy, the JVM-versus-instrumented split, and when to reach for `AsyncStream`. Those skills are not adding knowledge; at best they are saving the model from an off day.
 
+## The population sample (2026-08-27, 15 skills, 30 sessions, $9.74)
+
+The 8-skill sample above was **stratified on purpose** — half its skills were picked because their subject was recent. That is the right design for "where does the delta come from", and the wrong design for "how much of the library has one". PLAN 3.1 asks the second question, so this sample is drawn by **even stride across the path-sorted library** (every ~28th of the 423 not already measured), one representative task each, one run.
+
+**14 of 15 produced no measurable delta. One was positive. None were negative.**
+
+| Skill | Class | With | Without | Delta |
+|---|---|---:|---:|---:|
+| `compose-custom-layouts` | code | 100% | 75% | **+25** |
+| `adopting-swift-6-concurrency` | overview | 100% | 100% | 0 |
+| `app-actions-assistant` | code | 100% | 100% | 0 |
+| `car-app-library` | code | 80% | 80% | 0 |
+| `choosing-graphics-api` | overview | 100% | 100% | 0 |
+| `hig-ratings-reviews` | design | 100% | 100% | 0 |
+| `hig-text-fields` | design | 100% | 100% | 0 |
+| `kotlin-language-core` | lang-tooling | 100% | 100% | 0 |
+| `m3-elevation` | design | 100% | 100% | 0 |
+| `m3-text-fields` | design | 100% | 100% | 0 |
+| `runtime-permissions` | code | 100% | 100% | 0 |
+| `swiftui-state-data-flow` | code | 100% | 100% | 0 |
+| `tvos-media-playback` | code | 100% | 100% | 0 |
+| `uikit-auto-layout` | code | 100% | 100% | 0 |
+| `xcode-project-conventions` | lang-tooling | 75% | 75% | 0 |
+
+The single winner is the hardest *construction* task in the set — a custom `Layout` that has to relax the incoming width constraint before measuring children, which the control got structurally right and then botched at exactly that step. That matches 4.1: the delta appears where the task is genuinely hard or genuinely new, not where the topic is merely specialised. Note what did **not** win — `car-app-library` and `tvos-media-playback` are niche framework surfaces, and the control handled both.
+
+### Read this number with four caveats, all of which cut against over-reading it
+
+1. **One task per skill.** A skill answers more than one question. This estimates a *population rate*; it is not a verdict on any individual skill, and a different task could find a delta in any of these 14.
+2. **The bar is concept coverage, not answer quality.** The grader asks whether the right ideas appear — not whether they are prioritised well, explained well, or coded well. A skill could improve an answer substantially without changing which concepts show up, and this instrument would score that as zero. The control answers were consistently strong *and* well-organised, which is exactly the regime where a concept-coverage grader saturates.
+3. **The bias runs toward the skill, not away.** Several assertion sets were drawn partly from the skills' own guidance, which favours the with-skill arm. The zero rate is therefore, if anything, **understated**.
+4. **Not everything hit the ceiling.** `car-app-library` (80%) and `xcode-project-conventions` (75%) had an assertion that *both* arms missed, so the grader was not trivially satisfiable — the ties are real ties, not two 100%s handed out by a loose regex.
+
+Two grader faults were caught by reading answers, as usual. `m3-text-fields` first scored **−25** because the with-skill answer demanded error text that "completes the sentence *To fix this, you need to…*" and the regex wanted the literal words "how to fix" — corrected to a genuine tie. And `swiftui-state-data-flow` logged an `avoid` hit in **both** arms for naming `@StateObject`/`@Published`: one in a migration table, the other as correct advice for older deployment targets. Neither endorsed it.
+
+### What this does and does not settle
+
+It settles that **the library's value is concentrated, not spread evenly**. Roughly one skill in seven, in this sample, changes what a frontier model produces on a representative question.
+
+It does not settle what to do about it, and the plan deliberately stops here. "Adds nothing to Claude on one task" is not "adds nothing": these skills still cost [listing budget](../../docs/architecture.md) whether they help or not, which argues for pruning — and they may still help a smaller model, an agent with less context, or a person reading them, which argues against. That trade needs its own evidence, not an inference from this table.
+
 ## Refresh evals: did the refresh change the answers, or only the file? (2026-08-27, $10.89)
 
 `--baseline=<git-ref>` installs the skill *as it was* at that ref into a third arm. Run against the two skills PLAN 1.1 refreshed, this was supposed to confirm the refresh loop works. It half-confirmed it and half-caught me.

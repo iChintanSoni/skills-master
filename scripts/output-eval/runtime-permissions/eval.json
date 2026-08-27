@@ -1,0 +1,28 @@
+{
+  "skill": "runtime-permissions",
+  "install": ["runtime-permissions"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "In a Jetpack Compose screen I need the camera permission before opening a capture screen. Handle the first request, the rationale case, and permanent denial. Kotlin.",
+      "expect": [
+        {
+          "label": "launches through rememberLauncherForActivityResult",
+          "pattern": "rememberLauncherForActivityResult"
+        },
+        {
+          "label": "uses the RequestPermission activity-result contract",
+          "pattern": "RequestPermission"
+        },
+        {
+          "label": "shows a rationale when the system asks for one",
+          "pattern": "shouldShowRequestPermissionRationale|rationale"
+        },
+        {
+          "label": "routes permanent denial to app settings rather than re-prompting",
+          "pattern": "ACTION_APPLICATION_DETAILS_SETTINGS|app settings|Settings screen"
+        }
+      ]
+    }
+  ]
+}

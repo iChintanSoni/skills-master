@@ -1,0 +1,28 @@
+{
+  "skill": "tvos-media-playback",
+  "install": ["tvos-media-playback"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "Building a tvOS video app. I need the standard full-screen player with chapter markers, a custom menu in the transport bar, and mid-roll ads. Which APIs?",
+      "expect": [
+        {
+          "label": "uses AVPlayerViewController as the player",
+          "pattern": "AVPlayerViewController"
+        },
+        {
+          "label": "customises the transport bar with the tvOS-only menu API",
+          "pattern": "transportBarCustomMenuItems"
+        },
+        {
+          "label": "schedules ads with AVPlayerInterstitialEvent",
+          "pattern": "AVPlayerInterstitialEvent"
+        },
+        {
+          "label": "supplies chapters through navigation marker groups",
+          "pattern": "navigationMarkerGroups|AVNavigationMarkersGroup"
+        }
+      ]
+    }
+  ]
+}

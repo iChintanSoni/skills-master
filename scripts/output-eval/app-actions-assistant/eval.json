@@ -1,0 +1,28 @@
+{
+  "skill": "app-actions-assistant",
+  "install": ["app-actions-assistant"],
+  "notes": "Part of the PLAN 3.1 population sample: 15 skills drawn by even stride from the path-sorted library, one task each, to estimate how much of the library adds nothing measurable over a bare model. One task cannot characterise a skill — this measures the population, not this skill.",
+  "tasks": [
+    {
+      "prompt": "I want my Android recipe app to show up in launcher long-press shortcuts and be openable by voice through Google Assistant. What do I implement?",
+      "expect": [
+        {
+          "label": "declares capabilities in shortcuts.xml",
+          "pattern": "shortcuts\\.xml"
+        },
+        {
+          "label": "pushes dynamic shortcuts through ShortcutManagerCompat",
+          "pattern": "ShortcutManagerCompat|pushDynamicShortcut"
+        },
+        {
+          "label": "builds ShortcutInfoCompat with an intent the OS can deep-link",
+          "pattern": "ShortcutInfoCompat"
+        },
+        {
+          "label": "ties the voice surface to a declared capability",
+          "pattern": "capability|App Action|built-in intent|BII"
+        }
+      ]
+    }
+  ]
+}
