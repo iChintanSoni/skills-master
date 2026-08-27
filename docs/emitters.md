@@ -32,6 +32,25 @@ So a project that uses Claude Code *and* Codex genuinely needs both roots, and a
 
 **The AGENTS.md digest is left alone** when both are enabled. Making one emitter's output depend on another's being enabled would break the property that each target owns its files independently — the thing that makes the lockfile, `sync`, and `remove` generic. A consumer who now gets full skills in `.agents/skills/` and doesn't want the digest too can simply not enable `agents`.
 
+## How each agent triggers a skill
+
+Every one of them preloads **`name` + `description` and nothing else**, then loads the body only on activation. That is what makes `license` and `metadata` free to emit, and it is what makes the description the entire trigger surface.
+
+| Agent | Preloaded | Skills-list budget | Explicit invocation |
+|---|---|---|---|
+| Claude Code | `- <name>: <description>` | `contextWindow × 4 B/token × 1%` — ~8,000 B at 200k; over budget, entries degrade to a bare `- <name>` | Skill tool / `/name` |
+| Codex CLI | name + description | "at most **2% of the model's context window, or 8,000 characters** when unknown" | `$skill-name` |
+| Gemini CLI | "name and description of all enabled skills" injected into the system prompt | none documented | `activate_skill` (asks for approval) |
+| VS Code Copilot | name + description, matched against the request | none documented; `name` ≤ 64, `description` ≤ 1024 | `/` menu; `disable-model-invocation` / `user-invocable` opt out |
+
+**Two independent vendors land on ~8,000 characters.** The listing budget is an ecosystem norm, not a Claude Code quirk — which is why the crawl reports distance from it (see PLAN.md G8 and item 2.3).
+
+Codex is explicit about the consequence for authors:
+
+> Front-load the key use case and trigger words so a host can still match the skill if descriptions are shortened.
+
+We emit **spec fields only**, which all four accept. VS Code additionally understands `argument-hint`, `user-invocable`, `disable-model-invocation` and `context`, but those are not in the spec's allowed set — emitting them would fail the conformance gate, and a prose knowledge library has no use for them.
+
 ## Whole vs block mode
 
 - **whole** — the emitter owns the entire file (`.mdc`, `.instructions.md`, `.claude/.../SKILL.md`). Updates overwrite it as a unit.
