@@ -1,6 +1,6 @@
 ---
 name: m3-badges
-description: "Design guidance and critique for Material 3 badges on Android: choosing between small dot badges and large numbered badges, placement on navigation and icon targets, count formatting, and accessible labeling. Use when designing or reviewing notification counts, unread indicators, status dots, or any badge overlaid on a navigation item or action icon in a Compose-first Android UI."
+description: "Use when designing or reviewing notification counts, unread indicators, status dots, or any badge overlaid on a navigation item or action icon: small dot versus large numbered badges, placement, count formatting, and accessible labelling. M3 design critique, not code."
 license: MIT
 tags: [notifications]
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

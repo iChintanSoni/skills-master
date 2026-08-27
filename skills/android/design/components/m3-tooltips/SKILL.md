@@ -1,6 +1,6 @@
 ---
 name: m3-tooltips
-description: "Design critique and guidance for Material 3 tooltips on Android, covering plain vs rich variants, hover and long-press triggers, helper-text conciseness, and the rule that tooltips must never carry information essential to task completion. Use when designing or reviewing tooltip placement, variant selection, and copy for Compose-first Android apps."
+description: "Use when designing or reviewing tooltip placement, variant and copy: plain versus rich tooltips, hover and long-press triggers, helper-text conciseness, and the rule that a tooltip must never carry information essential to completing the task. M3 design critique, not code."
 license: MIT
 tags: []
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

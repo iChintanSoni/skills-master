@@ -1,9 +1,9 @@
 ---
 name: hig-context-menus
-description: Design critique and guidance for context menus that surface item-relevant actions via long-press or secondary-click, with optional previews, sensible grouping, destructive-item placement, and discoverability (the same actions must exist elsewhere). Use when reviewing or designing long-press/right-click menus, deciding context menu vs edit menu, choosing menu actions and previews, grouping or marking destructive commands, or auditing discoverability on iOS, iPadOS, macOS, or visionOS. Produces HIG-grounded design recommendations, not code.
+description: "Use when reviewing or designing long-press and right-click menus: context menu versus edit menu, choosing actions and previews, sensible grouping, destructive-item placement, and the discoverability rule that the same actions must exist elsewhere. HIG design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-05-30"
 ---
 

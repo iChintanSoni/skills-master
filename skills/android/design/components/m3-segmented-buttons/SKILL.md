@@ -1,6 +1,6 @@
 ---
 name: m3-segmented-buttons
-description: "Design judgment and critique for Material 3 segmented buttons — a compact row of connected options for single-select or multi-select choices within a view. Use when designing or reviewing a segmented button group, deciding between segmented buttons and tabs, chips, or radio buttons, judging correct item counts, and evaluating label and icon clarity on Android."
+description: "Use when designing or reviewing a segmented button group: single-select versus multi-select, judging correct item counts, label and icon clarity, and segmented buttons versus tabs, chips or radio buttons. M3 design critique, not code."
 license: MIT
 tags: [selection]
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components
   snapshot_date: "2026-06-06"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use

@@ -1,6 +1,6 @@
 ---
 name: m3-app-bars
-description: "Design critique and Material 3 guidance for top app bars (small, center-aligned, medium, large) and the bottom app bar: choosing the right size, scroll behaviors, title and action placement, overflow menus, and how bars interact with FABs and navigation. Use when reviewing or designing an Android screen's top or bottom app bar, selecting between bar sizes and scroll behaviors, placing navigation icons and action items, or evaluating whether a bottom app bar is the right container for actions and a FAB."
+description: "Use when reviewing or designing a screen's top or bottom app bar: choosing among small, center-aligned, medium and large, scroll behaviours, title and action placement, overflow menus, and how bars interact with FABs and navigation. M3 design critique, not code."
 license: MIT
 tags: []
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.android.com/develop/ui/compose/components/app-bars
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 ## When to use

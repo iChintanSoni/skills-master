@@ -1,9 +1,9 @@
 ---
 name: m3-carousel
-description: "Design judgment and critique for Material 3 carousels on Android: choosing among multi-browse, uncontained, hero, and full-screen layouts, sizing items for clarity and touch, using parallax and peek to signal scrollability, and ensuring accessible scroll experiences. Use when deciding whether a carousel is the right pattern for a content row, when selecting a carousel variant, or when reviewing an existing carousel design for visual hierarchy, item density, and scroll accessibility."
+description: "Use when deciding whether a carousel suits a content row, choosing a variant, or reviewing an existing one: multi-browse, uncontained, hero and full-screen layouts, item sizing for clarity and touch, parallax and peek to signal scrollability, and scroll accessibility. M3 design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-06-06"
 ---
 

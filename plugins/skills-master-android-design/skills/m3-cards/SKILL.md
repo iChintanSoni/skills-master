@@ -1,9 +1,9 @@
 ---
 name: m3-cards
-description: "Design guidance and critique for Material 3 cards on Android: choosing between elevated, filled, and outlined card variants, deciding when a card beats a list item or plain surface, clickable vs container cards, sizing and touch targets, and grouping related content and actions. Use when designing or reviewing any card-based layout, content groupings, feed items, dashboard tiles, or deciding between a card and a list row in Compose-first Android UI."
+description: "Use when designing or reviewing a card-based layout, content grouping, feed item or dashboard tile: elevated versus filled versus outlined variants, when a card beats a list row or plain surface, clickable versus container cards, and sizing and touch targets. M3 design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-06-06"
 ---
 

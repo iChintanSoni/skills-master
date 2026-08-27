@@ -1,6 +1,6 @@
 ---
 name: hig-alerts
-description: "Design critique and recommendations for alerts on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing an alert, confirmation, or interruption, deciding whether an alert is warranted at all, writing a clear title and concise optional message, choosing one or two buttons and labeling them with specific verbs, emphasizing the safe default action and marking destructive actions, and avoiding alert fatigue. Covers the 26 design cycle with Liquid Glass alerts that morph from their presenting control. Produces UX guidance, not code."
+description: "Use when reviewing or designing an alert, confirmation or interruption: whether an alert is warranted at all, a clear title and concise message, one or two buttons labelled with specific verbs, emphasising the safe default, marking destructive actions, and avoiding alert fatigue. HIG design critique, not code."
 license: MIT
 tags: [modality]
 x-skills-master:
@@ -14,7 +14,7 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/action-sheets
   snapshot_date: "2026-05-30"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # HIG Alerts

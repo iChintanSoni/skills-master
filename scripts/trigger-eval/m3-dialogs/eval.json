@@ -1,0 +1,16 @@
+{
+  "skill": "m3-dialogs",
+  "install": ["m3-dialogs", "m3-sheets", "m3-snackbar", "hig-alerts"],
+  "notes": "Written when 3.3 trimmed this description from 493 characters to 325, to check that the trim did not cost the skill its trigger. The neighbourhood is the interruption family — a bottom sheet, a snackbar, and Apple's alert skill — because 'how should I ask the user to confirm this' has four plausible answers and only one of them is a dialog.",
+  "shouldTrigger": [
+    "Should this destructive confirmation be a dialog in my Compose app?",
+    "Review my delete-account confirmation dialog — is the button order right?",
+    "I need a full-screen dialog for a multi-step form on Android. Is that the right call?",
+    "Critique the interruption flow in this Android app: we show a modal every time sync fails."
+  ],
+  "shouldNotTrigger": [
+    "Should this filter panel slide up from the bottom of the screen or be a separate page?",
+    "The user just deleted an item and I want to offer an undo for a few seconds. What pattern?",
+    "How do I present a modal sheet in SwiftUI with a medium detent?"
+  ]
+}

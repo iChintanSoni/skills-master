@@ -1,9 +1,9 @@
 ---
 name: hig-text-fields
-description: Design-critique guidance for Apple Human Interface Guidelines on text fields across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS, covering clear labels and purposeful placeholders, matching the keyboard and content type to the field, inline validation and error presentation, clear buttons, secure entry for sensitive data, and minimizing required input. Use when critiquing or specifying a single-line text input, sign-in or password field, search box, address or payment row, or any form field, judging label and placeholder wording, keyboard and AutoFill choices, or how errors and required fields are shown. Produces UX critique and recommendations, not code.
+description: "Use when critiquing or specifying a text input — sign-in or password field, search box, address or payment row, any form field: label and placeholder wording, keyboard and content-type choices, AutoFill, inline validation and error presentation, secure entry, and how required fields are shown. HIG design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-05-30"
 ---
 

@@ -1,9 +1,9 @@
 ---
 name: m3-dialogs
-description: "Design critique and recommendations for Material 3 dialogs on Android: basic dialogs, full-screen dialogs, when a modal interruption is justified, confirm/dismiss action order and labeling, destructive confirmations, focus and accessibility, and when to choose a bottom sheet or inline message instead. Use when reviewing or designing any dialog, confirmation prompt, or interruption flow in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code."
+description: "Use when reviewing or designing a dialog, confirmation prompt or interruption flow: basic versus full-screen dialogs, whether a modal interruption is justified, confirm and dismiss order and labelling, destructive confirmations, focus and accessibility, and when a bottom sheet fits better. M3 design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.1"
+  version: "1.0.2"
   snapshot-date: "2026-06-06"
 ---
 

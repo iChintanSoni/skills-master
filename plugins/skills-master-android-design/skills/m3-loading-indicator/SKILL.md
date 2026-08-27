@@ -1,9 +1,9 @@
 ---
 name: m3-loading-indicator
-description: Applies Material 3 Expressive design guidance to the loading indicator component — choosing it for indefinite waits instead of a linear/circular progress indicator, understanding its animated personality, sizing and placement rules, and when to prefer alternatives such as skeleton screens or determinate progress. Use when designing or reviewing any screen that shows an indefinite wait state, deciding between a loading indicator and other progress patterns, or critiquing the expressiveness and appropriateness of a wait experience in an Android app.
+description: "Use when designing or reviewing a screen with an indefinite wait: choosing the M3 Expressive loading indicator over a linear or circular progress indicator, its animated personality, sizing and placement, and when a skeleton screen or determinate progress answers better. M3 design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.1"
+  version: "1.0.2"
   snapshot-date: "2026-08-25"
 ---
 

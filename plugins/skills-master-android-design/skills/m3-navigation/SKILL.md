@@ -1,9 +1,9 @@
 ---
 name: m3-navigation
-description: "Material 3 design guidance for primary navigation on Android: when to use a navigation bar, navigation rail, or navigation drawer based on window size class, how to handle 3-7 top destinations, and how to design adaptive navigation that transitions across compact, medium, and expanded layouts. Use when designing or critiquing app-level navigation structure, evaluating destination count, or auditing active-state treatment and accessibility of primary nav components."
+description: "Use when designing or critiquing app-level navigation: navigation bar versus rail versus drawer by window size class, handling three to seven top destinations, adaptive transitions across compact, medium and expanded layouts, and active-state treatment and accessibility. M3 design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.1"
+  version: "1.0.2"
   snapshot-date: "2026-06-06"
 ---
 

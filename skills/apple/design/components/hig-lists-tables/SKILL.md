@@ -1,6 +1,6 @@
 ---
 name: hig-lists-tables
-description: "Applies Apple Human Interface Guidelines to lists and tables — organizing rows and sections, choosing plain vs grouped vs inset-grouped styles, selection and edit-mode affordances, swipe actions, disclosure/outline hierarchy, and deciding between a list, a collection/grid, and a true multi-column table. Use when designing or reviewing scrollable row-based UI, picking a list style, critiquing swipe actions or reordering, or choosing the right container for a data set. Produces design critique and recommendations, not code."
+description: "Use when designing or reviewing scrollable row-based UI: plain versus grouped versus inset-grouped styles, sections, selection and edit-mode affordances, swipe actions, disclosure hierarchy, and choosing between a list, a grid and a true multi-column table. HIG design critique, not code."
 license: MIT
 tags: [collections]
 x-skills-master:
@@ -15,7 +15,7 @@ x-skills-master:
     - https://developer.apple.com/design/human-interface-guidelines/outline-views
   snapshot_date: "2026-08-25"
   stability: stable
-  version: 1.0.2
+  version: 1.0.3
 ---
 
 ## When to use

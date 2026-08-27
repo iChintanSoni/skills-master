@@ -1,9 +1,9 @@
 ---
 name: hig-toggles
-description: Design-critique guidance for Apple Human Interface Guidelines toggles and switches across iOS, iPadOS, macOS, watchOS, tvOS, and visionOS, covering when a switch fits an immediate on/off setting, clear labeling of what 'on' means, avoiding switches for actions that need confirmation, and the switch-versus-checkbox choice on Mac. Use when critiquing or specifying a settings row, preferences pane, feature toggle, or control panel, judging whether a switch or a button is the right control, reviewing toggle labels, or deciding between switch and checkbox on macOS. Produces UX critique and recommendations, not code.
+description: "Use when critiquing or specifying a settings row, preferences pane, feature toggle or control panel: whether a switch or a button is the right control, labelling what 'on' means, avoiding switches for actions that need confirmation, and switch versus checkbox on macOS. HIG design critique, not code."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   snapshot-date: "2026-05-30"
 ---
 
