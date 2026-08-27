@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [swiftui-toolbars, choosing-navigation-pattern, hig-navigation-bars, hig-sidebars]
+  upstream:
+    - SwiftUI
   sources:
     - https://developer.apple.com/documentation/swiftui/navigationstack
     - https://developer.apple.com/documentation/swiftui/navigationsplitview

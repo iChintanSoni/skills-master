@@ -14,6 +14,8 @@ x-skills-master:
     ios: "16"
     swift: "6.0"
   pairs_with: [hig-siri-design, hig-snippets, adopting-app-intents]
+  upstream:
+    - AppIntents
   sources:
     - https://developer.apple.com/documentation/appintents
     - https://developer.apple.com/documentation/appintents/app-shortcuts

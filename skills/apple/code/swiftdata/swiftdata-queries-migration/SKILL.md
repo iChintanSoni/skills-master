@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [swiftdata-modeling]
+  upstream:
+    - SwiftData
   sources:
     - https://developer.apple.com/documentation/swiftdata/fetchdescriptor
     - https://developer.apple.com/documentation/swiftdata/schemamigrationplan

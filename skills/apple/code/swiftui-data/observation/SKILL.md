@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [swiftui-state-data-flow]
+  upstream:
+    - Observation
   sources:
     - https://developer.apple.com/documentation/observation
     - https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro

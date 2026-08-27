@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [hig-lists-tables, swiftui-scrollview]
+  upstream:
+    - SwiftUI
   sources:
     - https://developer.apple.com/documentation/swiftui/list
     - https://developer.apple.com/documentation/swiftui/table

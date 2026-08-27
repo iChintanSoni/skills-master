@@ -144,13 +144,31 @@ run (~$0.22 and ~$0.37 a session).
   `app-widgets-glance` (80 days, **8 releases**), `wear-compose` (80 days, **14**), `paging`,
   `datastore`, `hilt-di`. That is Phase 1's input, and it is evidence rather than a date.
 
-- [ ] **0.3 Give Apple a dated source (M).** Nothing here can flag an Apple skill: the three
+- [x] **0.3 Give Apple a dated source (M).** Nothing here can flag an Apple skill: the three
   Apple endpoints are a framework *index* and two taxonomies, with **no dates at all**, so
   every `hig-*` and Swift skill is invisible to the currency report no matter how stale.
   Candidates to evaluate, cheapest first: the per-framework "Updates" pages Apple publishes
   under `developer.apple.com/documentation/updates`, the release-notes RSS, and WWDC session
   metadata. Until one lands, the report should say Apple is unmeasured rather than imply it
   is current — the same honesty 0.2's Arabic bug argues for.
+  **Landed: Apple's per-framework "updates" pages.** `/documentation/updates/<framework>`
+  carries dated `## June 2026` headings — the only dated Apple content found. The index
+  lists 208 such pages; the crawl fetches only the ones skills declare, because a crawl
+  making 208 requests to answer a question about 20 skills is one somebody eventually turns
+  off. 21 Apple skills seeded, resolving to **12** dated framework pages.
+  **Month granularity, not day.** A heading says "June 2026", so the report reads it as the
+  1st and cannot say *how far* behind — only whether. That is enough for a queue and is
+  stated rather than smoothed over.
+  **Two bugs found by looking at the output instead of the summary.** (1) `upstream.json`
+  was written *before* the Apple topics were merged in, so the report used them and the
+  artifact on disk never had them — invisible unless you opened the file. (2) `Date.parse
+  ("June 2026 01")` yields **local** midnight, which `toISOString` renders as **31 May** in
+  any timezone east of UTC; every Apple date was silently a day early. Both fixed, the
+  second with an explicit `Date.UTC`.
+  **Still unmeasured, and now named in the report rather than implied current:** `CloudKit`
+  and `Observation` have no updates page at all, and every `hig-*` design skill tracks a
+  guideline rather than a framework, so nothing dates them. That is roughly half the Apple
+  library still invisible — better than all of it, and worth stating plainly.
 
 ## Phase 1 — Refresh what the evidence names
 

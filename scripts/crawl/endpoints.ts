@@ -29,6 +29,15 @@ export const APPLE_ENDPOINTS: Endpoint[] = [
     description: "Technology Overviews (high-level conceptual guides)",
   },
   {
+    // The index of Apple's per-framework "<Framework> updates" pages. Each of
+    // those pages carries dated `## June 2026` headings — the only dated Apple
+    // source found; the taxonomy endpoints below have no dates at all.
+    domain: "apple",
+    key: "apple-updates-index",
+    url: "https://developer.apple.com/tutorials/data/documentation/updates.json",
+    description: "Per-framework update pages (dated by month)",
+  },
+  {
     domain: "apple",
     key: "human-interface-guidelines",
     url: "https://developer.apple.com/tutorials/data/design/human-interface-guidelines.json",

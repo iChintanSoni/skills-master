@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [hig-gestures-design, hig-drag-and-drop]
+  upstream:
+    - SwiftUI
   sources:
     - https://developer.apple.com/documentation/swiftui/gestures
     - https://developer.apple.com/documentation/swiftui/composing-swiftui-gestures

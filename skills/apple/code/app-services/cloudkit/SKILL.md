@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [choosing-persistence]
+  upstream:
+    - CloudKit
   sources:
     - https://developer.apple.com/documentation/cloudkit/ckcontainer
     - https://developer.apple.com/documentation/cloudkit/cksyncengine-5sie5
