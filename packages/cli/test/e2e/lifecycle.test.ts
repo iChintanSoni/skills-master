@@ -292,6 +292,52 @@ describe("update with a changed source", () => {
     expect(doctorCommand({ cwd: dir }).ok).toBe(true);
   });
 
+  // `doctor` compares emitted files against the lockfile, never the lockfile
+  // against the source, so an install pinned to an old release reports healthy.
+  // `update --check` is the gate for that, and it must write nothing.
+  describe("update --check", () => {
+    it("reports a current install and leaves everything alone", async () => {
+      const content = forkContent();
+      await addCommand({ cwd: dir, names: [NAME], targets: ["claude"], content });
+      const before = read(CLAUDE);
+
+      const res = await updateCommand({ cwd: dir, content, check: true });
+      expect(res.behind).toEqual([]);
+      expect(res.upToDate).toEqual([NAME]);
+      expect(read(CLAUDE)).toBe(before);
+    });
+
+    it("reports a newer release without installing it", async () => {
+      const content = forkContent();
+      await addCommand({ cwd: dir, names: [NAME], targets: ["claude"], content });
+      const before = read(CLAUDE);
+
+      editUpstream(content, { body: "Newer guidance.", version: "1.1.0" });
+      const res = await updateCommand({ cwd: dir, content, check: true });
+
+      expect(res.behind).toEqual([
+        { name: NAME, installed: "1.0.0", available: "1.1.0", reason: "version" },
+      ]);
+      // The point of --check: it reports, it does not act.
+      expect(read(CLAUDE)).toBe(before);
+      expect(JSON.parse(read(LOCK)).skills[NAME].version).toBe("1.0.0");
+    });
+
+    // The case that actually bit this repo: resource files and descriptions get
+    // edited without a release, so a version comparison alone would say "fine".
+    it("catches content edited without a version bump", async () => {
+      const content = forkContent();
+      await addCommand({ cwd: dir, names: [NAME], targets: ["claude"], content });
+
+      editUpstream(content, { body: "Edited with no release." });
+      const res = await updateCommand({ cwd: dir, content, check: true });
+
+      expect(res.behind).toEqual([
+        { name: NAME, installed: "1.0.0", available: "1.0.0", reason: "content" },
+      ]);
+    });
+  });
+
   it("moves the block sentinel to the new version without duplicating the block", async () => {
     const content = forkContent();
     await addCommand({ cwd: dir, names: [NAME], targets: ["agents"], content });
