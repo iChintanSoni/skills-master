@@ -2,6 +2,9 @@
 name: modularization-local-spm
 description: Guides modularizing an app into local Swift packages with clean public interfaces, inward-flowing dependencies, faster builds, and a thin app target. Use when extracting feature or core modules, designing module boundaries, speeding up build and test cycles, or deciding how far to split a monolithic app.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

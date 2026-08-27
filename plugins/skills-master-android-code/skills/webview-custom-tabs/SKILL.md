@@ -2,6 +2,9 @@
 name: webview-custom-tabs
 description: Covers embedding web content in Android apps via WebView, Custom Tabs, and Trusted Web Activities — use when deciding how to display URLs, integrate a JavaScript bridge, or wrap a PWA in a native shell.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

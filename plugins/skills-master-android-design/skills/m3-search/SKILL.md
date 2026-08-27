@@ -2,6 +2,9 @@
 name: m3-search
 description: Design guidance for Material 3 search patterns — Use when deciding between search bar and search view, placing search in navigation, handling suggestions and recent queries, supporting voice entry, and determining when search warrants a prominent surface.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

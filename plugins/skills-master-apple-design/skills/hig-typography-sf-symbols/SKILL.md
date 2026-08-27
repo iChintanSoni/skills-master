@@ -2,6 +2,9 @@
 name: hig-typography-sf-symbols
 description: Critiques typography and SF Symbols usage against Apple's Human Interface Guidelines, covering built-in text styles for Dynamic Type, weight and size hierarchy, legibility, and consistent symbol rendering modes, weights, scales, and variants. Use when reviewing a screen's text hierarchy, evaluating whether type respects Dynamic Type and accessibility sizes, deciding font weights or styles, picking SF Symbol rendering modes, or checking that symbols visually match adjacent text.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

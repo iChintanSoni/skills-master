@@ -2,6 +2,9 @@
 name: app-bundles-size
 description: Guidance on building Android App Bundles (AAB), configuring per-device split APKs, structuring Play Feature Delivery for install-time and on-demand dynamic modules, adopting Play Asset Delivery, and measuring or reducing download size. Use when packaging a release build with AGP 9+, adding dynamic feature modules, optimising download size, or investigating why an AAB or APK is larger than expected.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

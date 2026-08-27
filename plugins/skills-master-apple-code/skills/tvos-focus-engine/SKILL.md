@@ -2,6 +2,9 @@
 name: tvos-focus-engine
 description: "Explains the UIKit focus engine and its SwiftUI surface: focusable and FocusState, focusSection and focusScope, prefersDefaultFocus and defaultFocus, resetFocus, focus effects and hoverEffect, UIFocusGuide and UIFocusSystem redirection, UIFocusDebugger, and Siri Remote directional input through onMoveCommand, onExitCommand, UIPress, and GCMicroGamepad. Use when focus lands in the wrong place, gets trapped, or refuses to move, when a custom view needs to become focusable, or when you must redirect focus across a gap in the layout."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

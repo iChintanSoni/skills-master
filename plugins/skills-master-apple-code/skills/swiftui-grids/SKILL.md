@@ -2,6 +2,9 @@
 name: swiftui-grids
 description: Guidance for choosing between SwiftUI's eager Grid/GridRow and lazy LazyVGrid/LazyHGrid, and for sizing tracks with GridItem (fixed, flexible, adaptive). Use when laying out content in rows and columns, building photo galleries or card collections, aligning form-like or spreadsheet content across columns, or deciding which grid container belongs inside a scroll view.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

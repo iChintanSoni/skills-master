@@ -2,6 +2,9 @@
 name: gamekit
 description: Use when adding Game Center to a game with GameKit — authenticating the local player via GKLocalPlayer.authenticateHandler, submitting leaderboard scores and reporting achievements, showing the dashboard with GKAccessPoint or GKGameCenterViewController, running real-time GKMatch or turn-based GKTurnBasedMatch matchmaking, saving games, and adopting the newer Challenges and Activities (GKGameActivity).
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

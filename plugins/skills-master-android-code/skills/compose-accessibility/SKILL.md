@@ -2,6 +2,9 @@
 name: compose-accessibility
 description: Covers Compose accessibility APIs — semantics modifier, contentDescription, mergeDescendants, stateDescription, Role, heading, custom actions, traversal order, touch-target sizing, and testTag. Use when building or auditing Compose UIs for TalkBack, Switch Access, or any assistive technology.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

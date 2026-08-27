@@ -2,6 +2,9 @@
 name: game-controller-input
 description: Covers game controller support on Android — routing KeyEvent and MotionEvent by InputDevice source, axis and deadzone handling, hot-plug and multiple controllers via InputManager.InputDeviceListener, per-controller rumble through VibratorManager, controller sensors and lights, button glyph conventions across Xbox/Switch/PlayStation styles, switching between touch and controller UI, and the Paddleboat library plus the Play manifest flag. Use when adding or auditing gamepad support in an Android game, including local multiplayer and Play Games large-screen requirements.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

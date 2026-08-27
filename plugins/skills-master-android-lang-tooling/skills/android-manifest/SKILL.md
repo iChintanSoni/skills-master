@@ -2,6 +2,9 @@
 name: android-manifest
 description: Covers the structure, components, intent filters, deep links, permissions, and security configurations in the AndroidManifest.xml file. Use when configuring app declarations, declaring intents, setting permissions, or auditing security properties.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

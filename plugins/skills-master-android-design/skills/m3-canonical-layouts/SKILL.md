@@ -2,6 +2,9 @@
 name: m3-canonical-layouts
 description: Material 3 design guidance for the three canonical adaptive layouts — list-detail, supporting pane, and feed — covering when each fits, how panes compose across window size classes, and how to adapt gracefully from compact phone to large-screen and foldable. Use when designing or critiquing an Android app layout that must scale across screen sizes, choosing between multi-pane and single-pane navigation, or deciding how to surface secondary content alongside a primary view.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

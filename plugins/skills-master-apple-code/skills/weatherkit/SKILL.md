@@ -2,6 +2,9 @@
 name: weatherkit
 description: Fetch current conditions, hourly and daily forecasts, severe weather alerts, and next-hour minute precipitation from Apple WeatherKit on Apple platforms or via the REST API. Use when an app shows weather data, when wiring WeatherService.shared, when required Apple Weather attribution and legal links are missing, or when a server needs signed JWT REST access.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: macrobenchmark-baseline-profiles
 description: Covers performance measurement and startup optimisation using Macrobenchmark and Baseline Profiles — measuring startup, scroll, and jank with MacrobenchmarkRule, generating and shipping Baseline/Startup Profiles to precompile hot code paths, and verifying improvements in CI. Use when you need to quantify app performance regressions, reduce cold-start time, or eliminate first-draw jank in a Jetpack Compose Android app.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: screencapturekit
 description: Guidance for capturing screen, window, app, and audio content on macOS with ScreenCaptureKit. Use when building screen recording, screen sharing, video conferencing, or game streaming features, enumerating displays/windows with SCShareableContent, building an SCContentFilter, configuring an SCStream, handling SCStreamOutput samples, presenting the system SCContentSharingPicker, or capturing system and microphone audio.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # ScreenCaptureKit

@@ -2,6 +2,9 @@
 name: swiftui-documents
 description: Builds document-based SwiftUI apps with DocumentGroup and the iOS 27 observable document family — Document, ReadableDocument, WritableDocument, DocumentReader, DocumentWriter — plus DocumentGroupLaunchScene and DocumentCreationSource for the launch experience. Use when creating or migrating a document-based app, routing between the deprecated FileDocument/ReferenceFileDocument protocols and the new reference-type model, implementing custom readers and writers with background file access and progress reporting, or customizing the document launch screen and creation sources.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 > **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.

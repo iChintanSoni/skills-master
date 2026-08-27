@@ -2,6 +2,9 @@
 name: kotlin-multiplatform
 description: Covers Kotlin Multiplatform (KMP) for sharing business logic across Android and iOS — source-set hierarchy, expect/actual declarations, KMP-ready libraries, and what belongs in shared vs platform-specific code. Use when setting up a KMP module, authoring shared domain or data layers, wiring expect/actual for platform APIs, or evaluating which libraries work in commonMain.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

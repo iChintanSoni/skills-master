@@ -2,6 +2,9 @@
 name: compose-animation
 description: Covers Jetpack Compose animation APIs — animate*AsState, Animatable, updateTransition, AnimatedVisibility, AnimatedContent, Crossfade, rememberInfiniteTransition, Modifier.animateContentSize, animation specs (spring/tween/keyframes/M3 Expressive physics), and shared element transitions via SharedTransitionLayout. Use when adding motion to a Compose UI, transitioning between states or screens, animating visibility or layout changes, or implementing shared element transitions.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

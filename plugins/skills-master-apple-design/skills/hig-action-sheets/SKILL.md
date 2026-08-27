@@ -2,6 +2,9 @@
 name: hig-action-sheets
 description: "Design critique and guidance for iOS/iPadOS action sheets (SwiftUI confirmation dialogs): presenting a short set of choices tied to a user-initiated action, ordering options, marking and placing the destructive choice, offering Cancel on iPhone, and choosing between an action sheet, a menu, and an alert. Use when reviewing a delete/discard/share flow, a multiple-choice prompt, a confirmation step, or any moment that asks the user to confirm an intentional action, and you need HIG-grounded design recommendations rather than code."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

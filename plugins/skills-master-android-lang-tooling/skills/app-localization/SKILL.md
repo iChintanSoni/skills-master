@@ -2,6 +2,9 @@
 name: app-localization
 description: Covers Android app localization — externalizing strings and resources, locale qualifiers, per-app language preferences via AppCompat/AndroidX, plurals and argument formatting, RTL layout support, and pseudolocale testing. Use when building or auditing a multi-language Android app to ensure correct resource resolution, proper string externalization, and reliable locale switching.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

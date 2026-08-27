@@ -2,6 +2,9 @@
 name: ui-automator
 description: Covers UI Automator for cross-app and system UI instrumented tests on Android — UiDevice setup, element selectors, cross-process interactions, and combining UI Automator with Espresso or Compose test rules for end-to-end flows. Use when writing instrumented tests that must interact with system dialogs, other apps, or the notification shade.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

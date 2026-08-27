@@ -2,6 +2,9 @@
 name: crash-symbolication
 description: Guides diagnosing app crashes by symbolicating reports, mapping dSYMs, reading the Xcode 26 Organizer and MetricKit diagnostics, and recognizing common crash signatures. Use when a TestFlight or App Store build crashes, when reports show only hex addresses, when matching dSYM UUIDs, when wiring MXCrashDiagnostic, or when triaging force-unwrap, out-of-bounds, or threading crashes.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-05-30"
 ---
 
 # Crash symbolication

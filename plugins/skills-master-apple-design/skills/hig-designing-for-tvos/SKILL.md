@@ -2,6 +2,9 @@
 name: hig-designing-for-tvos
 description: Design guidance and critique for tvOS apps grounded in Apple's Human Interface Guidelines. Use when designing or reviewing an Apple TV interface, evaluating focus and Siri Remote navigation, the 10-foot living-room viewing distance, large legible type and imagery, the top shelf, layered parallax/focus effects, or the tvOS 26 Liquid Glass look. Produces design recommendations and critique, not code.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

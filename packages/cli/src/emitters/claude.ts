@@ -1,6 +1,6 @@
 import { RESOURCE_FILES, type Emitter, type EmittedFile, type ResourceKey } from "../types";
 import { stabilityNote, withStabilityNote } from "../core/stability-note";
-import { withFrontmatter } from "../core/yaml";
+import { quoted, withFrontmatter } from "../core/yaml";
 import { existsRel } from "./util";
 
 /**
@@ -23,10 +23,22 @@ export const claudeEmitter: Emitter = {
     // `license` is a spec field, so it rides along when the skill declares one.
     // Absent means absent: the emitter has no business inventing a license for
     // content it did not author.
+    //
+    // `metadata` is the spec's string→string map for non-spec facts. It carries
+    // the two authored facts that decide whether an installed skill is still
+    // worth trusting — which release it is, and when it was last checked against
+    // the vendor docs. Both die with the strip of `x-skills-master` otherwise,
+    // and a plugin consumer has no lockfile to recover them from. It costs no
+    // context: Claude Code preloads `- <name>: <description>` per skill and
+    // nothing else (verified against the 2.1.231 loader).
     const fm = {
       name: skill.frontmatter.name,
       description: skill.frontmatter.description,
       ...(skill.frontmatter.license ? { license: skill.frontmatter.license } : {}),
+      metadata: {
+        version: quoted(xm.version),
+        "snapshot-date": quoted(xm.snapshot_date),
+      },
     };
     const files: EmittedFile[] = [
       {

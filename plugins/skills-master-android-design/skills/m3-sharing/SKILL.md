@@ -2,6 +2,9 @@
 name: m3-sharing
 description: "Design critique and guidance for Material 3 sharing patterns on Android: when to trigger the system sharesheet versus a custom share menu, how to shape shareable content, surfacing direct-share targets, and designing a well-considered receive-share entry point. Use when reviewing a share action trigger, choosing what content to expose for sharing, or evaluating whether a custom share surface is warranted instead of the Android system sharesheet."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

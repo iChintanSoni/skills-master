@@ -2,6 +2,9 @@
 name: compose-graphics
 description: Custom drawing in Jetpack Compose using Canvas, DrawScope, Brush, Path, Modifier.graphicsLayer, and BlendMode. Use when building custom chart renderers, decorative shapes, image effects, or any UI that cannot be assembled from standard composables alone.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: error-handling
 description: "Guidance on Swift error handling: the Error protocol, throws/try/do-catch, typed throws, Result, rethrows, defer, and propagating errors from async code. Use when designing failable APIs, deciding throw vs Result vs optional, modeling recoverable vs programmer errors, or migrating to typed throws."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

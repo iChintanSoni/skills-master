@@ -2,6 +2,9 @@
 name: networking-layer
 description: "Guidance for building a testable async networking layer with URLSession in Swift 6: endpoint modeling, Codable decoding, typed error handling, retries, timeouts, token refresh, and URLProtocol stubs. Use when designing an API client, wrapping URLSession, decoding JSON responses, adding auth/token refresh, or making network code unit-testable."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # Networking layer

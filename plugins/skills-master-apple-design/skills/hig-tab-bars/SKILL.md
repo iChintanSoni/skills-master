@@ -2,6 +2,9 @@
 name: hig-tab-bars
 description: Design critique and guidance for tab bars across iPhone, iPad, tvOS, and visionOS, grounded in Apple's Human Interface Guidelines. Use when reviewing or designing top-level navigation, deciding tabs vs sidebar vs hierarchical navigation, choosing how many tabs to show, pairing icons with labels, or adopting the iOS 26 floating Liquid Glass tab bar, the search tab role, or the iPad sidebar-adaptable pattern. Produces UX recommendations and review notes, not code.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 A tab bar gives people fast, persistent access to the top-level, peer sections of an app. In the 2026 design cycle it renders as a floating, inset Liquid Glass element that lets content flow beneath it. Use this skill to critique whether a tab bar is the right navigation model, whether its contents read as destinations, and whether it adapts well across devices.

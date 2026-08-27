@@ -2,6 +2,9 @@
 name: choosing-concurrency-pattern
 description: Decision router for asynchrony in Android apps. Use when choosing between coroutines, Flow, StateFlow, SharedFlow, LiveData, RxJava, or raw callbacks for a new feature, reviewing legacy async code, or mapping a specific need (one-shot call, stream, UI state) to the right tool.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

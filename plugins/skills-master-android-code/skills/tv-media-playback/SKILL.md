@@ -2,6 +2,9 @@
 name: tv-media-playback
 description: Media3 ExoPlayer player UI for Android TV — Use when building a living-room video playback experience with D-pad-driven controls, remote-friendly overlays, background/resume behaviour, and TV audio/display considerations using Media3 ExoPlayer and TV Compose.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

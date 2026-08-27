@@ -2,6 +2,9 @@
 name: carplay-templates
 description: Implements a CarPlay app with the CarPlay framework — CPTemplateApplicationScene plus its scene delegate, the CPInterfaceController template stack, and the system template catalog (list, grid, tab bar, now playing, point of interest, information, map, search, contact, alert, action sheet). Use when wiring the CarPlay scene manifest into Info.plist, requesting the Apple-granted CarPlay entitlement for an app category, pushing and popping templates, respecting vehicle-imposed list and tab limits, adding a Dashboard or instrument-cluster scene, or testing in the CarPlay Simulator.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

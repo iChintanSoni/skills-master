@@ -1,3 +1,4 @@
+import matter from "gray-matter";
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -96,6 +97,40 @@ describe("emitters", () => {
     const unlicensed = new ContentSource(CONTENT_ROOT).loadSkill("fixture-tool-skill");
     const files = getEmitter("claude")!.emit(unlicensed, ctx());
     expect(files[0]!.contents).not.toContain("license:");
+  });
+
+  // 1.3: version and snapshot_date are the two facts that decide whether an
+  // installed skill is still worth trusting, and they die with the strip of
+  // x-skills-master. The spec's metadata map carries them onto the Claude
+  // target, where they cost nothing — the preload is name + description only.
+  it("carries version and snapshot date as spec metadata, quoted as strings", () => {
+    const skillMd = getEmitter("claude")!
+      .emit(loadFixture(), ctx())
+      .find((f) => f.path.endsWith("SKILL.md"))!;
+    expect(skillMd.contents).toContain("metadata:");
+    expect(skillMd.contents).toContain('version: "1.0.0"');
+    // Quoted deliberately: js-yaml (so gray-matter) reads a bare 2026-01-01 as
+    // a Date, which would break the spec's string→string contract for metadata.
+    expect(skillMd.contents).toContain('snapshot-date: "2026-01-01"');
+  });
+
+  it("round-trips emitted metadata as strings, not dates", () => {
+    const skillMd = getEmitter("claude")!
+      .emit(loadFixture(), ctx())
+      .find((f) => f.path.endsWith("SKILL.md"))!;
+    const { metadata } = matter(skillMd.contents).data as {
+      metadata: Record<string, unknown>;
+    };
+    expect(metadata).toEqual({ version: "1.0.0", "snapshot-date": "2026-01-01" });
+  });
+
+  it("keeps provenance off the tool-specific targets", () => {
+    for (const emitter of EMITTERS) {
+      if (emitter.id === "claude") continue;
+      for (const f of emitter.emit(loadFixture(), ctx())) {
+        expect(f.contents, `${emitter.id} -> ${f.path}`).not.toContain("snapshot-date");
+      }
+    }
   });
 
   it("strips the x-skills-master block from every projection", () => {

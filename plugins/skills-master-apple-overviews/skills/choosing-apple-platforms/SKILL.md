@@ -2,6 +2,9 @@
 name: choosing-apple-platforms
 description: Decision router for which Apple platforms a codebase should target and what each one actually costs — iPhone and iPad from one target, the three routes onto the Mac, and the separate entry costs of watchOS, tvOS, visionOS, and CarPlay. Use when scoping a new app's platform matrix, estimating the effort of a port, deciding whether a watch or TV app is worth building, planning how much of a SwiftUI core can be shared, or answering the question of what genuinely does not carry across.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

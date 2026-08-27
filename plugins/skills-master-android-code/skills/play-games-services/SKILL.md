@@ -2,6 +2,9 @@
 name: play-games-services
 description: Covers Play Games Services v2 on Android — PlayGamesSdk.initialize plus automatic platform sign-in through GamesSignInClient, achievements and leaderboards, saved games via SnapshotsClient, friends and player profile comparison, server-side access with requestServerSideAccess, and the Recall API for cross-device account linking. Use when adding social and progression features to an Android game, migrating a v1 integration off GoogleSignInClient before the v1 shutdown, or preparing a title for Google Play Games on PC.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

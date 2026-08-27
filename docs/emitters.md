@@ -4,7 +4,7 @@ An emitter projects one canonical skill into the files a specific AI tool reads.
 
 | Emitter | Output(s) | Frontmatter emitted | Body | Fidelity |
 |---------|-----------|---------------------|------|----------|
-| `claude` | `.claude/skills/<name>/SKILL.md` + verbatim copies of `reference.md`/`examples.md`/`checklist.md` | `name`, `description`, `license` (when authored) | verbatim (Level-3 links resolve) | **lossless** |
+| `claude` | `.claude/skills/<name>/SKILL.md` + verbatim copies of `reference.md`/`examples.md`/`checklist.md` | `name`, `description`, `license` (when authored), `metadata` (version + snapshot date) | verbatim (Level-3 links resolve) | **lossless** |
 | `cursor` | `.cursor/rules/<name>.mdc` | `description`, `globs` (if any), `alwaysApply: false` | condensed | single-file |
 | `copilot` | `.github/instructions/<name>.instructions.md` **and** a pointer block in `.github/copilot-instructions.md` | `applyTo` (← globs; omitted when the skill has none, so glob-less guidance stays manual-attach instead of always-on), `description` | condensed | single-file |
 | `agents` | `AGENTS.md` (a `### <Title>` block) | none (plain Markdown) | digest: description + top guidance/pitfall bullets | broad, lossy |
@@ -57,7 +57,18 @@ Notes for whoever touches this next:
 - **Imported, not shelled out to.** `skills-ref` 0.1.1 renamed its console script to `agentskills`; the Python API is the part that did not move.
 - Anything an emitter adds to frontmatter must be a spec field or this gate fails — which is the point.
 
-`license` is the one spec field beyond `name`/`description` the Claude projection carries today. It is **passed through from authored frontmatter, never invented**: the CLI can be pointed at any content root (`--content`, `SKILLS_MASTER_REPO`), and an emitter that stamped a constant would assert terms for content it did not author. A skill with no `license` emits no `license` line. The tool-specific targets (`.mdc`, `.instructions.md`, `AGENTS.md`) do not carry it — their frontmatter vocabularies are Cursor's and Copilot's, not the spec's.
+Beyond `name`/`description`, the Claude projection carries two spec fields:
+
+- **`license`** — **passed through from authored frontmatter, never invented**. The CLI can be pointed at any content root (`--content`, `SKILLS_MASTER_REPO`), and an emitter that stamped a constant would assert terms for content it did not author. A skill with no `license` emits no `license` line.
+- **`metadata`** — the spec's string→string map, carrying `version` and `snapshot-date` from `x-skills-master`. Without it a consumer cannot tell which release of a skill they installed or when it was last checked against the vendor docs: `x-skills-master` is stripped, and a plugin install has no lockfile to recover it from. Both values are **double-quoted deliberately** — js-yaml (so gray-matter) reads a bare `2026-08-25` as a `Date`, which would break the string→string contract depending on which parser a consumer uses. `core/yaml.ts`'s `quoted()` forces the scalar style.
+
+The tool-specific targets (`.mdc`, `.instructions.md`, `AGENTS.md`) carry neither — their frontmatter vocabularies are Cursor's and Copilot's, not the spec's.
+
+### What the preload actually costs
+
+Frontmatter beyond `name`/`description` costs **no** always-on context. Verified against Claude Code 2.1.231's loader, which formats each listed skill as exactly `- <name>: <description>` and reads nothing else from the file until the skill is invoked.
+
+The same code path holds a warning for this library: that listing is **budgeted**, at `contextWindow × 4 bytes/token × skillListingBudgetFraction` (default `0.01`) — about **8,000 characters** on a 200k-token model. Over budget, Claude Code keeps the highest-priority entries whole and degrades the rest to a bare `- <name>`, description dropped. Today `skills-master-android-code` alone is ~41k characters of listing, so a full-domain install is well past the point where descriptions stop reaching the model. This is gap **G8** in PLAN.md, and it is why item 2.3 measures the footprint rather than trusting per-skill advice.
 
 ## Adding a target
 

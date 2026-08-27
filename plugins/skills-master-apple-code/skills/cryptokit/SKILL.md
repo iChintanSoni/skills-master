@@ -2,6 +2,9 @@
 name: cryptokit
 description: "Use when adding hashing, HMAC, symmetric encryption (AES-GCM/ChaChaPoly), key agreement (Curve25519/P256/P384), signatures, HKDF, or Secure Enclave-backed keys to Swift code. Triggers: import CryptoKit, SymmetricKey, SHA256, AES.GCM.seal, sharedSecretFromKeyAgreement, SecureEnclave."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

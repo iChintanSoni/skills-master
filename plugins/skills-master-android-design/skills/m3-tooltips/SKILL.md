@@ -2,6 +2,9 @@
 name: m3-tooltips
 description: Design critique and guidance for Material 3 tooltips on Android, covering plain vs rich variants, hover and long-press triggers, helper-text conciseness, and the rule that tooltips must never carry information essential to task completion. Use when designing or reviewing tooltip placement, variant selection, and copy for Compose-first Android apps.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

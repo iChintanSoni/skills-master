@@ -2,6 +2,9 @@
 name: codable-serialization
 description: "Guidance for serializing Swift types with Codable: conforming to Encodable/Decodable, CodingKeys, JSONEncoder/JSONDecoder strategies, custom encode(to:)/init(from:), nested and dynamic keys, optional/missing fields, property lists, and robust decoding of imperfect JSON. Use when modeling API responses, persisting data, parsing JSON or plists, mapping snake_case keys, decoding dates, or hardening a decoder against malformed input."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: choosing-async-pattern
 description: Decision guide for picking an asynchronous pattern in Swift in the 2026 (OS 26, Swift 6.x) cycle — async/await and structured concurrency as the default, AsyncSequence and AsyncStream for value streams, where Combine still earns its place (and that it is legacy-leaning), and completion handlers only at old API boundaries. Use when starting new async code and unsure which tool to reach for, when bridging a callback or Combine API into async/await, when modeling a stream of values over time, or when deciding whether to keep or retire a Combine pipeline.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

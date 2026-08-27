@@ -2,6 +2,9 @@
 name: pencilkit
 description: "Build Apple Pencil drawing and annotation features with PencilKit on iOS, iPadOS, and visionOS. Use when adding a PKCanvasView, presenting the PKToolPicker, capturing or rendering a PKDrawing, persisting strokes, handling Apple Pencil hover, double-tap, or squeeze via UIPencilInteraction, or wrapping the canvas in SwiftUI. Triggers: PKCanvasView, PKToolPicker, PKDrawing, drawingPolicy, dataRepresentation, PKToolPickerCustomItem, pencilInteraction didReceiveSqueeze."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: core-bluetooth
 description: "Guidance for Bluetooth Low Energy with Core Bluetooth: CBCentralManager scanning and connecting, service/characteristic discovery, read/write/notify, the CBPeripheralManager peripheral role, and background state restoration. Use when scanning for or connecting to BLE devices, building a GATT peripheral, streaming notifications, running Bluetooth in the background, or fixing missing Bluetooth permission prompts."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

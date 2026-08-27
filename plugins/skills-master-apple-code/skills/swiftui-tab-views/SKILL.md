@@ -2,6 +2,9 @@
 name: swiftui-tab-views
 description: Builds SwiftUI tab navigation with the type-safe Tab API, programmatic selection, the search role, the sidebar-adaptable style, paged TabView, and reorderable tabs. Use when adding a tab bar, wiring deep links to a selected tab, supporting iPad sidebar layouts, or adopting iOS 26 tab bar minimize and bottom-accessory behavior.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

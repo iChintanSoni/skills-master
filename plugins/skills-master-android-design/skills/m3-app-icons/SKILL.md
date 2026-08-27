@@ -2,6 +2,9 @@
 name: m3-app-icons
 description: Design guidance and critique for Android app icons in Material 3 — adaptive icon layers and the safe zone, themed (monochrome) icon design, masking across launcher shapes, and the Play Store icon. Use when designing a new app icon, auditing an existing icon for safe-zone compliance, ensuring the monochrome layer reads correctly for themed icons, evaluating how an icon survives aggressive masking on third-party launchers, or preparing final icon assets for a Play Store listing.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: hig-undo-redo
 description: "Design guidance and critique for reversible actions on Apple platforms: shake-to-undo, the three-finger edit gestures on iPhone and iPad, undo/redo affordances and menu items on Mac, and choosing undo over confirmation for destructive operations. Use when reviewing or designing editing flows, delete/destructive actions, undo/redo buttons or alerts, or text-editing gestures, or when someone asks whether an action should be undoable or guarded by a confirmation dialog. Produces UX critique grounded in Apple's Human Interface Guidelines, not code."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # hig-undo-redo

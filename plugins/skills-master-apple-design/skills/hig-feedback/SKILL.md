@@ -2,6 +2,9 @@
 name: hig-feedback
 description: "Design critique and recommendations for feedback and status across Apple platforms: progress, success/confirmation, error and empty states, haptics and sound, and keeping people informed without interrupting. Use when reviewing or designing loading and progress UI, success or error messaging, empty states, alerts, toasts/banners, or haptic and sound feedback, or when judging whether feedback is too noisy, too quiet, or interrupts unnecessarily. Produces HIG-grounded design guidance, not code."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-05-30"
 ---
 
 # HIG feedback & status

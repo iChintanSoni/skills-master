@@ -2,6 +2,9 @@
 name: game-loop-frame-pacing
 description: Running a real-time render loop on Android — Choreographer and vsync, Android 13 frame timelines, the AGDK Frame Pacing library (Swappy) for OpenGL ES and Vulkan, presentation timestamps, setFrameRate and adaptive refresh rate, choosing between SurfaceView, GLSurfaceView, and TextureView, frame-time budgeting, ADPF performance hints, and reading jank in Perfetto traces. Use when a game or custom renderer stutters, when porting a fixed-timestep loop to Android, when picking a render target surface, or when deciding what frame rate to request on a multi-refresh-rate display.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

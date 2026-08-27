@@ -2,6 +2,9 @@
 name: hig-notifications
 description: "Design-review guidance for app notifications on Apple platforms per the Human Interface Guidelines. Use when designing, auditing, or critiquing push/local notifications, choosing interruption levels (passive, active, time-sensitive, critical), writing notification copy, grouping or threading alerts, adding notification actions, or deciding how alerts behave under Focus and user settings. Produces UX critique and recommendations grounded in the HIG, not code. Triggers: notification design review, alert copy, interruption level choice, time-sensitive vs passive, over-notifying, notification fatigue, Focus and notification settings."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # hig-notifications

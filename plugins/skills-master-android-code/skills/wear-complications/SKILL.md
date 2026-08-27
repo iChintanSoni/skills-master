@@ -2,6 +2,9 @@
 name: wear-complications
 description: Covers watch face complications on Wear OS from the data-source side — ComplicationDataSourceService subclassing, supported complication types, providing and refreshing complication data, handling permission, and the update lifecycle. Use when building an app that supplies live data to watch face complications on Wear OS 2+.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

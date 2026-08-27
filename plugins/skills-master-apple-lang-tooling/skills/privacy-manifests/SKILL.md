@@ -2,6 +2,9 @@
 name: privacy-manifests
 description: "Guidance on authoring a PrivacyInfo.xcprivacy privacy manifest: declaring collected data types, tracking and tracking domains, required-reason API entries, and signing third-party SDK manifests. Use when adding or auditing a privacy manifest, fixing ITMS-91053/ITMS-91061 App Store upload errors, integrating an SDK on Apple's required list, or reconciling the manifest with the App Store privacy nutrition label."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

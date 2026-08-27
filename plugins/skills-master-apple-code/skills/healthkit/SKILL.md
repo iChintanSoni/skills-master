@@ -2,6 +2,9 @@
 name: healthkit
 description: Guidance for reading and writing Health data with HealthKit using modern async query descriptors, authorization, and background delivery. Use when an app requests Health permissions, queries samples or statistics, writes workouts, observes background updates, or runs watchOS/iOS workout sessions.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

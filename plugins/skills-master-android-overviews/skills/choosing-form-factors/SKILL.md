@@ -2,6 +2,9 @@
 name: choosing-form-factors
 description: Decision router for targeting Android device form factors beyond the phone — large screens, foldables, Wear OS, TV, Automotive, ChromeOS, and XR. Use when planning which surfaces to support, estimating reach-versus-effort tradeoffs, applying the adaptive quality tiers, or sequencing multi-form-factor investment for a Kotlin/Compose app.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

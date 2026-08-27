@@ -2,6 +2,9 @@
 name: spritekit
 description: "Builds 2D games and animated graphics with SpriteKit: scene graph, the update loop, SKAction animations, physics with contact handling, particle emitters, and embedding scenes in SwiftUI via SpriteView. Use when creating sprite-based games, side-scrollers, or animated 2D effects on Apple platforms, or when integrating an SKScene into a SwiftUI app."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # SpriteKit 2D games

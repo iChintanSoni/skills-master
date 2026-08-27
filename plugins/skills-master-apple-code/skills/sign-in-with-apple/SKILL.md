@@ -2,6 +2,9 @@
 name: sign-in-with-apple
 description: "Implements Sign in with Apple using AuthenticationServices: the SwiftUI SignInWithAppleButton, ASAuthorizationAppleIDProvider requests, credential and identity-token handling, server-side token verification, and Sign in with Apple JS on the web. Use when adding Apple authentication, requesting name/email scope, validating identity tokens on a backend, handling the private relay email, or responding to account revocation and deletion."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

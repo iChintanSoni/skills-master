@@ -2,6 +2,9 @@
 name: visionos-windows-volumes
 description: Builds the bounded half of a visionOS app — flat windows versus volumes via windowStyle(.volumetric), physical sizing with defaultSize(_:in:) and PhysicalMetric, ornaments, glassBackgroundEffect, volume baseplates and viewpoints, world alignment and scaling, and the Shared Space rules a 2D iPad-style app must satisfy to feel spatial. Use when bringing an existing SwiftUI app to Apple Vision Pro, deciding whether content belongs in a window or a volume, sizing 3D content in meters, or attaching controls outside a window's bounds.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

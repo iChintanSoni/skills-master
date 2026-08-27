@@ -2,6 +2,9 @@
 name: hig-app-clips-design
 description: Design-critique guidance for Apple Human Interface Guidelines App Clips, covering a fast, focused single-task slice of an app, the App Clip card (header image, title, subtitle, and action verb), avoiding mandatory account creation, deferring permission and notification prompts, using Sign in with Apple and Apple Pay to remove friction, confirming location only when needed, and a smooth, well-timed handoff to the full app. Use when reviewing or designing an App Clip experience, an App Clip card, an invocation flow (NFC tag, QR code, Maps, Safari, Messages), or the prompt to install the full app on iOS or iPadOS. Produces UX recommendations and critique, not code.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 # HIG App Clips design

@@ -2,6 +2,9 @@
 name: activitykit
 description: Builds ActivityKit Live Activities that surface live data on the Lock Screen and in the Dynamic Island via a widget extension. Use when starting, updating, or ending an Activity, modeling ActivityAttributes and ContentState, laying out compact/minimal/expanded Dynamic Island regions, driving updates with push or broadcast channels, or managing the update budget and stale dates.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: choosing-android-distribution
 description: Use when deciding how to distribute an Android app — Google Play vs alternative stores vs enterprise/direct sideload — and which delivery format (AAB vs APK), track strategy, and update mechanism to adopt.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

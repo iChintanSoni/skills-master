@@ -2,6 +2,9 @@
 name: m3-shape
 description: Design guidance for the Material 3 shape system — scale, corner families, component-to-shape assignments, using shape for emphasis and brand expression, and M3 Expressive shape morphing. Use when reviewing or designing component roundness, deciding which shape tier fits a surface or interactive element, communicating brand through corner style, or auditing shape consistency across a Compose UI.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

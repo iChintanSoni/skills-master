@@ -2,6 +2,9 @@
 name: hig-designing-for-visionos
 description: Design critique and recommendations for visionOS spatial apps grounded in Apple's Human Interface Guidelines. Use when designing or reviewing Apple Vision Pro experiences, choosing between windows, volumes, and immersive spaces, planning spatial layout and depth, designing eyes-and-hands interactions and comfortable target sizes, applying glass materials for legibility against passthrough, or auditing a layout for ergonomic comfort and fatigue. Produces UX guidance and HIG-based critique, not code.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 # Designing for visionOS

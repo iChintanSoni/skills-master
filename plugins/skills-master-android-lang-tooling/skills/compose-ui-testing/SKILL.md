@@ -2,6 +2,9 @@
 name: compose-ui-testing
 description: Covers Jetpack Compose UI testing — createComposeRule, createAndroidComposeRule, semantic finders and matchers, assertions and actions, synchronization and idling, testTag, and screenshot/state testing. Use when writing instrumented or local Compose UI tests, verifying composable behavior through semantics, or diagnosing test flakiness caused by synchronization gaps.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

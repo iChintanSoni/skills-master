@@ -2,6 +2,9 @@
 name: swiftui-toolbars
 description: Populates and tunes SwiftUI toolbars — toolbar(content:), ToolbarItem, ToolbarItemGroup, ToolbarItemPlacement, ToolbarSpacer, DefaultToolbarItem — plus the iOS 27 overflow model of ToolbarItemVisibilityPriority, ToolbarOverflowMenu, and topBarPinnedTrailing, and scroll-driven chrome through toolbarMinimizationBehavior. Use when choosing toolbar placements, controlling which actions collapse into the overflow menu as space shrinks, pinning a critical action, minimizing the navigation bar on scroll, or adapting one toolbar declaration across iPhone, iPad, Mac, Apple Watch, Apple TV, and Vision Pro.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 > **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.

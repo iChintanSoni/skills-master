@@ -2,6 +2,9 @@
 name: m3-haptics-sound
 description: Design critique and guidance for haptic and sound feedback in Material 3 Android apps — when tactile and audio signals reinforce interactions, how to match haptic weight to visual events, choosing predefined versus custom effects, maintaining restraint to avoid sensory noise, and respecting system and accessibility preferences. Use when reviewing or designing interaction feedback that involves vibration, touch response, or sound cues, or when auditing whether haptic and audio signals are consistent, proportionate, and accessible.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

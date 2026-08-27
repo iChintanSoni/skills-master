@@ -2,6 +2,9 @@
 name: choosing-android-testing
 description: Decision router for the Android test strategy — the test pyramid for Kotlin/Compose apps covering JVM unit tests, Robolectric, instrumented tests, Compose UI tests, Espresso/UI Automator, and screenshot tests. Use when designing a test suite from scratch, deciding which test type to add for a specific concern, or evaluating where to invest limited test effort.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

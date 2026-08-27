@@ -2,6 +2,9 @@
 name: metal
 description: Guidance on Metal for GPU rendering and compute, covering MTLDevice, command queues, command buffers, render and compute encoders, Metal Shading Language vertex and fragment functions, MetalKit MTKView and drawables, buffers and textures, and MetalFX upscaling. Use when building a custom renderer, writing GPU shaders, running data-parallel compute on the GPU, drawing into an MTKView, deciding between Metal and a higher-level framework like SwiftUI Canvas or RealityKit, or adding MetalFX upscaling to a real-time scene.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

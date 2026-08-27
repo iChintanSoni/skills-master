@@ -2,6 +2,9 @@
 name: media-projection
 description: Covers screen capture with MediaProjection API — Use when building screen recording, live-streaming, or mirroring features that require capturing display output to a Surface or VirtualDisplay on Android 16+.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

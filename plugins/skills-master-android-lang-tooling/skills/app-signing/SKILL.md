@@ -2,6 +2,9 @@
 name: app-signing
 description: Guidance on configuring Android app signing in Gradle with Kotlin DSL — signing configs, the upload key vs app signing key distinction, Play App Signing, key rotation, and keeping keystores out of version control. Use when setting up release signing for a new app, migrating a keystore to Play App Signing, rotating a compromised key, or hardening signing secrets in CI/CD.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

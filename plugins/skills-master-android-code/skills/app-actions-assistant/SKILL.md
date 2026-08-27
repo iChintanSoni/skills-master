@@ -2,6 +2,9 @@
 name: app-actions-assistant
 description: Teaches how to expose app capabilities to Android system surfaces via App Actions and shortcuts — Use when integrating with Google Assistant, surfacing app capabilities in launcher search, or wiring static/dynamic/pinned shortcuts so the OS can deep-link into your features.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

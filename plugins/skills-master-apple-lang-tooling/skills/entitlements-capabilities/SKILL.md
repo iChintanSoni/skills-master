@@ -2,6 +2,9 @@
 name: entitlements-capabilities
 description: Guidance for declaring app capabilities in Xcode and the entitlements, App IDs, and provisioning profiles they generate, covering App Groups, Keychain Sharing, Push Notifications, iCloud and CloudKit, Sign in with Apple, and Associated Domains across platforms and build configurations. Use when adding a capability, debugging an entitlement or provisioning mismatch, sharing data between a host app and its extensions, splitting Debug and Release entitlements, or wiring per-platform identifiers.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # entitlements-capabilities

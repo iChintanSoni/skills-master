@@ -2,6 +2,9 @@
 name: xctest-ui-automation
 description: Drives end-to-end UI tests with XCUITest — launching XCUIApplication, querying elements, waiting on expectations, asserting state, and structuring page objects. Use when writing or stabilizing automated UI tests, fixing flaky element lookups, or wiring accessibility identifiers for reliable selectors.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

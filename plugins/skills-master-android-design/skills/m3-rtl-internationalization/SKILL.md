@@ -2,6 +2,9 @@
 name: m3-rtl-internationalization
 description: Design critique and guidance for right-to-left and internationalized layouts on Android using Material 3. Use when reviewing or designing for Arabic, Hebrew, Farsi, Urdu, or other RTL localizations, when deciding which icons to mirror vs. keep fixed, when handling text expansion and truncation across locales, or when the team still reasons in left/right terms instead of start/end. Produces UX recommendations, not implementation code.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

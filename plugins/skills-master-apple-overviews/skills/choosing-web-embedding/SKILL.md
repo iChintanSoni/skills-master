@@ -2,6 +2,9 @@
 name: choosing-web-embedding
 description: "Decision router for showing web content in an Apple app: the SwiftUI WebView and WebPage pair or WKWebView when you own the page, SFSafariViewController for read-only third-party browsing, ASWebAuthenticationSession for OAuth and OpenID Connect sign-in, openURL to hand off to the default browser, and universal links or App Clips when the answer is not to embed at all. Use when picking a web surface, when a sign-in flow tempts a raw web view, or when weighing the App Review risk of wrapping a website as an app."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

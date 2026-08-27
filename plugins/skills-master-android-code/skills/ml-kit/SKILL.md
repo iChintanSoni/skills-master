@@ -2,6 +2,9 @@
 name: ml-kit
 description: Covers ML Kit on-device vision and language APIs (barcode scanning, text recognition, face detection, image labeling, translation, smart reply) — use when adding turnkey ML features to an Android app without building or hosting custom models.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: m3-layout-spacing
 description: Covers Material 3 layout and spacing design judgment — the 4dp/8dp grid, margins, padding, density, whitespace grouping, and rhythm — for Android UI. Use when designing or critiquing screen layouts, reviewing component spacing, or evaluating visual hierarchy and grouping across phone and large-screen form factors.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: hig-sliders-steppers
 description: Applies Apple Human Interface Guidelines to sliders and steppers — sliders for continuous ranges, steppers for small discrete increments, showing the current value, sensible min/max/step, labels and tick marks, and accessible alternatives. Use when designing or reviewing a value-adjustment control, choosing between a slider and a stepper, or critiquing how a numeric input is presented. Produces design critique, not code.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

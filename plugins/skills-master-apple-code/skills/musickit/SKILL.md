@@ -2,6 +2,9 @@
 name: musickit
 description: Guidance on integrating Apple Music with MusicKit in Swift, covering MusicAuthorization, catalog search via MusicCatalogSearchRequest, the user library, ApplicationMusicPlayer versus SystemMusicPlayer, playback queues, subscription and capability checks, artwork, and the MusicKit SwiftUI views. Use when requesting Apple Music access, searching the catalog or library, building a player or queue, gating playback on a subscription, presenting a subscription offer, or showing artwork in SwiftUI.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

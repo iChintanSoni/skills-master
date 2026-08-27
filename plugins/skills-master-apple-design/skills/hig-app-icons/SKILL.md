@@ -2,6 +2,9 @@
 name: hig-app-icons
 description: "Design-critique guidance for Apple app icons across platforms in the 26 design cycle: the unified rounded-rectangle grid, platform shapes, and the Liquid Glass layered icon system with default, dark, clear, and tinted appearances authored in Icon Composer. Use when reviewing or designing an app icon; when judging whether artwork is simple and recognizable at small sizes; when deciding how to layer artwork for depth and translucency; when removing text, words, or photographic backgrounds; when adapting one icon to iPhone, iPad, Mac, Apple Watch, Apple TV, or Apple Vision Pro; or when verifying the icon holds up in light, dark, clear, and tinted looks. Produces design recommendations, not code."
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 # HIG app icons

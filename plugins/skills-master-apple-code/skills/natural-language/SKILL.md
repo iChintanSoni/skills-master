@@ -2,6 +2,9 @@
 name: natural-language
 description: "Use when analyzing or understanding text on-device with Apple's Natural Language framework: tokenizing, lemmatizing, tagging parts of speech, recognizing named entities, identifying language, computing word/sentence embeddings and similarity, running custom Create ML classifiers, or scoring sentiment, all without a network call."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 # Natural Language

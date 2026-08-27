@@ -2,6 +2,9 @@
 name: choosing-graphics-api
 description: Decision router for Android graphics work — Compose drawing with Canvas and graphicsLayer, AGSL RuntimeShader effects applied through RenderEffect, the View Canvas, OpenGL ES and ANGLE, Vulkan for new native renderers, and the point where a game engine is the honest answer. Use when starting drawing, visual-effect, custom-rendering, or game work and the API is undecided, when weighing whether an effect justifies dropping to a native renderer, or when deciding what to do with an existing OpenGL ES codebase.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

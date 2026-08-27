@@ -2,6 +2,9 @@
 name: choosing-storage
 description: Decision router for local Android storage — Room, DataStore (Preferences or Proto), and files with kotlinx.serialization — by matching data shape, query needs, and migration cost. Use when designing a new data layer, deciding whether SharedPreferences is worth replacing, or choosing between Room and DataStore for a given data type.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use
