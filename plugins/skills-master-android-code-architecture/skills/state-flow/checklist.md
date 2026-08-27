@@ -1,0 +1,14 @@
+- [ ] Every `MutableStateFlow` in the ViewModel is `private`; only `StateFlow` (via `asStateFlow()` or a typed property) is exposed to the UI layer.
+- [ ] `stateIn` is called with `SharingStarted.WhileSubscribed(5_000)` and a non-null `initialValue` that represents a meaningful loading or empty state.
+- [ ] `stateIn` is called in the ViewModel's `init` block or as a property initializer — not inside a composable or an event handler.
+- [ ] All Compose collection sites use `collectAsStateWithLifecycle` rather than `collectAsState` to avoid background work leaking past the `STARTED` lifecycle state.
+- [ ] One-off events (navigation, snackbar, toast) are modeled with `MutableSharedFlow(replay = 0)`, not with `StateFlow` fields that would replay on resubscription.
+- [ ] `SharedFlow` events are collected inside `LaunchedEffect(viewModel)` or another stable key in the composable, not in the composable body or a `remember` block.
+- [ ] Screen state is a single sealed interface or data class per screen, avoiding scattered nullable `StateFlow` properties that can produce impossible combinations.
+- [ ] `MutableStateFlow.update { copy(...) }` is used instead of direct `value =` assignment when multiple fields change or when concurrent emissions are possible.
+- [ ] `stateIn` upstream `Flow`s handle errors with `.catch { }` to prevent the `StateFlow` from terminating on an exception.
+- [ ] ViewModel does not hold a reference to any Android `Context`, `View`, or `Lifecycle` — all state is emitted through `StateFlow`/`SharedFlow`.
+- [ ] The `UiState` type does not conflate persistent display state with transient event signals in the same field.
+- [ ] On large-screen / two-pane layouts, each pane composable independently calls `collectAsStateWithLifecycle` rather than sharing a single collected value via a hoisted variable.
+- [ ] Unit tests verify ViewModel state transitions using `turbine` or `StateFlow.value` assertions, not by inspecting mutable backing fields directly.
+- [ ] No `LiveData` is introduced for new code paths in Compose-based screens; `StateFlow` is used throughout for consistency.

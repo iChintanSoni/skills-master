@@ -1,0 +1,8 @@
+{
+  "name": "skills-master-apple-lang-tooling-ship",
+  "version": "0.1.0",
+  "description": "Apple language, build, test & ship skills — ship only. Smaller install: keeps the agent's always-on skill listing within budget.",
+  "author": {
+    "name": "skills-master contributors"
+  }
+}

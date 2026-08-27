@@ -1,0 +1,16 @@
+- [ ] `enableEdgeToEdge()` is called in every `Activity.onCreate` before `setContentView` or `setContent`.
+- [ ] No `window.statusBarColor` or `window.navigationBarColor` assignments exist in Kotlin/Java code — these are removed in favor of `enableEdgeToEdge()`.
+- [ ] No `android:statusBarColor` or `android:navigationBarColor` attributes appear in theme XML files used with `enableEdgeToEdge()`.
+- [ ] `View.SYSTEM_UI_FLAG_*` bitmask flags are absent from all Activity and Fragment code; replaced with `WindowInsetsControllerCompat`.
+- [ ] `Window.setDecorFitsSystemWindows(true)` is not called anywhere after `enableEdgeToEdge()` — it would re-enable legacy inset-fitting and cancel edge-to-edge layout.
+- [ ] `android:enableOnBackInvokedCallback="true"` is present in `<application>` in `AndroidManifest.xml` for predictive back support on API 33+.
+- [ ] `Activity.onBackPressed()` (deprecated API 33) is not overridden in any Activity; replaced with `OnBackPressedCallback` or `BackHandler`.
+- [ ] `PredictiveBackHandler` or `OnBackAnimationCallback` implementations always rethrow `CancellationException` when the gesture is cancelled.
+- [ ] No navigation bar height is hard-coded as a dp constant; all bottom padding is derived from `WindowInsetsCompat.getInsets(WindowInsetsCompat.Type.navigationBars())` or equivalent Compose API.
+- [ ] `WindowInsets.ime` (or the AndroidX Compose equivalent) is used for keyboard avoidance instead of `android:windowSoftInputMode="adjustResize"` alone.
+- [ ] `layoutInDisplayCutoutMode` is set appropriately for each Activity — `SHORT_EDGES` for standard UI, `ALWAYS` only for true full-screen immersive content.
+- [ ] The app has been tested on an emulator or device configured to gesture navigation mode, not only three-button navigation.
+- [ ] The app has been tested at `targetSdkVersion 35` on an API 35+ emulator to verify no nav bar or status bar coverage regressions.
+- [ ] Inset handling uses `WindowInsetsCompat` (AndroidX) throughout, not the raw platform `WindowInsets` type, to avoid API-level branches.
+- [ ] `enableEdgeToEdge()` dependency is present: `androidx.activity:activity` >= 1.8.0 (or `activity-compose` >= 1.8.0 for Compose projects).
+- [ ] On foldable targets, hinge avoidance uses `FoldingFeature` from Jetpack WindowManager separately from inset handling — the two APIs are not conflated.

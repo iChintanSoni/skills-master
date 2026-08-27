@@ -26,9 +26,10 @@ const PLUGINS_DIR = "plugins";
 /** The generated marketplace manifest, relative to the output root. */
 const MARKETPLACE_JSON = ".claude-plugin/marketplace.json";
 
-function pluginName(domain: string, cls: SkillClass): string {
+function pluginName(domain: string, cls: SkillClass, category?: string): string {
   const clsSeg = cls === "overview" ? "overviews" : cls;
-  return `skills-master-${domain}-${clsSeg}`;
+  const base = `skills-master-${domain}-${clsSeg}`;
+  return category ? `${base}-${category}` : base;
 }
 
 function titleCase(s: string): string {
@@ -74,31 +75,73 @@ interface MarketplaceOutput {
  * `--check` paths run through this, so CI verifies exactly what `build` writes.
  */
 function buildOutputs(content: ContentSource, out: string, version: string): MarketplaceOutput {
-  // Group emitted files by (domain, class).
+  // Two groupings, deliberately overlapping.
+  //
+  // The per-class plugins are what the marketplace has always shipped, and
+  // existing installs depend on their names. The per-category plugins exist
+  // because the always-on skills listing is budgeted — ~8 KB at 200k context —
+  // and a class-sized plugin blows it by up to 5x, at which point the agent
+  // replaces most descriptions with a bare `- <name>` (see PLAN.md G8 / 7.1).
+  // Category-sized units fit: 32 of 38 are inside the budget today.
+  //
+  // A skill therefore ships in exactly two plugins, and a consumer picks a
+  // granularity rather than a subset. The cost is a doubled `plugins/` tree.
   const groups = new Map<
     string,
-    { domain: string; cls: SkillClass; files: EmittedFile[]; count: number }
+    {
+      domain: string;
+      cls: SkillClass;
+      category?: string;
+      files: EmittedFile[];
+      count: number;
+    }
   >();
 
-  for (const dir of content.skillDirs()) {
-    const skill = content.loadSkill(dir.split(/[\\/]/).pop()!);
+  const skills = content.skillDirs().map((dir) => content.loadSkill(dir.split(/[\\/]/).pop()!));
+
+  // A class with exactly one category would produce a category plugin holding
+  // precisely the same skills as its class plugin — a byte-identical twin under
+  // a clumsier name (`…-overviews-overviews`). Ship one of them, not both.
+  const categoriesPerClass = new Map<string, Set<string>>();
+  for (const skill of skills) {
     const xm = skill.frontmatter["x-skills-master"];
     const key = `${xm.domain}:${xm.class}`;
-    const name = pluginName(xm.domain, xm.class);
-    const ctx: EmitContext = {
-      projectRoot: out,
-      paths: {
-        claude: `${PLUGINS_DIR}/${name}/skills`,
-        cursor: "",
-        copilot: "",
-        agents: "",
-      } as Record<TargetId, string>,
-    };
-    const files = claudeEmitter.emit(skill, ctx);
-    const g = groups.get(key) ?? { domain: xm.domain, cls: xm.class, files: [], count: 0 };
-    g.files.push(...files);
-    g.count += 1;
-    groups.set(key, g);
+    (categoriesPerClass.get(key) ?? categoriesPerClass.set(key, new Set()).get(key)!).add(
+      xm.category,
+    );
+  }
+
+  for (const skill of skills) {
+    const xm = skill.frontmatter["x-skills-master"];
+    const splits =
+      (categoriesPerClass.get(`${xm.domain}:${xm.class}`)?.size ?? 0) > 1
+        ? [undefined, xm.category]
+        : [undefined];
+
+    for (const category of splits) {
+      const key = `${xm.domain}:${xm.class}:${category ?? ""}`;
+      const name = pluginName(xm.domain, xm.class, category);
+      const ctx: EmitContext = {
+        projectRoot: out,
+        paths: {
+          claude: `${PLUGINS_DIR}/${name}/skills`,
+          cursor: "",
+          copilot: "",
+          agents: "",
+        } as Record<TargetId, string>,
+      };
+      const files = claudeEmitter.emit(skill, ctx);
+      const g = groups.get(key) ?? {
+        domain: xm.domain,
+        cls: xm.class,
+        category,
+        files: [],
+        count: 0,
+      };
+      g.files.push(...files);
+      g.count += 1;
+      groups.set(key, g);
+    }
   }
 
   const outFiles = new Map<string, string>();
@@ -111,11 +154,15 @@ function buildOutputs(content: ContentSource, out: string, version: string): Mar
     category: string;
   }[] = [];
 
-  for (const { domain, cls, files, count } of groups.values()) {
-    const name = pluginName(domain, cls);
+  for (const { domain, cls, category, files, count } of groups.values()) {
+    const name = pluginName(domain, cls, category);
     for (const f of files) outFiles.set(toPosix(f.path), f.contents);
 
-    const description = `${titleCase(domain)} ${CLASS_LABEL[cls]}.`;
+    // The category description says what it is *and* why you would pick it over
+    // the class plugin, because that is the whole reason it exists.
+    const description = category
+      ? `${titleCase(domain)} ${CLASS_LABEL[cls]} — ${category} only. Smaller install: keeps the agent's always-on skill listing within budget.`
+      : `${titleCase(domain)} ${CLASS_LABEL[cls]}.`;
     const manifest = {
       name,
       version,

@@ -1,0 +1,22 @@
+## Android app architecture checklist
+
+- [ ] The codebase is divided into at least two layers: a data layer (repositories + data sources) and a UI layer (ViewModels + composables). A domain layer is present only where multi-repository operations or reusable business rules justify it.
+- [ ] Repositories are the single source of truth for each data domain; no screen or ViewModel fetches from a data source directly.
+- [ ] Room entities and Retrofit DTOs are not exposed above the repository boundary; domain models are mapped at the data layer edge.
+- [ ] Each ViewModel exposes an immutable `StateFlow<UiState>` backed by a private `MutableStateFlow`; `MutableStateFlow` is never exposed to the UI.
+- [ ] UI state is a `data class` whose fields are all immutable (`val`, `List<T>` not `MutableList`). State transitions use `copy()`, never mutation.
+- [ ] `StateFlow` is collected with `collectAsStateWithLifecycle()`, not `collectAsState()`, to avoid background collection.
+- [ ] `stateIn` uses `SharingStarted.WhileSubscribed(5_000)` (not `Eagerly`) so the upstream flow is cancelled when no UI is subscribed.
+- [ ] Coroutines are launched in `viewModelScope`; no `GlobalScope` usage in ViewModels or repositories.
+- [ ] Business logic (multi-step rules, combining data from multiple repositories) lives in domain use cases or repositories — not in composables or ViewModels.
+- [ ] Presentation/formatting logic (mapping domain models to display strings, filtering for a specific screen) lives in the ViewModel — not in composables.
+- [ ] One-off effects (navigation, snackbars) are delivered via a `Channel` or `SharedFlow`; they are not stored as flags in the main `UiState`.
+- [ ] ViewModels are scoped to navigation destinations (screens), not to individual reusable composables.
+- [ ] `@HiltViewModel` + `@Inject constructor` is used for dependency injection; no manual ViewModel factories.
+- [ ] ViewModels hold no Android framework references except `SavedStateHandle`; they are testable without Robolectric.
+- [ ] State that must survive process death (selected IDs, scroll position keys) is persisted via `SavedStateHandle` or Room; in-memory `MutableStateFlow` is not assumed to persist.
+- [ ] The team has agreed on and documented its presentation pattern choice (MVVM vs. MVI vs. plain UDF) and applies it consistently.
+- [ ] Domain use cases have a single `operator fun invoke` entry point and zero Android framework imports.
+- [ ] Domain use cases that merely delegate to a single repository method (no added logic) are not created; the ViewModel calls the repository directly instead.
+- [ ] Navigation arguments carry only primitives or `@Serializable` types; full objects are rehydrated from the repository inside the destination ViewModel.
+- [ ] Unit tests cover ViewModel state transitions and domain use case logic without rendering any UI.

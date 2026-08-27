@@ -1,0 +1,8 @@
+{
+  "name": "skills-master-apple-code-app-frameworks",
+  "version": "0.1.0",
+  "description": "Apple code skills (frameworks & APIs) — app-frameworks only. Smaller install: keeps the agent's always-on skill listing within budget.",
+  "author": {
+    "name": "skills-master contributors"
+  }
+}

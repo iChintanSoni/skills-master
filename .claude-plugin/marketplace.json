@@ -13,6 +13,55 @@
       "category": "development"
     },
     {
+      "name": "skills-master-android-code-architecture",
+      "source": "./plugins/skills-master-android-code-architecture",
+      "description": "Android code skills (frameworks & APIs) — architecture only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-code-compose-ui",
+      "source": "./plugins/skills-master-android-code-compose-ui",
+      "description": "Android code skills (frameworks & APIs) — compose-ui only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-code-data",
+      "source": "./plugins/skills-master-android-code-data",
+      "description": "Android code skills (frameworks & APIs) — data only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-code-form-factors",
+      "source": "./plugins/skills-master-android-code-form-factors",
+      "description": "Android code skills (frameworks & APIs) — form-factors only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-code-graphics-games",
+      "source": "./plugins/skills-master-android-code-graphics-games",
+      "description": "Android code skills (frameworks & APIs) — graphics-games only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-code-media-camera-ml",
+      "source": "./plugins/skills-master-android-code-media-camera-ml",
+      "description": "Android code skills (frameworks & APIs) — media-camera-ml only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-code-platform-services",
+      "source": "./plugins/skills-master-android-code-platform-services",
+      "description": "Android code skills (frameworks & APIs) — platform-services only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
       "name": "skills-master-android-design",
       "source": "./plugins/skills-master-android-design",
       "description": "Android design-review skills.",
@@ -20,9 +69,86 @@
       "category": "design"
     },
     {
+      "name": "skills-master-android-design-components",
+      "source": "./plugins/skills-master-android-design-components",
+      "description": "Android design-review skills — components only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-android-design-foundations",
+      "source": "./plugins/skills-master-android-design-foundations",
+      "description": "Android design-review skills — foundations only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-android-design-patterns",
+      "source": "./plugins/skills-master-android-design-patterns",
+      "description": "Android design-review skills — patterns only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-android-design-platforms",
+      "source": "./plugins/skills-master-android-design-platforms",
+      "description": "Android design-review skills — platforms only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-android-design-styles",
+      "source": "./plugins/skills-master-android-design-styles",
+      "description": "Android design-review skills — styles only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-android-design-technologies",
+      "source": "./plugins/skills-master-android-design-technologies",
+      "description": "Android design-review skills — technologies only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
       "name": "skills-master-android-lang-tooling",
       "source": "./plugins/skills-master-android-lang-tooling",
       "description": "Android language, build, test & ship skills.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-lang-tooling-architecture",
+      "source": "./plugins/skills-master-android-lang-tooling-architecture",
+      "description": "Android language, build, test & ship skills — architecture only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-lang-tooling-build-packaging",
+      "source": "./plugins/skills-master-android-lang-tooling-build-packaging",
+      "description": "Android language, build, test & ship skills — build-packaging only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-lang-tooling-language",
+      "source": "./plugins/skills-master-android-lang-tooling-language",
+      "description": "Android language, build, test & ship skills — language only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-lang-tooling-ship",
+      "source": "./plugins/skills-master-android-lang-tooling-ship",
+      "description": "Android language, build, test & ship skills — ship only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-android-lang-tooling-testing",
+      "source": "./plugins/skills-master-android-lang-tooling-testing",
+      "description": "Android language, build, test & ship skills — testing only. Smaller install: keeps the agent's always-on skill listing within budget.",
       "version": "0.1.0",
       "category": "development"
     },
@@ -41,6 +167,55 @@
       "category": "development"
     },
     {
+      "name": "skills-master-apple-code-app-frameworks",
+      "source": "./plugins/skills-master-apple-code-app-frameworks",
+      "description": "Apple code skills (frameworks & APIs) — app-frameworks only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-app-services",
+      "source": "./plugins/skills-master-apple-code-app-services",
+      "description": "Apple code skills (frameworks & APIs) — app-services only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-form-factors",
+      "source": "./plugins/skills-master-apple-code-form-factors",
+      "description": "Apple code skills (frameworks & APIs) — form-factors only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-graphics-games",
+      "source": "./plugins/skills-master-apple-code-graphics-games",
+      "description": "Apple code skills (frameworks & APIs) — graphics-games only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-media",
+      "source": "./plugins/skills-master-apple-code-media",
+      "description": "Apple code skills (frameworks & APIs) — media only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-system",
+      "source": "./plugins/skills-master-apple-code-system",
+      "description": "Apple code skills (frameworks & APIs) — system only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-code-web",
+      "source": "./plugins/skills-master-apple-code-web",
+      "description": "Apple code skills (frameworks & APIs) — web only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
       "name": "skills-master-apple-design",
       "source": "./plugins/skills-master-apple-design",
       "description": "Apple design-review skills.",
@@ -48,9 +223,86 @@
       "category": "design"
     },
     {
+      "name": "skills-master-apple-design-components",
+      "source": "./plugins/skills-master-apple-design-components",
+      "description": "Apple design-review skills — components only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-apple-design-foundations",
+      "source": "./plugins/skills-master-apple-design-foundations",
+      "description": "Apple design-review skills — foundations only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-apple-design-inputs",
+      "source": "./plugins/skills-master-apple-design-inputs",
+      "description": "Apple design-review skills — inputs only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-apple-design-patterns",
+      "source": "./plugins/skills-master-apple-design-patterns",
+      "description": "Apple design-review skills — patterns only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-apple-design-platforms",
+      "source": "./plugins/skills-master-apple-design-platforms",
+      "description": "Apple design-review skills — platforms only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
+      "name": "skills-master-apple-design-technologies",
+      "source": "./plugins/skills-master-apple-design-technologies",
+      "description": "Apple design-review skills — technologies only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "design"
+    },
+    {
       "name": "skills-master-apple-lang-tooling",
       "source": "./plugins/skills-master-apple-lang-tooling",
       "description": "Apple language, build, test & ship skills.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-lang-tooling-architecture",
+      "source": "./plugins/skills-master-apple-lang-tooling-architecture",
+      "description": "Apple language, build, test & ship skills — architecture only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-lang-tooling-build-packaging",
+      "source": "./plugins/skills-master-apple-lang-tooling-build-packaging",
+      "description": "Apple language, build, test & ship skills — build-packaging only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-lang-tooling-language",
+      "source": "./plugins/skills-master-apple-lang-tooling-language",
+      "description": "Apple language, build, test & ship skills — language only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-lang-tooling-ship",
+      "source": "./plugins/skills-master-apple-lang-tooling-ship",
+      "description": "Apple language, build, test & ship skills — ship only. Smaller install: keeps the agent's always-on skill listing within budget.",
+      "version": "0.1.0",
+      "category": "development"
+    },
+    {
+      "name": "skills-master-apple-lang-tooling-testing",
+      "source": "./plugins/skills-master-apple-lang-tooling-testing",
+      "description": "Apple language, build, test & ship skills — testing only. Smaller install: keeps the agent's always-on skill listing within budget.",
       "version": "0.1.0",
       "category": "development"
     },

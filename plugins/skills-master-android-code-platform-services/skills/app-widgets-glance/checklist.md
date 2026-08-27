@@ -1,0 +1,20 @@
+- [ ] `GlanceAppWidgetReceiver` subclass exists with `override val glanceAppWidget` pointing to the widget implementation — no business logic in the receiver.
+- [ ] `GlanceAppWidget` overrides `provideGlance` (not the deprecated `Content`) and calls `provideContent { }`.
+- [ ] A `stateDefinition` is declared — either `PreferencesGlanceStateDefinition` or a custom `DataStore`-backed definition. In-memory / `remember` state is not used.
+- [ ] `sizeMode` is set explicitly; `SizeMode.Responsive` with at least two `DpSize` breakpoints is preferred over `SizeMode.Exact` for widgets that support resizing.
+- [ ] Responsive layouts read `LocalSize.current` inside `Content()` and branch the UI at the declared breakpoints.
+- [ ] All modifiers use `GlanceModifier` (not `Modifier`); no standard Compose components (`Column` from `androidx.compose.foundation`, etc.) are imported into widget files.
+- [ ] Widget actions use `actionRunCallback`, `actionStartActivity`, or `actionSendBroadcast` — click handlers are not implemented as raw lambdas.
+- [ ] `ActionCallback` implementations call `updateAppWidgetState` and then `widget.update(context, glanceId)` — state write and UI refresh are always paired.
+- [ ] Background refresh is scheduled via `PeriodicWorkRequestBuilder<WorkerClass>` with `ExistingPeriodicWorkPolicy.KEEP`; direct reliance on `android:updatePeriodMillis` alone is avoided for sub-30-minute refresh needs.
+- [ ] `CoroutineWorker.doWork()` fetches all active `GlanceId`s via `GlanceAppWidgetManager.getGlanceIds(MyWidget::class.java)` and updates each one.
+- [ ] `<appwidget-provider>` XML declares `android:resizeMode`, `minWidth`/`minHeight`, and `targetCellWidth`/`targetCellHeight` (API 31 guarded where needed).
+- [ ] Receiver in `AndroidManifest.xml` includes `android:exported="true"` and an `<intent-filter>` for `android.appwidget.action.APPWIDGET_UPDATE`.
+- [ ] Widget hierarchy is kept shallow (under 10 levels) to avoid `TransactionTooLargeException` on serialization to RemoteViews.
+- [ ] `GlanceTheme` with `GlanceTheme.colors` is applied at the root of `Content()` to support Material You dynamic color on Android 12+.
+- [ ] `android:widgetFeatures="reconfigurable|dynamicColors"` is set in the provider XML where dynamic color is desired.
+- [ ] No standard Compose state APIs (`remember`, `mutableStateOf`, `LaunchedEffect`, `collectAsState`) are used inside `provideContent { }`.
+- [ ] `@GlancePreview` annotation is added to the content composable for IDE preview; the preview is not the sole testing mechanism.
+- [ ] Widget is tested on a physical or emulated device at both small and large allocated sizes to verify RemoteViews serialization constraints.
+- [ ] If the widget uses `LazyColumn`, `itemId` lambdas return stable, unique `Long` values derived from item IDs to avoid spurious list re-renders.
+- [ ] Lint or detekt rule (or manual review) confirms no `import androidx.compose.material3.*` or `import androidx.compose.foundation.*` symbols are present in Glance widget files.

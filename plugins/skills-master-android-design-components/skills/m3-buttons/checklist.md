@@ -1,0 +1,23 @@
+- [ ] Only one `Button` (filled) appears per primary action zone; no two filled buttons share the same visual row or card.
+- [ ] The filled button maps to the screen's singular intended outcome, not a utility action like "Share," "Filter," or "Settings."
+- [ ] `FilledTonalButton` is used for a genuinely secondary action that still needs medium prominence — not as a way to avoid deciding between filled and text.
+- [ ] `ElevatedButton` is chosen only where surface elevation context makes a filled or tonal button inappropriate; the shadow is visually effective on the target surface.
+- [ ] `OutlinedButton` is used for actions that are structured but lower-stakes, reversible, or explicitly secondary (e.g., "Cancel," "Go back").
+- [ ] `TextButton` is used only for the lowest-stakes or tertiary actions; no screen relies on a text button as its sole CTA.
+- [ ] No more than two or three emphasis levels appear in a single button group; the emphasis gap between the primary and secondary actions is perceptually clear.
+- [ ] Every interactive button (including icon-only controls) has a minimum 48 x 48 dp touch target; visually compact buttons are padded to meet this floor.
+- [ ] Full-width buttons are used only in focused, single-column task flows; on large screens and tablets, button widths are constrained to the content column width (e.g., max 320 dp) or arranged side by side.
+- [ ] Leading icons appear only where they meaningfully disambiguate the action; decorative or redundant icons have been removed.
+- [ ] Icon-only interactive controls use `IconButton` or `FilledIconButton`, not a button variant with an empty label.
+- [ ] Every icon button has a non-empty `contentDescription`; icons inside labeled buttons pass `null` for their content description (the label is sufficient).
+- [ ] Button labels are in sentence case (not ALL CAPS); no legacy M2 text-transform styling is applied.
+- [ ] All five interactive states — enabled, disabled, hovered, focused, pressed — are visually distinct; custom color or shape overrides have been checked across all states.
+- [ ] Disabled buttons are accompanied by proximity text or an inline explanation describing why the action is unavailable.
+- [ ] Destructive primary actions (delete, sign out, remove) do not appear as `Button` (filled) without a confirmation step; they use a lower-emphasis variant in context and escalate only in a confirmation dialog.
+- [ ] M3 Expressive shape morphing (resting to pressed/hover shape transition) is preserved; shape overrides retain perceptual press feedback.
+- [ ] Corner radii are consistent across buttons in the same group; no mix of pill and slightly-rounded shapes without intentional semantic distinction.
+- [ ] Buttons in a group are spaced 8 dp apart for alternatives or 16 dp or more for semantically distinct actions.
+- [ ] Color is not the only differentiator between button types; shape, container presence, and elevation differences remain intact in the custom theme.
+- [ ] The design has been evaluated in dark mode, high-contrast mode, and with large font sizes to ensure state layers and labels remain legible.
+- [ ] Bottom-anchored button bars on phones respect edge-to-edge insets and sit above the system navigation bar.
+- [ ] On large screens in a list-detail layout, the primary CTA is anchored to the detail pane, not floating across the full window width.

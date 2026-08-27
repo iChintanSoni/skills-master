@@ -1,0 +1,12 @@
+- [ ] Confirmed a native SwiftUI (or native UIKit) equivalent does not already exist before bridging.
+- [ ] Chose the correct wrapper: `UIViewRepresentable` for a plain view, `UIViewControllerRepresentable` when a controller/presentation is involved.
+- [ ] All construction happens in `make...`; `update...` only diffs and applies changes.
+- [ ] `update...` does not write SwiftUI state synchronously (no binding mutation or `objectWillChange` mid-update).
+- [ ] Delegates, target/action, and callbacks route through the `Coordinator`, which holds the bindings/parent reference.
+- [ ] `Coordinator` is created in `makeCoordinator()` and marked `@MainActor` where it conforms to UIKit delegate protocols.
+- [ ] `sizeThatFits(_:uiView:context:)` implemented when the UIKit view has meaningful intrinsic size.
+- [ ] Timers, observers, KVO, and delegate references torn down in `dismantleUIView`/`dismantleUIViewController`.
+- [ ] Hosting SwiftUI in UIKit: child controller added/removed correctly and `sizingOptions` set for resizing.
+- [ ] SwiftUI in cells uses `UIHostingConfiguration` (not an embedded hosting controller); confirmed no reliance on `.toolbar` inside it.
+- [ ] No `self`-capturing closures stored on long-lived UIKit objects that would leak the bridge.
+- [ ] Verified behavior under dynamic type, dark mode, and rotation/size-class changes across the bridge.

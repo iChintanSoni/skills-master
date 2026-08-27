@@ -1,0 +1,22 @@
+- [ ] Added `androidx.media3:media3-exoplayer`, `media3-ui`, and `media3-common` to `build.gradle.kts`; no legacy `com.google.android.exoplayer2` dependency present
+- [ ] `ExoPlayer` instance is owned by a `ViewModel` (or `MediaSessionService`) — not held in an `Activity` field or `companion object`
+- [ ] `player.release()` is called in `ViewModel.onCleared()` (or `onStop`/`onDestroy` if Activity-scoped)
+- [ ] `AudioAttributes` set with appropriate `usage` and `contentType`, and `handleAudioFocus = true`
+- [ ] `player.setAudioAttributes(...)` called before `prepare()` to participate in audio focus
+- [ ] All `Player.Listener` instances removed via `removeListener` in corresponding teardown (DisposableEffect, onCleared, etc.)
+- [ ] `prepare()` called exactly once after `setMediaItem(s)` and not again unless intentionally resetting
+- [ ] `SurfaceView` used (not `TextureView`) unless a specific transformation effect requires TextureView
+- [ ] `PlayerView` or `PlayerSurface` bound and unbound correctly in `DisposableEffect` / lifecycle callbacks
+- [ ] Adaptive streams (HLS `.m3u8` / DASH `.mpd`) use `MediaItem.fromUri` — no manual extractor factory unless required
+- [ ] DRM `MediaItem.Builder` uses `DrmConfiguration.Builder(C.WIDEVINE_UUID)` with a valid `licenseUri`
+- [ ] DRM errors handled in `onPlayerError` by inspecting `PlaybackException.errorCode` (not just logging message)
+- [ ] Track selection mutated via `player.trackSelectionParameters.buildUpon()...build()` — not by recreating the player
+- [ ] Progress polling uses a coroutine loop with `delay(200)` — not `postDelayed` or per-frame recomposition
+- [ ] On large-screen / foldable, `WindowSizeClass` or `WindowInfoTracker` posture observed to adjust `resizeMode`
+- [ ] On Android TV, all playback controls reachable via D-pad without touch input
+- [ ] `android:resizeableActivity="true"` declared in `AndroidManifest.xml` if multi-window / PiP is supported
+- [ ] PiP transition handled in `onUserLeaveHint` and `onStop` checks `isInPictureInPictureMode` before pausing
+- [ ] Background audio uses a `MediaSessionService` with a foreground notification — not a bare `Service`
+- [ ] No mixed Media3 + legacy ExoPlayer2 dependencies in the same module
+- [ ] Unit test or instrumentation test verifies `player.release()` is called when ViewModel is cleared
+- [ ] ProGuard / R8 rules include Media3 keep rules if minification is enabled (check `consumer-rules.pro`)

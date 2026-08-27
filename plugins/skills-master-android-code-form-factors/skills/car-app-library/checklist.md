@@ -1,0 +1,21 @@
+- [ ] `CarAppService` subclass is declared in `AndroidManifest.xml` with `intent-filter` action `androidx.car.app.CarAppService` and the correct category (`POI`, `NAVIGATION`, `PARKING`, or `EV_CHARGING`).
+- [ ] `minCarApiLevel` `<meta-data>` is declared and matches the lowest Car App Library API level your app actually uses — not bumped higher than needed.
+- [ ] `createHostValidator()` is overridden with an `HostValidator.Builder` that lists allowed host package names and certificate digests for production; `ALLOW_ALL_HOSTS_VALIDATOR` is only used in debug builds.
+- [ ] `onCreateSession()` returns a `Session` subclass, and `Session.onCreateScreen()` returns the root `Screen` without performing blocking I/O.
+- [ ] All async data loading lives in coroutines launched from `Screen.lifecycleScope`; `onGetTemplate()` only reads already-computed state.
+- [ ] `invalidate()` is called after state changes (e.g., in a `collect` lambda), never from inside `onGetTemplate()`.
+- [ ] The navigation backstack depth never exceeds 5 screens — the maximum depth has been traced for every user flow.
+- [ ] No `Template` type is changed on a subsequent `onGetTemplate()` call for the same `Screen` instance; a new `Screen` is pushed when a different template type is needed.
+- [ ] `PaneTemplate` has at most 2 `Action`s; `NavigationTemplate` `ActionStrip` has at most 4 `Action`s — counts are validated at build time.
+- [ ] `Row` items have at most 2 metadata text lines; content that might overflow has been tested on the Desktop Head Unit emulator.
+- [ ] `ParkedOnlyOnClickListener` wraps all actions that are unsafe while driving (calls, form input, settings changes).
+- [ ] `SearchTemplate` is used for any text search flow — direct keyboard access or a custom input view is not implemented.
+- [ ] `CarIcon` images are backed by vector drawables or remote URIs — raw `Bitmap` objects are not passed to `GridItem` or `Row`.
+- [ ] `carContext.carAppApiLevel` is checked before using features added in later Car App Library API levels, with a safe fallback for older hosts.
+- [ ] The app has been tested with the Desktop Head Unit (DHU) emulator at both the minimum and maximum declared API levels.
+- [ ] For Automotive OS, the `:automotive` variant includes `automotive_app_desc.xml` and the `<uses-feature android:name="android.hardware.type.automotive" android:required="true" />` declaration.
+- [ ] Car-specific `Screen` and `Template` code lives in a `:car` shared module that both `:app` (Android Auto) and `:automotive` Gradle variants depend on.
+- [ ] No `CarContext` or `Screen` reference is stored in a singleton, `companion object`, or beyond its lifecycle scope.
+- [ ] The empty-state and loading-state paths are handled by returning a `MessageTemplate` with `setLoading(true)` or a `setNoItemsMessage()` call on `ItemList.Builder`.
+- [ ] `Action.BACK` is only used on non-root screens; root screens use `Action.APP_ICON` or no header action to avoid popping an empty backstack and ending the session unexpectedly.
+- [ ] The app has been validated on a real Automotive OS device or real Android Auto projection connection, not only on the DHU emulator.

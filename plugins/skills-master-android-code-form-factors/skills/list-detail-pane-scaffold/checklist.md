@@ -1,0 +1,17 @@
+- [ ] `BackHandler` is guarded with `navigator.canNavigateBack()` so the system handles the final back press rather than popping below the root destination.
+- [ ] `navigator.navigateBack()` is the only mechanism used to pop pane destinations — no manual state flips or NavController back calls that conflict with the scaffold navigator.
+- [ ] Selection state (the chosen item ID) lives in `SavedStateHandle` inside a `ViewModel`, not only in the navigator's content parameter, so it survives process death.
+- [ ] Both `navigator.scaffoldDirective` and `navigator.scaffoldValue` are passed directly to `ListDetailPaneScaffold` without manual manipulation.
+- [ ] Every pane's root composable is wrapped in `AnimatedPane` to get correct enter/exit transitions on compact screens.
+- [ ] The detail pane has a non-empty placeholder (empty-state message, illustration, or auto-selected first item) for the two-pane case when no item is yet selected.
+- [ ] Detail pane content uses `widthIn(max = ...)` or constrains its column width so content does not stretch uncomfortably across very wide expanded-window layouts.
+- [ ] `initialDestinationHistory` is provided to `rememberListDetailPaneScaffoldNavigator` when the screen can be opened via deep link directly to the detail pane.
+- [ ] The correct `ListDetailPaneScaffoldRole` (`List`, `Detail`, or `Extra`) is passed to `navigator.navigateTo` — not a hardcoded integer or string.
+- [ ] No `NavHost` is embedded inside a pane for cross-pane navigation; intra-pane secondary navigation may use a separate `NavHost` with its own `NavController`.
+- [ ] Gradle dependencies include all three adaptive artifacts: `adaptive`, `adaptive-navigation`, and `adaptive-layout` from the Material 3 Adaptive group.
+- [ ] The list pane highlights the currently selected item using `navigator.currentDestination?.content` so selection is visually reflected in two-pane mode.
+- [ ] A custom `PaneScaffoldDirective` with `maxHorizontalPartitions = 1` is used deliberately when a screen must force single-pane regardless of window size, and not used elsewhere.
+- [ ] The screen has been tested at compact width (360 dp), medium width (600–840 dp), and expanded width (840 dp+) — including free-form resizing on ChromeOS.
+- [ ] Foldable hinge exclusion is not manually handled inside the scaffold — the scaffold respects `WindowLayoutInfo` hinge bounds automatically; no custom exclusion logic is added unless using a custom directive.
+- [ ] The selected item in the list pane retains its highlighted state after a configuration change (rotation) — verified by checking ViewModel-driven selection state, not transient recomposition state.
+- [ ] `PaneScaffoldDirective` is not overridden to inject a two-pane layout on compact widths — that creates cramped, unusable panes below ~280 dp each.

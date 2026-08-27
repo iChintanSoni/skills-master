@@ -1,0 +1,15 @@
+- [ ] No call site catches `CancellationException` (or broad `Exception`/`Throwable`) without immediately rethrowing it.
+- [ ] All I/O operations (`Retrofit`, `Room`, file reads/writes) run inside `withContext(Dispatchers.IO)` or are wrapped in main-safe suspend functions.
+- [ ] CPU-intensive loops call `ensureActive()` or `yield()` at regular intervals to cooperate with cancellation.
+- [ ] `GlobalScope` is absent from feature code; every coroutine is launched inside a structured scope (`viewModelScope`, `lifecycleScope`, or an injected scope).
+- [ ] Every `async {}` block has a corresponding `await()` call so exceptions are not silently swallowed.
+- [ ] Parallel fan-out that tolerates partial failures uses `supervisorScope` (or `SupervisorJob`) so one child failure does not cancel siblings.
+- [ ] `CoroutineExceptionHandler` is only attached to root `launch` coroutines, not to child coroutines where it has no effect.
+- [ ] `CoroutineDispatcher` is injected (not hardcoded) into ViewModels and repositories to allow `UnconfinedTestDispatcher` in tests.
+- [ ] Flow collection in Compose uses `collectAsStateWithLifecycle()` rather than plain `collectAsState()`.
+- [ ] Flow collection in Fragments/Activities is wrapped in `repeatOnLifecycle(Lifecycle.State.STARTED)` to stop collection when the UI is not visible.
+- [ ] `viewModelScope` coroutines do not capture references to `Activity`, `Fragment`, or `View` that can outlive the ViewModel.
+- [ ] No blocking calls (`Thread.sleep`, `runBlocking` in production code, synchronous network or DB APIs) appear on `Dispatchers.Main`.
+- [ ] `supervisorScope` is used — not a bare `coroutineScope` — whenever multiple `async` siblings should be independent in their failure behavior.
+- [ ] Unit tests use `runTest` from `kotlinx-coroutines-test` and advance the virtual clock rather than relying on real time.
+- [ ] `SharedFlow` replay and buffer overflow strategies are explicitly configured when used as event buses to avoid silent event loss.
