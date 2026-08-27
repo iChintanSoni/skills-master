@@ -1,0 +1,18 @@
+- [ ] Cold `flow { }` builders contain only emission logic — no global side effects, no shared mutable state written outside the flow.
+- [ ] `flowOn(Dispatchers.IO)` is placed immediately after the operator(s) that do blocking or I/O work, not after a terminal operator.
+- [ ] Each cold flow exposed from a repository is converted to `StateFlow` in the ViewModel via `stateIn` with `SharingStarted.WhileSubscribed(5_000)` — not collected directly in the ViewModel constructor.
+- [ ] Compose screens use `collectAsStateWithLifecycle()` (from `lifecycle-runtime-compose`), not the plain `collectAsState()`, so collection pauses when the app is backgrounded.
+- [ ] Search / filtering pipelines use `flatMapLatest` to cancel stale inner flows when the query changes.
+- [ ] `debounce` is applied to query inputs before network or DB calls to avoid per-keystroke requests.
+- [ ] `catch` is placed on the upstream side (above `collect`) and does not swallow exceptions silently — it emits a typed error value or re-throws.
+- [ ] `retry` is used with a predicate that limits retries to transient errors (e.g., `IOException`) and is not applied unconditionally.
+- [ ] `SharedFlow` used for one-shot UI events has `replay = 0` and a bounded `extraBufferCapacity` with an explicit `onBufferOverflow` policy.
+- [ ] No flow is collected inside a composable body without a coroutine scope tied to the composition lifecycle (`LaunchedEffect` with a stable key, or lifted to the ViewModel).
+- [ ] `GlobalScope` and manually created `CoroutineScope()` are absent from flow collection sites — `viewModelScope` or `lifecycleScope` is used instead.
+- [ ] `conflate` and `collectLatest` are used only where dropping intermediate values is explicitly acceptable.
+- [ ] `flatMapMerge` (if present) has a bounded `concurrency` parameter — unbounded concurrent inner flows are not launched for user-facing queries.
+- [ ] `combine` is preferred over nested `collect` calls when assembling UI state from multiple sources.
+- [ ] Flow tests use Turbine's `test { }` DSL with `awaitItem()` / `awaitComplete()` / `awaitError()` — not manual `Channel` or `toList()` hacks.
+- [ ] Tests involving `debounce`, `delay`, or timed retry use `TestScope` + `StandardTestDispatcher` + `advanceTimeBy` for deterministic virtual-time control.
+- [ ] The `initialValue` passed to `stateIn` is a valid loading/empty sentinel — the UI handles it without crashing.
+- [ ] Repository flows do not expose `MutableStateFlow` or `MutableSharedFlow` — only their read-only `StateFlow` / `SharedFlow` interfaces are part of the public API.

@@ -1,0 +1,20 @@
+- [ ] `./gradlew` (wrapper) is used everywhere — no bare `gradle` calls.
+- [ ] `--no-daemon` is passed on all CI invocations (ephemeral runners) or daemon lifecycle is explicitly managed on persistent agents.
+- [ ] `--build-cache` is enabled on every relevant task invocation.
+- [ ] Gradle cache is keyed on `gradle-wrapper.properties` + version catalog (`libs.versions.toml`) hash, not on branch name alone.
+- [ ] `org.gradle.jvmargs` in `gradle.properties` allocates enough heap (at least `-Xmx4g`) for the CI runner.
+- [ ] Gradle Managed Devices are declared in `build.gradle.kts` under `testOptions.managedDevices`.
+- [ ] GMD `systemImageSource` is set to `"aosp_atd"` (or `"aosp"`) — not `"google"` — on CI.
+- [ ] GPU acceleration flag `-Pandroid.testoptions.manageddevices.emulator.gpu=swiftshader_indirect` is passed when the runner has no GPU.
+- [ ] KVM is enabled on Linux CI runners for hardware-accelerated AVDs.
+- [ ] Instrumented tests use `ANDROIDX_TEST_ORCHESTRATOR` when process isolation between test cases is required.
+- [ ] The release keystore is stored as a base64-encoded CI secret, not committed to source control.
+- [ ] The decoded keystore file is deleted in an `always`/cleanup step — especially on self-hosted runners.
+- [ ] Signing credentials (passwords, aliases) are environment variables or CI secrets, not hardcoded in `build.gradle.kts`.
+- [ ] The signed build has been enrolled in Google Play App Signing so the upload key is separate from the delivery key.
+- [ ] Play uploads use a service account with minimal required scopes, not a personal Google account.
+- [ ] The `publishBundle` (or equivalent) task is gated by a branch/tag condition at the pipeline level.
+- [ ] Release artifacts (AAB) are uploaded as pipeline artifacts for traceability.
+- [ ] Uploads target `internal` track first; promotion to wider tracks is a manual or separately gated step.
+- [ ] `--configuration-cache` compatibility has been verified for all plugins before enabling in CI.
+- [ ] The Java version pinned in CI (via `setup-java`) matches `compileOptions.sourceCompatibility` / `jvmToolchain` in `build.gradle.kts`.

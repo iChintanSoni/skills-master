@@ -1,0 +1,8 @@
+{
+  "name": "skills-master-apple-design-technologies",
+  "version": "0.1.0",
+  "description": "Apple design-review skills — technologies only. Smaller install: keeps the agent's always-on skill listing within budget.",
+  "author": {
+    "name": "skills-master contributors"
+  }
+}

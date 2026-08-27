@@ -1,0 +1,8 @@
+{
+  "name": "skills-master-android-code-form-factors",
+  "version": "0.1.0",
+  "description": "Android code skills (frameworks & APIs) — form-factors only. Smaller install: keeps the agent's always-on skill listing within budget.",
+  "author": {
+    "name": "skills-master contributors"
+  }
+}

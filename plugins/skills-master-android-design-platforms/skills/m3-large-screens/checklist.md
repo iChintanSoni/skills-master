@@ -1,0 +1,27 @@
+- [ ] The design has been reviewed at compact (< 600 dp), medium (600–840 dp), and expanded (>= 840 dp) — all three width classes have been explicitly designed, not assumed.
+- [ ] The design has been reviewed at compact height (< 480 dp, i.e., phone in landscape) to confirm primary actions and content are not pushed off screen.
+- [ ] Each breakpoint specifies the correct navigation chrome: NavigationBar at compact, NavigationRail at medium, permanent NavigationDrawer at expanded.
+- [ ] No bottom navigation bar appears at medium or expanded widths.
+- [ ] The NavigationDrawer at expanded is always visible — it is not a hamburger-toggled panel.
+- [ ] The adaptive quality tier target has been stated and the design has been reviewed against that tier's requirements.
+- [ ] If targeting Tier 3, the layout exploits the additional canvas (multi-pane, reveal, or repositioned navigation) rather than stretching the compact design.
+- [ ] The design has been reviewed at intermediate widths (500 dp, 650 dp, 720 dp, 900 dp, 1000 dp, 1200 dp) in addition to the class boundary points.
+- [ ] Any multi-pane layout specifies a default state for the trailing pane at first entry — it is never blank or showing "nothing selected."
+- [ ] Each pane in a multi-pane layout is at least 280 dp of usable content width at the narrowest breakpoint where the split is shown.
+- [ ] The list pane in a list-detail layout maintains a visible selected-item highlight while the detail pane is open.
+- [ ] On foldable targets, the design specifies all three states: folded (compact), open flat (medium/expanded), and the relevant partially-open posture (book or tabletop).
+- [ ] No interactive control, primary content, or image focal point is placed within 8 dp of the hinge line on either side.
+- [ ] Tabletop posture (fold horizontal) has been designed if the app contains content suited to hands-free viewing (video, recipes, fitness, navigation, reading).
+- [ ] Tabletop posture places passive viewable content in the top half and interactive controls in the bottom half.
+- [ ] Scroll position, playback state, and form state are preserved across posture transitions — the design requirement has been called out for engineering.
+- [ ] Every interactive element has a hover state defined for pointer device users.
+- [ ] Right-click context menus are specified for file, item, or content rows where secondary actions currently live in long-press menus or overflow menus.
+- [ ] Primary creation and navigation actions have keyboard shortcuts specified, and the shortcuts are documented in a keyboard shortcut overlay.
+- [ ] Tab order and keyboard focus traversal are specified for any screen containing forms, data tables, or complex multi-element layouts.
+- [ ] Drag-and-drop affordances (drag handles, drop target highlights, drop confirmation) are specified for any screen where reordering or cross-list movement is supported.
+- [ ] On ChromeOS, a minimum window size has been defined; the design at that minimum has been reviewed for layout integrity.
+- [ ] The app's behavior in a snapped-half-screen ChromeOS window (approximately 640 dp) has been reviewed — it should show a correct medium-class layout, not a broken phone layout.
+- [ ] Full-screen states (media playback, camera) provide clean enter and exit affordances that work in windowed ChromeOS mode.
+- [ ] All touch targets remain at least 48 dp at every breakpoint — larger canvases do not justify smaller tap areas.
+- [ ] Content columns at very wide expanded widths are capped at a comfortable max-width and centered; no single text or form column stretches beyond roughly 700 dp.
+- [ ] The design has been handed to the adaptive-window-size-classes code skill with explicit breakpoint thresholds, pane-width specifications, and hinge clearance requirements documented.

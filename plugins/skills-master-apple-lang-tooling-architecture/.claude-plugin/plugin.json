@@ -1,0 +1,8 @@
+{
+  "name": "skills-master-apple-lang-tooling-architecture",
+  "version": "0.1.0",
+  "description": "Apple language, build, test & ship skills — architecture only. Smaller install: keeps the agent's always-on skill listing within budget.",
+  "author": {
+    "name": "skills-master contributors"
+  }
+}

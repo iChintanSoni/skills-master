@@ -1,0 +1,25 @@
+- [ ] A single `OkHttpClient` instance is created in a DI module scoped to the application component — not re-created per screen, per ViewModel, or per request.
+- [ ] A single `Retrofit` instance is created in a DI module and reused — not re-instantiated per feature.
+- [ ] The `baseUrl` ends with a trailing slash (e.g. `"https://api.example.com/v1/"`).
+- [ ] All endpoint methods are declared as `suspend fun` rather than returning `Call<T>`.
+- [ ] `Response<T>` is used only when the HTTP status code or headers are needed; `T` is returned directly for endpoints where a non-2xx response should always throw.
+- [ ] `response.isSuccessful` is checked before accessing `response.body()` anywhere `Response<T>` is returned.
+- [ ] `response.errorBody()?.string()` is called at most once per response; the result is stored in a variable before being used.
+- [ ] Both `HttpException` (non-2xx) and `IOException` (network/socket) are caught and mapped to a domain-level error type before reaching the ViewModel.
+- [ ] OkHttp and Retrofit types (`HttpException`, `Response<T>`, `RequestBody`) do not appear in ViewModel or UI layer code.
+- [ ] `connectTimeout`, `readTimeout`, and `writeTimeout` are set explicitly on the `OkHttpClient.Builder`.
+- [ ] `HttpLoggingInterceptor` is gated strictly on `BuildConfig.DEBUG` — it never logs bodies in release builds.
+- [ ] Auth headers are added via an `Interceptor` (application interceptor), not manually in each service method.
+- [ ] Token refresh on 401 is handled via OkHttp's `Authenticator`, not by catching `HttpException` in every repository method.
+- [ ] The `Authenticator` guards against infinite refresh loops (e.g. by checking a sentinel request header or counting challenges).
+- [ ] A disk `Cache` is configured with an explicit size limit and a `File` path inside `context.cacheDir`.
+- [ ] `HttpLoggingInterceptor` is added as an application interceptor, not a network interceptor, so it sees the final transformed request.
+- [ ] A single JSON converter factory is installed on the `Retrofit` instance — `kotlinx.serialization` or Moshi, not both.
+- [ ] `@Serializable` data classes use `@SerialName` to decouple wire names from Kotlin property names where they differ.
+- [ ] `Json { ignoreUnknownKeys = true }` is set on the `kotlinx.serialization` `Json` instance to tolerate additive API changes.
+- [ ] Multipart uploads track progress via a custom `RequestBody` wrapper rather than blocking the main thread or polling.
+- [ ] All network calls are initiated from a `viewModelScope.launch` or a repository `suspend fun` — never from the main thread directly.
+- [ ] Background network syncs that must survive process death or screen rotation are performed via `WorkManager`, not from a foreground coroutine.
+- [ ] On large-screen targets, the `OkHttpClient` and `Retrofit` singletons are shared across all panes — no per-pane instances.
+- [ ] Unit tests for repository classes inject a `MockWebServer` (OkHttp) or a fake service interface — not a real network.
+- [ ] `cleartext` traffic is not permitted in production; any cleartext exception in `network_security_config.xml` is limited to debug builds or localhost.

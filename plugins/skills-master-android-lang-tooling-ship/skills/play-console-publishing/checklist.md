@@ -1,0 +1,18 @@
+- [ ] The release build task is `bundleRelease` (produces an `.aab`), not `assembleRelease` (produces an `.apk`), for Play submissions.
+- [ ] The app is enrolled in Play App Signing; the upload keystore is distinct from the release key and credentials are stored in a secrets manager, not source control.
+- [ ] `versionCode` increments on every build uploaded to any track — automated in CI to prevent upload rejections.
+- [ ] The internal testing track is used for every new build before promoting to closed, open, or production testing.
+- [ ] A staged rollout percentage (e.g., 10 %) is configured for production releases; the rollout is monitored in Android Vitals before expanding.
+- [ ] The In-App Update API is integrated with `FLEXIBLE` update type for routine updates and `IMMEDIATE` reserved only for blocking security or API-breaking releases.
+- [ ] `launchReviewFlow` is called only after a meaningful user action (not on every launch) and the "already prompted" flag is persisted to avoid repeated requests.
+- [ ] No custom pre-prompt ("Do you enjoy this app?") gate is shown before calling the Play In-App Review API — this violates Play policy.
+- [ ] Play Integrity nonces are generated and validated server-side; the integrity token is never trusted or decoded client-side.
+- [ ] `IntegrityManager.requestIntegrityToken` is called only on sensitive, high-value actions — not on every screen load — to stay within quota.
+- [ ] All SafetyNet Attestation calls have been removed and replaced with Play Integrity API equivalents.
+- [ ] The Data safety section in the Play Console accurately declares every data type collected, shared, or processed — including data from third-party SDKs.
+- [ ] The content rating questionnaire is complete and accurate for all target countries.
+- [ ] The app targets at least the minimum API level required by Play's current annual deadline (API 35 for updates as of 2026).
+- [ ] Adaptive icon assets include both foreground and background layers at the correct sizes.
+- [ ] Store listing screenshots meet the required aspect ratios for all declared form factors (phone, tablet, Chromebook if applicable).
+- [ ] A halted staged rollout is diagnosed and a fixed build is released before resuming expansion — the rollout percentage is never decreased on a faulty build.
+- [ ] `AppUpdateManager` and `ReviewManager` are injected as abstractions so they can be replaced with test fakes in unit and integration tests.

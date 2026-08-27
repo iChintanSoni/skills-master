@@ -1,0 +1,17 @@
+- [ ] App reads/writes private files only through `context.filesDir`, `context.cacheDir`, or `context.getExternalFilesDir()` — no hardcoded absolute paths.
+- [ ] No `file://` URIs are passed in Intents; all cross-app file sharing goes through `FileProvider.getUriForFile()`.
+- [ ] `FileProvider` declared in `AndroidManifest.xml` with `android:exported="false"` and `android:grantUriPermissions="true"`.
+- [ ] `res/xml/file_paths.xml` paths match the actual subdirectories created at runtime (no trailing slash mismatch).
+- [ ] SAF `ACTION_OPEN_DOCUMENT` Intents include `CATEGORY_OPENABLE` to exclude non-streamable virtual files.
+- [ ] `contentResolver.takePersistableUriPermission()` is called immediately after receiving a SAF Uri that needs to survive process death.
+- [ ] Persisted SAF Uris are stored alongside their permission flags; stale Uris without permissions are removed on next launch.
+- [ ] All `ContentResolver.openInputStream` and `openOutputStream` calls are wrapped in `use {}` and executed on `Dispatchers.IO`.
+- [ ] `DocumentFile` tree traversal runs on `Dispatchers.IO`, not the main thread.
+- [ ] `READ_MEDIA_IMAGES`, `READ_MEDIA_VIDEO`, `READ_MEDIA_AUDIO` are declared instead of the deprecated `READ_EXTERNAL_STORAGE` when targeting API 33+.
+- [ ] `READ_EXTERNAL_STORAGE` is gated with `android:maxSdkVersion="32"` if backward compatibility with older devices is needed.
+- [ ] `MANAGE_EXTERNAL_STORAGE` is not requested unless the app is an approved file manager; a Play Store justification exists if it is.
+- [ ] `WRITE_EXTERNAL_STORAGE` is not declared for `targetSdkVersion` 30+ (it has no effect and adds noise to the permission list).
+- [ ] Photo and video selection uses `ActivityResultContracts.PickVisualMedia` where appropriate — no media permission required.
+- [ ] `_data` (MediaStore `DATA` column) is not used for opening file streams on API 30+; `ContentResolver.openFileDescriptor` is used instead.
+- [ ] FileProvider authority uses `${applicationId}.fileprovider` (or a unique suffix) to avoid conflicts with library-declared providers.
+- [ ] Unit tests for storage logic mock `ContentResolver` rather than writing to real disk paths.

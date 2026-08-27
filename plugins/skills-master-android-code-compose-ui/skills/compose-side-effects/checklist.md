@@ -1,0 +1,15 @@
+- [ ] No coroutine launches (scope.launch, async, etc.) directly in the composable body — all launches are inside LaunchedEffect or triggered from event lambdas via rememberCoroutineScope.
+- [ ] Every LaunchedEffect key list includes all values the lambda reads that should cause a restart; no values are silently captured without being listed as keys.
+- [ ] LaunchedEffect(Unit) is only used when the effect truly must run exactly once per entry into the composition and does not depend on any changing parameter.
+- [ ] Lambdas or callbacks captured inside long-lived LaunchedEffect(Unit) or DisposableEffect blocks are wrapped with rememberUpdatedState to avoid stale closure bugs.
+- [ ] Every DisposableEffect block includes an onDispose { … } that reverses the registration/allocation performed in the effect body (no listener leaks, no resource leaks).
+- [ ] rememberCoroutineScope is used only for user-event-driven work (button clicks, gesture callbacks) — not for observation or subscription patterns.
+- [ ] SideEffect is used only for pushing Compose state to external non-Compose systems post-composition, not for one-shot work or resource lifecycle management.
+- [ ] produceState blocks that collect a hot stream use awaitDispose (or a structured launch inside the producer) to cancel the subscription when the composable leaves.
+- [ ] snapshotFlow lambdas read Compose snapshot state only (State, MutableState, derived state) — no regular Kotlin vars, no suspend calls inside the lambda.
+- [ ] Effects do not perform I/O or blocking work on the main dispatcher without an explicit withContext(Dispatchers.IO) switch.
+- [ ] Keys passed to LaunchedEffect and DisposableEffect are stable values (primitives, data classes, stable objects) — no new object instances created inline that always compare unequal and trigger continuous restarts.
+- [ ] Composables that observe external state (ViewModel StateFlow, LiveData, etc.) prefer collectAsStateWithLifecycle over manual LaunchedEffect + mutableStateOf pairs.
+- [ ] The scope returned by rememberCoroutineScope is not stored in or passed to objects that outlive the composition.
+- [ ] DisposableEffect is preferred over LaunchedEffect whenever the work has a required symmetric teardown, making the cleanup contract explicit and compiler-enforced.
+- [ ] UI state derived from a Flow is collected with produceState or collectAsStateWithLifecycle rather than a raw collect in a LaunchedEffect writing to a remembered mutable state variable (reduces boilerplate and error surface).

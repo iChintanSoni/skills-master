@@ -1,0 +1,8 @@
+{
+  "name": "skills-master-android-design-components",
+  "version": "0.1.0",
+  "description": "Android design-review skills — components only. Smaller install: keeps the agent's always-on skill listing within budget.",
+  "author": {
+    "name": "skills-master contributors"
+  }
+}

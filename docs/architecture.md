@@ -138,4 +138,17 @@ In a consuming project:
 Two channels over the same content:
 
 1. **npx CLI** — `skills-master add …` fetches skill subtrees (via `giget`, pinned to `contentRef`) and compiles them for whichever tools a project uses.
-2. **Claude marketplace** — `marketplace build` generates `.claude-plugin/marketplace.json` and one plugin per `(domain, class)` (e.g. `skills-master-apple-code`) for native `/plugin install`. The output is committed, so it is a build artifact that can go stale: the build owns every file under `plugins/` and deletes any it no longer emits, and `marketplace build --check` gates the committed tree in CI. Whatever the skill library holds, the plugins must bundle — a skill missing from a plugin is invisible to anyone who installs that way.
+2. **Claude marketplace** — `marketplace build` generates `.claude-plugin/marketplace.json` and the plugins for native `/plugin install`. The output is committed, so it is a build artifact that can go stale: the build owns every file under `plugins/` and deletes any it no longer emits, and `marketplace build --check` gates the committed tree in CI. Whatever the skill library holds, the plugins must bundle — a skill missing from a plugin is invisible to anyone who installs that way.
+
+### Two granularities, on purpose
+
+Every skill ships in **two** plugins:
+
+| | Example | Skills | Listing vs the ~8 KB budget |
+|---|---|---:|---|
+| per `(domain, class)` | `skills-master-apple-code` | 88 | 4.9× over |
+| per `(domain, class, category)` | `skills-master-apple-code-app-frameworks` | 36 | 1.9× over — and 32 of 36 category plugins fit outright |
+
+The class plugins are what the marketplace has always shipped and what existing installs name, so they stay. The category plugins exist because the agent's always-on skill listing is [budgeted](emitters.md#how-each-agent-triggers-a-skill): past roughly 8 KB, descriptions are replaced by a bare `- <name>`, so installing 107 skills at once means most of them arrive as names with no descriptions. A consumer picks a granularity; the skill bytes are identical either way, and a test asserts that.
+
+A class with only one category (both `overviews` classes) gets **no** category plugin — it would be a byte-identical twin under a clumsier name. The cost of the whole arrangement is a doubled `plugins/` tree on disk, which is a build artifact rather than something a consumer downloads twice.

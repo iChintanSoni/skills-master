@@ -615,7 +615,7 @@ can answer.
   The report now carries this table on every crawl, so the picture stays current as the
   library grows.
 
-- [ ] **7.2 Ship category-sized plugins (M) — needs a decision, not just implementation.**
+- [x] **7.2 Ship category-sized plugins (M) — needs a decision, not just implementation.**
   The marketplace build already groups by `(domain, class)`; grouping by
   `(domain, class, category)` is a small change to `marketplace.ts` plus regenerated output.
   What needs deciding first, because it is consumer-facing and hard to reverse:
@@ -625,8 +625,25 @@ can answer.
   marketplace listing stays navigable at 38+ entries;
   (c) migration for anyone already installed from the current plugin names — the build
   prunes output it no longer owns, so a rename is a remove-and-add for existing consumers.
-  Not started: this is Chintan's call on packaging, and 7.1 exists so the call is made with
-  numbers.
+  **Chintan chose (a) add alongside**, so the 8 class plugins are untouched and 36 category
+  plugins join them — 44 in the marketplace. Nobody's install breaks, and anyone who cares
+  about the listing budget installs a category instead of a class.
+  **Landed.** The build groups twice over the same emitted files; skill bytes are identical
+  in both granularities and a test asserts it. Category descriptions say *why* you would
+  pick them ("… — compose-ui only. Smaller install: keeps the agent's always-on skill
+  listing within budget"), while class descriptions are byte-for-byte what they were, so no
+  existing listing moves.
+  **One thing the numbers did not predict:** a class with a single category produces a
+  category plugin holding exactly the same skills as its class plugin — a byte-identical
+  twin under the name `skills-master-apple-overviews-overviews`. Both `overviews` classes
+  are like this, so the build now suppresses that case: 36 category plugins, not 38.
+  **Costs, stated plainly.** `plugins/` doubles — 617 files and 5.5 MB become 1,217 and
+  11 MB — because "alongside" means every skill is written twice. That is committed build
+  artifact, not anything a consumer downloads twice. The marketplace listing goes from 8
+  entries to 44. And the 0.3 conformance gate now validates **830** emitted skill dirs
+  instead of 434, still 0 invalid.
+  **Not done:** the six categories that remain over budget (7.1's table) still need
+  description trimming to fit — that is 3.3, and now has a concrete target list.
 
 ## Deliberate non-goals (recorded so they stay decided)
 
