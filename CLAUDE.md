@@ -63,6 +63,9 @@ issue** so the repo carries one live dashboard rather than a stack of weekly dup
 JSON stays as a run artifact. The link check is deliberately **not** `--strict` there: vendor
 hosts rate-limit under concurrency and return one-off 404s for live URLs, so a red weekly run
 would just train everyone to ignore it. Re-check any reported dead link by hand before editing.
+The same run reports whether the **dogfood install** under `packages/cli/` has fallen behind the
+content (`update --check`) — also report-only, because a skill changing upstream is normal; it
+just should not go unnoticed for three releases, which is exactly what happened once.
 
 The report also tracks the **always-on listing footprint**: every installed skill puts one
 `- <name>: <description>` line in the agent's system prompt, and Claude Code caps that listing at
