@@ -429,7 +429,8 @@ is ~26k agent invocations per iteration — not a thing to run wholesale. Sample
 
 ## Phase 4 — Output-quality evals (policy, not blanket coverage)
 
-- [ ] **4.1 Sampled output evals (L) — decision item.** The guides' with-skill vs
+- [x] **4.1 Sampled output evals (L) — decision item.** *(Harness + 2-skill pilot done; the
+  full 8-skill sample is costed and queued below.)* The guides' with-skill vs
   without-skill benchmark answers one question these docs never ask of a *knowledge*
   library: does having the skill measurably beat the model's raw knowledge? For a library
   whose whole mission is "give coding agents an edge", that is worth answering honestly on
@@ -439,6 +440,34 @@ is ~26k agent invocations per iteration — not a thing to run wholesale. Sample
   content), that finding should reshape what we author next — currency-first — and is
   worth more than any compliance polish in this file. If run: results and per-class
   verdicts get recorded here.
+  **Harness landed (`scripts/output-eval/`) and piloted on 2 skills, 10 sessions, $3.66.**
+  Same prompt, same model, two scratch projects — one with the skill, one bare — graded
+  against assertions that encode *practice* rather than the skill's vocabulary.
+
+  | Skill | Kind | With | Without | Delta |
+  | --- | --- | ---: | ---: | ---: |
+  | `viewmodel` | long-stable API | 100% | 92% | +8 |
+  | `foundation-models` | new framework | 100% | 83% | +17 |
+
+  **The averages hide the finding; the per-task numbers are the finding.** On Foundation
+  Models' 2025-era core API the control scored **100%** — the skill added nothing. On the
+  iOS 27 task it scored **50%**, never naming `Attachment`/`ImageReference` or
+  `PrivateCloudComputeLanguageModel`. So the library's edge is concentrated in **currency,
+  not coverage**, which is the hypothesis the item was written to test, now supported on a
+  small sample. Authoring priority follows: post-cutoff API surface earns its keep, and a
+  skill re-explaining a well-documented 2023 API mostly does not.
+  **Two lessons that cost real money.** (1) *Task selection decides whether an output eval
+  measures anything* — the first `foundation-models` run scored 100% in both arms and looked
+  like a null result for a brand-new framework, because every task probed API surface older
+  than the model. Adding one iOS 27 task turned a flat zero into a 50-point gap. (2) *A
+  regex grader cannot tell an endorsement from a warning*: it flagged a with-skill answer for
+  "reaches for an Activity-scoped ViewModel" when the sentence was "**Don't** fall back to
+  `viewModel(LocalContext.current as ComponentActivity)`". The grader now checks for a
+  preceding negation, and the stored answers were re-graded offline rather than re-run.
+  **Not done — the remaining 6 skills of the sample.** ~$12–15 at one run each, and worth
+  spending: two skills is directional, not conclusive, and the per-class verdicts the item
+  asks for need `design`, `lang-tooling` and `overview` represented. Needs Chintan's
+  go-ahead on spend.
 
 ## Phase 5 — Agent reach: the `.agents/skills/` standard directory
 
