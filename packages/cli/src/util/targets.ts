@@ -1,13 +1,17 @@
 import { detectTargets } from "../emitters";
-import { ALL_TARGETS, type TargetId } from "../types";
+import { ALL_TARGETS, DEFAULT_TARGETS, type TargetId } from "../types";
 
 const VALID = new Set<string>(ALL_TARGETS);
 
 /**
  * Which targets a command should emit to, in priority order: an explicit
  * `--target`, then the configured set, then whatever the project looks like it
- * uses, then everything. Shared by `add` and `sync` so the two can never
+ * uses, then the defaults. Shared by `add` and `sync` so the two can never
  * disagree about where output belongs.
+ *
+ * The last step is `DEFAULT_TARGETS`, not `ALL_TARGETS`: emitting a second full
+ * skills tree to `.agents/skills` on no evidence would double what VS Code
+ * Copilot lists, since it reads both roots.
  */
 export function resolveTargets(
   cwd: string,
@@ -17,7 +21,7 @@ export function resolveTargets(
   if (explicit?.length) return explicit;
   if (configured.length) return configured;
   const detected = detectTargets(cwd);
-  return detected.length ? detected : ALL_TARGETS;
+  return detected.length ? detected : DEFAULT_TARGETS;
 }
 
 /**

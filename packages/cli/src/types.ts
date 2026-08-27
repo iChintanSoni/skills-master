@@ -10,10 +10,22 @@ import type { Frontmatter } from "./schema/frontmatter";
 
 export type { Frontmatter } from "./schema/frontmatter";
 
-/** The four AI-tool targets shipped at launch. */
-export type TargetId = "claude" | "cursor" | "copilot" | "agents";
+/** Every AI-tool target the compiler can emit. */
+export type TargetId = "claude" | "cursor" | "copilot" | "agents" | "agents-skills";
 
-export const ALL_TARGETS: TargetId[] = ["claude", "cursor", "copilot", "agents"];
+export const ALL_TARGETS: TargetId[] = ["claude", "cursor", "copilot", "agents", "agents-skills"];
+
+/**
+ * What `init`/`add` emit when they detect nothing at all.
+ *
+ * `agents-skills` is excluded on purpose. It writes a second complete copy of
+ * every skill, and VS Code Copilot reads both `.claude/skills` and
+ * `.agents/skills` — so emitting both by default would show that consumer every
+ * skill twice, doubling the always-on listing in a budget that is already
+ * oversubscribed. A project that wants it says so, by having `.agents/` (or
+ * `.gemini/`) present or by asking for the target explicitly.
+ */
+export const DEFAULT_TARGETS: TargetId[] = ["claude", "cursor", "copilot", "agents"];
 
 /** On-demand "Level 3" resource files that may sit beside a SKILL.md. */
 export interface SkillResources {

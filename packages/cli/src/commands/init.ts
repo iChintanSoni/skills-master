@@ -1,5 +1,5 @@
 import { ProjectConfigSchema, type ProjectConfig } from "../schema/projectConfig";
-import { ALL_TARGETS, type TargetId } from "../types";
+import { DEFAULT_TARGETS, type TargetId } from "../types";
 import { detectTargets } from "../emitters";
 import { loadConfig, saveConfig } from "../core/project";
 import { log } from "../util/log";
@@ -29,8 +29,8 @@ export function initCommand(opts: InitOptions): ProjectConfig {
       targets = detected;
       log.info(`Detected tools: ${detected.join(", ")}`);
     } else {
-      targets = ALL_TARGETS;
-      log.info(`No tools detected — defaulting to all targets (${ALL_TARGETS.join(", ")}).`);
+      targets = DEFAULT_TARGETS;
+      log.info(`No tools detected — defaulting to ${DEFAULT_TARGETS.join(", ")}.`);
     }
   }
 

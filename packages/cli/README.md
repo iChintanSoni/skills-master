@@ -32,7 +32,7 @@ npx @ichintansoni/skills-master doctor                        # same detection, 
 | GitHub Copilot | `.github/instructions/<name>.instructions.md` |
 | AGENTS.md | a sentinel-marked block (your hand-written content is preserved) |
 
-Flags: `--target claude,cursor,copilot,agents|all` · `--with-pairs` (also install the paired code↔design skill) · `--dry-run` · `--overwrite` · `--content <dir>` (use a local skills checkout) · `--ref <git-ref>`. An explicit `--target` or `--ref` is remembered in `skills-master.json`, and `--target` widens the configured set rather than replacing it.
+Flags: `--target claude,cursor,copilot,agents,agents-skills|all` · `--with-pairs` (also install the paired code↔design skill) · `--dry-run` · `--overwrite` · `--content <dir>` (use a local skills checkout) · `--ref <git-ref>`. An explicit `--target` or `--ref` is remembered in `skills-master.json`, and `--target` widens the configured set rather than replacing it.
 
 Claude Code users can alternatively install via the plugin marketplace:
 

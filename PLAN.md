@@ -421,7 +421,7 @@ VS Code Copilot's default skills directory is `.agents/skills/`, and Gemini CLI 
 `.gemini/skills/` with `.agents/skills/` as an alias. One emitter therefore upgrades three
 of the top five from digest-or-nothing to full progressive-disclosure skills.
 
-- [ ] **5.1 `agents-skills` emitter → `.agents/skills/<name>/` (M).** Same projection as the
+- [x] **5.1 `agents-skills` emitter → `.agents/skills/<name>/` (M).** Same projection as the
   Claude emitter (spec frontmatter + verbatim body + co-located resource files) at the
   standard path — mostly a shared-code, second-mount-point change. Per-emitter details:
   detection heuristic (`.agents/` dir, or Codex/VS Code markers — apply the 1.7 rebalancing
@@ -432,6 +432,29 @@ of the top five from digest-or-nothing to full progressive-disclosure skills.
   (b) whether the AGENTS.md digest block should shrink to a pointer for consumers who also
   emit full skills to `.agents/skills/`. Covered by the 0.3 conformance gate automatically.
   `#minor`.
+  **Landed, pulled forward ahead of Phases 3–4** on the merit note below. `core/spec-skill.ts`
+  now holds the projection and both `claude` and `agents-skills` mount it; a test asserts the
+  two stay byte-identical, since drift between them would be silent.
+  **Who reads what, verified against each tool's own docs rather than assumed:** Codex scans
+  `.agents/skills` (project → parent → repo root → user) and *not* `.claude/skills`; Gemini
+  CLI the same, where `.agents/skills` outranks its own `.gemini/skills`; VS Code Copilot
+  reads `.github/skills`, `.claude/skills` **and** `.agents/skills`. And the decisive one,
+  read out of the binary rather than the docs: **Claude Code 2.1.231 contains zero references
+  to `.agents/skills`** — it scans `.claude/skills` only. So the two roots are complementary,
+  not redundant, and a project using Claude Code *and* Codex genuinely needs both.
+  **(a) Dedupe policy — narrow by default, explicit when asked.** VS Code Copilot is the one
+  consumer that reads both roots, so enabling both shows it every skill twice, which 2.3's
+  budget finding makes actively harmful rather than merely untidy. Therefore: a new
+  `DEFAULT_TARGETS` (the original four) is what `init`/`add` fall back to when they detect
+  nothing, while `ALL_TARGETS` keeps all five for `--target all` — an explicit request, not a
+  guess. Detection is `.agents/` or `.gemini/` only. `AGENTS.md` is deliberately **not**
+  evidence, even though it is the clearest sign of a Codex project, because it is the
+  `agents` target's evidence and claiming both would hand Codex the same content twice.
+  **(b) AGENTS.md digest — left alone, deliberately.** Shrinking it to a pointer when
+  `agents-skills` is enabled would make one emitter's output depend on another's being
+  enabled, breaking the property that each target owns its files independently — which is
+  exactly what makes the lockfile, `sync`, and `remove` generic over the interface. A
+  consumer who now gets full skills can simply not enable `agents`.
 - [ ] **5.2 Re-run the 1.8-style consumption audit for the new target (S).** Verify against
   current docs how Codex, VS Code, and Gemini actually discover/trigger `.agents/skills/`
   (metadata preload? `$name` mention? description matching?), and whether our description

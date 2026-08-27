@@ -8,6 +8,29 @@ An emitter projects one canonical skill into the files a specific AI tool reads.
 | `cursor` | `.cursor/rules/<name>.mdc` | `description`, `globs` (if any), `alwaysApply: false` | condensed | single-file |
 | `copilot` | `.github/instructions/<name>.instructions.md` **and** a pointer block in `.github/copilot-instructions.md` | `applyTo` (← globs; omitted when the skill has none, so glob-less guidance stays manual-attach instead of always-on), `description` | condensed | single-file |
 | `agents` | `AGENTS.md` (a `### <Title>` block) | none (plain Markdown) | digest: description + top guidance/pitfall bullets | broad, lossy |
+| `agents-skills` | `.agents/skills/<name>/SKILL.md` + verbatim resource copies | same as `claude` | verbatim | **lossless** |
+
+## Two skills roots, because no agent reads both
+
+`claude` and `agents-skills` emit the **same bytes** (`core/spec-skill.ts`) to two different roots. That is not redundancy — it is what the ecosystem currently requires:
+
+| Agent | `.claude/skills` | `.agents/skills` |
+|---|---|---|
+| Claude Code | ✅ only this | ❌ — the 2.1.231 binary contains no reference to it |
+| Codex CLI | ❌ | ✅ project → parent → repo root → user |
+| Gemini CLI | ❌ | ✅ takes precedence over `.gemini/skills` |
+| VS Code Copilot | ✅ | ✅ (also `.github/skills`) |
+
+So a project that uses Claude Code *and* Codex genuinely needs both roots, and a test asserts the two projections stay byte-identical.
+
+**VS Code Copilot is the one consumer that reads both**, and it will list every skill twice when both targets are enabled — which is worse than it sounds, because the always-on listing is budgeted (see above) and duplication spends that budget twice. Two consequences, both deliberate:
+
+- **`agents-skills` is not in `DEFAULT_TARGETS`.** When `init`/`add` detect nothing, they emit the original four. Writing a second full copy of every skill is not something to do on a guess.
+- **Detection is narrow**: `.agents/` (the standard root) or `.gemini/` (a tool that reads it). `AGENTS.md` is deliberately *not* evidence, even though it is the clearest sign of a Codex project — it is what the `agents` target already claims, and detecting both would hand Codex the same content twice, once as a digest and once as a full skill.
+
+`--target all` still means all five: that is an explicit request, not a guess.
+
+**The AGENTS.md digest is left alone** when both are enabled. Making one emitter's output depend on another's being enabled would break the property that each target owns its files independently — the thing that makes the lockfile, `sync`, and `remove` generic. A consumer who now gets full skills in `.agents/skills/` and doesn't want the digest too can simply not enable `agents`.
 
 ## Whole vs block mode
 
@@ -80,4 +103,4 @@ No other code changes — detection, conflict handling, the lockfile, and `updat
 
 ## Auto-detection
 
-Each emitter's `detect(root)` claims a project only on evidence that its tool is actually in use: `.claude/` (Claude Code), `.cursor/` (Cursor), `.github/copilot-instructions.md` or `.github/instructions/` (Copilot — a bare `.github/` full of workflows proves nothing), and an existing `AGENTS.md` (the standard is opt-in by the file's presence). When nothing is detected, `init`/`add` fall back to all targets, so a fresh project still gets everything.
+Each emitter's `detect(root)` claims a project only on evidence that its tool is actually in use: `.claude/` (Claude Code), `.cursor/` (Cursor), `.github/copilot-instructions.md` or `.github/instructions/` (Copilot — a bare `.github/` full of workflows proves nothing), an existing `AGENTS.md` (the standard is opt-in by the file's presence), and `.agents/` or `.gemini/` (the cross-agent skills root). When nothing is detected, `init`/`add` fall back to `DEFAULT_TARGETS` — the four original targets, not all five, for the duplication reason above.

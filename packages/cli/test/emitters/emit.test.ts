@@ -79,14 +79,20 @@ describe("emitters", () => {
   // 1.2: `license` is a spec field, so the Claude projection carries it — but
   // only when the skill declares one. An emitter that invented a license would
   // be asserting terms for content it did not author.
-  it("carries an authored license into the Claude projection only", () => {
-    const skillMd = getEmitter("claude")!
-      .emit(loadFixture(), ctx())
-      .find((f) => f.path.endsWith("SKILL.md"))!;
-    expect(skillMd.contents).toContain("license: MIT");
+  // The spec targets are the two that write a SKILL.md; the tool-specific ones
+  // speak Cursor's and Copilot's frontmatter vocabularies, not the spec's.
+  const SPEC_TARGETS = ["claude", "agents-skills"];
+
+  it("carries an authored license into the spec projections only", () => {
+    for (const id of SPEC_TARGETS) {
+      const skillMd = getEmitter(id)!
+        .emit(loadFixture(), ctx())
+        .find((f) => f.path.endsWith("SKILL.md"))!;
+      expect(skillMd.contents, id).toContain("license: MIT");
+    }
 
     for (const emitter of EMITTERS) {
-      if (emitter.id === "claude") continue;
+      if (SPEC_TARGETS.includes(emitter.id)) continue;
       for (const f of emitter.emit(loadFixture(), ctx())) {
         expect(f.contents, `${emitter.id} -> ${f.path}`).not.toContain("license:");
       }
@@ -126,11 +132,22 @@ describe("emitters", () => {
 
   it("keeps provenance off the tool-specific targets", () => {
     for (const emitter of EMITTERS) {
-      if (emitter.id === "claude") continue;
+      if (SPEC_TARGETS.includes(emitter.id)) continue;
       for (const f of emitter.emit(loadFixture(), ctx())) {
         expect(f.contents, `${emitter.id} -> ${f.path}`).not.toContain("snapshot-date");
       }
     }
+  });
+
+  // 5.1: the two spec targets are the same projection at two mount points —
+  // no agent reads both roots, so any drift between them is a bug.
+  it("emits byte-identical content to .claude/skills and .agents/skills", () => {
+    const claude = getEmitter("claude")!.emit(loadFixture(), ctx());
+    const agents = getEmitter("agents-skills")!.emit(loadFixture(), ctx());
+    expect(agents.map((f) => f.path)).toEqual(
+      claude.map((f) => f.path.replace(".claude/skills/", ".agents/skills/")),
+    );
+    expect(agents.map((f) => f.contents)).toEqual(claude.map((f) => f.contents));
   });
 
   it("strips the x-skills-master block from every projection", () => {
@@ -198,6 +215,24 @@ describe("detectTargets", () => {
     mkdirSync(join(dir, ".cursor"), { recursive: true });
     writeFileSync(join(dir, "AGENTS.md"), "# Agents\n", "utf8");
     expect(detectTargets(dir).sort()).toEqual(["agents", "claude", "cursor"]);
+  });
+
+  // 5.1: claiming this target writes a second full copy of every skill, so it
+  // wants real evidence — the standard root itself, or a tool that reads it.
+  it("detects agents-skills from .agents/ or .gemini/", () => {
+    mkdirSync(join(dir, ".agents"), { recursive: true });
+    expect(detectTargets(dir)).toEqual(["agents-skills"]);
+
+    rmSync(join(dir, ".agents"), { recursive: true });
+    mkdirSync(join(dir, ".gemini"), { recursive: true });
+    expect(detectTargets(dir)).toEqual(["agents-skills"]);
+  });
+
+  it("does not claim agents-skills from AGENTS.md alone", () => {
+    // AGENTS.md is the `agents` target's evidence. Claiming both would hand
+    // Codex the same content twice: a digest block and a full skill tree.
+    writeFileSync(join(dir, "AGENTS.md"), "# Agents\n", "utf8");
+    expect(detectTargets(dir)).toEqual(["agents"]);
   });
 });
 
