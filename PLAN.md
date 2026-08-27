@@ -374,9 +374,13 @@ is ~26k agent invocations per iteration — not a thing to run wholesale. Sample
   twins) — write ~20 queries each with should/should-not labels, and measure. The
   should-not sets come free: the sibling's should-trigger queries.
 - [ ] **3.3 Act on the data (M/L, scope unknown until 3.2).** Only rewrite what measurably
-  misfires. Candidate hypotheses to test, not presume: leading with "Use when" (the
-  agentskills.io imperative-lead recommendation — currently 19/433 do; note Anthropic's own
-  examples are what-then-when, so this is genuinely open); adding "even if the user doesn't
+  misfires. **Test the front-loading hypothesis first** — 5.2 found Codex instructing
+  authors to "front-load the key use case and trigger words so a host can still match the
+  skill if descriptions are shortened", which means hosts truncate and the first clause is
+  what survives. Candidate hypotheses to test, not presume: leading with "Use when" (the
+  agentskills.io imperative-lead recommendation — currently 19/433 do; Anthropic's own
+  examples are what-then-when, so the *style* is open even though truncation now argues for
+  triggers-first); adding "even if the user doesn't
   mention X" pushiness for under-triggering skills; trimming p90+ descriptions (≥573 chars)
   if length shows no trigger benefit — which would also buy back G8 tokens. Whatever wins
   becomes an authoring.md rule with a rationale; whatever loses gets recorded here as
@@ -455,11 +459,42 @@ of the top five from digest-or-nothing to full progressive-disclosure skills.
   enabled, breaking the property that each target owns its files independently — which is
   exactly what makes the lockfile, `sync`, and `remove` generic over the interface. A
   consumer who now gets full skills can simply not enable `agents`.
-- [ ] **5.2 Re-run the 1.8-style consumption audit for the new target (S).** Verify against
+- [x] **5.2 Re-run the 1.8-style consumption audit for the new target (S).** Verify against
   current docs how Codex, VS Code, and Gemini actually discover/trigger `.agents/skills/`
   (metadata preload? `$name` mention? description matching?), and whether our description
   format triggers well there — feed anything surprising into the Phase 3 eval harness
   rather than guessing.
+  **Landed.** All four consumers audited against their own current docs (`docs/emitters.md`
+  carries the table). The uniform answer: **every one preloads `name` + `description` and
+  nothing else**, loading the body only on activation — so 1.3's zero-cost finding
+  generalizes, and the description is the entire trigger surface everywhere.
+
+  | Agent | Skills-list budget | Explicit invocation |
+  | --- | --- | --- |
+  | Claude Code | `contextWindow × 4 B/token × 1%` ≈ 8,000 B at 200k; over budget → bare `- <name>` | Skill tool / `/name` |
+  | Codex CLI | "at most **2% of the model's context window, or 8,000 characters** when unknown" | `$skill-name` |
+  | Gemini CLI | none documented | `activate_skill`, with approval |
+  | VS Code Copilot | none documented; `name` ≤ 64, `description` ≤ 1024 | `/` menu, `disable-model-invocation` |
+
+  **Two surprises, both feeding Phase 3.**
+  1. **The listing budget is an ecosystem norm, not a Claude Code quirk.** Two independent
+  vendors land on ~8,000 characters. G8 is therefore not "we are expensive on one host" but
+  "a single-domain install overruns the documented budget on at least two of them", which
+  raises 2.3's finding from a measurement to a design constraint.
+  2. **Codex tells authors to front-load triggers, and says why:** *"Front-load the key use
+  case and trigger words so a host can still match the skill if descriptions are shortened."*
+  That is vendor-side evidence for 3.3's open "lead with Use when" question — which the plan
+  framed as genuinely undecided, since agentskills.io recommends the imperative lead while
+  Anthropic's own examples are what-then-when. It does not settle whether front-loading
+  improves trigger rates, but it changes the prior: descriptions are *expected to be
+  truncated by the host*, so whatever survives the first clause is what matches. Only 19 of
+  433 of ours lead with the trigger. 3.3 should test this first, not last.
+
+  **No action needed on format.** We emit spec fields only, which all four accept. VS Code
+  additionally understands `argument-hint`, `user-invocable`, `disable-model-invocation` and
+  `context` — none are in the spec's allowed set, so emitting them would fail the 0.3 gate,
+  and a prose library has no use for them. Our longest description (747) sits inside VS
+  Code's 1024 cap and Claude Code's 1536 per-description cap.
 
 **Priority note:** this phase is listed after the spec-alignment phases but ahead of
 Phase 6 on merit — it is the single highest-leverage reach item because it serves Codex,
