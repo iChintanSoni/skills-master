@@ -339,6 +339,80 @@ run (~$0.22 and ~$0.37 a session).
 
 - **Refreshing all 217 by date.** That is the bulk stamp again, wearing a different hat. The
   queue comes from evidence of upstream change (Phase 0) or it does not exist.
-- **Deleting zero-delta skills before 3.1 reports.** The sample is 8 skills deep.
+- **Deleting zero-delta skills before 3.1 reports.** ~~The sample is 8 skills deep.~~ 3.1
+  has now reported: 14 of 15, sampled by stride. That raises the question rather than
+  answering it — see the retrospective below for why the measurement does not license the
+  deletion.
 - **Re-opening packaging.** 44 of 44 categories fit the listing budget; adding skills is what
   will break that, and the crawl already reports it.
+
+## What this effort established (2026-08-27)
+
+Every numbered item is closed except **1.3**, which is open on purpose: 1.4 unblocked it, and
+then 1.2 changed what it should cost. Today's queue holds only entries 1.1 already inspected
+and judged immaterial, so working it would spend edits to change nothing — at the one risk
+this effort found evidence for.
+
+### The rate shrinks every time you look closer
+
+Three measurements, each a level below the last:
+
+| Question | Answer |
+| --- | --- |
+| Of queue entries flagged by upstream release activity, how many were material? | **2 of 5** (1.1) |
+| Inside a *material* refresh, how many added facts changed an answer? | **1 of 2** (1.2) |
+| Across the library, how many skills move a frontier model on a representative task? | **1 of 15** (3.1) |
+
+Nothing here contradicts the premise the plan opened with — value is currency plus buried
+judgment, not coverage. But each level down cost real money to measure and each one came back
+smaller than the level above predicted. Any future estimate should assume the same.
+
+### The finding that changes practice
+
+**A refresh can make a skill wrong, and wrong is more expensive than stale.** 1.2 caught the
+1.1 refresh introducing `androidx.glance:glance-wear`, a coordinate that has never been
+published. In the same eval, the *stale* version of that skill was not misleading anyone — the
+model said "the skill guidance I loaded still references it as a live option; it isn't" and
+routed around it. The refreshed one got repeated.
+
+Worse, the bad coordinate was traceable: the bare-model control named it too, **with a hedge**
+("could not confirm it has shipped; treat it as announced, not available"). A refresh drafted
+with model help inherits the model's guesses and drops the hedge. This is why 2.1 and 2.2 say
+a currency claim is only worth carrying if it came from a vendor page you had open — that is
+not a style rule, it is the mitigation for the only way this effort actually damaged the
+library.
+
+### What the tooling can and cannot do now
+
+It **can** relate a skill to its upstream (`x-skills-master.upstream`), join that to vendor
+release feeds weekly, rank the result by version lag against a pinned `Name@version`, and
+label every queue row with why it is there. That is a real improvement on "a date on a file".
+
+It **cannot** tell you whether what shipped matters. 1.1 tried three ways to infer that and
+1.4 modelled a fourth; the version string is a weak proxy in both directions — it would have
+dropped the biggest real defect and promoted a release containing nothing. **Materiality
+stayed a human judgment, and the evidence says it has to.** The ranking exists to order the
+reading, not to replace it.
+
+### Four methodological lessons, all of which cost money
+
+- **Assertions written from your own diff measure agreement, not correctness.** The first
+  `app-widgets-glance` grading said "+33, the refresh worked" and every number in it was real.
+  Rewritten from the vendor release pages, the result inverted.
+- **An empty answer is not a zero.** `--max-turns 3` starved the arms that spend turns loading
+  a skill, and the grader scored the silence 0% — a clean, plausible, entirely fictional
+  finding.
+- **Sampling design decides which question you answered.** 4.1's stratified sample and 3.1's
+  stride sample measure different things and would have been misread as the same number.
+- **Read the answers, not the scores.** Every eval item in this plan contained at least one
+  grader artifact, and none of them were visible from the summary line.
+
+### Still open, and what would close it
+
+- **1.3** — waits for a queue with material in it. The weekly crawl produces one, labelled.
+- **The zero-delta decision.** 3.1 deliberately stopped at the numbers. Closing it needs
+  evidence this effort never gathered: whether these skills help a *smaller* model, an agent
+  with less context, or a person reading them. Listing budget argues for pruning; those
+  readers argue against; nothing measured here adjudicates between them.
+- **3.2 from the previous plan** — the trigger-eval pilot (~$130), still unrun and still only
+  worth running against a specific suspected description.
