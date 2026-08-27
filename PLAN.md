@@ -363,11 +363,34 @@ The guides' loop (agentskills.io "Optimizing skill descriptions"): ~20 labeled q
 skill, 3 runs each, trigger-rate threshold, 60/40 train/validation split. At 433 skills that
 is ~26k agent invocations per iteration — not a thing to run wholesale. Sample instead:
 
-- [ ] **3.1 Build the trigger-eval harness (M).** A script (per the guide's
+- [x] **3.1 Build the trigger-eval harness (M).** A script (per the guide's
   `claude -p --output-format json` pattern) that takes `eval_queries.json` for a skill,
   computes trigger rates against a project with the relevant plugin installed, and reports
   pass/fail per query. Store query sets in-repo (e.g. `scripts/trigger-evals/<skill>/`).
   `#minor` if it lands as a CLI command; a repo script is fine too.
+  **Landed as `scripts/trigger-eval/bin.mjs`**, a repo script rather than a CLI command —
+  it spawns `claude`, so shipping it in the published package would put a dev-only
+  dependency on every consumer's install for no benefit. No `#minor` needed.
+  **`json` output was not enough.** It returns only the final answer, so a skill that never
+  fired is indistinguishable from one that fired and was unhelpful. The harness uses
+  `--output-format stream-json --verbose` and parses the tool-use trace for the `Skill`
+  call, which names the chosen skill. `--allowed-tools Skill` makes the choice the only
+  thing being measured.
+  **Cost, measured rather than estimated: ~$0.22 per session.** That puts 3.2's shape in a
+  different light — 10 skills × 20 queries × 3 runs is ~600 sessions, so **~$130 a run**,
+  and the guide's train/validation loop means several runs. `--dry-run` (free) and
+  `--limit` exist so the wiring can be proven for under a dollar before anyone commits to
+  that. **3.2 needs Chintan's go-ahead on spend, not just on scope.**
+  **First real data, from a 4-session smoke run on the `swiftui-sheets` / `hig-sheets` pair
+  the plan names:** 2/2 should-trigger fired correctly, and both design-side queries went to
+  `hig-modality` rather than `swiftui-sheets` — near-miss discrimination working, on the
+  case the guidance says is hardest. Far too small to conclude anything; it does show the
+  harness measures what it claims to.
+  **A limit worth stating:** these evals install a handful of skills, so every description
+  is intact. On a real full-domain install the listing is budgeted (2.3/5.2) and most
+  descriptions are replaced by a bare `- <name>`. A skill that triggers perfectly here may
+  still never trigger there — so a good 3.2 result would *not* license skipping the
+  granularity question.
 - [ ] **3.2 Pilot on the hard cases (M).** Pick ~10 skills where triggering is genuinely
   ambiguous — sibling pairs the near-miss guidance warns about (`swiftui-sheets` vs
   `hig-sheets`, `choosing-*` routers vs their destinations, `m3-*` design vs compose code
