@@ -265,12 +265,23 @@ run (~$0.22 and ~$0.37 a session).
 
 ## Phase 2 — Stop the bulk stamp from coming back
 
-- [ ] **2.1 A snapshot date must mean one skill (S).** State it in `docs/authoring.md`: a
+- [x] **2.1 A snapshot date must mean one skill (S).** State it in `docs/authoring.md`: a
   `snapshot_date` records when *this* skill was checked against *its* sources, and a refresh
   sets it per skill as it goes. Deliberately **not** a lint rule — "these 128 dates are
   identical" is indistinguishable from "these 128 skills were genuinely checked on the same
   day", so a rule would fire on honest work and miss the dishonest kind a week later. The
   enforcement that does work is 0.1: a date the upstream evidence contradicts.
+  **Landed** as "A snapshot date means one skill", placed immediately before the `upstream`
+  section it hands off to. Written against the library's actual state rather than in the
+  abstract: **all 433 skills carry four distinct dates** — 216 / 126 / 89 from bulk stamps,
+  and **2** set per skill by the refresh loop. So a date here mostly records when a batch
+  ran; the doc says that outright, because a rule that pretends the library already complies
+  is a rule nobody believes. The "not a lint rule" reasoning is stated with both failure
+  directions — it fires on honest bulk re-verification, and is defeated by stamping the
+  dishonest kind a day apart.
+  Extended past the item with 1.2's finding: a bump is a *claim*, and the cheap half is
+  editing the field. A date bumped without re-reading the sources is worse than a stale one,
+  which is not a hypothetical — 1.2 caught exactly that, on a skill that looked maintained.
 - [x] **2.2 Currency-first authoring guidance (S).** Fold 4.1's finding into
   `docs/authoring.md`: a new skill earns its place by carrying post-cutoff specifics or
   judgment the vendor's docs bury. Restating a stable, well-documented API measurably adds
