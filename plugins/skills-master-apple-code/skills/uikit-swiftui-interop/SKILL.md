@@ -70,8 +70,8 @@ struct SearchField: UIViewRepresentable {
 - **Documentation:** [UIHostingConfiguration](https://developer.apple.com/documentation/swiftui/uihostingconfiguration)
 - **WWDC:** [Use SwiftUI with UIKit (WWDC22)](https://developer.apple.com/videos/play/wwdc2022/10072/)
 - **WWDC:** [What's new in UIKit (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/243/)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working UIKit and SwiftUI interop code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to UIKit and SwiftUI interop
 
 ## See also
 

@@ -114,8 +114,8 @@ Always add `androidx.core:core-ktx` and `androidx.activity:activity-ktx` (or `ac
 
 - **Android Developers:** [Go edge-to-edge](https://developer.android.com/develop/ui/views/layout/edge-to-edge)
 - **Android Developers:** [Android 15 behavior changes for apps targeting API 35](https://developer.android.com/about/versions/15/behavior-changes-15)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working edge-to-edge code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to edge-to-edge
 
 ## See also
 

@@ -65,8 +65,8 @@ Reach for this skill when critiquing or designing any Android screen for inclusi
 
 - **Material 3 Guidelines:** [Foundations Overview](https://m3.material.io/foundations/overview)
 - **Documentation:** [Accessibility in Compose](https://developer.android.com/develop/ui/compose/accessibility)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for worked accessibility scenarios to compare a design against
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of accessibility
 
 ## See also
 

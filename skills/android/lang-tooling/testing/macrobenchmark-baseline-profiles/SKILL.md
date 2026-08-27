@@ -248,8 +248,8 @@ class ProfileVerificationTest {
 - **Documentation:** [Macrobenchmark overview — Android Developers](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview)
 
 ---
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working benchmark and baseline-profile code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to baseline profiles
 
 ## See also
 

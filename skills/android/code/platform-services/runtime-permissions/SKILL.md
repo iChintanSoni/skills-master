@@ -132,8 +132,8 @@ fun CameraFeature(viewModel: CameraViewModel = hiltViewModel()) {
 
 - **Documentation:** [Permissions on Android — overview](https://developer.android.com/guide/topics/permissions/overview)
 - **Documentation:** [Request runtime permissions](https://developer.android.com/training/permissions/requesting)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working runtime permissions code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to runtime permissions
 
 ## See also
 

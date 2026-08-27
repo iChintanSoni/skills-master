@@ -111,8 +111,8 @@ Never measure a child more than once — Compose enforces the single-pass contra
 - **Documentation:** [Compose layout basics](https://developer.android.com/develop/ui/compose/layouts/basics)
 - **Documentation:** [Custom layouts in Compose](https://developer.android.com/develop/ui/compose/layouts/custom)
 - **Documentation:** [Adaptive layouts](https://developer.android.com/develop/ui/compose/layouts/adaptive)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Compose layout code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Compose layout
 
 ## See also
 

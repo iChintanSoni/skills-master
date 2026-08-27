@@ -179,8 +179,8 @@ LaunchedEffect(listState) {
 
 - **Documentation:** [Side-effects in Compose](https://developer.android.com/develop/ui/compose/side-effects)
 - **Documentation:** [Compose API guidelines — effects](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/compose/docs/compose-api-guidelines.md)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Compose side effects code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Compose side effects
 
 ## See also
 

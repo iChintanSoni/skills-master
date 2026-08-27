@@ -113,8 +113,8 @@ disagree.
 - **WWDC:** [Discover Observation in SwiftUI (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10149/)
 - **WWDC:** [Demystify SwiftUI performance (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10160/)
 - **Sample Code:** [Backyard Birds: Building an app with SwiftData and widgets](https://developer.apple.com/documentation/swiftui/backyard-birds-sample)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working SwiftUI app architecture code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to SwiftUI app architecture
 
 ## See also
 

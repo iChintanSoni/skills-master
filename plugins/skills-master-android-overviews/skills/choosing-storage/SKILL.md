@@ -101,8 +101,8 @@ There is no reason to add new `SharedPreferences` usage in a Kotlin 2.2 / API-16
 
 - **Documentation:** [Data and file storage overview](https://developer.android.com/training/data-storage)
 - **Documentation:** [DataStore](https://developer.android.com/topic/libraries/architecture/datastore)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for the worked comparisons behind a storage decision
+- **Review checklist:** [checklist.md](checklist.md) — run before committing to a storage decision
 
 ## See also
 

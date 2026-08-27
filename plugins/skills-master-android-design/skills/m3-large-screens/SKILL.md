@@ -100,8 +100,8 @@ Wear OS and Android TV are not addressed by these guidelines. Wear uses a tile-a
 
 - **Material 3 Guidelines:** [Large screen canonical layouts](https://developer.android.com/guide/topics/large-screens/large-screen-canonical-layouts)
 - **Documentation:** [Build adaptive layouts in Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for worked large screens scenarios to compare a design against
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of large screens
 
 ## See also
 

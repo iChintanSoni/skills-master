@@ -99,8 +99,8 @@ dependencies {
 
 - **Documentation:** [Guide to Android app modularization](https://developer.android.com/topic/modularization)
 - **Documentation:** [Common modularization patterns](https://developer.android.com/topic/modularization/patterns)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for a worked multi-module setup to copy
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to modularization
 
 ## See also
 

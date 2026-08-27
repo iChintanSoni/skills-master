@@ -138,8 +138,8 @@ val syncState: StateFlow<WorkInfo?> = workManager
 
 - **Documentation:** [WorkManager overview](https://developer.android.com/topic/libraries/architecture/workmanager)
 - **Documentation:** [Getting started with WorkManager](https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working WorkManager code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to WorkManager
 
 ## See also
 

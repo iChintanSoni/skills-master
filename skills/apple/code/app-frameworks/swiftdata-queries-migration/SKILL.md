@@ -78,8 +78,8 @@ func upcoming(after date: Date, in context: ModelContext) throws -> [Trip] {
 - **Documentation:** [SchemaMigrationPlan](https://developer.apple.com/documentation/swiftdata/schemamigrationplan)
 - **WWDC:** [SwiftData: Dive into inheritance and schema migration (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/291/)
 - **WWDC:** [Model your schema with SwiftData (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10195/)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working SwiftData queries and migrations code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to SwiftData queries and migrations
 
 ## See also
 

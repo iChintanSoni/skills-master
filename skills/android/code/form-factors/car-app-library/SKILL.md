@@ -139,8 +139,8 @@ class PlaceListScreen(carContext: CarContext) : Screen(carContext) {
 
 - **Documentation:** [Build car apps](https://developer.android.com/training/cars/apps)
 - **Release notes:** [Car App Library releases](https://developer.android.com/jetpack/androidx/releases/car-app)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Android Auto and the Car App Library code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Android Auto and the Car App Library
 
 ## See also
 

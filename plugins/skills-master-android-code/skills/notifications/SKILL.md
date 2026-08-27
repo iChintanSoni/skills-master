@@ -133,8 +133,8 @@ fun postMessageNotification(context: Context, thread: ChatThread) {
 
 - **Documentation:** [Notifications overview](https://developer.android.com/develop/ui/views/notifications)
 - **Documentation:** [Create a notification](https://developer.android.com/develop/ui/views/notifications/build-notification)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working notifications code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to notifications
 
 ## See also
 

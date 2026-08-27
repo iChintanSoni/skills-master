@@ -104,8 +104,8 @@ This makes `when` expressions exhaustive and eliminates impossible states like `
 - **Documentation:** [UI layer — Android Architecture](https://developer.android.com/topic/architecture/ui-layer)
 - **Documentation:** [collectAsStateWithLifecycle API](https://developer.android.com/reference/kotlin/androidx/lifecycle/compose/package-summary#(kotlinx.coroutines.flow.StateFlow).collectAsStateWithLifecycle(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle.State,kotlin.coroutines.CoroutineContext))
 - **Guide:** [Kotlin flows on Android](https://developer.android.com/kotlin/flow)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working StateFlow code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to StateFlow
 
 ## See also
 

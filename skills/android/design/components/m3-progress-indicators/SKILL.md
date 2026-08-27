@@ -76,8 +76,8 @@ Wear OS has its own circular progress pattern designed for the round watch face;
 - **Documentation:** [Progress indicators in Jetpack Compose](https://developer.android.com/develop/ui/compose/components/progress)
 - **Material 3 Guidelines:** [Progress indicators specs](https://m3.material.io/components/progress-indicators/specs)
 - **Material 3 Guidelines:** [Progress indicators accessibility](https://m3.material.io/components/progress-indicators/accessibility)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for worked progress indicators scenarios to compare a design against
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of progress indicators
 
 ## See also
 

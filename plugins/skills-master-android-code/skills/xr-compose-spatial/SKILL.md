@@ -188,8 +188,8 @@ val isSpatialEnabled = session?.getSpatialCapabilities()
 - **Documentation:** [Android XR developer overview](https://developer.android.com/develop/xr)
 - **API reference:** [androidx.xr.compose.spatial package](https://developer.android.com/reference/kotlin/androidx/xr/compose/spatial/package-summary)
 - **API reference:** [androidx.xr.compose.subspace package](https://developer.android.com/reference/kotlin/androidx/xr/compose/subspace/package-summary)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Compose XR spatial UI code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Compose XR spatial UI
 
 ## See also
 

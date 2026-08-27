@@ -102,8 +102,8 @@ Map(position: $position, selection: $selection) {
 - **WWDC:** [Meet MapKit for SwiftUI (WWDC23)](https://developer.apple.com/videos/play/wwdc2023/10043/)
 - **WWDC:** [Go further with MapKit (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/204/)
 - **Sample Code:** [Interacting with nearby points of interest](https://developer.apple.com/documentation/MapKit/interacting-with-nearby-points-of-interest)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working MapKit code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to MapKit
 
 ## See also
 

@@ -181,8 +181,8 @@ fun BrowseScreen(
 
 - **Documentation:** [Get started with TV apps](https://developer.android.com/training/tv/get-started)
 - **Documentation:** [Jetpack TV library releases](https://developer.android.com/jetpack/androidx/releases/tv)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Compose for TV code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Compose for TV
 
 ## See also
 

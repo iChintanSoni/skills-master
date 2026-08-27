@@ -146,8 +146,8 @@ On two-pane widths, the detail pane is always visible even before the user has s
 
 - **Documentation:** [Build a list-detail layout with Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail)
 - **Documentation:** [Adaptive layouts in Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working list-detail scaffold code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to the list-detail scaffold
 
 ## See also
 

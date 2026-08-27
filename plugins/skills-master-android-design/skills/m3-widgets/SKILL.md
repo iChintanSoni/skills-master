@@ -85,8 +85,8 @@ metadata:
 - **Material 3 Guidelines:** [Foundations overview](https://m3.material.io/foundations/overview)
 - **Material 3 Guidelines:** [Dynamic color](https://m3.material.io/styles/color/system/overview)
 - **Material 3 Guidelines:** [Color roles](https://m3.material.io/styles/color/roles)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read for worked widgets scenarios to compare a design against
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of widgets
 
 ## See also
 

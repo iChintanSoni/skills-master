@@ -140,8 +140,8 @@ sealed interface SummaryUiState {
 
 - **Documentation:** [Gemini Nano on Android](https://developer.android.com/ai/gemini-nano)
 - **Documentation:** [Android AI overview](https://developer.android.com/ai)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Gemini Nano code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Gemini Nano
 
 ## See also
 

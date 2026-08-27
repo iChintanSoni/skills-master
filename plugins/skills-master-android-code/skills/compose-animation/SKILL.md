@@ -150,8 +150,8 @@ fun ExpandableCard(expanded: Boolean, onToggle: () -> Unit) {
 - **Documentation:** [Animation in Compose — Introduction](https://developer.android.com/develop/ui/compose/animation/introduction)
 - **Documentation:** [Compose animation quick guide](https://developer.android.com/develop/ui/compose/animation/quick-guide)
 - **Documentation:** [Shared element transitions in Compose](https://developer.android.com/develop/ui/compose/animation/shared-elements)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Compose animation code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Compose animation
 
 ## See also
 

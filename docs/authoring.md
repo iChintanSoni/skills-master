@@ -86,6 +86,21 @@ The primary Documentation/HIG URLs should also appear in the `sources` frontmatt
 5. **Pairing is bidirectional.** If A lists B in `pairs_with`, B must list A. The linter enforces this. See [What earns a pair](#what-earns-a-pair) for what belongs in the list.
 6. **L2/L3 split.** When the body grows past ~500 lines, move long examples → `examples.md`, step lists → `checklist.md`, and deep reference tables → `reference.md` (a defined slot no skill currently uses — prefer the first two unless a true lookup table outgrows them), and link them from the body. Every resource file you ship **must** be linked from the body (the linter warns otherwise) — the compiler keys on those links, so an unlinked resource is dropped from every emit target.
 
+## Point at a resource with a condition, not a label
+
+A bare pointer tells a reader the file exists. It doesn't tell them when opening it would be worth the tokens — which is the decision they're actually making. So every resource link carries a trailing clause saying *when* to follow it:
+
+```markdown
+- **Worked examples:** [examples.md](examples.md) — read when you want working SwiftUI navigation code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to SwiftUI navigation
+```
+
+Name the skill's subject in the clause — "run before a design review of onboarding" beats "run before a design review". The natural condition differs by class: `code`/`lang-tooling` resources are things you *adapt* and *run before merging*; `design` examples are scenarios you *compare a design against*; an `overviews` router's examples are the *comparisons behind a decision*.
+
+**Keep the `(examples.md)` link shape exactly.** `condense.ts`'s `L3_LINK_RE` and the linter's resource-linked rule both match on it, so `[examples.md](./examples.md — foo)` or a reworded target silently drops the resource from every projection. Put the hint *after* the closing paren.
+
+In condensed targets (Cursor, Copilot) the link flattens to plain text and the file isn't shipped — the hint then reads alongside the "full Claude Code skill" pointer note, which is what makes it coherent there rather than a dead reference.
+
 ## Resource files over 100 lines need a `## Contents`
 
 An agent that opens `examples.md` often previews it — `head -100`, or a partial read — and sees the first section plus no evidence that four more exist. So any `reference.md` / `examples.md` / `checklist.md` past **100 lines** opens with a table of contents, and the linter warns when one is missing (it looks only at the first 15 lines: a ToC below the fold is a ToC nobody reads).

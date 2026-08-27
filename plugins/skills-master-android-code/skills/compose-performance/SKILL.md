@@ -143,8 +143,8 @@ Run `./gradlew assembleRelease` (or the build variant you care about). Inspect `
 - **Documentation:** [Compose performance overview](https://developer.android.com/develop/ui/compose/performance)
 - **Documentation:** [Stability in Compose](https://developer.android.com/develop/ui/compose/performance/stability)
 - **Documentation:** [Compose compiler metrics](https://developer.android.com/develop/ui/compose/performance/stability/diagnose)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Compose performance code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Compose performance
 
 ## See also
 

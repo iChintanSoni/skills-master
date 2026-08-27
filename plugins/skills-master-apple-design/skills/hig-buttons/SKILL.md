@@ -55,7 +55,7 @@ Use this skill when designing or critiquing any tappable/clickable control that 
 - **WWDC:** [Get to know the new design system (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/356/)
 - **WWDC:** [Design foundations from idea to interface (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/359/)
 - **Documentation:** [Button | SwiftUI](https://developer.apple.com/documentation/swiftui/button)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Review checklist:** [checklist.md](checklist.md) — run before a design review of buttons
 
 ## See also
 

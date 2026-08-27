@@ -137,8 +137,8 @@ private val Context.dataStore by preferencesDataStore(
 
 - **Documentation:** [DataStore — Android Developers](https://developer.android.com/topic/libraries/architecture/datastore)
 - **Codelab:** [Android Proto DataStore — Android Developers Codelabs](https://developer.android.com/codelabs/android-proto-datastore)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working DataStore code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to DataStore
 
 ## See also
 

@@ -140,8 +140,8 @@ class ArticleRepository @Inject constructor(private val api: ArticleService) {
 - **Documentation:** [OkHttp — An efficient HTTP client for Android and Java](https://square.github.io/okhttp/)
 - **Documentation:** [kotlinx.serialization Retrofit converter](https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter)
 - **Documentation:** [Android Network Security Configuration](https://developer.android.com/privacy-and-security/security-tips)
-- **Worked examples:** [examples.md](examples.md)
-- **Review checklist:** [checklist.md](checklist.md)
+- **Worked examples:** [examples.md](examples.md) — read when you want working Retrofit and OkHttp code to adapt
+- **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Retrofit and OkHttp
 
 ## See also
 
