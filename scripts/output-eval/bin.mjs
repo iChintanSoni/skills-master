@@ -15,12 +15,19 @@
  * assertion that only matches a phrase the skill happens to use would measure
  * copying, not quality.
  *
+ * With `--baseline=<git-ref>` a third arm installs the skill *as it was* at that
+ * ref, which turns the same machinery on a different question: did a refresh
+ * change the answers, or only the file? The control arm stays, because it
+ * separates the two ways a refresh can be worth nothing — the old skill was
+ * already right, or the model knew the new fact anyway.
+ *
  * Options:
- *   --runs=<n>     repeats per task per arm (default 1 — these are expensive)
- *   --model=<name> model under test (default: whatever `claude` uses)
- *   --json=<path>  write the full result set, answers included
- *   --keep         leave the scratch projects and answers on disk
- *   --dry-run      print the plan and exit without spending anything
+ *   --runs=<n>       repeats per task per arm (default 1 — these are expensive)
+ *   --model=<name>   model under test (default: whatever `claude` uses)
+ *   --baseline=<ref> also run an arm with the skill as of that git ref
+ *   --json=<path>    write the full result set, answers included
+ *   --keep           leave the scratch projects and answers on disk
+ *   --dry-run        print the plan and exit without spending anything
  *
  * COST: each task costs two sessions, and these sessions write code, so they
  * are dearer than trigger evals. Check the printed cost after one skill before
@@ -54,6 +61,7 @@ if (!skillName) {
 const runs = Number(flag("runs", "1"));
 const model = flag("model");
 const jsonOut = flag("json");
+const baseline = flag("baseline");
 
 let spec;
 try {
@@ -63,10 +71,14 @@ try {
   process.exit(2);
 }
 
+const ARMS = baseline ? ["with", "before", "without"] : ["with", "without"];
+
 console.log(`Skill under test : ${spec.skill}`);
 console.log(`Tasks            : ${spec.tasks.length}`);
+if (baseline) console.log(`Baseline ref     : ${baseline}`);
 console.log(
-  `Runs per arm     : ${runs}  →  ${spec.tasks.length * runs * 2} sessions (with + without)`,
+  `Runs per arm     : ${runs}  →  ${spec.tasks.length * runs * ARMS.length} sessions ` +
+    `(${ARMS.join(" + ")})`,
 );
 
 if (has("dry-run")) {
@@ -79,14 +91,48 @@ if (has("dry-run")) {
   process.exit(0);
 }
 
-// ── two projects, identical but for the skill ───────────────────────────────
-const withDir = mkdtempSync(join(tmpdir(), "output-eval-with-"));
-const withoutDir = mkdtempSync(join(tmpdir(), "output-eval-without-"));
-execFileSync("node", [TSX, CLI, "add", ...(spec.install ?? [spec.skill]), "--target", "claude"], {
-  cwd: withDir,
-  env: { ...process.env, SKILLS_MASTER_CONTENT: CONTENT },
-  stdio: "pipe",
-});
+// ── projects, identical but for the skill ───────────────────────────────────
+const scratch = [];
+const project = (tag) => {
+  const dir = mkdtempSync(join(tmpdir(), `output-eval-${tag}-`));
+  scratch.push(dir);
+  return dir;
+};
+const install = (dir, content) =>
+  execFileSync("node", [TSX, CLI, "add", ...(spec.install ?? [spec.skill]), "--target", "claude"], {
+    cwd: dir,
+    env: { ...process.env, SKILLS_MASTER_CONTENT: content },
+    stdio: "pipe",
+  });
+
+const withDir = project("with");
+const withoutDir = project("without");
+install(withDir, CONTENT);
+
+/**
+ * Check the whole `skills/` tree out at the ref rather than the one directory:
+ * `add` validates the skill it installs, and `pairs_with` points at siblings, so
+ * a single-directory content root fails on skills that are perfectly valid.
+ */
+let beforeDir;
+if (baseline) {
+  const content = join(project("baseline-content"), "skills");
+  const tar = join(dirname(content), "skills.tar");
+  execFileSync("git", ["-C", REPO_ROOT, "archive", "--format=tar", "-o", tar, baseline, "skills"], {
+    stdio: "pipe",
+  });
+  execFileSync("tar", ["-xf", tar, "-C", dirname(content)], { stdio: "pipe" });
+  beforeDir = project("before");
+  try {
+    install(beforeDir, content);
+  } catch (err) {
+    console.error(
+      `\nCould not install ${spec.skill} from ${baseline} — did it exist under that name then?\n` +
+        String(err.stderr ?? err),
+    );
+    process.exit(1);
+  }
+}
 
 function ask(prompt, cwd) {
   const argv = [
@@ -95,8 +141,12 @@ function ask(prompt, cwd) {
     "--output-format",
     "stream-json",
     "--verbose",
+    // Loading a skill costs turns the control arm never spends: the Skill call,
+    // its result, and any resource the agent pulls in after it. At 3 the
+    // skill arms ran out before emitting an answer and scored 0% — which the
+    // grader could not tell apart from a wrong answer. Leave headroom.
     "--max-turns",
-    "3",
+    "12",
     // Skill is offered in both arms; the control simply has none installed, so
     // the difference is the skill's presence and nothing else.
     "--allowed-tools",
@@ -107,6 +157,7 @@ function ask(prompt, cwd) {
   let answer = "";
   let cost = 0;
   let usedSkill = false;
+  let subtype = "";
   for (const line of (res.stdout ?? "").split("\n")) {
     if (!line.trim()) continue;
     let ev;
@@ -116,6 +167,7 @@ function ask(prompt, cwd) {
       continue;
     }
     if (ev.type === "result") {
+      if (typeof ev.subtype === "string") subtype = ev.subtype;
       if (typeof ev.result === "string") answer = ev.result;
       if (typeof ev.total_cost_usd === "number") cost += ev.total_cost_usd;
     }
@@ -126,7 +178,7 @@ function ask(prompt, cwd) {
       }
     }
   }
-  return { answer, cost, usedSkill };
+  return { answer, cost, usedSkill, subtype };
 }
 
 /**
@@ -150,6 +202,11 @@ function isEndorsed(answer, pattern) {
 
 /** Assertions are regexes over the answer text; `avoid` matches count against it. */
 function grade(answer, task) {
+  // An empty answer is a broken session, not a bad one. Scoring it 0% would
+  // let a harness fault masquerade as a finding about the skill.
+  if (!answer.trim()) {
+    return { met: [], missed: [], violated: [], score: null, empty: true };
+  }
   const hit = (a) => new RegExp(a.pattern, "i").test(answer);
   const met = task.expect.filter(hit);
   const violated = (task.avoid ?? []).filter((a) => isEndorsed(answer, a.pattern));
@@ -165,41 +222,56 @@ const rows = [];
 let totalCost = 0;
 for (const [i, task] of spec.tasks.entries()) {
   for (let run = 0; run < runs; run++) {
-    for (const [arm, cwd] of [
-      ["with", withDir],
-      ["without", withoutDir],
-    ]) {
+    for (const arm of ARMS) {
+      const cwd = { with: withDir, before: beforeDir, without: withoutDir }[arm];
       const r = ask(task.prompt, cwd);
       totalCost += r.cost;
       const g = grade(r.answer, task);
-      rows.push({ task: i, run, arm, ...g, usedSkill: r.usedSkill, answer: r.answer });
+      rows.push({
+        task: i,
+        run,
+        arm,
+        ...g,
+        usedSkill: r.usedSkill,
+        subtype: r.subtype,
+        answer: r.answer,
+      });
       console.log(
         `  task ${i + 1} run ${run + 1} ${arm.padEnd(7)} ` +
-          `${(g.score * 100).toFixed(0).padStart(3)}%  ` +
+          `${g.empty ? " ——" : `${(g.score * 100).toFixed(0).padStart(3)}%`}  ` +
+          `${g.empty ? `NO ANSWER (${r.subtype || "unknown"})  ` : ""}` +
           `${g.violated.length ? `⚠ ${g.violated.length} avoided-practice hit(s)  ` : ""}` +
-          `${arm === "with" ? (r.usedSkill ? "(skill fired)" : "(skill did NOT fire)") : ""}`,
+          `${arm === "without" ? "" : r.usedSkill ? "(skill fired)" : "(skill did NOT fire)"}`,
       );
     }
   }
 }
 
 const mean = (arm) => {
-  const xs = rows.filter((r) => r.arm === arm);
-  return xs.reduce((n, r) => n + r.score, 0) / xs.length;
+  const xs = rows.filter((r) => r.arm === arm && r.score !== null);
+  return xs.length ? xs.reduce((n, r) => n + r.score, 0) / xs.length : null;
 };
 const violations = (arm) =>
   rows.filter((r) => r.arm === arm).reduce((n, r) => n + r.violated.length, 0);
 
-const w = mean("with");
-const wo = mean("without");
+const pct = (m) => (m === null ? "n/a" : `${(m * 100).toFixed(0)}%`);
+const LABEL = { with: "with skill", before: `as of ${baseline}`, without: "without skill" };
 console.log(`\n${spec.skill}`);
-console.log(
-  `  with skill    : ${(w * 100).toFixed(0)}% of assertions met, ${violations("with")} bad-practice hit(s)`,
-);
-console.log(
-  `  without skill : ${(wo * 100).toFixed(0)}% of assertions met, ${violations("without")} bad-practice hit(s)`,
-);
-console.log(`  delta         : ${((w - wo) * 100).toFixed(0)} points`);
+for (const arm of ARMS) {
+  console.log(
+    `  ${LABEL[arm].padEnd(14)}: ${pct(mean(arm))} of assertions met, ` +
+      `${violations(arm)} bad-practice hit(s)`,
+  );
+}
+const points = (a, b) =>
+  mean(a) === null || mean(b) === null
+    ? "not measurable — an arm produced no gradable answer"
+    : `${((mean(a) - mean(b)) * 100).toFixed(0)} points`;
+console.log(`  vs no skill   : ${points("with", "without")}`);
+if (baseline) {
+  // The question 1.2 asks. A refresh that does not move this moved only the file.
+  console.log(`  refresh moved : ${points("with", "before")}`);
+}
 console.log(`  cost          : $${totalCost.toFixed(2)}`);
 
 const missedWith = [...new Set(rows.filter((r) => r.arm === "with").flatMap((r) => r.missed))];
@@ -211,10 +283,10 @@ if (missedWith.length) {
 if (jsonOut) {
   writeFileSync(
     resolve(jsonOut),
-    `${JSON.stringify({ skill: spec.skill, runs, rows }, null, 2)}\n`,
+    `${JSON.stringify({ skill: spec.skill, runs, baseline, rows }, null, 2)}\n`,
   );
   console.log(`\nWrote ${jsonOut}`);
 }
 
-if (has("keep")) console.log(`\nProjects kept: ${withDir} | ${withoutDir}`);
-else for (const d of [withDir, withoutDir]) rmSync(d, { recursive: true, force: true });
+if (has("keep")) console.log(`\nProjects kept: ${scratch.join(" | ")}`);
+else for (const d of scratch) rmSync(d, { recursive: true, force: true });

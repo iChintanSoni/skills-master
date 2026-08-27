@@ -1,0 +1,41 @@
+{
+  "skill": "wear-compose",
+  "install": ["wear-compose"],
+  "notes": "A refresh eval, not a coverage eval: run with --baseline=<pre-refresh ref>. The assertions deliberately cover ONLY what 1.1's refresh added (the Wear Compose Navigation 3 integration and LocalAmbientModeManager, both 1.6), because assertions over the skill's unchanged bulk score the same in both arms and drown the signal being measured. A high control score is the finding that matters here — it would mean the refresh restated something the model already knew.",
+  "tasks": [
+    {
+      "prompt": "My Android app has migrated to Navigation 3. I'm now building the Wear OS UI with Jetpack Compose and swipe-to-dismiss has to keep working. How should I wire up navigation on the watch? Kotlin, and name the types involved.",
+      "expect": [
+        {
+          "label": "supplies swipe-to-dismiss through SwipeDismissableSceneStrategy",
+          "pattern": "SwipeDismissableSceneStrategy"
+        },
+        {
+          "label": "plugs into Navigation 3's NavDisplay rather than a parallel host",
+          "pattern": "NavDisplay"
+        },
+        {
+          "label": "keeps one navigation system rather than running Nav2 alongside Nav3",
+          "pattern": "back ?stack|single navigation|one navigation|without a second"
+        }
+      ]
+    },
+    {
+      "prompt": "My Wear OS Compose app supports always-on display. Inside a composable, how do I tell whether the watch is currently in ambient mode and simplify what I draw? Kotlin.",
+      "expect": [
+        {
+          "label": "reads ambient state from LocalAmbientModeManager inside the composable",
+          "pattern": "LocalAmbientModeManager"
+        },
+        {
+          "label": "registers AmbientLifecycleObserver for the activity-level lifecycle",
+          "pattern": "AmbientLifecycleObserver"
+        },
+        {
+          "label": "draws a simplified low-burn layout rather than the interactive UI",
+          "pattern": "burn|simplified|dimmed|minimal"
+        }
+      ]
+    }
+  ]
+}
