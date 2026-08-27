@@ -13,7 +13,7 @@ x-skills-master:
   requires: {android: "16", kotlin: "2.2"}
   pairs_with: [choosing-storage, m3-settings, backup-restore]
   upstream:
-    - Datastore
+    - Datastore@1.2
   sources:
     - https://developer.android.com/topic/libraries/architecture/datastore
     - https://developer.android.com/codelabs/android-proto-datastore

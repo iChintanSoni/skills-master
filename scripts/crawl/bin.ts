@@ -201,6 +201,25 @@ function currency(reg: Registry, upstream: Record<string, unknown>) {
     for (const t of topics ?? []) if (t.date) dated.push({ title: t.title, date: t.date });
   }
 
+  /** "Media3 Version 1.11.0-beta01" → 1.11.0-beta01. */
+  const versionIn = (title: string) => /\bVersion (\S+)/.exec(title)?.[1];
+  const isPrerelease = (v: string) => /-(alpha|beta|rc|dev)/i.test(v);
+  const majorMinor = (v: string): [number, number] => {
+    const m = /^(\d+)\.(\d+)/.exec(v);
+    return m ? [Number(m[1]), Number(m[2])] : [0, 0];
+  };
+  /** Newest non-prerelease version seen for a library. */
+  const latestStableOf = (name: string): string | undefined =>
+    dated
+      .filter((d) => d.title.toLowerCase().startsWith(name.toLowerCase()))
+      .map((d) => versionIn(d.title))
+      .filter((v): v is string => Boolean(v) && !isPrerelease(v as string))
+      .sort((a, b) => {
+        const [am, an] = majorMinor(a);
+        const [bm, bn] = majorMinor(b);
+        return bm - am || bn - an;
+      })[0];
+
   const declared: {
     name: string;
     path: string;
@@ -209,15 +228,29 @@ function currency(reg: Registry, upstream: Record<string, unknown>) {
     latest: string | null;
     behindDays: number | null;
     releasesSince: number;
+    /** stable releases only — an alpha stream should not outrank one considered release. */
+    stableSince: number;
+    /** stable releases that were a new minor or major, not a patch roll-up. */
+    minorOrMajorSince: number;
+    /** set when the skill pins a version and upstream's stable has moved past it. */
+    versionLag: { library: string; documented: string; stable: string } | null;
+    reason: string;
   }[] = [];
   let undeclared = 0;
 
   for (const s of reg.skills) {
-    const names = upstreamOf(s);
-    if (names.length === 0) {
+    const declarations = upstreamOf(s);
+    if (declarations.length === 0) {
       undeclared += 1;
       continue;
     }
+    // `Glance@1.2` pins the version the skill documents; a bare name does not.
+    const parsed = declarations.map((d) => {
+      const [library, documented] = d.split("@");
+      return { library: library!.trim(), documented: documented?.trim() };
+    });
+    const names = parsed.map((p) => p.library);
+
     const snapshot = snapshotDateOf(s);
     // A feed title reads "Media3 Version 1.11.0-beta01"; match on the library
     // half so a declaration does not have to name every version.
@@ -229,27 +262,82 @@ function currency(reg: Registry, upstream: Record<string, unknown>) {
         .map((m) => m.date)
         .sort()
         .at(-1) ?? null;
-    const releasesSince = snapshot && latest ? matches.filter((m) => m.date > snapshot).length : 0;
+    const since = snapshot ? matches.filter((m) => m.date > snapshot) : [];
+    const stableReleases = since.filter((m) => {
+      const v = versionIn(m.title);
+      return v != null && !isPrerelease(v);
+    });
+    const stableSince = stableReleases.length;
+    // A patch is a bug-fix roll-up; the 1.1 pilot found none of them worth a
+    // refresh, while a new minor or major was material both times.
+    const minorOrMajorSince = stableReleases.filter((m) => {
+      const v = versionIn(m.title)!;
+      return /^\d+\.\d+\.0(\b|$)/.test(v);
+    }).length;
+
+    // The signal the 1.1 pilot actually validated: the skill names a version
+    // older than the current stable. Independent of dates, which is why it
+    // catches staleness a bulk `snapshot_date` would otherwise hide.
+    let versionLag: { library: string; documented: string; stable: string } | null = null;
+    for (const p of parsed) {
+      if (!p.documented) continue;
+      const stable = latestStableOf(p.library);
+      if (!stable) continue;
+      const [dm, dn] = majorMinor(p.documented);
+      const [sm, sn] = majorMinor(stable);
+      if (sm > dm || (sm === dm && sn > dn)) {
+        versionLag = { library: p.library, documented: p.documented, stable };
+        break;
+      }
+    }
+
     declared.push({
       name: s.name,
       path: s.path,
       snapshot,
-      upstream: names,
+      upstream: declarations,
       latest,
+      // Why this row is in the queue, so a reader can tell signal from noise
+      // without opening the release notes. `pre-release` rows are the ones the
+      // 1.1 pilot found were never worth a refresh.
+      reason: versionLag
+        ? "version-lag"
+        : minorOrMajorSince > 0
+          ? "new minor/major"
+          : stableSince > 0
+            ? "patch only"
+            : since.length > 0
+              ? "pre-release only"
+              : "current",
       behindDays:
         snapshot && latest && latest > snapshot
           ? Math.round((Date.parse(latest) - Date.parse(snapshot)) / 86_400_000)
           : null,
-      releasesSince,
+      releasesSince: since.length,
+      stableSince,
+      minorOrMajorSince,
+      versionLag,
     });
   }
 
-  declared.sort((a, b) => (b.behindDays ?? -1) - (a.behindDays ?? -1));
+  // Rank by what the 1.1 pilot showed actually predicts a real refresh:
+  // a documented version behind current stable beats any number of releases,
+  // and a stable release beats a stream of alphas. Pre-releases still appear —
+  // ranked last rather than filtered out, because dropping them silently is how
+  // a queue starts lying.
+  const score = (d: (typeof declared)[number]) =>
+    (d.versionLag ? 1000 : 0) +
+    d.minorOrMajorSince * 10 +
+    d.stableSince * 2 +
+    (d.behindDays ?? 0) / 1000;
+  declared.sort((a, b) => score(b) - score(a));
+
+  const isBehind = (d: (typeof declared)[number]) => d.versionLag !== null || d.behindDays !== null;
   return {
     declared: declared.length,
     undeclared,
-    behind: declared.filter((d) => d.behindDays !== null),
-    current: declared.filter((d) => d.behindDays === null),
+    behind: declared.filter(isBehind),
+    current: declared.filter((d) => !isBehind(d)),
   };
 }
 

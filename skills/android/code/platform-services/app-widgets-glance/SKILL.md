@@ -13,7 +13,7 @@ x-skills-master:
   requires: { "android": "16", "kotlin": "2.2", "compose-bom": "2026.05.00", "glance": "1.2" }
   pairs_with: [m3-widgets, choosing-widget-toolkit]
   upstream:
-    - Glance
+    - Glance@1.2
   sources:
     - https://developer.android.com/develop/ui/compose/glance
     - https://developer.android.com/develop/ui/views/appwidgets/overview

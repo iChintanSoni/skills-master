@@ -111,7 +111,7 @@ x-skills-master:
     - Media3
 ```
 
-Name the library **exactly as the vendor's release feed prints it** ("Media3 Version 1.11.0-beta01" → `Media3`). The weekly crawl joins these to the feeds and reports which skills have an upstream that shipped after their snapshot — that list is the refresh queue.
+Name the library **exactly as the vendor's release feed prints it** ("Media3 Version 1.11.0-beta01" → `Media3`). Pin the version the skill documents when it names one — `Glance@1.2` — because that is the strongest staleness signal there is: both refreshes in the first pilot were "the skill names an old version", and neither was visible from how recently something shipped. The weekly crawl joins these to the feeds and reports which skills have an upstream that shipped after their snapshot — that list is the refresh queue.
 
 It is **declared, not inferred**, because inference is wrong often enough to be useless: matching skill names against feed titles pairs `Compose UI` with `choosing-android-testing` and `Browser` with `car-media-messaging`. A staleness signal built on bad matches is worse than no signal, because people stop trusting it.
 

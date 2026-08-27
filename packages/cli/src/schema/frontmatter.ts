@@ -74,6 +74,11 @@ export const XSkillsMasterSchema = z
      * guesses `Compose UI → choosing-android-testing`, and a staleness signal
      * built on bad matches is worse than none. The crawl uses these to report
      * when a skill's upstream has shipped since its `snapshot_date`.
+     *
+     * Optionally pin the version the skill documents — `Glance@1.2` — which is
+     * a far better staleness signal than release dates: both refreshes in the
+     * 1.1 pilot were "the skill names an old version", and neither was
+     * identifiable from how recently something shipped.
      */
     upstream: z.array(z.string().min(1)).optional(),
     /** citation URLs to canonical docs — never verbatim content. */
