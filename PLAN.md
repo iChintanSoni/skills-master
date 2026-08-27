@@ -253,11 +253,27 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   "aggregate token cost" to "most descriptions never reach the model at all", and makes
   description **length** a measurable lever rather than a stylistic one — inputs for 2.3
   and 3.3.
-- [ ] **1.4 Document the spec boundary (S).** `docs/architecture.md` gains a short section:
+- [x] **1.4 Document the spec boundary (S).** `docs/architecture.md` gains a short section:
   the canonical `skills/` format is a superset of the Agent Skills spec (extra top-level
   keys by design; the spec's `metadata` map can't hold structured facets); projections are
   the conformance surface; `skills-ref validate` is not expected to pass on `skills/` and
   is enforced on emitted output (0.3). Cross-link from authoring.md's frontmatter section.
+  **Landed:** `## The spec boundary` in architecture.md, promoted out of a stray paragraph
+  that had been sitting at the end of the *Categories mirror the vendor* section — the one
+  place nobody would look for it. Cross-linked from authoring.md's frontmatter block and
+  from CLAUDE.md, both phrased as an instruction not to "fix" a skill to satisfy a
+  validator pointed at the source tree, since that is the mistake the section exists to
+  prevent.
+  **Worth recording: the source tree fails the spec validator for *two* independent
+  reasons, not one.** The audit assumed it was the extra top-level keys. Run it and the
+  first failure is actually the parser: the reference implementation uses **strictyaml**,
+  which rejects flow sequences outright, so `tags: [swiftui, monetization]` and
+  `platforms: [apple, ios]` are refused before any field is inspected. Rewrite those in
+  block style and *then* you get `Unexpected fields in frontmatter: globs, tags,
+  x-skills-master`. Both are quoted verbatim in the section, run rather than remembered.
+  This strengthens the "Making canonical `skills/` spec-valid" non-goal below: conforming
+  would mean not just relocating facets but reformatting every list in the library to suit
+  a parser dialect nothing in our pipeline uses.
 
 ## Phase 2 — Progressive-disclosure polish (content, machine-checked by Phase 0)
 
