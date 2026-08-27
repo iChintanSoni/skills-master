@@ -2,6 +2,9 @@
 name: predictive-back
 description: Covers predictive back gesture integration for Android apps — opt-in via android:enableOnBackInvokedCallback, system back-to-home animations, PredictiveBackHandler and BackHandler in Compose, migration from legacy OnBackPressedCallback, and gesture testing. Use when implementing or migrating back-navigation handling in a Jetpack Compose or hybrid Android app.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

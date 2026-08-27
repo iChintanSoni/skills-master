@@ -2,6 +2,9 @@
 name: app-architecture
 description: Covers modern Android layered architecture — UI, domain, and data layers — with unidirectional data flow, single source of truth, and immutable UI state. Use when designing a new Android app, refactoring an existing codebase into layers, deciding where logic belongs, or evaluating UI presentation patterns (MVVM vs. MVI vs. plain UDF) in code review.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 > **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.

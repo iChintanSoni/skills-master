@@ -2,6 +2,9 @@
 name: app-widgets-glance
 description: Covers home-screen widgets built with Jetpack Glance — GlanceAppWidget and its Compose-style UI API, Glance state and update strategies, actions (actionRunCallback, actionStartActivity), responsive and adaptive sizing, and the boundary with legacy RemoteViews. Use when building or modernizing Android home-screen or lock-screen widgets with a Compose-first approach on Android 16+ or targeting large-screen surfaces.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: cloudkit
 description: "Use when storing app data in iCloud with CloudKit: CKContainer and private/public/shared CKDatabase, CKRecord and CKReference, async saving and querying, record zones, push subscriptions, CKShare sharing, and offline-first sync with CKSyncEngine, including account checks and conflict handling."
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

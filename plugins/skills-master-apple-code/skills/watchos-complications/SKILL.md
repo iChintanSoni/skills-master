@@ -2,6 +2,9 @@
 name: watchos-complications
 description: Builds Apple Watch complications and Smart Stack widgets with WidgetKit and SwiftUI — accessory circular, rectangular, inline, and corner families, widget labels and accented rendering, the watch reload budget, migrating off deprecated ClockKit, and Smart Stack relevance. Use when adding complications to a watchOS app, replacing a CLKComplicationDataSource, laying out an accessoryCorner view, or making a widget surface at the right moment in the Smart Stack.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

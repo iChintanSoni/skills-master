@@ -2,6 +2,9 @@
 name: keychain-security
 description: Stores credentials, tokens, and cryptographic keys securely using Keychain Services (SecItem APIs), accessibility levels, and SecAccessControl biometric/passcode gating. Use when persisting passwords, OAuth/session tokens, API keys, or private keys; when migrating secrets out of UserDefaults; or when sharing items across apps via keychain access groups.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-05-30"
 ---
 
 # keychain-security

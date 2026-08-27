@@ -2,6 +2,9 @@
 name: navigation-suite-scaffold
 description: Covers NavigationSuiteScaffold from the Material3 Adaptive Navigation Suite library — an adaptive container that automatically switches between NavigationBar, NavigationRail, and NavigationDrawer based on window size class. Use when building an app with top-level navigation that must adapt seamlessly across phones, tablets, foldables, and ChromeOS windows without manually wiring three separate navigation components.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

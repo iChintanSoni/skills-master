@@ -2,6 +2,9 @@
 name: app-shortcuts
 description: Covers launcher shortcuts (static, dynamic, pinned) and Google Assistant App Actions. Use when implementing app entry shortcuts, custom intents, or system keyboard shortcuts helper integration.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

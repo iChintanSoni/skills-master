@@ -2,6 +2,9 @@
 name: networking-data-layer
 description: Guidance for structuring the Android data layer — repository pattern, network-to-domain model mapping, single-source-of-truth offline-first caching, typed error modeling with Result and sealed types, and exposing reactive data as Flow. Use when designing a repository, wiring a local cache to a remote API, modeling errors for UI consumption, or deciding where domain mapping belongs.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

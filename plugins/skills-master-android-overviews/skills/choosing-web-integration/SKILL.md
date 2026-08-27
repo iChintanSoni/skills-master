@@ -2,6 +2,9 @@
 name: choosing-web-integration
 description: Decision router for displaying web content in Android apps — WebView for owned in-app or hybrid UIs, Custom Tabs for external links with the system browser engine, Trusted Web Activities for shipping a PWA as an app, and native re-implementation when full platform control matters. Use when choosing how to embed or open any URL or web-rendered content.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

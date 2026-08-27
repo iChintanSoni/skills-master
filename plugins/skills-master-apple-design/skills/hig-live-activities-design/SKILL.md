@@ -2,6 +2,9 @@
 name: hig-live-activities-design
 description: "Design guidance and critique for Live Activities and the Dynamic Island on iOS and iPadOS, grounded in Apple's Human Interface Guidelines. Use when reviewing or designing glanceable progress for a defined-duration task or live event: compact, minimal, and expanded Dynamic Island presentations, the Lock Screen banner layout, update cadence and alerting, and ending the activity gracefully. Produces design recommendations and review notes, not code. Triggers: Live Activity, Dynamic Island, ActivityKit UX, glanceable progress, lock-screen activity, Smart Stack, CarPlay Live Activity, delivery or sports score tracker design."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: appsearch
 description: Covers AppSearch for on-device full-text indexing — defining a schema with @Document, building a LocalStorage or PlatformStorage session, putting and removing documents, executing structured queries with operators and ranking, and surfacing results in system search. Use when an app needs fast on-device search over its own structured content, wants to expose that content to the platform search UI, or needs to replace a manual SQLite FTS setup.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

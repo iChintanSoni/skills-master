@@ -2,6 +2,9 @@
 name: biometric
 description: Covers BiometricPrompt for fingerprint/face/device-credential authentication on Android — use when gating sensitive actions, protecting CryptoObject-bound keys, or choosing authenticator strength for your security model.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

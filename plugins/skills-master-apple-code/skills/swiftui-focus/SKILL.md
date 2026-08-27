@@ -2,6 +2,9 @@
 name: swiftui-focus
 description: Manages keyboard and focus-engine focus in SwiftUI with the FocusState property wrapper, focused(_:equals:), default focus, focus sections, focusable, and onKeyPress. Use when wiring text-field focus and tab order, dismissing the keyboard programmatically, setting initial focus, grouping focus regions, or building focus-driven navigation on tvOS and visionOS.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

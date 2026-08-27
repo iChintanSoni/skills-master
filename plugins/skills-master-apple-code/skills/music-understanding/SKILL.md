@@ -2,6 +2,9 @@
 name: music-understanding
 description: "Guidance on the Music Understanding framework for on-device musical analysis of audio: the MusicUnderstandingSession actor built over an AVAsset or a streaming buffer provider, the rhythm, key, structure, pace, instrument-activity, and loudness analysis types, TimedValue and RangedValue results keyed to CMTime, the progressive loudnessResults sequence, and Codable results you can precompute and ship. Use when detecting beats, bars, or BPM, finding a track's key or section boundaries, syncing visuals or edits to musical energy, metering perceptual loudness in LUFS, or deciding between this framework, ShazamKit, and MusicKit."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 > **Emerging** — this covers an API that was pre-1.0, newly shipped, or still moving as of 2026-08-25. Treat the specifics as provisional and confirm against current documentation before relying on them.

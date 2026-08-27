@@ -2,6 +2,9 @@
 name: provisioning-code-signing
 description: "Guides Apple code signing and provisioning: signing identities and certificates, development vs distribution provisioning profiles, automatic vs manual signing, the App ID and entitlements relationship, and diagnosing signing errors. Use when configuring a target's Signing & Capabilities, fixing build errors like no profiles found or profile doesn't include signing certificate, or setting up signing on CI."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # Provisioning and code signing

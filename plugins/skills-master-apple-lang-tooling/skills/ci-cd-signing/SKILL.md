@@ -2,6 +2,9 @@
 name: ci-cd-signing
 description: "Guidance for building, testing, signing, and shipping Apple apps from CI: xcodebuild on headless runners, App Store Connect API keys, fastlane match, TestFlight upload, caching, and Xcode Cloud. Use when setting up a pipeline, fixing CI code-signing failures, automating archive/TestFlight delivery, or choosing between self-hosted CI and Xcode Cloud."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

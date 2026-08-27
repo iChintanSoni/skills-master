@@ -216,7 +216,7 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   the source. Pre-existing and unrelated to this change; refreshing it here would drag two
   unrelated content revisions into the diff. Worth its own item — `doctor` arguably should
   report a lockfile that has fallen behind the content.
-- [ ] **1.3 Provenance via the spec's `metadata` map (M) — decision item.** Optionally emit
+- [x] **1.3 Provenance via the spec's `metadata` map (M) — decision item.** Optionally emit
   `metadata: {version, snapshot-date, source}` (string→string, spec-legal, clients ignore
   what they don't know) on the Claude projection, so an installed skill self-describes its
   currency — today that information dies with the strip of `x-skills-master`, and staleness
@@ -225,6 +225,34 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   what's preloaded; verify that claim against Claude Code's actual loader before landing).
   If accepted: emitter + snapshots + emitters.md. If rejected: record why here, per the
   6.4/7.4 precedent of documenting non-changes. *(G6)*
+  **Accepted, minus `source`.** The Claude projection now emits
+  `metadata: {version, snapshot-date}`. Both are authored facts passed through from
+  `x-skills-master`; `source` was dropped because nothing authored says where a skill came
+  from, and synthesizing a repo URL would be the same false claim 1.2 rejected for
+  `license` — plugin consumers already get origin from the marketplace manifest. Values are
+  **double-quoted**: js-yaml (so gray-matter) reads a bare `2026-08-25` as a `Date`, which
+  would break the spec's string→string contract depending on the consumer's parser.
+  `core/yaml.ts` gained `quoted()` for this, and a round-trip test asserts both keys come
+  back as strings. The spec's own `read_properties` confirms it: `{'version': '1.1.1',
+  'snapshot-date': '2026-08-25'}`, both `str`, all 434 skills valid.
+  **The zero-context-cost claim is verified, not assumed** (the item asked for this).
+  Claude Code 2.1.231 formats each listed skill as exactly `- <name>: <description>` and
+  reads no other frontmatter until the skill is invoked — so `metadata` costs nothing
+  until it is deliberately looked at. See the G8 finding below, which came out of the
+  same read.
+  **Found while verifying — the skill listing is budgeted, and this library is far past
+  it.** The same loader caps the listing at
+  `contextWindow × 4 bytes/token × skillListingBudgetFraction` (default `0.01`) — about
+  **8,000 characters** on a 200k-token model, 40,000 on a 1M one. Over budget it keeps the
+  highest-priority entries whole and degrades the rest to a bare `- <name>`, description
+  dropped entirely. Measured listing sizes today: `android-code` 41.2k chars (107 skills),
+  `apple-code` 38.9k (88), `apple-design` 36.1k (64); the whole library is 192k chars. So a
+  single-domain install already blows a 200k-context budget by ~5×, and for most skills the
+  model sees a bare name. Individual descriptions are safe from the *other* cap
+  (`skillListingMaxDescChars`, default 1536; our longest is 747). This reframes G7/G8 from
+  "aggregate token cost" to "most descriptions never reach the model at all", and makes
+  description **length** a measurable lever rather than a stylistic one — inputs for 2.3
+  and 3.3.
 - [ ] **1.4 Document the spec boundary (S).** `docs/architecture.md` gains a short section:
   the canonical `skills/` format is a superset of the Agent Skills spec (extra top-level
   keys by design; the spec's `metadata` map can't hold structured facets); projections are
@@ -251,6 +279,15 @@ Two structural notes that are **by design, not gaps**, and should stay that way:
   longest descriptions. This makes G8 visible and continuously measured rather than a
   one-off audit figure, the same move 10.1 made for staleness. No content edits here —
   trimming, if any, happens in Phase 3 with eval evidence. *(G8)*
+  **Scope sharpened by 1.3's loader read — report against the real budget, not a raw
+  total.** Claude Code caps the always-on listing at
+  `contextWindow × 4 bytes/token × skillListingBudgetFraction` (default `0.01`): ~8,000
+  chars at 200k context, ~40,000 at 1M. Past that it keeps the highest-priority entries
+  whole and drops the rest to a bare `- <name>`. Every plugin should therefore report
+  `listing chars` and `× over budget` at both context sizes, not just token totals —
+  today `android-code` is 41.2k chars (5.2× over at 200k), `apple-code` 38.9k, whole
+  library 192k. The per-description cap (`skillListingMaxDescChars`, 1536) is not binding
+  for us: longest description is 747.
 
 ## Phase 3 — Description optimization, eval-driven (the expensive one — evidence first)
 

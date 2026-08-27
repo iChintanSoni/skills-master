@@ -2,6 +2,9 @@
 name: ktor-client
 description: Ktor HTTP client for Android and large-screen apps — Use when building type-safe, coroutine-native HTTP networking with content negotiation, auth plugins, and Kotlin Multiplatform compatibility.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

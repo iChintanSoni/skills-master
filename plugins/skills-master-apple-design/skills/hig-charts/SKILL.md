@@ -2,6 +2,9 @@
 name: hig-charts
 description: Applies Apple Human Interface Guidelines to charts and data visualization — choosing the right chart type, labeling axes and values, accessible color that doesn't rely on hue alone, selection and interaction, and chart-versus-table judgment. Use when designing or reviewing a chart, picking a visualization, critiquing a dashboard, or auditing chart accessibility. Produces design critique and recommendations, not code.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

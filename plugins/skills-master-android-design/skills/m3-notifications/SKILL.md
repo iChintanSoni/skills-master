@@ -2,6 +2,9 @@
 name: m3-notifications
 description: Design critique and recommendations for Android notifications using Material 3 principles. Use when reviewing or designing notification channels, channel importance levels, notification content and copy, rich styles (Messaging, BigText, Media), grouping strategies, or deciding whether and when an app should notify at all. Produces UX judgment grounded in M3 and Android platform conventions, not implementation code.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

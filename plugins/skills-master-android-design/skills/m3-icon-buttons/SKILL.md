@@ -2,6 +2,9 @@
 name: m3-icon-buttons
 description: Design guidance for Material 3 icon buttons — standard, filled, tonal, and outlined variants, toggleable states, sizing, and accessibility. Use when deciding which icon button variant fits a surface, whether an icon-only action is appropriate, and how to meet 48dp touch targets.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: telecom-calls
 description: Building a calling app with Jetpack Telecom (CallsManager) and self-managed ConnectionService — covers call registration, audio routing, call state management, and system dialer integration. Use when implementing VoIP, SIP, or any in-app calling feature that must coexist correctly with the Android telecom stack.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

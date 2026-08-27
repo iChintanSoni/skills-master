@@ -2,6 +2,9 @@
 name: android-activities
 description: Covers Activities, lifecycles, launch modes, task state restoration, and inter-activity intent-driven navigation. Use when building activity controllers, handling launch options, managing task affinities, or handling process death recreation.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

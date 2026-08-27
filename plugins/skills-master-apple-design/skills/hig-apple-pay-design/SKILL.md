@@ -2,6 +2,9 @@
 name: hig-apple-pay-design
 description: Design critique and guidance for offering Apple Pay in apps and on the web per Apple's Human Interface Guidelines. Use when reviewing or designing a checkout, cart, product page, or payment-method screen; choosing an Apple Pay button style, caption, or placement; deciding what the payment sheet should collect; or evaluating whether a custom payment form should defer to Apple Pay. Produces UX recommendations on prominence, button correctness, streamlined sheets, and avoiding redundant data entry, not code.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

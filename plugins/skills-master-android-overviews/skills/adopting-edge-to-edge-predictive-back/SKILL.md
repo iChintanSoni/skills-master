@@ -2,6 +2,9 @@
 name: adopting-edge-to-edge-predictive-back
 description: Adoption guide for the two modern platform behaviors enforced on Android 16 — going edge-to-edge with correct inset handling and opting into predictive back with animated transitions. Use when planning a migration to full-screen layout enforcement, deciding how to handle window insets in Compose or Views, or enabling predictive back animations for the first time.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

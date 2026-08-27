@@ -2,6 +2,9 @@
 name: hig-searching
 description: "Design critique and recommendations for search experiences on Apple platforms, grounded in the Human Interface Guidelines. Use when reviewing or designing where and how to offer search: search field placement and prominence, scope bars, search suggestions and recent searches, search tokens, clear and empty states, and how results are presented. Triggers include search bars, scope controls, filter chips, tab-bar or toolbar search, and Spotlight indexing. Produces UX guidance, not code."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 # HIG Searching

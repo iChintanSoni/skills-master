@@ -2,6 +2,9 @@
 name: watchos-workouts
 description: Runs HealthKit workout sessions on Apple Watch — HKWorkoutSession lifecycle, HKLiveWorkoutBuilder and HKLiveWorkoutDataSource, background runtime and the workout-processing mode, live heart-rate and energy statistics, water lock, mirrored sessions on iPhone, crash recovery, and workout zones. Use when building a fitness app for the watch, starting or ending a workout session, reading live sensor statistics during a workout, or adopting the workout zone APIs.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

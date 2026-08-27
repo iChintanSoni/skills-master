@@ -2,6 +2,9 @@
 name: swiftui-environment-preferences
 description: Guides reading and writing SwiftUI environment values, defining custom keys with the Entry macro, injecting Observable models, and flowing data up the tree with PreferenceKey. Use when sharing implicit dependencies across views, injecting a shared model, theming, or when a child must report size, position, or anchors back to an ancestor.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: hig-drag-and-drop
 description: Applies Apple Human Interface Guidelines to drag and drop — drag affordances, drop-target feedback, multi-item and cross-app drags, spring-loading, and accessible alternatives. Use when designing or reviewing a drag-and-drop interaction, deciding what should be draggable, critiquing drag previews or drop highlighting, or planning accessible and keyboard fallbacks. Produces design critique and recommendations, not code.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

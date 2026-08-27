@@ -2,6 +2,9 @@
 name: wear-tiles
 description: Covers Wear OS Tiles built with TileService and ProtoLayout — the 3-slot layout, Tiles Material components, resource bundles, freshness strategy, and tile previews. Use when building glanceable, always-accessible surfaces that appear in the Wear OS tile carousel without launching a full app.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

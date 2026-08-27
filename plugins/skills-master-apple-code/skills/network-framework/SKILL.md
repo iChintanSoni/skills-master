@@ -2,6 +2,9 @@
 name: network-framework
 description: "Guides direct transport-level networking with Apple's Network framework: NWConnection/NetworkConnection for TLS/TCP/UDP/QUIC clients, NWListener for servers, NWPathMonitor for connectivity changes, and NWParameters protocol options. Use when building custom wire protocols, peer-to-peer links, persistent sockets, or QUIC clients, or when deciding between Network framework and URLSession. Most plain HTTP apps should prefer URLSession instead."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

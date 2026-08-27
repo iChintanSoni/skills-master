@@ -2,6 +2,9 @@
 name: saved-state
 description: Covers preserving UI state across configuration changes and process death using SavedStateHandle in ViewModel, rememberSaveable in Compose, and custom Savers. Use when building screens that must restore scroll position, text input, selections, or other transient UI state after rotation, backgrounding, or system-initiated process termination.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

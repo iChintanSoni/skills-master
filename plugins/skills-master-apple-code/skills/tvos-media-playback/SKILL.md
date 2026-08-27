@@ -2,6 +2,9 @@
 name: tvos-media-playback
 description: "Covers video playback on Apple TV: AVPlayerViewController as the expected full-screen player, the tvOS-only transport surface (transportBarCustomMenuItems, customInfoViewControllers, contextualActions, customOverlayViewController, unobscuredContentGuide), AVPlayerItem externalMetadata and navigationMarkerGroups, ad and interstitial scheduling with AVPlayerInterstitialEvent, display-mode matching through AVDisplayManager, Picture in Picture, and the tvOS amendments to the HLS authoring spec. Use when building or debugging a video player on tvOS, customizing the transport bar, inserting ads, or matching the TV's refresh rate and dynamic range."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

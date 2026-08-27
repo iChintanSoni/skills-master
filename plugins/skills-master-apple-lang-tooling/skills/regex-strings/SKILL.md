@@ -2,6 +2,9 @@
 name: regex-strings
 description: Guidance for Swift string processing with the Regex type, covering regex literals, the RegexBuilder DSL, Capture and TryCapture, matching/replacing/splitting, Unicode-correct grapheme handling, and localized comparison. Use when parsing or validating text, extracting structured fields, choosing between a regex and plain String APIs, fixing emoji or accent mismatches, or porting NSRegularExpression to Swift Regex.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

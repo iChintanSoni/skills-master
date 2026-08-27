@@ -2,6 +2,9 @@
 name: hig-designing-for-watchos
 description: "Applies Apple Human Interface Guidelines to watchOS app and surface design — glanceable, short-session interactions, Digital Crown navigation, complications, the Smart Stack and widgets, notifications, and high-contrast layout on a tiny display. Use when designing or reviewing an Apple Watch app, choosing what belongs on the wrist versus the phone, scoping a single-glance task flow, designing complications or Smart Stack widgets, or critiquing a watchOS screen for legibility, hierarchy, or the 2025-2026 Liquid Glass look. Produces design critique and recommendations grounded in the HIG, not code. Triggers: watchOS design review, Apple Watch UX, glanceability, complications, Smart Stack, watch notifications, wrist-raise."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # hig-designing-for-watchos

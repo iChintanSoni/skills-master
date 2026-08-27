@@ -2,6 +2,9 @@
 name: camerax
 description: Covers CameraX — binding Preview, ImageCapture, ImageAnalysis, and VideoCapture use cases to a lifecycle, choosing CameraController vs ProcessCameraProvider, embedding a Compose camera preview, configuring resolution and aspect ratio, applying Camera Extensions, and requesting camera permissions. Use when adding a camera viewfinder, capturing photos or video, running real-time image analysis, or integrating vendor-specific camera extensions in a Jetpack Compose app.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

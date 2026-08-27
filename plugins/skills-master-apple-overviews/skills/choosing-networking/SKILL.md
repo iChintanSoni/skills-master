@@ -2,6 +2,9 @@
 name: choosing-networking
 description: Decision guide for picking an Apple networking approach. Use when starting networking work, evaluating URLSession vs Network framework, building WebSocket/peer-to-peer/custom-transport features, or deciding whether a third-party HTTP client is justified.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

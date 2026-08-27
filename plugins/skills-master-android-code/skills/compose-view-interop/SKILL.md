@@ -2,6 +2,9 @@
 name: compose-view-interop
 description: Covers bidirectional Compose/View interoperability — AndroidView and AndroidViewBinding to embed Views in Compose, ComposeView and AbstractComposeView to host Compose in Fragments or XML layouts, ViewCompositionStrategy for lifecycle safety, and cross-boundary state sharing. Use when incrementally migrating a screen, embedding a legacy custom View with no Compose equivalent, or adding Compose islands inside an existing Fragment/View hierarchy.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

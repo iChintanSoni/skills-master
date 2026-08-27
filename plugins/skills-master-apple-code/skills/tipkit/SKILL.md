@@ -2,6 +2,9 @@
 name: tipkit
 description: Guidance for surfacing contextual feature-discovery tips with TipKit. Use when defining a Tip, gating it with parameter- or event-based rules, presenting via popoverTip or TipView, grouping tips, or syncing tip status across devices with CloudKit.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

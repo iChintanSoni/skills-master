@@ -2,6 +2,9 @@
 name: avfoundation-playback
 description: Guides media playback with AVPlayer/AVPlayerItem, SwiftUI VideoPlayer and AVKit AVPlayerViewController, audio session setup, and Now Playing integration. Use when playing audio or video, observing player status/time, enabling background audio, or wiring lock-screen and remote controls on Apple platforms.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

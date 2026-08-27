@@ -2,6 +2,9 @@
 name: hig-color
 description: "Design critique and guidance for using color in Apple apps per the Human Interface Guidelines: system/semantic colors, the app accent/tint color, sufficient contrast, never relying on color alone, vibrancy on Liquid Glass materials, light/dark adaptation, and wide-gamut consistency. Use when reviewing a color palette, picking an accent/tint, auditing contrast or dark-mode legibility, or deciding between solid colors and vibrancy on glass. Produces UX recommendations, not code."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # HIG Color

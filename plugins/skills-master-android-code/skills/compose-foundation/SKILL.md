@@ -2,6 +2,9 @@
 name: compose-foundation
 description: Covers the Compose Foundation layer — clickable/combinedClickable, scroll and scrollable, BasicText/BasicTextField, focus management, MutableInteractionSource, and low-level pointer gestures. Use when building custom components that need raw gesture handling, custom indication, or text primitives without Material 3 opinionated styling.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

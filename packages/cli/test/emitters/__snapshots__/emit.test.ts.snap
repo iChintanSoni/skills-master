@@ -35,6 +35,9 @@ exports[`emitters > projects the fixture skill for claude 1`] = `
 name: fixture-skill
 description: A deterministic fixture skill for compiler tests. Use when exercising emitters, condensation, and the install lifecycle.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-01-01"
 ---
 
 > **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.

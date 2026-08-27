@@ -2,6 +2,9 @@
 name: m3-writing
 description: Guides designers and engineers on UX writing and content design for Material 3 Android apps. Use when crafting labels, button text, error messages, empty states, or any in-product copy to ensure clarity, consistent tone, and localization-friendly phrasing.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

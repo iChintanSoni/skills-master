@@ -2,6 +2,9 @@
 name: compose-window-insets
 description: Covers window insets and edge-to-edge layout in Jetpack Compose — Use when building screens that draw behind system bars, handle the soft keyboard, or need correct safe-area padding on phones and large screens.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

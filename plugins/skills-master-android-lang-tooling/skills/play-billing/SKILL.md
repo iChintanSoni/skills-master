@@ -2,6 +2,9 @@
 name: play-billing
 description: Covers Google Play Billing integration for Android apps — setting up the Play Billing Library, querying products, launching the purchase flow, acknowledging purchases, handling subscriptions, querying existing purchases, and verifying transactions server-side. Use when adding one-time purchases or subscriptions to an Android app, troubleshooting billing flow issues, or implementing server-side receipt validation with the Play Developer API.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

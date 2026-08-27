@@ -2,6 +2,9 @@
 name: play-console-publishing
 description: Covers shipping Android apps through Google Play — the Play Console, release tracks (internal/closed/open/production) and staged rollouts, Android App Bundles and Play App Signing, in-app updates and in-app reviews, Play Integrity API, and store listing and policy essentials. Use when setting up a Play release pipeline, managing track promotion, integrating flexible or immediate in-app updates, verifying app integrity, or preparing a store listing for review.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

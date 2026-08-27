@@ -2,6 +2,9 @@
 name: core-location
 description: "Use when an app needs the user's geographic position, geofencing, or visit detection on Apple platforms. Triggers: requesting when-in-use vs always authorization, streaming positions with CLLocationUpdate.liveUpdates, CLServiceSession, one-shot fixes, CLMonitor geofences, significant-change or visit monitoring, reduced accuracy, and required Info.plist usage strings."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: performance-profiling
 description: Covers profiling and performance analysis on Android — Android Studio Profiler (CPU, memory, energy, network), system tracing with Perfetto, diagnosing jank and slow startup, and a repeatable workflow for finding and fixing hotspots. Use when investigating frame drops, slow app startup, memory growth, excessive battery drain, or unexplained ANRs in an Android Kotlin app.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

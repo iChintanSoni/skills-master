@@ -2,6 +2,9 @@
 name: hig-writing
 description: "Critiques and improves UX writing for Apple platform apps using Human Interface Guidelines: voice and tone, concise button and label text, capitalization (title-style vs sentence-style), helpful alerts and error messages, and inclusive language. Use when reviewing or writing interface copy, button titles, labels, alert and error wording, empty states, permission prompts, onboarding text, or notifications; when copy feels wordy, jargony, or off-brand; or when checking capitalization and inclusive-language choices. Produces design guidance and copy critique, not code."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 # HIG Writing

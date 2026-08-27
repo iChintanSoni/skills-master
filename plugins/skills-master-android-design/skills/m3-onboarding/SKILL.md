@@ -2,6 +2,9 @@
 name: m3-onboarding
 description: "Design critique and recommendations for Material 3 onboarding on Android: first-run education, value-first screens, progressive disclosure vs upfront tours, sign-in and permission timing, skippability, and not blocking the user from the core task. Use when reviewing or designing a first-run experience, onboarding flow, sign-in wall, or permission-request timing in a Compose-first Android app and you need M3-grounded design judgment rather than implementation code."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

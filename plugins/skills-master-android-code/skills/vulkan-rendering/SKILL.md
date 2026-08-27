@@ -2,6 +2,9 @@
 name: vulkan-rendering
 description: Vulkan rendering on Android — why Vulkan over OpenGL ES, ANativeWindow surface and swapchain creation, pre-rotation, NDK and CMake wiring, validation layers, Android Vulkan Profiles for device reach, AHardwareBuffer interop, and profiling with Android GPU Inspector. Use when building or porting a native renderer or game engine to Vulkan on Android, deciding between Vulkan and OpenGL ES or ANGLE, debugging a swapchain or a black frame, or checking which Vulkan features your target device fleet actually supports.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

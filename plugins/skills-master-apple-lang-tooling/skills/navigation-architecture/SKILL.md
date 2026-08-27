@@ -2,6 +2,9 @@
 name: navigation-architecture
 description: Guides modeling SwiftUI navigation as serializable state with value-based NavigationStack paths, a router/coordinator owning the path, type-erased vs typed routes, deep/universal link parsing, and scene restoration. Use when designing app navigation, choosing centralized vs local navigation state, building a router, handling incoming URLs, or restoring the stack after relaunch.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

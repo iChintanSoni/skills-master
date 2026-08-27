@@ -2,6 +2,9 @@
 name: app-intents
 description: Defining AppIntent and AppEntity, parameters and resolution, AppShortcuts for Siri and Spotlight, intents that power interactive widgets and Controls, and the perform method. Use when exposing app actions or content to Siri, Spotlight, Shortcuts, widgets, Controls, or Apple Intelligence, or when designing AppEntity, AppShortcutsProvider, queries, or donations.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

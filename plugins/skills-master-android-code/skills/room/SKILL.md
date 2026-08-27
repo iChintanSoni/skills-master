@@ -2,6 +2,9 @@
 name: room
 description: Covers Room persistence — @Entity, @Dao, @Database, queries returning Flow, relations and @Relation, type converters, @Transaction, migrations (auto and manual) and fallback, suspend DAO functions, Room KMP, and choosing between androidx.room 2.x and the coroutine-first androidx.room3 3.0 rewrite. Use when implementing a local SQLite database with Jetpack Room, modelling entities with relations, reacting to data changes via Flow, handling schema migrations, or targeting Room KMP for shared Kotlin Multiplatform persistence.
 license: MIT
+metadata:
+  version: "1.1.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

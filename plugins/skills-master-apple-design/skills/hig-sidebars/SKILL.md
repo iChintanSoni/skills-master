@@ -2,6 +2,9 @@
 name: hig-sidebars
 description: Design critique and HIG guidance for sidebars on iPad, Mac, and Vision Pro. Use when reviewing or designing top-level navigation, deciding sidebar vs. tab bar, sectioning destinations with headers, handling selection state, collapse/show behavior, or the sidebar-adaptable relationship with floating tab bars in the Liquid Glass era. Produces UX recommendations, not code.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

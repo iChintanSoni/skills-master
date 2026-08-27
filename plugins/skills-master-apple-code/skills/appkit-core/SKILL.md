@@ -2,6 +2,9 @@
 name: appkit-core
 description: Use when building or maintaining a native Mac app in AppKit, or deciding AppKit vs SwiftUI on macOS. Covers NSApplication, NSWindow, NSWindowController, NSViewController, the menu bar and NSMenu, NSToolbar, target-action and the responder chain, document-based apps, and Mac idioms like resizable windows, keyboard handling, and multiple windows.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

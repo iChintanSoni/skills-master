@@ -2,6 +2,9 @@
 name: datastore
 description: Covers Jetpack DataStore for persistent key-value and typed proto storage — Preferences DataStore, Proto DataStore, reading preferences as a Flow, edit transactions, error handling, and migrating from SharedPreferences. Use when replacing SharedPreferences, persisting typed user settings, or streaming preference changes reactively in an Android app.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

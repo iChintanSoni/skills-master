@@ -2,6 +2,9 @@
 name: hig-loading
 description: Applies Apple Human Interface Guidelines to loading states and perceived performance — showing UI immediately, placeholders and skeletons versus spinners, determinate versus indeterminate progress, incremental loading, and slow or offline networks. Use when designing or reviewing a loading experience, a blank-while-fetching screen, a progress indicator, or pull-to-refresh, or critiquing how an app feels during waits. Produces design critique and recommendations, not code.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

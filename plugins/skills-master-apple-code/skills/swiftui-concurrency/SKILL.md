@@ -2,6 +2,9 @@
 name: swiftui-concurrency
 description: Guides view-scoped async work in SwiftUI using the task and task(id:) modifiers, refreshable and searchable async closures, and main-actor state updates. Use when wiring async loads, async sequences, pull-to-refresh, or live search into a view, when a task must cancel on disappear or restart on an id change, or when updating Observable or State models from background work without data races.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

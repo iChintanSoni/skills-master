@@ -2,6 +2,9 @@
 name: m3-icons
 description: "Design-critique guidance for Material Symbols iconography in Material 3 Android apps: the variable font axes (weight, fill, grade, optical size), sizing and touch-target alignment, filled vs outlined usage conventions, iconographic consistency, and accessibility labeling for actionable icons. Use when choosing between filled and outlined icon variants; when calibrating icon size, visual weight, or optical size for body text, headlines, or toolbar contexts; when ensuring icon state changes communicate correctly without color alone; when auditing icon set consistency across an app; or when reviewing whether interactive icons carry accessible labels."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

@@ -2,6 +2,9 @@
 name: m3-text-fields
 description: Design critique and guidance for Material 3 text fields on Android — covering filled vs outlined variants, label behavior, placeholder usage, supporting and error text, leading and trailing icons, character counters, and validation feedback patterns. Use when reviewing or specifying text input in a Compose-first Android app, choosing between the two field variants for a surface context, auditing error and validation UX, or determining whether a text field is the right control at all. Produces design judgment and recommendations, not implementation code.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

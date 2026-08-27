@@ -2,6 +2,9 @@
 name: m3-motion
 description: "Design critique and guidance for Material 3 motion in Android apps: easing and duration tokens, standard vs. expressive motion schemes, physics-based spring motion, M3 transition patterns, choreography, and honoring reduce-motion. Use when reviewing or designing animations, transitions, or state changes in a Material You app, or when auditing motion for accessibility and consistency with the M3 motion system. Produces design judgment and UX recommendations, not code."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

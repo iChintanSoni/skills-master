@@ -2,6 +2,9 @@
 name: compose-theming
 description: Covers Material 3 theming in Jetpack Compose — building ColorScheme (light/dark/dynamic), Typography, and Shapes, wiring MaterialTheme in the app root, accessing theme tokens inside composables, and extending the system with CompositionLocal for custom design tokens. Use when setting up or customising an app-wide theme, implementing dark-mode support, adopting Android 12+ dynamic color, or building a shared design-system layer on top of Material 3.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

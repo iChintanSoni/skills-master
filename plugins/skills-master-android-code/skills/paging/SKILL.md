@@ -2,6 +2,9 @@
 name: paging
 description: Covers Paging 3 for Android — PagingSource, RemoteMediator, Pager, PagingData Flow, collectAsLazyPagingItems in Compose, load states and retry, separators and transformations, and combining network with Room as the source of truth. Use when displaying large or infinite scrolling lists from a network API, a local database, or both, in a Jetpack Compose UI.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

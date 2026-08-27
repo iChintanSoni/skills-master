@@ -2,6 +2,9 @@
 name: result-builders
 description: "Guidance for designing and using Swift result builders: the @resultBuilder attribute, the buildBlock/buildOptional/buildEither/buildArray transform methods, buildExpression/buildFinalResult/buildLimitedAvailability, and buildPartialBlock for avoiding overload explosion. Use when authoring a declarative DSL, understanding how SwiftUI ViewBuilder or RegexBuilder work, deciding which build methods to implement, or debugging confusing result-builder type errors and missing control-flow support."
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

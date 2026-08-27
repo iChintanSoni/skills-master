@@ -2,6 +2,9 @@
 name: m3-settings
 description: "Material 3 design guidance for Android settings screens: grouping and ordering preferences, choosing between switches, checkboxes, and menus, handling destructive and account actions, adding search within settings, and establishing sensible defaults that minimize required configuration. Use when designing or critiquing a settings or preferences surface in an Android app and you need M3-grounded design judgment rather than implementation code."
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-06-06"
 ---
 
 ## When to use

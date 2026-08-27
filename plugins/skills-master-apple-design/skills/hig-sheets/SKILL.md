@@ -2,6 +2,9 @@
 name: hig-sheets
 description: Applies Apple Human Interface Guidelines to sheets and modal presentation — when to use a sheet versus full-screen or a popover, height/detents, and dismissal. Use when designing or reviewing a modal flow, choosing a presentation style, or critiquing a sheet's UX. Produces design critique, not code.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-05-30"
 ---
 
 ## When to use

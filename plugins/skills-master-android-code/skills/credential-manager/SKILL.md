@@ -2,6 +2,9 @@
 name: credential-manager
 description: Covers Android Credential Manager — the unified API for passkeys, saved passwords, and Sign in with Google that replaces legacy auth stacks. Use when implementing modern sign-in flows, adopting passkeys, migrating away from SmartLock or the deprecated One Tap library, or presenting the bottom-sheet credential picker on Android 16+.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

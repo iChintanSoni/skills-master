@@ -2,6 +2,9 @@
 name: adpf-thermal-performance
 description: Covers the Android Dynamic Performance Framework for games — reading thermal status and headroom from PowerManager, driving CPU scheduling with PerformanceHintManager hint sessions, reading CPU and GPU headroom from SystemHealthManager, honouring the Game Mode API and reporting through the Game State API with GameManager, and degrading render fidelity smoothly under thermal pressure. Use when a game throttles during long sessions, misses its frame budget on mid-tier hardware, or needs to hit the Play Console Slow Sessions bar.
 license: MIT
+metadata:
+  version: "1.0.0"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

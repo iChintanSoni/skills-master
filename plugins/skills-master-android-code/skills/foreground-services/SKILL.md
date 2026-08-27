@@ -2,6 +2,9 @@
 name: foreground-services
 description: Covers Android foreground services — declaring service types, posting a required notification, handling background-start restrictions, and managing lifecycle. Use when building features that require long-running, user-visible work such as media playback, navigation, fitness tracking, or file transfers.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

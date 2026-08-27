@@ -2,6 +2,9 @@
 name: compose-side-effects
 description: Covers Jetpack Compose effect APIs — LaunchedEffect, rememberCoroutineScope, rememberUpdatedState, DisposableEffect, SideEffect, produceState, and snapshotFlow — and their key/restart semantics. Use when bridging a composable to coroutines, subscriptions, listeners, or one-shot work that must run on enter or be cleaned up on leave.
 license: MIT
+metadata:
+  version: "1.0.2"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

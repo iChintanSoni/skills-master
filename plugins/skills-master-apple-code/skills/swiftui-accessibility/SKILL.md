@@ -2,6 +2,9 @@
 name: swiftui-accessibility
 description: "Covers SwiftUI accessibility modifiers in code: labels, values, hints, traits, grouping with accessibilityElement(children:), hiding, custom actions, sort priority, and Dynamic Type. Use when adding or auditing VoiceOver/assistive-technology support, fixing mis-read controls, grouping or hiding elements, exposing custom actions, or making text and metrics scale."
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 ## When to use

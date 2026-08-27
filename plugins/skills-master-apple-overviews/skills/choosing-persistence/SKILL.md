@@ -2,6 +2,9 @@
 name: choosing-persistence
 description: Helps choose a persistence approach on Apple platforms — SwiftData, Core Data, files/Codable, or CloudKit — by weighing maturity, sync needs, and migration cost. Use when starting a new data layer, deciding between SwiftData and Core Data, or adding cross-device sync.
 license: MIT
+metadata:
+  version: "1.0.1"
+  snapshot-date: "2026-08-25"
 ---
 
 > **Contested** — practitioners disagree here and the vendor does not prescribe an answer. Weigh the tradeoffs for the project at hand rather than adopting one option as the default.
