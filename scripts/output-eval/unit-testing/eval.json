@@ -1,0 +1,47 @@
+{
+  "skill": "unit-testing",
+  "install": ["unit-testing"],
+  "notes": "lang-tooling class, long-stable practice. The JVM-vs-instrumented split has been Android orthodoxy for a decade, so a zero delta here would be the expected result.",
+  "tasks": [
+    {
+      "prompt": "I'm adding tests to an Android app: one for a ViewModel's state machine, and one that checks a Room DAO query returns the right rows. Where does each test belong and why?",
+      "expect": [
+        {
+          "label": "keeps the ViewModel test as a local JVM test",
+          "pattern": "src/test|local (JVM )?test|unit test.{0,20}JVM|JVM"
+        },
+        {
+          "label": "puts the Room DAO test in instrumented tests",
+          "pattern": "androidTest|instrumented"
+        },
+        {
+          "label": "gives the deciding criterion (real Context/database/Activity)",
+          "pattern": "real (Context|database|SQLite|device)|needs a device|emulator"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "sends everything to instrumented tests",
+          "pattern": "both.{0,30}androidTest|all.{0,20}instrumented"
+        }
+      ]
+    },
+    {
+      "prompt": "How should I test a ViewModel that exposes a StateFlow and does work on a coroutine dispatcher?",
+      "expect": [
+        { "label": "uses runTest rather than blocking", "pattern": "runTest" },
+        {
+          "label": "injects or replaces the dispatcher",
+          "pattern": "TestDispatcher|StandardTestDispatcher|UnconfinedTestDispatcher|inject.{0,20}dispatcher|Dispatchers\\.setMain"
+        },
+        {
+          "label": "collects the flow with a real assertion technique",
+          "pattern": "Turbine|collect|first\\(\\)"
+        }
+      ],
+      "avoid": [
+        { "label": "reaches for Thread.sleep to wait for coroutines", "pattern": "Thread\\.sleep" }
+      ]
+    }
+  ]
+}

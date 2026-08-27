@@ -1,0 +1,47 @@
+{
+  "skill": "adopting-liquid-glass",
+  "install": ["adopting-liquid-glass"],
+  "notes": "overview class, recent migration. A router's job is to route, so the assertions are about the decision and its gating conditions rather than about code.",
+  "tasks": [
+    {
+      "prompt": "Our iOS app hasn't been rebuilt in a year. What actually triggers the new Liquid Glass appearance — is it our deployment target? And what's the fastest way to adopt it well?",
+      "expect": [
+        {
+          "label": "corrects the premise: the SDK you link against, not the deployment target",
+          "pattern": "SDK|relink|rebuild|link(ing)? against"
+        },
+        {
+          "label": "points at standard components as the highest-leverage move",
+          "pattern": "standard component|stock control|system (chrome|components)|replace.{0,40}custom"
+        },
+        {
+          "label": "warns against blanket glassEffect on custom surfaces",
+          "pattern": "glassEffect|blanket|sparing|glass on glass|glass over glass"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "claims the deployment target controls the appearance",
+          "pattern": "deployment target (is what|controls|determines|triggers)"
+        }
+      ]
+    },
+    {
+      "prompt": "We're not ready for the redesign this cycle. Can we keep the old look, and what should we watch out for when we do adopt it?",
+      "expect": [
+        {
+          "label": "names the compatibility opt-out flag",
+          "pattern": "UIDesignRequiresCompatibility"
+        },
+        {
+          "label": "frames the opt-out as temporary rather than permanent",
+          "pattern": "temporar|deadline|future release|not.{0,20}permanent|eventually"
+        },
+        {
+          "label": "flags content showing through previously opaque bars",
+          "pattern": "safe.?area|edge.to.edge|behind (the )?(bar|toolbar)|opaque bar"
+        }
+      ]
+    }
+  ]
+}

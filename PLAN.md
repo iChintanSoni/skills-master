@@ -499,10 +499,40 @@ is ~26k agent invocations per iteration — not a thing to run wholesale. Sample
   "reaches for an Activity-scoped ViewModel" when the sentence was "**Don't** fall back to
   `viewModel(LocalContext.current as ComponentActivity)`". The grader now checks for a
   preceding negation, and the stored answers were re-graded offline rather than re-run.
-  **Not done — the remaining 6 skills of the sample.** ~$12–15 at one run each, and worth
-  spending: two skills is directional, not conclusive, and the per-class verdicts the item
-  asks for need `design`, `lang-tooling` and `overview` represented. Needs Chintan's
-  go-ahead on spend.
+  **Sample completed — 8 skills, 34 sessions, $9.98.** Two per class, chosen in pairs: one
+  whose subject is recent, one stable and heavily documented for years.
+
+  | Skill | Class | Subject | With | Without | Delta |
+  | --- | --- | --- | ---: | ---: | ---: |
+  | `adopting-liquid-glass` | overview | recent migration | 100% | 50% | **+50** |
+  | `foundation-models` | code | new framework | 100% | 83% | **+17** |
+  | `hig-materials-liquid-glass` | design | recent material | 100% | 88% | **+13** |
+  | `crash-anr-vitals` | lang-tooling | recent + judgment | 100% | 88% | **+13** |
+  | `viewmodel` | code | stable API | 100% | 92% | +8 |
+  | `m3-buttons` | design | stable component | 100% | 100% | **0** |
+  | `unit-testing` | lang-tooling | stable practice | 100% | 100% | **0** |
+  | `choosing-async-pattern` | overview | stable decision | 100% | 100% | **0** |
+
+  **Per-class verdict, which the item asked for: the class is not the variable — the
+  subject's age is.** Every class contains both a large delta and a zero, so "design skills
+  are worth less than code skills" is not what the data says. On `m3-buttons`,
+  `unit-testing` and `choosing-async-pattern` the control missed **nothing at all**.
+  **The delta has two sources, and one of them corrected me.** (1) Post-cutoff specifics —
+  the `adopting-liquid-glass` control never named `UIDesignRequiresCompatibility`, never
+  framed the opt-out as temporary, never warned that content now shows through formerly
+  opaque bars. (2) Non-obvious judgment even where the facts are known: I picked
+  `crash-anr-vitals` expecting its 2026 Play thresholds to be post-cutoff, and **they were
+  not** — the control quoted 1.09% and 0.47% correctly. Its delta came from the
+  prioritise-by-affected-users heuristic instead. Same shape on the Liquid Glass material
+  skill, where the control knew the system but not "tint sparingly, through the system path".
+  **What this says about what to author next.** A skill earns its keep by carrying what
+  happened *after* training, or what the vendor's own docs bury. A skill that restates a
+  well-documented, long-stable API earns nothing measurable — an argument for currency-first
+  authoring and for keeping `snapshot_date` honest, not an argument for deleting anything:
+  a zero-delta skill still costs listing budget, which is now the thing that governs it
+  (2.3 / 7.1).
+  **Caveat that limits all of it:** one run per task, eight skills, assertions written by
+  the same person who wrote the skills' subject matter into the prompts. Directional.
 
 ## Phase 5 — Agent reach: the `.agents/skills/` standard directory
 
@@ -725,8 +755,9 @@ them up:
   version bump**, and a moved content ref — and the middle one is the case that actually
   bit this repo, since resource-file and description edits do not always take a release.
   Writes nothing and re-emits nothing; `--dry-run` remains the rehearsal, this is the gate.
-- **Finish the 4.1 output-eval sample** — six more skills, ~$12–15, for the per-class
-  verdicts the item asks for. Needs a go-ahead on spend, not on scope.
+- ~~**Finish the 4.1 output-eval sample**~~ **Done** — 8 skills, 34 sessions, $9.98. The
+  per-class verdicts are recorded under 4.1: the class turned out not to be the variable,
+  the subject's age is.
 - **3.2, the trigger pilot** — ~$130 a run. Largely superseded: 7.1/7.2/7.3 removed the
   budget confound that would have muddied its results, but 3.3 and 3.4 already acted on the
   parts that did not need it.

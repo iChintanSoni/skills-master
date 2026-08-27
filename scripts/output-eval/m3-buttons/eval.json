@@ -1,0 +1,44 @@
+{
+  "skill": "m3-buttons",
+  "install": ["m3-buttons"],
+  "notes": "design class, long-stable component. Material 3 buttons have been documented for years, so this is the design-side control on the currency hypothesis.",
+  "tasks": [
+    {
+      "prompt": "Review the button hierarchy on this Compose screen: I have two filled Material 3 buttons side by side at the bottom, 'Publish' and 'Save draft'.",
+      "expect": [
+        {
+          "label": "flags that two filled buttons collapse the hierarchy",
+          "pattern": "hierarch|equal|compet|one (filled|primary)|only one"
+        },
+        {
+          "label": "recommends filled tonal for the secondary action",
+          "pattern": "FilledTonal|filled tonal|tonal"
+        },
+        { "label": "identifies Publish as the single primary action", "pattern": "Publish" }
+      ],
+      "avoid": [
+        {
+          "label": "approves two filled buttons side by side",
+          "pattern": "(both|two) filled buttons (is|are) fine|looks good as is"
+        }
+      ]
+    },
+    {
+      "prompt": "In a Material 3 confirmation dialog I need 'Cancel' and 'Remove'. Which button variants should each use, and why?",
+      "expect": [
+        {
+          "label": "reaches for text or outlined variants rather than filled",
+          "pattern": "TextButton|text button|OutlinedButton|outlined"
+        },
+        {
+          "label": "treats the destructive action's weight deliberately",
+          "pattern": "destructive|Remove|error|emphasis"
+        },
+        {
+          "label": "keeps the dialog's actions from competing",
+          "pattern": "hierarch|emphasis|prominen"
+        }
+      ]
+    }
+  ]
+}

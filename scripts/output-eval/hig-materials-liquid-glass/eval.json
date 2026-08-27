@@ -1,0 +1,55 @@
+{
+  "skill": "hig-materials-liquid-glass",
+  "install": ["hig-materials-liquid-glass"],
+  "notes": "design class, recent material. Assertions encode design judgment rather than API names — a good answer refuses the premise of the first task whether or not it has read this skill.",
+  "tasks": [
+    {
+      "prompt": "I'm updating my iOS app for the new design. My plan: apply the Liquid Glass material to the whole screen background AND to every card on it, so the app looks modern throughout. Review that plan.",
+      "expect": [
+        {
+          "label": "pushes back on glass over glass / glass everywhere",
+          "pattern": "glass on glass|glass over glass|stack(ing)? (translucent|glass)|not.{0,30}every|sparing|accent, not|avoid.{0,40}blanket"
+        },
+        {
+          "label": "reserves glass for the floating navigation/control layer",
+          "pattern": "navigation|control layer|floating|chrome|toolbar"
+        },
+        {
+          "label": "keeps the content layer opaque",
+          "pattern": "opaque|content layer|standard background"
+        },
+        {
+          "label": "raises legibility or contrast as the cost",
+          "pattern": "legib|contrast|hierarchy"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "endorses blanketing the screen in glass",
+          "pattern": "(good|great|solid) plan|yes,? (you|that) (can|should) (apply|use) (it )?(to )?(the )?(whole|every)"
+        }
+      ]
+    },
+    {
+      "prompt": "For a small transient overlay that shows fine print, which system material should I pick, and how should I tint a destructive action inside it?",
+      "expect": [
+        {
+          "label": "picks the material by role and required contrast, not by its apparent colour",
+          "pattern": "contrast|semantic|role"
+        },
+        {
+          "label": "connects material thickness to legibility of fine text",
+          "pattern": "thick|thin|heavier|lighter"
+        },
+        {
+          "label": "tints sparingly and through the system path",
+          "pattern": "sparing|system tint|only to signal|semantic"
+        },
+        {
+          "label": "mentions accessibility settings changing the rendering",
+          "pattern": "Reduce Transparency|Increase Contrast|accessibilit"
+        }
+      ]
+    }
+  ]
+}
