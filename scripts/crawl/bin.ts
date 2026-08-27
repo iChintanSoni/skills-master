@@ -434,6 +434,91 @@ function parseXmlFeed(xmlText: string): Topic[] {
   return topics;
 }
 
+/**
+ * Apple's dated source, such as it is.
+ *
+ * Apple publishes one "<Framework> updates" page per framework, and those pages
+ * are the only Apple content found carrying dates — `## June 2026` headings,
+ * month granularity rather than the day granularity androidx gives. Month is
+ * enough to answer "has this moved since my snapshot" and not enough to answer
+ * "by how much", so the report reads a month as its first day and says so.
+ *
+ * Fetched per declared framework rather than for all 208 pages: a crawl that
+ * makes 208 requests to answer a question about 20 skills is a crawl someone
+ * will eventually turn off.
+ */
+async function fetchAppleUpdates(declared: string[]): Promise<Topic[]> {
+  if (declared.length === 0) return [];
+  const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  const indexUrl = "https://developer.apple.com/tutorials/data/documentation/updates.json";
+  const index = (await (
+    await fetch(indexUrl, { headers: { accept: "application/json" } })
+  ).json()) as {
+    references?: Record<string, { title?: string; url?: string; type?: string }>;
+  };
+  const pages = new Map<string, { title: string; url: string }>();
+  for (const ref of Object.values(index.references ?? {})) {
+    if (ref.type !== "topic" || !ref.url?.startsWith("/documentation/updates/")) continue;
+    pages.set(slug(ref.url.split("/").pop() ?? ""), {
+      title: ref.title ?? "",
+      url: `https://developer.apple.com${ref.url}`,
+    });
+  }
+
+  const topics: Topic[] = [];
+  for (const name of [...new Set(declared)]) {
+    const page = pages.get(slug(name));
+    if (!page) continue;
+    try {
+      const json = (await (
+        await fetch(
+          `https://developer.apple.com/tutorials/data${page.url.replace("https://developer.apple.com", "")}.json`,
+          { headers: { accept: "application/json" } },
+        )
+      ).json()) as unknown;
+
+      // Headings are nested arbitrarily deep in the render JSON; a walk is more
+      // robust than guessing the shape, which Apple changes.
+      const headings: string[] = [];
+      const walk = (node: unknown): void => {
+        if (Array.isArray(node)) return void node.forEach(walk);
+        if (node && typeof node === "object") {
+          const o = node as { type?: string; text?: string };
+          if (o.type === "heading" && typeof o.text === "string") headings.push(o.text);
+          Object.values(node).forEach(walk);
+        }
+      };
+      walk((json as { primaryContentSections?: unknown }).primaryContentSections);
+
+      // Build the date in UTC. `Date.parse("June 2026 01")` yields local
+      // midnight, which `toISOString` then renders as the 31st of May in any
+      // timezone east of UTC — a silent off-by-one on every Apple entry.
+      const MONTHS =
+        "january february march april may june july august september october november december".split(
+          " ",
+        );
+      const dates = headings
+        .map((h) => /^([A-Za-z]+) (\d{4})$/.exec(h))
+        .flatMap((m) => {
+          if (!m) return [];
+          const month = MONTHS.indexOf(m[1]!.toLowerCase());
+          return month === -1 ? [] : [Date.UTC(Number(m[2]), month, 1)];
+        })
+        .sort((a, b) => b - a);
+      if (dates.length === 0) continue;
+      topics.push({
+        title: `${name} updates`,
+        url: page.url,
+        date: new Date(dates[0]!).toISOString().slice(0, 10),
+      });
+    } catch {
+      // A framework whose page moved is unmeasured, not an error worth failing on.
+    }
+  }
+  return topics;
+}
+
 async function fetchUpstream() {
   const out: Record<string, unknown> = {};
 
@@ -520,10 +605,26 @@ async function main() {
   if (doFetch) {
     console.log("Fetching upstream endpoints…");
     const upstream = await fetchUpstream();
+
+    // Apple's per-framework update pages, fetched only for what skills declare.
+    // Added before the file is written — an earlier version mutated `upstream`
+    // afterwards, so the report used it but the artifact on disk never had it.
+    const declaredApple = reg.skills.filter((s) => s.domain === "apple").flatMap(upstreamOf);
+    const appleTopics = await fetchAppleUpdates(declaredApple);
+    const unresolved = [...new Set(declaredApple)].filter(
+      (n) => !appleTopics.some((t) => t.title === `${n} updates`),
+    );
+    upstream["apple-updates"] = { count: appleTopics.length, topics: appleTopics, unresolved };
+
     writeFileSync(join(REPORTS, "upstream.json"), JSON.stringify(upstream, null, 2) + "\n");
     for (const [k, v] of Object.entries(upstream)) {
       const info = v as { count?: number; error?: string };
       console.log(`  ${k}: ${info.error ? `ERROR ${info.error}` : `${info.count} topics`}`);
+    }
+    // A declaration that matches no page is unmeasured, and silence about it is
+    // how the Arabic bug in 0.2 stayed hidden. Name them.
+    if (unresolved.length) {
+      console.log(`  apple-updates: no dated page for ${unresolved.join(", ")}`);
     }
 
     // Only meaningful with a fresh fetch: a stale upstream.json would report

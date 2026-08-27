@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [hig-motion]
+  upstream:
+    - SwiftUI
   sources:
     - https://developer.apple.com/documentation/swiftui/animations
     - https://developer.apple.com/documentation/swiftui/phaseanimator

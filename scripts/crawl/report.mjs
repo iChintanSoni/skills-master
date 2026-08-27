@@ -128,9 +128,14 @@ if (currency) {
   // Apple has no dated source yet (PLAN.md 0.3), so silence about an Apple
   // skill means "unmeasured", not "current". Say so rather than let an empty
   // table read as a clean bill of health.
+  const unresolved = upstream?.["apple-updates"]?.unresolved ?? [];
   say(
-    "> Android only. Apple's endpoints carry no release dates, so Apple skills are " +
-      "**unmeasured** here rather than current.",
+    "> Apple is dated by month (its `updates` pages say “June 2026”, not a day), so a " +
+      "row can say *whether* an Apple skill is behind but not by how much." +
+      (unresolved.length
+        ? ` No dated page exists for **${unresolved.join(", ")}**, and design skills track ` +
+          "guidelines rather than frameworks — those are **unmeasured**, not current."
+        : ""),
     "",
   );
   if (currency.behind.length === 0) {

@@ -14,6 +14,8 @@ x-skills-master:
     ios: "26"
     swift: "6.0"
   pairs_with: [choosing-ml-approach, core-ai]
+  upstream:
+    - FoundationModels
   sources:
     - https://developer.apple.com/documentation/foundationmodels
     - https://developer.apple.com/documentation/foundationmodels/languagemodelsession

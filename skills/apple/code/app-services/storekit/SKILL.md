@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [background-assets, hig-ratings-reviews]
+  upstream:
+    - StoreKit
   sources:
     - https://developer.apple.com/documentation/storekit
     - https://developer.apple.com/documentation/storekit/product/purchaseresult

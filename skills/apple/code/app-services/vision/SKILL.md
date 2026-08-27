@@ -14,6 +14,8 @@ x-skills-master:
     ios: "18"
     swift: "6.0"
   pairs_with: [core-ml]
+  upstream:
+    - Vision
   sources:
     - https://developer.apple.com/documentation/vision
     - https://developer.apple.com/documentation/vision/recognizetextrequest

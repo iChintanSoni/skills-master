@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [core-ai, choosing-ml-approach, vision]
+  upstream:
+    - CoreML
   sources:
     - https://developer.apple.com/documentation/coreml
     - https://developer.apple.com/documentation/coreml/mlmodelconfiguration/computeunits

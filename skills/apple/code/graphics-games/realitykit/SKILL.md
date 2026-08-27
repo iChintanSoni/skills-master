@@ -14,6 +14,8 @@ x-skills-master:
     ios: "18"
     swift: "6.0"
   pairs_with: [visionos-immersive-spaces, choosing-graphics-tech, arkit, scenekit]
+  upstream:
+    - RealityKit
   sources:
     - https://developer.apple.com/documentation/realitykit
     - https://developer.apple.com/documentation/RealityKit/RealityView

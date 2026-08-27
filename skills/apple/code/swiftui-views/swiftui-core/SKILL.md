@@ -14,6 +14,8 @@ x-skills-master:
     ios: "17"
     swift: "6.0"
   pairs_with: [choosing-ui-toolkit, hig-layout, swiftui-custom-layout]
+  upstream:
+    - SwiftUI
   sources:
     - https://developer.apple.com/documentation/swiftui/view
     - https://developer.apple.com/documentation/swiftui/layout-fundamentals

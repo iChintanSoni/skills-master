@@ -14,6 +14,8 @@ x-skills-master:
     ios: "16"
     swift: "6.0"
   pairs_with: [hig-charts]
+  upstream:
+    - SwiftCharts
   sources:
     - https://developer.apple.com/documentation/charts
     - https://developer.apple.com/documentation/charts/creating-a-chart-using-swift-charts
