@@ -1,0 +1,47 @@
+{
+  "skill": "choosing-async-pattern",
+  "install": ["choosing-async-pattern"],
+  "notes": "overview class, long-stable decision. Swift concurrency guidance has been stable and heavily written about since 2021, so this is the router-side control on the currency hypothesis.",
+  "tasks": [
+    {
+      "prompt": "I have a delegate-based Swift API that calls back with sensor readings over time, and I want to consume it with for-await in new code. Which concurrency tool should I reach for, and what should I be careful about?",
+      "expect": [
+        {
+          "label": "reaches for AsyncStream to bridge the producer",
+          "pattern": "AsyncStream|AsyncThrowingStream"
+        },
+        {
+          "label": "frames the result as an AsyncSequence consumed with for await",
+          "pattern": "AsyncSequence|for await"
+        },
+        {
+          "label": "calls out the buffering policy as a deliberate choice",
+          "pattern": "buffer|back.?pressure|unbounded"
+        }
+      ],
+      "avoid": [
+        {
+          "label": "recommends starting new event-stream code in Combine",
+          "pattern": "use Combine for (this|new)|Combine is the (best|right) (choice|tool) (here|for this)"
+        }
+      ]
+    },
+    {
+      "prompt": "I need to run three independent network fetches at once in Swift and use all three results. What's the right structure, and what should I avoid?",
+      "expect": [
+        {
+          "label": "uses async let or a task group",
+          "pattern": "async let|withTaskGroup|withThrowingTaskGroup"
+        },
+        {
+          "label": "prefers structured concurrency for cancellation and scoped lifetime",
+          "pattern": "structured|cancel"
+        },
+        {
+          "label": "warns off detached tasks or semaphore blocking",
+          "pattern": "Task\\.detached|semaphore|do not block|don't block"
+        }
+      ]
+    }
+  ]
+}

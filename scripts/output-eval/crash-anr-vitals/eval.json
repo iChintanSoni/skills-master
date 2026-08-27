@@ -1,0 +1,42 @@
+{
+  "skill": "crash-anr-vitals",
+  "install": ["crash-anr-vitals"],
+  "notes": "lang-tooling class, recent facts. The second task asks for the 2026 Play Console thresholds, which are exactly the kind of number a model cannot infer and the skill states outright.",
+  "tasks": [
+    {
+      "prompt": "Our Android app is showing ANRs in Play vitals. Our Activity's onCreate does a Room query and then a network call before rendering. Explain what is wrong and how to fix it.",
+      "expect": [
+        {
+          "label": "names the main-thread blocking rule with its 5-second trigger",
+          "pattern": "5 ?second|five second|main thread|UI thread"
+        },
+        {
+          "label": "moves the work to an IO dispatcher",
+          "pattern": "Dispatchers\\.IO|withContext|background thread|coroutine"
+        },
+        { "label": "suggests StrictMode to catch it in debug", "pattern": "StrictMode" }
+      ],
+      "avoid": [
+        {
+          "label": "suggests widening the ANR timeout or ignoring it",
+          "pattern": "increase the timeout|ignore the ANR"
+        }
+      ]
+    },
+    {
+      "prompt": "What crash rate and ANR rate does Google Play treat as bad behaviour in 2026, and how should I prioritise which cluster to fix first?",
+      "expect": [
+        { "label": "gives the crash-rate threshold", "pattern": "1\\.09|1\\.1 ?%" },
+        { "label": "gives the ANR-rate threshold", "pattern": "0\\.47" },
+        {
+          "label": "prioritises by affected users rather than occurrences",
+          "pattern": "affected users"
+        },
+        {
+          "label": "connects exceeding the threshold to Play Store demotion",
+          "pattern": "demot|visibilit|ranking|discoverab"
+        }
+      ]
+    }
+  ]
+}
