@@ -27,8 +27,8 @@ jobs:
     name: CLI typecheck + tests
     runs-on: ${{ vars.CI_RUNNER || 'ubuntu-latest' }}
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           # corepack provisions pnpm; skip setup-node's auto pnpm cache,
@@ -54,7 +54,7 @@ jobs:
     name: Lint GitHub Actions workflows
     runs-on: ${{ vars.CI_RUNNER || 'ubuntu-latest' }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       # pyflakes lints inline `python` steps, of which these workflows have
       # none. Left on, the action pip-installs it — which on a self-hosted
       # runner means mutating the host to lint nothing.
@@ -72,7 +72,7 @@ jobs:
     name: Agent Skills spec conformance
     runs-on: ${{ vars.CI_RUNNER || 'ubuntu-latest' }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.13"
@@ -85,8 +85,8 @@ jobs:
     name: Lint skills + registry/taxonomy/marketplace drift
     runs-on: ${{ vars.CI_RUNNER || 'ubuntu-latest' }}
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           # corepack provisions pnpm; skip setup-node's auto pnpm cache,
