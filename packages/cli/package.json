@@ -59,14 +59,14 @@
     "gray-matter": "^4.0.3",
     "semver": "^7.8.5",
     "yaml": "^2.5.1",
-    "zod": "^4.4.3"
+    "zod": "^4.5.4"
   },
   "devDependencies": {
-    "@types/node": "^26.1.0",
+    "@types/node": "^26.4.1",
     "@types/semver": "^7.8.0",
     "@vitest/coverage-v8": "^4.1.11",
     "tsup": "^8.3.0",
-    "tsx": "^4.23.7",
+    "tsx": "^4.23.13",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11"
   }
