@@ -1,8 +1,35 @@
 name: Release
 
+# Release only when the *published artifact* can actually differ.
+#
+# The npm package is content-free: `files` is ["dist", "README.md", "LICENSE"],
+# so a tarball is dist/bin.js + the two docs. Skills never travel through npm —
+# the CLI fetches them at runtime from github:…/skills#main
+# (packages/cli/src/content/source.ts), and the Claude marketplace reads the
+# committed .claude-plugin/ + plugins/ off main. Both are live the moment a PR
+# merges, with or without a release.
+#
+# Publishing on every push therefore shipped mostly nothing: 0.3.9 through
+# 0.3.17 are byte-identical apart from `var version = "…"`, ~73% of merges never
+# touch packages/cli/, and 2026-08-27 produced 30 releases in a day.
+#
+# Each path below is here because it can change what a user installs:
+#   packages/cli/**  the only source of dist/bin.js
+#   pnpm-lock.yaml   runtime deps (zod, commander, …) are external, not bundled,
+#   package.json     so a bump changes the install without changing bin.js
+# Tests are excluded — `files` cannot carry them into the tarball.
+#
+# workflow_dispatch is the manual override: release on demand, and the escape
+# hatch if this filter ever proves too narrow.
 on:
   push:
     branches: [main]
+    paths:
+      - "packages/cli/**"
+      - "!packages/cli/test/**"
+      - "pnpm-lock.yaml"
+      - "package.json"
+  workflow_dispatch:
 
 # Serialize releases so two quick merges can't both try to tag/publish the same
 # version. A later push waits for the in-flight release to finish.
@@ -201,3 +228,37 @@ jobs:
             --title "${{ steps.ver.outputs.tag }}" \
             --generate-notes \
             claude-marketplace.zip
+
+      # A release can half-succeed: publish lands, then a later step fails and
+      # leaves the registry ahead of the tags. That is not theoretical — 0.1.6,
+      # 0.1.19 and 0.3.15 all reached npm with no tag, and 0.3.15 also has no
+      # GitHub Release. Nothing noticed until someone compared the three by hand
+      # weeks later. Assert they agree while the run is still on screen.
+      #
+      # `Compute next version` already recovers from this by baselining on
+      # max(tag, npmjs) — that net stays. This reports the tear instead of
+      # silently absorbing it.
+      - name: Verify release consistency
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.ver.outputs.tag }}
+          VER: ${{ steps.ver.outputs.next }}
+        run: |
+          set -euo pipefail
+          fail=0
+          # npmjs can take a few seconds to reflect a fresh publish as `latest`.
+          NPM_VER=""
+          for _ in 1 2 3 4 5; do
+            NPM_VER="$(npm view @ichintansoni/skills-master version \
+              --registry=https://registry.npmjs.org 2>/dev/null || true)"
+            [ "$NPM_VER" = "$VER" ] && break
+            sleep 5
+          done
+          [ "$NPM_VER" = "$VER" ] \
+            || { echo "::error::npmjs latest is '$NPM_VER', expected '$VER'"; fail=1; }
+          git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1 \
+            || { echo "::error::tag $TAG is missing from origin"; fail=1; }
+          gh release view "$TAG" >/dev/null 2>&1 \
+            || { echo "::error::GitHub Release $TAG does not exist"; fail=1; }
+          [ "$fail" -eq 0 ] || exit 1
+          echo "npmjs, tag and GitHub Release all agree on $TAG"
