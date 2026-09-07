@@ -28,7 +28,7 @@ jobs:
     permissions:
       contents: write # push tag + create GitHub Release
       packages: write # publish to GitHub Packages
-      id-token: write # npm provenance on the npmjs publish
+      id-token: write # OIDC trusted publishing + provenance on the npmjs publish
     steps:
       - uses: actions/checkout@v7
         with:
@@ -108,20 +108,40 @@ jobs:
       #
       # Dual publish: the same scoped package to npmjs (public install) and to
       # GitHub Packages (lights up the repo's Packages sidebar).
+      #
+      # npmjs authenticates by OIDC trusted publishing — no token. pnpm exchanges
+      # the `id-token: write` credential above for a short-lived registry token.
+      # The trusted publisher registered on npmjs pins this exact workflow
+      # *filename*, so renaming release.yml breaks publishing until the connection
+      # is recreated (its fields are immutable — you delete and re-add).
+      #
+      # This replaced a long-lived NPM_TOKEN that expired silently at 90 days and
+      # failed three releases with an opaque `E404 PUT`; an OIDC exchange has no
+      # expiry to miss. Provenance is automatic under trusted publishing, so
+      # `--provenance` is now belt-and-braces rather than load-bearing.
+      #
+      # setup-node's `registry-url` seeds the user npmrc with a literal
+      # `_authToken=${NODE_AUTH_TOKEN}`. With no NODE_AUTH_TOKEN in this step's
+      # env, pnpm would fail expanding it while loading config — before it ever
+      # reaches the publish. Dropping the key is what keeps that from happening,
+      # so this delete is load-bearing despite looking like dead cleanup.
+      - name: Publish to npmjs
+        run: |
+          set -euo pipefail
+          npm config --location=user set "@ichintansoni:registry=https://registry.npmjs.org"
+          npm config --location=user delete "//registry.npmjs.org/:_authToken"
+          pnpm --filter @ichintansoni/skills-master publish --no-git-checks --access public --provenance
+
+      # GitHub Packages has no trusted-publishing equivalent, so this one stays on
+      # a token — the per-run GITHUB_TOKEN, which is minted fresh and cannot expire.
+      # pnpm logs "Skipped OIDC: ERR_PNPM_AUTH_TOKEN_EXCHANGE … 404" here before
+      # falling back to it; on this step that warning is expected, not a failure.
+      #
       # Credentials go in the *user-level* npmrc, never a project one. pnpm 11
       # deliberately refuses to expand env vars in registry credentials read from
       # a project .npmrc — that file is usually committed, so expanding it there
       # could leak the token to an attacker-controlled registry. Writing to the
       # project root silently produced "authentication token not provided".
-      - name: Publish to npmjs
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          set -euo pipefail
-          npm config --location=user set "@ichintansoni:registry=https://registry.npmjs.org"
-          npm config --location=user set "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN"
-          pnpm --filter @ichintansoni/skills-master publish --no-git-checks --access public --provenance
-
       - name: Publish to GitHub Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
