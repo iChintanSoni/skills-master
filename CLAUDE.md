@@ -60,9 +60,11 @@ pnpm crawl:report                              # render the JSON reports as Mark
 The weekly crawl (`.github/workflows/crawl.yml`) runs the crawl plus the link check, renders
 `scripts/crawl/report.mjs` into the **job summary**, and rewrites a single **`crawl-report`-labelled
 issue** so the repo carries one live dashboard rather than a stack of weekly duplicates. The raw
-JSON stays as a run artifact. The link check is deliberately **not** `--strict` there: vendor
-hosts rate-limit under concurrency and return one-off 404s for live URLs, so a red weekly run
-would just train everyone to ignore it. Re-check any reported dead link by hand before editing.
+JSON stays as a run artifact. The link check splits its findings in two: **dead** is a 4xx that
+survived a `GET` retry — settled, act on it directly — while **unverified** is a 5xx/429/timeout
+that outlived three retries, meaning unreachable rather than broken. Conflating the two is what
+once made every link it reported a false positive. `--strict` fails on dead only, and the weekly
+run omits it entirely so an unreachable vendor host can never redden the build.
 The same run reports whether the **dogfood install** under `packages/cli/` has fallen behind the
 content (`update --check`) — also report-only, because a skill changing upstream is normal; it
 just should not go unnoticed for three releases, which is exactly what happened once.
