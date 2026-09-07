@@ -83,7 +83,10 @@ if (staleness) {
 const headline = [
   coverage ? `**${coverage.total}** skills` : null,
   staleness ? `**${buckets.stale}** stale (>180d)` : null,
-  links ? `**${links.dead.length}** dead link(s) of ${links.checked}` : null,
+  links
+    ? `**${links.dead.length}** dead link(s) of ${links.checked}` +
+      ((links.unverified ?? []).length ? ` (+${links.unverified.length} unverified)` : "")
+    : null,
   footprint
     ? `listing **${footprint.library.overBudget["200000"]}×** the 200k-context budget`
     : null,
@@ -92,29 +95,43 @@ say(headline.join(" · "), "");
 
 // ── Dead links: the only section that is ever actionable-urgent ─────────────
 if (links) {
-  if (links.dead.length === 0) {
+  // Dead and unverified are reported apart because they license different
+  // actions. Conflating them is what made every link this ever reported a false
+  // positive, and forced the table to carry a disclaimer talking readers out of
+  // trusting it.
+  const unverified = links.unverified ?? [];
+  const row = (d) =>
+    `| \`${d.status}\` | ${d.url} | ${(d.files ?? [])
+      .map((f) => `\`${f.replace(/^skills\//, "")}\``)
+      .join("<br>")} |`;
+  const table = (rows) => [
+    "| Status | URL | Used by |",
+    "|---|---|---|",
+    ...rows.slice(0, 30).map(row),
+    "",
+  ];
+
+  if (links.dead.length === 0 && unverified.length === 0) {
     say(`### Links`, "", `All ${links.checked} documentation links resolve.`, "");
-  } else {
-    say(
-      `### Dead links (${links.dead.length})`,
-      "",
-      "| Status | URL | Used by |",
-      "|---|---|---|",
-      ...links.dead
-        .slice(0, 30)
-        .map(
-          (d) =>
-            `| \`${d.status}\` | ${d.url} | ${(d.files ?? [])
-              .map((f) => `\`${f.replace(/^skills\//, "")}\``)
-              .join("<br>")} |`,
-        ),
-      "",
-    );
+  }
+
+  if (links.dead.length > 0) {
+    say(`### Dead links (${links.dead.length})`, "", ...table(links.dead));
     if (links.dead.length > 30) say(`…and ${links.dead.length - 30} more.`, "");
     say(
-      "Re-check by hand before editing: the scan runs concurrently and vendor hosts " +
-        "(support.google.com especially) rate-limit, which surfaces as a one-off 404 " +
-        "against a URL that is perfectly alive.",
+      "Each of these returned a 4xx to both a HEAD and a GET, so the answer is settled " +
+        "rather than flaky. Act on them directly.",
+      "",
+    );
+  }
+
+  if (unverified.length > 0) {
+    say(`### Unverified links (${unverified.length})`, "", ...table(unverified));
+    if (unverified.length > 30) say(`…and ${unverified.length - 30} more.`, "");
+    say(
+      "Unreachable, which is not the same claim as broken: a 5xx, a 429 or a timeout " +
+        "that outlived three retries. Vendor hosts rate-limit under concurrency, so a " +
+        "URL listed here is often perfectly alive. Re-check by hand before editing.",
       "",
     );
   }
