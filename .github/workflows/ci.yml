@@ -38,6 +38,24 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec biome ci .
       - run: pnpm --filter @ichintansoni/skills-master typecheck
+
+      # release.yml publishes the tarball built by this exact tsup command, but
+      # nothing here used to run it — so the bundle that ships was the one thing
+      # CI never checked. A TypeScript major (6 -> 7, #128) passed biome,
+      # typecheck and tests while the release-path build stayed unverified until
+      # publish time. Build here so a broken bundle fails in review, not on main.
+      - run: pnpm --filter @ichintansoni/skills-master build
+
+      # Emitting is not running: a bundle can build clean and still die on a bad
+      # shebang or an unbundled import the moment a user invokes it. `list` walks
+      # discover + parse over the whole library in under a second, and names no
+      # individual skill — so renaming one can't break CI in a confusing place.
+      - name: Smoke-test the built CLI
+        run: |
+          set -euo pipefail
+          node packages/cli/dist/bin.js --version
+          node packages/cli/dist/bin.js list --content ./skills >/dev/null
+
       - run: pnpm --filter @ichintansoni/skills-master test:coverage
       # Coverage is reported, not gated: a threshold that fails the build tends
       # to get met with tests written for the number. Putting it in the job
