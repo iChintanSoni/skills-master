@@ -151,16 +151,47 @@ jobs:
           npm config --location=user set "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN"
           pnpm --filter @ichintansoni/skills-master publish --no-git-checks
 
-      # Annotated tag pushed back with the default GITHUB_TOKEN. Pushes made with
-      # GITHUB_TOKEN do NOT trigger new workflow runs, so this can't re-trigger
-      # release.yml. [skip ci] is belt-and-suspenders.
-      - name: Create and push tag
+      # Tag via the Git refs API, NOT `git push`.
+      #
+      # GITHUB_TOKEN is a GitHub App token, and GitHub rejects a *push* whose ref
+      # would create or update anything under .github/workflows/ without the
+      # `workflows` permission — which the permissions: block above cannot grant.
+      # A tag push is subject to that check against the tree it points at, so a
+      # release whose commit is no longer main's tip gets rejected once main's
+      # workflow files have moved on:
+      #
+      #   ! [remote rejected] v0.3.15 -> v0.3.15 (refusing to allow a GitHub App
+      #     to create or update workflow `.github/workflows/release.yml` …)
+      #
+      # That is not hypothetical — it is why v0.3.15 is published to both
+      # registries with no tag and no GitHub Release. Two merges landed 21s apart;
+      # the second changed release.yml on main while the first release run was
+      # still going, so by the time that run tagged, its own tree held an older
+      # copy of the file. The commit being tagged never touched a workflow at all.
+      # Two merges close together, either one touching .github/workflows/, is
+      # enough — and Dependabot batches land exactly like that.
+      #
+      # Creating a ref that points at a commit already on the remote writes no file
+      # content, so it is structurally not a workflow create-or-update and the
+      # check does not apply. Annotated tag object first, then the ref, to match
+      # the tags already in the repo. Refs created this way with GITHUB_TOKEN do
+      # not trigger workflow runs, so this still cannot re-trigger release.yml.
+      - name: Create tag
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.ver.outputs.tag }}
         run: |
           set -euo pipefail
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag -a "${{ steps.ver.outputs.tag }}" -m "chore(release): ${{ steps.ver.outputs.tag }} [skip ci]"
-          git push origin "${{ steps.ver.outputs.tag }}"
+          TAG_SHA="$(gh api "repos/$GITHUB_REPOSITORY/git/tags" \
+            -f tag="$TAG" \
+            -f message="chore(release): $TAG [skip ci]" \
+            -f object="$GITHUB_SHA" \
+            -f type=commit \
+            --jq .sha)"
+          gh api "repos/$GITHUB_REPOSITORY/git/refs" \
+            -f ref="refs/tags/$TAG" \
+            -f sha="$TAG_SHA" \
+            --jq '"created " + .ref + " -> " + .object.sha'
 
       - name: Create GitHub Release
         env:
