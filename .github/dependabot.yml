@@ -11,8 +11,15 @@ updates:
       prefix: "chore"
       include: "scope"
     groups:
+      # vitest and @vitest/* must be upgraded in lockstep (especially across major
+      # bumps like 4 -> 5), otherwise v8 coverage crashes on mismatched internals.
+      vitest:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
+
       # Routine minor/patch bumps arrive as a single PR to cut noise; major
-      # bumps stay on their own so they get individual review (e.g. vitest 4).
+      # bumps stay on their own so they get individual review.
       minor-and-patch:
         update-types:
           - "minor"
