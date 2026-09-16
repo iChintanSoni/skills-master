@@ -39,6 +39,22 @@ Carried forward from `PLAN.md`'s currency effort, which is where this pattern wa
   backlog on a plausible angle, not a confirmed one — the output-eval at authoring time makes
   the final call, same as the currency effort's own precedent (`crash-anr-vitals`'s thresholds
   turned out not to be post-cutoff; the skill still worked on buried judgment alone).
+- **Two different kinds of "Currency" line.** Items with a `Source:`/`Sources:` line cite a
+  vendor page actually fetched this session — treat those dates as checked. Items without one
+  and without a `(provisional, unverified)` tag (e.g. 0.1, 1.1, 1.2, 2.3, 2.4) are general
+  software-engineering judgment (git-history tradeoffs, CI-gating logic) rather than a
+  vendor-sourced fact — there is no vendor page to cite for "squash loses bisectability," so
+  these don't need the tag, but they still deserve a sanity check against current docs/behavior
+  at authoring time rather than being taken as pre-verified.
+- **`pairs_with` reciprocity crosses phases.** Where a later item declares `pairs_with` an
+  earlier, already-shipped one (e.g. 2.3 → 2.1), authoring the later item means editing the
+  earlier skill too, per `CLAUDE.md`'s bidirectional rule — even though the earlier one already
+  merged in its own PR.
+- **`platforms` vocabulary for this domain.** Apple/Android skills populate `platforms` with
+  OS/form-factor values (`ios`, `wear-os`); `sdlc` isn't platform-scoped. Convention: `[git]`
+  for skills whose guidance is git-generic and host-independent (branching/merge strategy —
+  0.1, 1.1), `[github]` for skills specific to GitHub's platform features (Rulesets, Projects,
+  Actions, Issues — everything else in this backlog).
 
 **Correction (2026-09-16, before authoring started):** every existing `class: overview` skill in
 both domains uses `category: overviews` — confirmed in `docs/architecture.md`: "A class with only
@@ -46,7 +62,10 @@ one category (both `overviews` classes) gets **no** category plugin." Decision-r
 don't get topic categories; they collapse into one flat `overviews` bucket per domain, same as
 `code`'s topic categories are for code-producing skills only. All `overview`-class items below
 are corrected to `sdlc/overview/overviews/` (not the topic categories used in the original
-brainstorm) — `code`-class items keep their topic categories unchanged.
+brainstorm) — `code`-class items keep their topic categories unchanged. (Note: `overview` here
+is the CLI-spec class value passed to `pnpm cli new domain/class/category/name` — see
+`packages/cli/src/commands/new.ts` — which the CLI itself maps to the on-disk directory
+`overviews` via `CLASS_DIR`; the paths below are spec arguments, not literal disk paths.)
 
 ## Phase 0 — Bootstrap the domain
 
@@ -95,7 +114,9 @@ brainstorm) — `code`-class items keep their topic categories unchanged.
   the PR branch, broke after merge."
   Currency: merge queue GA since 2023-07-12 — old, not post-cutoff. Buried judgment: required
   status checks alone don't catch semantic conflicts between two individually-passing PRs;
-  merge queue re-tests the hypothetical *combined* state before merging. `pairs_with` 2.1.
+  merge queue re-tests the hypothetical *combined* state before merging. `pairs_with` 2.1 —
+  **when authoring 2.3, also add the reciprocal `pairs_with` entry to 2.1's already-shipped
+  skill** (bidirectional rule, see ground rules).
 - [ ] **2.4 `coverage-gating` (S).** `sdlc/code/repo-governance/`.
   Use when: wiring a coverage tool as a required check, or choosing a flat threshold vs. a
   ratchet.
@@ -159,7 +180,9 @@ brainstorm) — `code`-class items keep their topic categories unchanged.
 - [ ] **4.3 `automating-github-projects` (M).** `sdlc/code/github-collaboration/`.
   Use when: an agent needs to programmatically add/update items in a GitHub Project (v2).
   Currency: verified, confirmed **not** post-cutoff — Projects v2 has been GraphQL-only for
-  years (classic Projects, which had REST, sunset Oct 2025). Buried-practical-gotcha framing
+  years (classic Projects, which had REST, sunset 2025-04-01 — corrected here from an earlier
+  "Oct 2025" misstatement in this plan; re-verified directly against the cited changelog post).
+  Buried-practical-gotcha framing
   only: `gh project` CLI wraps a narrower surface than raw GraphQL; field updates need the
   field's *node ID*, not its name. **Discard**: a claim that REST gained partial Projects-v2
   support in Sept 2025 was checked and is false — do not carry it into the skill.
@@ -187,7 +210,9 @@ brainstorm) — `code`-class items keep their topic categories unchanged.
 - [ ] **4.7 `writing-actionable-issues` (M).** `sdlc/code/github-collaboration/`.
   Use when: an agent turns a vague ask into a well-formed GitHub Issue (or a linked set of
   issues) it or another agent can later act on and verify completion against.
-  Currency: verified, confirmed **not** post-cutoff — sub-issues went GA 2025-04-30. Skill
+  Currency: verified, confirmed **not** post-cutoff — sub-issues went GA 2025-04-09 (corrected
+  here from an earlier "2025-04-30" misstatement in this plan; re-verified directly against the
+  cited changelog post, whose own dateline reads "April 9, 2025"). Skill
   rests entirely on judgment: when a native sub-issue relationship is worth the overhead vs. a
   plain task-list checkbox, and that closing keywords (`Closes #123`) auto-link PR→issue but
   are often skipped unless an agent is told to use them.
@@ -196,8 +221,12 @@ brainstorm) — `code`-class items keep their topic categories unchanged.
 ## Deferred / cut from the brainstorm
 
 **Cut outright — human process, not agent-actionable:** requirements gathering / user-story
-writing, code review etiquette, incident-postmortem facilitation, Discussions-vs-Issues,
-`concurrency-and-caching` (real delta-zero risk, cut rather than carried on guesswork).
+writing, code review etiquette, incident-postmortem facilitation, Discussions-vs-Issues.
+
+**Cut outright — real delta-zero risk, not an agent-actionability cut:** `concurrency-and-caching`
+(setting a workflow's `concurrency:` block or `actions/cache` config is squarely something an
+agent does — this was cut on currency-bar grounds, carried on guesswork rather than checked, not
+because it fails the agent-actionability filter).
 
 **Deferred — no class fits yet.** PR review practices, ADR/design-doc judgment, flaky-test
 triage, rollback/hotfix judgment. These are real but don't produce a file (`code`) and aren't
