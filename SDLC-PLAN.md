@@ -40,9 +40,17 @@ Carried forward from `PLAN.md`'s currency effort, which is where this pattern wa
   the final call, same as the currency effort's own precedent (`crash-anr-vitals`'s thresholds
   turned out not to be post-cutoff; the skill still worked on buried judgment alone).
 
+**Correction (2026-09-16, before authoring started):** every existing `class: overview` skill in
+both domains uses `category: overviews` — confirmed in `docs/architecture.md`: "A class with only
+one category (both `overviews` classes) gets **no** category plugin." Decision-router skills
+don't get topic categories; they collapse into one flat `overviews` bucket per domain, same as
+`code`'s topic categories are for code-producing skills only. All `overview`-class items below
+are corrected to `sdlc/overview/overviews/` (not the topic categories used in the original
+brainstorm) — `code`-class items keep their topic categories unchanged.
+
 ## Phase 0 — Bootstrap the domain
 
-- [ ] **0.1 `choosing-branching-strategy` (S).** `sdlc/overview/version-control/`.
+- [ ] **0.1 `choosing-branching-strategy` (S).** `sdlc/overview/overviews/`.
   Use when: starting a repo with no established branching convention, or evaluating whether the
   current one fits release cadence/CI maturity. Mirrors the existing `choosing-testing-strategy`
   pattern exactly — first PR, chosen to validate the new domain's registry/taxonomy/marketplace
@@ -53,7 +61,7 @@ Carried forward from `PLAN.md`'s currency effort, which is where this pattern wa
 
 ## Phase 1 — Version control & branching
 
-- [ ] **1.1 `choosing-merge-strategy` (S).** `sdlc/overview/version-control/`.
+- [ ] **1.1 `choosing-merge-strategy` (S).** `sdlc/overview/overviews/`.
   Use when: configuring a repo's default merge method (merge commit / squash / rebase),
   independent of branching model.
   Currency: squash silently discards per-commit bisectability unless commits are already
@@ -124,7 +132,7 @@ Carried forward from `PLAN.md`'s currency effort, which is where this pattern wa
   Currency *(provisional, unverified)*: distinct mechanism from 2.1 (that gates PR merges; this
   gates `deployment` jobs). Judgment: environment-scoped secrets are least-privilege vs.
   repo-wide secrets, but rarely used by default.
-- [ ] **3.5 `choosing-release-automation` (M).** `sdlc/overview/github-automation/`.
+- [ ] **3.5 `choosing-release-automation` (M).** `sdlc/overview/overviews/`.
   Use when: deciding how a repo versions + publishes — semantic-release, release-please,
   changesets, or a hand-rolled tag/commit-keyword scheme. Includes versioning strategy
   (semver/calver/monorepo) as a section rather than a separate skill — decided together in
@@ -142,7 +150,7 @@ Carried forward from `PLAN.md`'s currency effort, which is where this pattern wa
   cutoff, likely known mechanically. Only surviving angle: `config.yml`'s
   `blank_issues_enabled: false` forcing template use, and label auto-apply. Real risk of
   delta-zero; carried forward for a real check rather than cut on guesswork.
-- [ ] **4.2 `choosing-project-tracking-approach` (S).** `sdlc/overview/github-collaboration/`.
+- [ ] **4.2 `choosing-project-tracking-approach` (S).** `sdlc/overview/overviews/`.
   Use when: deciding how to track work in a repo — Issues+labels only, Milestones, or
   Projects v2.
   Currency *(provisional, unverified)*: Projects v2 shines for cross-repo/org-wide views and
@@ -157,7 +165,7 @@ Carried forward from `PLAN.md`'s currency effort, which is where this pattern wa
   support in Sept 2025 was checked and is false — do not carry it into the skill.
   Sources: https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-api-to-manage-projects ,
   https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/
-- [ ] **4.4 `wiki-vs-repo-docs` (S).** `sdlc/overview/github-collaboration/`.
+- [ ] **4.4 `wiki-vs-repo-docs` (S).** `sdlc/overview/overviews/`.
   Use when: an agent is about to write documentation and needs to decide where it lives.
   Currency *(provisional, unverified)*: the Wiki is a **separate git repo**
   (`<repo>.wiki.git`), not covered by the main repo's branch protection, CODEOWNERS, or
