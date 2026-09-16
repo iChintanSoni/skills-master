@@ -9,3 +9,7 @@ allowBuilds:
 # Remove this once tsup widens its range to ^0.28.
 overrides:
   esbuild: ">=0.28.1"
+  # gray-matter 4.0.3 locks js-yaml to 3.15.1, which carries GHSA-2883-xcg3-v3hh.
+  # Patch release 3.15.2 fixes the CPU consumption vulnerability while preserving the 3.x API
+  # (safeLoad/safeDump) required by gray-matter (which fails on js-yaml 4+ / 5+).
+  js-yaml: "~3.15.2"
