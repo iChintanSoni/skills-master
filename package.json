@@ -23,8 +23,8 @@
     "crawl:report": "node scripts/crawl/report.mjs"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.13",
-    "tsx": "^4.23.13",
+    "@biomejs/biome": "^2.6.4",
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
 }
