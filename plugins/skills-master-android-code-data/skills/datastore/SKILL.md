@@ -3,8 +3,8 @@ name: datastore
 description: Covers Jetpack DataStore for persistent key-value and typed proto storage — Preferences DataStore, Proto DataStore, reading preferences as a Flow, edit transactions, error handling, and migrating from SharedPreferences. Use when replacing SharedPreferences, persisting typed user settings, or streaming preference changes reactively in an Android app.
 license: MIT
 metadata:
-  version: "1.0.1"
-  snapshot-date: "2026-06-06"
+  version: "1.0.2"
+  snapshot-date: "2026-11-25"
 ---
 
 ## When to use
@@ -21,10 +21,13 @@ Do not use DataStore for large datasets or relational data; use Room instead.
 
 ```kotlin
 // build.gradle.kts — Preferences DataStore
-implementation("androidx.datastore:datastore-preferences:1.1.2")
+implementation("androidx.datastore:datastore-preferences:1.3.0")
 
 // Proto DataStore (in addition to a proto-generated class)
-implementation("androidx.datastore:datastore:1.1.2")
+implementation("androidx.datastore:datastore:1.3.0")
+
+// Optional: Tink AEAD encryption wrapper (1.3+)
+implementation("androidx.datastore:datastore-tink:1.3.0")
 ```
 
 ### Preferences DataStore
@@ -81,7 +84,8 @@ class AppPreferencesRepository(private val dataStore: DataStore<Preferences>) {
 
 - Define your schema in a `.proto` file; the Protobuf plugin generates a Kotlin class (e.g. `UserSettings`).
 - Create a `Serializer<T>` that implements `readFrom` and `writeTo`, plus a `defaultValue`.
-- Instantiate via `dataStore<T>(fileName, serializer)` at the application Context level with the same singleton pattern.
+- Instantiate via `dataStore<T>(fileName, serializer)` at the application Context level with the same singleton pattern. When instantiating programmatically instead of using a delegate, prefer `DataStore.Builder<T>` (1.3+) over `DataStoreFactory`: pass an application-scoped `CoroutineContext` (with a `Job`) rather than a `CoroutineScope`, and configure corruption handling with `setCorruptionHandler` (such as `ReThrowCorruptionHandler` or a recovery handler).
+- For encrypted storage (replacing legacy `EncryptedSharedPreferences`), add `androidx.datastore:datastore-tink` (1.3+) and wrap your `Serializer<T>` with `AeadSerializer` backed by a Tink AEAD keyset (`AES256_GCM` via `AndroidKeysetManager`). `AeadSerializer` wraps `GeneralSecurityException` into `CorruptionException` so your `CorruptionHandler` handles decryption failures consistently.
 - Update with `dataStore.updateData { current -> current.toBuilder().setFoo(x).build() }` — returns the new value and applies atomically.
 - Prefer Proto DataStore when you have nested structures, versioning requirements, or want compile-time type safety on field names.
 
@@ -122,6 +126,7 @@ private val Context.dataStore by preferencesDataStore(
 - DataStore uses the file system, not a SQLite database. Backup rules (`android:allowBackup`) apply to the `datastore/` directory under your app's files directory; add `<exclude domain="file" path="datastore/" />` in your backup rules if the data is device-specific.
 - `DataStore` is not thread-safe for concurrent `edit` calls from multiple coroutines: while calls are serialized internally, callers must not cache a `Preferences` reference across `edit` lambda boundaries.
 - DataStore is process-local. If you use multiple processes (e.g. `:remote` service), use `MultiProcessDataStore` from the `datastore-multiprocess` artifact instead.
+- DataStore 1.3+ includes `androidx.tracing` support on Android, baseline profiles for faster startup, and KMP web storage options (`WebSessionStorage`, `WebLocalStorage`, `WebOpfsStorage`).
 
 ## Pitfalls
 
@@ -137,6 +142,7 @@ private val Context.dataStore by preferencesDataStore(
 
 - **Documentation:** [DataStore — Android Developers](https://developer.android.com/topic/libraries/architecture/datastore)
 - **Codelab:** [Android Proto DataStore — Android Developers Codelabs](https://developer.android.com/codelabs/android-proto-datastore)
+- **Release notes:** [DataStore releases](https://developer.android.com/jetpack/androidx/releases/datastore)
 - **Worked examples:** [examples.md](examples.md) — read when you want working DataStore code to adapt
 - **Review checklist:** [checklist.md](checklist.md) — run before merging changes to DataStore
 

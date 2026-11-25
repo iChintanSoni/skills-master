@@ -10,12 +10,12 @@ x-skills-master:
   platforms: [ios, ipados, macos, watchos, tvos, visionos]
   pairs_with: [watchos-app-structure, tvos-app-structure, visionos-windows-volumes, carplay-templates]
   sources:
-    - https://developer.apple.com/documentation/technologyoverviews/swiftui
+    - https://developer.apple.com/documentation/swiftui
     - https://developer.apple.com/documentation/uikit/mac-catalyst
     - https://developer.apple.com/documentation/carplay/requesting-carplay-entitlements
-  snapshot_date: "2026-08-25"
+  snapshot_date: "2026-11-25"
   stability: stable
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 ## When to use
@@ -103,7 +103,7 @@ Push the model, networking, persistence, and formatting into local Swift package
 
 ## References
 
-- **Documentation:** [SwiftUI technology overview](https://developer.apple.com/documentation/technologyoverviews/swiftui)
+- **Documentation:** [SwiftUI](https://developer.apple.com/documentation/swiftui)
 - **Documentation:** [Mac Catalyst](https://developer.apple.com/documentation/uikit/mac-catalyst)
 - **Documentation:** [Making your app compatible with visionOS](https://developer.apple.com/documentation/visionos/making-your-app-compatible-with-visionos)
 - **Documentation:** [watchOS apps](https://developer.apple.com/documentation/watchos-apps)

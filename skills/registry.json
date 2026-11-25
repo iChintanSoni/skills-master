@@ -1462,7 +1462,7 @@
         "visionos"
       ],
       "stability": "stable",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "multiplatform",
         "form-factors"
@@ -3248,7 +3248,7 @@
         "large-screen"
       ],
       "stability": "stable",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "persistence"
       ],
@@ -10911,7 +10911,7 @@
         "wear-os"
       ],
       "stability": "stable",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "tags": [
         "wearables"
       ],
