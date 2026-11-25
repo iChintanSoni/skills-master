@@ -9,14 +9,14 @@ so no schema change is needed for this wave.
 **Why this effort exists.** The library's two existing domains teach an agent how to write
 platform code. Nothing teaches it the process layer — which branch to cut, how to configure
 required checks, how to file a GitHub Issue an agent can later verify itself against. This
-plan scopes that out to a backlog, using the same bar the last effort measured: *every
+plan scopes that out to a backlog, using the same bar the last effort measured: _every
 stable-subject skill in an 8-skill output-eval sample scored a delta of zero against a bare
-model.* So every item below was screened for a post-cutoff specific or a buried-judgment angle
+model._ So every item below was screened for a post-cutoff specific or a buried-judgment angle
 before being kept — see each item's "Currency" line, and the [authoring guide](docs/authoring.md#what-earns-a-new-skill)
 for the underlying bar.
 
 **Agent-actionability filter.** Every skill in this library describes something a coding agent
-*does* while working in a repo, not a human/org process. That filter cut requirements-gathering,
+_does_ while working in a repo, not a human/org process. That filter cut requirements-gathering,
 code-review etiquette, and incident-postmortem-facilitation from the raw brainstorm — see
 "Deferred / cut" at the bottom.
 
@@ -35,7 +35,7 @@ Carried forward from `PLAN.md`'s currency effort, which is where this pattern wa
   over unchecked from this planning doc. Several items below already carry a verified source
   (checked 2026-09-16); the rest are marked **unverified** and need a real doc check as part
   of authoring, not before.
-- **A skill can still get cut at authoring time.** Items marked *(provisional)* survive to the
+- **A skill can still get cut at authoring time.** Items marked _(provisional)_ survive to the
   backlog on a plausible angle, not a confirmed one — the output-eval at authoring time makes
   the final call, same as the currency effort's own precedent (`crash-anr-vitals`'s thresholds
   turned out not to be post-cutoff; the skill still worked on buried judgment alone).
@@ -104,7 +104,7 @@ is the CLI-spec class value passed to `pnpm cli new domain/class/category/name` 
   Source: https://github.blog/changelog/2026-08-11-automatically-migrate-branch-protection-rules-to-repository-rulesets/
 - [ ] **2.2 `codeowners` (S) — accepted currency risk.** `sdlc/code/repo-governance/`.
   Use when: setting up auto-assigned reviewers via `CODEOWNERS`.
-  Currency *(provisional, unverified)*: CODEOWNERS syntax itself is old/well-known — kept
+  Currency _(provisional, unverified)_: CODEOWNERS syntax itself is old/well-known — kept
   standalone for granularity over a merge into 2.1. Candidate angle: last-matching-pattern-wins
   ordering (mirrors `.gitignore` semantics, a common footgun); team-based owners silently get no
   review request unless the team has explicit write access. May get cut by output-eval if this
@@ -114,7 +114,7 @@ is the CLI-spec class value passed to `pnpm cli new domain/class/category/name` 
   the PR branch, broke after merge."
   Currency: merge queue GA since 2023-07-12 — old, not post-cutoff. Buried judgment: required
   status checks alone don't catch semantic conflicts between two individually-passing PRs;
-  merge queue re-tests the hypothetical *combined* state before merging. `pairs_with` 2.1 —
+  merge queue re-tests the hypothetical _combined_ state before merging. `pairs_with` 2.1 —
   **when authoring 2.3, also add the reciprocal `pairs_with` entry to 2.1's already-shipped
   skill** (bidirectional rule, see ground rules).
 - [ ] **2.4 `coverage-gating` (S).** `sdlc/code/repo-governance/`.
@@ -130,13 +130,13 @@ is the CLI-spec class value passed to `pnpm cli new domain/class/category/name` 
   Use when: adding or auditing a third-party Action (`uses: owner/repo@version`) in any
   workflow.
   Currency: verified citation — tj-actions/changed-files compromise (CVE-2025-30066, disclosed
-  2025-03-14/15): attacker rewrote *all version tags* to point at malicious code, so tag-pinning
+  2025-03-14/15): attacker rewrote _all version tags_ to point at malicious code, so tag-pinning
   wasn't safe, only SHA-pinning was. Sources:
   https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-tj-actionschanged-files-cve-2025-30066-and-reviewdogaction ,
   https://github.com/advisories/ghsa-mrrh-fwg8-r2c3
 - [ ] **3.2 `reusable-workflows-and-composite-actions` (M).** `sdlc/code/github-automation/`.
   Use when: DRYing up duplicated CI logic across workflow files or repos.
-  Currency *(provisional, unverified)*: judgment — composite action reuses steps within one
+  Currency _(provisional, unverified)_: judgment — composite action reuses steps within one
   job; reusable workflow (`workflow_call`) reuses whole jobs/pipelines and supports
   `secrets: inherit`. Picking the wrong one is a common source of duplicated pipeline logic.
 - [ ] **3.3 `oidc-keyless-publishing` (M).** `sdlc/code/github-automation/`.
@@ -150,7 +150,7 @@ is the CLI-spec class value passed to `pnpm cli new domain/class/category/name` 
 - [ ] **3.4 `environments-and-required-approvals` (S).** `sdlc/code/github-automation/`.
   Use when: gating a deploy job behind manual approval, or scoping secrets to a specific
   environment (prod vs. staging).
-  Currency *(provisional, unverified)*: distinct mechanism from 2.1 (that gates PR merges; this
+  Currency _(provisional, unverified)_: distinct mechanism from 2.1 (that gates PR merges; this
   gates `deployment` jobs). Judgment: environment-scoped secrets are least-privilege vs.
   repo-wide secrets, but rarely used by default.
 - [ ] **3.5 `choosing-release-automation` (M).** `sdlc/overview/overviews/`.
@@ -158,7 +158,7 @@ is the CLI-spec class value passed to `pnpm cli new domain/class/category/name` 
   changesets, or a hand-rolled tag/commit-keyword scheme. Includes versioning strategy
   (semver/calver/monorepo) as a section rather than a separate skill — decided together in
   practice.
-  Currency *(provisional, unverified)*: this repo's own `release.yml` (tag-derived version,
+  Currency _(provisional, unverified)_: this repo's own `release.yml` (tag-derived version,
   `#major`/`#minor` in the merge commit, nothing committed back) is a real worked example of
   the hand-rolled option's tradeoffs against release-please's batched-PR model or changesets'
   per-package monorepo model.
@@ -174,7 +174,7 @@ is the CLI-spec class value passed to `pnpm cli new domain/class/category/name` 
 - [ ] **4.2 `choosing-project-tracking-approach` (S).** `sdlc/overview/overviews/`.
   Use when: deciding how to track work in a repo — Issues+labels only, Milestones, or
   Projects v2.
-  Currency *(provisional, unverified)*: Projects v2 shines for cross-repo/org-wide views and
+  Currency _(provisional, unverified)_: Projects v2 shines for cross-repo/org-wide views and
   custom workflows but is overhead a single small repo doesn't need; Milestones are lightweight
   but per-repo only; labels alone give no timeline/board view.
 - [ ] **4.3 `automating-github-projects` (M).** `sdlc/code/github-collaboration/`.
@@ -184,20 +184,20 @@ is the CLI-spec class value passed to `pnpm cli new domain/class/category/name` 
   "Oct 2025" misstatement in this plan; re-verified directly against the cited changelog post).
   Buried-practical-gotcha framing
   only: `gh project` CLI wraps a narrower surface than raw GraphQL; field updates need the
-  field's *node ID*, not its name. **Discard**: a claim that REST gained partial Projects-v2
+  field's _node ID_, not its name. **Discard**: a claim that REST gained partial Projects-v2
   support in Sept 2025 was checked and is false — do not carry it into the skill.
   Sources: https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-api-to-manage-projects ,
   https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/
 - [ ] **4.4 `wiki-vs-repo-docs` (S).** `sdlc/overview/overviews/`.
   Use when: an agent is about to write documentation and needs to decide where it lives.
-  Currency *(provisional, unverified)*: the Wiki is a **separate git repo**
+  Currency _(provisional, unverified)_: the Wiki is a **separate git repo**
   (`<repo>.wiki.git`), not covered by the main repo's branch protection, CODEOWNERS, or
   required PR review — docs placed there silently bypass the review process most teams assume
   applies everywhere.
 - [ ] **4.5 `pr-templates` (S).** `sdlc/code/github-collaboration/`.
   Use when: authoring `.github/PULL_REQUEST_TEMPLATE.md`, or multiple templates selectable via
   `?template=` query param.
-  Currency *(provisional, unverified)*: multi-template-via-URL-param is genuinely under-known —
+  Currency _(provisional, unverified)_: multi-template-via-URL-param is genuinely under-known —
   most people/models only know the single default-template case.
 - [ ] **4.6 `stacked-prs` (M) — strongest post-cutoff finding.** `sdlc/code/github-collaboration/`.
   Use when: an agent needs to split a large change into a stack of dependent, reviewable PRs.

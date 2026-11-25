@@ -19,20 +19,20 @@ npx @ichintansoni/skills-master status                        # what's installed
 npx @ichintansoni/skills-master doctor                        # same detection, but fails on drift
 ```
 
-`update` pulls newer skill content, but only ever re-emits to the targets a skill was *already* installed to. So adding a target to `skills-master.json` after the fact, or changing a `paths` override, leaves config and disk disagreeing with nothing to reconcile them. `sync` is that reconciliation — it treats the configured target set as the source of truth and makes disk match. Local edits are preserved unless you pass `--overwrite`. A target you *dropped* from config is reported but only deleted with `--prune`; a `paths` change is a move, so the old copy is cleaned up straight away rather than left for agents to load twice.
+`update` pulls newer skill content, but only ever re-emits to the targets a skill was _already_ installed to. So adding a target to `skills-master.json` after the fact, or changing a `paths` override, leaves config and disk disagreeing with nothing to reconcile them. `sync` is that reconciliation — it treats the configured target set as the source of truth and makes disk match. Local edits are preserved unless you pass `--overwrite`. A target you _dropped_ from config is reported but only deleted with `--prune`; a `paths` change is a move, so the old copy is cleaned up straight away rather than left for agents to load twice.
 
 `status` and `doctor` share their drift detection but answer different questions. `status` is an inventory — it lists every installed skill with its version, targets, and whether the output has been edited or deleted, works entirely offline, and always exits 0, so it is safe to pipe (`status --json`, `status --problems`, `status <name>…`). `doctor` is the gate: same findings, but it exits non-zero, which is what you want in CI.
 
-Both answer "is what I installed intact?" — neither answers "is what I installed **current?**", because both compare emitted files against the lockfile and never the lockfile against the source. An install pinned to a release from six months ago is perfectly healthy by that measure. `update --check` is the second gate: it resolves the content, reports which skills are behind, and exits non-zero. It catches the case a version comparison misses — a skill edited upstream *without* a version bump, which is what resource-file and description changes usually are.
+Both answer "is what I installed intact?" — neither answers "is what I installed **current?**", because both compare emitted files against the lockfile and never the lockfile against the source. An install pinned to a release from six months ago is perfectly healthy by that measure. `update --check` is the second gate: it resolves the content, reports which skills are behind, and exits non-zero. It catches the case a version comparison misses — a skill edited upstream _without_ a version bump, which is what resource-file and description changes usually are.
 
 `add` writes, per detected tool:
 
-| Tool | Output |
-|------|--------|
-| Claude Code | `.claude/skills/<name>/SKILL.md` (+ on-demand `examples.md` / `checklist.md`) |
-| Cursor | `.cursor/rules/<name>.mdc` (auto-attached on matching files) |
-| GitHub Copilot | `.github/instructions/<name>.instructions.md` |
-| AGENTS.md | a sentinel-marked block (your hand-written content is preserved) |
+| Tool           | Output                                                                        |
+| -------------- | ----------------------------------------------------------------------------- |
+| Claude Code    | `.claude/skills/<name>/SKILL.md` (+ on-demand `examples.md` / `checklist.md`) |
+| Cursor         | `.cursor/rules/<name>.mdc` (auto-attached on matching files)                  |
+| GitHub Copilot | `.github/instructions/<name>.instructions.md`                                 |
+| AGENTS.md      | a sentinel-marked block (your hand-written content is preserved)              |
 
 Flags: `--target claude,cursor,copilot,agents,agents-skills|all` · `--with-pairs` (also install the paired code↔design skill) · `--dry-run` · `--overwrite` · `--content <dir>` (use a local skills checkout) · `--ref <git-ref>`. An explicit `--target` or `--ref` is remembered in `skills-master.json`, and `--target` widens the configured set rather than replacing it.
 
@@ -49,36 +49,36 @@ Run `skills-master <command> --help` for the full flag list on any of these.
 
 ### Browsing the catalog
 
-| Command | What it does |
-|---|---|
-| `list` | List available skills. `--domain` · `--class` · `--category` · `--platform` · `--json` |
+| Command          | What it does                                                                                                                                                                |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `list`           | List available skills. `--domain` · `--class` · `--category` · `--platform` · `--json`                                                                                      |
 | `search <query>` | Match a query against names, descriptions, facets, and tags. Spacing, hyphens and case are ignored, so `wear os`, `wear-os` and `WearOS` all find the same skills. `--json` |
-| `view <name>` | Show a skill's metadata and body. `--raw` prints the body alone; `--json` returns metadata *and* body in one document |
+| `view <name>`    | Show a skill's metadata and body. `--raw` prints the body alone; `--json` returns metadata _and_ body in one document                                                       |
 
 ### Working in a project
 
-| Command | What it does |
-|---|---|
-| `init` | Detect which tools the project uses and write `skills-master.json`. `--target` · `--commit` · `--ref` · `--force` |
-| `add <names…>` | Install skills by name, category, or class |
+| Command           | What it does                                                                                                                                                    |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `init`            | Detect which tools the project uses and write `skills-master.json`. `--target` · `--commit` · `--ref` · `--force`                                               |
+| `add <names…>`    | Install skills by name, category, or class                                                                                                                      |
 | `update [names…]` | Re-install skills whose **content** changed upstream. Only touches targets a skill is already installed to. `--check` reports what is behind and exits non-zero |
-| `sync [names…]` | Re-emit to match the **current config** — new targets, moved `paths`, deleted files. `--overwrite` · `--prune` · `--dry-run` |
-| `remove <names…>` | Remove installed skills. `--target` removes from one tool only |
-| `status [names…]` | Inventory: versions, targets, and local-edit state. Offline, always exits 0. `--problems` · `--json` |
-| `doctor` | The same detection as `status`, but **exits non-zero** on drift — the CI gate. `--json` |
+| `sync [names…]`   | Re-emit to match the **current config** — new targets, moved `paths`, deleted files. `--overwrite` · `--prune` · `--dry-run`                                    |
+| `remove <names…>` | Remove installed skills. `--target` removes from one tool only                                                                                                  |
+| `status [names…]` | Inventory: versions, targets, and local-edit state. Offline, always exits 0. `--problems` · `--json`                                                            |
+| `doctor`          | The same detection as `status`, but **exits non-zero** on drift — the CI gate. `--json`                                                                         |
 
-`update` vs `sync` is the distinction worth knowing: `update` follows *content*, `sync` follows *config*.
+`update` vs `sync` is the distinction worth knowing: `update` follows _content_, `sync` follows _config_.
 
 ### Maintaining the library
 
 These operate on a skills checkout rather than a consuming project.
 
-| Command | What it does |
-|---|---|
-| `lint` | Validate the library: naming, reciprocal `pairs_with`, body caps, tag and source rules |
-| `new <domain/class/category/name>` | Scaffold a skill from the canonical template. `--force` |
-| `registry build` | Regenerate `registry.json`. `--check` fails on drift instead of rewriting |
-| `marketplace build` | Regenerate the Claude plugin marketplace. `--check` fails on drift |
+| Command                            | What it does                                                                           |
+| ---------------------------------- | -------------------------------------------------------------------------------------- |
+| `lint`                             | Validate the library: naming, reciprocal `pairs_with`, body caps, tag and source rules |
+| `new <domain/class/category/name>` | Scaffold a skill from the canonical template. `--force`                                |
+| `registry build`                   | Regenerate `registry.json`. `--check` fails on drift instead of rewriting              |
+| `marketplace build`                | Regenerate the Claude plugin marketplace. `--check` fails on drift                     |
 
 ## How it works
 
