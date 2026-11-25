@@ -38,7 +38,7 @@ Two added from what the last effort learned the hard way:
 
 - **Run it, don't reason about it.** Three of that effort's assumptions were wrong and each
   was caught only by executing something: the canonical tree fails the spec validator on its
-  YAML *dialect* before its extra fields; `cli new` scaffolded a description its own linter
+  YAML _dialect_ before its extra fields; `cli new` scaffolded a description its own linter
   rejected; and Play Console thresholds picked as a "post-cutoff" test turned out to be
   known to the model. Verify against the artifact, not the belief.
 - **A refresh must change something or say why not.** Bumping `snapshot_date` on a skill
@@ -49,14 +49,14 @@ Two added from what the last effort learned the hard way:
 
 ### The library is two libraries
 
-| | skills | carrying post-cutoff content | oldest snapshot |
-| --- | ---: | ---: | --- |
-| Refreshed in the last effort | 216 | **118** (55%) | 2026-08-25 |
-| Untouched since the bulk stamp | 217 | **0** | 2026-05-30 |
+|                                | skills | carrying post-cutoff content | oldest snapshot |
+| ------------------------------ | -----: | ---------------------------: | --------------- |
+| Refreshed in the last effort   |    216 |                **118** (55%) | 2026-08-25      |
+| Untouched since the bulk stamp |    217 |                        **0** | 2026-05-30      |
 
 Every snapshot date in the library is one of three values — `2026-05-30` (89),
 `2026-06-06` (128), `2026-08-25` (216). Not one skill carries a date of its own, so the
-field currently records *when a batch ran*, not when anyone checked that skill. 383 of 433
+field currently records _when a batch ran_, not when anyone checked that skill. 383 of 433
 are still on `version` 1.0.x.
 
 The untouched 217 break down as: `android/design` 51, `android/code` 45, `apple/design` 39,
@@ -81,7 +81,7 @@ The weekly crawl already snapshots vendor endpoints. What it produces:
 - **Apple technologies:** a 407-entry framework index.
 - **Android developers blog:** 25 recent posts.
 
-All three are *change* signals, and nothing relates them to a skill's `snapshot_date`. The
+All three are _change_ signals, and nothing relates them to a skill's `snapshot_date`. The
 crawl reports that a skill is 89 days old; it cannot report that the library the skill is
 about shipped four releases in those 89 days. That gap is the first thing to close, because
 without it "refresh the stale ones" means "refresh 217 skills by hand and hope".
@@ -109,7 +109,7 @@ run (~$0.22 and ~$0.37 a session).
   the report renders the queue worst-first. Seeded on 20 skills to prove the join.
   **The missing piece was dates, not matching.** The feed nests a day's releases inside one
   dated `<entry>`, and the parser was extracting the inner links while discarding the
-  wrapper's `<updated>` — so the crawl could say *what* shipped but never *when*. Carrying
+  wrapper's `<updated>` — so the crawl could say _what_ shipped but never _when_. Carrying
   the entry date down to each link is what makes "behind" computable at all.
   **Declared beats inferred, confirmed by trying it:** naive title matching pairs
   `Compose UI` with `choosing-android-testing` and `Browser` with `car-media-messaging`.
@@ -124,7 +124,7 @@ run (~$0.22 and ~$0.37 a session).
   **What that means for 0.2:** an empty queue built on one feed is not evidence of currency.
   Before ranking anything, 0.2 has to widen the sources — per-library release pages rather
   than the roll-up feed, the Android developers blog (25 recent posts, currently unused for
-  this), and an Apple equivalent, since Apple's endpoints are a framework *index* with no
+  this), and an Apple equivalent, since Apple's endpoints are a framework _index_ with no
   dates at all. Until then the honest report is "we cannot tell", which is what it now says.
 - [x] **0.2 Rank the refresh queue by evidence, not date (S).** With 0.1 in place, produce a
   ranked list: skills whose upstream moved since their snapshot, worst first. That list —
@@ -137,7 +137,7 @@ run (~$0.22 and ~$0.37 a session).
   and endpoints carry a `format` so a source can be HTML rather than a feed.
   **(2) The fetch was being served Arabic.** Node's `fetch` sends no `Accept-Language`, the
   CDN content-negotiated, and the date headings came back as `أحدث إصدار` — which
-  `Date.parse` rejects, so the parser found *zero* releases and reported everything current.
+  `Date.parse` rejects, so the parser found _zero_ releases and reported everything current.
   A localization bug that presents as good news is the worst kind. Fixed with `?hl=en` plus
   an explicit header, and both are commented as load-bearing.
   **The queue, first real run:** 5 of the 20 seeded skills are behind —
@@ -145,7 +145,7 @@ run (~$0.22 and ~$0.37 a session).
   `datastore`, `hilt-di`. That is Phase 1's input, and it is evidence rather than a date.
 
 - [x] **0.3 Give Apple a dated source (M).** Nothing here can flag an Apple skill: the three
-  Apple endpoints are a framework *index* and two taxonomies, with **no dates at all**, so
+  Apple endpoints are a framework _index_ and two taxonomies, with **no dates at all**, so
   every `hig-*` and Swift skill is invisible to the currency report no matter how stale.
   Candidates to evaluate, cheapest first: the per-framework "Updates" pages Apple publishes
   under `developer.apple.com/documentation/updates`, the release-notes RSS, and WWDC session
@@ -157,10 +157,10 @@ run (~$0.22 and ~$0.37 a session).
   making 208 requests to answer a question about 20 skills is one somebody eventually turns
   off. 21 Apple skills seeded, resolving to **12** dated framework pages.
   **Month granularity, not day.** A heading says "June 2026", so the report reads it as the
-  1st and cannot say *how far* behind — only whether. That is enough for a queue and is
+  1st and cannot say _how far_ behind — only whether. That is enough for a queue and is
   stated rather than smoothed over.
   **Two bugs found by looking at the output instead of the summary.** (1) `upstream.json`
-  was written *before* the Apple topics were merged in, so the report used them and the
+  was written _before_ the Apple topics were merged in, so the report used them and the
   artifact on disk never had them — invisible unless you opened the file. (2) `Date.parse
   ("June 2026 01")` yields **local** midnight, which `toISOString` renders as **31 May** in
   any timezone east of UTC; every Apple date was silently a day early. Both fixed, the
@@ -192,7 +192,7 @@ run (~$0.22 and ~$0.37 a session).
   **Not refreshed, and this is the useful half of the result:** `paging` (3.5.1, a patch),
   `datastore` (1.3.0-**alpha**10), `hilt-di` (1.4.0 — checked rather than assumed: a
   stabilisation release whose only developer-facing change, the simplified
-  `rememberHiltViewModelFactory()`, shipped in April, *before* the skill's June snapshot).
+  `rememberHiltViewModelFactory()`, shipped in April, _before_ the skill's June snapshot).
   Bumping `snapshot_date` on these would be exactly the "looks maintained while going stale"
   move this plan's ground rules forbid.
   **So the queue needs a materiality filter, not just recency** — see 1.4. Ranking by
@@ -213,9 +213,9 @@ run (~$0.22 and ~$0.37 a session).
   that has never been published; the real successor is `androidx.glance.wear:wear` +
   `wear-core`, still `1.0.0-alpha17`, so the advice was wrong even spelled correctly. Fixed
   here, and the corrected skill scores 100% against 88% for the control.
-  **The finding that outranks both numbers:** the *stale* arm was not misled — it said "the
+  **The finding that outranks both numbers:** the _stale_ arm was not misled — it said "the
   skill guidance I loaded still references it as a live option; it isn't" and routed around
-  it — while the *refreshed* arm repeated the error. And the bare model had already named
+  it — while the _refreshed_ arm repeated the error. And the bare model had already named
   that coordinate **with a hedge** ("could not confirm it has shipped; treat it as announced,
   not available"), which is almost certainly where the refresh got it, minus the hedge. A
   refresh drafted with model help inherits the model's guesses. **Stale is a slow leak;
@@ -241,13 +241,13 @@ run (~$0.22 and ~$0.37 a session).
   Weight the queue accordingly — a new stable minor or major outranks a patch, and a
   pre-release ranks last or is excluded outright. Cheap, mechanical, and it roughly doubles
   the hit rate before anyone spends time on a refresh that changes nothing.
-  Worth checking at the same time: `releasesSince` currently counts *entries*, so a library
+  Worth checking at the same time: `releasesSince` currently counts _entries_, so a library
   shipping alpha weekly outranks one that shipped a considered stable release. Count what
   matters instead.
   **Landed — but the filter this item proposed would have been wrong 2 times in 5, so it is
   not what shipped.** Modelling it against 1.1's own results first: it would have **dropped
   `wear-compose`**, the biggest real defect, because everything Wear Compose shipped after
-  the snapshot was a pre-release — its 1.6.2 stable landed *before* the bulk-stamped date.
+  the snapshot was a pre-release — its 1.6.2 stable landed _before_ the bulk-stamped date.
   And it would have **promoted `hilt-di`**, which had nothing, because 1.4.0 looks like a
   minor release. Version strings are a weak proxy for materiality in both directions.
   **What shipped instead: version lag, which is what both successful refreshes actually
@@ -262,11 +262,10 @@ run (~$0.22 and ~$0.37 a session).
   1.4.0 was a stabilisation release with nothing new. The label says what the ranking is
   based on so a reader can discount it — a cheap proxy that shows its working, not an
   oracle.
-
 ## Phase 2 — Stop the bulk stamp from coming back
 
 - [x] **2.1 A snapshot date must mean one skill (S).** State it in `docs/authoring.md`: a
-  `snapshot_date` records when *this* skill was checked against *its* sources, and a refresh
+  `snapshot_date` records when _this_ skill was checked against _its_ sources, and a refresh
   sets it per skill as it goes. Deliberately **not** a lint rule — "these 128 dates are
   identical" is indistinguishable from "these 128 skills were genuinely checked on the same
   day", so a rule would fire on honest work and miss the dishonest kind a week later. The
@@ -279,7 +278,7 @@ run (~$0.22 and ~$0.37 a session).
   is a rule nobody believes. The "not a lint rule" reasoning is stated with both failure
   directions — it fires on honest bulk re-verification, and is defeated by stamping the
   dishonest kind a day apart.
-  Extended past the item with 1.2's finding: a bump is a *claim*, and the cheap half is
+  Extended past the item with 1.2's finding: a bump is a _claim_, and the cheap half is
   editing the field. A date bumped without re-reading the sources is worse than a stale one,
   which is not a hypothetical — 1.2 caught exactly that, on a skill that looked maintained.
 - [x] **2.2 Currency-first authoring guidance (S).** Fold 4.1's finding into
@@ -287,10 +286,10 @@ run (~$0.22 and ~$0.37 a session).
   judgment the vendor's docs bury. Restating a stable, well-documented API measurably adds
   nothing — and still costs listing budget.
   **Landed** as "What earns a new skill", ahead of the scaffold section, because it decides
-  whether to scaffold at all. It opens on the question the evidence supports — *what does the
-  model get wrong today without this skill?* — and carries the numbers rather than the
+  whether to scaffold at all. It opens on the question the evidence supports — _what does the
+  model get wrong today without this skill?_ — and carries the numbers rather than the
   slogan: every stable-subject skill in the 8-skill sample scored a **zero** delta, and
-  `crash-anr-vitals` is written up as the case where my guess about *why* a skill wins was
+  `crash-anr-vitals` is written up as the case where my guess about _why_ a skill wins was
   wrong even though the delta was real.
   Two guards added that 4.1 alone would not have justified. **It is not a delete argument** —
   3.1 is open and a skill worth nothing to a frontier model may still be worth something to a
@@ -310,7 +309,7 @@ run (~$0.22 and ~$0.37 a session).
   and it still occupies listing budget either way. Record the numbers; decide after.
   **Landed. 15 skills by even stride across the path-sorted library, one task each: 14 zero,
   1 positive, 0 negative. $9.74.** The one winner (`compose-custom-layouts`, +25) is the
-  hardest *construction* task in the set — the control got the structure right and botched
+  hardest _construction_ task in the set — the control got the structure right and botched
   the constraint relaxation. Note what did **not** win: `car-app-library` and
   `tvos-media-playback` are niche framework surfaces and the control handled both, so the
   predictor is task difficulty and recency, **not** how specialised the topic is.
@@ -318,7 +317,7 @@ run (~$0.22 and ~$0.37 a session).
   stratified to over-represent recent subjects, which is right for "where does the delta come
   from" and wrong for "how much of the library has one".
   **Four caveats, all cutting against over-reading it,** are in the README: one task cannot
-  characterise a skill; the grader scores *concept coverage*, not prioritisation or code
+  characterise a skill; the grader scores _concept coverage_, not prioritisation or code
   quality, and saturates exactly where controls are strong; several assertion sets were drawn
   partly from the skills' own guidance, so the bias favours the skill and the zero rate is if
   anything understated; and two skills scored below 100% in **both** arms, which is the
@@ -357,10 +356,10 @@ this effort found evidence for.
 
 Three measurements, each a level below the last:
 
-| Question | Answer |
-| --- | --- |
-| Of queue entries flagged by upstream release activity, how many were material? | **2 of 5** (1.1) |
-| Inside a *material* refresh, how many added facts changed an answer? | **1 of 2** (1.2) |
+| Question                                                                            | Answer            |
+| ----------------------------------------------------------------------------------- | ----------------- |
+| Of queue entries flagged by upstream release activity, how many were material?      | **2 of 5** (1.1)  |
+| Inside a _material_ refresh, how many added facts changed an answer?                | **1 of 2** (1.2)  |
 | Across the library, how many skills move a frontier model on a representative task? | **1 of 15** (3.1) |
 
 Nothing here contradicts the premise the plan opened with — value is currency plus buried
@@ -371,7 +370,7 @@ smaller than the level above predicted. Any future estimate should assume the sa
 
 **A refresh can make a skill wrong, and wrong is more expensive than stale.** 1.2 caught the
 1.1 refresh introducing `androidx.glance:glance-wear`, a coordinate that has never been
-published. In the same eval, the *stale* version of that skill was not misleading anyone — the
+published. In the same eval, the _stale_ version of that skill was not misleading anyone — the
 model said "the skill guidance I loaded still references it as a live option; it isn't" and
 routed around it. The refreshed one got repeated.
 
@@ -411,7 +410,7 @@ reading, not to replace it.
 
 - **1.3** — waits for a queue with material in it. The weekly crawl produces one, labelled.
 - **The zero-delta decision.** 3.1 deliberately stopped at the numbers. Closing it needs
-  evidence this effort never gathered: whether these skills help a *smaller* model, an agent
+  evidence this effort never gathered: whether these skills help a _smaller_ model, an agent
   with less context, or a person reading them. Listing budget argues for pruning; those
   readers argue against; nothing measured here adjudicates between them.
 - **3.2 from the previous plan** — the trigger-eval pilot (~$130), still unrun and still only

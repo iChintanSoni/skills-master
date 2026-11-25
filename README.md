@@ -13,34 +13,34 @@ Two domains ship today — **Apple** and **Android** platform development — di
 
 **393 skills across two domains**, each with a curated `## References` section of verified, vendor-canonical links (Documentation / design guidelines / WWDC or Android Dev sessions / Sample Code). Every skill carries one of four classes:
 
-| Class | What it produces |
-|------|------------------|
-| `code` | compilable code for frameworks & APIs |
-| `design` | design-system critique (Apple HIG / Material 3) |
+| Class          | What it produces                                                |
+| -------------- | --------------------------------------------------------------- |
+| `code`         | compilable code for frameworks & APIs                           |
+| `design`       | design-system critique (Apple HIG / Material 3)                 |
 | `lang-tooling` | language, app architecture, testing, build/packaging, ship & CI |
-| `overview` | decision routers ("which technology should I use?") |
+| `overview`     | decision routers ("which technology should I use?")             |
 
 ### Apple — 183 skills
 
 Current to the 2026 "26" OS cycle, Swift 6.x.
 
-| Class | What it produces | Count |
-|------|------------------|------:|
-| `code` | SwiftUI, UIKit/AppKit, SwiftData, CloudKit, StoreKit, Core ML, MapKit, RealityKit/ARKit, AVFoundation, CryptoKit, WidgetKit, App Intents… | 71 |
-| `design` | Human Interface Guidelines — foundations, components, patterns, inputs, per-platform, technologies | 62 |
-| `lang-tooling` | Swift language, app architecture, testing, build/packaging, ship & CI | 37 |
-| `overview` | decision routers | 13 |
+| Class          | What it produces                                                                                                                          | Count |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----: |
+| `code`         | SwiftUI, UIKit/AppKit, SwiftData, CloudKit, StoreKit, Core ML, MapKit, RealityKit/ARKit, AVFoundation, CryptoKit, WidgetKit, App Intents… |    71 |
+| `design`       | Human Interface Guidelines — foundations, components, patterns, inputs, per-platform, technologies                                        |    62 |
+| `lang-tooling` | Swift language, app architecture, testing, build/packaging, ship & CI                                                                     |    37 |
+| `overview`     | decision routers                                                                                                                          |    13 |
 
 ### Android — 210 skills
 
 Current to Android 16 / API 36, Kotlin 2.2, Jetpack Compose & Material 3.
 
-| Class | What it produces | Count |
-|------|------------------|------:|
-| `code` | Jetpack Compose, Material 3, app architecture (ViewModel/Hilt/Navigation), Room/DataStore, CameraX, Media3/ExoPlayer, ML Kit/Gemini Nano, WorkManager, form factors (Wear/TV/Auto/XR/foldables)… | 95 |
-| `design` | Material 3 — foundations, components, patterns, styles, per-platform, technologies | 63 |
-| `lang-tooling` | Kotlin language, app architecture, testing, Gradle/build variants, ship & Play Console | 35 |
-| `overview` | decision routers | 17 |
+| Class          | What it produces                                                                                                                                                                                 | Count |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----: |
+| `code`         | Jetpack Compose, Material 3, app architecture (ViewModel/Hilt/Navigation), Room/DataStore, CameraX, Media3/ExoPlayer, ML Kit/Gemini Nano, WorkManager, form factors (Wear/TV/Auto/XR/foldables)… |    95 |
+| `design`       | Material 3 — foundations, components, patterns, styles, per-platform, technologies                                                                                                               |    63 |
+| `lang-tooling` | Kotlin language, app architecture, testing, Gradle/build variants, ship & Play Console                                                                                                           |    35 |
+| `overview`     | decision routers                                                                                                                                                                                 |    17 |
 
 90 flagship skills also ship Level-3 `examples.md` / `checklist.md`, and code↔design counterparts are cross-linked (Apple: `hig-tab-bars` ↔ `swiftui-tab-views`; Android: `m3-navigation` ↔ `navigation-compose`) so `--with-pairs` installs both. See **[docs/taxonomy.md](docs/taxonomy.md)** for the full catalog.
 
@@ -86,12 +86,12 @@ See [docs/architecture.md](docs/architecture.md) for the full design and [docs/a
 
 ## Repository layout
 
-| Path | What |
-|------|------|
-| `packages/cli/` | the `skills-master` npm package (CLI + compiler + emitters) |
-| `skills/` | the skill content library, organized `skills/<domain>/<class>/<category>/<name>/` (domains: `apple/`, `android/`) |
-| `scripts/crawl/` | report-only crawler that flags new/stale platform topics |
-| `docs/` | architecture, authoring, and emitter documentation |
+| Path             | What                                                                                                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `packages/cli/`  | the `skills-master` npm package (CLI + compiler + emitters)                                                       |
+| `skills/`        | the skill content library, organized `skills/<domain>/<class>/<category>/<name>/` (domains: `apple/`, `android/`) |
+| `scripts/crawl/` | report-only crawler that flags new/stale platform topics                                                          |
+| `docs/`          | architecture, authoring, and emitter documentation                                                                |
 
 ## License
 

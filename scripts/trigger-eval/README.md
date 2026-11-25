@@ -2,7 +2,7 @@
 
 Does a skill actually activate on prompts a real user would write?
 
-The library has always *asserted* description quality — every description carries a "Use when …" clause and the linter checks for it — but a grep proves the letter of the guidance, not that a model reaches for the right skill. This measures the latter.
+The library has always _asserted_ description quality — every description carries a "Use when …" clause and the linter checks for it — but a grep proves the letter of the guidance, not that a model reaches for the right skill. This measures the latter.
 
 ```bash
 node scripts/trigger-eval/bin.mjs swiftui-sheets --dry-run     # free: prints the plan
@@ -23,11 +23,11 @@ node scripts/trigger-eval/bin.mjs swiftui-sheets --json=/tmp/out.json # the full
 
 Every query is a real headless session. Measured on the first run: **~$0.22 per session**.
 
-| Scope | Sessions | Approx cost |
-|---|---:|---:|
-| Smoke (`--runs=1 --limit=2`) | 4 | $0.90 |
-| One skill, full set, 3 runs | ~48 | ~$11 |
-| The 10-skill pilot in PLAN.md 3.2 | ~600 | **~$130** |
+| Scope                             | Sessions | Approx cost |
+| --------------------------------- | -------: | ----------: |
+| Smoke (`--runs=1 --limit=2`)      |        4 |       $0.90 |
+| One skill, full set, 3 runs       |      ~48 |        ~$11 |
+| The 10-skill pilot in PLAN.md 3.2 |     ~600 |   **~$130** |
 
 So: `--dry-run` first, then one skill, and read the printed cost before committing to a pilot. `--concurrency` exists but hosts rate-limit; raise it carefully.
 
