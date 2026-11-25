@@ -3,8 +3,8 @@ name: wear-compose
 description: "Use when building or modernising a Wear OS app with Compose: wear.compose.material3 components, TransformingLazyColumn and ScalingLazyColumn for round screens, AppScaffold and ScreenScaffold, rotary input via rotaryScrollable, TimeText, and SwipeDismissableNavHost."
 license: MIT
 metadata:
-  version: "1.0.3"
-  snapshot-date: "2026-08-27"
+  version: "1.0.4"
+  snapshot-date: "2026-11-25"
 ---
 
 ## When to use
@@ -71,10 +71,15 @@ fun HomeScreen() {
 
 ### TransformingLazyColumn (preferred) vs ScalingLazyColumn
 
-- `TransformingLazyColumn` (Wear Compose 1.4+) is the preferred container. It applies a `transformedHeight` and `scrollTransform` to each item as it approaches the top or bottom of the round viewport, creating a curved-perspective effect that matches the display shape. Pair it with `rememberTransformingLazyColumnState()`.
+- `TransformingLazyColumn` (Wear Compose 1.4+) is the preferred container. It applies a `transformedHeight` and `scrollTransform` to each item as it approaches the top or bottom of the round viewport, creating a curved-perspective effect that matches the display shape. Pair it with `rememberTransformingLazyColumnState()`. In 1.7+, it supports `PinnableContainer` (holding an item in memory rather than disposing when scrolled out), sliding off-screen exit animations instead of fading out, and an optional `firstLayoutItemProvider` to anchor placement direction when items update dynamically.
 - `ScalingLazyColumn` scales and fades items near the top/bottom edges. It is still supported but `TransformingLazyColumn` supersedes it for new code with M3 Expressive for Wear.
 - Both respect `contentPadding` — always set a generous `top` padding (around 32 dp) and `bottom` padding (around 48 dp) so content is not obscured by `TimeText` or cut off by the chin on flat-tire displays.
 - Use `ScalingLazyListAnchorType.ItemCenter` on `ScalingLazyColumn` to snap the first visible item to the centre of the screen rather than the top edge.
+
+### One-handed gestures (1.7+)
+
+- Wire double-pinch (primary action) and wrist-turn (dismiss action) with `Modifier.oneHandedGesture` on interactive components, scrollable lists, and pagers. Animated gesture indicators show availability on initial composition (indicator visibility in `ScreenScaffold` is managed via a composition local).
+- For swipe actions inside lists, `SwipeToReveal` (1.7+) supports nested scroll, fast flings, a second haptic at the partial reveal state, and `actionContentSpacing` to separate the main content from action buttons.
 
 ### Rotary input — rotaryScrollable
 
@@ -139,8 +144,8 @@ fun RotaryList(items: List<String>) {
 - **Screen density:** Wear displays range from ~300 dpi on entry-level to ~450 dpi on premium. Use `sp` for text and `dp` for layout — never hardcode pixel values.
 - **Ambient mode:** Wear OS handles ambient mode separately from the Compose layer. For always-on displays use `AmbientLifecycleObserver` and provide a simplified low-burn ambient layout, not the full interactive UI. Inside composables, read `LocalAmbientModeManager` (1.6+) to branch UI or suppress animation rather than threading an "is ambient" flag down by hand.
 - **Tiles and Complications:** Compose-for-Wear handles the interactive app UI. Tiles use `androidx.wear.protolayout` (not Compose). If your app provides both, keep the Compose layer and the tile layer in separate modules to prevent dependency bleed.
-- **Minimum API:** Wear OS 3 maps to API 30; Wear OS 4 is API 33. The skill requires Android 16 (API 36) which aligns with Wear OS 5+. Wear Compose (1.6 stable) and the M3 Expressive components require at minimum Wear OS 3 (API 30) with degraded theming, and full M3 Expressive on Wear OS 4+.
-- **Performance:** Wear CPUs and RAM are constrained. Apply the same `compose-performance` discipline: stable parameters, `key` on list items, `derivedStateOf` for scroll-derived state. Prefer `TransformingLazyColumn` over `LazyColumn` — the latter lacks the curvature transform and wastes layout passes on round screens.
+- **Minimum API:** Wear OS 3 maps to API 30; Wear OS 4 is API 33. The skill requires Android 16 (API 36) which aligns with Wear OS 5+. Wear Compose (1.7 stable) and the M3 Expressive components require at minimum Wear OS 3 (API 30) with degraded theming, and full M3 Expressive on Wear OS 4+.
+- **Performance:** Wear CPUs and RAM are constrained. Apply the same `compose-performance` discipline: stable parameters, `key` on list items, `derivedStateOf` for scroll-derived state, and heed `@FrequentlyChangingValue` / `@RememberInComposition` (1.7+) lint warnings against reading high-frequency state or allocating un-remembered objects in composition. Prefer `TransformingLazyColumn` over `LazyColumn` — the latter lacks the curvature transform and wastes layout passes on round screens.
 
 ## Pitfalls
 
@@ -159,6 +164,7 @@ fun RotaryList(items: List<String>) {
 
 - **Documentation:** [Compose for Wear OS](https://developer.android.com/training/wearables/compose)
 - **Documentation:** [Navigation in Compose for Wear OS](https://developer.android.com/training/wearables/compose/navigation)
+- **Release notes:** [Wear Compose releases](https://developer.android.com/jetpack/androidx/releases/wear-compose)
 - **Worked examples:** [examples.md](examples.md) — read when you want working Wear OS Compose code to adapt
 - **Review checklist:** [checklist.md](checklist.md) — run before merging changes to Wear OS Compose
 

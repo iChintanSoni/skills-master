@@ -3,8 +3,8 @@ name: choosing-apple-platforms
 description: Decision router for which Apple platforms a codebase should target and what each one actually costs — iPhone and iPad from one target, the three routes onto the Mac, and the separate entry costs of watchOS, tvOS, visionOS, and CarPlay. Use when scoping a new app's platform matrix, estimating the effort of a port, deciding whether a watch or TV app is worth building, planning how much of a SwiftUI core can be shared, or answering the question of what genuinely does not carry across.
 license: MIT
 metadata:
-  version: "1.0.0"
-  snapshot-date: "2026-08-25"
+  version: "1.0.1"
+  snapshot-date: "2026-11-25"
 ---
 
 ## When to use
@@ -92,7 +92,7 @@ Push the model, networking, persistence, and formatting into local Swift package
 
 ## References
 
-- **Documentation:** [SwiftUI technology overview](https://developer.apple.com/documentation/technologyoverviews/swiftui)
+- **Documentation:** [SwiftUI](https://developer.apple.com/documentation/swiftui)
 - **Documentation:** [Mac Catalyst](https://developer.apple.com/documentation/uikit/mac-catalyst)
 - **Documentation:** [Making your app compatible with visionOS](https://developer.apple.com/documentation/visionos/making-your-app-compatible-with-visionos)
 - **Documentation:** [watchOS apps](https://developer.apple.com/documentation/watchos-apps)
