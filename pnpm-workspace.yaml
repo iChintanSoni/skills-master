@@ -13,3 +13,10 @@ overrides:
   # Patch release 3.15.2 fixes the CPU consumption vulnerability while preserving the 3.x API
   # (safeLoad/safeDump) required by gray-matter (which fails on js-yaml 4+ / 5+).
   js-yaml: "~3.15.2"
+  # vitest 5.1.0 peer-depends on vite ^8.0.0 and kept 8.0.16 pinned in pnpm-lock.yaml,
+  # which carries GHSA-rq7h-c2jc-7f22, GHSA-9jrq-w75r-8gcw, GHSA-r825-w8mm-5pxw,
+  # GHSA-587h-7wmj-h5pm, and GHSA-698v-4r3x-3vcv (all patched in >=8.3.3).
+  vite: "^8.3.3"
+  # magicast 0.5.5 and postcss 8.5.26 kept source-map-js pinned at 1.2.1 in pnpm-lock.yaml,
+  # which carries GHSA-68fv-2mgg-jv7q (patched in >=1.2.2).
+  source-map-js: "^1.2.2"
